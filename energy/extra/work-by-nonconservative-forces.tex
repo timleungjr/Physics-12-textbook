@@ -1,0 +1,270 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../../mybeamer}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\title{Work by Non-Conservative Forces}
+\date{}
+%\input{../me}
+\input{../../mycommands}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+
+\begin{frame}{Non-Conservative Force}
+  While the list of conservative forces is very short; the majority of forces
+  are \textbf{non-conservative}. Examples of non-conservative forces include:
+  \begin{itemize}
+  \item Aerodynamic drag (fluid resistance) and lift
+  \item Static and kinetic friction
+  \item Applied force
+  \item Tension force
+  \item Normal force
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Non-Conservative Force}
+  The work done by non-conservative forces differs from conservative forces in
+  that:
+  \begin{itemize}
+  \item There is no related potential energies
+  \item Transforms one form of \emph{kinetic} energy to another, or
+  \item Transforms kinetic energy from one object to another
+  \item Transforms kinetic energy into \emph{internal} energy
+  \item Work is path dependent
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Work by Static Friction}
+  We can learn about the work by non-conservative forces by studying the Work
+  by static friction in a multi-body example studied in dynamics. Two blocks
+  ($m_1$ and $m_2$), stacked vertically, move to the right without
+  slipping\footnote{This means that both blocks travel the same displacement
+  $\Delta d$} by external force $\vec F$ :
+  \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \fill[pattern=north east lines] rectangle (7,-.2);
+      \draw[thick] (0,0)--(7,0);
+      \draw[thick] (1,0) rectangle (4,1.2) node[midway]{$m_1$};
+      \draw[thick] (1.7,1.2) rectangle (3.3,2) node[midway]{$m_2$};
+      \draw[vectors] (4,.6)--(6,.6) node[right]{$\vec F$};
+      \draw[<-] (.95,.05) to[out=150,in=0] (0,.5) node[left]{frictionless};
+      \draw[<-] (3.35,1.25) to[out=20, in=180] (4.5,1.8) node[right]{$\mu$};
+    \end{tikzpicture}
+  \end{center}
+  \uncover<2>{
+    The FBDs of the blocks are shown below. (Highlighted forces are
+    action-reaction pairs.)
+    \begin{center}
+      \vspace{-.1in}
+      \begin{tikzpicture}[scale=.8,vectors,orange]
+        \fill circle (.1);
+        \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+        \draw (0,0)--(0, 1) node[above,fill=pink!10]{$\vec N_{12}$};
+        \draw (0,0)--(1.5,0) node[right,fill=yellow!10]{$\vec f_s$};
+      \end{tikzpicture}
+      \hspace{.4in}
+      \begin{tikzpicture}[scale=.8,vectors,violet]
+        \fill circle (.1);
+        \draw (-.05,0)--(-.05,-1) node[below left]{$m_1\vec g$};
+        \draw (.05,0)--(.05,-1) node[below right,fill=pink!10]{$\vec N_{12}$};
+        \draw (0,0)--(0, 1) node[above]{$\vec N_1$};
+        \draw (0,0)--(-1.5,0) node[left,fill=yellow!10]{$\vec f_s$};
+        \draw (0,0)--(2,0) node[right]{$\vec F$};
+      \end{tikzpicture}
+    \end{center}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Work by Static Friction}
+  \begin{columns}
+    \column{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[orange,vectors]
+      \fill circle (.08);
+      \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+      \draw (0,0)--(0,1) node[above]{$\vec N_{12}$};
+      \draw (0,0)--(1.5,0) node[right,fill=yellow!20]{$\vec f_s$};
+    \end{tikzpicture}
+
+    \column{.75\textwidth}
+    For the top block $m_2$, when it moves to the right
+    \begin{itemize}
+    \item Friction between the blocks $\vec f_s$ is the only force doing work
+    \item The work done by $\vec f_s$ is positive
+    \item Mass $m_2$ gains kinetic energy: $W_f=\Delta K>0$
+    \end{itemize}
+  \end{columns}
+  \uncover<2>{
+    \begin{columns}
+      \column{.65\textwidth}
+      For the bottom block $m_1$, when it moves to the right
+      \begin{itemize}
+      \item $\vec F$ does positive work on $m_1$, while
+      \item $\vec f_s$ does negative work on $m_1$
+      \item Therefore $\vec f_s$ decreases the kinetic energy of $m_1$
+        \begin{itemize}
+        \item Without friction, $m_1$ would move faster
+        \end{itemize}
+      \end{itemize}
+    
+      \column{.35\textwidth}
+      \centering
+      \begin{tikzpicture}[violet,vectors]
+        \fill circle (.08);
+        \draw (0,0)--(0,-1) node[below]{$m_1\vec g+\vec N_{12}$};
+        \draw (0,0)--(0, 1) node[above]{$\vec N_1$};
+        \draw (0,0)--(-1.5,0) node[left,fill=yellow!20]{$\vec f_s$};
+        \draw (0,0)--(2,0) node[right]{$\vec F$};
+      \end{tikzpicture}    
+    \end{columns}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Work by Static Friction}
+  The work done by static friction is
+  \begin{itemize}
+  \item positive on one object ($m_2$)
+  \item negative on another ($m_1$)
+  \end{itemize}
+  Therefore, work by friction transforms the kinetic energy of $m_1$ into the
+  kinetic energy of $m_2$ by the same amount
+\end{frame}
+
+
+
+\begin{frame}{Work by Kinetic Friction}
+  But what if the blocks \emph{do} slide against each other?
+  \begin{center}
+    \begin{tikzpicture}[scale=.72]
+      \fill[pattern=north east lines] rectangle (7,-.2);
+      \draw[thick] (0,0)--(7,0);
+      \draw[thick] (1,0) rectangle (4,1.2) node[midway]{$m_1$};
+      \draw[thick] (1.7,1.2) rectangle (3.3,2) node[midway]{$m_2$};
+      \draw[vectors] (4,.6)--(6,.6) node[right]{$\vec F$};
+      \draw[<-] (.95,.05) to[out=150,in=0] (0,.5) node[left]{frictionless};
+      \draw[<-] (3.35,1.25) to[out=20, in=180] (4.5,1.8) node[right]{$\mu$};
+    \end{tikzpicture}
+  \end{center}
+  \uncover<2>{
+    The FBDs of the blocks are shown below\ldots with slight differences. The
+    friction force is still an action-reaction pair, but now the friction is
+    \emph{kinetic}.
+    \begin{center}
+      \vspace{-.1in}
+      \begin{tikzpicture}[scale=.8,vectors,orange]
+        \fill circle (.1);
+        \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+        \draw (0,0)--(0, 1) node[above,fill=pink!10]{$\vec N_{12}$};
+        \draw (0,0)--(1.5,0) node[right,fill=yellow!10]{$\vec f_k$};
+      \end{tikzpicture}
+      \hspace{.4in}
+      \begin{tikzpicture}[scale=.8,vectors,violet]
+        \fill circle (.1);
+        \draw (-.05,0)--(-.05,-1) node[below left]{$m_1\vec g$};
+        \draw (.05,0)--(.05,-1) node[below right,fill=pink!10]{$\vec N_{12}$};
+        \draw (0,0)--(0, 1) node[above]{$\vec N_1$};
+        \draw (0,0)--(-1.5,0) node[left,fill=yellow!10]{$\vec f_k$};
+        \draw (0,0)--(2,0) node[right]{$\vec F$};
+      \end{tikzpicture}
+    \end{center}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Work by Kinetic Friction}
+  \begin{columns}
+    \column{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[orange,vectors]
+      \fill circle (.08);
+      \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+      \draw (0,0)--(0,1) node[above]{$\vec N_{12}$};
+      \draw (0,0)--(1.5,0) node[right,fill=yellow!20]{$\vec f_k$};
+    \end{tikzpicture}
+
+    \column{.75\textwidth}
+    For the top block $m_2$, when it moves to the right
+    \begin{itemize}
+    \item Kinetic friction between the blocks $\vec f_k$ is the only force
+      doing (positive) work
+    \item Mass $m_2$ gains kinetic energy: $W_f=\Delta K>0$
+    \end{itemize}
+    This is the same as the static friction case, except that $f_k\leq\max f_s$
+  \end{columns}
+  \uncover<2>{
+    \begin{columns}
+      \column{.65\textwidth}
+      For the bottom block $m_1$, when it moves to the right
+      \begin{itemize}
+      \item $\vec F$ does positive work on $m_1$, while
+      \item Kinetic friction $\vec f_k$ does negative work on $m_1$
+      \item Therefore $\vec f_s$ decreases the kinetic energy of $m_1$
+        \begin{itemize}
+        \item Without friction, $m_1$ would move faster
+        \end{itemize}
+      \end{itemize}
+    
+      \column{.35\textwidth}
+      \centering
+      \begin{tikzpicture}[violet,vectors]
+        \fill circle (.08);
+        \draw (0,0)--(0,-1) node[below]{$m_1\vec g+\vec N_{12}$};
+        \draw (0,0)--(0, 1) node[above]{$\vec N_1$};
+        \draw (0,0)--(-1.5,0) node[left,fill=yellow!20]{$\vec f_k$};
+        \draw (0,0)--(2,0) node[right]{$\vec F$};
+      \end{tikzpicture}    
+    \end{columns}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Work by Kinetic Friction}
+  The work done by static friction is
+  \begin{itemize}
+  \item positive on one object ($m_2$)
+  \item negative on another ($m_1$)
+  \end{itemize}
+  Therefore, work by friction transforms the kinetic energy of $m_1$ into the
+  kinetic energy of $m_2$ by the same amount.
+\end{frame}
+
+
+
+\begin{frame}{Work by Kinetic Friction}
+  Where kinetic friction is different from static friction is that:
+  \begin{itemize}
+  \item The displacement of the blocks are different: $m_1$ moves farther than
+    $m_2$
+  \item The positive work by $f_k$ on $m_2$ is less than the negative work done
+    by $f_k$ on $m_1$
+  \item<2->Kinetic friction took more energy away from $m_1$ than what is put
+    into $m_2$
+  \end{itemize}
+  \uncover<3->{\textbf{Where did the energy go?}}
+  \begin{itemize}
+  \item<4-> It went into heating up the interface between the blocks
+  \item<4-> Transformed kinetic energy of $m_1$ into
+    \begin{itemize}
+    \item Internal energy of $m_1$ and $m_2$
+    \item Kinetic energy of $m_2$ 
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\end{document}

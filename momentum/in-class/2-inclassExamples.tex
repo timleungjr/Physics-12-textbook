@@ -1,0 +1,311 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.7in,letterpaper]{geometry}
+%\usepackage{tikz,graphicx,wrapfig}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{cancel}
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\e}[1]{\times 10^{#1}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\dg}{^\circ}
+\newcommand{\magdir}[2]{#1\;[\textrm{#2}]}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\andthen}{\quad\longrightarrow\quad}
+\newcommand{\answer}[1]{
+  \fbox{
+    \begin{minipage}{0.98\textwidth}
+      \textbf{Answer:}
+      #1
+    \end{minipage}
+  }
+  \vspace{0.05in}
+}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\begin{center}
+  {\Large\textbf{Physics 12 Unit 2 (Momentum and Energy) In-class Examples}}
+\end{center}
+
+\textbf{Example 1:} Determine the momentum of a $0.300kg$ hockey puck
+travelling across the ice at a velocity of $\magdir{5.55m/s}{N}$.\\
+\answer{
+  \begin{displaymath}
+    \mb{p}=m\mb{v}=0.300kg\times 5.55m/s=\magdir{1.67kg\cdot m/s}{N}
+  \end{displaymath}
+}
+
+\textbf{Example 2:} If a golf club exerts an average force of
+$\magdir{5.25\e{3}N}{W}$ on a golf ball over a time interval of $5.45\e{-4}s$,
+what is the impulse of the interaction?\\
+\answer{
+  \begin{displaymath}
+    \mb{J}=\Delta\mb{p}=\mb{F}\Delta t=
+    \magdir{5.25\e{3}N}{W}\times 5.45\e{-4}s
+    =\magdir{2.86kg\cdot m/s}{W}
+  \end{displaymath}
+}
+
+\textbf{Example 3:} A student practices her tennis volleys by hitting a tennis
+ball against a wall.
+\begin{itemize}[noitemsep]
+\item If the $0.060kg$ ball travels $48m/s$ before hitting the wall and then
+  bounces directly backwards at $35m/s$, what is the impulse of the interaction?
+\item If the duration of the interaction if $25ms$, what is the average force
+  exerted on the ball by the wall?
+\end{itemize}
+\answer{Let's call the direction towards the wall positive; backwards is
+  negative.
+  \begin{displaymath}
+    J=\Delta p=m(v_2-v_1)=0.060kg\times\left(-35-48\right)
+    =\boxed{-4.9kg\cdot m/s}\;\;\text{or}\;\;
+    \boxed{\magdir{4.9kg\cdot m/s}{backwards}}
+  \end{displaymath}
+  To find the force:
+  \begin{displaymath}
+    J=F\Delta t\andthen F=\frac{J}{\Delta t}=\frac{-4.9kg\cdot m/s}{0.025s}
+    =\boxed{-1.97\e{2}N}\;\;\text{or}\;\;
+    \boxed{\magdir{1.97\e{2}N}{backwards}}
+  \end{displaymath}
+}
+
+\textbf{Example 4:} A $1.75\e{4}kg$ boxcar is rolling down a track towards a
+stationary boxcar that has a mass of $2.00\e{4}kg$. Just before the collision,
+the first boxcar is moving east at $5.45m/s$. when the boxcars collide, they
+lock together and continue to down the track. What is the velocity of the two
+boxcars immediately after the collision?\\
+\answer{
+  Momentum equation. B is the stationary boxcar
+  \begin{align*}
+    m_Av_A+\cancel{m_Bv_B}&=m_Av_A'+m_Bv_B'
+    \quad\textrm{where}\quad v_A'=v_B'=v'\\
+    m_Av_A&=(m_A+m_B)v'\\
+    v'&=\frac{m_Av_A}{m_A+m_B}
+    =\frac{2.00\e{4}\times 5.45}{(1.75+2.00)\e{4}}
+    =\boxed{\magdir{2.91m/s}{forward}}
+  \end{align*}
+  Should point out that this is a ``completely inelastic'' collision.
+}
+
+\textbf{Example 5:} If two people A and B stand in a canoe on top of the
+water. Find the velocity of the canoe and person B at the instant that person A
+start to take a step, if her velocity is $\magdir{0.75m/s}{forward}$.
+Assume person A has a mass of $65kg$ and the combined mass of the canoe, A and
+B is $115kg$.\\
+\answer{The mass of person B plus the canoe is $115-65=50kg$. Momentum equation:
+  \begin{align*}
+    \cancel{m_Av_A}+\cancel{m_Bv_B}&=m_Av_A'+m_Bv_B'\\
+    v_B'&=\frac{-m_Av_A'}{m_B}
+    =\frac{-65\times 0.75}{50}
+    =-0.975=\boxed{\magdir{0.975m/s}{backwards}}
+  \end{align*}
+  Remember that until A starts walking, neither A nor B are in motion, i.e.\
+  the momentum $p_A$ and $p_B$ are both zero at the beginning. Also note that
+  ``backwards'' is from the point of view of A.
+}
+
+\newpage 
+\textbf{Example 6:} A $0.0520kg$ golf ball is moving east with a velocity of
+$2.10m/s$ when it collides, head on, with a stationary $0.155kg$ billiard ball.
+If the golf ball rolls directly backward with a velocity of $-1.04m/s$, was the
+collision elastic?\\
+\answer{Let east to be positive direction. ``G'' is the golf ball; ``B'' is
+  the billiard ball. Momentum equation:
+  \begin{align*}
+    m_Gv_G+\cancel{m_Bv_B}&=m_Gv_G'+m_Bv_B'\\
+    v_B'&=\frac{m_G(v_G-v_G')}{m_B}
+    =\frac{0.0520\times\left(2.10-(-1.04)\right)}{0.155}=\magdir{1.05m/s}{E}
+  \end{align*}
+  Now that we know the velocity of the billiard ball, we can compute the
+  initial and final kinetic energy:
+  \begin{align*}
+    \text{Before:}\quad&\half m_Gv_G^2=\half\times 0.052\times 2.10^2
+    =0.1147J\\
+    \text{After:}\quad&\half m_Gv_G'^2+\half m_Bv_B'^2
+    =\half\times 0.052\times (-1.04)^2+\half\times 0.155\times 1.05^2=
+    0.1135J
+  \end{align*}
+  There is less kinetic energy after the collision, therefore it's
+  \textbf{not elastic}.
+}
+
+\textbf{Example 8:} A forensic expert needed to find the velocity of a bullet
+fired from a gun in order to predict the trajectory of a bullet. He fired a
+$5.50g$ bullet into a ballistic pendulum with a bob that had a mass of
+$1.75kg$. The pendulum swung to a height of $12.5cm$ above its rest position
+before dropping back down. What was the velocity of the bullet just before it
+hit and became embedded in the pendulum bob?\\
+\answer{We work backwards to solve the problem. Assuming that the pendulum
+  doesn't lose any energy, if it swings to a height of $12.5cm=0.125m$, that
+  means that right after the bullet strikes it, it had kinetic energy:
+  \begin{displaymath}
+    E_k=\half\cancel{m_{b+p}}v_\mathrm{after}^2=\cancel{m_{b+p}}g\Delta h\andthen
+    v_\mathrm{after}=\sqrt{2g\Delta h}=\sqrt{2\times 9.81\times 0.125}=1.566m/s
+  \end{displaymath}
+  Now solve the momentum equation for when the bullet hits the pendulum:
+  \begin{align*}
+    m_bv_b+\cancel{m_pv_p}&=m_bv_b'+m_pv_p'
+    \quad\text{where}\quad v_b'=v_p=v_\mathrm{after}\\
+    v_b&=\frac{(m_b+m_p)v_\mathrm{after}}{m_b}
+    =\frac{(1.75+0.0055)\times 1.566}{0.0055}=\boxed{500m/s}
+  \end{align*}
+  $500m/s=1800km/h$ is typical for a bullet fired from a high-powered rifle.
+}
+
+\textbf{Example 9:} A block of wood with a mass of $0.500kg$ slides across the
+floor toward a $3.50kg$ block of wood. Just before the collision, the small
+block is travelling at $3.15m/s$. Because some nails are sticking out of the
+blocks, the blocks stick together when they collide. Scratch marks on the floor
+show that they slid $2.63cm$ before coming to a stop. What is the coefficient
+of friction between the wooden blocks and the floor?\\
+\answer{Start with the collision. Momentum equation:
+  \begin{align*}
+    m_av_a+\cancel{m_bv_b}&=m_av_a'+m_bv_b'
+    \quad\text{where}\quad v_b'=v_p=v'\\
+    v'&=\frac{m_av_a}{m_a+m_b}
+    =\frac{0.500\times 3.15}{3.50+0.500}=0.39375m/s
+  \end{align*}
+  Now that we have the velocity after the collision, we can use kinematic
+  equations to compute the acceleration:
+  \begin{displaymath}
+    \cancel{v_2^2}=v_1^2+2a\Delta d\andthen
+    a=-\frac{v_1^2}{2\Delta d}=-\frac{0.39375^2}{2\times 0.0263}=-2.9475m/s^2
+  \end{displaymath}
+  The acceleration is due to friction, so we can find the friction force and
+  coefficient:
+  \begin{displaymath}
+    F_f=ma\andthen \mu F_n=ma\andthen \mu\cancel{m}g=\cancel{m}a\andthen
+    \mu=\frac{a}{g}=\frac{2.9475}{9.81}=\boxed{0.300}
+  \end{displaymath}
+}
+
+\textbf{Example 10:} A woman pushes a lawnmower with a force of $150N$ at an
+angle of $35\dg$ down from the horizontal. The lawn is $10.0m$ wide and
+required $15$ complete trips across the back. How much work does she do?\\
+\answer{Complete trip is $10.0\times 2=20.0m$, so $\Delta d=300m$.
+  \[ W=F\Delta d\cos35\dg=150\times 300\times\cos35\dg=\boxed{36.8\e{4}J}\]
+}
+
+\textbf{Example 11:} You drive a nail horizontally into a wall, using a
+$0.448kg$ hammerhead. If the hammerhead is moving horizontally at $5.5m/s$ and
+in one blow drives the nail into the wall a distance of $3.4cm$, determine the
+average force acting on 
+\begin{itemize}[noitemsep]
+\item The hammerhead
+\item The nail
+\end{itemize}
+\answer{The work done on the hammerhead is the change in it's kinetic energy.
+  After the hammerhead drives the nail into the wall, it has zero speed
+  $v_2=0$:
+  \[ W=\Delta E_k=\cancel{\half mv_2^2}-\half mv_1^2
+  =-\half\times 0.448\times 5.5^2=-6.776J\]
+  Work is negative, i.e.\ force is opposite the direction of travel $\Delta d$.
+  \[ W=F_\mathrm{hammerhead}\Delta d\andthen
+  F_\mathrm{hammerhead}=\frac{W}{\Delta d}=\frac{-6776}{0.034}
+  =\boxed{-199N}\;\;\text{or}\;\;\boxed{\magdir{199N}{backwards}}\]
+  Applying Newton's 3rd law, the force on the nail is equal in magnitude and
+  opposite in direction, i.e.:
+  \[ F_\mathrm{nail}=\boxed{\magdir{199N}{forward}}\]
+}
+
+\textbf{Example 12:} A gas-powered winch on a rescue helicopter does
+$4.20\e{3}J$ of work while lifting a $50.0kg$ swimmer at a constant speed up
+from the ocean. Through what height was the swimmer lifted?\\
+\answer{
+  \begin{displaymath}
+    W=\Delta E_g=mg\Delta h\andthen
+    \Delta h=\frac{W}{mg}=\frac{4.20\e{3}}{50.0\times 9.81}=\boxed{8.56m}
+  \end{displaymath}
+}
+
+\textbf{Example 13:} A skier is gliding along with a speed of $2.00m/s$ at the
+top of a ski hill, $40.0m$ high. The skier then begins to slide down the icy
+(friction-less) hill.
+\begin{itemize}[noitemsep]
+\item What will be the skier's speed at a height of $25.0m$?
+\item At what height will the skier have a speed of $10.0m/s$?
+\end{itemize}
+\answer{Assuming there are no other losses in energy, then at $25,0m$ height:
+  \begin{align*}
+    \half\cancel{m}v_1^2+\cancel{m}gh_1&=
+    \half\cancel{m}v_2^2+\cancel{m}gh_2\\
+    v_2&=\sqrt{v_1^2+2g(h_1-h_2)}=\boxed{17.3m/s}
+  \end{align*}
+  When the velocity is $10.0m/s$:
+  \begin{align*}
+    \half\cancel{m}v_1^2+\cancel{m}gh_1&=
+    \half\cancel{m}v_2^2+\cancel{m}gh_2\\
+    h_2&=\frac{1}{2g}(v_1^2-v_2^2)+h_1=\boxed{35.0m}
+  \end{align*}
+  
+}
+
+\textbf{Example 14:} A typical compound archery bow requires a force of
+$133N$ to hold an arrow at ``full draw'' (pulled back $71cm$). Assuming that
+the bow obeys Hooke's law, what is its spring constant?\\
+\answer{
+  \begin{displaymath}
+    F_a=kx\andthen k=\frac{F_a}{x}=\frac{133}{0.71}=\boxed{187N/m}
+  \end{displaymath}
+}
+  
+\textbf{Example 15:} A spring with spring constant of $75N/m$ is resting on a
+table.
+\begin{itemize}[noitemsep]
+\item If the spring is compressed a distance of $28cm$, what is the increase in
+  its potential energy?
+\item What force must be applied to hold the spring in this position?
+\end{itemize}
+\answer{Elastic potential energy:
+  \begin{displaymath}
+    E_e=\half kx^2=\half\times 75\times 0.28^2=\boxed{2.94J}
+  \end{displaymath}
+  Applied force:
+  \begin{displaymath}
+    F_a=kx=75\times 0.28=\boxed{21N}
+  \end{displaymath}
+}
+
+\textbf{Example 16:} A low-friction cart with a mass of $0.25kg$ travels along
+a horizontal track and collides head on with a spring that has a spring
+constant of $155N/m$. if the spring was compressed by $6.0cm$, how fast was the
+cart initially travelling?\\
+\answer{When the spring is fully compressed, the cart will no longer have any
+  speed, i.e.\ all the kinetic energy from the cart is transferred to the
+  elastic potential of the spring:
+  \begin{displaymath}
+    \half mv^2=\half kx^2\andthen
+    v=\sqrt{\frac{kx^2}{m}}=\sqrt{\frac{155\times 0.06^2}{0.25}}=\boxed{1.49m/s}
+  \end{displaymath}
+}
+
+\textbf{Example 17:} A freight elevator car with a total mass of $100.0kg$
+is moving downward at $3.00m/s$, when the cable snaps. The car falls $4.00m$
+onto a huge spring with a spring constant of $8.00\e{3}N/m$. By how much
+will the spring be compressed when the car reaches zero velocity?\\
+\answer{The total energy of the elevator is conserved, i.e.
+  \begin{displaymath}
+    \half mv_1^2+mg\Delta h_1+\cancel{\half kx_1^2}=
+    \cancel{\half mv_2^2}+mg\Delta h_2+\half kx_2^2
+  \end{displaymath}
+  Note that initially, the spring is not compressed ($x_1=0$), and after the
+  elevator falls onto the spring, it no longer has any speed ($v_2=0$).
+  If we assume that $h=0$ at the moment that the elevator touches the
+  spring, then $h_1=4.0$, $h_2=-x$. Substituting values, we have:
+  \begin{align*}
+    \half mv_1^2+mg\Delta h_1&= -mgx+\half kx_2^2\\
+    \half(100)(3.00^2)+(100)(9.81)(4.00)&=-(100)(9.81)x+\half(8.00\e{3})x_2^2\\
+    4000x^2-981x-4374&=0\\
+    x&=\boxed{1.18m}\;\;\text{or}\;\;\cancel{-0.93m}
+  \end{align*}
+  I can easily selected $h=0$ to be the point where the spring is fully
+  compressed, in that case, $h_2=0$ and $h_1=4.0+x$. I'll have to solve a
+  different quadratic equation, buy I'll get the same answer for $x$. In fact,
+  I can also say that $h=0$ to be the initial height, i.e. $h_1=0$, and
+  $h_2=-4.0-x$. I will still have the same answer!
+}
+
+\end{document}

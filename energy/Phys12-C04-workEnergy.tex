@@ -1,0 +1,1101 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../mybeamer}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\title{Class 4: Work and Energy}
+\subtitle{Unit 2: Energy and Momentum}
+\input{../term}
+\input{../mycommands}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+\begin{frame}{Where Are We In the Course}
+  \begin{enumerate}
+  \item Fundamentals of Dynamics
+  \item<alert@1>Energy and Momentum
+  \item Gravitational, Electric and Magnetic Fields
+  \item Wave Nature of Light
+  \item Modern Physics
+  \end{enumerate}
+\end{frame}
+
+
+
+\section{Work}
+
+\begin{frame}{Go Back to Work!}
+  The central theme in both Grades 11 and 12 Physics: \textbf{work} and
+  \textbf{energy}
+
+  \vspace{.1in}\textbf{Work:}
+  \begin{itemize}
+  \item Work is done when a force $\vec F$ displaces an object by $\Delta\vec d$
+  \item Mechanism in which energy is transformed from one form to another
+  \end{itemize}
+  
+  \vspace{.1in}\textbf{Energy:}
+  \begin{itemize}
+  \item The ability to do work
+  \item Two broad categories: \emph{potential} and \emph{kinetic}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Definition of Work}
+  \textbf{Mechanical work} $W$ is done when a force $\vec F$ displaces an
+  object by $\Delta\vec d$. For a \emph{constant} force, $W$ is defined as:
+  
+  \eq{-.1in}{
+    \boxed{W = F\Delta d\cos\theta}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{Unit} \\ \hline
+      Work                      & $W$        & \si\joule  \\
+      Magnitude of force        & $F$        & \si\newton \\
+      Magnitude of displacement & $\Delta d$ & \si\metre  \\
+      Angle between force and displacement vectors & $\theta$ &
+    \end{tabular}
+  \end{center}
+  Methods based on calculus are needed if force is not constant
+\end{frame}
+
+
+
+\begin{frame}{Definition of Work}
+
+  \eq{0in}{
+    \boxed{W = F\Delta d\cos\theta}
+  }
+  \begin{itemize}
+  \item Force and displacement are both vectors, but work is \emph{scalar}
+  \item Area under the force-displacement graph in 1-D
+  \item No work is done if:
+    \begin{itemize}
+    \item $F=0$ (no force applied)
+    \item $\Delta d=0$ (no displacement)
+    \item $\cos\theta=0\;\rightarrow\;\theta=\ang{90}$ ($\vec F$ and
+      $\Delta\vec d$ are perpendicular to each other)
+    \end{itemize}
+  \item $-1\leq\cos\theta\leq 1$, which means that work
+    done by a force can be \emph{positive} or \emph{negative}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Definition of Work}
+  \textbf{Work done by a force}
+  \begin{itemize}
+  \item We can quantify work by calculating the work done by a specific force
+  \item Example: A boy pushes a cart forward. The ``work done by the boy'' is
+    the work done by the applied force
+  \end{itemize}
+  
+  \vspace{.2in}\textbf{Work done on an object}
+  \begin{itemize}
+  \item There may be more than one force acting on an object
+  \item The \emph{sum} of all the work done on the object by each force
+  \item The work done by the net force
+  \item Also called the \textbf{net work} $W_\text{net}$
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} A woman pushes a lawnmower with a force of
+  \SI{150}{\newton} at an angle of \ang{35} down from the horizontal. The lawn
+  is \SI{10.0}{\metre} wide and required 15 complete trips across the back. How
+  much work does she do?
+  \begin{center}
+    \pic{.7}{graphics/lawnmower}
+  \end{center}
+  Hint: Is the applied force constant?
+\end{frame}
+
+
+
+%\begin{frame}{Example Problem}
+%  \textbf{Example:} You drive a nail horizontally into a wall, using a
+%  \SI{.45}{\kilo\gram} hammerhead. If the hammerhead is moving horizontally at
+%  \SI{5.5}{\metre\per\second} and in one blow drives the nail into the wall a
+%  distance of \SI{3.4}{\centi\metre}, determine the average force acting on 
+%  \begin{itemize}
+%  \item The hammerhead
+%  \item The nail
+%  \end{itemize}
+%\end{frame}
+
+
+
+\section{Kinetic Energy}
+
+\begin{frame}{Defining Kinetic Energy}
+  When a constant net force accelerates an object, work is being done by the
+  net force. Combining kinematics and the second law of motion to find what
+  ``quantity of motion'' changes:
+
+  \vspace{-.2in}{\large
+    \begin{align*}
+      v_2^2 &=v_1^2+2{\color{red}a}\Delta d =
+      v_1^2+2{\color{red}\frac{F_\text{net}}m}\Delta d\\
+      2\frac{F_\text{net}}m\Delta d &= v_2^2-v_1^2\\
+      F_\text{net}\Delta d &= \frac12 m(v_2^2-v_1^2)
+      =\frac12 mv_2^2- \frac12 mv_1^2
+    \end{align*}
+  }
+  
+  We can use calculus to get the same result even if $F$ is not constant.
+\end{frame}
+
+
+\begin{frame}{Defining Kinetic Energy}
+  The quantity of motion that changes when net work is done to an object is
+  called \textbf{kinetic energy}\footnote{Or more precisely, \emph{translational
+  kinetic energy}, as opposed to \emph{rotational kinetic energy} which is a
+  topic covered in AP Physics, but not Grade 12 Physics}, defined as:
+  
+  \eq{-.1in}{
+    \boxed{K=\frac12 mv^2}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{Unit} \\ \hline
+      Kinetic energy & $K$ & \si\joule \\
+      Mass           & $m$ & \si{\kilo\gram} \\
+      Speed          & $v$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Work-Energy Theorem}
+  When a net force acts on an object, the net work $W_\text{net}$ done by the
+  net force is equal to the change in its kinetic energy:
+
+  \eq{-.1in}{
+    \boxed{W_\text{net} =\Delta K}
+  }
+  
+  \begin{itemize}
+  \item\vspace{-.1in}Positive work ($W_\text{net}>0$) increases kinetic energy
+    ($\Delta K>0$); the object speeds up
+  \item Negative work ($W_\text{net}<0$) decreases kinetic energy
+    ($\Delta K<0$); the object slows down
+  \end{itemize}
+  It does not matter what the net force is consists of
+\end{frame}
+
+
+
+\section{Potential Energies}% and Conservative Forces}
+
+%\begin{frame}{Defining Potential Energy}
+%  The other category of energy is \textbf{potential energy}. When a
+%  \textbf{conservative force} acts on an object, it changes the amount of
+%  potential energy that the object has. Conservative forces include:
+%
+%  \begin{itemize}
+%  \item Gravitational force
+%  \item Spring force
+%  \item Electrostatic force (aka \emph{electric force}, or \emph{coulomb force})
+%  \end{itemize}
+%
+%  These forces are called \emph{conservative} because they lead to the concept
+%  of \textbf{conservation of mechanical energy}.
+%\end{frame}
+
+
+\subsection{Gravitation Potential Energy}
+
+\begin{frame}{Gravitational Force \& Gravitational Potential Energy}
+  Consider an object free-falling under the force of gravity over a
+  displacement $\Delta d$:
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=gray!30] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,4) circle (.2) node[right=2]{$m$};
+      \draw[vectors,red] (0,4)--(0,2) node[right]{$m\vec g$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item When $\Delta\vec d$ is small, $\vec g$ can be considered to be constant
+  \item Work done by the gravity ($W_g$) is \emph{positive}, therefore,
+    kinetic energy increases, and the object speeds up:
+
+    \eq{-.2in}{
+      W_g=mg\Delta d=\Delta K > 0
+    }
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Gravitational Potential Energy}
+  Work done by gravity can also be expressed in terms of the change in height.
+  Using ground as reference (i.e.\ $h=0$):
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[thick,fill=gray!30] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,6) circle (.25);
+      \draw[vectors,purple] (0,6)--(0,3) node[midway,right]{$\Delta d$};
+      \begin{scope}[thick,blue]
+        \draw[->|] (-.4,1)--(-.4,6) node[midway,left]{$h_1$};
+        \draw[->|] (0,1)--(0,3) node[midway,right]{$h_2$};
+        \draw[dash dot] (-3,1.02)--(5,1.02) node[right]{$h=0$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center} 
+
+  \vspace{-.4in}{\large
+    \begin{align*}
+      W_g &= F_g{\color{magenta}\Delta d}\\
+      &=mg{\color{magenta}(h_1-h_2)} =
+      {\color{magenta}-}mg{\color{magenta}(h_2-h_1)}
+      =-(mgh_2-mgh_1) = -\Delta U_g
+      \end{align*}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Gravitational Potential Energy}
+  Defining the \textbf{gravitational potential energy} $U_g$ as:
+
+  \eq{-.1in}{
+    \boxed{U_g=mgh}
+  }
+
+  \vspace{-.1in}Work done by gravity is related to the gravitational potential
+  energy by:
+  
+  \eq{-.1in}{
+    \boxed{  W_g=-\Delta U_g=-mg\Delta h }
+  }
+
+  \fcolorbox{black}{yellow!15}{
+    \begin{minipage}{.95\textwidth}
+      \begin{itemize}
+      \item \emph{Positive} work by gravity \emph{decreases} gravitational
+        potential energy, while
+      \item \emph{Negative} work by gravity \emph{increases} gravitational
+        potential energy
+      \item $W_g$ depends on the end points $h_1$ and $h_2$, but not \emph{how}
+        it went from $h_1$ to $h_2$
+      \item Only work done by gravity can change $U_g$
+      \end{itemize}
+    \end{minipage}
+  }
+\end{frame}
+%  \uncover<2>{
+%    \vspace{.3in}\textbf{Example 9:} A gas-powered winch on a rescue
+%    helicopter does \SI{4.20e3}{J} of work while lifting a \SI{50.0}{kg}
+%    swimmer at a constant speed up from the ocean. Through what height was the
+%    swimmer lifted?
+%  }
+%\end{frame}
+
+
+\subsection{Elastic Potential Energy}
+
+\begin{frame}{Elastic Potential Energy}
+  \textbf{Elastic potential energy} is stored as an object \emph{deforms}. It
+  is released when the object returns to its original shape. Examples:
+  \begin{itemize}
+  \item Diving board
+  \item Rubber band
+  \item Exercise ball
+  \item Spring
+  \end{itemize}
+  Deformations that can be restored are called \textbf{elastic deformations},
+  while permanent deformations are called \emph{plastic} deformations. Every
+  material can deform elastically, then plastically, then fracture, but the
+  mechanics of \emph{how} this happens is complex. In Grade 12 Physics, we will
+  only study elastic deformations of springs.
+\end{frame}
+
+
+
+\begin{frame}{Spring Force}
+  The spring force $\vec F_e$ is the force that a compressed/stretched spring
+  exerts on the object connected to it. An \emph{ideal} spring obeys
+  \textbf{Hooke's law}:
+    
+  \eq{-.1in}{
+    \boxed{
+      \vec F_e=-k\vec x
+    }
+  }
+
+  \vspace{-.1in}$\vec F_e$ is in the opposite direction to the spring's
+  displacement $\vec x$, and is proportional to the amount of
+  compression/stretching.
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \draw[mass] (5,.5) rectangle (6,1.5);
+      \draw[thick,
+        decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(5,1);
+      \fill[pattern=north east lines] (-.2,0) rectangle (0,2);
+      \draw[thick] (0,0)--(0,2);
+      \fill[red] (5.5,1) circle (.06);
+      \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[dashed] (3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
+      \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$x$};
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.8]
+      \draw[thick,gray!40,fill=gray!20] (5,.5) rectangle (6,1.5);
+      \draw[thick,gray!20,
+        decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(5,1);
+      \fill[pattern=north east lines] (-.2,0) rectangle (0,2);
+      \draw[thick] (0,0)--(0,2);
+      \fill[gray!30] (5.5,1) circle (.06);
+      \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[dashed] (3,0)--(3,2);
+      \draw[vectors,gray!30] (3,.3)--(5,.3) node[midway,below]{$x$};
+      \draw[mass] (1.5,.5) rectangle (2.5,1.5);
+      \draw[thick,
+        decoration={aspect=.3,segment length=1.5mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(1.5,1);
+      \draw[vectors] (3,.3)--(1.5,.3) node[midway,below]{$x$};
+      \fill[red] (2,1) circle (.06);
+      \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_e$};
+    \end{tikzpicture}
+  \end{center}
+  The constant $k$ (called the \textbf{spring constant}, \textbf{force
+    constant}, \textbf{Hooke's constant} or \textbf{spring rate}) is the
+  stiffness of the spring. It has an SI unit of \si{\newton\per\metre}.
+\end{frame}
+
+
+
+\begin{frame}{Elastic Potential Energy}
+  Work done by the spring force to the mass attached to it require some
+  calculus\footnote{Calculus is required because $\vec F_e$ is not constant,
+  but you do not need to know the details for Grade 12 Physics.} that is not
+  shown here:
+
+  \eq{-.1in}{
+    \underbrace{W_e=\int_{x_1}^{x_2}F_edx}_\text{definition using calculus}
+    =\cdots
+    =-\left(\frac12kx_2^2-\frac12kx_1^2\right) = -\Delta U_e
+  }
+  
+  From this we define the \textbf{elastic potential energy} $U_e$:
+
+  \eq{-.1in}{
+    U_e=\frac12kx^2
+  }
+\end{frame}
+
+
+
+\begin{frame}{Elastic Potential Energy}
+  Work done by the spring force is related to the elastic potential energy by:
+  
+  \eq{-.1in}{
+    \boxed{  W_e=-\Delta U_e }
+  }
+
+  \fcolorbox{black}{yellow!15}{
+    \begin{minipage}{.95\textwidth}
+      \begin{itemize}
+      \item\emph{Positive} work done by the spring \emph{decreases} spring
+        potential energy, while
+      \item\emph{Negative} work done by the spring \emph{increases} spring
+        potential energy
+      \item $W_e$ depends on the end points $x_1$ and $x_2$, but not \emph{how}
+        it went from $x_1$ to $x_2$
+      \item Only work done by the spring force can change $U_e$
+      \end{itemize}
+    \end{minipage}
+  }
+\end{frame}
+
+
+
+
+%\begin{frame}{Mass-Spring Simulation}
+%  \begin{center}
+%    \textbf{Click for external link:}
+%    \href{https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_en.html}
+%         {Hooke's Law}
+%  \end{center}
+%\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} A typical compound archery bow requires a force of
+  \SI{133}{\newton} to hold an arrow at ``full draw'' (pulled back) of
+  \SI{71}{\centi\metre}. Assuming that the bow obeys Hooke's law, what is its
+  spring constant?
+\end{frame}
+
+
+
+%\begin{frame}{Elastic Potential Energy}
+%  \begin{columns}
+%    \column{.25\textwidth}
+%    \begin{tikzpicture}[scale=1.2]
+%      \draw[->] (0,0)--(2,0)node[right]{$\Delta d$};
+%      \draw[->] (0,0)--(0,4)node[above]{$F$};
+%      \draw[very thick, red] (0,0)--(1.5,3);
+%      \draw[dashed] (1.25,0)--(1.25,2.5);
+%      \draw[dashed] (0,2.5)--(1.25,2.5);
+%      \draw[<->] (0,-0.15)--(1.25,-0.15) node[midway,below]{$x$};
+%      \draw[<->] (-0.15,0)--(-0.15,2.5) node[midway,left]{$kx$};
+%      \fill[red] (1.25,2.5) circle (.06);
+%
+%      \uncover<2->{
+%        \draw[fill=gray,draw=gray] (0,0)--(1.25,0)--(1.25,2.5)--cycle;
+%      }
+%    \end{tikzpicture}
+%    \column{.75\textwidth}
+%    \begin{itemize}
+%    \item Work done to extend/compress a spring is the area under the
+%      force-displacement graph
+%    \item If we use some calculus, we can see that work
+%      done is the potential stored in the spring
+%
+%      \eq{-.2in}{\boxed{W=U_e=\frac12 kx^2}}
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Example Problem}
+%  \textbf{Example:} A spring with spring constant of \SI{75}{\newton\per\metre}
+%  is resting on a table.
+%  \begin{itemize}
+%  \item If the spring is compressed by \SI{28}{\centi\metre}, what is the
+%    increase in its potential energy?
+%  \item What force must be applied to hold the spring in this position?
+%  \end{itemize}
+%\end{frame}
+
+
+
+\section{Conservative vs.\ Non-Conservative Forces}
+
+\begin{frame}{Conservative Forces}
+  Gravitational force $\vec F_g$, spring force $\vec F_e$, electrostatic force
+  $\vec F_q$, magnetic force $\vec F_m$, and nuclear forces belong to a class of
+  forces called \textbf{conservative forces}
+    
+  \eq{-.1in}{
+    \boxed{ W_c=-\Delta U }
+  }
+
+  \vspace{-.15in}Work done by a conservative force:
+  \begin{itemize}
+  \item Causes a change in a related potential energy:
+    \begin{itemize}
+    \item \emph{Positive} work \emph{decreases} the related potential energy
+    \item \emph{Negative} work \emph{increases} the related potential energy
+    \end{itemize}
+  \item Is \emph{path independent}
+  \item Transforms the related potential energy to kinetic energy (positive
+    work) and vice versa (negative work)
+  \end{itemize}
+\end{frame}
+
+
+
+
+%\begin{frame}{Conservation of Mechanical Energy}
+%  Mathematically, the work done by conservative forces can be expressed as:
+%  
+%  \eq{-.1in}{
+%    W_c=-\Delta U = \Delta K
+%  }
+%  
+%  which show that when only conservative forces act on an object, its total
+%  mechanical energy $E_T$ is conserved:
+%
+%  \eq{-.1in}{
+%    \boxed{
+%      \Delta K + \Delta U =0
+%    }\quad\rightarrow\quad
+%    \boxed{
+%      E_T = U_1 + K_1 = U_2 + K_2
+%    }
+%  }
+%\end{frame}
+
+
+
+\begin{frame}{Non-Conservative Force}
+  The majority of forces are \textbf{non-conservative}. For example:
+  \begin{itemize}
+  \item Normal force
+  \item Static and kinetic friction
+  \item Applied force
+  \item Tension force
+  \item Aerodynamic forces: Drag (fluid resistance) and lift
+  \end{itemize}
+  The work-energy theorem ($W_\text{net}=\Delta K$) still applies regardless of
+  whether the forces acting on the object are conservative or non-conservative
+\end{frame}
+
+
+
+\begin{frame}{Work by Non-Conservative Forces}
+  The work done by non-conservative forces differs from conservative forces in
+  that:
+  \begin{itemize}
+  \item There is no related potential energies: the work done by a
+    non-conservative force transform energy from one form of kinetic energy to
+    another
+  \item The work done by non-conservative forces is always path dependent
+  \end{itemize}
+\end{frame}
+
+
+
+
+\section{Internal Energy}
+
+\begin{frame}{Internal Energy}
+  \begin{columns}
+    \column{.31\textwidth}
+    \begin{tikzpicture}
+      \draw[thick,fill=gray!5] (-.2,-.2) rectangle (2.2,2.2);
+      \draw[vectors] (2.3,1)--(3.5,1) node[right]{$v$};
+      \draw[very thick,|<-|] (-.5,1)--(-.5,-3) node[midway,fill=white]{$h$};
+      \foreach \i in {1,...,50} \fill (rand+1,rand+1) circle (.055);
+    \end{tikzpicture}
+
+    \column{.69\textwidth}
+    Consider a container of gas of mass $m$ moving at speed $v$ at a height $h$
+    above Earth.
+    \begin{itemize}
+    \item It has a \emph{bulk} kinetic energy of $K=\dfrac12 mv^2$
+    \item It has a gravitational potential energy of $U_g=mgh$
+    \item The random motion of the air molecules have an additional energy,
+      called the \textbf{internal energy} $E_\text{int}$% (or \textbf{thermal
+      %energy})
+    \item Internal energy is the sum of all the kinetic and potential energies
+      at the \emph{microscopic} level:
+
+      \eq{-.2in}{
+        E_\text{int}=K_\text{micro} + U_\text{micro}
+      }
+      
+      \vspace{-.15in}Internal energy depends linearly on temperature.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+%\begin{frame}{Internal Energy}
+%  \textbf{Internal energy}, or \textbf{thermal energy} from the random motion
+%  depends linearly on temperature.
+%  \begin{itemize}
+%  \item For an ideal gas, or a monatomic gas:
+%    
+%    \eq{-.2in}{
+%      E_\text{int}=\dfrac32nRT
+%    }
+%  \item For a diatomic gas:
+%
+%    \eq{-.2in}{
+%      E_\text{int}\approx\dfrac52nRT
+%    }
+%  \item For a solid:
+%
+%    \eq{-.2in}{
+%      E_\text{int}\approx3nRT
+%    }    
+%  \end{itemize}
+%\end{frame}
+
+
+\section{Conservation of Energy}
+
+\begin{frame}{Law of Conservation of Energy}
+  The \textbf{law of conservation of energy} states that \emph{the change in
+  the total energy of a system is equal to the external work done to it}:
+
+  \eq{-.1in}{
+    \boxed{
+      \Delta E_\text{sys}=W_\text{ext}
+    }
+  }
+
+  A \textbf{system} is a collection of objects that apply forces on each other,
+  and therefore \emph{may} do work to each other. The energies of a system
+  include the kinetic, potential, and internal energies of all the objects:
+
+  \eq{-.1in}{
+    \boxed{
+      E_\text{sys}=\sum_i K_i + \sum_i U_i + E_\text{int}
+    }
+  }
+\end{frame}
+
+
+
+\begin{frame}{Law of Conservation of Energy}
+
+  The change in system energy ($\Delta E_\text{sys}$) is the \emph{sum} of the
+  changes in all forms of energies in the system:
+  
+  \eq{-.1in}{
+    \boxed{
+      \Delta E_\text{sys}
+      =\sum_i\Delta K_i + \sum_i\Delta U_i + \Delta E_\text{int}
+    }
+  }
+
+  Therefore the law of conservation of energy can be expanded into:
+
+  \eq{-.1in}{
+    \boxed{
+      \sum_i\Delta K_i + \sum_i\Delta U_i + \Delta E_\text{int}= W_\text{ext}
+    }
+  }
+  %where $K_i$ and $U_i$ are the kinetic and potential energies of the objects
+  %in the system, and $E_\text{int}$ is the internal energy of the system.
+\end{frame}
+
+
+
+\begin{frame}{Law of Conservation of Energy}
+  In problem encountered in Grade 12 Physics, changes in the internal energy
+  are usually considered to be \emph{outside} the system, and the law of
+  conservation of energy simplifies to:
+  
+  \eq{-.2in}{
+    \boxed{ \sum_i\Delta K_i + \sum_i\Delta U_i = W_\text{ext} }\;\;\text{or}\;\;
+    \boxed{ \sum_i U_i + \sum_i K_i + W_\text{ext} = \sum_i U_i' + \sum_i K_i' }
+  }
+
+  The external work $W_\text{ext}$ is
+  \begin{itemize}
+  \item\textbf{Positive} if work is done {\color{red}to} the system by the
+    surrounding
+  \item\textbf{Negative} if work is done {\color{red}by} the system to the
+    surrounding
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Conservation of Energy in an Isolated System}
+  \begin{columns}
+    \column{.28\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \fill[pattern=north east lines] rectangle (5,4);
+      \draw[very thick] rectangle (5,4);
+      \draw[very thick,fill=white] (.2,.2) rectangle (4.8,3.8);
+      \draw[thick,
+        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (2.5,3.75)--+(0,-1.5) node[midway,right=4]{$k$};
+      \draw[mass] (2,2.25) rectangle +(1,-1) node[midway]{$m$};
+    \end{tikzpicture}
+
+    \column{.72\textwidth}
+    An \textbf{isolated system} is a system of objects that does not interact
+    with its surroundings. (Think of a bunch of objects inside an insulated
+    box.) In such a case, there is no external work, and the conservation of
+    energy reduces to:
+
+    \eq{-.1in}{
+      \boxed{
+        \sum_i\Delta K_i + \sum_i\Delta U_i + \Delta E_\text{int}= 0
+      }
+    }
+  \end{columns}
+\end{frame}
+
+
+
+
+%\begin{frame}{Isolated Systems and Conservation of Energy}
+%  The system is isolated from the surrounding environment, therefore
+%  \begin{itemize}
+%  \item The environment can't do any work on it
+%  \item Energy inside the system cannot escape either
+%  \end{itemize}
+%  Forces are now \emph{internal} to the system, and that work only converts
+%  kinetic energy into potential energies inside the system, and vice versa.
+%\end{frame}
+
+
+
+\begin{frame}{Example: Gravity}
+  Assuming no friction and drag, a free-falling object forms an isolated system
+  with Earth:
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      \draw[thick,fill=gray!30] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,3) circle (.2);
+      \draw[vectors,red] (0,3)--(0,1.25) node[below]{$\vec F_g$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item The only force doing work is gravity (conservative!) on the mass
+    \begin{itemize}
+    \item Gravitational force is an internal force
+    \item Work by gravity transforms between kinetic \& gravitational
+      potential energies
+    \end{itemize}
+  \item The sum of the kinetic energy of the mass ($K$) and the gravitational
+    potential energy ($U_g$) is constant
+    
+    \eq{-.2in}{
+      \boxed{ K+U_g=\text{constant} }
+    }
+  \end{itemize}
+  %The system isolated until the two masses collide (This is a topic for next
+  %class.)
+\end{frame}
+
+
+\begin{frame}{Example: Gravity}
+  An object sliding down an arbitrarily-shaped ramp forms an isolated system
+  with Earth, assuming that there is no friction or drag
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick](0,4) to[out=-30,in=180] (3,1) to[out=0,in=180] (5,3)
+      to[out=0,in=170] (8,0) to[out=-10,in=180] (10,0);
+      \draw[mass,rotate around={-60.5:(1,2.93)}] (1,2.93) rectangle +(.6,.6);
+      \fill[red] (1.4,2.8) circle (.08);
+      \draw[vectors,red] (1.4,2.8)--+(0,-1.5) node[left]{$m\vec g$};
+      \draw[vectors,red,rotate around={30:(1.4,2.8)}]
+      (1.4,2.8)--+(1.4,0) node[right]{$\vec F_N$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.1in}Normal and gravitational forces are \emph{internal}
+    forces, but only gravity does work ($\vec F_N$ is perpendicular to motion)
+  \item The sum of the kinetic energy ($K$) and gravitational potential energy
+    ($U_g$) is constant
+    
+    \eq{-.15in}{
+      \boxed{
+        K+U_g=\text{constant}
+      }
+    }
+  %\item The shape of the ramp does not matter, only the initial and final
+  %  height relative to the referene level
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} A skier glides with a speed of \SI{2.0}{\metre\per\second}
+  at the top of a ski hill, \SI{40}{\metre} high. She then begins to slide down
+  the icy (i.e.\ frictionless) hill.\footnote{In reality, there will always be
+  \emph{some} friction and drag as she slides down. In that case, we will also
+  need to know the non-conservative work done by friction.}
+  \begin{enumerate}[(a)]
+  \item What is the skier's speed at a height of \SI{25}\metre?
+  \item At what height does the skier have a speed of
+    \SI{10}{\metre\per\second}?
+  \end{enumerate}
+\end{frame}
+
+
+
+
+\begin{frame}{Example: Horizontal Spring-Mass System}
+  A horizontal spring-mass system with no friction and damping forces is a
+  closed system:
+  \begin{center}
+    \vspace{-.05in}
+    \begin{tikzpicture}[scale=.8]
+      \draw[mass] (5,.5) rectangle (6,1.5);
+      \draw[thick,decorate,
+        decoration={aspect=.45,segment length=6,amplitude=7,coil}] (0,1)--(5,1);
+      \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
+      --(-.2,2)--(0,2)--(0,.5)--cycle;
+      \draw[very thick] (0,2)--(0,.5)--(6.5,.5);
+      \fill[red] (5.5,1) circle (.08);
+      \draw[vectors,red] (5.5,1)--+(0,-1) node[below]{$\vec F_g$};
+      \draw[vectors,red] (5.5,1)--+(0,1) node[above]{$\vec F_N$};
+      \draw[vectors,red] (5.5,1)--+(-1,0) node[above]{$\vec F_e$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.1in} The system consists of the mass and the spring (Earth is
+    not part of the system)
+    \begin{itemize}
+    \item $\vec F_g$ and $\vec F_N$ are both \emph{external} forces, but they
+      do not do work because they are perpendicular to motion
+    \item The only force doing work is $\vec F_e$ which is an internal force
+    \end{itemize}
+  \item The sum of kinetic energy of the mass ($K$) and the elastic
+    potential energy in the spring ($U_e$) is constant
+
+    \eq{-.2in}{
+      \boxed{ K+U_e=\text{constant} }
+    }
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} A toy cart with a mass of \SI{.25}{\kilo\gram} travels
+  along a frictionless horizontal track and collides head on with a spring that
+  has a spring constant of \SI{155}{\newton\per\metre}. If the spring is
+  compressed by \SI{6.0}{\centi\metre}, how fast is the cart initially
+  travelling?
+  \begin{center}
+    \begin{tikzpicture}
+      \fill[blue!30] rectangle (10,-.3);
+      \draw (0,0)--(10,0);
+      \draw[fill=brown] (.5,.2) rectangle (3,.5) node[midway,above=3]{$m$};
+      \draw[fill=gray] (1,.2) circle (.2);
+      \draw[fill=gray] (2.5,.2) circle (.2);
+      \fill (1,.2) circle (.06);
+      \fill (2.5,.2) circle (.06);
+      \draw[vectors] (3,.35)--(4.5,.35) node[above]{$v$};
+      \draw[pattern=north east lines] (9.3,0) rectangle (10,1.7);
+      \draw[ultra thick,decorate,
+        decoration={aspect=.4,segment length=1.5mm, amplitude=2mm, coil}]
+      (6.3,.4)--(9.3,.4) node[midway,above=3]{spring};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Example: Vertical Spring-Mass System}
+  \begin{columns}
+    \column{.25\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[mass] (.5,2) rectangle (1.5,1);
+      \draw[thick,decorate,
+        decoration={aspect=.4,segment length=5,amplitude=7,coil}] (1,5)--(1,2); 
+      \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
+      \draw[very thick] (0,5)--(2,5);
+      \draw[vectors,red] (1,1.5)--(1,0) node[right]{$m\vec g$};
+      \draw[vectors,red] (1,1.5)--(1,3) node[right]{$\vec F_e$};
+      \fill[red] (1,1.5) circle (.06);      
+    \end{tikzpicture}
+
+    \column{.75\textwidth}
+    Assuming no friction, drag or other damping forces, a vertical
+    spring-mass system (consists of the mass, the spring and Earth) is an
+    isolated system
+    \begin{itemize}
+    \item Both $m\vec g$ and $\vec F_e$ are internal forces and they are doing
+      work
+    \item The sum of the kinetic energy of the mass ($K$), the gravitational
+      potential energy ($U_g$), and the elastic potential energy in the
+      spring ($U_e$) is constant.
+
+      \eq{-.1in}{
+        \boxed{ K + U_g + U_e=\text{constant} }
+      }
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Example Problem}
+  \begin{columns}
+    \column{.6\textwidth}
+    \textbf{Example:} A freight elevator car with a total mass of
+    \SI{100}{\kilo\gram} is moving downward at \SI{3.00}{\metre\per\second},
+    when the cable snaps. The car falls \SI{4.00}{\metre} onto a huge spring
+    with a spring constant of \SI{8.00e3}{\newton\per\metre}. By how much will
+    the spring be compressed when the elevator car reaches zero velocity?
+
+    \column{.4\textwidth}
+    \pic1{graphics/freight-elevator}
+  \end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}{Example: Simple Pendulum}
+  \begin{columns}
+    \column{.75\textwidth}
+    Assuming no friction, drag or other damping forces, the simple pendulum
+    system (consists of the mass and Earth) is a closed system
+    \begin{itemize}
+    \item Gravity ($\vec F_g$) is an internal force, and it does work as the
+      pendulum swings
+    \item Tension ($\vec F_T$) is an external force, but does not do work on
+      the pendulum because it is perpendicular to its motion
+    \item The sum of the kinetic energy of the mass ($K$) and the gravitational
+      potential energy ($U_g$) is constant:
+
+      \eq{-.1in}{
+        \boxed{ K + U_g =\text{constant} }
+      }
+    \end{itemize}
+    
+    \column{.23\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
+      \draw[thick] (-1,0)--(1,0);
+      \begin{scope}[rotate=15]
+        \draw[thick] (0,0)--(0,-5);
+        \shade[ball color=red] (0,-5) circle (.2) node[right=3]{$m$};
+        \draw[vectors,red] (0,-5)--(0,-3.5) node[left]{$\vec F_T$};
+        \draw[vectors,red,rotate around={-15:(0,-5)}] (0,-5)--(0,-6.3)
+        node[below]{$\vec F_g$};
+      \end{scope}
+      \draw[dashed] (0,0)--(0,-5);
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{What if there is friction?}
+  Energy is always conserved as long as your system is defined properly. In
+  this case, the system consists of a mass, a spring, Earth and all the air
+  molecules inside the box:
+  \input{../common/closed-box}
+  The energies of this system include
+  \begin{itemize}
+  \item Kinetic energy of the mass ($K$)
+  \item Gravitational potential energy ($U_g$) between the mass and Earth
+  \item Elastic potential energy ($U_e$) stored in the spring
+  \item Internal energies ($E_\text{int}$) of the air molecules and the mass
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Isolated System with Changing Internal Energy}
+  \input{../common/closed-box}
+  
+  \eq{-.1in}{
+    \boxed{ K + U_g + U_e + E_\text{int}=\text{constant}}
+  }
+  
+  \textbf{Note:} Work done by kinetic friction and drag forces (both
+  non-conservative) always convert the kinetic energy of the mass into the
+  internal energy of the air molecules and the mass, heating them up. It does
+  not go the other way.
+\end{frame}
+
+
+
+\begin{frame}{Isolated vs.\ Open System}
+  Accounting for the change in $E_\text{int}$ is usually impractical (if not
+  downright impossible) especially when the air molecules are not confined to
+  a box.
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \fill[pattern=north east lines] (0,4) rectangle (5,4.5);
+      \fill[gray!10] rectangle (5,4);
+      \draw[very thick] (0,4)--(5,4);
+      \draw[thick,
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (2.5,4)--(2.5,2.25) node[midway,right=5]{$k$};
+      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-.05in}Solution:
+  \begin{itemize}
+  \item Take the air molecule out of the \emph{system}
+  \item No longer an isolated system
+  \item Account for the work by kinetic friction and drag as
+    \emph{external work} between initial and final states:
+
+    \eq{-.2in}{
+      K + U_g + U_e + W_\text{ext}= K' + U_g' + U_e'
+    }
+  \end{itemize}
+\end{frame}
+
+
+
+\section{Power \& Efficiency}
+
+\begin{frame}{Power}
+  Power is the rate at which work is done, i.e.\ the rate at which energy is
+  being transformed:
+
+  \eq{-.1in}{
+    \boxed{P = \frac W{\Delta t}}\quad\quad
+    \boxed{P = \frac{\Delta E}{\Delta t}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity}  & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Power              & $P$        & \si\watt \\
+      Energy transformed & $\Delta E$ & \si\joule \\
+      Work done          & $W$        & \si\joule \\
+      Time interval      & $\Delta t$ & \si\second
+    \end{tabular}
+  \end{center}
+  In engineering, power is often more critical than the actual amount of work
+  done.
+\end{frame}
+
+
+
+\begin{frame}{Power}
+  If a constant force is used to push an object at a constant velocity, the
+  power produced by the force is:
+  
+  \eq{-.1in}{
+    P=\frac W{\Delta t}=\frac{F\Delta d}{\Delta t}
+    \quad\longrightarrow\quad \boxed{P=Fv}
+  }
+  
+  Application: aerodynamics
+  \begin{itemize}
+  \item When an object moves through air, the applied force must overcome air
+    resistance (drag), which is proportional with $v^2$
+    \item Therefore ``aerodynamic power'' must scale with $v^3$ (i.e.\ doubling
+      your speed requires $2^3=8$ times more power)
+    \item Important when aerodynamic forces dominate
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Efficiency}
+  The ratio of useful energy or work output to the total energy or work input
+
+  \eq{-.1in}{
+    \boxed{\eta = \frac{E_o}{E_i}\times\SI{100}{\percent}}\quad
+    \boxed{\eta = \frac{W_o}{W_i}\times\SI{100}{\percent}}\quad
+    \boxed{\eta = \frac{P_o}{P_i}\times\SI{100}{\percent}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Useful output energy, work & $E_o$, $W_o$ & \si\joule \\
+      Useful output power & $P_o$ & \si\watt \\
+      Input energy, work  & $E_i$, $W_i$ & \si\joule \\
+      Input power & $P_o$ & \si\watt \\
+      Efficiency & $\eta$ & no units
+    \end{tabular}
+  \end{center}
+  Efficiency is always $0 \leq\eta < 100\%$
+\end{frame}
+\end{document}

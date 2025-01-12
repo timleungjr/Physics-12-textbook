@@ -1,0 +1,1541 @@
+%\documentclass[12pt,compress,aspectratio=169]{beamer}
+%\input{../mybeamer}
+%
+\chapter{Kinematics}
+\label{chapter:kinematics}
+%\subtitle{Unit 1: Fundamentals of Dynamics}
+%\input{../term}
+%\input{../mycommands}
+%
+%\begin{document}
+%
+%
+%\section{Kinematics}
+%  \textbf{Kinematics} describes the motion of points, bodies (objects), and
+%  systems of bodies (groups of objects). It is the mathematical relationship
+%  between
+
+
+
+%\begin{frame}{Course Outline}
+%  The course is divided into five major units. The first unit will take up
+%  Classes 1 to 3.
+%  \begin{enumerate}
+%  \item<alert@1>Fundamentals of Dynamics
+%  \item Energy and Momentum
+%  \item Gravitational, Electric and Magnetic Fields
+%  \item Wave Nature of Light
+%  \item Modern Physics
+%  \end{enumerate}
+%
+%
+%
+%
+%\section{Files to Download from School Website}
+%  There are many handouts and slides for download on the first day. Please
+%  download them from the school website if you have not already done so.
+%  \begin{itemize}
+%  \item\texttt{Phys12-C01-courseOutline.pdf}
+%  \item\texttt{Phys12-C01-equationSheet.pdf}
+%  \item\texttt{Phys12-C01-kinematics-print.pdf}
+%  \item\texttt{Phys12-C01-projectileMotion.pdf}
+%%  \item\texttt{Phys12-C01-g.pdf}
+%%  \item\texttt{Phys12-C01-sigFigs.pdf}
+%  \item\texttt{Phys12-C01-HW.pdf}
+%  \end{itemize}
+%  Weekly homework question are posted on the school website, and also on the
+%  Classkick app online. If you wish to print the class slides for yourself, we
+%  recommend printing 4 to 6 slides per page.
+%
+%
+%
+%
+\section{Frame of Reference}
+A \textbf{frame of reference}\footnote{Or \textbf{reference frame}, or just
+\textbf{frame}} is a \emph{coordinate system} in which physical
+measurements are made. In classical mechanics, a frame of reference is
+\begin{itemize}
+\item the $x$- $y$- and $z$-axes in the Cartesian coordinate system
+\end{itemize}
+Later, when we study relativity, the frame of reference must also include
+\begin{itemize}
+\item a time axis
+\end{itemize}
+
+
+
+
+%\section{Frame of Reference}
+Think of the frame of reference as a ``hypothetical mobile laboratory'' an
+observer uses to make any physical measurements (e.g.\ mass, lengths, time).
+At a minimum,
+it must include:
+\begin{itemize}
+\item A set of rulers (i.e.\ a coordinate system) to measure lengths
+\item A clock to measure the passage of time
+  %\item A scale to compare forces
+  %\item A balance to measure masses
+\end{itemize}
+We assume that this ``hypothetical laboratory'' is \emph{perfect}:
+\begin{itemize}
+\item The hypothetical instruments are not subjected to numerical errors
+\item There is an instrument for whatever you want to measure
+\item What matters is the \emph{motion} of the frame (at rest, uniform
+  motion, accelerating), and how that motion affects the measurements
+\end{itemize}
+
+
+
+
+\subsection{Inertial Frame of Reference}
+An \textbf{inertial frame of reference}\footnote{Also known as a
+\textbf{rest frame}} is one that moves in uniform motion (constant
+velocity, no acceleration)
+\begin{itemize}
+\item The frame of reference is not subjected to any net force
+\item In all inertial frames of reference, the laws of motion are valid
+\item Since all laws of motion are valid in all inertial frames of reference,
+  \emph{any} inertial frame can be considered to be at rest (stationary)
+\end{itemize}
+
+
+
+
+The priniciple of relativity states that:
+\begin{definition}
+  \textbf{The Principle of Relativity:} The laws of motion must be
+  obeyed in all inertial frames of reference.
+\end{definition}
+\begin{itemize}
+\item All inertial frames are equally valid when determining the laws of
+  motion
+\item All inertial frames can be considered at rest
+\item All motion is relative: there is no \emph{absolute motion} or
+    \emph{absolute rest}
+\end{itemize}
+%
+%
+%
+%
+%\section{Inertial Frame of Reference}
+Observer A is moving with a constant velocity relative to observer B
+\begin{itemize}
+\item A observes that the ball that he is throwing only has vertical motion
+\item B observes that the ball is moving in a parabolic curve
+\item A \& B agree on the \emph{equations} that govern the motion
+\end{itemize}
+\begin{center}
+  \pic{.65}{kinematics/graphics/57}
+\end{center}
+Observer A makes the same observation regardless of whether he is moving
+uniformly relative to the ground or not
+\begin{itemize}
+\item Valid for A to think that he is at rest, but B is moving
+\item Also valid for B to think that he is at rest, but A is moving
+\item Both A and B are inertial frames of reference
+\end{itemize}
+%  \begin{center}
+%    \vspace{-.15in}
+%    \pic{.65}{graphics/57}
+%  \end{center}
+%
+%
+%
+%
+\subsection{Non-inertial Frame of Reference}
+A \textbf{non-inertial frame of reference} is one that is undergoing
+acceleration (i.e.\ non-constant velocity)
+\begin{itemize}
+\item Require a \textbf{fictitious force}\footnote{Also known as a
+\textbf{pseudo force}} in the FBD to account for the observations
+  \begin{itemize}
+  \item Hypothetical force
+  \item Does not exist in inertial frame of reference
+  \end{itemize}
+\item Example: A car that is speeding up, slowing down, or turning
+\end{itemize}
+\begin{center}
+  \pic{.4}{kinematics/graphics/man-in-accel-car}
+\end{center}
+
+
+
+
+%\section{Example: Reference Frame}
+%  \begin{columns}
+%    \column{.4\textwidth}
+%    \pic1{graphics/capsule2}
+%    
+%    \column{.6\textwidth}
+%    \textbf{Example:} Passengers in a high-speed elevator feel as though they
+%    are being pressed heavily against the floor when the elevator starts moving
+%    up. After the elevator reaches its maximum speed, the feeling disappears.
+%  \end{columns}
+%
+%
+%
+%
+%\section{Example: Reference Frame}
+%  \begin{enumerate}
+%  \item When do the elevator and passengers form 
+%    \begin{itemize}
+%    \item an inertial frame of reference?
+%    \item a non-inertial frame of reference?
+%    \end{itemize}
+%  \item Before the elevator starts moving,
+%    \begin{itemize}
+%    \item what forces are acting on the passengers?
+%    \item how large is the external (unbalanced) force?
+%    \end{itemize}
+%  \item Is a person standing outside the elevator in an inertial or
+%    non-inertial frame of reference?
+%  \end{enumerate}
+%
+%
+%
+%
+%\section{Frame of Reference}
+%  \textbf{Example:} Given the definition of an inertial frame of reference,
+%  is Earth an inertial frame of reference?
+%
+%  \vspace{.3in}\uncover<2>{
+%    \textbf{Answer:} No! Earth is rotating on its axis, and also orbiting in an
+%    elliptical path around the Sun. However, we can adjust the value of $g$
+%    slightly to account for the acceleration of Earth.
+%  }
+%
+%
+%
+%
+%\section{Motion Quantities}
+%
+%  Kinematics does not deal with the cause of motion.
+
+
+
+\section{Kinematic Quantities}
+
+\begin{itemize}
+\item Position
+\item Displacement
+\item Distance
+\item Velocity
+\item Speed
+\item Acceleration
+\end{itemize}
+
+
+\subsection{Position}
+
+\textbf{Position} ($\mathbf r$) is the location of an object in a coordinate
+system. It is a vector measured from the origin to the object. If the object
+moves, $\mathbf r$ is a continuous function of time $t$:
+\begin{equation}
+  \mathbf r=\mathbf r(t)
+\end{equation}
+At this moment, it is not necessary to know what kind of function $\mathbf r(t)$
+is; the motion of the object will be determined by the forces that act on the
+object, and therefore what acceleration it has. All that matters is that
+$\mathbf r(t)$ evolves with time, the object can be at only one position at any
+time (hence it is a function), and that there are no gaps in the where the
+object is (hence it is a continuous function). The SI unit for position is
+\emph{metre} (\si\metre).
+
+Position is a \emph{vector}, and therefore require a magnitude and direction.
+For motion in a one-dimensional coordinate system, the position of the object
+is a coordinate along the number line. The vector is an arrow drawn from
+the origin to object itself, as shown in Figure~\ref{fig:1d-position}. In
+the figure, the position of the object is positive.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \draw[axes] (-3,0)--(3,0) node[pos=0,left]{$-$} node[right]{$+$};
+    %\foreach \x in {-5,...,5} \draw (\x,.1)--(\x,-.1);
+    \draw[thick] (0,.1)--(0,-.1) node[below]{$O$};
+    \fill[red] (2.5,0) circle (.05);% node[below]{$A$};
+    \draw[vectors,red] (0,0)--(2.5,0) node[midway,above]{$\mathbf r$};
+  \end{tikzpicture}
+  \caption{Position in a one-dimensional coordinate system}
+  \label{fig:1d-position}
+\end{figure}
+
+In a two-dimesional coordinate system (e.g.\ $xy$-plane),
+%\textbf{Position in 2D Coordinate System:} For two-dimensional motion,
+there are several ways to describe an object's position. One way is to use the
+$x$ and $y$ coordinates. The positions of the object at $P$ and $Q$ are:
+\begin{align*}
+  \vec r_P & =3\hat x + 2\hat y\\
+  \vec r_Q & =-4\hat x + 3\hat y
+\end{align*}
+or the length of the straight line from the origin to
+the position, and the angle it makes with the $x$ axis.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \draw[help lines] (-3.3,-3.3) grid (3.3,3.3);
+    \fill[red] (3,2) circle (.05) node[above]{$P$};
+    \draw[vectors,red] (0,0)--(3,2) node[midway,above]{$\mathbf r$};
+    \draw[axes] (-3.5,0)--(3.5,0) node[right]{$x$};
+    \draw[axes] (0,-3.5)--(0,3.5) node[above]{$y$};
+    \draw[axes] (1.5,0) arc (0:atan(2/3):1.5) node[midway,right]{$\theta$};
+    \node[below left] at (0,0) {$O$};
+  \end{tikzpicture}
+  \caption{Position in a two-dimensional coordinate system}
+\end{figure}
+
+
+
+\subsection{Displacement}
+\textbf{Displacement} ($\Delta\mathbf r$) is the \emph{change in position} when
+an object moves through the coordinate system. Mathematically, displacement is
+defined as the \emph{difference} between the initial position
+$\mathbf r_1=\mathbf r(t_1)$ when motion begins, and the current position
+$\mathbf r(t)$ of the object. Therefore, as the object moves, $\Delta\mathbf r$
+is also a continuous function of time, i.e.:
+%\begin{equation*}
+%  \Delta\mathbf r=  \Delta\mathbf r(t)
+%\end{equation*}
+\begin{equation}
+  \boxed{
+    \Delta\mathbf r(t)=\mathbf r(t)-\mathbf r_1
+  }
+\end{equation}
+Graphically, displacement is drawn as a vector pointing from the initial
+position $\mathbf r_1$ towards the current/final position $\mathbf r$.
+%\begin{figure}[ht]
+%  \centering
+%  \begin{tikzpicture}[scale=.5]
+%    \draw[axes] (0,0)--(6,0) node[right]{$x$};
+%    \draw[axes] (0,0)--(0,8) node[above]{$y$};
+%    \draw[vectors,red] (0,0)--(4,1) node[midway,above]{$\mathbf r_1$};
+%    \draw[vectors,red] (0,0)--(2,6) node[midway,left]{$\mathbf r_2$};
+%    \draw[vectors,blue] (4,1)--(2,6) node[midway,right]{$\Delta\mathbf r$};
+%  \end{tikzpicture}
+%\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.8]
+    \draw[axes] (0,0)--(7,0) node[right]{$x$};
+    \draw[axes] (0,0)--(0,6.5) node[above]{$y$};
+    \fill (4,1) circle (.08) node[below]{1};
+    \fill (2,6) circle (.08) node[left]{5};
+    \draw[vectors,red] (0,0)--(4,1) node[midway,above]{$\mathbf r_1$};
+    \draw[vectors,red] (0,0)--(2,6) node[midway,left] {$\mathbf r_5$};
+    \begin{scope}[rotate around={33:(4,1)}]
+      \draw[vector,blue] (4,1)--+(2,0) node[midway,below]{$\Delta\mathbf r_1$};
+      \fill (6,1) circle (.08) node[right]{2};
+    \end{scope}
+    \begin{scope}[rotate around={60:(4,1)}]
+      \draw[vector,blue] (4,1)--+(3.35,0) node[midway,right]{$\Delta\mathbf r_2$};
+      \fill (7.35,1) circle (.08) node[above]{3};
+    \end{scope}
+    \begin{scope}[rotate around={85:(4,1)}]
+      \draw[vector,blue] (4,1)--+(2.8,0) node[pos=.7,left=0]{$\Delta\mathbf r_3$};
+      \fill (6.8,1) circle (.08) node[above]{4};
+    \end{scope}
+    \draw[vectors,blue] (4,1)--(2,6) node[midway,left]{$\Delta\mathbf r_4$};
+    %\fill (7,2) circle (.07);
+    %\fill (6,4.5) circle (.07);
+    %\fill[cyan] (3,3) circle (.07);
+    %\fill[cyan] (4,6) circle (.07);
+    \draw[very thick,dashed,->] (4,1) ..controls (7,2) and (6,4.5).. (5,4)
+    ..controls (3,3) and (4,6).. (2,6) node[midway,right]{$\mathcal C$};
+  \end{tikzpicture}
+  \caption{The displacement of an object evolves with time as it moves.}
+\end{figure}
+
+
+The SI unit for displacement is also \textbf{metre} (\si\metre).
+
+
+
+\textbf{Explain why this is a subtraction}
+
+
+\subsection{Distance}
+
+\textbf{Distance} ($s$) is a quantity that is \emph{similar} to
+displacement. It is the length of the path $\mathcal C$ taken as an object
+moves from initial position ($\mathbf r_1$) to its current/final position
+($\mathbf r(t)$). Unlike displacement, distance is a \emph{length}, and therefore
+it is \emph{scalar} quantity. For the same reason, distance is non-negative
+(i.e.\ $s\geq 0$). As the object moves, distance is always increasing. Since
+the length changes with time, distance is also a continuous function of time:
+\begin{equation*}
+  \boxed{s=s(t)}
+\end{equation*}
+%\item Depends on \emph{how} the object travels from $\mathbf r_1$ to
+%  $\mathbf r_2$
+Although the magnitude of the displacement vector $|\Delta\mathbf r|$ is also a
+scalar, it is \emph{not} necessarily the same as distance. In classical
+physics,  $s\geq |\Delta\mathbf r|$
+
+%\begin{figure}
+%  \centering
+%  \begin{tikzpicture}[scale=.5]
+%    \draw[axes] (0,0)--(6,0) node[right]{$x$};
+%    \draw[axes] (0,0)--(0,8) node[above]{$y$};
+%    \draw[vectors,red] (0,0)--(4,1) node[midway,above]{$\mathbf r_1$};
+%    \draw[vectors,red] (0,0)--(2,6) node[midway,left] {$\mathbf r_2$};
+%    \draw[vectors,blue] (4,1)--(2,6) node[midway,right]{$\Delta\mathbf r$};
+%    \draw[very thick,dash dot] (4,1)..controls (6,5) and (5,7)..(2,6)
+%    node[midway,right]{$s$};
+%  \end{tikzpicture}
+%\end{figure}
+
+
+
+
+\subsection{Velocity}
+
+\textbf{Average velocity} ($\mathbf v_\text{avg}$) is how quickly your position
+changes \emph{over a finite time interval}. It is a vector quantity with an
+SI unit of \textbf{metres per second} (\si{\metre\per\second}). The direction
+of $\mathbf v_\text{avg}$ is the same as displacement $\Delta\mathbf d$, and it is
+also a function of time:
+\begin{equation}
+  \boxed{
+    \mathbf v_\text{avg}(t)
+    =\frac{\Delta\mathbf r(t)}{\Delta t}
+    =\frac{\mathbf r(t)-\mathbf r_1}{t-t_1}
+  }
+\end{equation}
+where $\mathbf r_1=\mathbf r(t_1)$ is the initial position at initial time $t_1$
+
+In contrast, \textbf{instantaneous velocity} ($\mathbf v$) is how quickly
+your displacement is changing \emph{at a specific instance in time}
+\begin{itemize}
+\item Obtained by letting the time interval \emph{infinitesimally} small,
+  i.e.\ $\Delta t\rightarrow 0$
+\item Also called the \emph{rate of change in displacement}
+\item Calculating instantaneous velocity may require calculus\footnote{For
+those of you who know a bit of calculus, the definition of instantenous
+velocity is:
+\begin{displaymath}
+  \mathbf v(t)=\frac{d\mathbf r}{dt}
+\end{displaymath}}  
+\end{itemize}
+
+
+
+
+\subsection{Speed}
+
+\textbf{Average speed} ($v$) is similar to average velocity, but instead of
+using displacement, it is the distance ($s$) travelled over a \emph{finite}
+time interval. Speed is a \emph{scalar}:
+  
+\begin{equation}
+  \boxed{
+    v_\text{avg}(t)
+    =\frac{s(t)}{\Delta t}\geq 0
+  }
+\end{equation}
+Similarly, \textbf{instantaneous speed} ($v$) is how quickly
+distance is changing at a \emph{specific instance} in time.
+\begin{itemize}
+\item Since distance is always positive ($s\ge 0$), both average and
+  instantaneous speeds must always be positive
+\end{itemize}
+
+
+
+
+\subsection{Acceleration}
+
+\textbf{Average acceleration} ($\mathbf a_\text{avg}$) is how quickly the
+instantaneous velocity vector changes over a \emph{finite} time interval,
+with an SI unit of \textbf{metres per second squared}
+(\si{\metre\per\second\squared}):
+\begin{equation}
+  \boxed{\mathbf a_\text{avg}(t)
+    =\frac{\Delta\mathbf v(t)}{\Delta t}
+    =\frac{\mathbf v(t)-\mathbf v_1}{t-t_1}
+  }
+\end{equation}
+where $\mathbf v_1=\mathbf v(t_1)$ is the initial velocity $\mathbf v$ at initial time
+$t_1$.
+
+\textbf{Instantaneous acceleration} ($\mathbf a(t)$) is how quickly the velocity
+vector is changing at a \emph{specific instance} in time
+
+A few things to note about acceleration:
+\begin{itemize}
+\item i.e.\ \emph{the rate of change of instantaneous velocity}
+\item A change in a vector ($\Delta\mathbf v$) can mean a change in magnitude
+  and/or direction
+\item There can be acceleration without any speeding up or slowing down!
+\item Think  about what happens if a car is turning at constant speed
+\end{itemize}
+
+
+
+
+%\section{Working with Vectors}
+%  Vectors obey the \emph{principle of superposition}, which means that they
+%  \emph{add} together. Methods for adding vectors include:
+%  \begin{itemize}
+%  \item Using \textbf{Pythagorean theorem} (for vectors at right angles to
+%    each other)
+%  \item Using \textbf{cosine and sine laws}
+%  \item Decomposing vectors into \textbf{components}, then reassemble them
+%    using Pythagorean theorem
+%  \end{itemize}
+%  For 1D problems, ($+$) and ($-$) signs are sufficient to indicate direction
+%  \begin{itemize}
+%  \item Remember to indicate which way is positive though!
+%  \end{itemize}
+%  \textbf{WARNING:} When adding vectors, you
+%  \underline{\textbf{\emph{must not}}} simply add the magnitudes of the vectors!
+
+
+
+%
+%\section{Basic Motion Graphs}
+%We can describe \emph{one-dimensional} motion graphically using
+%\textbf{motion graphs}, by plotting
+%\begin{itemize}
+%\item Position vs.\ time ($d$--$t$)
+%\item Instantaneous velocity vs.\ time ($v$--$t$)
+%\item Instantaneous acceleration vs.\ time ($a$--$t$)
+%\end{itemize}
+
+
+
+\section{Basic Motion Graphs}
+In one-dimension, motion can 
+%  %the kinematic equations\footnote{They can only
+%  %  be used for constant acceleration!} can
+also be expressed graphically using \textbf{motion graphs}. The most basic
+motion graphs are motion quantities as functions of time:
+\begin{itemize}[itemsep=3pt]
+\item Position vs.\ time ($r$ vs.\ $t$)
+\item Instantaneous velocity vs.\ time ($v$ vs.\ $t$)
+\item Instantaneous acceleration vs.\ time ($a$ vs.\ $t$)
+\end{itemize}
+At the moment, we are interested in:
+\begin{itemize}[itemsep=3pt]
+\item What the graphs themselves tell us
+\item What the slopes of the graphs tell us
+\item What the areas under the graphs tell us
+\end{itemize}
+
+
+
+\subsection{Position vs.\ Time Graph}
+The \emph{most} obvious choice for expressing 1D motion of an object
+graphically is by plotting its position as a function of time ($r(t)$). An
+example is shown in Fig.~\ref{fig:pos-time-graph}.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.5]
+    \draw[axes] (0,0)--(3.5,0) node[right]{$t$};
+    \draw[axes] (0,-.7)--(0,2.5) node[right]{$r$};
+    \draw[functions,smooth,samples=30,domain=0:3]
+    plot({\x},{-.2*\x^4+.5*\x^3+.4*\x^2-.5});
+    
+    \draw[gray] (1.5,0)--(1.5,1.1) node[pos=0,below,black]{$t_0$}
+    --(0,1.1) node[left,black]{$r(t_0)$};
+    \fill[red!80!black] (1.5,1.1) circle (.05);
+  \end{tikzpicture}
+  \caption{A typical position vs.\ time graph}
+  \label{fig:pos-time-graph}
+\end{figure}   
+In a position vs.\ time graph, the horizontal ($x$) axis (independent variable)
+is time $t$, while the the vertical ($y$) axis (dependent variable) is the
+position $r$ measured from origin.
+%\item Position in one-dimension can be $+/-$
+%Generally, motion begins at $t=0$.
+As shown in Figure~\ref{fig:pos-time-graph}, to find position at time $t_0$,
+you can simply read the graph!
+%\item Time only moves forward, but the graph does not explicitly tell you
+%  so
+
+
+
+
+\subsubsection{Slope of Secant: Average Velocity}
+\textbf{Average velocity} of an object's motion is the
+\emph{slope of the secant} of the position vs.\ time graph.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.1]
+    \draw[axes] (0,0)--(0,3.3) node[above]{$r$};
+    \draw[axes] (0,0)--(3,0) node[right]{$t$};
+    \draw[functions,smooth,samples=20,domain=0:2.8]
+    plot({\x},{-.2*\x^4+.5*\x^3+.4*\x^2+.4});
+    \draw[thick,dash dot](.5,.55)--(2.5,2.9);
+    \draw[thick] (.5,.55)--(2.5,.55)node[midway,above]{$\Delta t$}
+    --(2.5,2.9) node[midway,right]{$\Delta r$};
+    \draw[gray] (.5,.55)--(.5,-.1) node[below,black]{$t_1$};
+    \draw[gray] (2.5,.55)--(2.5,-.1) node[below,black]{$t_2$};
+    \draw[gray] (.5,.55)--(-.1,.55) node[left,black]{$r_1$};
+    \draw[gray] (2.5,2.9)--(-.1,2.9) node[left,black]{$r_2$};
+    \fill[red!80!black] (.5,.55) circle (.05);
+    \fill[red!80!black] (2.5,2.9) circle (.05);
+  \end{tikzpicture}
+  \hspace{.1in}
+  \begin{tikzpicture}[scale=1.1]
+    \draw[axes] (0,0)--(0,3.3) node[above]{$r$};
+    \draw[axes] (0,0)--(3,0) node[right]{$t$};
+    \draw[functions] (0,.35)--(.5,.55)--(1,2)--(1.8,1.5)--(2.5,2.9);
+    \draw[thick,dash dot] (.5,.55)--(2.5,2.9);
+    \draw[thick] (.5,.55)--(2.5,.55)node[midway,above]{$\Delta t$}
+    --(2.5,2.9) node[midway,right]{$\Delta r$};
+    \draw[gray] (.5,.55)--(.5,-.1) node[below,black]{$t_1$};
+    \draw[gray] (2.5,.55)--(2.5,-.1) node[below,black]{$t_2$};
+    \draw[gray] (.5,.55)--(-.1,.55) node[left,black]{$r_1$};
+    \draw[gray] (2.5,2.9)--(-.1,2.9) node[left,black]{$r_2$};
+    \fill[red!80!black] (.5,.55) circle (.05);
+    \fill[red!80!black] (2.5,2.9) circle (.05);
+    \end{tikzpicture}
+\end{figure}
+%  \vspace{-.1in}Same average velocity in both graphs, but very different
+%  motions
+%  \begin{itemize}
+%  \item ($+$) slope: motion in the ($+$) direction during the time interval
+%  \item ($-$) slope: motion in the ($-$) direction during the time interval
+%  \item Zero slope: no displacement over this time interval
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+\subsubsection{Instantaneous Velocity:} The instantaneous velocity of an object
+is the \emph{slope of the tangent} to the curve of the position vs.\ time graph
+at a specific time.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.75]
+    \draw[axes] (0,0)--(4,0) node[right] {$t$};
+    \draw[axes] (0,0)--(0,4) node[right] {$d$};
+    \draw[functions,smooth,samples=20,domain=.5:3.5]
+    plot({\x},{.25*\x^2+.5});
+    \fill[red!80!black] (2,1.5) circle (2.2pt);
+    \draw[dotted,thick] (2,1.5)--(2,0) node[below] {$t_0$};
+    
+    \draw[smooth,samples=4,domain=.75:3.5,thick,dashed]
+    plot({\x},{\x-.5});
+    \draw[thick] (.75,.25)--(3.5,.25) node[pos=.65,above] {\scriptsize Run};
+    \draw[thick] (3.5,.25)--(3.5,3) node[midway,right] {\scriptsize Rise};
+    
+  \end{tikzpicture}
+\end{figure}
+
+Like average velocity, the sign of the slope also indicates the direction of
+motion. If position data is obtained experimentally, it may be difficult to
+obtain an accurate value for instantaneous velocity.
+
+%  What can we learn about instantaneous velocity from this position vs.\ time
+%  graph?
+%\begin{figure}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (0,0)--(3.5,0) node[right]{$t$};
+%      \draw[axes] (0,-.7)--(0,2.5) node[right]{$d$};
+%      \draw[functions,smooth,samples=30,domain=0:3]
+%      plot({\x},{-.2*\x^4+.5*\x^3+.4*\x^2-.5});
+%      \uncover<2->{
+%        \begin{scope}[thick,cyan]
+%          \draw (-.4,-.5)--+(.8,0) node[midway,below=-2]{$v=0$};
+%          \draw (1.9,2.1)--+(.8,0) node[midway,above=-2]{$v=0$};
+%          \draw (2.3,2.1)--(2.3,0) node[below=-2]{$t_1$};
+%          \draw (0,-.5)--(0,0);
+%        \end{scope}
+%        \fill[cyan] (0,-.5) circle (.07);
+%        \fill[cyan] (2.3,2.1) circle (.07);
+%      %  \draw[dash dot,thick] (1.5,0)--(1.5,1.1) node[pos=0,below]{$t_0$}
+%      %  --(0,1.1) node[left]{$d(t_0)$};
+%      %  \fill[red!80!black] (1.5,1.1) circle (.05);
+%      }
+%      \uncover<3->{
+%        \fill[pink!35,opacity=.3] (0,-.7) rectangle (2.3,2.3);
+%        \draw[<-,thick,red] (.75,1) to[out=120,in=0] +(-1,.2)
+%        node[left,text width=98,draw=red,fill=magenta!10]{\scriptsize
+%          For $0<t<t_0$, velocity is positive ($v>0$) because the graph has a
+%          positive slope\par};
+%      }
+%      \uncover<4->{
+%        \fill[cyan!35,opacity=.3] (2.3,-.7) rectangle (3,2.3);
+%        \draw[<-,thick,blue] (2.6,1) to[out=90,in=180] +(1.6,.4)
+%        node[right,text width=86,draw=blue,fill=cyan!30]{\scriptsize
+%          For $t>t_0$, velocity is negative ($v<0$) because the slope is
+%          negative\par};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+%
+\textbf{Acceleration:} Finding instantaneous acceleration $a(t)$ from a
+position vs.\ time graph is \emph{very} difficult\footnote{If you already know
+the function $r(t)$ exactly, then you can use calculus to find acceleration
+exactly. In that case you don't really \emph{need} this graph in the first
+place.}, but we can still find the \emph{sign} of acceleration based on whether
+the graph opens up or down.
+%In this example:
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \draw[axes] (0,0)--(3.5,0) node[right]{$t$};
+    \draw[axes] (0,-.7)--(0,2.5) node[right]{$d$};
+    \draw[functions,smooth,samples=30,domain=0:2.95]
+    plot({\x},{-.2*\x^4+.5*\x^3+.4*\x^2-.5});
+    %\uncover<2->{
+      \fill[magenta!35,opacity=.3] (0,-.7) rectangle (1.47,2.3);
+      \draw[<-,thick,red] (.75,.2) to[out=120,in=0] +(-1,1)
+      node[left,text width=88,draw=red,fill=magenta!10]{\scriptsize
+        For $t<t_0$, acceleration is positive ($a>0$) because the graph opens
+        \underline{up}\par};
+      \draw[thick,gray](1.47,1.03)--(1.47,0) node[below,black]{$t_0$};
+      \fill[red!80!black] (1.47,1.03) circle (.055);
+    %}
+    %\uncover<3->{
+      \draw[functions,smooth,samples=30,domain=1.48:2.95,blue]
+      plot({\x},{-.2*\x^4+.5*\x^3+.4*\x^2-.5});
+      \fill[red!80!black] (1.47,1.03) circle (.055);
+      \fill[cyan!35,opacity=.3] (1.47,-.7) rectangle (3,2.3);
+      \draw[<-,thick,blue] (2.25,1.8) to[out=270,in=180] +(1.6,-2.2)
+      node[right,text width=88,draw=blue,fill=cyan!30]{\scriptsize
+        For $t>t_0$, acceleration is negative ($a<0$) because the graph opens
+        \underline{down}\par};
+    %}
+  \end{tikzpicture}
+\end{figure}
+
+%
+%
+%
+\subsection{Velocity vs.\ Time Graph}
+
+A less obvious choice for expressing 1D motion is by plotting
+\emph{instantaneous} velocity as a function of time, i.e.\ $v=v(t)$. In
+essence, we are plotting the slope of the position vs.\ time graph instead.
+Using our example position vs.\ time graph:
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.1]
+    \draw[axes] (0,0)--(3.5,0) node[above]{$t$};
+    \draw[axes] (0,-1)--(0,2.5) node[right]{$d$};
+    \draw[functions,smooth,samples=30,domain=0:2.95,magenta]
+    plot(\x,{-.2*\x^4+.5*\x^3+.4*\x^2-.5});
+
+    \fill[violet] (1.3,.7) circle (.055);
+    \draw[violet] (1.3,.7)--(1.3,0) node[below]{$t_0$};
+    \draw[thick,violet,rotate around={atan(1.8):(1.3,.7)}] (.3,.7)--+(2,0)
+    node[midway,above,rotate=atan(1.8)]{$m=v(t_0)$};
+  \end{tikzpicture}
+  \begin{tikzpicture}[scale=1.1]
+    \draw[axes] (0,0)--(3.5,0) node[above]{$t$};
+    \draw[axes] (0,-1)--(0,2.5) node[right]{$v$};
+    \draw[smooth,samples=40,domain=0:2.5,functions,violet]
+    plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+    \draw[gray] (1.3,0)--(1.3,1.83) node[pos=0,below,black]{$t_0$}
+    --(0,1.83) node[left,black]{$v(t_0)$};
+    \fill[violet] (1.3,1.83) circle (.06);
+  \end{tikzpicture}
+
+\end{figure}
+
+%
+%
+%
+%\begin{frame}{Velocity vs.\ Time Graph}
+%%  \begin{columns}
+%%    \column{.7\textwidth}
+%%    \begin{itemize}
+%  The velocity vs.\ time graph shows how instantaneous velocity evolves with
+%  time. In this example:
+%%    \item<3->Slope of the secant: average acceleration
+%%    \item<3->Slope of the tangent: instantaneous acceleration
+%%    \end{itemize}
+%%    
+%%    \column{.3\textwidth}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (0,0)--(3,0) node[right=-2]{$t$};
+%      \draw[axes] (0,-1.5)--(0,2.2) node[above=-2]{$v$};
+%      \draw[smooth,samples=45,domain=0:2.55,very thick,violet]
+%      plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+%      \uncover<2->{
+%        \fill[violet] (2.3,0) circle (.055) node[below left=-2]{$t_1$};
+%        \fill[violet] circle (.055) node[left=-2]{$0$};
+%        \draw[<-,violet,thick] (-.4,0)--+(-3,0)
+%        node[text width=80,draw=violet,fill=violet!10]{\scriptsize
+%          At $t=0$ and $t=t_1$, velocity is zero ($v=0$)\par};
+%      }
+%      \uncover<3->{
+%        \draw[gray] (1.47,1.87)--(1.47,0) node[below,violet]{$t_0$};
+%        \fill[violet] (1.47,1.87) circle (.055);
+%        \draw[<-,thick,violet] (1.55,1.87) to[out=30,in=150] +(1.6,0)
+%        node[right,text width=75,draw=violet,fill=violet!10]{\scriptsize
+%          At $t=t_0$, velocity is maximum. The slope is zero at this point.
+%          \par};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%  Velocity is positive when the graph is above the time axis; and negative
+%  when below the time axis
+%
+%%    \begin{tikzpicture}[scale=1.1]
+%%      \draw[axes] (0,0)--(3.5,0) node[above]{$t$};
+%%      \draw[axes] (0,-1.25)--(0,2.75) node[right]{$v$};
+%%      \draw[functions,smooth,samples=40,domain=0:3]
+%%      plot({\x},{1.35*(\x-1)*(\x-1)-1.1*\x+.5});
+%%      \uncover<2>{
+%%        \draw[smooth,samples=40,domain=.626:2.189,orange,very thick]
+%%        plot({\x},{1.35*(\x-1)*(\x-1)-1.1*\x+.5});
+%%        \draw[smooth,samples=40,domain=2.189:3,violet,very thick]
+%%        plot({\x},{1.35*(\x-1)*(\x-1)-1.1*\x+.5});
+%%        \draw[smooth,samples=40,domain=0:.626,violet,very thick]
+%%        plot({\x},{1.35*(\x-1)*(\x-1)-1.1*\x+.5});
+%%      }
+%%    \end{tikzpicture}
+%%  \end{columns}
+%\end{frame}
+%
+%
+
+\textbf{Average Acceleration:}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.1]
+%      \draw[axes] (0,0)--(3,0) node[right=-2]{$t$};
+%      \draw[axes] (0,-1.5)--(0,2.2) node[above=-2]{$v$};
+%      \draw[smooth,samples=45,domain=0:2.55,very thick,violet]
+%      plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+%      %\uncover<2->{
+%      %  \fill[violet] (2.3,0) circle (.055) node[below left=-2]{$t_1$};
+%      %  \fill[violet] (0,0) circle (.055) node[left=-2]{$0$};
+%      %}
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+\textbf{Instantaneous Acceleration:}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.1]
+%      \draw[axes] (0,0)--(3,0) node[right=-2]{$t$};
+%      \draw[axes] (0,-1.5)--(0,2.2) node[above=-2]{$v$};
+%      \draw[smooth,samples=45,domain=0:2.55,very thick,violet]
+%      plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+%      %\uncover<2->{
+%      %  \fill[violet] (2.3,0) circle (.055) node[below left=-2]{$t_1$};
+%      %  \fill[violet] (0,0) circle (.055) node[left=-2]{$0$};
+%      %}
+%    \end{tikzpicture}
+%  \end{center}
+
+
+
+\textbf{Displacement and position:} The area under the velocity vs.\ time graph
+is the \emph{displacement} of the object. In example below, the shaded area is
+the displacement between $t_1$ and $t_2$. If the position at $t_1$ (i.e.\
+$d_1$) is also known, then we can find the position at $t_2$ (i.e.\
+$d_2=d_1+\Delta d$).
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.3]
+    \draw[smooth,samples=30,domain=.5:2,gray,fill=lightgray]
+    plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x})--(2,0) node[below,black]{$t_2$}
+    --(.5,0) node[below,black]{$t_1$}--cycle;
+
+    \draw[smooth,samples=50,domain=0:2.4,functions,violet]
+    plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+
+    \draw[axes] (0,0)--(3.5,0) node[above]{$t$};
+    \draw[axes] (0,-.5)--(0,2.5) node[right]{$v$};
+
+    \node at (1.25,.7) {$\Delta d$};
+  \end{tikzpicture}
+  \caption{The area under the velocity vs.\ time graph between $t_1$ and $t_2$
+    gives us the object's displacement during this time interval.}
+  \label{fig:area-under-vt-graph}
+\end{figure}
+If the area is \emph{above} the $x$-axis (time axis), then displacement
+is positive ($\Delta d>0$); if the area is \emph{below} the $x$-axis, then
+displacement is negative ($\Delta d<0$).
+
+
+
+\subsection{Acceleration vs. Time Graph}
+In the same way that we convert a position vs.\ time graph to a velocity vs.\
+time graph, we can also convert a velocity vs.\ time graph to an
+\textbf{acceleration vs.\ time} graph, by plotting the slope of the tangent.
+This graph shows how \emph{instantaneous} acceleration $a(t)$ evolves with
+time. In the example below:
+%    \centering
+%    \begin{tikzpicture}[scale=1.1]
+%      \draw[axes] (0,0)--(3,0) node[right]{$t$};
+%      \draw[axes] (0,-1)--(0,2.5) node[right]{$v$};
+%      \draw[smooth,samples=40,domain=0:2.4,functions,violet]
+%      plot(\x,{-.8*\x^3+1.5*\x^2+.8*\x});
+%      %\fill[violet] (1.3,.7) circle (.06);
+%      %\draw[violet] (1.3,.7)--(1.3,0) node[below]{$t_0$};
+%    \end{tikzpicture}
+%    
+%    \column{.3\textwidth}
+%    \centering
+%    \begin{tikzpicture}[scale=1.1]
+%      \draw[axes] (0,0)--(3,0) node[right]{$t$};
+%      \draw[axes] (0,-2.3)--(0,1.2) node[right]{$a$};
+%      \draw[smooth,samples=40,domain=0:2.2,functions,orange]
+%      plot(\x,{-1.2*\x^2+1.5*\x+.4});
+%      %\draw[gray] (1.3,0)--(1.3,1.83) node[pos=0,below,black]{$t_0$}
+%      %--(0,1.83) node[left,black]{$v(t_0)$};
+%      %\fill[violet] (1.3,1.83) circle (.06);
+%    \end{tikzpicture}
+%  \end{columns}
+
+%\begin{frame}{Acceleration vs.\ Time Graph}
+
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.1]
+%      \draw[axes] (0,0)--(2.8,0) node[right=-2]{$t$};
+%      \draw[axes] (0,-2)--(0,1.2) node[right=-2]{$a$};
+%      \draw[smooth,samples=40,domain=0:2.2,functions,orange]
+%      plot(\x,{-1.2*\x^2+1.5*\x+.4});
+%      \uncover<2->{
+%        \fill[pink!40,opacity=.4] (0,-2) rectangle (1.48,1);
+%        \fill[orange] (0.63,.87) circle (.06);
+%        \draw[gray] (.63,0)--(.63,.87) node[pos=0,below=-2,black]{$t_0$}
+%        --(0,.87) node[left=-2,black]{$a_\text{max}$};
+%        \fill[orange] (1.48,0) circle (.06) node[above,black]{$t_1$};
+%        \draw[thick,magenta,<-] (.75,-1)--+(-1,0)
+%        node[left,text width=80,draw=magenta]{\scriptsize
+%          Acceleration is positive from $t=0\rightarrow t_1$, with a maximum
+%          magnitude of $a_\text{max}$ at $t_0$\par};
+%      }
+%      \uncover<3->{
+%        \fill[violet] (1.48,0) circle (.06) node[above]{$t_1$};
+%        \draw[thick,violet,<-] (1.48,.4) to[out=90,in=180] (3,1)
+%        node[right,text width=70,draw=violet,fill=violet!10]{\scriptsize
+%          Acceleration is zero ($a=0$) at $t=t_1$\par};
+%      }
+%      \uncover<4->{
+%        \fill[cyan!40,opacity=.4] (1.48,-2) rectangle (2.4,1);
+%        \draw[thick,blue,<-] (2.1,-.8)--+(1,0)
+%        node[right,text width=63,draw=blue,fill=cyan!10]{\scriptsize
+%          Acceleration is negative for $t>t_1$\par};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%  \uncover<4->{
+%    \vspace{-.1in}Remember: Since acceleration is a vector, \emph{positive}
+%    acceleration means acceleration \emph{in the positive
+%    \underline{direction}}, but it does not necessarily mean the object speeds
+%    up
+%  }
+%\end{frame}
+%
+%
+
+\subsubsection{Slope of the Acceleration vs.\ Time Graph}
+The slope of the acceleration vs.\ time graph is the rate of change of
+acceleration, called \textbf{jerk}.\footnote{The slope of the tangent is
+called \textbf{instantaneous jerk}, whereas the slope of the secant is the
+\textbf{average jerk}.}. This is \emph{not} a topic that is covered in Grade
+11 or 12 Physics.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \draw[axes] (0,0)--(3,0) node[right]{$t$};
+    \draw[axes] (0,-2)--(0,1.2) node[right]{$a$};
+    \draw[smooth,samples=40,domain=0:2.2,functions,orange]
+    plot(\x,{-1.2*\x^2+1.5*\x+.4});
+    \fill[blue] (1,.7) circle (.055);
+    \draw[blue,thick,rotate around={-atan(.9):(1,.7)}] (0,.7)--+(2.2,0);
+  \end{tikzpicture}
+\end{figure}
+
+
+
+%\begin{frame}{Area Under the Acceleration vs.\ Time Graph}
+%  The area under acceleration vs.\ time graph is the \emph{change in velocity}
+%  $\Delta v$.
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (0,0)--(3,0) node[right]{$t$};
+%      \draw[axes] (0,-2)--(0,1.2) node[right]{$a$};
+%      \draw[smooth,samples=40,domain=0:2.2,functions,orange]
+%      plot(\x,{-1.2*\x^2+1.5*\x+.4});
+%      \uncover<2->{
+%        \draw[smooth,samples=40,domain=.3:1.3,thick,gray,fill=lightgray!50]
+%        plot(\x,{-1.2*\x^2+1.5*\x+.4})--(1.3,0) node[below=-2,black]{$t_2$}
+%        --(.3,0) node[below=-2,black]{$t_1$}--cycle;
+%        \draw[thick,<-,black!80] (.8,.3)--+(-1.5,0)
+%        node[text width=72,left,draw=black!80,fill=lightgray!50]{\scriptsize
+%          $\Delta v>0$ from $t_1\rightarrow t_2$ because the area is above the
+%          $x$ axis\par};
+%      }
+%      \uncover<3->{
+%        \draw[smooth,samples=40,domain=1.7:2.1,thick,cyan,fill=cyan!20]
+%        plot(\x,{-1.2*\x^2+1.5*\x+.4})--(2.1,0) node[above=-2]{$t_4$}
+%        --(1.7,0) node[above=-2]{$t_3$}--cycle;
+%        \draw[thick,<-,blue] (1.9,-.5)--+(2,0)
+%        node[text width=75,right,draw=blue,fill=cyan!20]{\scriptsize
+%          $\Delta v<0$ from $t_3\rightarrow t_4$ because the area is below the
+%          $x$ axis\par};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item If the area is \emph{above} the $x$-axis (time axis), then $\Delta v>0$
+%  \item If the area is \emph{below} the $x$-axis, then $\Delta v<0$
+%  \item Remember: $\Delta v>0$ does not necessarily mean that the object
+%    speeds up; $\Delta v<0$ does not necessarily mean that it will slow down
+%  \end{itemize}
+%\end{frame}
+
+
+\section{Uniform Motion}
+\textbf{Uniform motion} is when the velocity vector is constant, and neither
+its magnitude nor direction changes. In 1D, the motion graphs look like this:
+\vspace{-.1in}\begin{center}
+  \begin{tikzpicture}[scale=.6]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,0)--(0,4.5) node[above]{$d$};
+    \draw[functions] (0,.5)--(4,4);
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.6]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,0)--(0,4.5) node[above]{$v$};
+    \draw[functions] (0,2)--(4,2);
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.6]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,0)--(0,4.5) node[above]{$a$};
+    \draw[functions] (0,0)--(4,0);
+  \end{tikzpicture}
+\end{center}
+\begin{itemize}
+\item \vspace{-.15in}$d$--$t$ graph is a straight line
+\item The slope of the $d$--$t$ graph, which is velocity $v$, is also constant
+\item There is no acceleration, so $a=0$ for all $t$
+\end{itemize}
+
+
+
+
+\section{Uniform Acceleration}
+When a constant net force acts on an object, it moves with a constant
+non-zero acceleration, or \textbf{uniform acceleration}.
+\begin{center}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$d$};
+    \draw[functions,samples=10,domain=0:4] plot(\x,{.35*(\x-1)*(\x-1)+1});
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$v$};
+    \draw[functions] (0,-1)--(4,2.5);
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$a$};
+    \draw[functions] (0,1)--(4,1);
+  \end{tikzpicture}
+\end{center}
+\begin{itemize}
+\item The $d$ vs.\ $t$ graph is part of a \emph{parabola}
+  \begin{itemize}
+  \item opens \emph{up}, then acceleration is positive
+  \item opens \emph{down}, then acceleration is negative
+  \end{itemize}
+\item The $v$ vs.\ $t$ graph is a straight line; the (constant) slope is the
+  cceleration
+\end{itemize}
+
+
+
+
+\section{Area Under Motion Graphs}
+\begin{center}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$d$};
+    \draw[functions,samples=10,domain=0:4] plot(\x,{.35*(\x-1)*(\x-1)+1});
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \draw[pink!40,fill=pink!40] (0,0)--(0,-1)--(1,0)--cycle;
+    \draw[blue!20,fill=blue!20] (1,0)--(3.5,0)--(3.5,2.5)--cycle;
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$v$};
+    \draw[functions] (0,-1)--(4,3);
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \fill[gray!40] rectangle (4,1) node[black,midway]{$\Delta v$};
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-1.5)--(0,4.5) node[above]{$a$};
+    \draw[functions] (0,1)--(4,1);
+  \end{tikzpicture}
+\end{center}
+\begin{itemize}
+\item The area under the $a$--$t$ graph is the change in velocity $\Delta v$
+  \begin{itemize}
+  \item If initial velocity is known, then we can plot $v$--$t$ graph based on
+    this graph
+  \end{itemize}
+\item The area under the $v$--$t$ graph is the displacement $\Delta d$
+  \begin{itemize}
+  \item If the area is {\color{red!40}below} the $x$-axis (time axis), then
+    displacement is negative;
+  \item If the area is {\color{blue!20}above} the time axis, then
+    displacement is positive
+  \end{itemize}
+\item The area under the $d$--$t$ graph has no physical meaning
+\end{itemize}
+
+
+
+
+\section{Simple Harmonic Motion}
+In \textbf{simple harmonic motion}\footnote{Or \textbf{oscillatory motion},
+or \textbf{vibration}}, displacement, velocity and acceleration are all
+periodic functions, and none of them are constant!
+\vspace{-.1in}
+\begin{center}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-2.5)--(0,2.5) node[above]{$d$};
+    \draw[functions,samples=50,domain=0:4] plot(\x,{2*cos(150*\x)});
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-2.5)--(0,2.5) node[above]{$v$};
+    \draw[functions,samples=50,domain=0:4] plot(\x,{-2*sin(150*\x)});
+  \end{tikzpicture}
+  \hspace{.15in}
+  \begin{tikzpicture}[scale=.55]
+    \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[axes] (0,-2.5)--(0,2.5) node[above]{$a$};
+    \draw[functions,samples=50,domain=0:4] plot(\x,{-2*cos(150*\x)});
+  \end{tikzpicture}
+\end{center}
+We will discuss this topic later, in the next unit.
+
+
+
+%\section{Example Problem}
+%  \textbf{Example:} Expression the motion in a \emph{position-time}
+%  graph and an \emph{acceleration-time} graph. Assume the object's initial
+%  position is the origin of the coordinate system.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.75]
+%      \draw[help lines] grid (12,4);
+%      \draw[axes] (0,0)--(13,0) node[right]{$t$ (\si\second)};
+%      \foreach \t in {0,...,12} {
+%        \draw(\t,0)--(\t,-.15) node[below]{$\t$};
+%      }
+%      \draw[axes] (0,0)--(0,5) node[above]{$v$ (\si{\metre\per\second})};
+%      \foreach \v in {0,...,4} {
+%        \draw(0,\v,0)--(-.15,\v) node[left]{$\v$};
+%      }
+%      \draw[functions] (0,2)--(2.5,2)--(5,4)--(7.5,4)--(10,1)--(12,1);
+%    \end{tikzpicture}
+%  \end{center}
+%
+%
+%
+%
+\section{1D Kinematic Equations}
+
+\begin{align*}
+  \Delta d &=v_1\Delta t + \frac12a\Delta t^2\\
+  \Delta d &=v_2\Delta t - \frac12a\Delta t^2\\
+  \Delta d &=\frac{v_1+v_2}2 \Delta t\\
+  v_2 &= v_1+ a \Delta t\\
+  v_2^2 &= v_1^2+ 2a \Delta d
+\end{align*}
+
+There are five motion quantities of interest:
+\begin{center}
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+    Displacement & $\Delta d$ & \si{\metre} \\
+    Initial (instantaneous) velocity & $v_1$ & \si{\metre\per\second} \\
+    Final (instantaneous) velocity   & $v_2$ & \si{\metre\per\second} \\
+    Acceleration (constant) & $a$    & \si{\metre\per\second\squared}\\
+    Time interval & $\Delta t$ & \si\second
+  \end{tabular}
+\end{center}
+Only valid for \underline{\textbf{constant acceleration}}
+
+
+
+%\section{1D Kinematic Equations}
+%  \begin{columns}
+%    \column{.35\textwidth}
+%    {\large
+%      \begin{align*}
+%        \Delta d &=v_1\Delta t + \frac12a\Delta t^2\\
+%        \Delta d &=v_2\Delta t - \frac12a\Delta t^2\\
+%        \Delta d &=\frac{v_1+v_2}2 \Delta t\\
+%        v_2 &= v_1+ a \Delta t\\
+%        v_2^2 &= v_1^2+ 2a \Delta d
+%      \end{align*}
+%    }
+%    \column{.65\textwidth}
+\begin{itemize}
+\item For 1-object problems, you are usually given 3 of the 5 variables,
+  and you are asked to find a 4th one
+\item For 2-object problems, the motion of the two objects are connected by
+  time interval $\Delta t$ and displacement $\Delta d$
+\item For 2D or 3D problems, each direction should have its own kinematic
+  equations
+\end{itemize}
+
+
+
+%\section{1D Kinematic Equations}
+Kinematic equations \emph{cannot} be used when acceleration is non-uniform
+(when non-constant forces act on an object):
+\begin{itemize}
+\item Aerodynamic forces
+  \begin{itemize}
+  \item Lift and drag forces
+  \item proportional to $v^2$
+  \end{itemize}
+\item Spring force
+  \begin{itemize}
+  \item The force that a compressed/stretched spring applies to connected
+    objects
+  \item Proportional to spring displacement $\mathbf x$
+  \end{itemize}
+\item Dampers in springs
+  \begin{itemize}
+  \item Dampers are used to slow down the vibration of an object
+  \item Generally proportional to $v$
+  \end{itemize}
+\end{itemize}  
+%We will discuss more about forces later in this unit.
+
+
+
+
+%\section{Relative Motion}
+%  \begin{center}
+%    \vspace{-.15in}
+%    \pic{.65}{graphics/57}
+%  \end{center}
+%  \begin{itemize}
+%  \item Observers (frames of reference) A and B measures different motion of the
+%    ball because A and B a moving relative to each other
+%  \item The instantaneous velocity of the ball at any time $t$, as measured by
+%    A and B, is related by the instantaneous velocities of A and B relative to
+%    each other
+%  \end{itemize}
+%
+%
+%
+%
+%\section{Relative Motion}
+%  All velocities are measured \emph{relative} to a frame of reference.
+%  Therefore, when expressing relative motion, we can use two subscripts:
+%    
+%  \eq{-.15in}{
+%    \mathbf v_{AB}
+%  }
+%    
+%  \vspace{-.15in}where $A$ represents the object, and $B$ represents the frame
+%  of reference
+%
+%  \vspace{.25in}\textbf{Example:} the velocity of an airplane ($P$) travelling
+%  at \SI{251}{\kilo\metre\per\hour} [N] relative to Earth ($E$) is expressed as:
+%
+%  \eq{-.2in}{
+%    \mathbf v_{PE}=\SI{251}{\kilo\metre\per\hour}\text{ [N]}
+%  }
+%
+%
+%
+%
+%\section{Relative Motion}
+%  \begin{itemize}
+%  \item Different observers make different observations because they (their
+%    frames of reference) are moving relative to each other.
+%  \item In \emph{classical} mechanics, the different velocity measurements are
+%    related by the \textbf{Galilean velocity addition rule}\footnote{This
+%    equation was thought to be so obvious that no one bothered to give it a
+%    name until Einstein showed that it is not valid near the speed of light}:
+%    
+%    \eq{-.1in}{
+%      \boxed{\mathbf v_{AC}=\mathbf v_{AB}+\mathbf v_{BC}}
+%    }
+%
+%    \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
+%    velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
+%    relative to $C$.
+%  \item Can only be used when velocity $v$ is small compared to the speed of
+%    light $c$
+%  \end{itemize}
+%
+%
+%%\section{Relative Motion}
+%%  If we add another reference frame ($D$), the equation becomes:
+%%
+%%  \eq{-.3in}{
+%%    \mathbf v_{AD}=\mathbf v_{AB}+\mathbf v_{BC}+\mathbf v_{CD}
+%%  }
+%%
+%
+%
+%
+%\section{Relative Motion Example: Airplane in Air}
+%  The velocity of the plane relative to the ground (``ground speed'') is
+%  the velocity of the plane relative to the air (``air speed'') plus
+%  the velocity of the air relative to the ground (``wind speed'').  
+%  \begin{center}
+%    \pic{.4}{graphics/Planewind}
+%  \end{center}
+%  The addition of velocities is exactly the same as any vector addition.
+
+%\section{Projectile Motion}
+%  A \textbf{projectile} is an object that is launched with an initial velocity
+%  of $\mathbf v_1$ along a parabolic trajectory and accelerates only due to
+%  gravity.
+%  \begin{columns}[T]
+%    \column{.3\textwidth}
+%    \begin{tikzpicture}[scale=1.6]
+%      \draw[axes] (0,0)--(2,0) node[right]{$x$};
+%      \draw[axes] (0,0)--(0,2) node[above]{$y$};
+%      \draw[dotted,domain=0:2.7,thick] plot (\x, {1.2*\x-.2*\x*\x});
+%      \draw[vectors] (0,0)--(.75,.9) node[above]{$\mathbf v_1$};
+%      \draw[vectors,red] (0,0)--(0,.9) node[midway,left]{$v_y$};
+%      \draw[vectors,blue] (0,0)--(.75,0) node[midway,below]{$v_x$};
+%      \draw[axes] (.5,0) arc (0:52:.5) node[pos=.6,right]{$\theta$};
+%    \end{tikzpicture}
+%
+%    \column{.67\textwidth}
+%    \begin{itemize}
+%    \item $x$-axis: \emph{horizontal}, pointing \emph{forward}
+%    \item $y$-axis: \emph{vertical}, pointing \emph{up}
+%    \item Angle $\theta$ measured \emph{above} the horizontal (i.e.\ $\theta>0$
+%      when thrown upwards; $\theta<0$ then thrown downwards)
+%    \item The origin is usually where the projectile is launched
+%    \end{itemize}
+%  \end{columns}
+%
+%
+%
+%
+%\section{Horizontal Direction}
+%  The initial velocity $\mathbf v_1$ can be decomposed into its $x$ and $y$
+%  components:
+%
+%  \vspace{-.25in}{\large
+%    \begin{align*}
+%      v_x &=v_1\cos\theta \\
+%      v_y &=v_1\sin\theta
+%      \end{align*}
+%  }
+%
+%  There is no horizontal acceleration (i.e.\ $a_x=0$), therefore $v_x$ is
+%  constant. The kinematic equations reduce to a single equation:
+%
+%  \eq{-.1in}{
+%    \Delta x=v_x\Delta t=\left[v_0\cos\theta\right]\Delta t
+%  }
+%
+%  \vspace{-.1in}where $\Delta x$ is the horizontal displacement.
+%
+%
+%
+%
+%
+%\section{Vertical Direction}
+%  There is constant vertical acceleration due to gravity alone, i.e.\
+%  $a_y=-g$. ($a_y$ is \emph{negative} due to the way we defined the
+%  coordinate system, with the $y$-axis pointing up.) The most important
+%  kinetic equation is this one:
+%
+%  \eq{-.1in}{
+%    \Delta y = \left[v_1\sin\theta\right]\Delta t-\frac12g\Delta t^2
+%  }
+%
+%  These two kinematic equations may also be useful:
+%
+%  \vspace{-.25in}{\large
+%    \begin{align*}
+%      v_y &= \left[v_1\sin\theta\right] -gt\\
+%      v_y^2&=\left[v_1^2\sin^2\theta\right]-2g\Delta y
+%    \end{align*}
+%  }
+%
+%
+%
+%
+%\section{Solving Projectile Motion Problems}
+%  Horizontal and vertical motions are linearly independent, but variables are
+%  shared in both directions:
+%  \begin{itemize}
+%  \item Time interval $\Delta t$
+%  \item Launch angle $\theta$ (above the horizontal)
+%  \item Initial speed $v_1$
+%  \end{itemize}
+%  
+%  \vspace{.25in}When solving any projectile motion problems
+%  \begin{itemize}
+%  \item \emph{Two} equations with \emph{two} unknowns
+%  \item If an object lands on an incline, there will be a third equation
+%    relating $x$ and $y$
+%  \end{itemize}
+%
+%
+%
+%
+%\section{Symmetric Trajectory}
+%  A projectile's trajectory is \emph{symmetric} if the object lands at the same
+%  height as when it launched. The angle $\theta$ is measured above the
+%  horizontal. The \textbf{time of flight} ($T$), \textbf{range} ($R$)
+%  and \textbf{maximum height} ($H$) are, respectively,
+%
+%  \eq{-.1in}{
+%    \boxed{T=\frac{2v_1\sin\theta}g}\quad\quad
+%    \boxed{R=\frac{v_1^2\sin(2\theta)}g}\quad\quad
+%    \boxed{H=\frac{v_1^2\sin^2\theta}{2g}}
+%  }
+%
+%
+%
+%
+%\section{Maximum Range}
+%  \eq{-.1in}{
+%    R=\frac{v_1^2\sin(2\theta)}g
+%  }
+%  
+%  \begin{itemize}
+%  \item Maximum range occurs at $\theta=\ang{45}$
+%  \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
+%    given by:
+%    
+%    \eq{-.1in}{
+%      \theta_1=\frac12\sin^{-1}\left(\frac{Rg}{v_1^2}\right)
+%    }
+%
+%  \item But there is another angle that \emph{gives the same range}!
+%
+%    \eq{-.1in}{
+%      \theta_2=\ang{90}-\theta_1
+%    }
+%  \end{itemize}
+%
+%%
+%%
+%%\section{Projectile Motion}
+%%  \begin{itemize}
+%%  \item For projectile motion problems, resolve the problem into horizontal
+%%    ($x$) and vertical ($y$) directions, and apply kinematic equations
+%%    independently
+%%  \item No horizontal acceleration ($a_x=0$), therefore kinematic equations
+%%    reduce to a single equation:
+%%    
+%%    \eq{-.3in}{\Delta x=v_x\Delta t}
+%%  \item Acceleration due to gravity only in the vertical ($y$) direction:
+%%    
+%%    \eq{-.25in}{\mathbf a_y=\mathbf g=\magdir{\SI{9.81}{\metre\per\second^2}}{down}}
+%%
+%%    \vspace{-.15in}We \emph{usually} define the (+) direction to be [up], so
+%%    $a_y=-g=\SI{-9.81}{\metre\per\second^2}$ %, but it can change depending on
+%%    %the problem
+%%  \end{itemize}
+%%
+%%
+%%
+%%\section{Solving Projectile Motion Problems}
+%%  \begin{itemize}
+%%  \item There are variables the two directions
+%%    \begin{itemize}
+%%    \item Initial speed $v_i$
+%%    \item Angle above the horizontal $\theta$ (appears in the initial velocities
+%%      in both horizontal and vertical directions)
+%%    \item Time of motion $\Delta t$
+%%    \end{itemize}
+%%  \item Have two equations with two unknowns
+%%  \item In more difficult problems, $\Delta y$ and $\Delta x$ can be related
+%%    geometrically, (so $3$ equations with $3$ unknowns)
+%%  \end{itemize}
+%%
+%%
+%%
+%%
+\begin{example}
+  While hiking in the wilderness, you come to a cliff
+  overlooking a river. A topographical map shows that the cliff is
+  \SI{291}{\metre} high and the river is \SI{68.5}{\metre} wide at that
+  point. You throw a rock directly forward from the top of the cliff, giving
+  the rock a horizontal velocity of \SI{12.8}{\metre\per\second}.
+  \begin{enumerate}
+  \item Did the rock make it across the river?
+  \item With what velocity did the rock hit the ground or water?
+  \end{enumerate}
+  
+  \begin{center}
+    \pic{.5}{kinematics/graphics/cliff}
+  \end{center}
+\end{example}
+
+
+
+\begin{example}
+  A golfer hits the golf ball off the tee, giving it an
+  initial velocity of \SI{32.6}{\metre\per\second} at an angle of \ang{65} with
+  the horizontal. The green where the golf ball lands is \SI{6.30}{\metre}
+  higher than the tee, as shown in the illustration. Find the time interval
+  when the golf ball was in the air, and the distance to the green.
+  \begin{center}
+    \pic{.5}{kinematics/graphics/golfer}
+  \end{center}
+\end{example}
+
+
+
+\begin{example}
+  You are playing tennis with a friend on tennis courts
+  that are surrounded by a \SI{4.8}{\metre} fence. You opponent hits the ball
+  over the fence and you offer to retrieve it. You find the ball at a distance
+  of \SI{12.4}{\metre} on the other side of the fence. You throw the ball at an
+  angle of \ang{55.} with the horizontal, giving it an initial velocity of
+  \SI{12.1}{\metre\per\second}. The ball is \SI{1.05}{\metre} above the ground
+  when you release it. Did the ball go over the fence, hit the fence, or hit
+  the ground before it reached the fence?
+\end{example}
+
+
+
+%\section{Symmetric Trajectory}
+%  Trajectory is \emph{symmetric} if the object lands at the same height as
+%  when it started.
+%  \begin{itemize}
+%  \item Time of flight
+%    \eq{-.1in}{t_\text{max}=\frac{2v_i\sin\theta} g}
+%  \item Range
+%    \eq{-.1in}{R=\frac{v_i^2\sin(2\theta)} g}
+%  \item Maximum height
+%    \eq{-.1in}{h_\text{max}=\frac{v_i^2\sin^2\theta}{2g}}
+%  \end{itemize}
+%  The angle $\theta$ is the \textbf{above the the horizontal}
+
+
+
+\begin{example}
+  A player kicks a football for the opening kickoff. He
+  gives the ball an initial velocity of \SI{29}{m/s} at an angle of \ang{69}
+  with the horizontal. Neglecting friction, determine the ball's maximum height,
+  hang time and range?
+\end{example}

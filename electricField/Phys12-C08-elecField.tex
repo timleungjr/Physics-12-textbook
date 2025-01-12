@@ -1,0 +1,338 @@
+\chapter{Electric Field}
+
+%\section{The Charges Are: Let's Review Some Basics}
+%  We already know quite a bit about charge particles:
+%  \begin{itemize}
+%  \item The \emph{net charge} of an object means an excess of protons or
+%    electrons.
+%  \item The SI unit for electric charge is a \emph{coulomb} (\si\coulomb),
+%    which is the amount of charges that \SI1{\ampere} of current passes through
+%    a circuit in \SI1{\second} (i.e.\ $\SI1\coulomb=\SI1{\ampere\second}$)
+%  \item Elementary charge $e=\SI{1.602e-19}\coulomb$
+%  \end{itemize}
+%\end{frame}
+
+From the onset, we know that there are two types of charge, which we have
+assigned a positive or negative sign to facility mathematical calculations.
+
+With the development of atomic theory in the beginning of the 20th Century,
+we understand that the positive charge is carried by the proton, while the
+negative the charge is carried by the electron. The ``charge'' used in this
+chapter is the net difference between 
+
+
+We will begin with \textbf{electrostatics}, where charges that are not moving
+(or moving slowly) relative to one another
+
+
+
+\section{Coulomb's Law for Electrostatic Force}
+
+Electric charges exert an \textbf{electrostatic force}\footnote{Also known as
+the \textbf{electric force}, or the \textbf{coulomb force}. It is a
+fundamental force; and also a conservative force.} $\vec F_q$ on each other.
+The direction of the force is based on the \emph{sign} of the charges:
+\begin{itemize}
+\item Like charges \emph{repel} (positive \& positive; negative \& negative)
+\item Opposite charges \emph{attract} (positive \& negative)
+\end{itemize}
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.5\linewidth}
+    \begin{tikzpicture}[scale=.5]
+      \draw[vectors] (0,0)--(2.8,0) node[right]{$F_q$};
+      \draw[vectors] (8,0)--(5.2,0) node[left]{$F_q$};
+      \draw[poscharge] circle (.4) node[white]{$+$};
+      \draw[negcharge] (8,0) circle (.4) node[white]{$-$};
+    \end{tikzpicture}
+  \end{subfigure}
+
+  \begin{subfigure}{.5\linewidth}
+    \begin{tikzpicture}[scale=.5]
+      \draw[vectors] (0,0)--(-3,0) node[left]{$F_q$};
+      \draw[vectors] (8,0)--(11,0) node[right]{$F_q$};
+      \draw[poscharge] circle (.4) node[white]{$+$};
+      \draw[poscharge] (8,0) circle (.4) node[white]{$+$};
+    \end{tikzpicture}
+  \end{subfigure}
+    
+  \begin{subfigure}{.5\linewidth}
+    \begin{tikzpicture}[scale=.5]
+      \draw[vectors] (0,0)--(-3,0) node[left]{$F_q$};
+      \draw[vectors] (8,0)--(11,0) node[right]{$F_q$};
+      \draw[negcharge] circle (.4) node[white]{$-$};
+      \draw[negcharge] (8,0) circle (.4) node[white]{$-$};
+    \end{tikzpicture}
+  \end{subfigure}
+\end{figure}
+
+
+\begin{center}
+  \begin{tikzpicture}[scale=.5]
+    \draw[vectors] (0,0)--(3,0) node[right]{$F_q$};
+    \draw[vectors] (10,0)--(7,0) node[left]{$F_q$};
+    \draw[poscharge] circle (.3) node[white]{$+$} node[above=3]{$q_1$};
+    \draw[negcharge] (10,0) circle (.3) node[white]{$-$} node[above=3]{$q_2$};
+  \end{tikzpicture}
+\end{center}
+The magnitude of the electrostatic force between two \emph{point charges} is
+given by \textbf{Coulomb's law}:
+\begin{equation}
+  \boxed{
+    F_q=\frac{k\left|q_1q_2\right|}{r^2}
+  }
+\end{equation}
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%    \rowcolor{pink}
+%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%    Magnitude of electrostatic force & $F_q$ &  \si{\newton} \\
+%    Coulomb's constant (electrostatic constant) & $k$ & \si{N.m^2/C^2} \\
+%    Point charges 1 and 2 & $q_1$, $q_2$ & \si\coulomb \\
+%    Distance between point charges & $r$ & \si\metre
+%  \end{tabular}
+%\end{center}
+where $k=\SI{8.99e9}{N.m^2/C^2}$ is called \textbf{Coulomb's constant}.
+Coulomb's law is very similar in form to the law of universal gravitation
+(Eq.~\ref{eq:law-of-gravity}). The major difference is that whereas masses are
+\emph{always} positive, and the gravitational force is \emph{always} attractive,
+charges can be either positive or negative, and therefore the electrostatic
+force may be attractive or repulsive. Nevetheless, much of the analysis used
+
+
+
+
+%\section{Comparing $\bm F_g$ to $\bm F_q$}
+
+%    \centering
+%    Electrostatic force (point charge):
+%
+%    \eq{-.2in}{
+%      \boxed{F_q=\frac{k|q_1q_2|}{r^2}}
+%    }
+%    
+%    \centering
+%    Gravitational force (point mass):
+%
+%    \eq{-.2in}{
+%      \boxed{F_g=\frac{Gm_1m_2}{r^2}}
+%    }
+%  
+%  \vspace{.15in}Similarities:
+%  \begin{itemize}
+%  \item Both inversely proportional to $r^2$ (inverse square law)
+%  \item Both are scaled by a constant
+%  \end{itemize}
+%  Differences:
+%  \begin{itemize}
+%  \item For gravity there are only positive masses (only attraction)
+%  \item Electric charge can be either positive or negative (charges can
+%    attract or repel)
+%  \end{itemize}
+
+
+
+\section{Electric Field}
+We can define the \textbf{electric field} by repeating the same procedure as
+with gravitational field. Grouping the variables in Coulomb's law:
+\begin{equation}
+  F_q=\underbracket[1pt]{\left[\frac{k|q_1|}{r^2}\right]}_{E}q_2
+\end{equation}
+A source charge $q_s$ creates an ``electric field'' ($E$) with a magnitude of
+%\footnote{i.e.\ also known as the \emph{strength} or \emph{intensity}
+%of the field}
+\begin{equation}
+  E(q_s,r)=\frac{k|q_s|}{r^2}
+  \label{eq:point-charge-electric-field}
+\end{equation}
+where $r$ is the distance from the point charge.
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Electric field strength & $E$ & \si{\newton\per\coulomb} \\
+%      Coulomb's constant & $k$ & \si{N.m^2/C^2} \\
+%      Source charge & $q_s$ & \si\coulomb \\
+%      Distance from source charge & $r$ & \si\metre
+%  \end{tabular}
+%\end{center}
+Similar to gravitational field, electric field $\bm E$ created by $q_s$ is
+a function that shows how it influences other charged particles around it. The
+direction of the field is radially outward from a positive point charge and
+radially inward towards a negative charge.
+\begin{remark}
+  For those who have a strong background in vectors, we can directly express
+  the electric field from a point charge in vector form, just as we did with
+  gravity:
+  \begin{equation*}
+    \boxed{
+      \bm E(q_s,\bm r)=\frac{kq_s}{|\bm r|^2}\hat{\bm r}
+    }
+  \end{equation*}
+  where $\hat{\bm r}$ is the \emph{outward radial direction}. If the
+  source charge $q_s$ is positive, the direction of the electric field points
+  away from the charge, (in the $\hat{\bm r}$ direction with a magnitude
+  speicified in Eq.~\ref{eq:point-charge-electric-field}). Conversely, if $q_s$
+  is negative, the direction of the electric field is towards the charge.
+\end{remark}
+
+%The magnitude of the electric field
+%charge is a function of the source charge $q_s$ and
+%%inversely proportional for the square of the
+%the distance $r$ from the charge:
+%
+%  \eq{-.1in}{
+%    \boxed{E(q_s,r)=\frac{k|q_s|}{r^2}}
+%  }
+
+
+%  \centering
+%  \begin{tikzpicture}
+%    \shade[poscharge] circle (.25) node[midway,white]{$Q$};
+%    \begin{scope}[vectors,blue]
+%      \foreach \theta in {0,45,...,359} \draw[rotate=\theta] (.5,0)--+(1.2,0);
+%      \foreach \theta in {0,30,...,359} \draw[rotate=\theta] (2.3,0)--+(.5,0);
+%    \end{scope}
+%    \node[left,blue] at (2.3,0) {$\bm E$};
+%    \node[text width=153, draw=blue, fill=cyan!5, text=blue] at (0,3.5) {
+%      \scriptsize Positive charge $Q$ generates an electric field with a
+%      magnitude of
+%
+%      \vspace{-.07in}
+%      \begin{displaymath}
+%        E=\frac{kQ}{r^2}
+%      \end{displaymath}
+%      The direction of $\bm E$ is \emph{away from} the charge.\par
+%    };
+%
+%    \uncover<3->{
+%      \begin{scope}[violet,rotate=30]
+%        \draw[vectors] (-1.2,0)--+(-1.5,0) node[above=0]{$\bm F_q$};
+%        \draw[thick,fill=orange!5] (-1.2,0) circle (.18) node{$q$};
+%      \end{scope}
+%      \node[
+%        text width=190,
+%        draw=violet,
+%        fill=violet!5,
+%        text=violet] at (0,-2.7){\scriptsize Positive charge $q$ is inside the
+%        electric field generated by {\color{blue}$Q$}, therefore it
+%        experiences an electric force:
+%        
+%        \vspace{-.08in}
+%        \begin{displaymath}
+%          \bm F_q=q{\color{blue} \bm E}
+%        \end{displaymath}
+%        in the same direction as {\color{blue}$\bm E$}. The force is
+%        repulsive.\par
+%      };
+%    }
+%  \end{tikzpicture}
+%  \hspace{.3in}
+%  \begin{tikzpicture}
+%    \uncover<2->{
+%      \shade[negcharge] circle (.3) node[midway,white]{$-Q$};
+%      \begin{scope}[vectors,magenta]
+%        \foreach \x in {0,45,...,359} \draw[rotate=\x] (1.5,0)--+(-1,0);
+%        \foreach \x in {0,30,...,359} \draw[rotate=\x] (2.8,0)--+(-.4,0);
+%      \end{scope}
+%      \node[right,magenta] at (1.5,0) {$\bm E$};
+%      \node[text width=144, draw=magenta, fill=magenta!5, text=magenta]
+%      at (0,3.5) {\scriptsize Negative charge $-Q$ generates an electric field
+%        with a magnitude of
+%
+%        \vspace{-.07in}
+%        \begin{displaymath}
+%          E=\frac{k|-Q|}{r^2}=\frac{kQ}{r^2}
+%        \end{displaymath}
+%        The direction of $\bm E$ is \emph{towards} the charge.\par
+%      };
+%    }
+%    \uncover<4->{
+%      \begin{scope}[orange,rotate=15]
+%        \draw[vectors] (-2.5,0)--+(1.2,0) node[right=0]{$\bm F_q$};
+%        \draw[thick,fill=orange!5] (-2.5,0) circle (.18) node{$q$};
+%      \end{scope}
+%      \node[
+%        text width=190,
+%        draw=orange,
+%        fill=orange!5,
+%        text=orange] at (0,-2.7){\scriptsize Positive charge $q$ is inside the
+%        electric field generated by {\color{magenta}$-Q$}, therefore it
+%        experiences an electric force:
+%        
+%        \vspace{-.08in}
+%        \begin{displaymath}
+%          \bm F_q=q{\color{magenta}\bm E}
+%        \end{displaymath}
+%        in the same direction as {\color{magenta}$\bm E$}. The force is
+%        attractive.\par
+%      };
+%    }
+%  \end{tikzpicture}
+
+When another charge $q$ enters the electric field $\bm E$, the field exerts
+an electrostatic force $\bm F_q$ on the charge. The equation is similar to
+the law of gravitation:
+%  $\bm E$ \emph{doesn't do anything} until another charge interacts with it.
+%  And when there is a charge $q$, the electrostatic force $\bm F_q$ that it
+%  experiences in the presence of $\bm E$ is:
+\begin{equation}
+  \boxed{
+    \bm F_q=q\bm E
+  }
+\end{equation}
+If $q>0$ (a positive charge), $\bm F_q$ is in the \emph{same} direction as
+$\bm E$; if $q<0$ (a negative charge), $\bm F_q$ is in the
+\emph{opposite} direction as $\bm E$.
+
+
+%\section{Electric Field from Multiple Charges}
+When there are multiple charges, then the total electric field at any
+location is the vector sum of all the electric field from each source
+charge, i.e.:
+\begin{equation}
+  \bm E=\bm E_1+\bm E_2+\bm E_3+\bm E_4+\cdots=\sum_i \bm E_i
+\end{equation}
+Once the total electric field is known, we can use the equation
+\begin{equation*}
+  \bm F_q=q\bm E
+\end{equation*}
+without knowing \emph{what} created $\bm E$
+
+
+
+%\section{Electric Field Lines}
+%  If you place a positive charge in an electric field, the force on the charge
+%  will be in the direction of the electric field.
+%  
+%    \pic{.95}{graphics/pos_charge}\\
+%    \pic{.95}{graphics/neg_charge}
+%
+%    \pic{.95}{graphics/2charges}
+
+%\begin{example}
+%  What is the electric field strength at a point \SI{30}{\centi\metre} from the
+%  centre of a small sphere that has a positive charge of
+%  \SI{2.0}{\nano\coulomb}?
+%\end{example}
+
+\begin{example}
+  Three point charges, $q_A=\SI{6.0}{\micro\coulomb}$,
+  $q_B=\SI{-5.0}{\micro\coulomb}$, and $q_C=\SI{6.0}{\micro\coulomb}$, are
+  located at the corners of a square with sides $L=\SI{5.0}{\centi\metre}$ long.
+  What is the electric field at $D$?%Remember that electric field is a vector.
+  \begin{center}
+    \vspace{-.2in}
+    \begin{tikzpicture}%[scale=1.4]
+      \draw[axes] (2,2)--(3,2) node[right]{$x$};
+      \draw[axes] (2,2)--(2,3) node[above]{$y$};
+      \draw rectangle (2,2);
+      \shade[poscharge] circle (.1) node[below left] {$B$};
+      \shade[poscharge] (2,0) circle (.1) node[below right]{$C$};
+      \shade[poscharge] (0,2) circle (.1) node[above left] {$A$};
+      \fill (2,2) circle (.045) node[above right,black]{$D$};
+      \node[above] at (1,2) {$L$};
+    \end{tikzpicture}
+  \end{center}
+  \textbf{Solution:}
+\end{example}

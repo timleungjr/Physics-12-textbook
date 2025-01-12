@@ -1,0 +1,400 @@
+\documentclass[11pt,titlepage,twoside]{article}
+%\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[letterpaper,
+  showcrop,
+  margin=.5in,
+  layoutsize={5.5in,8.5in},
+  layoutoffset={1.5in,1.25in}]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{xcolor,colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{siunitx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\captionsetup{
+  width=.8\linewidth, % width of caption is 90% of current textwidth
+  labelfont=bf,        % the label, e.g. figure 12, is bold
+  font=footnotesize,   % the whole caption text (label + content) is small
+  format=hang,         % no caption text under the label
+}
+%\captionsetup[subfigure]{
+%  format=plain,   % but allowed in subfigure to save space
+%}
+
+\sisetup{
+  inter-unit-product=\cdot,
+  per-mode=symbol
+}
+
+\tikzset{
+  >=latex
+}
+\tikzstyle{every node}=[font=\footnotesize]
+\tikzstyle{axes}=[thick,->]
+\tikzstyle{vectors}=[ultra thick,->]
+\tikzstyle{mass}=[thick,fill=cyan!35]
+\tikzstyle{function}=[very thick,red!80!black]
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\newcommand{\pic}[2]{ \includegraphics[width=#1\textwidth]{#2} }
+\newcommand{\xxx}{\hat x}
+\newcommand{\yyy}{\hat y}
+%\newcommand{\zzz}{\hat z}
+
+
+%\newtcolorbox{exercise}[1][]{
+%  enhanced,
+%  skin=enhancedlast jigsaw,
+%  attach boxed title to top left={xshift=-4mm,yshift=-0.5mm},
+%  fonttitle=\bfseries\sffamily,
+%  colbacktitle=blue!50,
+%  colframe=blue!60!gray,
+%  interior style={
+%    top color=blue!10,
+%    bottom color=red!10
+%  },
+%  boxed title style={
+%    empty,
+%    arc=0pt,
+%    outer arc=0pt,
+%    boxrule=0pt
+%  },
+%  underlay boxed title={
+%    \fill[blue!60!gray] 
+%      (title.north west) -- 
+%      (title.north east) -- 
+%      +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm) -- 
+%      ([xshift=4mm,yshift=0.5mm]frame.north east) -- 
+%      +(0mm,-1mm) -- 
+%      (title.south west) -- cycle;
+%    \fill[blue!45!white!50!black] 
+%      ([yshift=-0.5mm]frame.north west) -- 
+%      +(-0.4,0) -- 
+%      +(0,-0.3) -- cycle;
+%    \fill[blue!45!white!50!black] 
+%      ([yshift=-0.5mm]frame.north east) -- 
+%      +(0,-0.3) -- 
+%      +(0.4,0) -- cycle; 
+%  },
+%  title={Exercise},
+%  #1
+%}
+
+
+
+\title{Projectile Motion\\(Physics 11, 12 and AP Physics 1)}
+\author{Timothy Leung}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\cleardoublepage
+
+\section*{Preface}
+Projectile motion is a topic that is covered in Physics 11 (SPH3U), Physics
+12 (SPH4U), AP Physics 1, as well as AP Physics C. The problems in AP Physics C
+are generally more difficult, although conceptually there is nothing that is
+more advanced than in the lower level courses.
+\cleardoublepage
+
+\section{Projectile Motion}
+A \textbf{projectile} is an object that is launched through the air\footnote{Or
+more accurately, in a \emph{vacuum}!} along a parabolic trajectory and
+accelerates only due to gravity. When solving projectile motion problems, we
+usually define the axes in a way that is consistent with Cartesian coordinate
+system, as shown in Figure~\ref{fig:projectile}, where:
+\begin{itemize}[nosep]
+\item $x$-axis is the \emph{horizontal} direction, with the positive direction
+  pointing \emph{forward}
+\item $y$-axis is the \emph{vertical} direction, with the positive direction
+  pointing \emph{up}
+\item the origin of the coordinate system is located at the point where the
+  projectile is launched
+\end{itemize}
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.5]
+    \draw[axes] (0,0)--(2,0) node[right]{$x$};
+    \draw[axes] (0,0)--(0,2) node[above]{$y$};
+    \draw[axes] (.5,0) arc (0:52:.5) node[midway,right]{$\theta$};
+    \draw[dotted,domain=0:4.5,thick] plot(\x,{1.2*\x-.2*\x*\x});
+    \draw[vectors] (0,0)--(.75,.9) node[above]{$\mathbf V_0$};
+    \draw[vectors,red] (0,0)--(0,.9) node[midway,left]{$\mathbf v_0$};
+    \draw[vectors,blue] (0,0)--(.75,0) node[midway,below]{$\mathbf u_0$};
+  \end{tikzpicture}
+  \caption{Schematic diagram of a projectile motion.}
+  \label{fig:projectile}
+\end{figure}
+The initial velocity $\mathbf V_0$ has both horizontal and vertical components,
+$\mathbf u_0$ and $\mathbf v_0$, i.e. we can express the projectile's initial
+velocity in component form:
+\begin{equation}
+  V_0=
+  \underbrace{[V_0\cos(\theta)]\xxx}_{\mathbf u_0} +
+  \underbrace{[V_0\sin(\theta)]\yyy}_{\mathbf v_0}
+\end{equation}
+where $V_0=|\mathbf V_0|$ is the magnitude of the initial velocity, $\xxx$
+and $\yyy$ are unit vectors representing the directions of the $x$ and $y$
+axes, and $\theta$ is an angle measured \emph{above} the horizontal. (This means
+that $\theta>0$ if the projectile is launched above the horizontal, and
+$\theta<0$ if it is launched below the horizontal.)
+
+In the \textbf{horizontal} ($x$) direction, there is no acceleration (i.e.\
+$a_x=0$), therefore the horizontal velocity component $u$ is constant
+throughout the trajectory, i.e.\ $u=u_0$. Kinematic equations reduce to a
+single equation. If the projectile is launched at $t=0$, its position as a
+function of time is given by:
+\begin{equation}
+  x=u_0t=V_0\cos(\theta) t
+  \label{horizontal}
+\end{equation}
+%where $\Delta x$ is the final horizontal displacement when motion stops,
+%$v_i$ is the initial speed (magnitude of the initial velocity),
+%$v_x=v_i\cos\theta$ is therefore the horizontal component of the
+%initial velocity (which is constant), and $\Delta t$ is the time of motion.
+
+In the \textbf{vertical} ($y$) direction, there is a constant acceleration due
+to gravity (i.e.\ $a_y=-g=\SI{-9.81}{\metre\per\second\squared}$). Note that
+acceleration is \emph{negative} because the convention is to point the positive
+axis upwards. The kinematic equations now take the form:
+\begin{align}
+  y &= v_0t - \frac12 gt^2
+  = V_0\sin(\theta) t - \frac12 gt^2\label{vertical}\\
+  v &= V_0\sin(\theta) -gt\\
+  v^2 &= V_0^2\sin^2(\theta)-2gy\label{height}
+\end{align}
+%where $v_{1y}=v_i\sin\theta$ is the initial vertical component of velocity
+%(positive if $\theta$ above horizontal, and negative if $\theta$ is below), and
+%$\Delta y$ is the final vertical displacement (positive if the object lands
+%higher, then $\Delta y > 0$, if it lands lower, then $\Delta y<0$.)
+%and $v_ In the equations above, we usethe acceleration in the $y$
+%direction to be $a_y=-g=\SI{-9.81}{\metre\per\second}$. The acceleration is
+%\emph{negative} since we usually define the positive direction to be \emph{up}.
+
+Horizontal and vertical motions are independent of each other, but there are
+variables that are shared in both directions (Eqs.~\ref{horizontal} and
+\ref{vertical}), namely:
+\begin{itemize}[nosep]
+\item Time interval $t$
+\item Launch angle $\theta$
+\item Initial speed $V_0$
+\item Horizontal distance $x$
+\item Vertical distance $y$
+\end{itemize}
+When solving any projectile motion problems, there will be likely \emph{two}
+equations with \emph{two} unknowns that you need to solve for. It is almost
+certain that $t$ will be one of them. For more complicated problems,
+where an object lands on a ramp, there will be a third relationship between
+the horizontal displacement $x$ with vertical displacement $y$.
+
+
+
+\section{Symmetric Trajectory}
+
+A \textbf{symmetric trajectory} is a special case where an object is launched
+at an angle of $\theta$ (between $\ang{0}$ and $\ang{90}$) above
+horizontal\footnote{This may be obvious, but any angles \emph{below} the 
+horizontal will never have a symmetric trajectory.} with an initial speed
+$V_0$, and then lands at the same height. Examples may include hitting a golf
+ball towards the hole, or shooting a bullet towards a horizontal
+target\footnote{Shooting a bullet towards a horizontal target always require an
+upward angle because of gravity}. To derive the equations, we use the $x$-axis
+for the horizontal direction and $y$-axis for the vertical.
+
+\subsection{Maximum height $H$}
+To find the maximum height of a symmetric trajectory, we apply the kinematic
+equation in the $y$-direction. Recognizing that at maximum height $H=y$, the
+vertical velocity is zero $v=0$. Substituting this into Eq.~\ref{height}:
+\begin{equation}
+  0 = [V_0\sin(\theta)]^2-2gH
+\end{equation}
+Solving for $H$, we get the maximum height equation:
+\begin{equation}
+  \boxed{H=\frac{V_0^2\sin^2(\theta)}{2g}}
+\end{equation}
+
+\subection{Total time of flight $T$}
+We apply the kinematic equation in the $y$ (vertical) direction. When the
+object lands at the same height at time $T$, its final vertical displacement is
+zero. Substituting $y=0$ into Eq~\ref{vertical}, we get:
+\begin{equation}
+  0=V_0\sin(\theta)T-\frac12gT^2
+\end{equation}
+Solving for $T$, we have:
+\begin{equation}
+  \boxed{T=\frac{2V_0\sin(\theta)}g}
+  \label{tmax}
+\end{equation}
+
+\subsection{Range $R$}
+We substitute the expression for $t_\text{max}$ from Eq.~\ref{tmax} into the
+$\Delta t$ in Eq.~\ref{horizontal}, the range $R=\Delta x$ can be calculated
+for any given launch angle and initial speed:
+\begin{equation*}
+  R =V_0\cos(\theta)
+  \underbrace{\left[\frac{2V_0\sin(\theta)}g\right]}_{T}
+\end{equation*}
+Using the trigonometric identity $\sin(2\theta)=2\sin\theta\cos\theta$, we
+simplify the equation to:
+\begin{equation}
+  \boxed{R=\frac{V_0^2\sin(2\theta)}g}
+\end{equation}
+It is obvious that for any given initial speed $V_0$, the maximum range
+$R_\text{max}$ occurs when $\sin(2\theta)=1$ (i.e.\ $\theta=\ang{45}$), with a
+range of:
+\begin{equation}
+  \boxed{R_\text{max}=\frac{V_0^2}g}
+\end{equation}
+Also, for a known initial speed $V_0$ and range $R$, the launch angle $\theta$
+is given by:
+\begin{equation}
+  \boxed{
+    \theta_1=\frac12\sin^{-1}\left(\frac{gR}{V_0^2}\right)
+  }
+\end{equation}
+This angle is labelled $\theta_1$ because it is \emph{not} the only angle that
+can reach this range. Recall that for any angle $\ang{0}<\phi<\ang{90}$, there
+is also another angle where the $\sin$ are equal:
+\begin{displaymath}
+  \sin\phi_1=\sin(\underbrace{\ang{180}-\phi_1}_{\phi_2})
+\end{displaymath}
+Which means that for any $\theta_1$, there is also another angle $\theta_2$
+where $2\theta_2=\ang{180}-2\theta_1$, or quite simply:
+\begin{equation}
+  \boxed{\theta_2=\ang{90}-\theta_1}
+\end{equation}
+
+\newpage
+
+\section{Solved Problems}%Projectile Motion Additional Practice Problems}}
+
+When solving these practice problems, make sure your answers have the correct
+number of significant figures. Write out the kinematic equations in both the
+$x$ and $y$ directions, and identify the unknowns.
+
+\begin{enumerate}[
+    label=\textbf{Example \arabic*:},
+    itemindent=65pt,
+    leftmargin=0pt]
+%\item A newspaper delivery boy throws a newspaper towards a porch which is
+%  \SI{1.5}{\metre} below the height of his hand and \SI{6.5}{\metre} in front
+%  of him when he releases the paper. Given that he throws the paper with a
+%  velocity of \SI{8.5}{\metre\per\second} at {\ang{30} above horizontal,
+%  and neglecting any air resistance, find:
+%  \begin{enumerate}[nosep]
+%  \item the time it takes for the paper to reach the ground.
+%  \item the acceleration when the paper is only \SI{1.0}{\metre} from the
+%    ground.
+%  \item the horizontal range of the paper. Does it make it to the porch?
+%  \item the speed of the newspaper when it lands.
+%  \end{enumerate}
+% \newpage
+  
+\item A golfer hits the golf ball off the tee, giving it an initial velocity of
+  \SI{32.6}{\metre\per\second} at an angle of \ang{65} with the horizontal. The
+  green where the golf ball lands is \SI{6.30}{\metre} higher than the tee, as
+  shown in the illustration. Find
+  \begin{enumerate}
+  \item the time interval when the golf ball was in the air
+  \item the distance to the green
+  \end{enumerate}
+  \pic1{../graphics/golfer}
+  \newpage
+  
+\item A diver jumps off a \SI{8.75}{\metre} cliff with an initial velocity of
+  \SI{.764}{\metre\per\second} at an angle of \ang{25} below the horizontal.
+  \begin{enumerate}
+  \item How long will it take for the diver to hit the water below?
+  \item Determine the range (horizontal distance) of the diver
+  \end{enumerate}
+  \newpage
+  
+\item A golf ball is hit on a flat fairway at a launch angle of \ang{33} with a
+  speed of \SI{12.1}{\metre\per\second}.
+  \begin{enumerate}
+  \item How long does the golf ball stay in the air?
+  \item How far does the golf ball travel?
+  \end{enumerate}
+  \newpage
+
+\item You are playing tennis with a friend on tennis courts that are surrounded
+  by a \SI{4.8}{\metre} fence. You opponent hits the ball over the fence and
+  you offer to retrieve it. You find the ball at a distance of
+  \SI{12.4}{\metre} on the other side of the fence. You throw the ball at an
+  angle of \ang{55.} with the horizontal, giving it an initial velocity of
+  \SI{12.1}{\metre\per\second}. The ball is \SI{1.05}{\metre} above the ground
+  when you release it. Did the ball go over the fence, hit the fence, or hit
+  the ground before it reached the fence? %(Hint: The initial velocity has both
+  %vertical and horizontal components. Once you have resolved the velocities,
+  %think about which direction you are able to find $\Delta t$.)
+  \newpage
+  
+\item In a boisterous game of ``Monkey in the Middle'', Kathleen and Shannon
+  are tossing a pencil case back and forth over Kevin's head. The girls were
+  \SI{5.}{\metre} apart, and Kevin was \emph{exactly} in the middle. If Kevin
+  was able to reach a height of \SI{3.2}{\metre} with a jump, calculate how far
+  above his reach Kathleen's throw of \SI{8.7}{\metre\per\second} [\ang{65}
+    above horizontal] would be if it left her hand \SI{1.}{\metre} above the
+  ground. If Shannon, jumping, can reach \SI{3.}{\metre}, would she be able to
+  catch the pencil case?
+  \newpage
+  
+\item A kangaroo is capable of jumping vertically to a height of
+  \SI{2.62}{\metre}.
+  \begin{enumerate}
+  \item Determine the takeoff speed of the kangaroo.
+  \item If the kangaroo jumps instead at an angle of \ang{45} with the same
+    initial speed, how far can it jump on level ground?
+  \end{enumerate}
+  \newpage
+  
+\item A projectile is fired into the air from the edge of a \SI{125}{\metre}
+  high cliff at an angle of \ang{30.2} above the horizontal. The projectile
+  hits a target \SI{455}{\metre} away from the base of the cliff. What is the
+  initial speed of the projectile $V$?
+
+  \pic{1}{../graphics/projectile_motion_problems_image1}
+\end{enumerate}
+\newpage
+
+For problems with the object lands on an incline, both $x$ and $y$ are unknown.
+In this case, there is a simple trigonometric relationship between the two
+displacements: $\tan\theta$.
+\begin{enumerate}[
+    label=\textbf{Example \arabic*:},
+    itemindent=65pt,
+    leftmargin=0pt,
+    resume]
+\item A ski jumper launches from a ski jump that is oriented parallel to a
+  hill. The jump has a vertical drop of \SI{50}{\metre} and the coefficient of
+  kinetic friction $\mu$ between the skier and the ramp is negligible. The
+  launch point is \SI{5.0}{\metre} above the hill and there is a small lip at
+  the bottom of the jump so that the skier launches horizontally. Assume that
+  the skier started from rest at the top of the jump.
+  \begin{enumerate}
+  \item How long in seconds is the skier in flight?
+  \item What is the horizontal distance that the skier travels?
+  \end{enumerate}
+
+  \pic{1}{../graphics/1521-small}
+  \newpage
+  
+\item A projectile is launched from point $O$ at an angle of \ang{22} with an
+  initial velocity of \SI{15}{\metre\per\second} up an incline plane that makes
+  an angle of \ang{10} with the horizontal. The projectile hits the incline
+  plane at point $M$.
+  \begin{enumerate}[nosep]
+  \item Find the time it takes for the projectile to hit the incline plane.
+  \item Find the distance $OM$.
+  \end{enumerate}
+  \begin{center}
+    \pic{.5}{../graphics/incline}
+  \end{center}
+\end{document}

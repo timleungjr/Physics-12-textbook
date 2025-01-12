@@ -1,0 +1,294 @@
+\documentclass[12pt]{../ossphysics}
+
+\begin{document}
+\setheader{Physics 11 Class 1 Homework}
+\hwtitle{11}{1}{Motion Quantities}
+\begin{center}
+  \fcolorbox{black}{yellow!10}{
+    \begin{minipage}{.98\linewidth}
+      For \emph{vector} quantities (position, displacement, velocity,
+      acceleration), you must answer with both \emph{magnitude} and
+      \emph{direction}. For 1D problems, you may answer using $+$/$-$
+      directions, but you must indicate the positive direction. Scalar
+      quantities (speed, distance, time) do not have a direction. Write neatly.
+      Put a box around your answers. Answer with the appropriate number of
+      significant figures.
+    \end{minipage}
+  }
+\end{center}
+\begin{questions}
+  \question State the number of significant figures. If there are infinite
+  number of sig.\ figs., write ``$\infty$''; if there is not enough
+  information to tell, write an ``X''. %\textbf{Read the additional slides
+  %on significant figures first.}
+  The numbers in \textbf{BOLD FACE} %highlighted in
+  %\textcolor{red}{red}
+  are to be treated as integers. Pay attention to units; they may give you
+  clues about how to treat the numbers.
+  
+  \vspace{.15in}
+  \begin{minipage}{.32\textwidth}
+    \begin{enumerate}[
+        itemsep=20pt,
+        label={(\alph*) \underline{\hspace{.6in}}},
+        leftmargin=70pt]
+    \item\SI{4206}{\kilo\metre}
+    \item\SI{2.998e8}{\metre\per\second}
+    \item$\dfrac\pi{\mathbf 2}$
+    %\item\SI{5.00}{\second}
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{.32\textwidth}
+    \begin{enumerate}[itemsep=20pt,label={(\alph*) \underline{\hspace{.6in}}},
+        leftmargin=70pt,start=5]
+    \item$\sqrt{\mathbf 2}$
+    %\item\SI{1000}{lumens}
+    \item$e^{\mathbf 4}$
+    \item\SI{21}{cars}
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{.32\textwidth}
+    \begin{enumerate}[itemsep=20pt,label={(\alph*) \underline{\hspace{.6in}}},
+        leftmargin=70pt,start=9]
+    %\item\SI{9.30e-6}\joule
+    \item\SI{.0050010}\tesla
+    \item\SI{-273.15}\celsius
+    \item\SI{3600}\newton
+    \end{enumerate}
+  \end{minipage}
+  \vspace{.15in}
+
+  \question Express the following arithmetic operations with the correct number
+  of significant figures and units:
+  
+  \vspace{.15in}\begin{minipage}{.45\textwidth}
+    \begin{enumerate}[itemsep=20pt,label={(\alph*)}]
+    \item $\SI{4.13}{\metre\per\second}\times\SI{6.2}\second=$
+    \item $\SI{8.9921}\metre-\SI{2.63}\metre=$
+    \item $\SI{26.195}{\metre\per\second\squared}\times\SI{89}{\second}=$
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{.45\textwidth}
+    \begin{enumerate}[itemsep=20pt,start=4,label={(\alph*)}]
+    \item $\SI{6.4}\metre\times\SI{3.62}\metre=$
+    \item $\SI{1.419934}\metre\div\SI{62}{\metre\per\second}=$
+    \item $\SI{1.897}\ohm+\SI{.2119}\ohm=$
+    \end{enumerate}
+  \end{minipage}
+  \vspace{.15in}
+  
+  \question Convert the following quantities into different common units.
+  Answer with the appropriate number of significant figures. (i.e.\ the number
+  of sig.\ figs.\ after the conversion is the same as what is given to
+  you.) Conversion factors from imperial to SI units are \emph{exact}.
+  \begin{enumerate}[itemsep=20pt,label={(\alph*)}]
+  \item $\SI{90}{km/h}=\underline{\hspace{1in}}\;\si{\metre\per\second}$
+  \item $\SI{30.0}{\metre\per\second}=\underline{\hspace{1in}}\;\si{km/h}$
+  \item $\SI{24.0}\hour=\underline{\hspace{1in}}\;\si\second$
+  \item $\SI{16}{ft}=\underline{\hspace{1in}}\;\si\metre$
+    ($\SI1{ft}=\SI{12}{in}$, $\SI1{in}=\SI{0.0254}\metre$)
+  \item $\SI{7.3e9}\joule=\underline{\hspace{1in}}\;\si{\kilo\watt\hour}$
+    ($\SI1{\kilo\watt\hour}=\SI{3.6e6}\joule$)
+  %\item $\SI{6.5}{\kilo\watt\hour}=\underline{\hspace{1in}}\;\si{J}$
+  \end{enumerate}
+  \newpage
+
+  \question The Earth is approximately a sphere of radius \SI{6.37e6}\metre.
+  \begin{parts}
+    \part What is its circumference in metres?
+    \vspace{\stretch1}
+    
+    \part What is its surface area in square metres?
+    \vspace{\stretch1}
+
+    \part What is its volume in cubic metres?
+    \vspace{\stretch1}
+  \end{parts}
+  
+  \question One US gallon of paint ($\SI1{gal}=\SI{3.78e-3}{\metre\cubed}$)
+  covers an area of \SI{25.0}{\metre\squared}. What is the thickness of the
+  paint on the wall?
+  \vspace{\stretch1}
+  
+  \question Calculate the number of kilometres in \SI{20.0}{mi} using
+  \emph{only} the following conversion factors:\\ $\SI1{mi}=\SI{5280}{ft}$,
+  $\SI1{ft}=\SI{12}{in}$, $\SI1{in}=\SI{2.54}{\centi\metre}$,
+  $\SI1\metre=\SI{100}{\centi\metre}$, and $\SI1{\kilo\metre}=\SI{1000}\metre$.
+  \vspace{\stretch{1.5}}
+
+  \question How many grams of copper are required to make a \emph{hollow}
+  spherical shell with an inner radius of $r_i=\SI{5.70}{\centi\metre}$ and an
+  outer radius of $r_o=\SI{5.75}{\centi\metre}$? The density of copper is
+  $\rho=\SI{8.93}{\gram\per\centi\metre\cubed}$. (Mass and volume are related
+  by $m=\rho V$.)
+  \vspace{\stretch3}
+  \newpage
+  
+  \question A rock is thrown straight upward from the edge of a 30 m cliff,
+  rising 10 m then falling all the way down to the base of the cliff.
+  \begin{parts}
+    \part What is the \emph{distance} that the rock travelled?
+    \vspace{\stretch1}
+    
+    \part What is it \emph{displacement} after it hits the base of the cliff?
+    \vspace{\stretch1}
+  \end{parts}
+  
+  \question A student athlete runs around a \SI{400}{\metre} track and
+  completes it in \SI{53}\second. Find her average speed and velocity:
+  \vspace{\stretch{1.5}}
+  
+  \question A stalled car starts to roll backwards down a hill. At the instant
+  that it has a velocity of \SI{4.0}{\metre\per\second} down the hill, the
+  driver is able to start the car and start accelerating backup. After
+  accelerating for \SI{3.0}\second, the car is travelling uphill at
+  \SI{3.5}{\metre\per\second}. Determine the car's average acceleration once
+  the driver got it started.
+  \vspace{\stretch1}
+
+  %\question Is it possible to have an average velocity of zero for some motion
+  %but an average speed of 120 km/h for that same motion? Provide a quantitative
+  %example.
+  
+  \question A basketball player gains the ball at centre court. He then
+  dribbles down to the opponents' basket and scores \SI{6.0}{\second} later.
+  After scoring, he runs back to guard his own team's basket, taking
+  \SI{9.0}{\second} to run down the court. A basketball court is \SI{30}{\metre}
+  long. Find the average velocity of the basketball player
+  %Using centre court as his reference position, calculate his average
+  %velocity
+  \begin{parts}
+    \part while he is dribbling up the opponents' basket
+    \vspace{\stretch1}
+
+    \part while he is running down from the opponents' basket to his own team's
+    basket
+    \vspace{\stretch1}
+
+    \part for the entire sequence of motion
+    \vspace{\stretch1}
+  \end{parts}
+  \newpage
+  
+%  \question A field hockey player runs \SI{45}{\metre} forward and then straight
+%  back \SI{65}{\metre} during a game. If we consider forward to be the positive
+%  direction,
+%  \begin{parts}
+%    \part What is her displacement?
+%    \vspace{\stretch1}
+%    
+%    \part What is the distance travelled?
+%    \vspace{\stretch1}
+%  \end{parts}
+%  
+%  \question If a motorcycle with an initial velocity of
+%  \SI{25}{\metre\per\second} forward changes its velocity to
+%  \SI{55}{\metre\per\second} in \SI{4.5}\second, What is the average
+%  acceleration of the motorcycle?
+%  \vspace{\stretch{1.5}}
+
+  %\question At the end of the school day, at exactly 2:30 pm, a group of
+  %students run out of the school building and reach the edge of the school
+  %property at 2:30:45 pm. Which of the following correctly describes the motion
+  %in terms of time?
+  %\begin{choices}
+  %  \choice $\Delta t=2$:$30$
+  %  \choice $t_1=2$:$30$, $t_2=\SI{45}{\second}$
+  %  \choice $t_2=2$:$30$:$45$ pm, $\Delta t=\SI{45}{\second}$
+  %  \choice $t_1=0$, $t_2=2$:$30$:$45$ pm, $\Delta t=\SI{45}{\second}$
+  %  \choice None of the above
+  %\end{choices}
+
+  \question A car is travelling west and approaching a stop sign. As it is
+  slowing to a stop, the directions associated with the object's velocity and
+  acceleration, respectively, are
+  \begin{choices}
+    \choice West, East
+    \choice West, West
+    \choice East, East
+    \choice East, West
+    \choice There is not enough information to tell.
+  \end{choices}
+  
+  %\question An athlete runs around a 400 m standard oval track 4 times. Her
+  %distance and displacement are, respectively,
+  %\begin{choices}
+  %  \choice 0, 0
+  %  \choice 1600 m, 0
+  %  \choice 0, 1600 m
+  %  \choice 1600 m, 1600 m [forward]
+  %  \choice 100 m, 0
+  %\end{choices}
+  
+  \question If a car travelling at \SI{60}{\kilo\metre\per\hour} [S] stops in
+  a time of \SI{3.5}\second, its acceleration is:
+  \begin{choices}
+    \choice\SI{4.8}{\metre\per\second\squared} [S]
+    \choice\SI{4.8}{\metre\per\second\squared} [N]
+    \choice\SI{17}{\metre\per\second\squared} [S]
+    \choice\SI{17}{\metre\per\second\squared} [N]
+    %\choice\SI{17.1}{\metre\per\second\squared} [S]
+  \end{choices}
+  
+  %\question A car travels 35 km [N] in 30 minutes and then hits a traffic jam
+  %and spends 90 minutes travelling \SI{16.7}{\kilo\metre\per\hour} [N]. The
+  %average velocity of the car is:
+  %\begin{choices}
+  %  \choice \SI{43.4}{\kilo\metre\per\hour} [N]
+  %  \choice \SI{51.7}{\kilo\metre\per\hour} [N]
+  %  \choice \SI{16.7}{\metre\per\second} [N]
+  %  \choice \SI{8.34}{\metre\per\second} [N]
+  %  \choice 0
+  %\end{choices}
+
+  %\question A boy throws a ball straight up off a second floor balcony and it
+  %then lands on the ground. Neglecting air resistance, the magnitude of
+  %velocity is greatest:
+  %\begin{choices}
+  %  \choice just after it leaves the boy's hand
+  %  \choice at the peak of the ball's trajectory
+  %  \choice just before it hits the ground
+  %  \choice it remains the same throughout the motion
+  %  \choice impossible to tell without knowing the angle of projection
+  %\end{choices}
+
+  \question The distance $d$ travelled by an accelerating object is described
+  by the equation
+  \begin{equation*}
+    d=\dfrac12a\Delta t^2
+    \end{equation*}
+  where $a$ is the acceleration, and $\Delta t$ is the time interval for the
+  acceleration. How would the distance change if $\Delta t$ is doubled?
+  \begin{choices}
+    \choice Increase by a factor of 2
+    \choice Increase by a factor of 4
+    \choice Remains the same
+    \choice Decrease by a factor of $1/2$
+    \choice Decrease by a factor of $1/4$
+  \end{choices}
+  
+  \question The gravitational force between two masses $m_1$, $m_2$ at a
+  distance $r$ apart is described by the law of universal gravitation:
+  \begin{displaymath}
+    F=\frac{Gm_1m_2}{r^2}
+  \end{displaymath}
+  What is the force $F'$ if $r$ is tripled and $m_1$ is decreased by half?
+  \begin{choices}
+    \choice $F'=F/6$
+    \choice $F'=F/18$
+    \choice $F'=9F/2$
+    \choice $F'=3F/2$
+    \choice $F'=6F$
+  \end{choices}
+  
+  \question For any motion, the average speed is always
+  \underline{\hspace{.8in}} the magnitude of average velocity.
+  \begin{choices}
+    \choice greater than
+    \choice greater than or equal to
+    \choice equal to
+    \choice less than or equal to
+    \choice less than
+  \end{choices}
+\end{questions}
+\end{document}

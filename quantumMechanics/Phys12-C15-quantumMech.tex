@@ -1,0 +1,964 @@
+\chapter{Introduction to Quantum Mechanics}
+
+\begin{definition}
+  \textbf{Anyone who is not shocked by quantum theory has not understood it.}
+
+  \vspace{.1in}\flushright{- Niels Bohr}
+\end{definition}
+
+
+
+%\section[Intro]{Introduction}
+
+Light must be a wave. After all, it has all the properties of waves:
+\begin{itemize}
+\item Refraction
+\item Interference
+\item Diffraction\ldots
+\end{itemize}
+We even know what \emph{kind} of a wave it is
+\begin{itemize}
+\item Electromagnetic (``EM'') wave
+\item A transverse wave
+\item Same as: radio waves, microwave, infrared, ultraviolet, x-ray\ldots
+\item Travels in vacuum with a speed of \SI{2.998e8}{\metre\per\second},
+  independent of the velocity of the object emitting the light
+\end{itemize}
+But now we're going to find out that things aren't as simple as it seems.
+%
+%
+%
+%
+\section{Blackbody Radiation}
+\begin{figure}[ht]
+  \centering
+  \pic{.4}{quantumMechanics/graphics/Black-body_realization}
+\end{figure}
+
+\begin{itemize}
+\item The concept was coined by Gustav Kirchhoff in 1860
+\item An idealized object that absorbs all incident EM radiation
+\item Model of a blackbody:
+  \begin{itemize}
+  \item A box (``cavity'') with a mirror inside, and a hole where
+    light (EM radiation) is allowed in
+  \item Some of the light reflects inside the cavity; some gets absorbed
+    by the cavity
+  \item Eventually all the light inside the cavity is absorbed
+  \end{itemize}
+
+%    \pic{1.2}{graphics/Black-body_realization}
+%    
+%    \column{.8\textwidth}
+
+\item A blackbody is in thermal equilibrium
+  \begin{itemize}
+  \item All of the absorbed energy is then immediately radiated back as EM
+    radiation
+  \item The spectral distribution depends on temperature
+  \end{itemize}
+\item A blackbody at room temperature appears black, because most of the
+  radiative energy is infrared and invisible to the human eye
+\item Thermal radiation spontaneously emitted by many ordinary objects can
+  be approximated as blackbody radiation 
+\end{itemize}
+%  
+%
+%
+%
+%
+%\begin{frame}{Raleigh-Jeans Law and the Ultraviolet Catastrophe}
+%  
+%    \column{.55\textwidth}
+\begin{itemize}
+\item Based on classical thermodynamics
+\item Agrees with experimental results for long wavelengths, but the
+  equation predicts that short wavelengths (e.g.\ ultraviolet radiation,
+  x-ray) will have infinite intensity
+\item Known as \textbf{``ultraviolet catastrophe''}
+\end{itemize}
+%
+%    \column{.45\textwidth}
+%    \pic1{graphics/1280px-Black_body}
+  
+
+
+
+\section{Quantization of Energy}
+%  
+%    \column{.2\textwidth}
+%    \centering
+%    \pic1{graphics/20973-050-F6EEBFF1}\\
+%    {\footnotesize Max Planck}
+%    
+%    \column{.8\textwidth}
+\begin{itemize}
+\item Made a strange modification in the classical calculations
+\item Derived a function of $P(\lambda,T)$ that agreed with experimental
+  data for all wavelengths
+\item First found an empirical function to fit the data
+\item Then searched for a way to modify the usual calculations
+\end{itemize}
+
+Theorized that the walls of a blackbody are composed of subatomic electric
+oscillators (``resonators'')
+\begin{itemize}
+\item The nature of these resonators were unknown
+\item Billions of resonators vibrating at different frequencies, and
+\item Emitting radiation at those frequencies (remember: for a wave, the
+  frequency of source disturbance is the frequency of the wave)
+\item In classical physics, resonators can have any energy, and change
+  its amplitude continuously
+\end{itemize}
+To agree with experiments, Planck theorized that energy emitted by a
+resonator must be \emph{discrete}
+\begin{itemize}
+\item When energy is emitted from a resonator, it drops to the next
+  lower energy level
+\end{itemize}
+
+The total energy $E_\text{res}$ of a harmonic oscillator is proportional
+to the integral multiples of its natural frequency $f$:
+\begin{equation}
+  \boxed{E_\text{res}=nhf}
+\end{equation}
+%    \begin{center}
+%      \begin{tabular}{l|c|c}
+%        \rowcolor{pink}
+%        \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%        Energy of the resonator & $E_\text{res}$ & \si\joule\\
+%        Energy level            & $n$ & (no unit)\\
+%        Planck's constant       & $h$ & \si{\joule\second}\\
+%        Frequency of resonator  & $f$ & \si\hertz
+%      \end{tabular}
+%    \end{center}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[xscale=.55,yscale=.75]
+    \foreach \y in {0,1,...,4} {
+      \draw[very thick] (0,\y)--(4,\y)
+      node[pos=0,left]{$\y$} node[right]{$\y hf$};
+    }
+    \foreach \y in {0,1,...,3} {
+      \draw[very thick,red!70!black,<->] (\y+.2,\y)--(\y+.2,\y+1);
+    }
+    \draw[vectors] (4.7,4.5)--(4.7,5.9) node[above]{Energy $E$};
+    \draw[vectors] (-.4,4.5)--(-.4,6) node[above]{to $n=\infty$};
+  \end{tikzpicture}
+\end{figure}
+\textbf{Planck's constant} is experimentally determined to be
+$h=\SI{6.626e-34}{\joule\second}$
+%
+%
+%
+\subsection{Energy Quantization in Ordinary Harmonic Oscillators}
+%\begin{frame}{Blackbody Radiation}
+%According to Planck, \emph{all} harmonic oscillators have discrete energies,
+%not just vibrations at the subatomic level.
+%\begin{itemize}
+%\item Applies also to the swing of a pendulum, or mass-spring systems (Unit
+%  2)
+%\item The frequency $f$ is the natural frequencies of those systems
+%\item Because $h$ is small, measuring the difference between energy levels
+%  is difficult at macroscopic scale
+%\end{itemize}
+
+
+Planck envisioned that the quantization of energy applies to all of harmonic
+oscillators, rather than just for the blackbody radiation. To understand how
+energy quantization applies to standard problems in harmonic motion, let us
+consider the frictionless horizontal spring-mass system that we studied in
+Chapters 4 (energy) and 7 (harmonic motion). In Section 7.4, we derived the
+equation for the natural frequency ($f_0$) of the system, which depends on the
+spring constant k of the spring, and the mass m connected to it:
+\begin{equation*}
+  f_0 = \frac1{2\pi}\sqrt{\frac km}
+\end{equation*}
+When the mass oscillates, its total mechanical energy is the mass's kinetic
+energy, plus the elastic potential energy stored in the spring, as we have
+already shown in Eq. 4.15.
+\begin{equation*}
+  E = K + U_s
+\end{equation*}
+At maximum displacement (i.e. at amplitude $A$), all of the system's energy is
+in elastic potential energy:
+\begin{equation*}
+  E = \frac12kA^2
+\end{equation*}
+We can then relate the total energy to the amplitude of the harmonic motion.
+Solving for the amplitude, we have:
+\begin{equation}
+  A=\sqrt{\frac{2E}k}
+  \label{eq:amplitude-from-energy}
+\end{equation}
+In classical physics, the pendulum can have \emph{any} energy levels: both the
+mass's kinetic and elastic potential energies are continuous functions, and
+therefore any amplitudes are plausible. However, in Planck's view, the energies
+of this system must also be quantized. For a hypothetical system with
+$k=\SI{987}{\newton\per\metre}$, and $m=\SI1{\kilo\gram}$, we will have a
+natural frequency of $f_0=\SI{5.00}\hertz$. As it is oscillating at its natural
+frequency, the allowable energies are:
+\begin{align*}
+  E_0 &= 0\\
+  E_1 &= hf_0  = \SI{3.32e-33}{\joule}\\
+  E_2 &= 2hf_0 = \SI{6.63e-33}{\joule}\\
+  E_3 &= 3hf_0 = \SI{9.94e-33}{\joule}
+\end{align*}
+The gap between different energy levels is $\Delta E=hf=\SI{3.32e-33}\joule$.
+Energies between these discrete levels(i.e. between $E_1$ and $E_2$, or between
+$E_2$ and $E_3$) are not allowed. This means that the possible amplitudes of
+the mass can be calculated by substituting the energy levels into
+Eq.~\ref{eq:amplitude-from-energy}:
+\begin{align*}
+  A_0 &= 0\\
+  A_1 &= \cdots\\
+  A_2 &= \cdots\\
+  A_3 &= \cdots
+\end{align*}
+For a spring-mass system with a low natural frequency, the energy gap---and
+therefore the gaps between amplitudes---is laughably small, which is why energy
+quantization cannot be observed in a macroscopic scale. But for a charge
+particle emitting light, it will have to vibrate at a frequency between
+\num{4e14} to \SI{7e14}{\hertz}. All of a sudden, the gap $\Delta E$ is no longer so
+small.
+
+When this mass is oscillating, frictional forces removes energy from the
+system. N Chapter 7, we studied the use of a "damping force" $\bm F_D$ to
+consolidate the effects of kinetic friction, drag and viscous damping, using
+the equation
+\begin{equation*}
+  F_D= -bv
+\end{equation*}
+When this damping force is present, the total energy $E$ of the system decreases
+with time $t$ as an exponential decay function:
+\begin{equation}
+  E(t)=E_0e^{-\frac bmt} %=E_0e^{-\frac{t}{\tau}}
+\end{equation}
+where $E_0$ is the initial energy of the system, and $b$ is the damping
+constant. For simplicity, we are not showing the derivation of this equation,
+except to point out that $E(t)$ is a continuous function in time, as shown in
+Fig.\ 15.4a. However, if the energy levels of this harmonic oscillator is
+indeed quantized, then $E(t)$ would, in fact, decrease as a step function, as
+shown in Fig.\ 15.4b.
+
+
+\section{Maxwell's Equations: Classical Laws of Electrodynamics}
+%%  
+%%    \column{.25\textwidth}
+%%    \centering
+%%    \pic{.97}{graphics/PORTRAIT-James-Clerk-Maxwell}\\  
+%%    {\footnotesize James Clerk Maxwell\par}
+%%    
+%%    \column{.75\textwidth}
+Maxwell's equations show that an oscillating charge generates a fluctuating
+electric field and magnetic field, which travels through space as an
+``electromagnetic wave'' with speed:
+\begin{equation*}
+  c=\frac1{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{\meter\per\second}
+\end{equation*}
+By 1862, the speed of light was already measured to within about
+\SI{.6}{\percent} of this value\footnote{By L\'{e}on Foucault using a
+rotating mirror experiment. His experimental value was
+\num{298000}$\pm 500$ \si{\metre\per\second}}. Does that mean that light is
+an EM wave?
+
+
+
+
+%\begin{frame}{Proving Light as an Electromagnetic Wave}
+Proving that light is an EM wave requires an alternating current with a
+frequency of \SI{e14}{\per\second}.
+\begin{itemize}
+\item Physicists already knew the wavelengths of visible light (e.g.\ through
+  double-slit interference patterns)
+\item The frequency can be determined simply applying $c=f\lambda$
+\end{itemize}
+
+Technology of Maxwell's time could only generate frequencies
+around \SI{e8}{\per\second}
+\begin{itemize}
+\item Much higher than the \SI{60}{\per\second} that our electrical outlet
+  uses
+\item But still one million (\num{e6}) times too low
+\end{itemize}
+
+
+
+
+\section{Photoelectric Effect}
+
+%%\begin{frame}{Heinrich Hertz}
+%%  
+%%    \column{.65\textwidth}
+%%    \begin{itemize}
+%%    \item German physicist (1857-1894)
+%%    \item Devised the ``spark gap experiment'' to generate high frequencies
+%%    \item The unit for frequency is named after him in his honour
+%%    \end{itemize}
+%%
+%%    \column{.35\textwidth}
+%%    \pic{1}{graphics/Heinrich_Rudolf_Hertz}
+%%  
+%%
+%
+%
+%
+%
+%\begin{frame}{The Spark Gap Experiment}
+German physicist Heinrich Hertz (1857-1894) devised a ``spark gap experiment''
+to generate high frequencies required
+\begin{figure}[ht]
+  \centering
+  \pic{.5}{quantumMechanics/graphics/Hertz_exp_2}
+\end{figure}
+\begin{itemize}
+\item Produced EM waves with frequency \num{e14} oscillations per second
+\item Showed that light waves have the same wavelengths as predicted by
+  Maxwell's equations
+\end{itemize}
+
+%\begin{frame}{Discovery of the Photoelectric Effect}
+
+Hertz left a terse remark in his results:
+\begin{center}
+  \fbox{
+    \begin{minipage}{.75\textwidth}
+      \emph{It is essential that the pole surfaces of the spark gap should be
+      frequently re-polished to ensure reliable operation of the spark.}
+      \end{minipage}
+    }
+  \end{center}
+\begin{itemize}
+\item Electrons were leaving the metal surface (caused by the UV radiation)
+\item This is now known as the \textbf{photoelectric effect}
+\item Hertz and other physicists who repeated his experiments did not have a
+  satisfactory explanation using classical physics
+\end{itemize}
+This is, in fact, the first evidence that light is \emph{not} a wave after all.
+
+
+
+
+
+%\begin{frame}{Photoelectric Effect}
+When EM waves hits the (metallic) emitter plate, electrons are knocked
+off the surface with some kinetic energy, generating a current
+\begin{center}
+  \begin{tikzpicture}[scale=.7,american voltages]
+    \draw[thick,green!70!black,smooth,samples=30,domain=0:3,rotate=40,<-]
+    plot({\x},{.15*sin(240*\x)}) node[above]{EM};
+    \draw[thick] (.5,1)--(1.5,2);
+    \draw[thick] (2,1)--(3,2);
+    \draw[thick] (.5,1)--(0,1) arc (90:270:1)--(6,-1) arc (-90:90:1)--(2,1);
+    \draw[ultra thick,blue!80!black] (0,.8)--(0,-.8)
+    node[below,black]{Emitter};
+    \draw[ultra thick,red!80!black] (6,.8)--(6,-.8)
+    node[below,black]{Collector};
+    \draw[thick] (0,0)--(-1.5,0)--(-1.5,-2.5)
+    to[V,l_={Variable voltage}](3,-2.5)
+    to[rmeter,t=A,l_={Ammeter}] (7.5,-2.5) --(7.5,0)--(6,0);
+    \begin{scope}[blue!40]
+      \fill (3,-.5) circle (.1);  \draw[vectors] (3,.-.5)--(4,-.5);
+      \fill (1,0) circle (.1);    \draw[vectors] (1,0)--(2,0);
+      \fill (2.2,.3) circle (.1); \draw[vectors] (2.2,.3)--(3.2,.3);
+      \fill (4.5,.4) circle (.1); \draw[vectors] (4.5,.4)--(5.5,.4);
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+The current can be stopped by adjusting the voltage, called the
+\textbf{stopping voltage}, allowing us to measure the kinetic energy of the
+\textbf{photo electrons}
+%
+%
+%
+%
+%
+%\begin{frame}{Photoelectric Effect: Cannot be Explained by Classical View}
+From the classical electrodynamics:
+\begin{itemize}
+\item Energy is transferred from light wave to the electrons
+\item Kinetic energy of the emitted electrons should be proportional to both
+  \emph{intensity} (related to the amplitude of the EM wave; brightness) and
+  \emph{frequency}
+\item Increasing intensity:
+  \begin{itemize}
+  \item Increases the number of electron emitted
+  \item Increases the electrons' kinetic energy
+  \end{itemize}
+\item Even a dim light would \emph{eventually} transfer enough energy to an
+  electron be emitted
+\end{itemize}
+\textbf{But this isn't what is happening!}
+
+
+
+
+%\begin{frame}{Photoelectric Effect: What Actually Happens}
+\begin{center}
+  \pic{.9}{quantumMechanics/graphics/73bacc9f2bf571752483a89ef6c61a94f07470f7}
+\end{center}
+\begin{itemize}
+\item Increasing intensity of light knocked off more electrons, but does not
+  change their maximum kinetic energy $K_\text{max}$, but
+\item Changing the \emph{frequency} of the light did change $K_\text{max}$
+  though, although
+\item Below a certain frequency, \emph{no} electrons were emitted
+\end{itemize}
+
+
+
+
+%\section{Einstein}
+%
+%%\begin{frame}{1905: \emph{Annus Mirabilis} (The Miraculous Year)}
+%%  {The Year That Einstein Became Very Famous}
+%%  \begin{itemize}
+%%  \item<alert@2>\textbf{Photoelectric effect:} ``On a Heuristic Viewpoint
+%%    Concerning the Production and Transformation of Light''
+%%  \item\textbf{Brownian motion:} ``On the Motion of Small Particles Suspended
+%%    in a Stationary Liquid, as Required by the Molecular Kinetic Theory of
+%%    Heat''
+%%  \item<alert@1>\textbf{Special relativity:} ``On the Electrodynamics of Moving
+%%    Bodies''
+%%  \item\textbf{Mass-energy equivalence:} ``Does the inertia of a body depend
+%%    upon its energy content?''
+%%  \end{itemize}
+
+
+
+
+\subsection{The Photon: Packets of Energy}
+In a paper published in 1905, Albert Einstein\footnote{1879--1955. Nobel Prize
+winner 1921} offered a solution to the photoelectric effect: it can only be
+explained if light behaves \emph{not} as a continuous wave, but rather, \emph{a
+collection of discrete energy particles} called \textbf{photons}, each with
+energy $E=hf$. In Einstein's model, the photons collide with the electrons, and
+are then all of their energy are absorbed into the electron without delay.
+
+The energy of the photon is determined by its \emph{frequency}, in agreement
+with Planck, therefore, increasing the frequency of the light increases the
+kinetic energy $K$ of the ejected photo electrons, in agreement with
+experimental results. Additionally, the intensity (brightness) of light is
+related to the number of photons. Therefore, increasing the brightness of
+the light results in a higher number of electrons being knocked off the metal
+surface. This is also in agreement with experimental results.
+
+The relationship between kinetic energy of electrons and the photons can be
+summarized in a simple linear function:
+\begin{equation}
+  \boxed{
+    K_\text{max}=
+    \begin{cases}
+      hf-\varphi & \text{if}\;\;hf>\varphi\\
+      0          & \text{otherwise}
+    \end{cases}
+  }
+\end{equation}
+where $K_\text{max}$ is the maximum kinetic energy of the photo-electrons; $h$
+is Planck's constant; $f$ is the frequency of the EM wave; and $\varphi$ is
+property of the material, called the \text{work function}.
+
+
+%The ``work function'' is a property of the metal that determines how much
+%energy is absorbed until an electron is knocked off
+
+Bottom line: Classical electrodynamics concept cannot
+be applied in photoelectric effect, and must be replaced with quantum
+mechanics.
+
+
+
+
+\subsection{Work Function $\varphi$}
+
+\textbf{Work function} $\varphi$ is the minimum energy required to remove
+an electron from the metal to a point just outside the metal surface. The
+lowest frequency at which electrons are ejected is called the
+\textbf{threshold frequency} $f_0$. The slope of the graph is $h$ independent
+of the metal.
+
+An example for zinc is shown as an example in Fig.~\ref{fig:zinc}. Zinc has a
+work function of 4.3 eV, and therefore a threshold frequency of
+\SI{1.04e15}{\hertz}. The frequency is in the ultra-violet range, and therefore
+visible light will not cause electrons to be ejected.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[xscale=.5,yscale=.65]
+    \foreach \wav in {420, 422,...,740}{
+      \definecolor{tmpcolor}{wave}{\wav}
+      \colorlet{mycolor}[rgb]{tmpcolor}
+      \fill[fill=mycolor,opacity=.2] ({3000/\wav},-5) rectangle +(.1,7);
+    }
+    \draw[axes] (0,0)--(15.7,0) node[above]{$f$ ($\times\SI{e14}{\hertz}$)};
+    \draw[axes] (0,-5.2)--(0,2.7) node[right]{$\varphi$ ($\si{\electronvolt})$};
+    \foreach \x in {2,4,...,14} \draw[thick](\x,0)--(\x,-.2) node[below]{$\x$};
+    \foreach \y in {-5,...,2} \draw[thick](0,\y)--(-.2,\y) node[left]{$\y$};
+
+    \draw[ultra thick,red] (0,0)--(10.4,0) node[above]{$f_0$};
+    \draw[ultra thick,red,rotate around={22.46:(10.4,0)}]
+    (10.4,0)--+(5,0) node[right]{Zn};
+    \draw[ultra thick,dashed] (0,-4.3)--(10.4,0);
+  \end{tikzpicture}
+  \caption{Kinetic energy of photo-electrons for zinc.}
+  \label{fig:zinc}
+\end{figure}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l|c}
+    \rowcolor{pink}
+    \textbf{Metal} & \textbf{Work function} (\si\electronvolt) \\ \hline
+    Aluminum & 4.28 \\ \hline
+    Calcium  & 2.87 \\ \hline
+    Cesium   & 2.14 \\ \hline
+    Copper   & 4.65 \\ \hline
+    Iron     & 4.50 \\ \hline
+    Lead     & 4.25 \\ \hline
+    Lithium  & 2.90 \\ \hline
+    Nickel   & 5.15 \\ \hline
+    Platinum & 5.65 \\ \hline
+    Potassium & 2.30 \\ \hline
+    Tin      & 4.42 \\ \hline
+    Tungsten & 4.55 \\ \hline
+    Zinc     & 4.33 \\
+  \end{tabular}
+  \caption{Work function for various metals}
+  \label{tabl:work-function}
+\end{table}
+%  
+%
+%
+%
+%
+\section{Compton Scattering}
+
+%%    \pic{1.2}{graphics/Arthur_Compton_1927}
+%%
+%%    {\footnotesize Arthur H.\ Compton\par}
+
+American physicist Arthur Compton\footnote{1892--1962; Nobel Prize winner in
+1927}, was studying x-ray scattering by free electrons
+\begin{itemize}
+\item Classical theory cannot account for the scattering behaviour
+\item Frequency shift only depends on scattering angle
+\item Prediction possible if treating the x-ray as photons with
+  momentum, just like a particle
+\item In the \textbf{momentum-energy relation} by Einstein\footnote{From
+the mass-energy equivalence $E=m'c^2$ which can be also expressed as
+$E^2=p^2c^2+m^2c^4$}, a massless particle ($m=0$) has an energy related
+  to its momentum by $E=pc$.
+\end{itemize}
+
+\begin{equation}
+  \boxed{
+    p=\frac Ec=\frac{hf}c=\frac h\lambda
+  }
+\end{equation}
+
+
+
+
+%\begin{frame}{Compton Scattering}
+By treating x-ray as photons (i.e.\ a particle) with momentum $p=h/\lambda$,
+Compton showed that the behaviour of the scattered x-ray and the recoil
+electron is consistent with an \emph{elastic collision}\footnote{Recall from
+Unit 2 that in an elastic collision, both momentum and kinetic energy are
+conserved} between the x-ray photon and the electron.
+\begin{center}
+  \pic{.45}{quantumMechanics/graphics/compton2}
+\end{center}
+%
+%
+%
+%
+%\begin{frame}{Momentum of a Photon}
+The momentum of a photon is proportional to Planck's constant and inversely
+proportional to its wavelength:
+%
+%  \eq{-.1in}{
+%    \boxed{p=\frac h\lambda}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Momentum          & $p$       & \si{\kilo\gram\metre\per\second} \\
+%      Planck's constant & $h$       & \si{\joule\second} \\
+%      Wavelength        & $\lambda$ & \si\metre
+%    \end{tabular}
+%  \end{center}
+
+
+
+\begin{example}
+  Calculate the momentum of a photon of light that has
+  frequency of \SI{5.09e14}\hertz.
+\end{example}
+
+
+
+\section{Matter Waves}
+
+%\begin{frame}{Matter Waves: The De Broglie Hypothesis}
+%%  
+%%    \column{.25\textwidth}
+%%    \centering
+%%    \pic{1}{graphics/76562-004-66881FD5}\\
+%%    {\footnotesize Louis De Broglie}
+%%
+%%    \column{.75\textwidth}
+If electromagnetic waves are really particles of energy, then are particles
+(e.g.\ electrons) waves?
+\begin{itemize}
+\item Louis Broglie\footnote{1892--1987; Nobel Prize winner in 1929},
+  while completing his Ph.D.\ in 1924, proposed a hypothesis: a particle can
+  also have a wavelength
+\item Confirmed, accidentally, by the Davisson-Germer Experiment in 1927
+  (beam of electron scattering on nickel crystal surface)
+\end{itemize}
+
+
+
+
+%\begin{frame}{Electron Interference}
+%  
+%    \column{.84\textwidth}
+%    If I perform a double-slit experiment with a beam of electrons, will I get
+%    an interference pattern?
+%    \begin{center}
+%    \pic{.6}{graphics/CNX_Chem_06_03_Electrnin}
+%    \end{center}
+%    
+%    \column{.16\textwidth}
+%\begin{figure}[ht]
+%  \pic{.1}{quantumMechanics/graphics/206px-Double-slit_experiment_results_Tanamura_2}
+%\end{figure}
+
+If matter, like an electron, is also a wave, then it should have a wavelength
+too. We can solve momentum equation to find $\lambda$:
+\begin{equation}
+    p=\frac h\lambda\;\;\rightarrow\;\;
+    \lambda=\frac hp\;\;\rightarrow\;\;\boxed{\lambda=\frac h{mv}}
+\end{equation}
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Wavelength of a particle & $\lambda$ & \si\metre \\
+%      Planck's constant & $h$       & \si{\joule\second} \\
+%      Mass              & $m$       & \si{\kilo\gram} \\
+%      Velocity          & $v$       & \si{\metre\per\second}
+%    \end{tabular}
+%  \end{center}
+This applies if momentum is non-relativistic.
+
+
+
+
+
+\begin{example}
+  Calculate the wavelength of an electron moving with a velocity of
+  \SI{6.39e6}{\metre\per\second}.
+\end{example}
+
+
+%\begin{frame}{Particle-Wave Duality}
+%  \textbf{The Copenhagen interpretation:}
+%  \begin{itemize}
+%  \item Accepted view: wave-particle duality
+%  \item An experiment can either show:
+%    \begin{itemize}
+%    \item The wave nature: diffraction, refraction (e.g.\ light)
+%    \item The particle nature: scattering (Compton effect), photoelectric
+%      effect
+%    \item But not both.
+%    \end{itemize}
+%  \end{itemize}
+
+
+
+\section{Uncertainty Principle}
+If a particle is a wave, how can you tell where it is? Consider the
+one-dimensional wave shown in Fig.~\ref{fig:1d-wave}.
+\begin{figure}[ht]
+  \centering
+  $\Psi(x,t)=\cos(kx-\omega t)$\\
+  \begin{tikzpicture}[scale=1.3]
+    \draw[xscale=.3,function,smooth,samples=300,domain=-18:18]
+    plot(\x,{sin(180*\x)});
+  \end{tikzpicture}
+  \caption{A one-dimensional wave}
+  \label{fig:1d-wave}
+\end{figure}
+At any time $t$, the wave/particle can be described by the wave function
+$\Psi(x,t)$. The function has a single wavelength of $\lambda$ (therefore a
+single value of momentum $p=\frac h\lambda$), but it has no distinguishing
+features that can tell you the particle's position $x$. In fact, the wave
+functoin seems to suggest that the particle is \emph{everywhere}. Therefore we
+conclude that, \textbf{when we have precise knowledge of a particle wave's
+  \emph{momentum}, we have no knowledge of its \emph{position}.}
+
+On the other extreme, consider a particle/wave defined as a
+\emph{delta function}, as shown in Fig.~\ref{fig:1d-delta-wave}.
+\begin{figure}[ht]
+  \centering
+  \vspace{-.3in}
+  \begin{tikzpicture}[scale=1.2]
+    \draw[function] (-5,0)--(-.04,0)--(0,2.3)--(.04,0)--(5,0);
+    %\draw[function,smooth,samples=300,domain=-5:5]
+    %plot(\x,{2*exp(-\x*\x/0.005)});
+    \draw[axes] (3,2) to[out=180,in=90] (0,2.4);
+    %\draw[axes] (3,2) to[out=270,in=270] (0,0);
+    \node[right] at (3,2){The particle is here!};
+  \end{tikzpicture}
+  \caption{A one-dimensional delta wave}
+  \label{fig:1d-delta-wave}
+\end{figure}
+The particle's position $x$ is well-defined but its wavelength $\lambda$ (and
+therefore momentum $p$) is undefined. (Recall the definition of a wavelength:
+it is the shortest distance between two points in a wave that is in phase. In
+the case of a pulse wave, no two points are in phase.) The wave function
+provides no information about the particle's velocity. Therefore, we conclude
+that \textbf{when we have precise knowledge of a particle wave's
+  \emph{position},  we have no knowledge of \emph{where} it is going.}
+
+However, if a moving particle has small variations (uncertainties) in its
+momentum $p$ (wavelength $\lambda$), as shown Fig.~\ref{fig:packet}.
+\begin{figure}[ht]
+  \centering
+  $\cos(280x)+\cos(281x)+\cdots+\cos(300x)+\cdots+\cos(319x)+\cos(320x)$\\
+  \begin{tikzpicture}[scale=1.2]
+    \draw[xscale=.3,yscale=.07,function,smooth,samples=360,domain=-15:15]
+    plot(\x,{.5*(
+      sin(300*\x)+
+      sin(301*\x)+ sin(302*\x)+ sin(303*\x)+sin(304*\x)+sin(305*\x)+
+      sin(306*\x)+ sin(307*\x)+ sin(308*\x)+sin(309*\x)+sin(310*\x)+
+      sin(311*\x)+ sin(312*\x)+ sin(313*\x)+sin(314*\x)+sin(315*\x)+
+      sin(316*\x)+ sin(317*\x)+ sin(318*\x)+sin(319*\x)+sin(320*\x)+
+      sin(280*\x)+ sin(281*\x)+ sin(282*\x)+sin(283*\x)+sin(284*\x)+
+      sin(285*\x)+ sin(286*\x)+ sin(287*\x)+sin(288*\x)+sin(289*\x)+
+      sin(290*\x)+ sin(291*\x)+ sin(292*\x)+sin(293*\x)+sin(294*\x)+
+      sin(295*\x)+ sin(296*\x)+ sin(297*\x)+sin(298*\x)+sin(299*\x)
+      )});
+  \end{tikzpicture}
+  \caption{A one-dimensional wave packet}
+  \label{fig:packet}
+\end{figure}
+When we add up the different waves together, we begin to see a \textbf{packet}
+forming.
+\textbf{To gain knowledge about the \emph{position} of a particle, we must
+  give up knowledge about its \emph{momentum}, and vice versa.}
+
+
+
+
+%\begin{frame}{Uncertainty Principle}
+Werner Heisenberg\footnote{1901--1976, Nobel Prize winner in 1932} showed that
+because of wave properties of particles, an observer can never be completely
+certain of \emph{both} an object's momentum $p$ and position $x$. The limit
+to any measurement is given by the \textbf{uncertainty principle}:
+\begin{equation}
+  \boxed{\sigma_p\sigma_x\geq \frac h{4\pi}}
+\end{equation}
+\begin{center}
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+    Uncertainty in momentum & $\sigma_p$ & \si{\kilo\gram\metre\per\second}\\
+    Uncertainty in position & $\sigma_x$ & \si\metre \\
+    Planck's constant       & $h$        & \si{\joule\second}
+  \end{tabular}
+\end{center}
+The more you know about an object's position, the less you know about its
+momentum, and vice versa.
+
+
+
+
+\section{Bohr Atomic Model}
+%%
+%%\begin{frame}{Atomic Model}
+%%  J.\ J.\ Thomson: plum-pudding model (1897)
+%%  \begin{itemize}
+%%  \item Developed along with William Croakes
+%%  \item Negatively-charged electrons are like raisins in a positively-charged
+%%    ``dough''
+%%  \end{itemize}
+%%  Ernest Rutherford: planetary model (1911)
+%%  \begin{itemize}
+%%  \item The atom is mostly empty space
+%%  \item Negatively-charged electrons orbiting a fixed, positively-charged
+%%    nucleus in set, predictable paths (orbits)
+%%  \end{itemize}
+%%  The Rutherford model explains a lot more than the Thomson model, but misses
+%%  out on a very important feature of an accelerating electron:
+%%  \emph{it radiates energy as electromagnetic waves!}
+%%
+%%
+%%
+%%
+%%\begin{frame}{Why the Planetary Model Doesn't Work}
+%%  \begin{center}
+%%    \pic{.23}{graphics/spiral}
+%%  \end{center}
+%%  According to classical electrodynamics:
+%%  \begin{itemize}
+%%  \item An accelerating electron has an oscillating electric field and an
+%%    oscillating magnetic field
+%%  \item Therefore it emits electromagnetic radiation
+%%  \item The electron will lose energy and the orbit decays
+%%  \item Eventually it'll collapse into the nucleus
+%%  \end{itemize}
+%%
+%%
+%%
+%%
+%%\begin{frame}{Bohr Atomic Model}
+%%  Danish physicist Niels Bohr\footnote{1885--1962; Nobel Prize winner in
+%%    1922} postulated that electrons can move in certain ``non-radiating''
+%%  orbits, corresponding to energy levels:
+\begin{equation}
+  E_n=-\frac{k^2e^4m}{2\hslash^2}\frac{Z^2}{n^2}
+\end{equation}
+%%  \begin{center}
+%%    \begin{tabular}{l|c|c}
+%%      \rowcolor{pink}
+%%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%%      Energy at level $n$ & $E_n$ & \si{\joule}    \\
+%%      Coulomb's constant  & $k$   & \si{N.m^2/C^2}  \\
+%%      Elementary charge   & $e$   & \si{\coulomb}   \\
+%%      Atomic mass         & $m$   & \si{\kilo\gram} \\
+%%      Reduced Planck's constant & $\hbar=h/2\pi$ & \si{\joule\second}\\
+%%      Atomic number       & $Z$   & (integer)       \\
+%%      Energy level        & $n$   & (integer)
+%%    \end{tabular}
+%%  \end{center}
+%%
+%%
+%%
+%%
+%%\begin{frame}{Bohr Atomic  Model}
+%%  Successful in describing the behaviour of the hydrogen atom---but fails for
+%%  heavier atoms---although it still relies on 
+%%  \begin{itemize}
+%%  \item Coulomb forces between electrons and protons (classical)
+%%  \item Centripetal forces (classical)
+%%  \item Quantization of energy (new physics!)
+%%  \end{itemize}
+%%  De Broglie's hypothesis gives us a glimpse of what Bohr is missing
+%%  \begin{itemize}
+%%  \item The ``orbits'' correspond to a standing wave around the nucleus
+%%  \item A standing wave does not lose energy
+%%  \end{itemize}
+%%
+%%
+%%
+%%
+%%\begin{frame}{Standing Wave on a String}
+%%  
+%%    \column{.3\textwidth}
+%%    \pic{1}{graphics/strhar}
+%%
+%%    \column{.7\textwidth}
+%%    \begin{itemize}
+%%    \item We have studied standing waves in Grade 11
+%%    \item If electron is to be in a ``stable orbit'' around a nucleus, it has
+%%      to be in a standing wave pattern
+%%    \item Otherwise, it will interfere with itself
+%%    \end{itemize}
+%%  
+%%
+%%
+%%
+%%\begin{frame}{Circular Standing Wave}
+%%  \begin{center}
+%%    \pic{.7}{graphics/oo1wp}
+%%  \end{center}
+%%  Electron resonance states $n=3,4,5,6$
+%%
+%
+%
+%
+\section{Particle in a Box}
+%  
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \foreach \y in {1,...,5}{
+      \draw[dashed](0,\y-.5)--(3,\y-.5) node[pos=0,left]{$n=\y$};
+      \draw[very thick,violet,smooth,samples=80,domain=0.01:2.99]
+      plot({\x},{.4*sin(60*\y*\x)+\y-.5});
+    }
+    \fill[gray!40] (-.1,5) rectangle (0,0);
+    \fill[gray!40] (-.1,0) rectangle (3.1,-.1);
+    \fill[gray!40] (3,-.1) rectangle (3.1,5);
+    \draw[thick] (0,5)
+    --(0,0) node[pos=0,above]{$\psi(x)$} node[below]{0}
+    --(3,0) node[below]{$L$}--(3,5);
+  \end{tikzpicture}
+\end{figure}
+
+A particle confined to a 1D box behaves like a standing wave. The resonance
+modes (frequencies where a stable standing wave exists) correspond to the
+wavelengths:
+\begin{equation}
+  \lambda=\frac{2L}n\quad n=1,2,3\ldots
+\end{equation}
+and the momentum of the particle at the $n$-th mode is:
+\begin{equation}
+  p_n=\frac h\lambda=\frac{nh}{2L}
+\end{equation}
+%  
+%
+%
+%
+%
+%\begin{figure}[ht]
+%  \centering
+%  \begin{tikzpicture}
+%    \foreach \y in {1,...,5}{
+%      \draw[dashed](0,\y-.5)--(3,\y-.5) node[pos=0,left]{$n=\y$};
+%      \draw[very thick,violet,smooth,samples=80,domain=0.01:2.99]
+%      plot({\x},{.4*sin(60*\y*\x)+\y-.5});
+%    }
+%    \fill[gray!40](-.1,5)rectangle(0,0);
+%    \fill[gray!40](-.1,0)rectangle(3.1,-.1);
+%    \fill[gray!40](3,-.1)rectangle(3.1,5);
+%    \draw[thick](0,5)--(0,0) node[pos=0,above]{$\psi(x)$}
+%    node[below]{0}--(3,0)node[below]{$L$}--(3,5);
+%  \end{tikzpicture}
+%\end{figure}   
+
+Kinetic energy of the particle can be expressed in terms of momentum:
+\begin{equation}
+  E_n=\frac12mv^2=\frac{p_n^2}{2m}=\frac{n^2h^2}{8mL^2}
+\end{equation}
+If a particle is a standing wave, then kinetic energy of the particle can
+never be zero, therefore
+\begin{itemize}
+\item The particle cannot have zero velocity
+\item The lowest energy level ($n=1$) is called the
+  \textbf{zero-point energy}
+    \end{itemize}
+
+\begin{example}
+  A \SI{.150}{\kilo\gram} billiard ball is confined to the pool table
+  \SI{1.42}{\metre} wide. How long (in seconds) will it take to travel from one
+  side of the table to the other side at fundamental mode?
+\end{example}
+%
+%
+%
+\section{Schr\"{o}dinger}
+%%
+%%\begin{frame}{What Else Can You Learn from Quantum Mechanics}
+%%  {Schr\"{o}dinger's Equation}
+%%  \begin{itemize}
+%%  \item The differential equations that governs the quantum state of a
+%%    quantum system changes in time
+%%  \item It's like what Newton's second law of motion and conservation of
+%%    energy to classical mechanics
+%%  \item Gives full details of the behaviour of electrons in atoms
+%%  \item ``Schr\"{o}dinger's Cat'' thought experiment
+%%  \end{itemize}

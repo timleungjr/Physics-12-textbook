@@ -1,0 +1,432 @@
+\section{Problem Set}
+
+\begin{enumerate}[itemsep=4pt]
+%  \question Which of the following involves a net force?
+%  \begin{enumerate}[nosep,label=\Roman*.]
+%  \item A ball on the end of a string travels in circular motion.
+%  \item A space probe travels with a constant velocity in a straight line
+%    between planets.
+%  \item An object has a constant horizontal velocity, but a decreasing
+%    vertical velocity.
+%  \end{enumerate}
+%  \begin{choices}
+%    \choice I only
+%    \choice I and II only
+%    \choice II and III only
+%    \choice I and III only
+%    \choice I, II, and III
+% \end{choices}
+%
+%  \question A small moving block collides with a large block at rest. Which of
+%  the following is true of the forces the blocks apply to each other?
+%  \begin{choices}
+%    \choice The small block exerts twice the force on the large block 
+%    compared to the force the large block exerts on the small block.
+%    \choice The small block exerts half the force on the large block
+%    compared to the force the large block exerts on the small block.
+%    \choice The small block exerts exactly the same amount of force on the large
+%    block that the large block exerts on the small block.
+%    \choice The large block exerts a force on the small block, but the small
+%    block does not exert a force on the large block.
+%    \choice The small block exerts a force on the large block, but the large
+%    block does not exert a force on the small block.
+%  \end{choices}
+%  
+%  \question A force of magnitude $F$ pulls up at an angle $\theta$ to the
+%  horizontal on a block of mass $m$. The mass remains in contact with the level
+%  floor and the coefficient of friction between the block and the floor is
+%  $\mu$. The frictional force between the floor and the block is
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.7]
+%      \fill[pattern=north east lines] rectangle (8,-.3);
+%      \draw[very thick] (0,0)--(8,0);
+%      \draw[mass] (3,0) rectangle (5,1.5);
+%      \fill (4,.75) circle (.1);
+%      \draw[dashed] (4,.75)--(7,.75);
+%      \draw[vectors] (4,.75)--(6,2.75) node[right]{$F$};
+%      \draw[axes] (5.5,.75) arc (0:45:1.5) node[midway,right]{$\theta$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{choices}
+%    \choice$\mu mg$
+%    \choice$\mu(mg-F\sin\theta)$
+%    \choice$\mu(mg+F\sin\theta)$
+%    \choice$\mu(mg-F\cos\theta)$
+%    \choice$\mu(mg+F\cos\theta)$
+%  \end{choices}
+%  \newpage
+%  
+%  \question A 1 kg block is sliding up a \ang{30} incline and is slowing down
+%  with an acceleration of \SI{-6}{\metre\per\second\squared}. The mass
+%  encounters a frictional force $f$ and a normal force $N$. Which of the
+%  following free body diagrams best represents the forces acting on the block?
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.25]
+%      \begin{scope}[rotate=-30]
+%        \draw[thick] (0,0)--(-4,0);
+%        \draw[mass] (-1,0) rectangle (-1.7,.7);
+%        \draw[vectors] (-1.8,.35)--+(-.8,0) node[above]{$v$};
+%      \end{scope}
+%      \draw[thick] (0,0)--(-3.464,0)--(-3.464,2);
+%      \draw[axes] (-1.2,0) arc (180:150:1.2) node[midway,left]{\ang{30}};
+%    \end{tikzpicture}
+%  \end{center}
+%
+%  \vspace{-.15in}A.\begin{tikzpicture}
+%    \fill circle (.08);
+%    \draw[vectors] (0,0)--(0,1) node[above]{$N$};
+%    \draw[vectors] (0,0)--(0,-1) node[below]{$mg$};
+%    \draw[vectors,rotate=60] (0,0)--(0,1) node[left]{$f$};
+%  \end{tikzpicture}
+%  \hspace{.2in}B.\begin{tikzpicture}
+%    \fill circle (.08);
+%    \draw[vectors,rotate=-30] (0,0)--(0,1) node[above]{$N$};
+%    \draw[vectors,rotate=-30] (0,0)--(0,-1) node[below]{$mg$};
+%    \draw[vectors,rotate=60] (0,0)--(0,1) node[left]{$f$};
+%  \end{tikzpicture}
+%  \hspace{.2in}C.\begin{tikzpicture}
+%    \fill circle (.08);
+%    \draw[vectors,rotate=-30] (0,0)--(0,1) node[above]{$N$};
+%    \draw[vectors] (0,0)--(0,-1) node[below]{$mg$};
+%    \draw[vectors,rotate=60] (0,0)--(0,-1) node[right]{$f$};
+%  \end{tikzpicture}
+%  \hspace{.2in}D.\begin{tikzpicture}
+%    \fill circle (.08);
+%    \draw[vectors] (0,0)--(0,1) node[above]{$N$};
+%    \draw[vectors] (0,0)--(0,-1) node[below]{$mg$};
+%    \draw[vectors,rotate=60] (0,0)--(0,-1) node[right]{$f$};
+%  \end{tikzpicture}
+%  \hspace{.2in}E.\begin{tikzpicture}
+%    \fill circle (.08);
+%    \draw[vectors,rotate=150] (0,0)--(0,1) node[left]{$N$};
+%    \draw[vectors] (0,0)--(0,-1) node[below]{$mg$};
+%    \draw[vectors,rotate=60] (0,0)--(0,-1) node[right]{$f$};
+%  \end{tikzpicture}
+%
+%  \question In the previous question, the magnitude of the frictional force
+%  $f$ between the block and the plane is most nearly
+%  \begin{choices}
+%    \choice\SI1\newton
+%    \choice\SI2\newton
+%    \choice\SI3\newton
+%    \choice\SI4\newton
+%    \choice\SI5\newton
+%  \end{choices}
+%  
+%%  \question Two blocks, 4 kg and 2 kg, are connected by a string. An applied
+%%  force $\vec F$ of magnitude 18 N pulls the blocks to the left. The
+%%  acceleration of the 4 kg block is
+%%  \begin{center}
+%%    \begin{tikzpicture}[scale=.95]
+%%      \fill[pattern=north east lines] (1.5,0) rectangle (9,-.3);
+%%      \draw[very thick] (1.5,0)--(9,0);
+%%      \draw[very thick] (7,0) rectangle (8,1) node[midway]{2 kg};
+%%      \draw[very thick] (4,0) rectangle (6,1) node[midway]{4 kg};
+%%      \draw[very thick] (6,.5)--(7,.5);
+%%      \draw[very thick,->] (4,.5)--(2.5,.5) node[left]{$\vec F$};
+%%    \end{tikzpicture}
+%%  \end{center}
+%%  \begin{choices}
+%%    \choice\SI{2.0}{\metre\per\second\squared}
+%%    \choice\SI{3.0}{\metre\per\second\squared}
+%%    \choice\SI{4.0}{\metre\per\second\squared}
+%%    \choice\SI{4.5}{\metre\per\second\squared}
+%%    \choice\SI{6.0}{\metre\per\second\squared}
+%%  \end{choices}
+%%  
+%%  \question In the previous question, the tension in the string between the
+%%  blocks is
+%%  \begin{choices}
+%%    \choice 4.0 N
+%%    \choice 6.0 N
+%%    \choice 12 N
+%%    \choice 16 N
+%%    \choice 18 N
+%%  \end{choices}
+%
+%  \question A weight of magnitude $W$ is suspended in equilibrium by two cords,
+%  one horizontal and one slanted at an angle of \ang{60} from the horizontal, as
+%  shown. The tension in the horizontal cord is \underline{\hspace{1in}}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[ultra thick,brown] (0,-1.5)--(1.5,-1.5)--(1.5,-2.5);
+%      \draw[ultra thick,brown] (1.5,-1.5)--(4.5,0);
+%      \fill[pattern=north east lines] (0,0)--(5,0)--(5,.2)--(-.2,.2)--
+%      (-.2,-3)--(0,-3)--cycle;
+%      \draw[thick] (0,-3)--(0,0)--(5,0);
+%      \draw[thick,dashed] (1.5,0)--(1.5,-1.5)--(5,-1.5);
+%      \fill (1.5,-1.5) circle (.07);
+%      \draw[mass] (1.2,-2.5) rectangle (1.8,-3.1) node[midway]{$W$};
+%      \draw[axes] (3,-1.5) arc (0:27:1.5) node[midway,right]{\ang{60}};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{choices}
+%    \choice equal to the tension in the slanted cord
+%    \choice one-third as much as the tension in the slanted cord
+%    \choice one-half as much as the tension in the slanted cord
+%    \choice twice as much as the tension in the slanted cord
+%    \choice three times as much as the tension in the slanted cord
+%  \end{choices}
+%  \newpage
+%  
+%  \question Three blocks of mass 3 kg, 2 kg, and 1 kg are pushed along a
+%  horizontal frictionless plane by a force of 24 N to the right, as shown
+%  below. The acceleration of the 2 kg block is
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.9]
+%      \fill[pattern=north east lines]  rectangle (8,-.3);
+%      \draw[thick] (0,0)--(8,0);
+%      \draw[mass] (2,0) rectangle (4,1.5) node[midway]{3 kg};
+%      \draw[thick,fill=cyan!20] (4,0) rectangle (5.5,1.3) node[midway]{2 kg};
+%      \draw[thick,fill=cyan!10] (5.5,0) rectangle (6.5,1.1) node[midway]{1 kg};
+%      \draw[vectors] (0,.75)--(2,.75) node[midway,above]{24 N};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{choices}
+%  \choice\SI{144}{\metre\per\second\squared}
+%  \choice\SI{72}{\metre\per\second\squared}
+%  \choice\SI{12}{\metre\per\second\squared}
+%  \choice\SI{6}{\metre\per\second\squared}
+%  \choice\SI{4}{\metre\per\second\squared}
+% \end{choices}
+%  
+%  \question In the previous question, the force that the 2 kg block exerts on
+%  the 1 kg block is
+%  \begin{choices}
+%    \choice 2 N
+%    \choice 4 N
+%    \choice 6 N
+%    \choice 24 N
+%    \choice 144 N
+%  \end{choices}
+%  
+%  %\question What is the acceleration of the system shown below if both blocks
+%  %have a mass of \SI{5.0}{\kilo\gram}, and the coefficient of kinetic
+%  %friction is $0.11$? What is the tension in the rope?
+%  %\begin{enumerate}
+%  %  \item Determine the tension in the rope
+%  %  \item Determine the acceleration of both blocks
+%  %\end{enumerate}
+
+\item A hockey stick exerts an average force of \SI{39}{\newton} on a
+  \SI{.20}{\kilo\gram} hockey puck over a distance of \SI{.22}\metre. If the
+  hockey puck started from rest, what is the final velocity of the puck? 
+  Assume that the friction between the puck and the ice is negligible. 
+
+\item A curling stone with mass \SI{20.0}{\kilo\gram} leaves the curler's hand
+  at a speed of \SI{.885}{\metre\per\second}. It slides \SI{31.5}{\metre} down
+  the rink before coming to rest. 
+  \begin{enumerate}[itemsep=4pt]
+  \item Draw a free-body diagram of the curling stone after it leaves the
+    curler's hand
+  \item Find the average force of friction acting on the stone
+  \item Find the coefficient of kinetic friction between the ice and the stone
+  \item How far would the curling stone travel if its mass was reduced to
+    \SI{15.0}{\kilo\gram}, if the initial velocity is the same?
+  \end{enumerate}
+  (Hint: To do the least amount of work, solve the problem algebraically first,
+  and then substitute numerical values at the end.)
+
+\item A skier coasts down a \ang{3.5} slope at constant speed.
+  \begin{enumerate}[itemsep=4pt]
+    \item Draw a free-body diagram of the skier. The skier should be
+    represented by a dot. All forces (not components) should be drawn as arrow
+    that originate at, and pointing away from, the dot.
+    \item Find the coefficient of kinetic friction between the skis and the snow
+    covering the slope.
+  \end{enumerate}
+  (Hint: If you solve the problem algebraically first, \emph{most} of the
+  variables will cancel out, leaving you with a \emph{very} simple expression.
+  That's the time to substitute numerical values for your final answer.)
+
+%%\item A pulley device is used to hurl projectiles from a ramp ($\mu_k=0.26$).
+%%  Mass A (\SI{5.}{kg}) is accelerated from rest at the bottom of the
+%%  \SI{4.}{m}-long
+%%  ramp by mass B, a falling \SI{20.}{kg} mass suspended over a frictionless
+%%  pulley.
+%%  Just as A reaches the top of the ramp, it detaches from the rope (neglect the
+%%  mass of the rope) and becomes projected from the ramp.
+%%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%%  \item Draw free-body diagrams for both masses. (Draw forces directly on the
+%%    diagram.)
+%%  \item Determine the acceleration of A along the ramp.
+%%  \item Determine the tension in the rope during the acceleration of A along
+%%    the ramp.
+%%  \item Determine the speed of projection of A from the top of the ramp. 
+%%  \item Determine the horizontal range of A from the base of the ramp.
+%%  \end{enumerate}
+%%  \pic{.45}{diagram2}
+%  
+%  \question One method to increase the storage space in a very small house is to
+%  hang storage bins from the ceiling using ropes. In this example, a
+%  \SI{26}{\kilo\gram} bin is hung from the ceiling using two ropes of different
+%  tension, as shown in the diagram below. What is the tension in each of the
+%  ropes? (Hint: Start with a free-body diagram at the junction between the
+%  ropes.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.2]
+%      \draw[mass] (-1,.7) rectangle (1,2) node[midway]{\SI{26}{\kilo\gram}};
+%      \draw[ultra thick,brown] (0,2)--(0,2.5);
+%      \draw[ultra thick,brown] (3,3.5)--(0,2.5)--(-1.5,3.5);
+%      \fill[pattern=north east lines] (-3,3.5) rectangle (4,3.8);
+%      \draw[very thick] (-3,3.5)--(4,3.5);
+%      \fill (0,2.5) circle (.06);
+%      \draw[axes] (2,3.5) arc (180:198.4:1) node[midway,left]{\ang{18.4}};
+%      \draw[axes] (-0.5,3.5) arc (0:-33.7:1) node[midway,right]{\ang{33.7}};
+%    \end{tikzpicture}
+%  \end{center}
+
+\item Two blocks of masses $m=\SI{.80}{\kilo\gram}$ and
+  $M=\SI{2.0}{\kilo\gram}$ are connected by a massless string over a massless
+  and frictionless pulley as shown in the diagram below. The blocks are
+  released from rest at $t=0$.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick,brown] (-3,.4)--(.1,.4);
+      \draw[thick] (0,0)--(-5.5,0) node[midway,below]{$\mu=0.14$};
+      \draw[mass] (-3,0) rectangle +(-1,.8) node[midway]{$m$};
+      \begin{scope}[rotate=-30]
+        \draw[thick,brown] (1,.4)--(-.05,.4);
+        \draw[thick] (0,0)--(4.5,0)
+        node[midway,below,rotate=-30] {$\mu=0.14$};
+        \draw[thick,mass] (1,0) rectangle +(2,1) node[midway,rotate=-30]{$M$};
+      \end{scope}
+      \begin{scope}[rotate=-15]
+        \draw[thick,fill=gray] (0,.3) circle (.15);
+        \draw[thick,fill=gray!50] (0,.3) circle (.1);
+        \draw[ultra thick] (0,0)--(0,.3);
+        \fill (0,.3) circle (.04);
+      \end{scope}
+      \draw[thick,gray!70] (0,0)--(0,-1.5);
+      \draw[axes] (0,-.5) arc (270:330:.5) node[midway,below]{$\phi=\ang{60}$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[itemsep=4pt]
+  \item Draw free-body diagrams of the blocks as they move.
+  \item Determine the magnitude of acceleration of the blocks.
+  \item Calculate the magnitude of the tension force in the string.
+%  %\item If the string broke, for what minimum value of the coefficient of
+%  %static friction would the \SI{2.0}{\kilo\gram} block not begin to slide?
+  \end{enumerate}
+%  (Some hints and FYI: The pulley \emph{must} be frictionless and massless,
+%  otherwise, when the blocks are released from rest, the pulley will have
+%  rotational kinetic energy, and the tension will not be constant throughout.
+%  Both blocks will have the same magnitude of acceleration. To solve the
+%  problem, apply the second law of motion to each block, and the two unknowns
+%  that you need to solve are acceleration an tension. It does not matter which
+%  quantity you solve first.)
+
+\item In the figure below, the blocks do not slide against each other when
+  horizontal external force $\vec F$ is applied to $m_3$. Assume that there is
+  no friction at the contact between the blocks and the table. (Note: Without
+  this external force $\vec F$, $m_2$ would accelerate downwards, while $m_1$
+  would accelerate towards the right.)
+  %With the help of free-body diagrams on
+  %each mass, determine the magnitude of $\vec F$. 
+  \begin{center}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[very thick] (-3,0)--(3,0);
+      \fill[pattern=north east lines] (-3,0) rectangle (3,-.3);
+      \begin{scope}[thick]
+        \draw[mass] (-1.7,0) rectangle (0,1.2) node[midway]{$m_3$};
+        \draw[fill=gray!70] (-1.7,1.2) rectangle (-.8,1.9) node[midway]{$m_1$};
+        \draw[fill=gray!70] (0,.3) rectangle (.6,.78) node[midway]{$m_2$};
+      \end{scope}
+      \begin{scope}[ultra thick,brown]
+        \draw (-.8,1.55)--(.1,1.55);
+        \draw (.35,1.2)--(.35,.78);
+      \end{scope}
+      \begin{scope}[very thick]
+        \draw[fill=lightgray] (.1,1.3) circle (.3);
+        \draw[fill=gray] (.1,1.3) circle (.2);
+      \end{scope}
+      \fill (.1,1.3) circle (.05);
+      \draw[vectors] (-2.6,.6)--(-1.7,.6) node[pos=0,left]{$\vec F$};
+    \end{tikzpicture}
+    
+    $m_1=\SI{1.8}{\kilo\gram}$, $m_2=\SI{1.2}{\kilo\gram}$,
+    $m_3=\SI{3.0}{\kilo\gram}$
+  \end{center}
+  \begin{enumerate}[itemsep=4pt]
+  \item Draw free-body diagrams for each of the blocks. The block should be
+    presented by a dot. Forces should be drawn as arrows originating at, and
+    pointing away from, the dot that represent the object.
+
+%    \uplevel{
+%      Hints: For parts (b) and (c), you will only need to use the free-body
+%      diagrams of two of the 3 blocks. If the blocks don't slide against each
+%      other, they will all have the same acceleration vector.)
+%    }
+  \item Calculate the acceleration of the blocks (both magnitude and direction)
+    when the force is applied.
+  \item Calculate the magnitude of the force applied.
+  \end{enumerate}
+
+\item In a tractor-pull competition, a tractor applies a force of
+  \SI{1.3}{\kilo\newton} to the sled, which has mass \SI{1.1e4}{\kilo\gram}. At
+  that point, the coefficient of kinetic friction between the sled and the
+  ground has increased to 0.80. What is the acceleration of the sled? Explain
+  the significance of the sign of the acceleration. 
+  
+%%  \question A solo Arctic adventurer pulls a string of two toboggans of supplies
+%%  across level, snowy ground. The toboggans have masses of \SI{95}{\kilo\gram}
+%%  and \SI{55}{\kilo\gram}. Applying a force of \SI{165}{\newton} causes the
+%%  toboggans to accelerate at \SI{.61}{\metre\per\second\squared}.
+%%  \begin{enumerate}
+%%    \item Calculate the frictional force acting on the toboggans. 
+%%    \item Find the tension in the rope attached to the second
+%%    (\SI{55}{\kilo\gram}) toboggan.
+%%  \end{enumerate}
+
+\item A \SI{6.8}{\kilo\gram} bicycle, with a cyclist of mass
+  \SI{63.5}{\kilo\gram}, are travelling at \SI{45.4}{\kilo\metre\per\hour}
+  during a bike race, when the cyclist sees a crash ahead. To avoid the crash,
+  he applies the brakes, locking the wheels.
+  \begin{enumerate}[itemsep=4pt]
+  \item How far does the bike travel if the coefficient of kinetic friction
+    between the tires and the road is 0.60?
+  \item How far would the bike travel if the mass of the cyclist is only
+    \SI{40.2}{\kilo\gram}?
+  \end{enumerate}
+
+%%  \question A \SI{3.0}{\kilo\gram} counterweight is connected to a
+%%  \SI{4.5}{\kilo\gram} window that freely slides vertically in its frame. How
+%%  much force must you exert to start the window opening with an acceleration of
+%%  \SI{.25}{\meter\per\second\squared}.
+
+%%  %\uplevel{
+%%  %  \pic{.35}{../graphics/pulley-a-b}
+%%  %}
+%%  %\question A rope of negligible mass passes over a pulley of negligible
+%%  %mass attached to the ceiling, as shown above. One end of the rope is held by
+%%  %Student $A$ of mass \SI{70}{\kilo\gram}, who is at rest on the floor. The
+%%  %opposite end of the rope is held by Student $B$ of mass \SI{60}{\kilo\gram},
+%%  %who is suspended at rest above the floor.
+%%  %\begin{enumerate}
+%%  %  \item On the dots below that represent the students, draw and label
+%%  %  free-body diagrams showing the forces on Student $A$ and on Student $B$.
+%%  %
+%%  %  \begin{center}
+%%  %    \begin{tikzpicture}
+%%  %      \fill circle (.08) node[right]{$\;A$};
+%%  %      \fill (1,2.5) circle (.08) node[right]{$\;B$};
+%%  %    \end{tikzpicture}
+%%  %  \end{center}
+
+%%  %  \item Calculate the magnitude of the force exerted by the floor on Student
+%%  %  $A$.
+%%  %  
+%%  %  \uplevel{
+%%  %    Student $B$ now climbs up the rope at a constant acceleration of
+%%  %    \SI{.25}{\metre\per\second\squared} with respect to the floor.
+%%  %  }
+%%  %  
+%%  %  \item Calculate the tension in the rope while Student B is accelerating.
+%%  %
+%%  %  \item As Student $B$ is accelerating, is Student $A$ pulled upward off the
+%%  %  floor? Justify your answer.
+%%  %
+%%  %  \item With what minimum acceleration must Student $B$ climb up the rope to
+%%  %  lift Student $A$ upward off the floor?  
+%%  %\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,292 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.6in,letterpaper]{geometry}
+\usepackage{mathpazo}
+\usepackage{newtxtext,newtxmath}
+\usepackage[document]{ragged2e}
+\usepackage{siunitx}
+\usepackage{multicol}
+\sisetup{
+  detect-all,
+  inter-unit-product=\cdot,
+  per-mode=symbol
+}
+
+\newcommand{\sk}{\quad\quad}
+\setlength\parindent{0pt}
+
+\begin{document}
+\begin{center}
+  {\large{\textbf{EQUATIONS AND CONSTANTS FOR GRADE 12 PHYSICS}}}
+\end{center}
+These equations make doing homework and exams a bit easier, but they are
+\underline{\textbf{not}} an excuse for not learning the course material. If
+you don't know what these equations mean and how to use them, they will not
+help you at all. %Vector quantities are expressed in \textbf{bold fonts}.
+
+\begin{multicols*}{3}
+  \textbf{KINEMATIC EQUATIONS:}
+  \begin{align*}
+    \vec v_\text{avg} &=\frac{\Delta\vec d}{\Delta t}\sk
+    \vec a_\text{avg} =\frac{\Delta\vec v}{\Delta t}\\
+    \Delta\vec d &=\vec v_1\Delta t + \frac12\vec a\Delta t^2\\
+    \Delta\vec d &=\vec v_2\Delta t - \frac12\vec a\Delta t^2\\
+    \Delta\vec d &=\frac{\vec v_1+\vec v_2}2 \Delta t\\
+    v_2^2 &= v_1^2+ 2a\Delta d\\
+    \vec v_2 &= \vec v_1+\vec a \Delta t
+  \end{align*}
+
+  \textbf{SYMMETRIC PROJECTILES:}
+  \begin{align*}
+    \text{Total time: }T &= \frac{2v_i\sin\theta}g\\
+    \text{Range: }R &= \frac{v_i^2\sin(2\theta)}g\\
+    \text{Max height: }H &= \frac{v_i^2\sin^2\theta}{2g}
+  \end{align*}
+
+  \textbf{LAWS OF MOTION:}
+  \begin{align*}
+    \text{First law: }\vec F_\text{net} &=
+    \vec0\;\rightarrow\;\vec a=\vec 0\\
+    \text{Second law: }\vec F_\text{net} &=
+    m\vec a=\frac{\Delta\vec p}{\Delta t}\\
+    \text{Third law: }\vec F_\text{AB} &= -\vec F_\text{BA}
+  \end{align*}
+
+  \textbf{MOMENTUM \& IMPULSE}
+  \begin{align*}
+    \vec p &= m\vec v\\
+    \vec J &= F\Delta t\\
+    \vec J_\text{net} &= \Delta\vec p
+  \end{align*}
+
+
+  \textbf{WORK \& ENERGY:}
+  \begin{align*}
+    W &= F\Delta d\cos\theta\;\;\text{(constant force)}\\
+    W_\text{net} &= \Delta K\sk K = \frac12mv^2\\
+    U_g &= mgh\sk U_e = \frac12kx^2\\
+    W &=-\Delta U\;\;\text{(conservative forces)}
+  \end{align*}
+
+
+  \textbf{CONSERVATION OF ENERGY:}
+  \begin{align*}
+    E_\text{mech} &=K+\sum_i U_i\\
+    E_\text{sys}&=E_\text{mech}+E_\text{int}\\
+    \Delta E_\text{sys} &=W_\text{ext}\\
+  \end{align*}
+  
+  \textbf{COLLISIONS:}
+  \begin{align*}
+    \sum_i\vec p_i &=\sum_i\vec p'_i\text{ (all collisions)}\\
+    \sum_iK_i &=\sum_iK_i'\text{ (elastic only)}
+  \end{align*}
+
+  \textbf{1D ELASTIC COLLISION:}
+  \begin{align*}
+    v_1'&=\frac{v_1(m_1-m_2)+2m_2v_2}{m_1+m_2}\\
+    v_2'&=\frac{v_2(m_2-m_1)+2m_1v_1}{m_1+m_2}
+  \end{align*}
+  
+  \textbf{FORCES:}
+  \begin{align*}
+    \text{Gravity }\vec F_g &=m\vec g\\
+    \text{Static friction: } F_s &\leq \mu_sF_N\\
+    \text{Kinetic friction: } F_k &= \mu_kF_N\\
+    \text{Hooke's Law: }\vec F_s &= -k\vec x\\
+    \text{Drag: }F_D&=\frac12\rho v_\infty^2C_DA_\text{ref}
+  \end{align*}
+
+  
+  \textbf{CIRCULAR MOTION:}
+  \begin{align*}
+    \vec a_c&\perp\vec v\sk a_c=\frac{v^2}r\\
+    F_c&=ma_c=\frac{mv^2}r\\
+    T&=\frac{2\pi r}v\sk f=\frac1T\\
+    \tan\theta&=\frac{v^2}{rg}
+  \end{align*}
+
+  \textbf{ORBITAL MOTION:}
+  \begin{align*}
+    v_\text{orb} &=\sqrt{\frac{GM}r}\\
+    v_\text{esc} &=\sqrt{\frac{2GM}r}=\sqrt2v_\text{orb}\\
+    K_\text{orb} &=\frac{GMm}{2r}=\frac12mv_\text{orb}^2\\
+    U_\text{orb} &=-\frac{GMm}r=-2K_\text{orb}\\
+    E_\text{tot} &=K_\text{orb}+U_g=-\frac{GMm}{2r}=-K_\text{orb}\\
+    \frac{T^2}{r^3}&=\text{constant}
+  \end{align*}
+
+  \textbf{GRAVITY:}
+  \begin{align*}
+    F_g &= \frac{Gm_1m_2}{r^2}  &U_g &=-\frac{Gm_1m_2}r\\
+    g &=\frac{Gm_s}{r^2}       &\vec F_g &= m\vec g
+  \end{align*}
+
+  \textbf{ELECTROSTATICS:}
+  \begin{align*}
+    F_q &= \frac{kq_1q_2}{r^2}  &U_q     &= \frac{kq_1q_2}r\\
+    E &= \frac{kq_s}{r^2}      &\vec F_q &= q\vec E\\
+    V &= \frac{kq_s}r          &\Delta V &=\frac{\Delta U}q\\
+  \end{align*}
+  
+  \vspace{-.2in}\text{parallel plate:}\\
+
+  \vspace{-.2in}\begin{align*}
+    E &= \frac{\sigma}{\varepsilon_0}=\frac{\Delta V}d
+  \end{align*}
+
+  \textbf{MAGNETISM:}
+  \begin{align*}
+    F_m &= qvB\sin\theta\\
+    F_m &= IlB\sin\theta\\
+  \end{align*}
+
+  \textbf{TRAVELLING WAVE:}
+  \begin{displaymath}
+    v=f\lambda=\frac\lambda{T}
+  \end{displaymath}
+
+  \textbf{REFRACTION:}
+  \begin{align*}
+    n_1\sin\theta_1 &= n_2\sin\theta_2\\
+    n &= \frac cv
+  \end{align*}
+
+  
+  \textbf{SINGLE-SLIT DIFFRACTION:}
+
+  \text{Bright fringes:}
+  \begin{align*}
+    \left(m+\frac12\right)\lambda&=W\sin\theta\\
+    y_m&=\left(m+\frac12\right)\frac{\lambda L}W\sk
+    m = 1,2,3\cdots
+  \end{align*}
+  \text{Dark fringes:}
+  \begin{align*}
+    m\lambda &= W\sin\theta\\
+    y_m &= \frac{m\lambda L}W\sk
+    m = 1,2,3\cdots
+  \end{align*}
+  \columnbreak
+  
+  \textbf{DOUBLE-SLIT INTERFERENCE:}
+
+  \text{Bright fringe:}
+  \begin{align*}
+    n\lambda &= d\sin\theta\\
+    y_n &= \frac{n\lambda L}d\sk
+    n =0,1,2,3\cdots\\
+    \lambda &\approx\frac{\Delta yd}x
+  \end{align*}
+  \text{Dark fringes:}
+  \begin{align*}
+    \left(n+\frac12\right)\lambda &= d\sin\theta\\
+    y_n&=\left(n+\frac12\right)\frac{\lambda L}d\\
+    n &=0,1,2,3\cdots
+  \end{align*}
+  
+  \textbf{OPTICAL RESOLUTION:}
+  \begin{align*}
+  \text{Rectangular: }\theta_\text{min} &= \dfrac\lambda W\\
+  \text{Circular: }\theta_\text{min} &= \dfrac{1.22\lambda}D
+  \end{align*}
+  
+  \textbf{THIN-FILM INTERFERENCE:}\\
+  One phase shift:
+  \begin{align*}
+    \text{Constructive: }2nt&=\left(m-\frac12\right)\lambda\\
+    \text{Destructive: }2nt&=m\lambda
+  \end{align*}
+  Two phase shifts:
+  \begin{align*}
+    \text{Constructive: }2nt&=m\lambda\\
+    \text{Destructive: }2nt&=\left(m-\frac12\right)\lambda
+  \end{align*}
+  
+  \textbf{SPECIAL RELATIVITY:}
+  \begin{align*}
+    \gamma &= \frac1{\sqrt{1-\left(\dfrac vc\right)^2}}\\
+    t' &= \gamma t\\
+    L' &= \frac L\gamma\\
+    m' &= \gamma m\\
+    p &=m'v\\
+    E_0 &= mc^2\\
+    E_T &= m'c^2 = \gamma mc^2\\
+    K &= E_T-E_0=(\gamma-1)mc^2
+  \end{align*}
+  \columnbreak
+  
+  \textbf{QUANTUM MECHANICS:}
+  \begin{align*}
+    E &= hf\\
+    K_\text{max} &=
+    \begin{cases}
+      hf-\varphi & \text{if}\;\;hf>\varphi\\
+    0          & \text{otherwise}
+    \end{cases}\\  
+    p &= \frac Ec=\frac{hf}c=\frac h\lambda\\
+    \lambda &= \frac h{mv}\\
+    \sigma_p \sigma_x &\geq\frac h{4\pi}
+  \end{align*}
+
+  \textbf{SI UNIT PREFIXES:}
+ 
+  \vspace{.1in}\begin{tabular}{llc}
+    tera  & $10^{12}$ & T \\
+    giga  & $10^9$  & G \\
+    mega  & $10^6$  & M \\
+    kilo  & $10^3$  & k \\
+    centi & $10^{-2}$ & c \\
+    milli & $10^{-3}$ & m \\
+    micro & $10^{-6}$ & $\mu$ \\
+    nano  & $10^{-9}$ & n\\
+    pico  & $10^{-12}$ & p\\
+    femto & $10^{-15}$ & f
+  \end{tabular}
+
+  \vspace{.2in}\textbf{USEFUL CONSTANTS:}
+  \begin{align*}
+    \text{Acceleration to to gravity: }g &=\SI{9.81}{m/s^2}
+    \text{ (near surface of Earth)}\\
+    \text{Universal gravitational constant: }G &=\SI{6.674e-11}{N.m^2/kg^2}\\
+    \text{Coulomb's constant: }k &=\SI{8.988e9}{N.m^2/C^2}\\
+    \text{Electron rest mass: }m_e &=\SI{9.110e-31}{\kilo\gram}\\
+    \text{Proton rest mass: }m_p &=\SI{1.673e-27}{\kilo\gram}\\
+    \text{Elementary charge: }e &=\SI{1.602e-19}\coulomb\\
+    \text{Speed of light in vacuum: }c &=\SI{2.998e8}{\metre\per\second}\\
+    \text{Planck's constant: }h &=\SI{6.626e-34}{\joule\second}
+    =\SI{4.136e-15}{\electronvolt\second}\\
+    m_\text{Earth} &=\SI{5.972e24}{\kilo\gram}\\
+    r_\text{Earth} &=\SI{6.371e6}\metre\\
+    m_\text{Sun} &=\SI{1.989e30}{\kilo\gram}\\
+    r_\text{Sun} &=\SI{6.957e8}\metre\\
+    m_\text{Moon} &=\SI{7.348e22}{\kilo\gram}\\
+    r_\text{Moon} &=\SI{1.737e6}\metre\\
+    d_\text{Earth-to-moon}&=\SI{3.844e8}\metre\text{ (centre to centre)}\\
+  \end{align*}
+
+  \textbf{UNIT CONVERSIONS:}
+  \begin{align*}
+    \SI1\electronvolt &=\SI{1.602e-19}\joule\\
+    \SI1{\kilo\watt\hour} &=\SI{3.6e6}\joule\\
+    \SI1{km/h} &=\SI{0.278}{\metre\per\second}\\
+    \SI1{m/s} &=\SI{3.6}{\kilo\metre\per\hour}\\
+    \SI1{ly} &=\SI{9.461e15}\metre
+  \end{align*}
+
+  \textbf{MATHEMATICAL FORMULAS:}
+  Circles:
+  \begin{align*}
+    C=2\pi r\\
+    A=\pi r^2
+  \end{align*}
+  Spheres:
+  \begin{align*}
+    S=4\pi r^2\\
+    V=\dfrac43\pi r^3
+  \end{align*}
+  \begin{align*}
+    \text{Density: }\rho &=\dfrac mV\\
+    \text{Small angles: }\tan\theta &\approx\sin\theta\approx\theta
+  \end{align*}
+\end{multicols*}
+\end{document}

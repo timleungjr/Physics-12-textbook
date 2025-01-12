@@ -1,0 +1,189 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\usetheme{Singapore}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
+\usepackage[lf]{carlito}
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage{xcolor,colortbl}
+\usepackage{siunitx}
+
+\sisetup{
+  detect-all,
+  per-mode=symbol
+}
+
+
+\title{Acceleration Due To Gravity}
+\subtitle{Unit 1: Fundamentals of Dynamics}
+\author{Grade 12 Physics}
+\institute{Olympiads School}
+\date{Updated: Fall 2022}
+
+\newcommand{\eq}[2]{
+  \vspace{#1}{\large\begin{displaymath}#2\end{displaymath}}
+}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}{What is $g$}
+  In physics, we use the symbol $\vec g$ to represent the \textbf{acceleration
+    due to gravity} for any free-falling objects. On/near the surface of Earth,
+  it has an \emph{average} value of
+
+  \eq{-.15in}{
+    \boxed{
+      \vec g=\SI{9.81}{\metre\per\second\squared}\text{ [down]}
+    }
+  }
+
+  Since acceleration is a vector quantity, the direction of $\vec g$ is
+  important: it always points down by definition.
+\end{frame}
+
+
+
+\begin{frame}{Law of Universal Gravitation}
+  The value of $g$ is obtained by grouping terms from the \textbf{law of
+    universal gravitation}, which describes the force of attraction between
+  massive objects. The magnitude of the gravitational force is given by:
+
+  \eq{-.1in}{
+    \boxed{F_g=\frac{Gm_1m_2}{r^2}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Magnitude of gravitational force & $F_g$   & \si\newton\\
+      Universal gravitational constant & $G$   & \si{N.m^2/kg^2} \\
+      Point masses                     & $m_1$, $m_2$ & \si{\kilo\gram} \\
+      Distance between two masses      & $r$   & \si\metre
+    \end{tabular}
+  \end{center}
+  The \textbf{universal gravitational constant} has a value of
+  $G=\SI{6.674e-11}{N.m^2/kg^2}$.
+\end{frame}
+
+
+
+\begin{frame}{How Do We Get The Value of $g$?}
+  To find the value of $g$, we group the variables in the universal gravitation
+  equation:
+    
+  \eq{-.2in}{
+    F_g=\underbrace{\left[\frac{Gm_s}{r^2}\right]}_{=g}m=mg
+  }
+
+  \vspace{-.1in} On/near Earth's surface, we use Earth's mass
+  $m_s=m_E=\SI{5.972e24}{\kilo\gram}$ and the average value of Earth's radius
+  $r=r_E=\SI{6.371e6}{\metre}$ to find the value of $g$:
+
+  \eq{-.2in}{
+    g\approx\SI{9.82}{\metre\per\second\squared}
+  }
+
+  \vspace{-.15in}This is slightly \emph{higher} than the accepted value of
+  $9.81$.
+\end{frame}
+
+
+
+\begin{frame}{Earth Is Non-Inertial}
+  This small discrepency comes from the fact that Earth is a non-initial frame
+  of reference, because:
+  \begin{itemize}
+  \item Earth rotates on an axis with a period of \SI1\day
+  \item Earth orbits around the Sun with a period of \SI{365.25}\day
+  \item The solar system orbits around the centre of the galaxy (Milky Way) with
+    an unknown period
+  \end{itemize}
+  Of these factors, the Earth's own rotation (not surprisingly) has the
+  strongest influence.
+\end{frame}
+
+
+
+\begin{frame}{Making Earth an ``Inertial'' Frame of Reference}
+  Because of Earth's own rotation, observers on Earth experience a small
+  \textbf{centrifugal force} in the opposite direction of gravity.
+  \begin{itemize}
+  \item Centrifugal force is not a real force
+  \item It is a \textbf{pseudo force}\footnote{Also known as a
+    \textbf{fictitious force}} that is only experienced by observers in
+    non-inertial frames of reference
+  \end{itemize}
+  Therefore observers on Earth (non-inertial frames of reference)
+  measure a slight
+  decrease in $g$ because of this centrifugal force, hence we use a
+  \emph{corrected} value of \SI{9.81}{\metre\per\second\squared}. This way, we
+  can ``pretend'' that Earth is an inertial frame of reference.
+\end{frame}
+
+
+
+\begin{frame}{Value of $g$ At Various Parts of Earth}
+  Additionally, the Earth is not a perfect sphere. Depending on where you are,
+  the value of $g$ changes slightly.
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+      \rowcolor{pink}
+      \textbf{Location} & $g$ (\si{m/s^2}) & Altitude (\si{m}) & $r$ (\si{km})\\
+      \hline
+      North Pole                     & $9.8322$ & $0$      & $6357$ \\
+      Equator                        & $9.7805$ & $0$      & $6378$ \\
+      Peak of Mt. Everest            & $9.7647$ & $8850$   & $6387$ \\
+      Bottom of Mariana Ocean Trench & $9.8331$ & \num{-11034} & $6367$ \\
+      International Space Station    & $9.0795$ & \num{250000} & $6628$
+    \end{tabular}
+  \end{center}
+  $r$ is the distance to the centre of Earth.
+\end{frame}
+
+
+
+\begin{frame}{Using $g$ in Kinematics and Dynamics}
+  Some important notes when solving questions:
+  \begin{itemize}
+  \item $\vec g$ is a vector, and the direction is \emph{always} pointing down
+  \item The \emph{magnitude} of this vector, i.e.\
+    $g=|\vec g|=\SI{9.81}{\metre\per\second\squared}$, \emph{not}
+    \SI{-9.81}{\metre\per\second\squared}.
+    \begin{itemize}
+    \item Consistent with basic understanding of vectors, the magnitude must
+      always non-negative\footnote{It means that it can be positive, or zero}
+    \item We ``use'' \SI{-9.81}{\metre\per\second\squared} in problem solving
+      because (most notably) for projectile motions, $y$-axis generally is
+      defined pointing up, while $g$ points down by definition (i.e.\ in the
+      negative direction)
+    \item The negative sign in \SI{-9.81}{\metre\per\second\squared}
+      actually presents the direction of the vector
+    \end{itemize}
+  \end{itemize}
+%  This way of defining the axes is the standard (``right-handed'') Cartesian
+%  coordinate system that is most familiar in math classes. It also allows for
+%  most mathematical tools for vectors to be used easily.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Using $g$ in Kinematics}
+%  When the $y$-axis points upwards, acceleration due to gravity, which points
+%  \emph{down}, is therefore negative, i.e.\
+%  
+%  \eq{-.2in}{
+%    a_y=-g=\SI{-9.81}{\metre\per\second^2}
+%  }
+%
+%  It is important to keep in mind that \SI{9.81}{\metre\per\second^2} is the
+%  \emph{magnitude} of the acceleration vector, while the negative sign
+%  indicates that it is in the negative \emph{direction} (down).
+\end{frame}
+\end{document}

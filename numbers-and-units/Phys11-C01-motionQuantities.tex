@@ -1,0 +1,1513 @@
+%\documentclass[12pt,compress,aspectratio=169]{beamer}
+%\input{../mybeamer}
+%
+%\usepackage{cancel}
+%
+%\title{Class 1: Vectors and Motion Quantities}
+%\subtitle{Unit 1: Motion}
+%\input{../term}
+%\input{../mycommands}
+%
+%
+%\begin{document}
+%
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+%
+%\section[Intro]{Introduction}
+%
+\chapter{Dealing with Numbers}
+%
+%\subsection{Uncertainties}
+%
+%\begin{frame}{Physics Is Not Math}
+\begin{center}
+  There are things that we must learn\\
+  \emph{before} we learn any physics.
+\end{center}
+
+In physics, a quantity is either \emph{counted}, \emph{measured},
+or \emph{estimated}.
+
+%
+%
+%
+%\section{Counting vs.\ Measuring vs.\ Estimating}
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    %    Counted:
+    \pic1{numbers-and-units/images/empty-classroom}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+%    Measured:
+    \pic1{numbers-and-units/images/graduated-cylinder}
+  \end{subfigure}
+  \begin{subfigure}{.33\textwidth}
+    \centering
+%    Estimated:
+    \pic1{numbers-and-units/images/crowded-beach}
+    \end{subfigure}
+\end{figure}  
+%
+
+%
+%
+%
+%\section{Counted Quantities}
+%  
+%    \column{.33\textwidth}
+%    \pic1{images/empty-classroom}
+%    
+%    \column{.66\textwidth}
+%    Examples of quantities that are \emph{counted}:
+%    \begin{itemize}
+%    \item There are 20 students and 1 teacher in an online Zoom class
+%    \item There are 2 engines on a Boeing 777
+%    \item 2 of the 15 cars in the parking lot are red
+%    \end{itemize}
+%    Quantity that are counted are usually expressed \emph{exactly} with
+%    \emph{no uncertainties}. They are expressed as integers or fractions
+%    (ratios of integers).
+%  
+
+%
+%
+%
+%\section{Measured Quantities}
+%  
+%    \column{.33\textwidth}
+%    \pic1{images/graduated-cylinder}
+%
+%    
+%    \column{.66\textwidth}
+%    This is not the case with numbers that needs to be \emph{measured}, for
+%    example:
+%    \begin{itemize}
+%    \item The car is moving at \SI{45.4}{\metre\per\second} towards west
+%    \item A truck is towing a car using \SI{4500}{\newton} of force
+%    \end{itemize}
+%    Measured quantities always has \emph{uncertainties}, which depend on (but
+%    not limited to):
+%    \begin{itemize}
+%    \item Uncertainties in the tools used to make the measurements
+%    \item Errors introduced by the person making the measurements, etc
+%    \end{itemize}
+%  
+
+%
+%
+%
+%\section{Estimated Quantities}
+%  
+%    \column{.33\textwidth}
+%    \pic1{images/crowded-beach}
+%
+%    \column{.66\textwidth}
+%    There are also numbers which are too large to be counted, and are
+%    therefore usually \textbf{estimated}. For example:
+%    \begin{itemize}
+%    \item There are 7.714 billion people on Earth
+%    \item A bag of popcorn contains 600 kernels of corn
+%    \end{itemize}
+%    In these estimates, the exact values are likely not the most important
+%    (otherwise some poor graduate student at a university would be \emph{told}
+%    to count exactly); we treat them the same way as measured numbers with
+%    uncertainties.
+%  
+
+%
+%
+%
+%
+%\section{Uncertainties in Numbers}
+Measured or estimated quantities have \emph{uncertainties}; the \emph{exact}
+answers are impossible to obtain. \emph{How} we write the numbers conveys our
+knowledge about those uncertainties.
+
+When a number is obtained through a measurement or estimate, the \emph{last}
+digit is the one that has uncertainties. For example, these two measurements
+conveys different levels of uncertainty:
+%
+%  \eq{-.1in}{
+%    \SI{123}\metre\quad\quad\text{and}
+%    \quad\quad\SI{123.456}\metre
+%  }
+
+%
+%
+%\section{Uncertainties in Numbers}
+%  \eq{-.3in}{
+%    \SI{123}\metre
+%  }
+%  \begin{itemize}
+%  \item\vspace{-.25in}Uncertainty is in the unit digit (accurate to about
+%    $\pm 1$ {\color{magenta}m})
+%  \item Depending on how (with what tools, by whom, etc) the length was
+%    measured, the actual value \emph{could} be \SI{122}{\metre} or
+%    \SI{124}\metre
+%  \end{itemize}
+%
+%  \eq{0in}{
+%    \SI{123.456}\metre
+%  }
+%  \begin{itemize}
+%  \item\vspace{-.25in}Uncertainty is in the 3rd decimal place (accurate to
+%    about $\pm1$ {\color{magenta}mm})
+%  \item The actual length could be \SI{123.457}{\metre} or \SI{123.455}\metre
+%  \end{itemize}
+
+%
+%
+%
+%\section{Managing Uncertainties}
+%  When performing mathematical operations on numbers with uncertainties
+%  (through measurements and/or estimations), we must manage the uncertainties
+%  in the claculations.
+
+%
+%
+%
+%\section{Uncertainties in Numbers: An Example}
+%  \textbf{Example:} Given that $AB=\SI{103}\metre$ and
+%  $BC=\SI{103}\metre$. What is $AC$?
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[thick](0,0)--(2,0) node[pos=0,left]{$A$}
+%      node[right]{$B$} node[midway,below]{\SI{103}\metre}
+%      --(2,2) node[midway,right]{\SI{103}\metre} node[right]{$C$};
+%      \draw[thick](1.85,0) rectangle(2,0.15);
+%      \draw[very thick,red](0,0)--(2,2);
+%    \end{tikzpicture}
+%  \end{center}
+%  \vspace{-.1in}In your math class, you will certainly be required to give the
+%  \emph{exact} answer:
+%
+%  \eq{-.1in}{
+%    \num{103}\sqrt 2\;\si\metre
+%  }
+%    
+%  \vspace{-.2in}But $AB$, $BC$, as well as the right angle $\angle ABC$ in the
+%  diagram are \emph{measurements} with uncertainties. Then what is the best way
+%  to express $AC$?
+
+%
+%
+%
+%\section{Uncertainties in Numbers: An Example}
+%  
+%    \column{.3\textwidth}
+%    \vspace{.2in}
+%    \begin{tikzpicture}[scale=1.35]
+%      \draw[thick](0,0)--(2,0) node[pos=0,left]{$A$}
+%      node[right]{$B$} node[midway,below]{\SI{103}\metre};
+%      \draw[thick](2,0)--(2,2) node[midway,right]{\SI{103}\metre}
+%      node[right]{$C$};
+%      \draw[thick](1.85,0) rectangle(2,0.15);
+%      \draw[very thick,red](0,0)--(2,2);
+%    \end{tikzpicture}
+%    
+%    \column{.7\textwidth}
+%    Is the answer still the same as in your math class?
+%
+%    \eq{-.1in}{
+%      103\sqrt2\;\si\metre
+%    }
+%
+%    \vspace{-.1in}Or should we round off to some decimal places, and our
+%    answer is no longer ``exact''?
+%
+%    \eq{-.1in}{
+%      \SI{145.6639969}\metre
+%    }
+%    
+%    \vspace{-.1in}And if we round off decimal places, how many should we
+%    keep? (In this particular example, the correct way to express the answer is
+%    \SI{146}{\metre}, with \emph{no} decimal place. But how to we find out?
+%  
+
+%
+%
+%\subsection{Significant Figures}
+%
+%\section{Significant Figures}
+%  \vspace{.15in}We use a technique called \textbf{significant figures}
+%  (or \textbf{sig.\ figs.\ }or \textbf{s.f.}).
+%  \begin{itemize}
+%  \item %The significant figures of a number are
+%    Digits that carry meaning contributing to its measurement resolution
+%  \item Also known as \textbf{significant digits}, \textbf{sig.\ digs.\ }or
+%    \textbf{s.d.}
+%  \item Used when a full error analysis cannot be performed
+%  \end{itemize}
+%
+%  \vspace{.15in}First, we need to find out \emph{how many} significant figures
+%  a measurement has. There are a few rules.
+
+%
+%
+%
+%\section{When are Digits Significant?}
+%  
+%  \begin{block}{}
+%    Non-zeros digits are always significant
+%  \end{block}
+%
+%  \textbf{Example:}
+%  \begin{itemize}
+%  \item\SI{22}{\metre} has \emph{two} s.f., while
+%  \item\SI{22.3}{\metre} has \emph{three} s.f.
+%  \end{itemize}
+%
+%  \begin{block}{}
+%    Zeroes placed before other digits (``leading zeros'') are not significant
+%  \end{block}
+%  \textbf{Example:}
+%  \begin{itemize}
+%  \item\SI{.046}{\metre\per\second} has \emph{two} s.f.
+%  \item\SI{.00453}{\metre\per\second} has \emph{three} s.f.
+%  \end{itemize}
+%  The leading zeros in both cases do not contribute to the answer.
+
+%
+%
+%\section{When are Digits Significant?}
+%  \begin{block}{}
+%    Zeroes placed \emph{between} non-zero digits are significant
+%  \end{block}
+%
+%  \textbf{Example:} \SI{4009}{\kilo\gram} has \emph{four} s.f.
+%
+%  \vspace{.25in}
+%  \begin{block}{}
+%    Zeroes placed behind a decimal point are significant except leading zeros
+%  \end{block}
+%
+%  \textbf{Example:} \SI{7.90}{\watt} has \emph{three} s.f.
+
+%
+%
+%
+%\section{When are Digits Significant?}
+%  This last case is a bit contentious, and different teachers with different
+%  backgrounds will interpret it differently:
+%
+%  \vspace{.1in}
+%  \begin{block}{}
+%    Zeroes at the end of a number are significant only if they are behind a
+%    decimal point. Otherwise, it is impossible to tell.
+%  \end{block}
+%  
+%  \vspace{.2in}\textbf{Example:} In the length \SI{8200}\metre, it is unclear
+%  whether the zeroes are significant. The number of significant figures is at
+%  least \emph{two} but could also be \emph{three} or \emph{four}.
+
+%
+%
+%
+%\section{Significant Figures in Mathematical Operations}
+%  \begin{block}{}
+%    In calculations involving multiplication, division, trigonometric functions,
+%    and square roots, the number of significant figures in the answer should
+%    equal the least number of significant figures in any of the numbers being
+%    multiplied or divided.
+%  \end{block}
+%
+%  \textbf{Example:} When evaluating
+%
+%  \eq{-.15in}{
+%    y=\sin(kx)
+%  }
+%    
+%  where $k=\SI{.097}{\per\metre}$ (2 s.f.) and $x=\SI{4.73}\metre$ (3 s.f.),
+%  the answer should have 2 s.f., i.e.:
+%
+%  \eq{-.1in}{
+%    y=\sin(kx)=\num{.44}
+%  }
+
+%
+%
+%
+%\section{Significant Figures in Mathematical Operations}
+%  \textbf{Example:} When multiplying 6.4 and 3.217 together, the answer
+%  should have 2 significant figures:
+%
+%  \eq{-.3in}{
+%    6.{\color{red}4}\times 3.21{\color{red}7}=2{\color{red}1}
+%    }
+%
+%  \vspace{-.15in}The digits highlighted in red contain uncertainties. We can
+%  show this by separating part of the numbers with certainties from the part
+%  without:
+%
+%  \eq{-.2in}{
+%    6.{\color{red}4}\times 3.21{\color{red}7}
+%    = (6+{\color{red}0.4}) \times (3.21 + {\color{red}0.007})
+%  }
+%
+%  \vspace{-.2in}Any number that is multiplied by 0.4 or 0.007 will
+%  automatically be uncertain. When we put together all the numbers, we end up
+%  with
+%
+%  \eq{-.2in}{
+%    =2{\color{red}0.5888}
+%  }
+%
+%  \vspace{-.2in}Since we expect only the \emph{last} digit to have
+%  uncertainties, we round it off to the final answer of 21.
+
+%
+%
+%
+%\section{Significant Figures in Mathematical Operations}
+%  \begin{block}{}
+%    For \textbf{additions and subtractions}: the number of \emph{decimal places}
+%    in the answer equals the least number of \emph{decimal places} in any of the
+%    numbers being added or subtracted.
+%  \end{block}
+%  
+%  Using the numbers from the previous example, what if we add them together?
+%
+%  \eq{-.1in}{
+%    6.{\color{red}4} + 3.21{\color{red}7} = 9.{\color{red}6}
+%  }
+%
+%  Like multiplication/division, any number that is added to, or subtracted
+%  from, another number that has uncertainties, the sum or difference will also
+%  be uncertain.
+
+%
+%
+%\section{Integers and Irrational Numbers}
+%  Integers and irrational numbers often appear in algebraic expressions of the
+%  equations that we use in physics problems.
+%  \begin{itemize}
+%  \item Integers, the imaginary number, and ratios of integers have an infinite
+%    number of significant figures because they do not have uncertainties:
+%
+%    \eq{-.1in}{
+%      -1\quad5000\quad\frac32\quad i
+%    }
+%
+%  \item Irrational numbers also have an infinite number of significant figures
+%
+%    \eq{-.1in}{
+%      e\quad\pi\quad\sqrt5
+%    }
+%  \end{itemize}
+
+%
+%
+%
+%\subsection{Rounding}
+%
+%\section{Rounding}
+%  In the previous examples, we are left with more decimal places than needed.
+%  Since we can only keep \emph{one} number with uncertainty, that means that
+%  the answers have to be
+%  \emph{rounded to the appropriate number of significant figures}.
+%  
+%  \vspace{.15in}Most problems in high-school physics have 2 or 3 significant
+%  figures\footnote{of course there are exceptions}.
+
+%
+%
+%
+%\section{Rules for Rounding}
+%  
+%    \column{.6\textwidth}
+%
+%    To round to $n$ significant figures, check the $(n+1)$\textsuperscript{th}
+%    digit onward. If they are
+%    \begin{itemize}
+%    \item \num{000000} to \num{499999}\ldots: round \textbf{down}
+%    \item \num{500001} to \num{999999}\ldots: round \textbf{up}
+%    \item \num{500}\ldots, then check $n$\textsuperscript{th} digit:
+%      \begin{itemize}
+%      \item if that number is odd, round up
+%      \item if that number is even, round down
+%      \end{itemize}
+%    \end{itemize}
+%    
+%    \column{.4\textwidth}
+%    \textbf{Example:} Rounding to three significant figures
+%
+%    \vspace{.15in}
+%    \begin{tabular}{c|c}
+%      \rowcolor{pink}
+%      \textbf{Measurement} & \textbf{Round To} \\\hline
+%      \num{1.2346} & 1.23 \\
+%      \num{1.3478} & 1.35 \\
+%      \num{2.4450} & 2.44 \\
+%      \num{2.5752} & 2.58
+%    \end{tabular}
+%  
+%  \vspace{.15in}This is the most common rounding method taught in \emph{most}
+%  science and engineering textbooks, but there are variations between
+%  disciplines.
+
+%
+%
+%
+%\section{Keep One More Digit in Intermediate Answers}
+%  When doing multi-step calculations, keep at least one more significant
+%  figure\footnote{In fact, the best way is to keep \emph{all} the decimal
+%    places in your calculator} in your intermediate results than needed in your
+%  final answer.
+%  \begin{itemize}
+%  \item If the final answer requires two s.f., carry at least \emph{three}
+%    s.f.\ during calculations
+%  \item If you round off too soon, you discard information contained in the 3rd
+%    digit; as a result, the 2nd digit in your final answer might be incorrect
+%  \item This phenomenon is known as \textbf{round-off error}
+%  \end{itemize}
+%  \begin{block}{}
+%    Different teachers have different approaches, so pay attention to
+%    what they want!
+%  \end{block}
+
+%
+%
+%
+%
+\section{Scientific Notation}
+In \textbf{scientific notation}, a number is written as a number between
+1 and 10 that is multiplied by a power of 10. For example:
+%
+%  \eq{-.1in}{
+%    \num{5326.6}\rightarrow\num{5.3266e3}
+%  }
+%
+%  Because $\num{5326.6}=\num{5.3266}\times\num{1000}=\num{5.3266e3}$.
+%  Another example:
+%
+%  \eq{-.1in}{
+%    \num{.00654}\rightarrow\num{6.54e-3}
+%  }
+
+%
+%
+%
+%\section{Scientific Notation}
+Scientific notation avoids confusions about significant figures, because all
+digits, except for the first, are now after the decimal place, where zeros are
+considered significant. For example, it is unclear how many significant
+figures are in this time interval:
+%
+%  \eq{-.1in}{
+%    \SI{86400}\second
+%  }
+%  
+%  \vspace{-.15in}There could be 3, 4 or 5. However, if it is expressed using
+%  scientific notation, the number of significant figures is clear:
+%  
+%  \eq{-.1in}{
+%    \SI{8.640e4}\second
+%  }
+
+In this case, it is clear that the measurement is to 4 significant figures  
+
+
+
+\section{Order of Magnitude}
+
+When two numbers differ by a factor of 10, we say that they differ by
+{\color{red}one} \textbf{order of magnitude}, because the ratio of the number
+is $10^{\color{red}1}$. Similarly, {\color{cyan}two} orders of magnitude
+means a ratio of $10^{\color{cyan}2}$.
+
+\textbf{Example:} In air, the speed of light $c$ is approximately \emph{six}
+orders of magnitude faster than the speed of sound  $v_s$. We can also say that
+$v_s$ is approximately six orders of magnitude slower than $c$.
+%
+%  \eq{-.1in}{
+%    \frac c{v_s}=
+%    \frac{\SI{3.00e8}{\metre\per\second}}
+%         {\SI{3.43e2}{\metre\per\second}}
+%    \approx 10^6
+%  }
+
+Order-of-magnitude analysis is often used by scientists and engineers to
+check whether the solution to a problem makes sense.
+
+
+
+\chapter{SI Units}
+
+The \textbf{International System of Units} (\textbf{SI}, from the French
+\emph{Syst\`{e}me international d'unit\'{e}s}) is the modern form of the
+metric system. SI units are based on seven base units:
+%  
+%
+%    \column{.37\textwidth}
+%    \pic1{images/si-base}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c|c|l}
+    \textbf{Symbol} & \textbf{Name} & \textbf{Quantity} \\ \hline
+    \si\second    & second  & time\\
+    \si\metre     & metre   & length\\
+    \si{\kilo\gram} & kilogram & mass\\
+    \si\ampere    & amp\`{e}re  & electric current\\
+    \si\kelvin    & kelvin  & temperature\\
+    \si\mol       & mole    & amount of substance\\
+    \si\candela   & candela & luminous intensity
+  \end{tabular}
+\end{table}  
+
+All other units are derived from these seven base units. For example, the
+units that you encounter include:
+\begin{itemize}
+\item Velocity, measured in \emph{metres per second} [\si{\metre\per\second}]
+\item Force, measured in \emph{newtons} [\si\newton], defined as:
+  [\si{\kilo\gram\metre\per\second\squared}]
+\item Work and energy, measured as \emph{joules} [\si\joule], defined as:
+  [\si{\kilo\gram\metre\squared\per\second\squared}]
+\item And power is measured in \emph{watts} [\si\watt], defined as:
+  [\si{\kilo\gram\metre\squared\per\second\cubed}]
+\end{itemize}
+There will be more units in the course
+
+%
+%
+%
+\section{SI Unit Prefixes}
+
+A \textbf{unit prefix} can be added to units of measurement to indicate
+multiples of the units. Accepted SI unit prefixes indicate powers of 10.
+
+For example, a distance of $d=\SI{545}\metre$ can also be written as:
+\begin{align*}
+  d &= \SI{5.45e2}\metre\\
+  d &= \SI{.545}{\kilo\metre}
+\end{align*}
+
+Common SI unit prefixes are shown on the table.
+%    
+%    \column{.3\textwidth}
+%    \centering
+%    \textbf{Common SI prefixes:}
+%    
+    \begin{tabular}{|l|l|c|}
+      \hline
+      tera  & $10^{12}$ & T \\
+      giga  & $10^9$  & G \\
+      mega  & $10^6$  & M \\
+      kilo  & $10^3$  & k \\
+      centi & $10^{-2}$ & c \\
+      milli & $10^{-3}$ & m \\
+      micro & $10^{-6}$ & $\mu$ \\
+      nano  & $10^{-9}$ & n \\
+      \hline
+    \end{tabular}
+%  
+
+
+
+
+\section{Unit Conversion}
+
+%\section{Unit Conversion}
+Not all quantities are given to you are in SI units. For example, The SI unit
+for speed is metres per second (\si{\metre\per\second}), but kilometres per
+hour (\si{\kilo\metre\per\hour}) is commonly used around the world, while the
+imperial unit miles per hour (\si{mph}) is used in the United States.
+%  \begin{center}
+%    \pic{.35}{images/MP9004482912}
+%  \end{center}
+%  As scientists, in order to communicate ideas with people who use different
+%  units, we have to know how to convert them.
+
+%
+%
+%
+%\section{Unit Conversion}
+Generally, the conversion ratio is given to you (or you may be asked to search
+for it online or in books). For example, to convert from
+\si{\metre\per\second} to \si{\kilo\metre\per\hour}, the ratio is:
+%
+%  \eq{-.1in}{
+%    \SI1{\metre\per\second}=\SI{3.6}{\kilo\metre\per\hour}
+%  }
+%
+%  \vspace{-.15in}which I can re-write as
+%
+%  \eq{-.1in}{
+%    \frac{\SI1{\metre\per\second}}{\SI{3.6}{\kilo\metre\per\hour}}=1
+%    \quad\text{or}\quad
+%    \frac{\SI{3.6}{\kilo\metre\per\hour}}{\SI1{\metre\per\second}}=1
+%  }
+
+The advantage of writing this way is that multiplying any numbers by 1 will
+never change the number itself. This is the key to unit conversion.
+
+%
+%
+%
+%\section{Unit Conversion}
+If you wish to convert \SI{90}{\kilo\metre\per\hour} to
+\si{\metre\per\second}, you can simply multiply by the ratio:
+
+%  \eq{-.1in}{
+%    90\;\cancel{\si{\kilo\metre\per\hour}}
+%    \times
+%    \boxed{
+%      \frac{\SI1{\metre\per\second}}
+%           {3.6\;\cancel{\si{\kilo\metre\per\hour}}}
+%    }
+%    =\SI{25}{\metre\per\second}
+%  }
+%
+%  The \si{\kilo\metre\per\hour} units on the left-hand-side will cancel---yes,
+%  units cancel too---leaving the same quantity in
+%  \si{\metre\per\second}. This works backwards as well, for example, to convert
+%  \SI{30.}{\metre\per\second} to \si{\kilo\metre\per\hour}:
+%
+%  \eq{-.1in}{
+%    \num{30.0}\;\cancel{\si{\metre\per\second}}
+%    \times
+%    \boxed{
+%      \frac{\SI{3.6}{\kilo\metre\per\hour}}
+%           {\num1\;\cancel{\si{\metre\per\second}}}
+%    }
+%    =\SI{108}{\kilo\metre\per\hour}
+%  }
+
+%
+%
+%
+%\section{Accuracy vs.\ Precision}
+%  When solving a problem in your physics homework, you have to deal with both
+%  the \emph{accuracy} and \emph{precision} of the numerical values that you
+%  are given. Using a dart board as an analogy:
+%  \begin{center}
+%    \pic{.9}{images/Accuracy-vs-precision1}
+%  \end{center}
+%  
+%  \begin{itemize}
+%  \item\textbf{Accuracy:} How close the darts are to the centre
+%  \item\textbf{Precision:} How close the darts are to each other
+%  \end{itemize}
+
+%
+%
+%
+%
+%
+%
+%\section{Kinematics}
+%  \textbf{Kinematics} is a branch of mechanics that mathematically
+%  \emph{describes} the motion of objects, by using these motion quantities:
+%  \begin{itemize}
+%  \item Position
+%  \item Displacement
+%  \item Distance
+%  \item Velocity (instantaneous and average)
+%  \item Speed
+%  \item Acceleration (instantaneous and average)
+%  \end{itemize}
+%  Kinematics does not deal with \emph{what} causes motion (or what causes
+%  motion to change), only the relationship between motion quantities
+
+%
+%
+%
+%\section{Vectors}
+%
+%\section{Vectors vs.\ Scalars}
+%  When describing a physical quantity, sometimes direction matters. Quantities
+%  that require a direction called a \textbf{vector}.
+%  \begin{itemize}
+%  \item ``I am \SI{15}{\kilo\metre} from Meritus Academy''
+%  \item Without knowing the direction, there is no way of knowing where I am
+%  \end{itemize}
+%
+%  \vspace{.1in}For some other quantities, no direction is required. These are
+%  called \textbf{scalar} quantities.
+%  \begin{itemize}
+%  \item The mass of my bike is \SI{7.1}{\kilo\gram}
+%  \item The current world record for the \SI{100}{\metre} dash is
+%    \SI{9.58}\second
+%  \end{itemize}
+
+%
+%
+%
+%\section{Vector}
+%  When direction matters, we use a mathematical concept called a \textbf{vector}
+%  \begin{itemize}
+%  \item A vector has two parts:
+%    \begin{itemize}
+%    \item\textbf{Magnitude:} how much of that quantity
+%    \item\textbf{Direction:} which way
+%    \end{itemize}
+%  \item Usually represented by an arrow: the length is the magnitude
+%    \begin{center}
+%      \begin{tikzpicture}[rotate=25,scale=.75]
+%        \draw (-.5,0)--(6,0) node[below right]{Line of Action};
+%        \draw[vectors,red] (0,0)--(3,0) node[midway,above left]{$\vec A$};
+%      \end{tikzpicture}
+%    \end{center}
+%  \item Vector quantities have an arrow written above the symbol:
+%
+%    \eq{-.1in}{\vec d\quad\vec v\quad\vec a\quad\vec F\ldots}
+%  \end{itemize}
+
+%
+%
+%
+%\section{Examples of Vector Quantities}
+%    These are some examples vector quantities that require direction:
+%    \begin{itemize}
+%    \item Position ($\vec d$)
+%    \item Displacement ($\Delta \vec d$)
+%    \item Velocity ($\vec v$)
+%    \item Acceleration ($\vec a$)
+%    \item Force ($\vec F$)
+%    \item Magnetic Field ($\vec B$)
+%    \end{itemize}
+
+%
+%
+%\section{Examples of Scalar Quantities}
+%  These are examples scalar quantities that do not require directions:
+%  [T]
+%    \column{.33\textwidth}
+%    \begin{itemize}
+%    \item Distance ($s$)
+%    \item Area ($A$)
+%    \item Volume ($V$)
+%    \item Speed ($v$)
+%    \item Time ($t$)
+%    \end{itemize}
+%
+%    \column{.33\textwidth}
+%    \begin{itemize}
+%    \item Mass ($m$)
+%    \item Mechanical work ($W$)
+%    \item Energy ($E$)
+%    \item Heat ($Q$)
+%    \item Frequency ($f$)
+%    \end{itemize}
+%
+%    \column{.33\textwidth}
+%    \begin{itemize}
+%    \item Wavelength ($\lambda$)
+%    \item Electric Charge ($q$)
+%    \item Resistance ($R$)
+%    \item Voltage ($V$)
+%    \end{itemize}
+%  
+%  
+%  \vspace{.1in}The majority of physical quantites that we will encounter in
+%  Grade 11 are scalar quantities
+
+%
+%
+%
+%\section{Writing Vectors} %{Vectors in Two or More Dimensions}
+%  Any vector can be expressed by explicitly stating their magnitude and
+%  direction:
+%  \begin{center}
+%    {\large
+%      magnitude [direction]
+%    }
+%  \end{center}
+%  
+%  \begin{itemize}
+%  \item If I walk \SI{22}{\kilo\metre} to the north to come to class at
+%    Meritus Academy\footnote{Reality check: \SI{22}{\kilo\metre} south of
+%    Meritus is in the \emph{lake}}, I move by:
+%    
+%    \begin{center}
+%      {\large
+%        \SI{22}{\kilo\metre} [N]
+%      }
+%    \end{center}
+%
+%  \item\vspace{.1in}If I fly a small airplane north-west towards Sudbury, I
+%    travel with a velocity of:
+%    
+%    \begin{center}
+%      {\large
+%        \SI{125}{\metre\per\second} [NW]
+%      }
+%    \end{center}
+%  \end{itemize}
+
+%
+%
+%
+%\section{Vectors in One Dimension}
+%  For vectors in 1D we only need to use a ($+$) and ($-$) signs to indicate
+%  direction, like on a number line.
+%  \begin{itemize}
+%  \item Define a positive direction, e.g.
+%    \begin{itemize}
+%    \item If [North] is positive, then [South] is negative
+%    \item If [up] is positive, then [down] is negative
+%    \item If [left] is positive, then [right] is negative
+%    \end{itemize}
+%  \item When answering a problem, be sure to indicate which way is positive!
+%  \item After that, use ($+$) and ($-$) signs to describe the direction. e.g.
+%
+%    \eq{-.15in}{
+%      -\SI{28}{\metre\per\second}
+%    }
+%
+%    \vspace{-.2in}
+%    describes an object that is moving towards the ($-$) direction at
+%    \SI{28}{\metre\per\second}. We need to know what the ($+$) direction is
+%    before this has any meaning.
+%  \end{itemize}
+
+%
+%
+%\section{Motion Quantities}
+%
+%\subsection{Position}
+%
+%\section{Position}
+%  \textbf{Position} ($\vec d$) is the location of any object in a coordinate
+%  system
+%  \begin{itemize}
+%  \item A vector measured from the origin of the coordinate system (also called
+%    the \textbf{reference point})
+%  \item The coordinate system should be selected to simplify calculations
+%  \item The symbol for position is sometimes $\vec x$ or $\vec r$
+%  \item The SI unit for position is a \emph{metre} (\si\metre)
+%  \end{itemize}
+
+%
+%
+%
+%\section{Coordinate Systems}
+%  [t]
+%    \column{.33\textwidth}
+%    The 1D coordinate system is the number line.
+%
+%    \vspace{.5in}
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \draw[axes] (-2,0)--(2,0) node[right]{+};
+%        \draw[thick] (0,.1)--(0,-.1) node[below=-2]{$O$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \vspace{.3in}
+%    
+%    \column{.33\textwidth}
+%    The 2D coordinate system is the $xy$-plane.
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \draw[axes] (0,0)--(2,0) node[right]{$x$};
+%        \draw[axes] (0,0)--(0,2) node[above]{$y$};
+%      \end{tikzpicture}
+%    \end{center}
+%    
+%    \column{.33\textwidth}
+%    The 3D coordinate system is the Cartesian ($xyz$) space.
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \draw[axes] (0,0)--(1.6,-.5) node[right]{$y$};
+%        \draw[axes] (0,0)--(-1,-.6) node[left]{$x$};
+%        \draw[axes] (0,0)--(0,1.7) node[above]{$z$};
+%      \end{tikzpicture}
+%    \end{center}
+%  
+%  \vspace{.1in}Grade 11 Physics only focuses on one- and two-dimensional
+%  problems
+
+%
+%
+%
+%\section{Position in 1D}
+%  A one-dimensional coordinate system is the number line, and the position
+%  is the coordinate along the line. For example, if each tick represents
+%  \SI1\metre, then
+%
+%  \vspace{.1in}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left]{$-$} node[right]{$+$};
+%      \foreach \x in {-5,...,5} \draw (\x,.1)--(\x,-.1);
+%      \draw[thick] (0,.1)--(0,-.1) node[below]{$O$};
+%      \fill[red] (3.2,0) circle (.05) node[below]{$A$};
+%      \draw[vectors,red] (0,0)--(3.2,0) node[midway,above]{$\vec d_A$};
+%      \fill[blue](-4,0) circle (.05) node[below]{$B$};
+%      \draw[vectors,blue] (0,0)--(-4,0) node[midway,above]{$\vec d_B$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item The position of $A$ is {\color{red}$\vec d_A=+\SI{3.2}\metre$}; the
+%    position of $B$ is {\color{blue}$\vec d_B=\SI{-4.0}\metre$}
+%  \item The position vector is represented by an arrow drawn from the origin
+%  \item The positive direction and the location of the origin must be known
+%    \emph{a priori}\footnote{It means ahead of time}
+%  \item For 1D, the arrow above the variable is usually omitted
+%  \end{itemize}
+
+%
+%
+%
+%\section{Position in 2D}
+%  The two-dimensional coordinate system used in Grade 11 Physics is the
+%  $xy$-plane, called the \textbf{cartesian coordinate system}.
+%
+%  \vspace{.2in}
+%  
+%    \column{.3\textwidth}
+%    \centering
+%    \begin{tikzpicture}
+%      \fill[red] (3,2) circle (.05) node[above]{$P(x,y)$};
+%      \draw[vectors,red] (0,0)--(3,2) node[midway,above]{$\vec d_P$};
+%      \draw[axes] (-.2,0)--(3.5,0) node[right]{$x$};
+%      \draw[axes] (0,-.2)--(0,2.5) node[above]{$y$};
+%      \draw[axes] (1.5,0) arc(0:atan(2/3):1.5) node[midway,right]{$\theta$};
+%      \node[below left] at (0,0) {$O$};
+%    \end{tikzpicture}
+%
+%    \column{.65\textwidth}
+%    The position vector {\color{red}{$\vec d_P$}} is an arrow drawn from the
+%    origin to $P$. There are two ways to describe the vector:
+%    \begin{itemize}
+%    \item By the $(x,y)$ coordinates, or
+%    \item By the length of the arrow (magnitude) and the angle $\theta$ with
+%      the $x$-axis (direction)
+%    \end{itemize}
+%    We will study 2D vectors in more depth in Classes 3 and 4
+%  
+
+%
+%
+%
+%\subsection{Displacement}
+%
+%\section{Displacement: Change in Position}
+%  \textbf{Displacement} $\Delta\vec d$ is the change in position when an
+%  object moves. It is the difference between the final position (where
+%  motion ends) $\vec d_2$ and initial position (where motion begins)
+%  $\vec d_1$:
+%  
+%  \eq{-.1in}{
+%    \boxed{\Delta\vec d=\vec d_2-\vec d_1}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Displacement      & $\Delta\vec d$ & \si\metre\\
+%      Initial position  & $\vec d_1$ & \si\metre \\
+%      Final position    & $\vec d_2$ & \si\metre
+%    \end{tabular}
+%  \end{center}
+%  \uncover<3>{
+%    Displacement is posed as a \emph{subraction} of two vectors, but at this
+%    time it may be unclear what this subtraction actually means (there is a 1D
+%    example later)
+%  }
+%
+%  \begin{tikzpicture}[overlay]
+%    \uncover<2->{
+%      \node[text width=106,draw=magenta,fill=magenta!5,text=magenta] (act) at
+%      (2,3.6) {The Greek letter ``$\Delta$'' (``delta'') means ``change'' in
+%        mathematics, so $\Delta\vec d$ literally means ``the change in the
+%        position vector'', which is what displacement is};
+%      \draw[axes,magenta] (act) to[out=20,in=180] +(4,1);
+%    }
+%  \end{tikzpicture}
+
+%
+%
+%
+%\section{Displacement in 1D}
+%  Expressing displacement in 1D is straightforward. When an object
+%  moves from position 1 to 2, then $\Delta\vec d$ is represented by the arrow
+%  pointing from 1 towards 2:
+%
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left]{$-$} node[right]{$+$};
+%      \foreach \x in {-5,...,5} \draw (\x,.1)--(\x,-.1);
+%      \draw[thick] (0,.1)--(0,-.15) node[below]{$O$};
+%      \fill[red] (3.2,0) circle (.05) node[above]{1};
+%      \fill[red] (-2.5,0) circle (.05) node[above]{2};
+%      \draw[vectors,red] (3.2,0)--(-2.5,0) node[midway,above]{$\Delta d$};
+%      \draw[vectors,blue] (0,-.1)--(3.2,-.1) node[midway,below]{$d_1$};
+%      \draw[vectors,violet] (0,-.1)--(-2.5,-.1) node[midway,below]{$d_2$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \textbf{Example:} Using the equation from the last slide,
+%  \begin{displaymath}
+%    \Delta\vec d
+%    ={\color{violet}\vec d_2}-{\color{blue}\vec d_1}
+%    =(\SI{-2.5}\metre)-(\SI{3.2}\metre)=\boxed{{\color{orange}-}\SI{5.7}\metre}
+%  \end{displaymath}
+%  The displacement vector has a magnitude of \SI{5.7}{\metre} towards the
+%  {\color{orange}negative direction}.
+
+%
+%
+%
+%\section{Displacement in 2D}
+%  
+%    \column{.6\textwidth}
+%    Expressing displacement in 2D is more complicated, but still follows the
+%    same idea as in 1D. When an object moves from position 1 to 2, then
+%    $\Delta\vec d$ is represented by the arrow pointing from 1 towards 2.
+%
+%    \column{.35\textwidth}
+%    \begin{tikzpicture}
+%      \draw[vectors,blue] (0,0)--(3,1) node[pos=.6,below]{$\vec d_1$};
+%      \draw[vectors,violet] (0,0)--(.5,2.5) node[midway,right] {$\vec d_2$};
+%      \draw[vectors,red] (3,1)--(.5,2.5) node[midway,above=3]{$\Delta\vec d$};
+%      \fill[red] (3,1) circle (.05) node[right]{1};
+%      \fill[red] (.5,2.5) circle (.05) node[above]{2};
+%      \draw[axes] (-.2,0)--(3.5,0) node[right]{$x$};
+%      \draw[axes] (0,-.2)--(0,3.5) node[above]{$y$};
+%      \node[below left] at (0,0) {$O$};
+%    \end{tikzpicture}
+%  
+
+%
+%
+%
+%\subsection{Distance}
+%
+%\section{Distance}
+%  Distance ($s$) is a motion quantity that is related to displacement
+%  \begin{itemize}
+%  \item Distance is a \emph{scalar} quantity (no direction)
+%  \item The length of the path between two positions, and therefore
+%  \item Depends on \emph{how} an object travels from one point to another
+%  \item Non-negative ($s\geq 0$)
+%  \item Always inreasing as the object moves
+%  \end{itemize}
+%  In the 1D example below, the displacement is \SI{-5.7}\metre, but the
+%  distance travelled is much more than that.
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left]{$-$} node[right]{$+$};
+%      \foreach \x in {-5,...,5} \draw (\x,.1)--(\x,-.1);
+%      \draw[thick] (0,.1)--(0,-.1);
+%      \fill[red] (3.2,0) circle (.05) node[above]{1};
+%      \fill[red] (-2.5,0) circle (.05) node[above]{2};
+%      \draw[vectors,red] (3.2,0)--(-2.5,0) node[midway,above]{$\Delta\vec d$};
+%      \draw[very thick,blue] (3.2,-.2)--(1,-.2) arc(90:270:.1)
+%      --(2.5,-.4) arc(90:-90:.1)--(-1.7,-.6) node[midway,below]{$s$}
+%      arc(270:90:.1)--(0,-.4) arc(-90:90:.1)--(-2.5,-.2);
+%    \end{tikzpicture}
+%  \end{center}
+
+%
+%
+%
+%\section{Distance}
+%  
+%    \column{.35\textwidth}
+%    \centering
+%    \begin{tikzpicture}
+%      \draw[vectors] (3,1)--(.5,2.5) node[midway,above=2.5]{$\Delta\vec d$};
+%      \begin{scope}[very thick]
+%        \draw[blue] (3,1) to[out=90,in=45] (.5,2.5);
+%        \draw[green] (3,1) ..controls(2,.5) and (1,0).. (.5,2.5);
+%        \draw[orange] (3,1) ..controls(6,2) and (1,4).. (.5,2.5);
+%        \draw[violet] (3,1) ..controls(2.5,-2) and (0,0).. (.5,2.5);
+%      \end{scope}
+%      \fill (3,1) circle (.05) node[below right=-1]{1};
+%      \fill (.5,2.5) circle (.05) node[left]{2};
+%      \draw[axes] (-.2,0)--(3.5,0) node[right]{$x$};
+%      \draw[axes] (0,-.2)--(0,3.5) node[above]{$y$};
+%      \node[below left] at (0,0) {$O$};
+%    \end{tikzpicture}
+%
+%    \column{.6\textwidth}
+%    The {\color{violet}purple}, {\color{green}green}, {\color{blue}blue} and
+%    {\color{orange}orange} paths all have the same displacement $\Delta\vec d$
+%    (start at position 1 and ending at position 2), but their distances are
+%    different. In classical physics, distance is always greater than or equal
+%    to the magnitude of the displacement vector:
+%
+%    \eq{-.1in}{
+%      s\geq |\vec d|
+%    }
+%  
+
+%
+%
+%% THIS HAS BEEN MOVED TO CLASS 3 SLIDES
+%%
+%%\section{Example}
+%%  
+%%    \column{.63\textwidth}
+%%    \textbf{Example:} Determine the 3 displacements between Freda's home and
+%%    the other three buildings:
+%%    \begin{itemize}
+%%    \item Home to school%: \uncover<2->{\magdir{\SI{141}\metre}{NE}}
+%%    \item Home to diner%: \uncover<3->{\magdir{\SI{200}\metre}{N}}
+%%    \item Home to sports complex%:
+%%      %\uncover<4->{\magdir{\SI{361}\metre}{N \ang{33.7} W}}
+%%    \end{itemize}
+%%    
+%%    \column{.37\textwidth}
+%%    \pic1{images/town-map}
+%%  
+%
+%%
+%%
+%%
+%%\section{Example}
+%%  
+%%    \column{.63\textwidth}
+%%    \textbf{Example:} What is Freda's total distance and displacement if she
+%%    goes to school from home, then to the diner, then sports complex everyday?
+%%
+%%    \column{.37\textwidth}
+%%    \pic1{images/town-map}
+%%  
+%
+%%
+%%
+%%
+%%\section{Example}
+%%  
+%%    \column{.63\textwidth}
+%%    Assuming that she goes home every night (a very reasonable assumption,
+%%    because if she doesn't, she can't start the next day from home again!)
+%%    \begin{itemize}
+%%    \item Displacement: $\Delta\vec d=\vec 0$
+%%    \item Total distance cannot be determined because we don't know what path
+%%      she takes
+%%    \end{itemize}
+%%
+%%    \column{.37\textwidth}
+%%    \pic1{images/town-map}
+%%  
+%
+%
+%
+%
+%\section{Another Simple Example}
+%  \textbf{Example}: Dawn starts from her home, and bikes \SI{2.0}{\kilo\metre}
+%  east, then \SI{3.0}{\kilo\metre} west.
+%  \begin{enumerate}[(a)]
+%  \item Draw a vector diagram, and
+%  \item Find her displacement
+%  \item Find the total distance that she travelled
+%  \end{enumerate}
+%
+%  %\vspace{.5in}
+%  %\textbf{Example}: Dawn starts from home again, but this time she goes
+%  %\SI{2.0}{\kilo\metre} north and then \SI{3.0}{\kilo\metre} east.
+%  %\begin{enumerate}[(a)]
+%  %\item Draw a vector diagram, and
+%  %\item Find her displacement
+%  %\end{enumerate}
+
+%
+%
+%
+%\subsection{Velocity}
+%
+%\section{Velocity}
+%  \textbf{Velocity} is how quickly displacement changes with time. Like
+%  displacement, velocity is also a vector. \textbf{Average velocity} is defined
+%  as:
+%
+%  \eq{-.1in}{
+%    \boxed{
+%      \vec v_\text{avg}
+%      =\frac{\Delta\vec d}{\Delta t}
+%      =\frac{\vec d_2-\vec d_1}{t_2-t_1}
+%    }
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|l}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Average velocity & $\vec v_\text{avg}$ &
+%      \si{\metre\per\second} (metres per second)\\
+%      Displacement     & $\Delta\vec d$ & \si{\metre} (metres) \\
+%      Time interval    & $\Delta t$     & \si{\second} (seconds)
+%    \end{tabular}
+%  \end{center}
+%  On the other hand, \textbf{instantaneous velocity} is how quickly
+%  displacement is changing at an instance in time (i.e.\
+%  $\Delta t\rightarrow0$).
+
+%
+%
+%
+%\subsection{Speed}
+%
+%\section{Speed}
+%  Both velocity and speed are used to describe how \emph{fast} an object is
+%  moving, but they are not the same! \textbf{Average speed} is how quickly
+%  \emph{distance} is changing with time:
+%
+%  \eq{-.1in}{
+%    \boxed{
+%      v_\text{avg}
+%      =\frac s{\Delta t}\geq 0
+%    }
+%  }
+%
+%  Since distance is a non-negative value, average speed must also be
+%  non-negative
+%  \begin{center}
+%    \begin{tabular}{l|c|l}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Average speed & $v_\text{avg}$ &
+%      \si{\metre\per\second} (metres per second)\\
+%      Distance travelled & $s$        & \si{\metre} (metres) \\
+%      Time interval      & $\Delta t$ & \si{\second} (seconds)
+%    \end{tabular}
+%  \end{center}
+%  On the other hand, \textbf{instantaneous speed} is how quickly distance is
+%  changing at an instance in time.
+
+%
+%
+%
+%\section{Velocity vs.\ Speed}
+%  Difference between average velocity and average speed:
+%  \begin{itemize}
+%  \item Velocity is a vector (needs a direction), but speed is a scalar (no
+%    direction)
+%  \item Since displacement is different from distance, an object that has
+%    travelled a long distance but returns to the initial position will have
+%    non-zero average speed but zero average velocity.
+%  \end{itemize}
+%  In contrast, instantaneous speed is just the magnitude of the instantaneous
+%  velocity vector.
+
+%
+%
+%
+%\section{Example Problems}
+%  \textbf{Example}: Does speedometer of a car indicate speed or velocity?
+%
+%  \vspace{.5in}
+%  \textbf{Example}: A student runs around a \SI{400}{\metre}
+%  oval track in \SI{80}\second. Would the average velocity and average
+%  speed be the same? Explain?
+
+%
+%
+%
+%\section{Example Problem}
+%  \textbf{Example}: A dragster in a race is timed at the 200 m and 400 m
+%  points. The time are shown on the stopwatches in the diagram. Calculate the
+%  average velocity for:
+%  \begin{enumerate}
+%  \item the first 200 m
+%  \item the next 200 m, and
+%  \item the entire race
+%  \end{enumerate}
+%  \begin{center}
+%    \pic{.8}{images/dragrace}
+%  \end{center}
+
+%
+%
+%
+%\subsection{Acceleration}
+%
+%\section{Average Acceleration}
+%  \textbf{Acceleration} is the rate of change of instantaneous velocity (how
+%  quickly instantaneous velocity changes with time). It is also a vector:
+%
+%  \eq{-.1in}{
+%    \boxed{
+%      \vec a_\text{avg} = \frac{\Delta\vec v}{\Delta t}
+%      = \frac{\vec v_2-\vec v_1}{t_2-t_1}
+%    }
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|l}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Average acceleration & $\vec a_\text{avg}$ &
+%      \si{\metre\per\second\squared} (metres per second squared) \\
+%      Initial and final velocities & $\vec v_1$, $\vec v_2$ &
+%      \si{\metre\per\second} (metres per second) \\
+%      Change in velocity & $\Delta\vec v$ &
+%      \si{\metre\per\second} (metres per second) \\
+%      Time interval      & $\Delta t$ & \si{\second} (seconds)
+%    \end{tabular}
+%  \end{center}
+%  It may be easier to think of the unit for acceleration as ``metre per second,
+%  per second''
+
+%
+%
+%
+%%\section{Acceleration}
+%%  \begin{itemize}
+%%  \item A change in the velocity vector can mean a change in magnitude and/or
+%%    direction
+%%  \item There can be acceleration without any speeding up or slowing down!
+%%  \item Think about what happens if a car is turning at constant speed
+%%  \end{itemize}
+%
+%
+%
+%
+%\section{Example Problems}
+%  \textbf{Example}: A skater is going \SI{15}{\meter\per\second} at $t=0$.
+%  After \SI{5.0}\second, he is going \SI{5.0}{\metre\per\second}. What is his
+%  average acceleration?
+%  
+%  \vspace{.6in}
+%  \textbf{Example}: A sports car is travelling in a straight line along a
+%  highway at a speed of \SI{20}{\metre\per\second}. The driver steps on the
+%  gas, and \SI{3.0}{\second} later, the car's speed is
+%  \SI{32}{\metre\per\second}. Find its average acceleration.
+
+%
+%
+%
+%\section{Summary}
+%
+%\section{Summary: Position in 1D}
+%  For motion in one dimension, the position is like a point on the number line,
+%  where:
+%  \begin{itemize}
+%  \item{\color{red}($+$) Position}: on the positive side of the origin
+%  \item{\color{blue}($-$) Position}: on the negative side of the origin
+%  \end{itemize}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left] {$-$} node[right]{$+$};
+%      \draw[thick] (0,.1)--(0,-.1) node[below]{0};
+%
+%      \fill[red] (3,0) circle (.05);
+%      \draw[vectors,red] (0,0)--(3,0);
+%      
+%      \fill[blue] (-4,0) circle (.05);
+%      \draw[vectors,blue] (0,0)--(-4,0);
+%    \end{tikzpicture}
+%  \end{center}
+%  It doesn't matter which way the object is moving, only \emph{where} it is at
+%  that moment
+
+%
+%
+%
+%\section{Summary: Displacement \& Average Velocity} 
+%  When expressing displacement of an object, it does not matter where the
+%  object is relative to the reference point, only where it has gone
+%  \begin{itemize}
+%  \item{\color{red}($+$) Displacement}: moved in the positive direction
+%  \item{\color{blue}($-$) Displacement}: moved in the negative direction
+%  \end{itemize}
+%  Average velocity is in the same direction as displacement
+%  
+%  \vspace{.2in}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left]{$-$} node[right]{$+$};
+%      \draw[thick] (-3,.1)--(-3,-.1) node[below]{0};
+%
+%      \draw[vectors,red] (-3.93,0)--(.5,0) node[midway,above]{$\Delta d$};
+%      \fill[pink] (-4,0) circle (.05);
+%      \fill[red] (.5,0) circle (.05);
+%      
+%      \draw[vectors,blue] (5,0)--(3,0) node[midway,above]{$\Delta d$};
+%      \fill[blue!30] (5,0) circle (.05);
+%      \fill[blue] (3,0) circle (.05);
+%    \end{tikzpicture}
+%  \end{center}
+
+%
+%
+%
+%\section{Summary: Instantaneous Velocity}  
+%  For intstantaneous velocity, it does not matter where the object is, only
+%  where it is going
+%  \begin{itemize}
+%  \item{\color{red}($+$) velocity}: moving in the ($+$) direction
+%  \item{\color{blue}($-$) velocity}: moving in the ($-$) direction
+%  \end{itemize}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left] {$-$} node[right]{$+$};
+%      \draw[thick] (0,.1)--(0,-.1) node[below]{0};
+%
+%      \fill[red] (2,0) circle (.05);
+%      \draw[vectors,red] (2,0)--(3.5,0) node[midway,above]{$\vec v>0$};
+%
+%      \fill[blue] (-.5,0) circle (.05);
+%      \draw[vectors,blue] (-.5,0)--(-3,0) node[midway,above]{$\vec v<0$};
+%    \end{tikzpicture}
+%  \end{center}
+
+%
+%
+%
+%\section{Summary: Acceleration}
+%  Acceleration is a bit tricky; we have to know the velocity vector as well.
+%  \begin{itemize}
+%  \item If acceleration and velocity has the same sign, the object is speeding
+%    up (speed increasing)
+%  \item If the signs are opposite, then the object is slowing down
+%  \end{itemize}
+
+%
+%
+%
+%\section{Summary: Acceleration}
+%  Example: Positive velocity
+%  \begin{itemize}
+%  \item{\color{red}($+$) velocity \& ($+$) acceleration:} moving in the
+%    ($+$) direction \& speeding up
+%  \item{\color{blue}($+$) velocity \& ($-$) acceleration:} moving in the
+%    ($+$) direction \& slowing down
+%  \end{itemize}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left] {$-$} node[right]{$+$};
+%      \draw[thick] (0,.1)--(0,-.1) node[below]{0};
+%
+%      \fill[red] (2,0) circle (.05);
+%      \draw[vectors,red] (2,0)--(4.5,0) node[above]{$\vec v>0$};
+%      \draw[vectors,red] (2.5,-1)--(3.5,-1) node[above]{$\vec a>0$};
+%
+%      \fill[blue] (-3,0) circle (.05);
+%      \draw[vectors,blue] (-3,0)--(-1.5,0) node[above]{$\vec v>0$};
+%      \draw[vectors,blue] (-2,-1)--(-3,-1) node[above]{$\vec a<0$};
+%    \end{tikzpicture}
+%  \end{center}
+%  If acceleration has the same sign as velocity, then the object speeds up; if
+%  the signs are opposite, the object slows down.
+
+%
+%
+%
+%\section{Summary: Acceleration}
+%  Example: Negative velocity
+%  \begin{itemize}
+%  \item{\color{red}($-$) velocity \& ($+$) acceleration:} moving in the
+%    ($-$) direction \& slowing down
+%  \item{\color{blue}($-$) velocity \& ($-$) acceleration:} moving in the
+%    ($-$) direction \& speeding up
+%  \end{itemize}
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[axes] (-6,0)--(6,0) node[pos=0,left] {$-$} node[right]{$+$};
+%      \draw[thick] (0,.1)--(0,-.1) node[below]{0};
+%
+%      \fill[red] (4.5,0) circle (.05);
+%      \draw[vectors,red] (4.5,0)--(1,0) node[above]{$\vec v<0$};
+%      \draw[vectors,red] (2.5,-1)--(4,-1) node[above]{$\vec a>0$};
+%
+%      \fill[blue] (-1,0) circle (.05);
+%      \draw[vectors,blue] (-1,0)--(-3,0) node[above]{$\vec v<0$};
+%      \draw[vectors,blue] (-1.5,-1)--(-2.5,-1) node[above]{$\vec a<0$};
+%    \end{tikzpicture}
+%  \end{center}

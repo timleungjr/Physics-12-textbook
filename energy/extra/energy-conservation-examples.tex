@@ -1,0 +1,492 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../../mybeamer}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\title{Examples of Conservation of Energy: Gravity}
+\date{}
+%\input{../term}
+\input{../../mycommands}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+\begin{frame}{Example: Free Fall}{}  
+  {\color{orange}Assuming that there is no friction and drag}, a free-falling
+  object forms an isolated system with Earth:
+  \begin{center}
+    \begin{tikzpicture}[scale=.65]
+      \draw[thick,fill=gray!20] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,4) circle (.2);
+      \draw[vectors,red] (0,4)--+(0,-1.25) node[right]{$m\vec g$};
+      \draw[vectors,red] (0,.25)--+(0,1.25) node[right]{$m\vec g$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Gravitational force is an internal force
+  \item Work done by gravity stays within the system
+  \end{itemize}
+  The system is isolated until the two masses collide
+\end{frame}
+
+
+
+\begin{frame}{Example: Free Fall}
+  \begin{center}
+    \begin{tikzpicture}[scale=.65]
+      \draw[thick,fill=gray!20] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,4) circle (.2);
+      \draw[vectors,red] (0,4)--+(0,-1.25) node[right]{$m\vec g$};
+      \draw[vectors,red] (0,.25)--+(0,1.25) node[right]{$m\vec g$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Gravity is an internal force (also the only force in the system)
+  \item Energy of the system:
+    \begin{itemize}
+    \item The kinetic energy $K$ of the mass
+    \item The gravitational potential energy $U_g$ \emph{stored between the
+    object and Earth}
+    \end{itemize}
+  \item As the object falls, the only force doing work is gravity
+    (conservative!)
+    \begin{itemize}
+    \item Positive work done by gravity converts $U_g$ into $K$
+    \item Negative work done by gravity converts $K$ into $U_g$
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Example: Free Fall}
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=gray!20] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,4) circle (.2);
+      \draw[vectors,red] (0,4)--+(0,-1.25) node[right]{$m\vec g$};
+      \draw[vectors,red] (0,.25)--+(0,1.25) node[right]{$m\vec g$};
+    \end{tikzpicture}
+  \end{center}
+  Since the system is isolated, $\Delta E_\text{sys}=0$, and we have
+
+  \eq{-.1in}{
+    \boxed{ K+U_g=\text{constant} }
+    \quad\text{\normalsize or}\quad
+    \boxed{ K+U_g= K'+U_g'}
+  }
+  
+  When solving problems, we expand the terms $K=\dfrac12mv^2$ and $U_g=mgh$
+\end{frame}
+
+
+
+\begin{frame}{Example: Arbitrary Ramp}{}
+  {\color{orange}Assuming that there is no friction or drag}, an object
+  sliding down an arbitrarily-shaped ramp forms an isolated system with Earth:
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick](0,4) to[out=-30,in=180] (3,1) to[out=0,in=180] (5,3)
+      to[out=0,in=170] (8,0) to[out=-10,in=180] (10,0);
+      \draw[mass,rotate around={-60.5:(1,2.93)}] (1,2.93) rectangle +(.6,.6);
+      \fill[red] (1.4,2.8) circle (.08);
+      \draw[vectors,red] (1.4,2.8)--+(0,-1.5) node[left]{$m\vec g$};
+      \draw[vectors,red,rotate around={30:(1.4,2.8)}]
+      (1.4,2.8)--+(1.4,0) node[right]{$\vec F_N$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Both gravity ($m\vec g$) and normal force ($N$) are internal forces
+    \begin{itemize}
+    \item They act on the object (shown above) as well as on Earth (3rd law of
+      motion)
+    \end{itemize}
+  \item Normal force does not do any work ($\vec N$ is perpendicular to motion
+    of the object)
+  \item Only gravity (conservative force!) does work
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example: Arbitrary Ramp}
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick](0,4) to[out=-30,in=180] (3,1) to[out=0,in=180] (5,3)
+      to[out=0,in=170] (8,0) to[out=-10,in=180] (10,0);
+      \draw[mass,rotate around={-60.5:(1,2.93)}] (1,2.93) rectangle +(.6,.6);
+      \fill[red] (1.4,2.8) circle (.08);
+      \draw[vectors,red] (1.4,2.8)--+(0,-1.5) node[left]{$m\vec g$};
+      \draw[vectors,red,rotate around={30:(1.4,2.8)}]
+      (1.4,2.8)--+(1.4,0) node[right]{$\vec F_N$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Energy of the system:
+    \begin{itemize}
+    \item The kinetic energy $K$ of the mass
+    \item The gravitational potential energy $U_g$ \emph{stored between the
+    object and Earth}
+    \end{itemize}
+  \item As the object slides up/down the ramp, work is done by gravity:
+    \begin{itemize}
+    \item Positive work done converts $U_g$ into $K$
+    \item Positive work done converts $K$ into $U_g$
+    \end{itemize}
+    The energy stays inside the system
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example: Arbitrary Ramp}
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick](0,4) to[out=-30,in=180] (3,1) to[out=0,in=180] (5,3)
+      to[out=0,in=170] (8,0) to[out=-10,in=180] (10,0);
+      \draw[mass,rotate around={-60.5:(1,2.93)}] (1,2.93) rectangle +(.6,.6);
+      \fill[red] (1.4,2.8) circle (.08);
+      \draw[vectors,red] (1.4,2.8)--+(0,-1.5) node[left]{$m\vec g$};
+      \draw[vectors,red,rotate around={30:(1.4,2.8)}]
+      (1.4,2.8)--+(1.4,0) node[right]{$\vec F_N$};
+    \end{tikzpicture}
+  \end{center}
+  Since the system is isolated, the sum the kinetic energy ($K$) and
+  gravitational potential energy ($U_g$) is constant, like the free-fall
+  problem before:
+
+  \eq{-.1in}{
+    \boxed{ K+U_g=\text{constant} }
+    \quad\text{\normalsize or}\quad
+    \boxed{ K+U_g= K'+U_g'}
+  }
+
+  When solving problems, we expand the terms $K=\dfrac12mv^2$ and $U_g=mgh$
+\end{frame}
+
+
+\begin{frame}{What if there is friction?}
+  In both examples, we have assumed that {\color{orange}there is no friction or
+    drag}. If there is (kinetic) friction, we can still have an isolated
+  system.
+%  this case, the system consists of a mass, a spring, Earth and all the air
+%  molecules inside the box:
+%  \input{../common/closed-box}
+%  The energies of this system include
+  \begin{itemize}
+  \item We must now add to the system, internal/thermal energies of
+    \begin{itemize}
+    \item the air molecules surrounding the object
+    \item the object itself
+    \item the Earth
+    \end{itemize}
+  \item System energy will still be conserved \emph{if} you include the internal
+    energy
+  \item But accounting for internal energy is nearly impossible, since
+    surrounding air molecules are not confined, and Earth is quite large
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Isolated vs.\ Open System}
+  Accounting for the change in internal/thermal energy is usually impractical,
+  if not downright impossible. The solution:
+  %  \begin{center}
+%    \begin{tikzpicture}[scale=.5]
+%      \fill[pattern=north east lines] (0,4) rectangle (5,4.5);
+%      \fill[gray!10] rectangle (5,4);
+%      \draw[very thick] (0,4)--(5,4);
+%      \draw[thick,
+%        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+%        decorate] (2.5,4)--(2.5,2.25) node[midway,right=5]{$k$};
+%      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \vspace{-.05in}Solution:
+  \begin{itemize}
+  \item Treat all the microscopic energies to be \emph{outside} of the system
+%  \item Take the air molecule out of the \emph{system}
+  \item No longer an isolated system
+  \item Therefore the work by kinetic friction and drag are
+    \emph{external work}:
+
+    \eq{-.1in}{
+      K + U_g + {\color{red}W_\text{ext}}= K' + U_g'
+    }
+
+  \item With friction and drag, \emph{usally} these forces do negative work
+    that takes away energy from the system2
+  \end{itemize}
+\end{frame}
+
+
+
+
+%\begin{frame}{Example Problem}
+%  \textbf{Example:} A skier glides with a speed of \SI{2.0}{\metre\per\second}
+%  at the top of a ski hill, \SI{40}{\metre} high. She then begins to slide down
+%  the icy (i.e.\ frictionless) hill.\footnote{In reality, there will always be
+%  \emph{some} friction and drag as she slides down. In that case, we will also
+%  need to know the non-conservative work done by friction.}
+%  \begin{enumerate}[(a)]
+%  \item What is the skier's speed at a height of \SI{25}\metre?
+%  \item At what height does the skier have a speed of
+%    \SI{10}{\metre\per\second}?
+%  \end{enumerate}
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}{Example: Horizontal Spring-Mass System}
+%  Assuming no friction, drag or other damping forces, a horizontal spring-mass
+%  system is an isolated system:
+%  \begin{center}
+%    \vspace{-.18in}
+%    \begin{tikzpicture}[scale=.85]
+%      \draw[mass] (5,.5) rectangle (6,1.5);
+%      \draw[thick,decorate,
+%        decoration={aspect=.45,segment length=6,amplitude=7,coil}] (0,1)--(5,1);
+%      \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
+%      --(-.2,2)--(0,2)--(0,.5)--cycle;
+%      \draw[very thick] (0,2)--(0,.5)--(6.5,.5);
+%      \fill[red] (5.5,1) circle (.08);
+%      \draw[vectors,red] (5.5,1)--+(0,-1) node[below]{$\vec F_g$};
+%      \draw[vectors,red] (5.5,1)--+(0,1) node[above]{$\vec F_N$};
+%      \draw[vectors,red] (5.5,1)--+(-1,0) node[above]{$\vec F_e$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item\vspace{-.1in}The only force doing work is the spring force ($\vec F_g$
+%    and $\vec F_N$ are perpendicular to motion)
+%  \item The sum of the kinetic energy of the mass ($K$) and the elastic
+%    potential energy stored in the spring ($U_e$) is constant
+%
+%    \eq{-.2in}{
+%      \boxed{ K+U_e=\text{constant} }
+%    }
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Example Problem}
+%  \textbf{Example:} A toy cart with a mass of \SI{.25}{\kilo\gram} travels
+%  along a frictionless horizontal track and collides head on with a spring that
+%  has a spring constant of \SI{155}{\newton\per\metre}. If the spring is
+%  compressed by \SI{6.0}{\centi\metre}, how fast is the cart initially
+%  travelling?
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \fill[blue!30] rectangle (10,-.3);
+%      \draw (0,0)--(10,0);
+%      \draw[fill=brown] (.5,.2) rectangle (3,.5) node[midway,above=3]{$m$};
+%      \draw[fill=gray] (1,.2) circle (.2);
+%      \draw[fill=gray] (2.5,.2) circle (.2);
+%      \fill (1,.2) circle (.06);
+%      \fill (2.5,.2) circle (.06);
+%      \draw[vectors] (3,.35)--(4.5,.35) node[above]{$v$};
+%      \draw[pattern=north east lines] (9.3,0) rectangle (10,1.7);
+%      \draw[ultra thick,decorate,
+%        decoration={aspect=.4,segment length=1.5mm, amplitude=2mm, coil}]
+%      (6.3,.4)--(9.3,.4) node[midway,above=3]{spring};
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}{Example: Vertical Spring-Mass System}
+%  \begin{columns}
+%    \column{.25\textwidth}
+%    \centering
+%    \begin{tikzpicture}
+%      \draw[mass] (.5,2) rectangle (1.5,1);
+%      \draw[thick,decorate,
+%        decoration={aspect=.4,segment length=5,amplitude=7,coil}] (1,5)--(1,2); 
+%      \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
+%      \draw[very thick] (0,5)--(2,5);
+%      \draw[vectors,red] (1,1.5)--(1,0) node[right]{$\vec F_g$};
+%      \draw[vectors,red] (1,1.5)--(1,3) node[right]{$\vec F_e$};
+%      \fill[red] (1,1.5) circle (.06);      
+%    \end{tikzpicture}
+%
+%    \column{.75\textwidth}
+%    Assuming no friction, drag or other damping forces, the vertical
+%    spring-mass system (consists of the mass, the spring and Earth) is an
+%    isolated system
+%    \begin{itemize}
+%    \item Both gravity and spring force are doing work
+%    \item The sum of the kinetic energy of the mass ($K$), the gravitational
+%      potential energy ($U_g$), and the elastic potential energy in the
+%      spring ($U_e$) is constant.
+%
+%      \eq{-.1in}{
+%        \boxed{ K + U_g + U_e=\text{constant} }
+%      }
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
+%
+%\begin{frame}{Example Problem}
+%  \begin{columns}
+%    \column{.6\textwidth}
+%    \textbf{Example:} A freight elevator car with a total mass of
+%    \SI{100}{\kilo\gram} is moving downward at \SI{3.00}{\metre\per\second},
+%    when the cable snaps. The car falls \SI{4.00}{\metre} onto a huge spring
+%    with a spring constant of \SI{8.00e3}{\newton\per\metre}. By how much will
+%    the spring be compressed when the elevator car reaches zero velocity?
+%
+%    \column{.4\textwidth}
+%    \pic1{graphics/freight-elevator}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}{Example: Simple Pendulum}
+%  \begin{columns}
+%    \column{.75\textwidth}
+%    Assuming no friction, drag or other damping forces, the simple pendulum
+%    system (consists of the mass and Earth) is isolated
+%    \begin{itemize}
+%    \item Gravity ($\vec F_g$) is the only force that does work
+%    \item Tension ($\vec F_T$) idoes not do work on the pendulum because it is
+%      perpendicular to its motion
+%    \item The sum of the kinetic energy of the mass ($K$) and the gravitational
+%      potential energy ($U_g$) is constant:
+%
+%      \eq{-.1in}{
+%        \boxed{ K + U_g =\text{constant} }
+%      }
+%    \end{itemize}
+%    
+%    \column{.23\textwidth}
+%    \centering
+%    \begin{tikzpicture}
+%      \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
+%      \draw[thick] (-1,0)--(1,0);
+%      \begin{scope}[rotate=15]
+%        \draw[thick] (0,0)--(0,-5);
+%        \shade[ball color=red] (0,-5) circle (.2) node[right=3]{$m$};
+%        \draw[vectors,red] (0,-5)--(0,-3.5) node[left]{$\vec F_T$};
+%        \draw[vectors,red,rotate around={-15:(0,-5)}] (0,-5)--(0,-6.3)
+%        node[below]{$\vec F_g$};
+%      \end{scope}
+%      \draw[dashed] (0,0)--(0,-5);
+%    \end{tikzpicture}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{What if there is friction?}
+%  Energy is always conserved as long as your system is defined properly. In
+%  this case, the system consists of a mass, a spring, Earth and all the air
+%  molecules inside the box:
+%  \input{../common/closed-box}
+%  The energies of this system include
+%  \begin{itemize}
+%  \item Kinetic energy of the mass ($K$)
+%  \item Gravitational potential energy ($U_g$) between the mass and Earth
+%  \item Elastic potential energy ($U_e$) stored in the spring
+%  \item Internal energies ($E_\text{int}$) of the air molecules and the mass
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Isolated System with Changing Internal Energy}
+%  \input{../common/closed-box}
+%  
+%  \eq{-.1in}{
+%    \boxed{ K + U_g + U_e + E_\text{int}=\text{constant}}
+%  }
+%  
+%  \textbf{Note:} Work done by kinetic friction and drag forces (both
+%  non-conservative) always convert the kinetic energy of the mass into the
+%  internal energy of the air molecules and the mass, heating them up. It does
+%  not go the other way.
+%\end{frame}
+%
+%
+%
+%\section{Power \& Efficiency}
+%
+%\begin{frame}{Power}
+%  Power is the rate at which work is done, i.e.\ the rate at which energy is
+%  being transformed:
+%
+%  \eq{-.1in}{
+%    \boxed{P = \frac W{\Delta t}}\quad\quad
+%    \boxed{P = \frac{\Delta E}{\Delta t}}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity}  & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Power              & $P$        & \si\watt \\
+%      Energy transformed & $\Delta E$ & \si\joule \\
+%      Work done          & $W$        & \si\joule \\
+%      Time interval      & $\Delta t$ & \si\second
+%    \end{tabular}
+%  \end{center}
+%  In engineering, power is often more critical than the actual amount of work
+%  done.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Power}
+%  If a constant force is used to push an object at a constant velocity, the
+%  power produced by the force is:
+%  
+%  \eq{-.1in}{
+%    P=\frac W{\Delta t}=\frac{F\Delta d}{\Delta t}
+%    \quad\longrightarrow\quad \boxed{P=Fv}
+%  }
+%  
+%  Application: aerodynamics
+%  \begin{itemize}
+%  \item When an object moves through air, the applied force must overcome air
+%    resistance (drag), which is proportional with $v^2$
+%    \item Therefore ``aerodynamic power'' must scale with $v^3$ (i.e.\ doubling
+%      your speed requires $2^3=8$ times more power)
+%    \item Important when aerodynamic forces dominate
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Efficiency}
+%  The ratio of useful energy or work output to the total energy or work input
+%
+%  \eq{-.1in}{
+%    \boxed{\eta = \frac{E_o}{E_i}\times\SI{100}{\percent}}\quad
+%    \boxed{\eta = \frac{W_o}{W_i}\times\SI{100}{\percent}}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Useful output energy & $E_o$ & \si\joule \\
+%      Input energy         & $E_i$ & \si\joule \\
+%      Useful output work   & $W_o$ & \si\joule \\
+%      Input work           & $W_i$ & \si\joule \\
+%      Efficiency           & $\eta$ & no units
+%    \end{tabular}
+%  \end{center}
+%  Efficiency is always $0 \leq\eta < 100\%$
+%\end{frame}
+%
+\end{document}

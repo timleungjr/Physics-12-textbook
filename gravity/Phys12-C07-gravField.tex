@@ -1,0 +1,1128 @@
+\chapter{Gravity and Planetary Motion}
+\label{chapter:gravity}
+
+\section{Law of Universal Gravitation}
+In classical/Newtonian physics, \textbf{gravity} is the mutual attraction
+between all massive objects, as shown in Fig.~\ref{fig:gravity1}.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.65]
+    \draw[vectors,red] (0,0)--(2,0) node[right]{$\bm F_g$};
+    \draw[vectors,blue] (8,0)--(6,0) node[left]{$\bm F_g$};
+    \shade[balloon1] circle (.4) node[white]{$m_1$};
+    \shade[balloon2] (8,0) circle (1) node[white]{$m_2$};
+    \draw[dashed] (0,0)--(0,-1.5);
+    \draw[dashed] (8,0)--(8,-1.5);
+    \draw[<->] (0,-1.3)--(8,-1.3) node[midway,fill=white]{$r$};
+  \end{tikzpicture}
+  \caption{Two massive objects ($m_1$ and $m_2$) applying a gravitational force
+    on each other.}
+  \label{fig:gravity1}
+\end{figure}
+
+The magnitude of \textbf{gravitational force} ($\bm F_g$)  between two
+masses is proportional to their masses ($m_1$, $m_2$), and inversely
+proportional to the square of the distance ($r$) between them:
+\begin{equation}
+  \boxed{
+    F_g=\frac{Gm_1m_2}{r^2}
+  }
+  \label{eq:law-of-gravity}
+\end{equation}
+where $G=\SI{6.67e-11}{N.m^2/kg^2}$ is the \textbf{universal gravitational
+  constant}. This equation is derived based on the second law of motion and
+Kepler's law of planetary motion (discussed later in this chapter). 
+
+Like \emph{all} forces, gravity obey the third law of motion: if $m_1$ exerts a
+force $\bm F_g$ on $m_2$, then $m_2$ also exerts a force $-\bm F_g$ on
+$m_1$. The attractive forces are equal in magnitude and opposite in direction
+(i.e.\ third law of motion). The masses $m_1$ and $m_2$ are assumed to be
+\emph{point masses} that do not occupy any space. For objects with
+\emph{spatial extend} (i.e.\ the mass actually takes up space), we assume that
+one object is not inside the other.
+
+This equation does not work for extremely massive objects (e.g.\ black holes
+and neutron stars), and the law must be replaced by the theory of general
+relativity. It is also unclear as to whether the law applies to
+extremely small masses (e.g.\ elementary particles like protons, electrons and
+neutons). However, aside from the extreme, using Eq.~\ref{eq:law-of-gravity} is
+generally acceptable.
+\begin{common-question}
+  \textbf{What happens when $r=0$?} From Eq.~\ref{eq:law-of-gravity}, it
+  appears that when $r\rightarrow 0$, $F_g\rightarrow\infty$. However, it is
+  worth pointing out that point masses do not actually exist (even an electron
+  has a finite size). Therefore the situation for $r=0$ never arises; $F_g$ is
+  never be infinite. From a more practical point of view, whether a mass can be
+  treated as a point mass is a matter of \emph{scale}. For example, at the
+  scale of the solar system, the Sun and all the planets, moons, comets can all
+  be considered as point masses, but near the surface of an
+  irregularly-shaped asteroid, the point mass model would be very inaccurate.
+\end{common-question}
+
+
+
+
+\begin{example}
+  A \SI{65.0}{\kilo\gram} astronaut is walking on the surface of the moon,
+  which has a mean radius of \SI{1.74e3}{\kilo\metre} and a mass of
+  \SI{7.35e22}{\kilo\gram}. What is the weight of the astronaut?
+
+  \textbf{Solution:} When the astronaut walks on the moon, the
+  distance between his centre of mass (CM) and the Moon's CM is just the
+  radius of the Moon.
+  \begin{equation*}
+    F_g=\frac{Gm_1m_2}{r^2}=
+  \end{equation*}
+  We have previously known that the gravitational pull on the Moon is
+  approximately $1/6$ that of Earth. This calculation confirms it.
+\end{example}
+
+
+
+\begin{example}
+  How far apart would you have to place two
+  \SI{7.0}{\kilo\gram} bowling balls so that the force of gravity between them
+  would be \SI{1.25e-8}\newton? (Notice the magnitude of gravitational force
+  between the two objects. In fact, gravitational force is the weakest of all
+  fundamental forces.)
+
+  \vspace{.15in}\textbf{Solution:}
+  \begin{equation*}
+    F_g=\frac{Gm_1m_2}{r^2}=\frac{Gm^2}{r^2}=\quad\rightarrow\quad
+    r=\sqrt{\frac{Gm^2}{F_g}}=\left(\sqrt{\frac G{F_g}}\right)m=
+  \end{equation*}
+\end{example}
+
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.4]
+    \shade[ball color=red] circle (.7) node[white]{$M$};
+    
+    \draw[vectors,blue,rotate=45] (.7,0)--(2.5,0) node[right]{$\bm F_1$};
+    \shade[ball color=blue] (5,5) circle (.8) node[white]{$m_1$};
+    
+    \draw[vectors,green,rotate=-45] (-.7,0)--(-2,0) node[left]{$\bm F_2$};
+    \shade[ball color=green] (-5,5) circle (.6) node[white]{$m_2$};
+    
+    \draw[vectors,violet,rotate=45](-.7,0)--(-3.5,0) node[left]{$\bm F_3$};
+    \shade[ball color=violet] (-5,-5) circle (1.2) node[white]{$m_3$};
+
+    \draw[vectors,magenta,rotate=-45](.7,0)--(2.7,0) node[right]{$\bm F_4$};
+    \shade[ball color=magenta] (5,-5) circle (.8) node[white]{$m_4$};
+    
+    %\draw[vectors] (.7,0)--(3.5,0) node[left]{$\bm F$};
+  \end{tikzpicture}
+\end{figure}
+
+For a mass $M$ subjected to the influence of multiple discrete point masses
+$m_i$, the total gravitational force on $M$ is the vector sum of all the
+forces $\bm F_i$:
+\begin{equation}
+  \boxed{
+    \bm F=\sum_i\bm F_i
+  }
+\end{equation}
+\begin{itemize}
+\item Even if $m_1,\ldots,m_4$ are all stationary, as $M$ moves, its
+  acceleration would not be constant
+\item It is generally difficult to describe the motion of $M$ as a function
+  of time, even with calculus
+\end{itemize}
+  
+
+
+
+\section{Gravitational Field}
+We usually describe gravitational force using the familiar equation:
+\begin{equation*}
+  \bm F_g=m\bm g
+\end{equation*}
+To find $g$, we can group together the variables in the law of
+universal gravitation. For the gravitational force acting on $m_2$, we have:
+\begin{equation} 
+  F_g=\underbracket[1pt]{\left[\frac{Gm_1}{r^2}\right]}_{=g}m_2=m_2g
+\end{equation}
+On or near Earth's surface, we use $m_1=m_\text{Earth}$ and $r=r_\text{Earth}$
+to compute $g=\SI{9.81}{\metre\per\second\squared}$, or
+$g=\SI{9.81}{\newton\per\kilo\gram}$ (both units are equivalent)
+
+
+
+
+%\section{Gravitational Field}
+The \textbf{gravitational field} ($\bm g$) generated by a source point mass
+($m_s$) is a measure of how it influences the gravitational forces on other
+masses in its vicinity.
+%The \textbf{gravitational field} $\bm g$ is a function of a source mass
+%$m_s$ and the distance $r$ from it;
+Its magnitude\footnote{Also referred to as its \emph{strength} or
+\emph{intensity} of the field} is given as a function of two variables:
+\begin{equation}
+  \boxed{
+    g(m_s,r)=\frac{Gm_s}{r^2}}
+\end{equation}
+The direction of the gravitational field is \emph{towards} the source mass
+that created it.
+\begin{remark}%sidenote}
+  For those with a strong background in vectors, we can directly express
+  gravitational field in vector form:
+  \begin{equation*}
+    \boxed{
+      \bm g(m_s,\bm r)=-\frac{Gm_s}{|\bm r|^2}\hat{\bm r}
+    }
+  \end{equation*}
+  where $\hat{\bm r}$ is the \emph{outward radial direction}. Therefore,
+  the direction of the field is the inward radial direction $-\hat{\bm r}$,
+  i.e.\ the gravitational field vector points towards the source mass that
+  created it, as stated above.
+\end{remark}%sidenote}
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%    \rowcolor{pink}
+%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%    Gravitational field strength & $g$ & \si{\newton\per\kilo\gram}\\
+%    Universal gravitational constant & $G$ & \si{N.m^2/kg^2} \\
+%    Source mass (a point mass) & $m_s$ & \si{\kilo\gram} \\
+%    Distance from source mass & $r$ & \si\metre
+%  \end{tabular}
+%\end{center}
+
+
+
+%\section{Relating Gravitational Field \& Gravitational Force}
+When a mass $m$ is placed inside a gravitational field $\bm g$, it
+experiences a gravitational force given by the familiar equation:
+%$\bm g$ itself doesn't do anything unless another mass $m$ is inside this
+%field. At which point, the other mass $m$ experiences a gravitational force
+%related to $\bm g$ by:
+\begin{equation*}
+  \bm F_g=m\bm g
+\end{equation*}
+Regardless of what generated the gravitational field.
+
+
+
+%\section
+%  \centering
+%  \begin{tikzpicture}
+%    \draw[blue!70!black,mass] circle (.3) node[midway]{$M$};
+%    \foreach \theta in {0,45,...,359}
+%    \draw[vectors,blue!70!black,rotate=\theta] (2,0)--+(-1,0);
+%    \foreach \theta in {0,30,...,359}
+%    \draw[vectors,blue!70!black,rotate=\theta] (3,0)--+(-.4,0);
+%    \node[right,blue!70!black] at (2,0) {$\bm g$};
+%    \node[
+%      text width=140,
+%      draw=blue!70!black,
+%      fill=blue!5,
+%      text=blue!70!black] at (5.7,0) {Mass $M$ generates a gravitational field
+%      that extends from the mass itself over the entire space, with a magnitude
+%      of
+%
+%      \vspace{-.07in}
+%      \begin{displaymath}
+%        g=\frac{GM}{r^2}
+%      \end{displaymath}
+%      $\bm g$ points \emph{towards} the mass that generated it. This
+%      gravitational field does not do anything until there is another mass
+%      inside the field.\par
+%    };
+%    \uncover<2->{
+%      \begin{scope}[orange,rotate=20]
+%        \draw[vectors] (-3.5,0)--+(1.2,0) node[right=0]{$\bm F_g$};
+%        \draw[thick,fill=orange!5] (-3.5,0) circle (.18) node{$m$};
+%      \end{scope}
+%      \node[
+%        text width=220,
+%        draw=orange,
+%        fill=orange!5,
+%        text=orange] at (-2.7,-3.2){Mass $m$ is inside the gravitational field
+%        generated by {\color{blue!70!black}$M$}, therefore it experiences a
+%        gravitational force of
+%        
+%        \vspace{-.08in}
+%        \begin{displaymath}
+%          \bm F_g=m{\color{blue!70!black} \bm g}
+%        \end{displaymath}
+%        The gravitational force is in the same direction as
+%        {\color{blue!70!black}$\bm g$}\par
+%      };
+%    }
+%  \end{tikzpicture}
+%
+%
+%
+%
+\subsection{Multiple Gravitational Fields}
+When there are multiple source masses, the total gravitational field is the
+vector sum of all the gravitational fields from each source mass.
+\begin{equation}
+  \bm g =\bm g_1+\bm g_2+\bm g_3+\cdots=\sum_i \bm g_i
+\end{equation}
+
+
+
+\subsection{Gravitational Field Lines}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.5]
+    \foreach \x in {0,20,...,359}{
+      \begin{scope}[red,very thick,rotate=\x]
+        \draw (0,0)--(0,1);
+        \draw[<-] (0,0.95)--(0,1.5);
+      \end{scope}
+        \draw[mass] circle (.17) node{$m$};
+    }
+  \end{tikzpicture}
+\end{figure}
+\begin{itemize}
+\item The direction of $\bm g$ is towards the centre of the object that
+  created it
+\item Field lines do not tell the intensity (i.e.\ magnitude) of $\bm g$,
+  only the direction
+\end{itemize}
+%
+%
+%
+%
+%
+%\section{Gravitational Field Lines}
+%  When there are multiple masses, the total gravitational field (dotted line)
+%  is the vector sum of all the individual fields.
+%  \begin{center}
+%    \pic{.4}{graphics/grav-fields}
+%  \end{center}
+%  The solid lines are called \textbf{equipotential lines}, where the potential
+%  energy is constant. Equipotential lines are perpendicular to
+%  gravitational field lines.
+
+
+
+
+\section{Gravitational Potential Energy}
+The expression for \textbf{gravitational potential energy} can be obtained
+through the law of universal gravitation using basic integral calculus, by
+calculating the work done by the gravitational force as it moves an object from
+$r_1$ to $r_2$. Of course, the calculus is ``basic'' only if you already know
+calculus, otherwise it is impossible:
+\begin{equation*}
+  \underbracket[1pt]{
+    W_g = \int_{\bm r_1}^{\bm r_2}\bm F_g\cdot d\bm r
+  }_\text{Definition using calculus}
+  = \cdots = Gm_1m_2 \int_{r_1}^{r_2}\frac{dr}{r^2}
+  =\frac{Gm_1m_2}{r_1} - \frac{Gm_1m_2}{r_2}=-\Delta U_g
+\end{equation*}
+But we can skip over to the final result: $U_g$ is the gravitational potential
+energy stored between masses $m_1$ and $m_2$, defined as:
+\begin{equation}
+  \boxed{U_g=-\frac{Gm_1m_2}r}
+  \label{eq:GPE-general}
+\end{equation}
+By definition, $U_g$ is the work done by gravity required to move two objects
+from $r$ to $\infty$. To generalize the equation, the reference where $U_g=0$
+is set at $r=\infty$, and $U_g$ \emph{decrease} as $r$ decreases.
+
+%%  Since $g$ is not a constant, we use an equation consistent with the law of
+%%  universal gravity to obtain the general expression for
+%%  \textbf{gravitational potential energy} stored between a system of two
+%%  masses:
+%  
+%  \eq{-.05in}{
+%    \boxed{U_g=-\frac{Gm_1m_2}r}
+%  }
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%    \rowcolor{pink}
+%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%    Gravitational potential energy & $U_g$ & \si\joule \\
+%    Point masses & $m_1$, $m_2$ & \si{\kilo\gram} \\
+%    Distance between centres of mass & $r$ & \si\metre \\
+%    Universal gravitational constant & $G$ & \si{N.m^2/kg^2}
+%  \end{tabular}
+%\end{center}
+
+
+%  %Similar to the simpler expression for gravitational potential energy
+%  %($U_g=mgh$),
+
+
+%  \eq{-.1in}{
+%    \boxed{U_g=-\frac{Gm_1m_2}r}\quad\text{\normalsize and }
+%    \quad\boxed{  W_g=-\Delta U_g}
+%  }
+
+Eq.~\ref{eq:GPE-general} also shows that the gravitational force is
+conservative:
+
+\begin{enumerate} %[itemsep=3pt,leftmargin=15pt]
+\item When work done by gravtational force is \emph{positive} (i.e.\
+  $W_g>0$), there is a \emph{decrease} in gravitational potential energy by
+  the same amount ($\Delta U_g>0$), while
+\item When work done by graviational force is \emph{negative} (i.e.\
+  $W_g<0$), there is an \emph{increase} in gravitational potential energy by
+  the same amount ($\Delta U_g>0$)
+\item The work by gravity is \emph{path independent}: $W_g$, and therefore
+  $\Delta U_g$, depends on the end points $r_1$ and $r_2$, but not \emph{how}
+  the objects move from $r_1$ to $r_2$
+  \item Only work done by gravity can affect $U_g$
+\end{enumerate}
+
+%\fcolorbox{black}{yellow!5}{
+%  \begin{minipage}{.95\textwidth}
+%    \begin{itemize}
+%    \item \emph{Positive} work by $\bm F_g$ \emph{decreases} gravitational
+%      potential energy $U_g$, while
+%    \item \emph{Negative} work by $\bm F_g$ \emph{increases} gravitational
+%      potential energy $U_g$
+%    \item $W_g$ depends on $r_1$ and $r_2$, but not \emph{how} the mass moves
+%      from $r_1\rightarrow r_2$
+%    \item Only work done by $\bm F_g$ can change $U_g$
+%    \end{itemize}
+%  \end{minipage}
+%}
+
+
+
+
+%%\section{Relating Gravitational Potential Energy to Force}
+%%  The work-energy theorem tells us that
+%%  \begin{itemize}
+%%  \item $\bm F_g$ always points in the direction from high to low potential
+%%    energy, i.e.
+%%  \item A falling object is always decreasing in $U_g$
+%%  \item ``Steepest descent'': the direction of $\bm F_g$ is the shortest path
+%%    to decrease $U_g$ 
+%%  \item Objects travelling perpendicular to $\bm F_g$ has constant $U_g$
+%%  \end{itemize}  
+%%  In vector calculus, we say that gravitational force ($\bm F_g$) is the
+%%  negative gradient of the gravitational potential energy ($U_g$):
+%%  
+%%  \eq{-.1in}{
+%%    \bm F_g=-\nabla U_g=-\frac{dU_g}{dr}\hat{\bm{r}}
+%%  }
+%%
+%
+%
+%
+%%\section{Relating $U_g$, $\bm F_g$ and $\bm g$}
+%%  Knowing that $\bm F_g$ and $\bm g$ only differ by a constant, we can
+%%  also relate gravitational field to $U_g$ by the gradient operator:
+%%
+%%  \eq{-.1in}{
+%%    \bm g=\frac{\bm F_g}{m}=-\nabla\left(\frac{U_g}{m}\right)=
+%%    -\frac{d}{dr}\left(\frac{U_g}{m}\right)\hat{\bm{r}}
+%%  }
+%%
+%%  We already know that the direction of $\bm g$ is the same as $\bm F_g$,
+%%  i.e.
+%%  \begin{itemize}
+%%  \item The direction of $\bm g$ is the shortest path to decrease $U_g$ 
+%%  \item Objects travelling perpendicular to $\bm g$ has constant $U_g$
+%%  \end{itemize}
+%%
+%
+%
+%
+%%\section
+%%  We will now combine our knowledge of gravitational force and gravitational
+%%  energy to understand motion of satellites, planets and stars.
+%%
+%
+%
+%
+%\section{Kepler's Laws}
+%
+%%    \pic{1.1}{graphics/kepler}
+%%      
+%\begin{itemize}
+%\item German mathematician, astronomer \& astrologer
+%\item Formulated his laws based on the observation of his teacher, Tycho
+%  Brahe
+%\item Published his first two laws in 1609, third law in 1619
+%\item His work was controversial because of another competing theory,
+%  but by 1670, most scientists have accepted his findings
+%\item Kepler's laws are considered to be \emph{empirical}:
+%  \begin{itemize}
+%  \item Based purely on observed data
+%  \item Kepler had no physical theory
+%  \item ``Fitting the curve'' to the data
+%  \end{itemize}
+%\end{itemize}
+%  
+%
+%
+%
+%
+%\section{Kepler's Laws of Planetary Motion}
+%  \textbf{1.\ Law of Ellipses: The orbit of a planet is an ellipse with the Sun
+%    at one of the two foci.}
+%  \begin{center}
+%    \pic{.35}{graphics/23kepler1}
+%  \end{center}
+%  This is an extraordinary claim, because it is different from those of
+%  Nicolaus Copernicus, who claimed that the orbit of a planet is circular.
+%
+%
+%
+%
+%\section{Kepler's Laws of Planetary Motion}
+%  \textbf{2.\ Law of Equal Areas: A line segment joining a planet and the Sun
+%    sweeps out equal areas during equal intervals of time.}
+%  \begin{center}
+%    \pic{.4}{graphics/201532-132212364-3243-planet}
+%  \end{center}
+%  The planet moves faster when it is closer to the Sun, and slower when it
+%  farther.
+%
+%
+%
+%
+%\section{Kepler's Laws of Planetary Motion}
+%  \textbf{3.\ Law of Periods: The square of the orbital period of a planet is
+%    proportional to the cube of the semi-major axis of its orbit.}
+%
+%  \vspace{.1in}For two different planets $A$ and $B$ orbiting the same sun:
+%  
+%  \eq{-.1in}{
+%    \boxed{\frac{T^2}{r^3}=\text{constant}}\quad\text{or}\quad
+%    \boxed{\frac{T_A^2}{r_A^3}=\frac{T_B^2}{r_B^3}}
+%  }
+%
+%
+%
+%
+%\section{Orbital Radii and Periods of Different Planets}
+%  
+%    \centering
+%    \begin{tabular}{c|c|r}
+%      \rowcolor{pink}
+%      \textbf{Planet} &
+%      \textbf{$R$ (AU)} &
+%      \textbf{$T$ (days)} \\ \hline
+%      Mercury & 0.389 & 87.77  \\
+%      Venus   & 0.742 & 224.70 \\
+%      Earth   & 1.000 & 365.25 \\
+%      Mars    & 1.524 & 686.98 \\
+%      Jupiter & 5.200 & 4332.62 \\
+%      Saturn  & 9.150 & \num{10579.20}
+%    \end{tabular}
+%    
+%    \centering
+%    \pic{.8}{graphics/kep8}
+%  
+%  \vspace{.1in}\textbf{Astronomical unit} (AU) is defined as the average radius
+%  of Earth's orbit
+%
+%
+%
+%
+%\section{Kepler's Law of Planetary Motion}  
+%    The elliptical orbits of most of the planets in the solar system have very
+%    small eccentricity (i.e.\ their orbits are close to being circular) but
+%    comets can have much higher eccentricity
+%
+%    \begin{tabular}{l|l}
+%      \rowcolor{pink}
+%      \textbf{Object} & $e$ \\ \hline
+%      Mercury	& \num{.206} \\
+%      Venus	& \num{.0068} \\
+%      Earth	& \num{.0167} \\
+%      Mars	& \num{.0934} \\
+%      Jupiter	& \num{.0485} \\
+%      Saturn	& \num{.0556} \\
+%      Uranus	& \num{.0472} \\
+%      Neptune	& \num{.0086} \\
+%      Pluto	& \num{.25} \\ \hline
+%      Halley's Comet   & \num{.9671} \\
+%      Comet Hale-Bopp  & \num{.9951} \\
+%      Comet Ikeya-Seki & \num{.9999}
+%    \end{tabular}
+%  
+%
+%
+%
+%%\section{Kepler's Laws of Planetary Motion}
+%
+%%  Also, Brahe's original observations deviated from Kepler's laws slightly,
+%%  especially for Jupiter (Kepler knew that something is missing)
+
+
+\section{Orbital Motion}
+\label{sec:orbital-motion}
+
+In \emph{Treatise of the System of the World}, the third book in
+\emph{Principia}, Newton presented a thought experiment, shown in
+Fig.~\ref{fig:thought-experiment}. The dashed line in the figures represent a
+circular path that is concentric with the centre of Earth. A cannonball is
+launched parallel to the surface of Earth with some initial velocity
+$\bm v$.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+      \fill[red] (0,1.7) circle (.05);
+      \draw[function,->] (0,1.7) arc (90:30:1 and 1.45);
+      %\draw[function,->,domain=0:.5] plot(\x,{-.5*\x*\x+1.7});
+      \draw[dashed,gray,thick] circle (1.7);
+    \end{tikzpicture}
+    \caption{If initial velocity is too slow, the object falls back onto the
+      planet after travelling a short distance}
+  \end{subfigure}
+  \hspace{.3in}
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+      \fill[red] (0,1.7) circle (.05);
+      \draw[function,->] (0,1.7) arc (90:-55:1.5 and 1.5);
+      \draw[dashed,gray,thick] circle (1.7);
+    \end{tikzpicture}
+    \caption{With a higher initial velocity, the projectile will travel a longer
+      distance but eventually, it still falls.}
+  \end{subfigure}
+
+  \vspace{.2in}\begin{subfigure}{.4\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+      \fill[red] (0,1.7) circle (.05);
+      \draw[function,->] (0,1.7) arc (90:-270:1.7);
+    \end{tikzpicture}
+    \caption{An object launched with a sufficient initial speed stays on a
+      circular path (orbit) around the planet}
+    \label{fig:in-orbit}
+  \end{subfigure}
+  \hspace{.3in}
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+      \fill[red] (0,1.7) circle (.05);
+      \draw[dashed,gray,thick] circle (1.7);
+      \draw[function,->,domain=0:2.2] plot(\x,{-.3*\x*\x+1.7});
+    \end{tikzpicture}
+    \caption{The object launched with very high initial speed escapes the
+      gravitational pull of the planet}
+    \label{fig:escape-from-orbit}
+  \end{subfigure}
+  \caption{Newton's thought experiment on orbital motion}
+  \label{fig:thought-experiment}
+\end{figure}
+
+In this discussion, we want to answer two questions:
+\begin{enumerate}[itemsep=3pt]
+\item How fast does the cannonball have to travel before it goes around Earth
+  without falling, as dipicted in Fig.~\ref{fig:in-orbit}? (i.e.\ what is the
+  sufficient speed required goes into orbit?)
+\item How fast does the cannonball have to travel before it never comes back,
+  as depicted in Fig.~\ref{fig:escape-from-orbit}?
+\end{enumerate}  
+
+
+
+\subsection{Orbital Velocity}
+\label{sec:orbital-velocity}
+
+%\textbf{Orbital velocity} is the speed required for an object to stay in a
+%circular path without falling back onto the surface. For example:
+%\begin{itemize}
+%\item A spy satellite orbiting around the Earth
+%\item The moon orbiting around the Earth
+%\item Planets of the solar system orbiting around the Sun
+%\end{itemize}
+
+The example depicted in Fig.~\ref{fig:in-orbit} (``fast enough that it doesn't
+fall down'') is that of an object moving in circular motion around the planet.
+If we assume that a small mass $m$ is in a circular orbit around a much larger
+mass $M$, we can further assume that $M$ is stationary. The distance $r$
+between the masses is also the orbital radius of that circular motion, and the
+centre of $M$ is also the centre of the circular motion. The required
+centripetal force is supplied by the gravitational force. Since there are no
+other forces, the object moves in uniform circular motion with a constant speed
+$v_\text{orbit}$, called the \textbf{orbital speed}, and the velocity vector
+$\bm v_\text{orbit}$ is called the \textbf{orbital velocity}. This is shown
+graphically in Fig.~\ref{fig:orbital-velocity}.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \node at (0,0) {\pic{.12}{gravity/earth-1200px}};
+    \draw[function,->] (0,3) arc (90:-270:3);
+    \begin{scope}[rotate=50]
+      \draw[thick] (0,0)--+(0,-.8);
+      \draw[very thick,<->] (0,-.5)--(3,-.5) node[midway,fill=white]{$r$};
+      \fill circle (.05) node[above]{$M$};
+      \draw[vector,violet] (3,0)--+(0,-2) node[right]{$\bm v_\text{orbit}$};
+      \draw[mass] (3,0) circle (.07) node[above]{$m$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Object travelling in a circular orbit at the orbital velocity.}
+  \label{fig:orbital-velocity}
+\end{figure}
+
+Starting with the second law of motion, $\bm F_c=m\bm a_c$, and
+substituting the gravitational force $\bm F_g$ into the expression for
+centripetal force $\bm F_c$:
+\begin{equation}
+  F_g=ma_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}r
+\end{equation}
+cancelling the $r$ and $m$ terms on both sides of the equation, we can solve
+for the expression for orbital speed:
+%which does not depend on the mass $m$ of the object in orbit:
+\begin{equation}
+  \boxed{
+    v_\text{orbit}=\sqrt{\frac{GM}r}
+  }
+  \label{eq:orbital-velocity}
+\end{equation}
+Note that this equation is only applicable for perfectly circular orbits. Like
+all uniform circular motion, the direction of $\bm v_\text{orbit}$ is
+tangent to the circular path.
+
+
+
+%\begin{tikzpicture}[scale=.8]
+%  \foreach \x in {0,3} \draw (\x,0)--+(0,-1);
+%  \draw[dashed,thick] circle (3);
+%  \shade[balloon2] circle (.7) node[white]{$M$};
+%  \draw[vectors,red] (3,0)--+(-1.2,0) node[above]{$\bm F_g$};
+%  \shade[balloon1] (3,0) circle (.16) node[white]{$m$};
+%  \draw[<->] (0,-.8)--(3,-.8) node[midway,fill=white]{$r$};
+%\end{tikzpicture}
+%    
+%To calculate the magnitude of orbital velocity, we make these assumptions:
+%\begin{itemize}
+%\item A small mass ($m$) orbits a much larger one ($M$), i.e.\ $M\gg m$
+%\item The orbit is perfectly circular
+%\end{itemize}
+%Following these assumptions:
+%\begin{itemize}
+%\item $M$ is treated as a stationary object; only $m$ moves
+%\item Orbital radius ($r$) is the same as the distance between the masses
+%\item Centripetal force is provided by gravity
+%  %\eq{-.1in}{
+%  %  F_c=F_g=\frac{GMm}{r^2}
+%  %}
+%\item The orbital motion is a uniform circular motion
+%\end{itemize}
+%  
+%The centripetal force for mass $m$ staying in orbit is provided by gravity:
+%\begin{equation}
+%  \underbracket[1pt]{F_c}_{{\color{orange}=F_g}} =
+%  m{\color{magenta}a_c}\quad\rightarrow\quad
+%  %F_g = ma_c\quad\rightarrow\quad
+%  {\color{orange}\frac{GMm}{r^2}}
+%  = \frac{m{\color{magenta}v^2}}{\color{magenta}r}
+%\end{equation}
+%Cancelling $m$ and $r$ terms on both sides, and solving for
+%magnitude of velocity, we find the magnitude of the orbital velocity to be:
+%\begin{equation}
+%  v=\boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
+%\end{equation}
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Orbital velocity  & $v_\text{orbit}$ & \si{\metre\per\second} \\
+%      Universal gravitational constant & $G$ & \si{N.m^2/kg^2}\\
+%      Distance between centres of mass & $r$ & \si\metre \\
+%      Mass of the larger object        & $M$ & \si{\kilo\gram}
+%    \end{tabular}
+%  \end{center}
+Orbital velocity does not depend on $m$, the smaller mass of the object in
+orbit. In other words, a \SI{1.5e-13}{\kilo\gram} speck of cosmic dust and the
+\SI{4.2e5}{\kilo\gram} International Space Station both have the same
+$v_\text{orbit}$ around Earth at the same altitude.
+
+\begin{example}
+  What is the orbital speed of a satellite at a height of
+  \SI{300}{\kilo\metre} above the surface of Earth? The mass of Earth is
+  \SI{5.97e24}{\kilo\gram} and the radius of Earth is \SI{6.37e3}{\kilo\metre}.
+
+  \textbf{Solution:} To calculate the orbital speed, we must first calculate
+  the orbital radius $r$. In this case, it is the satellite's altitude plus
+  the radius of Earth:
+  \begin{equation*}
+    r=h+r_E=300+6370=\SI{6670}{\kilo\metre}=\SI{6.67e6}\metre
+  \end{equation*}
+  Now we can use Eq.~\ref{eq:orbital-velocity} to solve the problem:
+  \begin{equation*}
+    v_\text{orbit}=\sqrt{\frac{GM}r}
+    =\sqrt{\frac{(6.67\times 10^{-11})\times(5.97\times10^{24})}{6.67\times10^6}}
+    =\SI{7.7e3}{\metre\per\second}
+  \end{equation*}
+  The problem itself is straightforward; whether you get the correct answer
+  is generally determined by whether you have used the correct value for $r$.
+\end{example}
+
+\begin{example}
+  At what speed $v$ and altitude $h$ must a satellite orbit above the equator
+  in order to be geostationary? ``Geostationary'' means that the position of
+  the satellite is over the same position on earth all the time. This means
+  that period of the satellite must be the same as Earth's rotation (1 day).
+\end{example}
+
+
+\subsection{Escape Velocity}
+An object can leave the surface of Earth at any velocity. But when all the
+kinetic energy of that object is converted into gravitational potential
+energy, it will return back to the surface of Earth. However, there is a
+\emph{minimum} velocity at which the object would not fall back to Earth
+because of gravity, called the \textbf{escape velocity}. To derive the escape
+velocity, we assume that
+\begin{itemize}[itemsep=2pt]
+\item The object and Earth form an isolated system
+\item All the work is done by gravity
+\item There are no other external forces such as drag, or the thrust from
+  engines
+\item There is no change in the mass of the object
+\end{itemize}
+Note that this is not the case for launching a \emph{real} rocket, where we must
+consider the rapid change in mass when the rocket is burning fuel, and
+the (positive) work done by the rocket's thrust, and the extraordinary amount of
+drag that the rocket experiences. Nevertheless, we can use these assumptions to
+get an approximation of the speed required to escape the gravitational pull of
+Earth.
+
+Since gravity is a conservative force, energy is conserved, therefore
+\begin{equation}
+  \underbracket[1pt]{U_i+K_i}_\text{launch}=
+  \underbracket[1pt]{U_\infty+K_\infty}_\text{after escape}
+  \label{eq:launch}
+\end{equation}
+where $U_i$ and $K_i$ are the gravitational potential and kinetic energy at
+launch respectively. At launch, $U_i=-\dfrac{GMm}r$. At $r=\infty$, $U_\infty=0$.
+At this time, the object is no longer the under the gravitational influence
+of the planet, and therefore we can set  $K_\infty=0$. The right-hand-side of
+Eq.~\ref{eq:launch} reduces to zero.
+
+In the left-hand side of the the energy conservation equation, we set $K=-U$
+and solving for $v$ that satisfies the equation:
+\begin{equation}
+  \frac12mv^2=\frac{GMm}r
+  \quad\longrightarrow\quad
+  v=\boxed{v_\text{esc}=\sqrt{\frac{2GM}r}}
+\end{equation}
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%    \rowcolor{pink}
+%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%    Escape velocity & $v_\text{esc}$ & \si{\metre\per\second} \\
+%    Universal gravitational constant & $G$ & \si{N.m^2/kg^2}\\
+%    Distance between centres of mass & $r$ & \si\metre \\
+%    Mass of the larger object        & $M$ & \si{\kilo\gram}
+%  \end{tabular}
+%\end{center}
+
+
+
+
+%Any object with $v\geq v_\text{esc}$ can break free of a planet's
+%gravitational pull.
+
+\begin{example}
+  Determine the escape velocity for a
+  \SI{1.60e6}{\kilo\gram} rocket leaving the surface of Earth.
+
+  \textbf{Solution:} Although the mass of the rocket is given,
+  the escape speed does not depend on it. Given that the Earth's mass and
+  radius are, 
+  \begin{equation*}
+    v_\text{esc}=\sqrt{\frac{2GM}r}
+    =\sqrt{\frac{2(6.67\times10^{-11})(5.792\times10^{24})}{6.371\times10^6}}=
+    \boxed{\SI{1.12e4}{\metre\per\second}}
+  \end{equation*}
+  The launch a rocket into space, the rocket must have an initial speed of
+  approximately \SI{11.2}{\kilo\metre\per\second}. Consider that commercial
+  airplanes generally fly at approximately 13 km above Earth's surface, a
+  rocket launched must reach this altitude in about 1 second.
+\end{example}
+%
+%
+%
+%\subsection{Comparing Orbital Velocity to Escape Velocity}
+
+
+
+
+
+%\subsection{Non-Circular Orbits}
+%  \begin{center}
+%    \pic{.6}{graphics/newton-cannon-orbital-types-Seeds}
+%  \end{center}
+
+
+It's important to note that the object can escape from the \emph{surface} or
+the planet, or it can escape from \emph{orbit}. In Fig.~\ref{fig:two-escapes},
+both objects have the same escape velocity.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.4\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=1.8]
+      \node at (0,0) {\pic{.15}{gravity/earth-1200px}};
+      %\draw[thick] circle (.25) node[below]{$M$};
+      \draw[thick,dashed] circle (1);
+      \draw[mass] (0,1) circle (.05);
+      \draw[mass] (2,0) circle (.05);
+      \draw[thick,<->] (0,0)--(0,1) node[midway,right=0]{$r$};
+      \draw[vector,red] (0,1) to[out=0,in=135] (2,0);
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}{.4\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=1.8]
+      \node at (0,0) {\pic{.61}{gravity/earth-1200px}};
+      %\draw[thick] circle (1) node[below]{$M$};
+      \draw[mass] (0,1) circle (.05);
+      \draw[mass] (2,0) circle (.05);
+      \draw[thick,<->] (0,0)--(0,1) node[midway,right]{$r$};
+      \draw[vector,red] (0,1) to[out=0,in=135] (2,0);
+    \end{tikzpicture}
+  \end{subfigure}
+  \caption{Escape velocity only depends on $M$ and $r$}
+  \label{fig:two-escapes}
+\end{figure}
+%but the
+%one in orbit (left) already has orbital velocity $v_\text{orbit}$, so escaping
+%from orbit only requires an additional speed of
+Both are at a distance $r$ from the centre of the planet of mass $M$.
+The difference is that the object in orbit (left) already has orbital speed
+$v_\text{orbit}$, so escaping from that orbit requires only an additional
+speed of
+\begin{equation}
+  \Delta v=v_\text{esc}-v_\text{orbit}=(\sqrt2-1)v_\text{orbit}
+\end{equation}
+
+
+
+\subsection{Elliptical Orbits}
+Orbital and escape velocities differ by a factor of $\sqrt2$:
+\begin{equation*}
+  v_\text{orbit}=\sqrt{\frac{GM}r}
+  \quad\quad
+  v_\text{esc}=\sqrt{\frac{2GM}r}=\sqrt2v_\text{orbit}
+\end{equation*}
+What happens if $v_\text{orbit}<v<v_\text{esc}$? What kind of an orbit does it
+have? What happens if $v<v_\text{orbit}$? Will the object crash into the planet?
+
+
+As shown in Fig.~\ref{fig:circular-elliptical-parabolic-hyperbolic},
+depending on the magnitude of $\bm v$ at $P$:
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \node at (0,0) {\pic{.28}{gravity/earth-1200px}};
+    \draw[vector,magenta] (0,4) arc (90:-250:4);
+    \draw[vector,violet,domain={0:4},dash dot] plot(\x,-.1*\x*\x+4);
+    %node[right]{$v_\text{esc}$ (parabola)};
+    \draw[very thick,blue,dotted] (0,.5) ellipse (3.2 and 3.5);
+    \draw[very thick,orange,dashed] (0,-.5) ellipse (4.2 and 4.5);
+    \draw[mass] (0,4) circle (.08) node[above]{$P$};
+    \draw[vector] (0,4)--(1.5,4) node[above]{$\bm v$};
+    \fill (0,-3) circle (.08) node[below]{$P'$};
+    \fill (0,-5) circle (.08) node[below]{$P''$};
+    \node[above,blue] at (0,-3) {\scriptsize Elliptical};
+    \node[above,magenta] at (0,-4) {\scriptsize Circular};
+    \node[above,orange] at (0,-5) {\scriptsize Elliptical};
+    \draw[thick,|<->] (0,0)--(0,4) node[pos=.6,right]{$r$};
+  \end{tikzpicture}
+  \caption{Different orbital paths}
+  \label{fig:circular-elliptical-parabolic-hyperbolic}
+\end{figure}
+\begin{itemize}[itemsep=6pt]
+\item{\color{magenta}If the object moves at orbital velocity, i.e.\
+  $v=v_\text{orbit}$, it will orbit around the planet in uniform circular
+  motion. The path is perfectly circular, and the speed is constant.}
+  
+\item{\color{violet}If the object is at escape velocity, $v=v_\text{esc}$, it
+  will leave the planet's gravitational pull in a parabolic path.}
+  
+\item{\color{green!80!black}If the object is faster than escape velocity, i.e.\
+    $v>v_\text{esc}$, it will leave the planet's gravitational pull in a
+  hyperbolic path.}
+  
+\item{\color{orange} If the object is moving faster than the orbital speed, but
+  not faster enough for escape speed, i.e.\ $v_\text{orb}<v<v_\text{esc}$, the
+  object would be too fast to maintain a circular path, and therefore gain
+  altitude, arriving at point $P'$ on the other side of the planet, which is
+  the furthest away from the centre. the resulting path is elliptical.}
+  
+\item{\color{blue} If the object is moving slower than the orbital speed, i.e.\
+  $v<v_\text{orb}$, the object would lose altitude, arriving at point $P''$ on
+  the other side of the planet, which is the closest away from the centre. The
+  resulting path is also elliptical. The object does not necessarily crash; that
+  will depend on what the actual speed is.}
+\end{itemize}
+
+
+
+\section{Orbital Energies}
+
+\textbf{Orbital kinetic energy:} We can obtain the orbital kinetic energy in a
+perfectly circular orbit by applying the orbital velocity in our expression of
+kinetic energy:
+\begin{equation}
+  K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
+  \left(\sqrt{\frac{GM}r}\right)^2=\boxed{\frac{GMm}{2r}}
+\end{equation}
+This equation uses the expression for orbital velocity $v_\text{orbit}$,
+therefore it relies on the same assumption, i.e.\ a perfectly circular orbit
+
+
+
+\textbf{Total orbital energy:} Total orbital energy is the sum of kinetic and
+gravitational potential energies while in orbit:
+\begin{equation}
+  E_\text{orbit}=K_\text{orbit}+U_g
+\end{equation}
+Substituting the expressions for $K$ and $U_g$ derived for objects in orbit:
+\begin{equation}
+  E_\text{orbit}=
+  \underbracket[1pt]{\frac{GMm}{2r}}_{K_\text{orbit}} +
+  \underbracket[1pt]{\left(-\frac{GMm}r\right)}_{U_g}=
+  \boxed{-\frac{GMm}{2r}}
+\end{equation}
+
+%Orbital kinetic energy can be exprssed in terms of orbital velocities, or
+%in terms of $M$ and orbital radius $r$:
+%
+%%  \eq{-.1in}{
+%%    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac{GMm}{2r}
+%%  }
+%  
+%Gravitational potential energy is $-2$ times the orbital kinetic energy:
+%  
+%%  \eq{-.1in}{
+%%    U_g=-\frac{GMm}r=-2K_\text{orbit}
+%%  }
+%%
+%Adding $K_\text{orbit}$ and $U_g$ together, the total orbital
+%energy must be the negative of the orbit kinetic energy:
+%  
+%  \eq{-.15in}{
+%    E_\text{orbit}=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
+%  }
+%
+%
+%
+\textbf{Binding Energy:} Binding energy $E_\text{binding}$ is the energy
+required to remove the mass $m$ from its orbit, and bring it to $r=\infty$,
+where total energy $E_\infty=0$. To do so, we need to make up for the deficit
+in total energy, therefore:
+\begin{equation}
+  E_\text{binding}=E_\infty-E_\text{orbit}=0-(-K_\text{orbit})=K_\text{orbit}
+\end{equation}
+For those with a background in chemistry, the binding energy is analogous to
+the \emph{ionization energy} of removing the valence electron from an atom.
+
+
+
+%%\begin{example}
+%%  On March 6, 2001, the Mir space station was deliberately
+%%  crashed into Earth. At the time, its mass was \SI{1.39e3}{\kilo\gram} and its
+%%  altitude was \SI{220}{\kilo\metre}.
+%%  \begin{itemize}
+%%  \item Prior to the crash, what was its binding energy to Earth?
+%%  \item How much energy was released in the crash? Assume that its orbit was
+%%    circular
+%%  \end{itemize}
+%%
+%
+%
+%
+%%\section{Space Travel}
+%%
+%%\section{Energy and Momentum in Space}
+%%  How does a spacecraft move in space anyway? Well, like this:
+%%  \begin{center}
+%%    \pic{.8}{graphics/throwing-stuff}
+%%  \end{center}
+%%
+%%
+%%
+%%
+%%\section{Energy and Momentum in Space}
+%%  We don't throw out blocks of cargo from the back of the spacecraft,
+%%  but we \emph{do} expel burnt fuel from the rockets at very high speeds\ldots
+%%  \begin{center}
+%%    \pic{.8}{graphics/rocket}
+%%  \end{center}
+%%
+%%
+%%
+%%
+%%\section{Energy and Momentum in Space}
+%%  Let's go back to the impulse-momentum theorem from Unit 2:
+%%
+%%  \eq{-.2in}{ \bm F\Delta t= \Delta\bm{p}=\Delta(m\bm{v}) }
+%%  
+%%  Therefore
+%%
+%%  \eq{-.35in}{
+%%    \bm F_\text{(on\;gas)}\Delta t= m\Delta\bm{v}_\text{gas}
+%%  }
+%%  
+%%  Or
+%%
+%%  \eq{-.35in}{
+%%    \boxed{\bm F_\text{(on\;gas)}=
+%%      \left(\frac{m}{\Delta t}\right)\Delta\bm{v}_\text{gas}}
+%%  }
+%%
+%%
+%%
+%%
+%%\section{The Space Shuttle}{Pinnacle of Technology in the 1970's and 1980's}
+%%  
+%%    \pic{1.1}{graphics/atlantis}
+
+%%    \begin{itemize}
+%%    \item Two solid-fuel booster rockets during take-off
+%%      \begin{itemize}
+%%      \item Once turned on, they can't be turned off
+%%      \item Retrived from the ocean to be re-used again
+%%      \end{itemize}
+%%    \item One single-use external liquid-fuel tank (``ET'') to supply additional
+%%      fuel to the shuttle's main rocket engines (``SSME'')
+%%    \end{itemize}
+%%  
+%%
+%%
+%%
+%%
+%%\begin{example}
+%%  A rocket engine consumes \SI{50.}{\kilo\gram} of hydrogen
+%%  and \SI{400.}{\kilo\gram} of oxygen during a \SI{5.00}{\second} burn.
+%%  \begin{itemize}
+%%  \item If the exhaust speed of the gas is \SI{3.54}{\kilo\metre\per\second},
+%%    determine the thrust of the engine
+%%  \item If the rocket has a mass of \SI{1.5e4}{\kilo\gram}, calculate the
+%%    acceleration of the rocket
+%%  \end{itemize}
+%%\end{example}
+%%
+%%
+%%
+%%\section{Gravitational Assist or Slingshot}
+%%  
+%%    The interaction between the objects is a \emph{very} elastic ``collision''
+%%    
+%%    \begin{center}
+%%      \pic{1}{graphics/slingshot}
+%%    \end{center}
+%%  
+%%
+%%
+%%
+%%
+%%\section{Gravitational Assist or Slingshot}
+%%  The interaction between the objects is \emph{very} elastic\\
+%%  \begin{center}
+%%      \pic{.9}{graphics/bounce}
+%%    \end{center}
+

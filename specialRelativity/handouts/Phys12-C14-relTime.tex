@@ -1,0 +1,189 @@
+\documentclass{../../oss-handout}
+\usepackage{newtxtext,newtxmath}
+\usepackage{enumitem}
+\usepackage{siunitx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+\newcommand{\bigsqrt}{\ensuremath\sqrt{1-\left(\dfrac vc\right)^2}}
+
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Meritus Academy}
+\renewcommand{\coursetitle}{Grade 12 Physics}
+\renewcommand{\term}{Updated Fall 2023}
+\title{In-Class Example: Relativity of Time}
+\author{Dr.\ Timothy Leung}
+\date{\today}
+
+\begin{document}
+\thispagestyle{title}
+\gentitle
+
+\fbox{
+  \begin{minipage}{.97\linewidth}
+    \textbf{Example 1a:} A rocket speeds past an asteroid at $0.800c$. If Kim,
+    an observer on the rocket, sees \SI{10.}{\second} pass on her clock, how
+    long would that time interval be as see by Jim, an observer on the asteroid?
+  \end{minipage}
+}
+
+This is a standard problem in relativistic mechanics. Here, there are two
+distinct events:
+\begin{enumerate}[nosep]
+\item Kim's clock on the rocket starts measuring time, and
+\item Kim's clock on the rocket stops measuring time.
+\end{enumerate}
+This problem is \emph{how} the time interval between is perceived by different
+observers. The clock is stationary relative to Kim. According to her, it
+measures the \emph{proper} time $t$. As far as Kim is concerned, she, the
+rocket, and her clock are \emph{all} stationary; everything else is moving.
+However, that clock is moving relative to Jim, so he measures the
+\emph{dilated} time $t'$, which is related to proper time by the motion of the
+rocket:
+\begin{displaymath}
+  t' =\frac t\bigsqrt = \frac{10.0}{\sqrt{1-(0.800)^2}}=\SI{16.7}\second
+\end{displaymath}
+To Jim, \SI{16.7}{\second} has passed on his clock, but only \SI{10.}{\second}
+has passed on Kim's clock on the rocket. Therefore, Jim concludes that Kim's
+clock is running slow. \textbf{A moving clock runs slow.} Jim and Kim disagree
+on how much time has passed.
+
+\vspace{.2in}\fbox{
+  \begin{minipage}{.97\linewidth}
+    \textbf{Example 1b:} A rocket speeds past an asteroid at $0.800c$. If Jim,
+    an observer in the \emph{asteroid} sees \SI{10.}{\second} pass on his
+    clock, how long would that time interval be as see by Kim, an observer on
+    the \emph{rocket}?
+  \end{minipage}
+}
+
+This next example is a more a interesting problem when paired with the first.
+This time, there are also two distinct events to consider:
+\begin{enumerate}[nosep]
+\item Jim's clock on the \emph{asteroid} starts measuring time, and
+\item Jim's clock on the \emph{asteroid} stops measuring time.
+\end{enumerate}
+The difference, of course, is the \emph{location} of the clock, which is now on
+the asteroid, and therefore stationary relative to Jim. The \SI{10.}{\second}
+that Jim measures is the proper time. As far as Jim is concerned, he, the
+clock, and the asteroid, are all stationary; everything else is moving. On the
+other hand, Kim sees the clock moving, and therefore she measures the dilated
+time, which is related to the motion of the rocket by:
+\begin{displaymath}
+  t' =\frac t\bigsqrt = \frac{10.0}{\sqrt{1-(0.800)^2}}=\SI{16.7}\second
+\end{displaymath}
+There are no additional calculations to do; you have already done it in the last
+problem! In fact, \textbf{both observers see the other's clock run slow!}
+
+But how is this even possible? How can Kim's clock be slower than Jim's, while
+Jim's clock is also slower than Kim's? The answer lies with the concept of the
+relativity of simultaneity.
+
+When Kim measures \SI{10.0}{\second} on her clock, in order to compare time,
+Jim must \emph{synchronize} his own clock to start and stop with Kim's. (We
+will assume that he is successful.) Jim concludes that Kim's clock runs slow,
+because clearly, he can see that \SI{16.7}{\second} has passed on his clock.
+Kim disputes Jim's conclusion, because \textbf{events that are simultaneous
+  in one reference frame is not simultaneous in another}. From Kim's reference
+frame, Jim's clock was \emph{never} synchronized; he \emph{didn't} the start
+his clock at the same time as hers (he was late) and \emph{didn't} stop his
+clock at the same time either (he was late again). Kim concludes that Jim is
+just terrible at doing experiments.
+
+However, when we reverse the example, Kim is the one who has to synchronize her
+clock to Jim's, and to her surprise, she finds that Jim's clock runs slow! Jim,
+however, observes that Kim makes the same mistake that she accuses him of: she
+starts her clock late and stops even later. He chuckles at Kim being the bad
+experimenter herself.
+
+How Jim and Kim resolve their differences is left to your imagination. In the
+meantime, students in this class know why the disagreement started, and what
+role relativity plays.
+
+\vspace{.3in}A Dr.\ Seuss-style tongue twister is inevitable:
+\begin{center}
+  \begin{minipage}{.4\linewidth}
+    \emph{Now Kim sees Jim's clock run slow.\\
+      Now Jim sees Kim's clock run slow.\\
+      Whose clock is slower?\\
+      Both clocks are slower!
+    }
+  \end{minipage}
+\end{center}
+  
+
+%\fbox{
+%  \begin{minipage}{.97\linewidth}
+%    \textbf{Example 2:} A spacecraft passes Earth at a speed of
+%    \SI{2.00e8}{m/s}. If observers on Earth measure the length of the
+%    spacecraft to be \SI{554}{\metre}, how long would it be according to its
+%    passengers?
+%  \end{minipage}
+%}
+%
+%Since the observers on Earth are in a different frame of reference from the
+%spacecraft, the length that they observe is the contracted length. The
+%passengers on the spacecraft itself will observe the proper length:
+%\begin{displaymath}
+%  L=L_0\bigsqrt\;\;\;\longrightarrow\;\;\;
+%  L_0
+%  =\frac{L}{\bigsqrt}
+%  =\frac{554}{\sqrt{1-\left(\frac{\num{2.00e8}}{\num{3.00e8}}\right)^2}}
+%  =\SI{743}{\metre}
+%\end{displaymath}
+%Likewise, the passengers on the spacecraft will also see that the earth
+%contracted along the direction of motion, and has turned into an oval instead.
+%
+%%\fbox{
+%%  \begin{minipage}{.97\linewidth}
+%%    \textbf{Example 3:} An electron has a rest mass of
+%%    \SI{9.11e-31}{\kilo\gram}. In a detector, it behaves as if it has a mass
+%%    of \SI{12.55e-31}{\kilo\gram}. How fast is that electron moving relative to
+%%    the detector?
+%%  \end{minipage}
+%%}
+%%
+%%    Since the observers on Earth are in a different frame of reference from the
+%%    spacecraft, the length that they observe is the contracted length. The
+%%    passengers on the spacecraft itself will observe the proper length:
+%%    \begin{displaymath}
+%%      L=L_0\bigsqrt\;\;\;\longrightarrow\;\;\;
+%%      L_0
+%%      =\frac{L}{\bigsqrt}
+%%      =\frac{554}{\sqrt{1-\left(\frac{2.00\e{8}}{3.00\e{8}}\right)^2}}
+%%      =
+%%    \end{displaymath}
+%%    Similar to Problems 1a and 1b, the passengers on the spacecraft will also
+%%    see that the earth contracted along the direction of motion, and has turne
+%%    into an oval instead.
+%
+%\fbox{
+%  \begin{minipage}{.97\linewidth}
+%    \textbf{Example 3:} A rocket car with a mass of \SI{2.00e3}{\kilo\gram} is
+%    accelerated to \SI{1.00e8}{\metre/\second}. Calculate its kinetic energy.
+%    \begin{enumerate}[noitemsep,topsep=0pt]
+%    \item Using the classical or general equation for kinetic energy
+%    \item Using the relativistic equation for kinetic energy
+%    \end{enumerate}
+%  \end{minipage}
+%}
+%
+%%    \begin{enumerate}
+%Using the classical equation, kinetic energy is given by:
+%\begin{displaymath}
+%  K
+%  =\frac{1}{2}mv^2=\frac{1}{2}\times\num{2.00e3}\times(\num{1.00e8})^2
+%  =\SI{1.00e19}{\joule}
+%\end{displaymath}
+%Using relativistic equation for mass:
+%\begin{align*}
+%  K &= mc^2-m_0c^2=\gamma m_0c^2-m_0c^2=m_0c^2\left(\gamma-1\right)\\
+%  &=\num{2.00e3}\times(\num{3.00e8})^2\times\left(\frac{1}{\sqrt{1-\left(\frac{\num{1.00e8}}{\num{3.00e8}}\right)^2}}-1\right)
+%=\SI{1.09e19}{\joule}
+%\end{align*}
+\end{document}

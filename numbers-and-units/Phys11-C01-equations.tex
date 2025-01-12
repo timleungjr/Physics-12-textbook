@@ -1,0 +1,231 @@
+\documentclass{../oss-handout}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{newtxtext,newtxmath}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{multicol}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\headheight}{26pt}
+
+\sisetup{
+  inter-unit-product=\cdotp,
+  per-mode=symbol
+}
+
+\titleformat*{\subsection}{\large\bfseries}
+\titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{4pt plus 12pt minus 2pt}
+\newcommand\sk{\;\;\;}
+
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Meritus Academy}
+\renewcommand{\coursetitle}{Physics 11}
+\renewcommand{\term}{Updated for Summer 2023}
+\title{EQUATIONS AND CONSTANTS FOR PHYSICS 11}
+\author{}
+\date{\today}
+
+\begin{document}
+\thispagestyle{title}
+\gentitle
+
+These equations are meant to make doing homework and exams a bit easier. They
+are \underline{\textbf{not}} an excuse for not learning the course material. If
+you don't know what these equations mean and how to use them, they will not
+help you at all.
+
+\begin{multicols*}{3}
+  \textbf{MOTION QUANTITIES:}
+  \begin{align*}
+    \Delta\vec d &=\vec d_2-\vec d_1 \\
+    \vec v_\text{avg} &=\frac{\Delta\vec d}{\Delta t}\\
+    \vec a_\text{avg} &=\frac{\Delta\vec v}{\Delta t}
+  \end{align*}
+
+  \textbf{1D KINEMATIC EQUATIONS\\(CONSTANT ACCEL.):}
+  \begin{align*}
+    v_2 &= v_1+ a \Delta t\\
+    \Delta d &= v_1\Delta t + \frac12 a\Delta t^2\\
+    \Delta d &= v_2\Delta t - \frac12 a\Delta t^2\\
+    v_2^2 &= v_1^2+ 2a\Delta d \\
+    \Delta d &=\frac{v_1+v_2}2 \Delta t
+  \end{align*}
+
+  \textbf{LAWS OF MOTION:}
+  \begin{align*}
+    &\text{1st \& 2nd laws:}&\vec F_\text{net} &=m\vec a\\\
+    &\text{3rd law:}&\vec F_\text{12} &=-\vec F_\text{21}
+  \end{align*}
+
+  \textbf{COMMON FORCES:}
+  \begin{align*}
+    &\text{Gravity: } &\vec F_g&=m\vec g\\
+    &\text{Static friction:} &F_s &\leq \mu_sF_N\\
+    &\text{Kinetic friction:} &F_k &= \mu_kF_N\\
+    &\text{Drag:} &F_D &= \frac12\rho v^2C_DA_\text{ref}
+  \end{align*}
+
+  \textbf{WORK \& ENERGY:}
+  \begin{align*}
+    W&=F\Delta d\cos\theta\\
+    W_\text{net}&=\Delta K \\
+    K &=\frac12 mv^2\\
+    W_c &=-\Delta E_c\\%\text{ (conservative forces)}
+    E_g&=mgh\\
+    E_e&=\frac12kx^2\\
+    E_\text{mech} &=\sum_i K_i + \sum_i E_i\\
+    \Delta E_\text{sys} &=W_\text{ext}
+    %\Delta E_g+ \Delta K &= 0\quad\text{isolated system}
+  \end{align*}
+
+  \textbf{POWER \& EFFICIENCY:}
+  \begin{align*}
+    P &=\frac{\Delta E}{\Delta t}=\frac W{\Delta t}\\
+    \eta&=\frac{E_\text{out}}{E_\text{in}}=
+  \frac{W_\text{out}}{W_\text{in}}\times
+  \SI{100}{\percent}
+  \end{align*}
+
+  \textbf{TEMPERATURE SCALES:}
+  \begin{align*}
+    %T&\propto\sum E_k\\
+    T&=T_c+273.15\\
+    \Delta T&=\Delta T_c
+  \end{align*}
+
+  \textbf{THERMODYNAMICS:}
+  \begin{align*}
+    \Delta U &=Q+W \\
+    U &\propto T\\
+    Q &= mc(T_f-T_i)\\
+    Q_\text{melt} &= mL_f\\ 
+    Q_\text{boil} &= mL_v
+  \end{align*}
+
+  \textbf{VIBRATIONS:}
+  \begin{align*}
+    T &= \frac{\Delta t}N\\
+    f &= \frac N{\Delta t}\\
+    f &= \frac1T
+  \end{align*}
+
+  \textbf{MECHANICAL WAVES:}
+  \begin{align*}
+    v&=f\lambda\\
+    v_\text{string}&=\sqrt{\frac{F_T}\mu}\quad\quad\mu=\frac mL\\
+  \end{align*}
+
+  \textbf{SOUND WAVES:}
+  \begin{align*}
+    v_s &=331.3\sqrt{1+\frac{T_c}{273.15}}\\
+    v_s &\approx 331.3 + 0.606T_c\\
+    M&=\frac v{v_s}\\
+    \gamma&=\sin^{-1}\left(\frac1M\right)\\
+    f'&=\frac{v_s+v_\text{ob}}{v_s-v_\text{src}}f
+  \end{align*}
+%\end{minipage}
+%
+%
+%\vspace{.2in}
+%\begin{minipage}[t]{.3\textwidth}
+  \textbf{SOUND INTERFERENCE:}
+  \begin{align*}
+    f_\text{beat}&=|f_2-f_1|\\
+    f_n&=nf_1
+  \end{align*}
+%\end{minipage}
+%\begin{minipage}[t]{.4\textwidth}
+  \textbf{STRINGS, OPEN \& CLOSED PIPES:}
+  \begin{align*}
+    f_1&=\frac v\lambda=\frac v{2L}\\
+  \end{align*}
+%\end{minipage}
+%\begin{minipage}[t]{.3\textwidth}
+  \textbf{SEMI-OPEN PIPES:}
+  \begin{align*}
+    f_1&=\frac v\lambda=\frac v{4L}\\
+    f_n&=(2n-1)f_1
+  \end{align*}
+%\end{minipage}
+%
+%\begin{minipage}[t]{.3\textwidth}
+  \textbf{ELECTRICITY:} % AND MAGNETISM}
+  \begin{align*}
+    F_q &= \frac{kq_1q_2}{r^2}\\
+    \Delta E_q &= Q\Delta V\\
+    I &= \frac Q{\Delta t}\\
+    R &= \rho\frac LA
+  \end{align*}
+%\end{minipage}
+%\begin{minipage}[t]{.4\textwidth}
+  \textbf{CIRCUITS:}
+  \begin{align*}
+    V &=IR \\
+    R_s&=R_1 + R_2 + \cdots + R_N\\
+    \frac1{R_p}&=\frac1{R_1}+\frac1{R_2}+\cdots+\frac1{R_N}\\
+    V_S &= \mathcal E-V_\text{int}\\
+    P &=IV=I^2R=\frac{V^2}R
+  \end{align*}
+
+  \textbf{MAGNETISM:}
+  \begin{align*}
+    B &=\frac{\mu_0I}{2\pi r}\\
+    F_m&=BIL\sin\theta
+  \end{align*}
+
+  \textbf{UNIT CONVERSIONS:}
+  \begin{align*}
+    \SI1{\kilo\watt.\hour} &=\SI{3.6e6}\joule\\
+    \SI1{km/h} &=\SI{0.278}{m/s}\\
+    \SI1{m/s} &=\SI{3.6}{km/h}\\
+    \SI1\electronvolt &=\SI{1.602e-19}\joule
+  \end{align*}
+  \columnbreak
+  
+  \textbf{USEFUL FORMULAS:}
+
+  \vspace{.1in}
+  \begin{tabular}{ll}
+    Circumference of a circle & $C=2\pi r$\\
+    Area of a circle          & $A=\pi r^2$\\
+    Surface area of a sphere  & $S=4\pi r^2$\\
+    Volume of a sphere        & $V=\dfrac43\pi r^3$\\
+    Density & $\rho=\dfrac mV$
+  \end{tabular}
+
+  \vspace{.1in}
+  \textbf{SI UNIT PREFIXES:}
+
+  \vspace{.1in}
+  \begin{tabular}{llc}
+    tera  & $10^{12}$ & T \\
+    giga  & $10^9$  & G \\
+    mega  & $10^6$  & M \\
+    kilo  & $10^3$  & k \\
+    centi & $10^{-2}$ & c \\
+    milli & $10^{-3}$ & m \\
+    micro & $10^{-6}$ & $\mu$ \\
+    nano  & $10^{-9}$ & n \\
+    pico  & $10^{-12}$ & p \\
+    femto & $10^{-15}$ & f
+  \end{tabular}
+    
+  \vspace{.1in}
+  \textbf{USEFUL CONSTANTS:}
+
+  \vspace{.1in}
+  \begin{tabular}{ll}
+    Acceleration due to gravity: &
+    $g=\SI{9.81}{\meter\per\second\squared}$ (near surface of Earth)\\
+    Universal gravitational constant: & $G=\SI{6.674e-11}{N.m^2/kg^2}$\\
+    Elementary charge:  & $e=\SI{1.602e-19}\coulomb$\\
+    Permeability of free space: & $\mu_0=4\pi\times10^{-7}\si{T.m/A}$\\
+  Speed of light in a vacuum: & $c=\SI{2.998e8}{\metre\per\second}$
+  \end{tabular}
+\end{multicols*}
+\end{document}
