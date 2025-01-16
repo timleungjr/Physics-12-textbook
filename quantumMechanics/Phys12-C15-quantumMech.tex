@@ -165,23 +165,47 @@ $h=\SI{6.626e-34}{\joule\second}$
 %\end{itemize}
 
 
-Planck envisioned that the quantization of energy applies to all of harmonic
+Planck envisioned that the quantization of energy applies to \emph{all} harmonic
 oscillators, rather than just for the blackbody radiation. To understand how
-energy quantization applies to standard problems in harmonic motion, let us
+energy quantization applies to ordinary harmonic oscillators, let us
 consider the frictionless horizontal spring-mass system that we studied in
-Chapters 4 (energy) and 7 (harmonic motion). In Section 7.4, we derived the
-equation for the natural frequency ($f_0$) of the system, which depends on the
-spring constant k of the spring, and the mass m connected to it:
+Chapters~\ref{chapter:energy} and 7 (harmonic motion), which is shown again in
+Fig.~\ref{fig:horizontal-spring-mass1-again}.
+\begin{figure}[hbt]
+  \centering
+  \begin{tikzpicture}[scale=1.3]
+    \draw[mass] (5,.5) rectangle (6,1.5);
+    \draw[thick,decorate,
+      decoration={aspect=.4,segment length=8,amplitude=8,coil}] (0,1)--(5,1);
+    \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
+    --(-.2,2)--(0,2)--(0,.5)--cycle;
+    \draw[thick] (6.5,.5)--(0,.5)--(0,2);
+    \draw[axes] (6.5,1)--+(.8,0) node[right]{$+$};
+    \draw[dashed] (3.5,-.5)--+(0,3) node[above]{Unstretched/Equilibrium};
+    \draw[vector] (3.5,0)--(5,0) node[midway,below]{$x$};
+    \fill[red] (5.5,1) circle (.08);
+    \draw[vector,red] (5.5,1)--(5.5,0) node[below]{$\bm F_g$};
+    \draw[vector,red] (5.5,1)--(5.5,2) node[above]{$\bm F_n$};
+    \draw[vector,red] (5.5,1)--(4.5,1) node[above]{$\bm F_s$};
+  \end{tikzpicture}
+  \caption{A horizontal spring-mass system with no friction, drag and damping
+    forces.}
+  \label{fig:horizontal-spring-mass1-again}
+\end{figure}
+In Section 7.4, we derived the equation for the natural frequency ($f_0$) of
+this system, which depends on the spring constant $k$ of the spring, and the
+mass $m$ connected to it:
 \begin{equation*}
   f_0 = \frac1{2\pi}\sqrt{\frac km}
 \end{equation*}
 When the mass oscillates, its total mechanical energy is the mass's kinetic
 energy, plus the elastic potential energy stored in the spring, as we have
-already shown in Eq. 4.15.
+already shown in Eq.~\ref{eq:total-energy}.
 \begin{equation*}
   E = K + U_s
+  \label{eq:total-energy}
 \end{equation*}
-At maximum displacement (i.e. at amplitude $A$), all of the system's energy is
+At maximum displacement (i.e.\ at amplitude $A$), all of the system's energy is
 in elastic potential energy:
 \begin{equation*}
   E = \frac12kA^2
@@ -201,9 +225,9 @@ natural frequency of $f_0=\SI{5.00}\hertz$. As it is oscillating at its natural
 frequency, the allowable energies are:
 \begin{align*}
   E_0 &= 0\\
-  E_1 &= hf_0  = \SI{3.32e-33}{\joule}\\
-  E_2 &= 2hf_0 = \SI{6.63e-33}{\joule}\\
-  E_3 &= 3hf_0 = \SI{9.94e-33}{\joule}
+  E_1 &= hf_0  = \SI{3.32e-33}\joule\\
+  E_2 &= 2hf_0 = \SI{6.63e-33}\joule\\
+  E_3 &= 3hf_0 = \SI{9.94e-33}\joule
 \end{align*}
 The gap between different energy levels is $\Delta E=hf=\SI{3.32e-33}\joule$.
 Energies between these discrete levels(i.e. between $E_1$ and $E_2$, or between
@@ -224,14 +248,10 @@ particle emitting light, it will have to vibrate at a frequency between
 small.
 
 When this mass is oscillating, frictional forces removes energy from the
-system. N Chapter 7, we studied the use of a "damping force" $\bm F_D$ to
-consolidate the effects of kinetic friction, drag and viscous damping, using
-the equation
-\begin{equation*}
-  F_D= -bv
-\end{equation*}
-When this damping force is present, the total energy $E$ of the system decreases
-with time $t$ as an exponential decay function:
+system. In Chapter 7, we studied the use of a ``damping force''
+$F_D=-bv$ to consolidate the effects of kinetic friction, drag and viscous
+damping. When this damping force is present, the total energy $E$ of the
+system decreases with time $t$ as an exponential decay function:
 \begin{equation}
   E(t)=E_0e^{-\frac bmt} %=E_0e^{-\frac{t}{\tau}}
 \end{equation}
