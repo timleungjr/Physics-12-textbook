@@ -1,0 +1,290 @@
+%\documentclass[12pt,aspectratio=169]{beamer}
+%\input{../mybeamer}
+
+\chapter{Capacitors}
+
+
+%\section{Capacitors}
+%
+%{Electric Field Between Parallel Charged Plates}
+%  \begin{center}
+%    \begin{tikzpicture}[xscale=.8]
+%      \draw[thick,fill=gray!30] rectangle (8,.1);
+%      \draw[thick,fill=gray!30] (0,1.5) rectangle (8,1.6);
+%      \foreach \x in {.4,.8,1.2,...,7.6}{
+%        \draw[->,thick] (\x,1.5)--(\x,.7);
+%        \draw[thick] (\x,1.5)--(\x,.1);
+%      }
+%      \foreach\x in {.8,1.6,2.4,...,7.2}{
+%        \node at (\x,1.78) {\scriptsize $+$};
+%        \node at (\x,-.28) {\scriptsize $-$};
+%      }
+%      
+%      \draw[->,thick] (0,1.5) ..controls(-.15,1.2).. (-.2,.7);
+%      \draw[thick] (-.2,.8) ..controls(-.15,.4).. (0,.1);
+%
+%      \draw[->,thick] (8,1.5) ..controls(8.15,1.2).. (8.2,.7);
+%      \draw[thick] (8.2,.8) ..controls(8.15,.4).. (8,.1);
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item Two charged plates, each producing an electric field pointing in the
+%    same direction
+%  \item The total electric field is twice the value of \emph{one} infinite
+%    plane, pointing from the positively charged plate toward the negatively
+%    charged plate
+%
+%    \eq{-.1in}{
+%      \boxed{E=\frac\sigma{\epsilon_0}}
+%    }
+%  \item $\vec E$ outside the plates is very low (close to zero), except for
+%    fringe effects at the edges of the plates
+%  \end{itemize}
+%
+%
+%
+%
+%{Electric Field and Electric Potential Difference}
+%  \begin{center}
+%    \begin{tikzpicture}[xscale=.6,yscale=.8]
+%      \draw[thick,fill=gray!30] rectangle (8,.1);
+%      \draw[thick,fill=gray!30](0,1.5) rectangle (8,1.6);
+%      \foreach \x in {.4,.8,1.2,...,7.6}{
+%        \draw[->,thick] (\x,1.5)--(\x,.7);
+%        \draw[thick] (\x,1.5)--(\x,.1);
+%      }
+%      \foreach\x in {.8,1.6,2.4,...,7.2}{
+%        \node at (\x,1.78) {\scriptsize $+$};
+%        \node at (\x,-.28) {\scriptsize $-$};
+%      }
+%      
+%      \draw[->,thick] (0,1.5)..controls(-.15,1.2)..(-.2,.7);
+%      \draw[thick] (-.2,.8)..controls(-.15,.4)..(0,.1);
+%
+%      \draw[->,thick] (8,1.5)..controls(8.15,1.2)..(8.2,.7);
+%      \draw[thick] (8.2,.8)..controls(8.15,.4)..(8,.1);
+%
+%      \draw[thick,|<->|] (-.5,.1)--(-.5,1.5) node[midway,left]{$d$};
+%    \end{tikzpicture}
+%  \end{center}
+%  In the case of two parallel plates, the electric field between the plates is
+%  uniform, and the relationship simplifies to:
+%
+%  \eq{-.1in}{
+%    \boxed{E=\frac{\Delta V}d}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
+%      Voltage between plates & $\Delta V$ & \si\volt \\
+%      Distance between plates & $d$ & \si\metre
+%    \end{tabular}
+%  \end{center}
+%
+%
+%
+%{Capacitors}
+\textbf{Capacitors} is a device that stores energy in an electric field. The
+simplest form of a capacitor is a set of closely spaced parallel plates:
+%  \begin{center}
+%    \pic{.45}{cap19}
+%  \end{center}
+
+When the plates are connected to a battery, the battery transfer charges to the
+plates until the voltage $V$ equals the battery terminals. After that, one
+plate has charge $+Q$; the other has $-Q$.
+
+
+\section{Parallel-Plate Capacitors}
+The (uniform) electric field between two parallel plates is proportional to the
+surface charge density $\sigma$, which is the charge $Q$ divided by the area of
+the plates $A$:
+
+%  \eq{-.1in}{
+%    E=\frac{\color{red}\sigma}{\epsilon_0}=
+%    \frac{\color{red}Q}{{\color{red}A}\epsilon_0}
+%  }
+  
+Substituting this into the relationship between the plate voltage $V$ and
+electric field, we find a relationship between the charges across the plates
+and the voltage:
+
+%  \eq{-.1in}{
+%    V={\color{blue}E}d=
+%    \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
+%    \quad\longrightarrow\quad
+%    \boxed{Q=\left[\frac{A\epsilon_0}d\right]V}
+%  }
+%
+
+Since area $A$, distance of separation $d$ and the vacuum permittivity
+$\epsilon_0$ are all constants, the relationship between charge $Q$ and voltage
+$V$ is \emph{linear}. And the constant is called the \textbf{capacitance} $C$,
+defined as:
+
+%  \eq{-.1in}{
+%    \boxed{C=\frac QV}
+%  }
+%
+For parallel plates:
+%
+%  \eq{-.1in}{
+%    C=\frac{A\epsilon_0}d
+%  }
+%
+The unit for capacitance is a \textbf{farad} (named after Michael Faraday),
+where $\SI1\farad=\SI1{\coulomb\per\volt}$.
+
+
+
+
+\subsection{Cylindrical Capacitors}
+
+%%    \pic{1.05}{cylindrical-capacitor}
+%%
+Not all capacitors are parallel plates. Cylindrical capacitors are also popular.
+%%    \begin{itemize}
+%%    \item The capacitor has length $\ell$ which is much larger than the radii
+%%      of the inner \& outer cylinders ($a$, $b$)
+%%    \item Inner cylinder has total charge $Q$
+%%    \item Outer cylinder has total charge $-Q$
+%%    \item Inside the capacitor, the electric field in the radial direction
+%%    \item Outside of the capacitor, there is no electric field
+%%    \end{itemize}
+
+
+
+%%{Cylindrical Capacitors: Electric Field}
+%%  \begin{columns}
+%%    \column{.4\textwidth}
+%%    \pic{1.05}{cylindrical-capacitor}
+%%
+%%    \column{.56\textwidth}
+%%
+%%    Using a bit of calculus, we can also see that, like the parallel plate, the
+%%    relationship between voltage and charge is still linear. In this case, the
+%%    capacitance is defined as:
+%%
+%%    \eq{-.1in}{
+%%      \boxed{C=\frac QV=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}}
+%%    }
+%%    
+%%    The capacitance is generally expressed in terms of $C/\ell$. Capacitance
+%%    depends only on the geometry (i.e.\ the raidii $a$ and $b$) and the
+%%    permittivity.
+%%  \end{columns}
+
+
+
+\section{Practical Capacitors}
+
+%    \column{.3\textwidth}
+%    \pic1{Figure_20_05_05a}
+%    
+%    \column{.7\textwidth}
+%    \begin{itemize}
+%    \item Parallel-plate capacitors are very common in electric circuits, but
+%      the vacuum between the plates is not very effective
+%    \item Instead, a non-conducting \textbf{dielectric} material is inserted
+%      between the plates
+%    \item When the plates are charged, the electric field of the plates
+%      polarizes the dielectric
+%    \item The polarization  produces an electric field that opposes the field
+%      from the plates, therefore reduces the effective voltage, and increasing
+%      the capacitance
+%    \end{itemize}
+%
+%
+%
+%
+\section{Dielectric Constant}
+If electric field without dielectric is $E_0$, then $E$ in the dielectric is
+reduced by $\kappa$, the \textbf{dielectric constant}:
+%
+%  \eq{-.1in}{
+%    \boxed{\kappa=\frac{E_0}E}
+%  }
+%
+%  The capacitance of the plates with the dielectric is now amplified by the
+%  same factor $\kappa$:
+%
+%  \eq{-.1in}{
+%    \boxed{C=\kappa C_0}
+%  }
+%
+%  We can also view the dielectric as something that increases the
+%  \emph{effective permittivity}:
+%  
+%  \eq{-.1in}{
+%    \boxed{\epsilon=\kappa\epsilon_0}
+%  }
+%
+%
+%
+%
+%{Dielectric Constant}
+%  The dielectric constants of commonly used materials are:
+%  \begin{center}
+%    \begin{tabular}{l|l}
+%      \rowcolor{pink}
+%      \textbf{Material} & $\kappa$ \\ \hline
+%      Air         & \num{1.00059} \\
+%      Bakelite    & \num{4.9} \\
+%      Pyrex glass & \num{5.6} \\
+%      Neoprene    & \num{6.9} \\
+%      Plexiglas   & \num{3.4} \\
+%      Polystyrene & \num{2.55} \\
+%      Water (\SI{20}\celsius) & \num{80} 
+%    \end{tabular}
+%  \end{center}
+%
+%
+%
+%
+%{Storage of Electrical Energy}
+%  When charging up a capacitor, imagine positive charges moving from the
+%  ($-$) plate to the ($+$) plate.
+%  \begin{center}c
+%    \pic{.4}{slide14}
+%  \end{center}
+%  Initially neither plates are charged, so moving the first charge takes very
+%  little work; as the electric field builds, more work needs to be done.
+%  The total work done is the potential energy inside the capacitor:
+%
+%  \eq{-.1in}{
+%    \boxed{U_c=\frac12\frac{Q^2}C=\frac12QV=\frac12CV^2}
+%  }
+%
+%
+%
+%
+%
+%{Notes About Storage of Electric Energy}
+%  \begin{itemize}
+%  \item The presence of a dielectric \emph{increases} the capacitance; therefore
+%    the work (and potential energy stored) to move a charge \emph{decreases}
+%    with the dielectric constant $\kappa$
+%  \item After the capacitor is charged, removing the dielectric material from
+%    the capacitor plates will require additional work.
+%  \end{itemize}
+%
+%
+%
+%
+%{Capacitors in Electric Circuits}
+%  Capacitors are an important part of an electric circuits because it stores
+%  energy in the electric field
+%  \begin{itemize}
+%  \item Denoted by this symbol (with reference to the parallel-plate capacitor):
+%    \begin{center}
+%      \vspace{.1in}
+%      \begin{tikzpicture}
+%        \draw[thick] (3,0) to[C,o-o] (5,0);
+%      \end{tikzpicture}
+%    \end{center}
+%  \item Act like a voltage source
+%  \item Unlike a battery, the voltage increases or decreases as the charge
+%    across the capacitor plates change.
+%  \end{itemize}

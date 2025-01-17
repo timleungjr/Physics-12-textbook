@@ -1,0 +1,398 @@
+\documentclass{../../oss-apphys-exam}
+
+\tikzstyle{charge}=[ball color=red]
+
+\begin{document}
+%\genheader
+
+\gentitle{4}{ELECTROSTATICS, PART 2}
+
+
+
+\begin{questions}
+  \classkickMCinstructions
+  
+  \question Paper is considered an insulator. How does a positively charged
+  piece of tape pick up a neutral paper bit?
+  \begin{choices}
+    \choice The tape makes the protons flow to the opposite end of the paper,
+    causing an attraction between the electrons left behind and the tape.
+    \choice The tape polarizes the paper atoms, attracting the electrons to the
+    side of the atoms closest to the tape.
+    \choice The tape forces electrons at the opposite end of the paper to flow
+    through the paper toward the tape.
+    \choice The tape polarizes the paper atoms, moving the protons within the
+    atoms to the side of the atom farthest from the tape.
+    \choice It is not possible for a charged object to attract a neutral object.
+  \end{choices}
+
+
+  
+  \question A pith ball is a tiny piece of Styrofoam that is covered with a
+  conductive paint. One pith ball initially has a charge of \SI{6.4e-8}\coulomb,
+  and it touches an identical, neutral pith ball. After the pith balls are
+  separated, what is the charge on the pith ball that had the initial charge?
+  \begin{choices}
+    \choice\SI{6.4e-8}\coulomb
+    \choice\SI{3.2e-8}\coulomb
+    \choice\SI{0}\coulomb
+    \choice\SI{-3.2e-8}\coulomb
+    \choice\SI{-6.4e-8}\coulomb
+  \end{choices}
+
+  \question Glass becomes positively charged when it is rubbed with silk. Which
+  of the following is the best description of what's happening?
+  \begin{choices}
+    \choice Electrons are rubbed off the glass onto the silk.
+    \choice Electrons are rubbed off the silk onto the glass.
+    \choice Protons are rubbed off the glass onto the silk.
+    \choice Protons are rubbed off the silk onto the glass.
+    \choice Neutrons in the glass have an affinity for positive charge.
+  \end{choices}
+
+  \question Consider an isolated, neutral system consisting of wool fabric and a
+  rubber rod. If the rubber rod is rubbed with wool to become negatively
+  charged, what can be said about the wool fabric?
+  \begin{choices}
+    \choice It becomes equally negatively charged.
+    \choice It becomes equally positively charged.
+    \choice It becomes negatively charged but not equally.
+    \choice It becomes positively charged but not equally.
+    \choice In a neutral system, neither object can become charged.
+  \end{choices}
+
+  \question A negatively charged object is placed near, but not touching, a
+  neutral conductor. As a result, the two objects are attracted to each other.
+  Which of the following is true?
+  \begin{choices}
+    \choice The neutral object gains positive charges to become positively
+    charged.
+    \choice The neutral object loses negative charges to become positively
+    charged.
+    \choice The neutral object loses positive charges to become negatively
+    charged.
+    \choice The neutral object gains negative charges to become negatively
+    charged.
+    \choice Negative charges of the neutral object move to the side opposite
+    the negatively charged object.
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=2]
+      \draw[dashed] (0,0)--(1,0)--(1,1) node[midway,right]{$a$}--(0,1)--cycle;
+      \fill (.5,.5) circle (.03);
+      \draw[fill=white] (0,0) circle (.05) node[below=2]{$-q$};
+      \draw[fill=white] (1,0) circle (.05) node[below=2]{$+q$};
+      \draw[fill=white] (0,1) circle (.05) node[above=2]{$+q$};
+      \draw[fill=white] (1,1) circle (.05) node[above=2]{$-q$};
+    \end{tikzpicture}
+  }
+  \question Four charges are arranged at the corners of a square of side $a$ as
+  shown above. Which of the following is true of the electric field and the
+  electric potential at the centre of the square?
+
+  \begin{tabular}{rcc}
+    & \underline{Electric Field} & \underline{Electric Potential}\\
+    (A) & zero & zero \\
+    (B) & $\dfrac{kQ}{a\sqrt 2}$ & zero \\
+    (C) & $\dfrac{kQ^2}{2a^2}$ &  $\dfrac{kQ}{2a}$\\
+    (D) & zero &  $\dfrac{kQ}{\sqrt{2a}}$\\
+    (E) & $\dfrac{kQ^2}{2a}$ & $\dfrac{kQ}{a\sqrt 2}$
+  \end{tabular}
+  \newpage  
+
+
+  
+  \classkickFRQinstructions
+  
+  % THIS IS ALSO A FINAL-EXAM QUESTION FOR PHYSICS 12. THIS IS TAKEN FROM A
+  % QUESTION FROM TIPLER
+  \question An electron starts at the position shown in the figure below with
+  an initial velocity of $V_0=\SI{5.0e6}{\metre\per\second}$ at an angle of
+  \ang{30} to the $x$-axis. The electric field is in the positive $y$-direction
+  and has a magnitude of \SI{3.5e3}{\newton\per\coulomb}. The electron carries
+  the elementary charge of $e=\SI{-1.6e-19}\coulomb$ and has a mass of
+  $m_e=\SI{9.1e-31}{\kilo\gram}$.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[axes] (-3,0)--(-2,0) node[right]{$x$};
+      \draw[axes] (-3,0)--(-3,1) node[above]{$y$};
+      \draw[line width=1mm] (0,0)--(10,0);
+      \draw[line width=1mm] (0,3)--(10,3);
+      \begin{scope}[|<->|,thick]
+        \draw (0,3.35)--(10,3.35) node[midway,fill=white]{10 cm};
+        \draw (10.25,0)--(10.25,3) node[midway,fill=white]{3.0 cm};
+      \end{scope}
+      \foreach \x in {2,3.3,...,9.5} \draw[vectors,lightgray] (\x,0)--(\x,3);
+      \node at (5.2,1.5) {$\vec E$};
+      \draw[vectors,rotate=30] (0,0)--(2,0)
+      node[midway,above left,black]{$\vec V_0$};
+      \draw[axes] (1.25,0) arc (0:28:1.25) node[midway,right]{\ang{30}};
+      \shade[charge] circle (.2) node[left=3]{$e^-$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{parts}
+    \part Which plate has a positive charge?
+    \part What is the electric potential difference across the plates?
+    \part What is the acceleration (both magnitude and direction) of the
+    electron? Assume that gravitational effects can be neglected.
+    \part On which plate and at what location will the electron strike?
+    (Hint: think projectile motion, but acceleration is not due to gravity.)
+  \end{parts}
+  \newpage
+
+  \uplevel{
+    \centering
+    \pic{.55}{contours1}
+  }
+  \question The figure above shows the equipotential lines around spherical
+  charges 1 and 2. Points A, B, C, and D represent locations on the
+  equipotential lines.
+  \begin{parts}
+    \part Sketch electric field vectors at points A and C. The vectors should be
+    drawn so their relative strengths are reflected in the drawing.
+    \vspace{.2in}
+
+    \part What are the signs of the two charges, and how do their relative
+    magnitudes compare? Explain how the equipotential lines help you determine
+    this.
+    \vspace{\stretch1}
+    
+    \part The spheres have masses in the same ratio as the magnitude of their
+    charges. Will the equipotential lines for gravity have a similar shape as
+    the lines shown? Explain.
+    \vspace{\stretch1}
+    
+    \part A proton is released from point C and moves through an electric
+    potential difference of magnitude \SI{40}\volt.
+    \begin{subparts}
+      \subpart On which equipotential line will the proton end up?
+      \vspace{\stretch1}
+      
+      \subpart The proton will have kinetic energy when it arrives at this new
+      equipotential line. Where does this kinetic energy come from? Explain
+      your answer in terms of the system that includes the two charges and the
+      proton.
+      \vspace{\stretch1}
+    \end{subparts}
+    \newpage
+    
+    \part An electron at point A is moved to point B. Has the electric potential
+    energy of the electron--charges system increased or decreased? Justify
+    your answer with an equation.
+    \vspace{\stretch1}
+    
+    \part The distance between points C and D is $d$. Derive a symbolic
+    expression for the magnitude of the average electric field between the
+    two points. Also, indicate the direction of the electric field.
+    \vspace{\stretch1}
+    
+    \part A particle with positive charge of $Q$ is released from point C and
+    gains kinetic energy on its path to point D. Derive a symbolic equation for
+    the amount of work done by the electric field and the final kinetic
+    energy of the proton.
+    \vspace{\stretch5}
+    
+  \end{parts}
+  \newpage
+
+  %\question Electric field vectors around three charges 1, 2, and 3, are shown
+  %in the figure below.
+  %\uplevel{
+  %  \centering
+  %  \pic{.4}{efield}
+  %}
+  %\begin{parts}
+  %  \part On the diagram, draw the direction of the force on an electron placed
+  %  at point C.
+  %  \vspace{.3in}
+  %  
+  %  \part What are the signs of the three charges? Explain what aspects of
+  %  the electric field indicate the sign of the charges.
+  %  \vspace{\stretch1}
+  %
+  %  \part Sketch two equipotential lines---one that passes through point A and
+  %  another that passes through point B.
+  %  \vspace{.3in}
+  %  
+  %  \part Which equipotential line has a higher electric potential, the line
+  %  that passes through point A or the one that passes through point B?
+  %  Justify your answer.
+  %  \vspace{\stretch1}
+  %\end{parts}
+  %\newpage
+  
+  \uplevel{
+    \cpic{.45}{contours}
+  }
+  \question The dots in the figure above represent two identical spheres,
+  $X$ and $Y$, that are fixed in place with their centers in the plane of the
+  page. Both spheres are charged, and the charge on sphere $Y$ is positive. The
+  lines are equipotential lines, also in the plane of the page, with
+  a potential difference of \SI{10}{\volt} between each set of adjacent lines.
+  The absolute value of the electric potential of the outermost line is
+  \SI{50}\volt.
+  \begin{parts}
+    \part Indicate the values of the potentials, including the signs, at the
+    labeled points A and B.
+
+    \vspace{.1in}
+    Potential at point A \underline{\hspace{.5in}}\hspace{.5in}
+    Potential at point B \underline{\hspace{.5in}}
+
+    \part How do the magnitudes and the signs of the charges of the spheres
+    compare? Explain your answer in terms of the equipotential lines shown.
+    \label{partb}
+    \vspace{\stretch1}
+      
+    \part The spheres at points $X$ and $Y$ have masses in the same ratio as
+    the magnitudes of their charges. The equipotential lines for gravity for
+    the spheres have shapes similar to those of the equipotential lines shown.
+    Explain why the two sets of lines have similar shapes.
+    \vspace{\stretch1}
+    
+    \uplevel{
+      Let the potentials at the three labeled points be $V_A$, $V_B$, and $V_C$.
+      A proton with charge $+q$ and mass $m$ is released from rest at point $B$.
+    }
+    
+    \part Based on your answer to part (\ref{partb}), briefly describe one
+    similarity and one difference between the electric and gravitational forces
+    exerted on the proton by the system of the two spheres. The similarity and
+    difference you describe must not be ones that generally apply to all forces.
+    \vspace{\stretch1}
+    \newpage
+    
+    \uplevel{
+      At some time after being released from rest at point $B$, the proton
+      has moved through a potential difference of magnitude \SI{20}\volt.
+    }
+    
+    \part Determine the change in electric potential energy of the
+    proton-spheres system when the proton has moved through the \SI{20}{\volt}
+    potential difference. Express your answer symbolically in terms of $q$,
+    $V_A$, $V_B$, $V_C$, and physical constants, as appropriate.
+    \vspace{\stretch1}
+      
+    \part As it moved through the \SI{20}{\volt} potential difference, the
+    proton was displaced a distance $d$ by the electric force. Determine a
+    symbolic expression for the total work done on the proton by the electric
+    field in terms of the average magnitude $E_\text{avg}$ of the electric
+    field over that distance.
+    \vspace{\stretch1}
+      
+    \part Two students are discussing how and why the kinetic energy of
+    the proton would change after it is released.
+    \begin{itemize}
+    \item Student 1 says that if the system is defined as the proton and the
+      spheres, the increase in the proton’s kinetic energy is due to a change
+      in the system's potential energy as the proton moves through the
+      \SI{20}{\volt} potential difference.
+    \item Student 2 says that if the system is defined as only the proton,
+      the kinetic energy of the proton increases because positive work is
+      done on the proton by the electric field as the proton moves through
+      the \SI{20}{\volt} potential difference.
+    \end{itemize}
+    Discuss each student's claims, explaining why each is correct or incorrect.
+    \vspace{\stretch2}
+  \end{parts}
+  \newpage
+  
+  \question A parallel plate capacitor with a capacitance of $C$ is shown in the
+  figure. The area of one plate is $A$, and the distance between the plates is
+  $d$.
+  \uplevel{
+    \cpic{.3}{parallel-plate-capacitor}
+  }
+  \begin{parts}
+    \part If the area of both capacitor plates as well as the distance between
+    them were doubled, what would be the effect on the capacitance of the
+    capacitor? Explain.
+    \vspace{\stretch1}
+    
+    \part The capacitor is connected to a battery of potential difference
+    $\Delta V$. If the potential difference of the battery is doubled, what
+    happens to the charge stored on the plates and the capacitance of the
+    capacitor? Justify your answer.
+    \vspace{\stretch1}
+    
+    \part In an experiment, the area $A$ of the capacitor plates is changed to
+    investigate the effect on the capacitance $C$ of the capacitor. Sketch
+    the graph of the lab data you expect to see from this experiment.
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[axes]
+        \draw (0,0)--(5,0) node[right]{$A$};
+        \draw (0,0)--(0,4.5) node[above]{$C$};
+      \end{tikzpicture}
+    }
+    \newpage
+    
+    \part In another experiment, the distance between the plates ($d$) is
+    changed to investigate the effect on the capacitance ($C$) of the capacitor.
+    Sketch the graph of the lab data you expect to see from this experiment.
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[axes]
+        \draw (0,0)--(5,0) node[right]{$d$};
+        \draw (0,0)--(0,4.5) node[above]{$C$};
+      \end{tikzpicture}
+    }
+    
+    \part You are going to use a capacitor to power a light bulb. You need the
+    bulb to shine for a long time. Describe the geometry of the capacitor
+    you would choose to power the bulb. Explain your answer.
+  \end{parts}
+  \newpage
+  
+  %\question A charged capacitor generates the electric field shown in the
+  %figure below.
+  %\uplevel{
+  %  \cpic{.2}{charged}
+  %}
+  %\begin{parts}
+  %  \part An electric dipole shown below is placed between the plates of the
+  %  capacitor. Draw any electric forces experienced by the dipole, and
+  %  describe its motion.
+  %  \uplevel{
+  %    \centering
+  %    \begin{tikzpicture}[scale=1.2,thick]
+  %      \draw circle (.2) node{$+$};
+  %      \draw (0,1) circle (.2) node{$-$};
+  %      \draw (0,.2)--(0,.8);
+  %    \end{tikzpicture}
+  %  }
+  %
+  %  \part An uncharged metal box is placed between the plates of the capacitor.
+  %  \begin{subparts}
+  %    \subpart Draw any net charge on the box that results from it being placed
+  %    inside the capacitor on the figure on the left.
+  %    
+  %    \uplevel{
+  %      \centering
+  %      \tikz{\draw[fill=lightgray] rectangle (1,2);}
+  %    }
+  %    
+  %    \subpart Draw any electric field generated by the charges of the box on
+  %    the figure in the middle.
+  %
+  %    \uplevel{
+  %      \centering
+  %      \tikz{\draw[fill=lightgray] rectangle(1,2);}
+  %    }
+  %    
+  %    \subpart Draw the net electric field inside the box due to its own charge
+  %    distribution and due to the external electric field of the capacitor
+  %    on the figure on the right.
+  %
+  %    \uplevel{
+  %      \centering
+  %      \tikz{\draw[fill=lightgray] rectangle (1,2);}
+  %    } 
+  %  \end{subparts}
+  %\end{parts}
+  
+\end{questions}
+\end{document}
