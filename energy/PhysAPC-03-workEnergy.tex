@@ -30,11 +30,11 @@ to define different forms of energies.
 \label{sec:mechwork}
 An infinitesimal amount of \textbf{mechanical work} $\dl W$ is done when a
 force $\bm F$ displaces an object by an infinitesimal amount
-$\dl\bm x$. If the force moves an object along the path $\mathcal C$, the
+$\dl{\bm x}$. If the force moves an object along the path $\mathcal C$, the
 total work $W$ done by the force is defined by the integral:
 \begin{equation}
   \boxed{
-    W=\int_{\mathcal C}\dl W=\int_{\mathcal C}\bm F(\bm x)\cdot\dl\bm x
+    W=\int_{\mathcal C}\dl W=\int_{\mathcal C}\bm F(\bm x)\cdot\dl{\bm x}
   }
   \label{work-definition}
 \end{equation}
@@ -43,9 +43,9 @@ by $\bm F$ can be positive or negative depending on the dot product. In
 general, the amount of work done ($W$) depends on the path $\mathcal C$. %From
 %Eq.~(\ref{work-definition}), we recognize that
 No work is done if the force is perpendicular to displacement, (i.e.\
-$\bm F\cdot\dl\bm x=0$) which means that the force did not \emph{cause}
+$\bm F\cdot\dl{\bm x}=0$) which means that the force did not \emph{cause}
 the displacement, or if the object does not move, (i.e.\
-$\dl\bm x=\bm 0$), or if no force is applied during motion (i.e.\
+$\dl{\bm x}=\bm 0$), or if no force is applied during motion (i.e.\
 $\bm F=\bm 0$).
 
 For motion confined to one direction along a one-dimensional coordinate
@@ -135,7 +135,7 @@ calculating the work done by ``a force'', it could mean:
   \begin{equation*}
     W_\text{net}
     = \sum_i W_i
-    =\int_{\mathcal C}\bm F_\text{net}(\bm x)\cdot\dl\bm x
+    =\int_{\mathcal C}\bm F_\text{net}(\bm x)\cdot\dl{\bm x}
   \end{equation*}
   The net work allows us to study what is the overall conservation of energy
   to the entire object.
@@ -169,12 +169,12 @@ calculating the work done by ``a force'', it could mean:
   \item Work done by the normal force is zero, because $\bm F_n$ is
     perpendicular to the direction of motion:
     \begin{equation*}
-      W_n=\int\underbrace{\bm F_n\cdot\dl\bm x}_{=0}=0
+      W_n=\int\underbrace{\bm F_n\cdot\dl{\bm x}}_{=0}=0
     \end{equation*}
   \item Work done by kinetic friction is negative, because $\bm f$ is in
     the opposite direction to motion:
     \begin{equation*}
-      W_f=\int\bm f\cdot\dl\bm x=-\int f\dl x=-\mu_k F_n\Delta x<0
+      W_f=\int\bm f\cdot\dl{\bm x}=-\int f\dl x=-\mu_k F_n\Delta x<0
     \end{equation*}
   \item Work done by gravity is also negative, because the component of
     gravity along the direction of motion is in the opposite direction.
@@ -190,7 +190,7 @@ calculating the work done by ``a force'', it could mean:
   \begin{align*}
     W_\text{net} &=W_a+W_n+W_g +W_f\\
     &=\int\left(\bm F_a+\bm F_n+\bm F_g+\bm F_f\right)
-    \cdot\dl\bm x =\int\bm F_\text{net}\cdot\dl\bm x
+    \cdot\dl{\bm x} =\int\bm F_\text{net}\cdot\dl{\bm x}
   \end{align*}
 \end{example}
 
@@ -205,13 +205,13 @@ difference is the dot product, which only \emph{slightly} increases the
 complexity of the problem from the 1D case:
 \begin{equation*}
   W_\text{net}
-  = \int\bm F_\text{net}(\bm x)\cdot\dl\bm x
-  = \cdots = m\int\bm v\cdot\dl\bm v
+  = \int\bm F_\text{net}(\bm x)\cdot\dl{\bm x}
+  = \cdots = m\int\bm v\cdot\dl{\bm v}
 \end{equation*}
 The difference in the dot product is a lot easier to evaluate than you might
 think:
 \begin{align*}
-  m\int\bm v\cdot\dl\bm v
+  m\int\bm v\cdot\dl{\bm v}
   &=m\left(\int v_x\dl v_x + \int v_y\dl v_y + \int v_z\dl v_z\right)\\
   &=\left(\frac12mv_x^2+\frac12mv_y^2 + \frac12mv_z^2\right)
   =\frac12mv^2
@@ -426,7 +426,7 @@ The expression for \textbf{gravitational potential energy} can be obtained
 from the law of universal gravitation using basic integral calculus:
 
 \begin{equation}
-  W_g = \int_{\bm r_1}^{\bm r_2}\bm F_g\cdot\dl\bm r
+  W_g = \int_{\bm r_1}^{\bm r_2}\bm F_g\cdot\dl{\bm r}
   = Gm_1m_2 \int_{r_1}^{r_2}\frac{\dl r}{r^2} = -\Delta U_g
 \end{equation}
 where we again define the gravitational potential energy stored between two
@@ -568,7 +568,7 @@ attractive or repulsive force between charged particles, given by
 
 The integral is nearly identical to that for the gravitational force:
 \begin{equation}
-  W_q=\int\bm F_q\cdot\dl\bm r
+  W_q=\int\bm F_q\cdot\dl{\bm r}
   =kq_1q_2\int_{r_0}^{r_1}\frac{\dl r}{r^2}
   =-\frac{kq_1q_2} r\Big|^{r_2}_{r_1}=-\Delta U_q
 \end{equation}
@@ -1570,7 +1570,7 @@ done.
 If a force is used to push an object at a constant velocity, the
 power produced by the force is:
 \begin{equation}
-  P=\diff Wt=\frac{\bm F\cdot\dl\bm x}{\dl t}
+  P=\diff Wt=\frac{\bm F\cdot\dl{\bm x}}{\dl t}
   =\bm F\cdot\diff{\bm x}t
   \quad\rightarrow\quad
   \boxed{P=\bm F\cdot\bm v}
