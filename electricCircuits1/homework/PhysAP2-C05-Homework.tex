@@ -1,0 +1,265 @@
+\documentclass{../../oss-apphys-exam}
+\begin{document}
+%\genheader
+
+\gentitle{5}{DC CIRCUIT ANALYSIS, PART 1}
+
+\classkickMCinstructions
+
+\textbf{Questions \ref{ohmic1}--\ref{ohmic2}}: The figure shows current as a
+function of electric potential difference for a resistor and bulb.
+\cpic{.35}{ohmic}
+
+\begin{questions}
+  \question Are the devices ohmic?
+  \label{ohmic1}
+  
+  \begin{tabular}{ccc}
+    & \underline{Resistor} & \underline{Bulb}\\ \hline
+    (A) & Ohmic & Ohmic \\
+    (B) & Ohmic & Non-Ohmic\\
+    (C) & Non-Ohmic & Ohmic\\
+    (D) & Non-Ohmic & Non-Ohmic\\
+  \end{tabular}
+  
+  \question If the resistor and bulb are connected in parallel to a 10.0 V
+  battery, what is the total current passing through the system?
+  \begin{choices}
+    \choice 0.5 A
+    \choice 0.7 A
+    \choice 1.0 A
+    \choice 1.7 A
+  \end{choices}
+
+  \question With the resistor and bulb still connected in parallel to the 10.0 V
+  battery, what is the total power dissipated by the bulb and resistor?
+  \begin{choices}
+    \choice 0.042 W
+    \choice 10 W
+    \choice 17 W
+    \choice 24 W
+  \end{choices}
+  
+  \question What is the equivalent resistance of the bulb and resistor while
+  still connected in parallel to the 10.0 V battery?
+  \begin{choices}
+    \choice\SI{.17}\ohm
+    \choice\SI{5.9}\ohm
+    \choice\SI{17}\ohm
+    \choice\SI{24}\ohm
+  \end{choices}
+
+  \question The bulb and resistor are removed and reconnected in series to the
+  10.0 V battery. What is the total current passing through the system?
+  \label{ohmic2}
+  \begin{choices}
+    \choice 0.41 A
+    \choice 0.50 A
+    \choice 1.0 A
+    \choice 1.7 A
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \textbf{Questions \ref{batt1}--\ref{batt2}}: Two batteries and two resistors
+    are connected in a circuit, as shown in the figure. The currents through
+    $R_1$, $R_2$, and $\varepsilon_2$ are shown.
+    \cpic{.3}{2batteries}
+  }
+  
+  \question Which of the following is a proper application of conservation laws
+  to this circuit? \emph{Select two answers.}
+  \label{batt1}
+  \begin{choices}
+    \choice $\varepsilon_1 - I_1 R_1 - I_2 R_2 = 0$
+    \choice $\varepsilon_2 - \varepsilon_1 - I_1 R_1 = 0$
+    \choice $I_1 + I_2 - I_3 = 0$
+    \choice $I_2 + I_3 - I_1 = 0$
+  \end{choices}
+
+  \question The resistors $R_1$ and $R_2$ have the same resistance. If the
+  potential differences of the batteries are $\varepsilon_1=\SI9\volt$ and
+  $\varepsilon_2=\SI6\volt$, which resistor will have the most current passing
+  through it?
+  \label{batt2}
+  \begin{choices}
+    \choice $R_1$
+    \choice $R_2$
+    \choice $R_1$ and $R_2$ have the same current.
+    \choice It is not possible to determine the currents through the resistors
+    without more information.
+  \end{choices}
+
+  \uplevel{
+    \textbf{Questions \ref{identical1}--\ref{identical2}}: Four identical
+    resistors of resistance Rare connected to a battery, as shown in the
+    figure. Ammeters $A_1$ and $A_2$ measure currents of 1.2 A and 0.4 A,
+    respectively.
+    \cpic{.38}{identical}
+  }
+
+  \question What are the currents measured by ammeters $A_3$ and $A_4$?
+  \label{identical1}
+  
+  \begin{tabular}{ccc}
+    & $A_3$ & $A_4$ \\ \hline
+    (A) & \SI{.4}\ampere & \SI{.4}\ampere \\
+    (B) & \SI{.8}\ampere & \SI{.4}\ampere \\
+    (C) & \SI{.4}\ampere & \SI{1.2}\ampere \\
+    (A) & \SI{.8}\ampere & \SI{1.2}\ampere
+  \end{tabular}
+
+  \question What is the equivalent resistance of the circuit?
+  \label{identical2}
+  \begin{choices}
+    \choice $\dfrac14R$
+    \choice $\dfrac43R$
+    \choice $\dfrac52R$
+    \choice $4R$
+  \end{choices}
+
+  \question A student is given a battery with an unknown emf ($\varepsilon$)
+  and an internal resistance of $r$. The student sets up a circuit with a known
+  resistor and switch, as shown in the figure. Which measurements should the
+  student make to find the values of both $\varepsilon$ and $r$?
+  \emph{Select two answers.}
+  \cpic{.28}{internal}
+  \begin{choices}
+    \choice With the switch open, measure the potential difference between
+    points 1 and 2 and the current at point 1.
+    \choice With the switch closed, measure the potential difference between
+    points 1 and 2 and the current at point 1.
+    \choice With the switch open, measure the potential difference between
+    points 1 and 2. Close the switch and measure the current at point 1.
+    \choice With the switch open, measure the potential difference between
+    points 1 and 2. Close the switch and measure the potential difference
+    between points 1 and 2.
+  \end{choices}
+  \newpage
+
+  \fullwidth{
+    \classkickFRQinstructions
+  }
+  
+  % TAKEN FROM THE 2017 AP PHYSICS 2 EXAM FREE-RESPONSE QUESTION #2
+
+  \question A group of students is given several long, thick, cylindrical
+  conducting rods of the same unknown material with various lengths and
+  diameters and asked to experimentally determine the resistivity of the
+  material using a graph. The available equipment includes a voltmeter, an
+  ammeter, connecting wires, a variable-output DC power supply, and a metric
+  ruler.
+  \begin{parts}
+    \part Describe a procedure the students could use to collect the data
+    needed to create the graph, including the measurements to be taken and a
+    labeled diagram of the circuit to be used. Include enough detail that
+    another student could follow the procedure and obtain similar data.
+
+    Draw a labeled diagram here.
+    \vspace{\stretch1}
+      
+    Write your procedure here.
+    \vspace{\stretch1}
+      
+    \part Describe how the data could be graphed in a way that is useful
+    for determining the resistivity of the material. Describe how the graph
+    could be analyzed to calculate the resistivity.
+    \vspace{\stretch1}
+    \newpage
+    
+    \uplevel{
+      The students are now given a rectangular rod of the material, as shown
+      below, whose dimensions are not known. The students are asked to
+      experimentally determine the resistance of the rod. They obtain the data
+      in the table below for the potential difference $\Delta V$ across the rod
+      and the current $I$ in it.
+      \begin{center}
+        \vspace{.1in}
+        \pic{.65}{rod}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+          \hline
+          $\Delta V$ (\si\volt) & 6.0 & 5.0 & 3.5 & 2.5 & 2.0 & 1.5 \\
+          \hline
+          $I$ (\si\ampere) & 0.078 & 0.070 & 0.044 & 0.036 & 0.027 & 0.018 \\
+          \hline
+        \end{tabular}
+      \end{center}
+    }
+
+    \part On the axes below, plot the data so that the resistance of the
+    rectangular rod can be determined from a best-fit line. Label and scale the
+    axes. Use the best-fit line to determine the resistance of the rod, clearly
+    showing your calculations.
+
+    \uplevel{
+      \centering
+      \begin{tikzpicture}
+        \draw[lightgray,step=.2] grid (8,8);
+        \draw[thick] grid (8,8);
+        \draw[axes] (0,0)--(8.5,0);
+        \draw[axes] (0,0)--(0,8.5);
+      \end{tikzpicture}
+      \vspace{1in}
+    }
+    \uplevel{
+      After completing their calculations, the students begin to consider the
+      factors that might have produced uncertainties in their results.
+    }
+    \part The students realize that they did not take into account the
+    internal resistance of the power supply. Briefly describe how this would
+    affect their value of the resistance of the rectangular rod. Explain your
+    reasoning.
+    \vspace{\stretch1}
+    
+    \part The students realize that they did not take into account a possible
+    change in the temperature of the cylindrical rods. Should the students be
+    concerned about this? Explain why or why not.
+    \vspace{\stretch1}
+  \end{parts}
+  \newpage
+  
+  \uplevel{
+    \cpic{.38}{XYZ}
+  }
+  \question\vspace{-.1in} Four lightbulbs are connected in a circuit with a
+  \SI{24}{\volt} battery as shown above.
+  \begin{parts}
+    \part
+    \begin{subparts}
+      \subpart Determine the average potential energy change of an electron as
+      it moves from point $Z$ to point $X$.
+      \vspace{\stretch1}
+      
+      \subpart Indicate whether the electron gains or loses potential energy as
+      it moves from point $Z$ to point $X$.
+
+      \vspace{.15in}
+      \underline{\hspace{.4in}} Gains energy
+      \vspace{.15in}
+      \underline{\hspace{.4in}} Loses energy
+    \end{subparts}
+
+    \part Calculate the equivalent resistance of the circuit.
+    \vspace{\stretch1}
+    
+    \part Calculate the magnitude of the current through point $Y$.
+    \vspace{\stretch1}
+    
+    \part Indicate on the diagram the direction of the current through point
+    $Y$.
+    \vspace{\stretch1}
+    
+    %\part Calculate the energy dissipated in the 12 W bulb in 5.0 s.
+    %\vspace{\stretch1}
+    
+    \part Rank the bulbs in order of brightness, with 1 being the brightest. If
+    any bulbs have the same brightness, give them the same ranking.
+
+    \vspace{.15in}
+    \underline{\hspace{.4in}} Bulb A\hspace{1in}
+    \underline{\hspace{.4in}} Bulb B\hspace{1in}
+    \underline{\hspace{.4in}} Bulb C\hspace{1in}
+    \underline{\hspace{.4in}} Bulb D
+  \end{parts}
+\end{questions}
+\end{document}

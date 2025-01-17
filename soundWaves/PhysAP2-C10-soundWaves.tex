@@ -1,0 +1,1118 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../mybeamer}
+\usepackage{hyperref}
+
+\newcolumntype{g}{>{\columncolor{gray!15}}c}
+
+\title{Class 10: Physics of Sound and Music}
+\subtitle{AP Physics 2}
+\input{../me}
+\input{../mycommands}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\section[Properties]{Properties of Sound}
+
+\subsection{Compression/Rarefaction}
+
+\begin{frame}{Sound Wave}
+  \textbf{Sound wave}\footnote{Also known as an \textbf{acoustic wave}} is a:
+  \begin{itemize}
+  \item \textbf{mechanical wave}
+    \begin{itemize}
+    \item Requires a medium---air (or any gas), a liquid, or a solid
+    \item Does not propagate in a vacuum
+    \end{itemize}
+  \item \textbf{longitudinal wave}
+    \begin{itemize}
+    \item The vibrations of the medium is \emph{parallel} to the direction of
+      travel of the wave
+    \end{itemize}
+  \item \textbf{pressure wave}
+    \begin{itemize}
+    \item The crests and troughs of the wave corresponds to regions in the
+      medium where the pressure is at the highest or lowest
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example: Speaker}
+  \begin{itemize}
+  \item Air molecules near the speaker is disturbed by the vibration of the
+    speaker cone
+  \item The vibrations cause the air molecules to compress and
+    expand, creating a wave that travels through air
+  \end{itemize}
+  \begin{center}
+    \pic{.7}{images/speaker}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Longitudinal Wave Simulation}
+  \begin{center}
+    \pic{.7}{images/Lwave-v8-0}\\
+    \href{https://ossfiles.ca/index.php/s/ec938CYeAo5LgtL}{[Link to Animation]}
+  \end{center}
+  This simulation was created by Professor Daniel A.\ Russell at the
+  Pensylvannia State University.
+  (\href{http://acs.psu.edu/drussell/demos.html}
+  {acs.psu.edu/drussell/demos.html})
+\end{frame}
+
+
+
+\subsection{Speed of Sound}
+
+\begin{frame}{Speed of Sound in Dry Air}
+  The speed of sound $v_s$ in dry air can be calculated by this equation:
+
+  \eq{-.1in}{
+    \boxed{
+      v_s=331.3\sqrt{1+\frac{T_C}{273.15}}=331.3\sqrt{\frac T{273.15}}
+    }
+  }
+
+  where $T_c$ is the temperature in \emph{degree Celsius}, and $T$ is the
+  absolute temperature in \emph{kelvin}. For temperatures near \SI0\celsius,
+  the speed of sound can be further simplified by linearization of the above
+  equation:
+
+  \eq{-.1in}{
+    v_s=331.3+0.606T_C
+  }  
+\end{frame}
+
+
+
+\begin{frame}{Speed of Sound in Liquids and Solids}
+  \begin{columns}
+    \column{.6\textwidth}
+    The speed of sound in a liquid depends on the ``bulk modulus'' $K$ of the
+    liquid, and density $\rho$:
+      
+    \eq{-.13in}{
+      v_s = \sqrt{\frac K\rho}
+    }
+   
+    \vspace{-.07in}while the speed of sound in a solid depends on the
+    ``Young's modulus'' $E$ of the solid and density $\rho$:
+
+    \eq{-.13in}{
+      v_s = \sqrt{\frac E\rho}
+    }
+
+    \vspace{-.07in}(You are not responsible for knowing these equations in
+    AP Physics 2.)
+
+    \column{.35\textwidth}
+    {\small
+      \begin{tabular}{l|c}
+        \rowcolor{cyan!30}
+        \textbf{Material} & \textbf{Speed} (\si{\metre\per\second}) \\
+        \rowcolor{pink!70}
+        \multicolumn{2}{c}{Gases (\SI0\celsius, \SI{101}{\kilo\pascal})} \\
+        Carbon dioxide & 259 \\
+        Oxygen         & 316 \\
+        Air            & 331 \\
+        Helium         & 965 \\
+        \rowcolor{pink!70}
+        \multicolumn{2}{c}{Liquids (\SI{20}\celsius)} \\
+        Ethanol        & 1162 \\
+        Fresh water    & 1482 \\
+        Seawater       & 1440-1500 \\
+        \rowcolor{pink!70}
+        \multicolumn{2}{c}{Solids} \\
+        Copper         & 5010 \\
+        Glass          & 5640 \\
+        Steel          & 5960
+      \end{tabular}
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example}: Suppose the room temperature of a classroom is
+  \SI{21}\celsius. Calculate the speed of sound in the classroom.
+\end{frame}
+
+
+
+%\begin{frame}{Example Problem}
+%  \textbf{Example}: The temperature is \SI{4.0}{\celsius} one morning as
+%  Martita hikes through a canyon. She shouts at the canyon wall, and
+%  \SI{2.8}{\second} later hears an echo. How far away is the canyon wall?
+%\end{frame}
+
+
+
+\subsection{Loudness}
+
+\begin{frame}{Intensity of Sound}
+  The average power transmitted $P_\text{avg}$ by a sound wave is proportional
+  to the square of the ``pressure amplitude'' $\Delta p$, which is the pressure
+  difference from atmospheric pressure.
+
+  \eq{-.15in}{
+    P\propto(\Delta p)^2
+  }
+
+  \vspace{-.2in}The \textbf{loudness} of sound, which is the sound wave's
+  \textbf{intensity}, is the power of the sound wave divided by the area ($S$)
+  that the sound wave passes through:
+
+  \eq{-.1in}{
+    \boxed{I=\frac PS}
+  }
+  
+  \vspace{-.05in}When sound is emitted from a point source, the area that the
+  wavefront passes through is $S=4\pi r^2$ (surface area of a sphere), where
+  $r$ is the distance from the source.
+\end{frame}
+
+
+
+\begin{frame}{Intensity of Sound}
+  As the sound wave travels outwards from a source, the surface area where the
+  wavefront pass through increases with $r^2$. Therefore, intensity decreases:
+
+  \eq{-.1in}{
+    I\propto\frac1{r^2}
+  }
+  \begin{center}
+    \pic{.38}{images/isqb}
+  \end{center}
+  As the intensity drops further away from the source, the amplitude $\Delta p$
+  of the sound wave also decreases
+\end{frame}
+
+
+
+\begin{frame}{Threshold of Hearing}
+  The lowest detectable sound intensity is called the \textbf{threshold of
+    hearing} $I_0$, defined as:
+
+  \eq{-.1in}{
+    I_0=\SI{e-12}{\watt\per\metre\squared}
+  }
+  
+  While the sound intensity at the \textbf{threshold of pain} can damage a
+  human ear:
+
+  \eq{-.1in}{
+    I_p=\SI1{\watt\per\metre\squared}
+  }
+\end{frame}
+
+
+
+\begin{frame}{The Decibel}
+  The \textbf{decibel} is defined as the logarithm of the ratio intensity of
+  sound $I$ compared to the threshold of hearing $I_0$:
+  
+  \eq{-.1in}{
+    \beta=10\log_{10}\left[\frac I{I_0}\right]
+  }
+  \begin{itemize}
+  \item The threshold of hearing is \SI0{dB} while the threshold of pain is
+    \SI{120}{dB}
+  \item Humans perceive a doubling of loudness when intensity is increased by a
+    factor of 10 (i.e.\ \SI{10}{dB})
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Sound Intensity in Decibels}
+  \centering
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Source} & $I$ (\si{\watt\per\metre\squared}) & dB \\ \hline
+    Threshold of Hearing      & \num{e-12} & 0   \\
+    Rustling Leaves           & \num{e-11} & 10  \\
+    Whisper                   & \num{e-10} & 20  \\
+    Normal conversation       & \num{e-6}  & 60  \\
+    Busy street traffic       & \num{e-5}  & 70  \\
+    Vacuum cleaner            & \num{e-4}  & 80  \\
+    Large orchestra           & \num{6e-3} & 98  \\
+    MP3 player maximum Level  & \num{e-2}  & 100 \\
+    Front row of rock concert & \num{e-1}  & 110 \\
+    Military jet during take-off   & \num{e2} & 140 \\
+    Instant perforation of eardrum & \num{e4} & 160
+  \end{tabular}
+\end{frame}
+
+
+
+\subsection{Frequency/Pitch}
+
+\begin{frame}{Frequency and Pitch}
+  \begin{columns}
+    \column{.65\textwidth}
+    \begin{itemize}
+    \item Frequencies of sound are referred to as its \textbf{pitch}
+    \item Audible range for an adult human is approximately \SI{20}{\hertz} to
+      \SI{20000}\hertz
+    \item\textbf{Infrasound}: frequencies below audible range
+    \item\textbf{Ultrasound}: frequencies above audible range, e.g.
+      \begin{itemize}
+      \item Dog whistles
+      \item Medical ultrasound devices
+      \end{itemize}
+    \end{itemize}
+
+    \column{.35\textwidth}
+    \pic1{images/ultrasound}\\
+    {\footnotesize Medical ultrasound devices usually use frequencies between
+    \SI1{\mega\hertz} to \SI{20}{\mega\hertz}.\par}
+  \end{columns}
+\end{frame}
+
+
+
+\section{Doppler Effect}
+
+\subsection{Mach Number}
+
+\begin{frame}{Mach Number}
+  Speeds close to the speed of sound are often expressed in terms of its ratio
+  to the speed of sound. This is called the \textbf{Mach number} ($M$):
+  
+  \eq{-.1in}{
+    \boxed{M=\frac v{v_s}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Mach number          & $M$   & (no units) \\
+      Speed of the object  & $v$   & \si{\metre\per\second} \\
+      Local speed of sound & $v_s$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+  \item Subsonic: $M<1$
+  \item Supersonic: $1<M<5$
+  \item Hypersonic: $M\geq5$
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Sound from a Stationary Source}
+  \begin{columns}
+    \column{.38\textwidth}
+    \begin{tikzpicture}[scale=.55]
+      \begin{scope}[very thick]
+        \draw[red!80] circle (1);
+        \draw[red!60] circle (2);
+        \draw[red!40] circle (3);
+        \draw[red!20] circle (4);
+      \end{scope}
+      \fill circle (.075) node[right]{source};
+      \draw[<->] (-1,0)--(-2,0) node[midway,below]{$\lambda$};
+      \foreach \theta in {0,20,...,340}{
+        \draw[axes,rotate=\theta] (3.7,0)--(4.7,0);
+      }
+    \end{tikzpicture}
+
+    \column{.62\textwidth}
+    When a sound is emitted from a stationary point source, the sound wave moves
+    radially outward from the origin:
+    \begin{itemize}
+    \item Loudness (intensity) drops farther away from the source, proportional
+      to $\dfrac1{r^2}$
+    \item All points hear the same wavelength and frequency (pitch) of sound
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Sound from a Moving Source}
+  \vspace{.2in}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.7]
+      \begin{scope}[very thick]
+        \draw[red!20] circle (4);
+        \draw[red!40] (0.5,0) circle (3);
+        \draw[red!60] (1.0,0) circle (2);
+        \draw[red!80] (1.5,0) circle (1);
+      \end{scope}
+      \draw[vectors] (0,0)--(2.7,0) node[above]{$v$};
+      \fill circle (.075) node[below]{1};
+      \fill (.5,0) circle (.075) node[below]{2};
+      \fill (1,0) circle (.075) node[below]{3};
+      \fill (1.5,0) circle (.075) node[below]{4};
+      \draw[<->] (-4,0)--(-2.5,0) node[midway,above]{$\lambda_1$};
+      \draw[<->] (4,0)--(3.5,0);
+      \node (a) at (4.5,-1.2) {$\lambda_2$};
+      \draw (3.75,-.1) to[out=270,in=180] (a);
+    \end{tikzpicture}
+      
+    \column{.6\textwidth}
+    When sound is emitted from a subsonic \emph{moving} source, the diagram
+    looks different. In this case, the sound source is moving to the right,
+    from 1 to 4
+    \begin{itemize}
+    \item When the source is moving \emph{towards the observer}, the
+      wavelength $\lambda_2$ decreases, and the perceived frequency increases.
+    \item When the source is moving \emph{away from the observer}, wavelength
+      $\lambda_1$ increases, and the perceived frequency decreases.
+    \end{itemize}
+    This is called the \textbf{Doppler effect}.
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Doppler Effect}
+  We experience Doppler effect every time an ambulance speeds by us with its
+  sirens on.
+  \begin{center}
+    \pic{.6}{images/toronto-ambulance}
+  \end{center}
+  When it is moving towards us, the pitch of the siren is high, but
+  the moment it passes us, the pitch decreases.
+\end{frame}
+
+
+
+\begin{frame}{Doppler Effect}
+  When a wave source is moving at a speed $v_\text{src}$ and an observer is
+  moving at $v_\text{ob}$, the perceived frequency $f'$ is shifted:
+
+  \eq{-.1in}{
+    \boxed{f'=\frac{v_s+v_\text{ob}}{v_s-v_\text{src}}f}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit}\\
+      Perceived frequency & $f'$  & \si\hertz \\
+      Source frequency    & $f$   & \si\hertz \\
+      Speed of sound      & $v_s$ & \si{\metre\per\second}\\
+      Speed of source & $v_\text{src}$ & \si{\metre\per\second}\\
+      Speed of observer & $v_\text{ob}$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  $v_\text{src}$ and $v_\text{ob}$ are positive when they move towards each
+  other, and negative when they move away.
+\end{frame}
+
+
+
+\subsection{Sonic Boom}
+
+\begin{frame}{Sound Source at Sonic Speed}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.55]
+      \begin{scope}[very thick]
+        \draw[red!20] circle (4);
+        \draw[red!40] (1,0) circle (3);
+        \draw[red!60] (2,0) circle (2);
+        \draw[red!80] (3,0) circle (1);
+      \end{scope}
+      \draw[vectors] (0,0)--(4.5,0) node[right]{$v=v_s$};
+      \fill circle (.075) node[below]{1};
+      \fill (1,0) circle (.075) node[below]{2};
+      \fill (2,0) circle (.075) node[below]{3};
+      \fill (3,0) circle (.075) node[below]{4};
+      \fill (4,0) circle (.075) node[below]{5};
+      \draw[dashed] (4,7)--(4,-4)
+      node[pos=.05,right]{\scriptsize No disturbance in front of the shock}
+      node[pos=.05,left]{\scriptsize Disturbed air flow behind the shock};
+    \end{tikzpicture}
+      
+    \column{.6\textwidth}
+    When sound source is moving at the speed of sound ($M=1$):
+    \begin{itemize}
+    \item Wavefronts are bunched up just in front of the source
+    \item Since sound wave is a pressure wave, right in front of the sound
+      source, there is a large change in pressure (called a \textbf{shock
+        wave})
+    \item When the shock passes an observer, a loud bang can be heard (aka
+      \textbf{sonic boom})
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Sound from a Supersonic Source}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[scale=.55]
+      \fill (3.5,-3) circle (.1) node[right]{observer};
+      \begin{scope}[very thick]
+        \draw[red!20] circle (4);
+        \draw[red!40] (1.8,0) circle (3);
+        \draw[red!60] (3.6,0) circle (2);
+        \draw[red!80] (5.4,0) circle (1);
+      \end{scope}
+      \fill circle (.075) node[below]{1};
+      \fill (1.8,0) circle (.075) node[below]{2};
+      \fill (3.6,0) circle (.075) node[below]{3};
+      \fill (5.4,0) circle (.075) node[below]{4};
+      \fill (7.2,0) circle (.075) node[below]{5};
+
+      \draw[vectors] (-3.5,0)--(9,0) node[above left]{$v>v_s$};
+      \draw[dashed,rotate around={213.8:(7.2,0)}] (7.2,0)--(15.5,0);
+      \draw[dashed,rotate around={146.3:(7.2,0)}] (7.2,0)--(17.5,0);
+      \draw[axes] (-2.8,0) arc (180:146.3:10) node[pos=.4,right]{$\gamma$};
+    \end{tikzpicture}
+      
+    \column{.55\textwidth}
+    When sound source is moving at $M>1$, it out runs the sound that it makes:
+    An \emph{oblique shock} is formed at an angle (called the
+    \textbf{Mach angle}) given by:
+    
+    \eq{-.1in}{
+      \gamma=\sin^{-1}\left(\frac 1M\right)
+    }
+
+    An observer does not hear the sound source until it has gone past!
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Bullet in Supersonic Flight}
+  Generating a shock does not require an actual sound source. Any object
+  moving through air creates a pressure disturbance. For example, a bullet in
+  supersonic flight generates shock waves as it moves through air.
+  \begin{columns}
+    \column{.55\textwidth}
+    \begin{itemize}
+    \item The flow around this bullet is taken inside a \emph{shock tube} that
+      generates a short burst of supersonic flow. A high-speed camera is used to
+      take the photo.
+    \item The Mach number changes as air flows around the bullet
+    \end{itemize}
+
+    \column{.45\textwidth}
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.9}{images/bullet2}};
+      \node[thick,magenta,draw=magenta,fill=white] (A) at (2.6,1.4){
+        \scriptsize shock wave};
+      \draw[vectors,magenta] (A)--(.9,1.4);
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Duck in Water}
+  A similar shock behaviour is observed when the duck swims in water, because
+  the duck swims faster than the speed of the water wave, it also creates a
+  cone shape.
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.6}{images/duck}};
+      \node[thick,draw=blue,fill=white]
+      at (2.3,.8) {\scriptsize undisturbed water};
+      \node[thick,draw=blue,fill=white,above]
+      (A) at (-2,1.5) {\scriptsize shock wave};
+      \draw[vectors,blue] (A)--(-2,.3);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\section{Beats}
+
+\begin{frame}{Visualizing Beat Frequency}
+  Two waves ({\color{magenta}$\Psi_1$} and {\color{cyan}$\Psi_2$}) moving in the
+  same medium\footnote{The two waves would be travelling at the same speed.}
+  but with different frequencies\footnote{Think of two musical instruments
+    playing out of tune from each other} go through regions of constructive and
+  destructive interference:
+  \begin{center}
+    \begin{tikzpicture}[yscale=.66]
+      \begin{scope}[->]
+        \draw (0,0)--(11,0) node[right]{$x$};
+        \draw (0,-5)--(0,2) node[right]{$y$};
+        \draw (0,-3)--(11,-3) node[right]{$x$};
+      \end{scope}
+      \draw[vectors] (4,1.5)--(5,1.5) node[right]{$v$};
+      \begin{scope}[smooth,samples=200,domain=0:10,thick]
+        \draw[cyan] plot(\x,{sin(700*\x)});
+        \draw[magenta] plot(\x,{sin(770*\x)});
+        \draw[violet] plot(\x,{.8*(sin(700*\x)+sin(770*\x))-3});
+      \end{scope}
+      \begin{scope}[violet,dashed,smooth,samples=30,domain=0:10]
+        \draw plot(\x,{ 1.6*cos(35*\x)-3});
+        \draw plot(\x,{-1.6*cos(35*\x)-3});
+      \end{scope}
+      \node[right] at (10,1){\color{magenta}$\Psi_1$};
+      \node[right] at (10,.4){\color{cyan}$\Psi_2$}; 
+      \node[right] at (10,-2){\color{violet}$\Psi=\Psi_1+\Psi_2$}; 
+      \foreach \x in {90,180,270} \draw[gray] (\x/35,-5)--(\x/35,1.5);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Beat Frequency}
+  \textbf{Beat frequency} is the absolute value of the difference of the
+  frequencies of the two component waves. At low frequencies, they sound like a
+  pulsating ``whoomf''\footnote{If the beat frequency is in the audible
+    range, it will be interpreted as an actual sound}. Musicians often use beat
+  frequencies to determine if someone is playing in tune.
+
+  \eq{-.1in}{
+    \boxed{f_b=|f_2-f_1|}
+  }
+
+  \vspace{-.1in}
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Beat frequency              & $f_b$ & \si\hertz \\
+      Frequencies component waves & $f_1$, $f_2$ & \si\hertz
+    \end{tabular}
+  \end{center}
+  For those who are interested, the full derivation of the beat frequency can
+  be found on the accompanied handout for this class, but it is not requised
+  for Grade 11 Physics.
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example}: A tuning fork of unknown frequency is sounded at the same
+  time as one of the frequency \SI{440}\hertz, resulting in the production of
+  beats. Over 15 seconds, 45 beats are produced. What are the possible
+  frequencies of the unknown tuning fork?
+\end{frame}
+
+
+
+\section{Harmonics}
+
+\begin{frame}{Musical Instruments}
+  When a musical instrument produces a sound at a certain frequency, it also
+  produces many higher frequency sounds\footnote{the reason for this will
+    become apparent later in the slides}
+  \begin{itemize}
+  \item The higher frequency sounds are \emph{whole-number multiples} of the
+    lowest frequency
+  \item e.g.\ a violin playing at \SI{440}{\hertz} produces sound waves at
+    \begin{center}
+      {\Large
+        \vspace{.1in}
+        \SI{440}\hertz, \SI{880}\hertz, \SI{1320}\hertz, \SI{1760}\hertz,
+        \SI{2200}\hertz, \SI{2640}\hertz\ldots
+        \vspace{.1in}
+      }
+    \end{center}
+  \item Generally, the higher the frequency, the smaller the amplitude
+  \item The overall quality of the sound comes from the sum of all the waves
+    (principle of superposition). This is why a violin and a trumpet playing
+    the same note will always sound different
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[t]{Harmonic Frequencies}
+  The sound wave with the longest wavelength (and therefore lowest frequency)
+  is called the \textbf{fundamental frequency}, or the \textbf{first harmonic}.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,blue,smooth,samples=30,domain=0:2.8] plot(\x,{sin(200*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,red!20,smooth,samples=50,domain=0:2.8] plot(\x,{sin(400*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,green!20,smooth,samples=70,domain=0:2.8]
+      plot(\x,{sin(600*\x)});
+    \end{tikzpicture}
+  \end{center}
+  Generally\footnote{This is, of course, not always the case. A \emph{muted}
+  trumpet has its fundamental frequency mostly damped out.}, when a musical
+  instrument produces a sound, the fundamental frequency is the one that is
+  ``heard''
+\end{frame}
+
+
+
+\begin{frame}[t]{Harmonic Frequencies}
+  A second wave is also created with half the wavelength and twice the
+  frequency. It's called the \textbf{second harmonic}, or the
+  \textbf{first overtone}.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,blue!20,smooth,samples=20,domain=0:2.8]
+      plot(\x,{sin(200*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,red,smooth,samples=50,domain=0:2.8] plot(\x,{sin(400*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}
+      \draw[vectors] (1,1.3)--(1.5,1.3) node[right]{$v$};
+      \draw[thick,green,smooth,samples=70,domain=0:2.8]
+      plot(\x,{sin(600*\x)});
+    \end{tikzpicture}
+  \end{center}
+  Beyond the 2nd harmonic, there are also the 3rd harmonic (2nd overtone),
+  4th harmonic (3rd overtone), 5th harmonic (4th overtone) etc. Whole-number
+  multiples of the fundamental frequency $f_1$ are its \textbf{harmonic
+    frequencies}, and the $n$-th harmonic is:
+
+  \eq{-.15in}{
+    \boxed{f_n=nf_1}\quad\quad n=1,2,3,\ldots
+  }
+\end{frame}
+
+
+
+\begin{frame}{Different Musical Instruments}
+  Wave forms from different musical instruments at \SI{440}\hertz:
+  \begin{center}
+    \pic{.6}{images/F_InstrumentWaves}
+  \end{center}
+  The graph on the right correspond to the amplitudes at different frequencies.
+  Note the peaks at regular intervals. Those are the harmonic frequencies.
+\end{frame}
+
+
+
+\section{Resonance Modes}
+
+\subsection{Strings}
+
+\begin{frame}{Standing Waves on Strings}
+  \textbf{Resonance modes} are frequencies where a standing wave can be
+  established. For a string of length $L$, this requires both ends of the
+  string to be nodes. The \textbf{fundamental mode} (lowest frequency) occurs
+  at $\lambda=2L$:
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,-.1)--(0,.1);
+      \draw[thick] (pi,-.1)--(pi,.1);
+      \draw[thick] (0,0)--(pi,0);
+      \begin{scope}[smooth,samples=20]
+        \draw[domain=0:pi,functions] plot(\x,{0.45*sin(180/pi*\x)});
+        \draw[domain=pi:2.2*pi,dashed] plot(\x,{0.45*sin(180/pi*\x)});
+        \draw[domain=0 :2.2*pi,dashed] plot(\x,{-.45*sin(180/pi*\x)});
+      \end{scope}
+      \draw[|<->|] (0,-.6)--(2*pi,-.6) node[midway,fill=white]{$\lambda=2L$};
+      \fill circle (.04) node[below=3,fill=yellow!30]{N};
+      \fill (pi/2,0) circle (.04) node[below=3,fill=pink!30]{A};
+      \fill (pi,0) circle (.04) node[below=3,fill=yellow!30]{N};
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{-.1in}The fundamental frequency can be calculated based on the
+  relationship $v_\text{str}=f\lambda$:
+
+  \eq{-.1in}{
+    \boxed{
+      f_1=\frac{v_\text{str}}\lambda=\frac{v_\text{str}}{2L}
+      \quad\text{\normalsize where}\quad v_\text{str}=\sqrt{\frac{F_TL}m}
+    }
+  }
+\end{frame}
+
+
+\begin{frame}{Standing Waves On a String of Length $L$}
+  The second resonance mode occurs when $\lambda=L$:
+
+  \vspace{.2in}\begin{columns}
+    \column{.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0)--(pi,0);
+      \draw[thick] (0,-.1)--(0,.1);
+      \draw[thick] (pi,-.1)--(pi,.1);
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{.4*sin(360/pi*\x)});
+        \draw[dashed] plot(\x,{-.4*sin(360/pi*\x)});
+      \end{scope}
+      \fill (0,0) circle (.04) node[below]{N};
+      \fill (pi,0) circle (.04) node[below]{N};
+      \fill (pi/2,0) circle (.04) node[below]{N};
+      \fill (pi/4,0) circle (.04) node[below]{A};
+      \fill (3*pi/4,0) circle (.04) node[below]{A};
+    \end{tikzpicture}
+    
+    \column{.6\textwidth}    
+    \eq{-.01in}{
+      f_2 = \frac v\lambda=\frac vL=2f_1
+    }
+  \end{columns}
+
+  The third resonance mode occurs at $\lambda=\dfrac23L$:
+
+  \begin{columns}
+    \column{.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0)--(pi,0);
+      \draw[thick] (0,-.1)--(0,.1);
+      \draw[thick] (pi,-.1)--(pi,.1);
+      \begin{scope}[smooth,domain=0:pi]
+        \draw[samples=20,functions] plot(\x,{.4*sin(540/pi*\x)});
+        \draw[samples=30,dashed] plot(\x,{-.4*sin(540/pi*\x)});
+      \end{scope}
+      \foreach \x in {0,pi/3,pi,2*pi/3}
+      \fill (\x,0) circle (.04) node[below]{N};
+      %\fill (0,0) circle (.04) node[below]{N};
+      %\fill (pi,0) circle (.04) node[below]{N};
+      %\fill (pi/3,0) circle (.04) node[below]{N};
+      %\fill (2*pi/3,0) circle (.04) node[below]{N};
+      \fill (pi/6,0) circle (.04) node[below]{A};
+      \fill (pi/2,0) circle (.04) node[below]{A};
+      \fill (5*pi/6,0) circle (.04) node[below]{A};
+    \end{tikzpicture}
+    
+    \column{.6\textwidth}
+      
+    \eq{-.01in}{
+      f_3=\frac v\lambda=\frac{3v}{2L}=3f_1
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves On a String of Length $L$}
+  The $n$-th resonance mode of a wave on string is given by:
+
+  \eq{-.1in}{
+    \boxed{f_n=nf_1}\quad
+    \text{\normalsize where}\quad
+    \boxed{f_1=\frac v{2L}}
+  }
+  \begin{itemize}
+  \item $n=1,2,3,\ldots$ is a whole-number multiple
+  \item This equation is \emph{identical} to the equation for harmonic
+    frequencies, meaning that on a string, every harmonic is a resonance
+    frequency
+  \item A vibrating string is said to have a ``full set of harmonics''
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Closed Pipes}
+
+\begin{frame}{Standing Waves in a Closed Pipe of Length $L$}
+  Similar standing-wave patterns can be found on pipes with both ends closed.
+  Like strings, the boundary condition is that the closed ends of the pipes
+  must be nodes.
+
+  \vspace{.2in}
+  \begin{columns}
+    \column{.33\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.3,yscale=.45]
+      \foreach \x in {0,pi} \node[below,fill=yellow!40] at (\x,-1.1){N};
+      \node[below,fill=pink!40] at (pi/2,-1.1){A};
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{sin(180/pi*\x)});
+        \draw[dashed] plot(\x,{-1*sin(180/pi*\x)});
+      \end{scope}
+      \draw[thick] (0,-1) rectangle (pi,1);
+      \node[above] at (pi/2,1){Fundamental Mode};
+    \end{tikzpicture}
+
+    \eq{-.25in}{
+        f_1=\frac{v_s}\lambda=\frac{v_s}{2L}
+    }
+  
+    \column{.33\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.3,yscale=.45]
+      \foreach \x in {0,pi/2,pi} \node[below,fill=yellow!40] at(\x,-1.1){N};
+      \foreach \x in {pi/4,3*pi/4} \node[below,fill=pink!40] at(\x,-1.1){A};
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{sin(360/pi*\x)});
+        \draw[dashed] plot(\x,{-1*sin(360/pi*\x)});
+      \end{scope}
+      \draw[thick] (0,-1) rectangle (pi,1);
+      \node[above] at (pi/2,1){2nd Resonance Mode};
+    \end{tikzpicture}
+
+    \eq{-.25in}{
+      f_2=
+      \frac{v_s}\lambda=\frac{v_s}L=2f_1
+    }
+    
+    \column{.33\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.3,yscale=.45]
+      \foreach \x in {0,pi/3,2*pi/3,pi}
+      \node[below,fill=yellow!40] at (\x,-1.1){N};
+      \foreach \x in {pi/6,pi/2,5*pi/6}
+      \node[below,fill=pink!40] at (\x,-1.1){A};
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{sin(540/pi*\x)});
+        \draw[dashed] plot(\x,{-1*sin(540/pi*\x)});
+      \end{scope}
+      \draw[thick] (0,-1) rectangle (pi,1);
+      \node[above] at (pi/2,1){3rd Resonance Mode};
+    \end{tikzpicture}
+
+    \eq{-.25in}{
+      f_3=\frac{3v_s}{2L}=3f_1
+    }
+  \end{columns}  
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in a Closed Pipe of Length $L$}
+  For strings and pipes that are \emph{closed at both ends}, the $n$-th
+  resonance mode is given by:
+  
+  \eq{-.1in}{
+    \boxed{f_n=nf_1}\quad\text{\normalsize where}\quad
+    \boxed{f_1=\frac{v_s}{2L}}
+    \quad n=1,2,3,\ldots
+  }
+  \begin{itemize}
+  \item The above equation is \emph{identical} to the equation for harmonic
+    frequencies, i.e.\ every harmonic is a resonance mode
+  \item The difference between a closed pipe and a string is that the wave
+    speed is the speed of sound $v_s$ inside the pipe
+  \end{itemize}
+  No musical ``instruments'' are built this way, but you can use this to model
+  standing wave patterns inside a concert hall.
+\end{frame}
+
+
+
+\subsection{Open Pipes}
+
+\begin{frame}{Standing Waves in an Open Pipe of Length $L$}
+  Some organ pipes and flute have open ends on both sides. In this case, the
+  open ends are anti-nodes. The standing-wave pattern is similar to the closed
+  pipes, but the locations of the nodes and anti-nodes are reversed.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.4,yscale=.8]
+      \draw[thick] (0,-.5)--(pi,-.5);
+      \draw[thick] (0,.5)--(pi,.5);
+      \foreach \x in {0,pi} \node[below,fill=pink!50] at (\x,-.55){A};
+      \node[below,fill=yellow!50] at (pi/2,-.55){N};
+      \begin{scope}[smooth,domain=0:pi,samples=15]
+        \draw[functions] plot(\x,{.5*sin(180/pi*\x+90)});
+        \draw[dashed] plot(\x,{-.5*sin(180/pi*\x+90)});
+      \end{scope}
+      \node[above] at (pi/2,.5){Fundamental Mode};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.4,yscale=.8]
+      \draw[thick] (0,-.5)--(pi,-.5);
+      \draw[thick] (0,.5)--(pi,.5);
+      \foreach \x in {0,pi/2,pi} \node[below,fill=pink!50] at (\x,-.55){A};
+      \foreach \x in {pi/4,3*pi/4} \node[below,fill=yellow!50] at (\x,-.55){N};
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{.5*sin(360/pi*\x+90)});
+        \draw[dashed] plot(\x,{-.5*sin(360/pi*\x+90)});
+      \end{scope}
+      \node[above] at (pi/2,.5){2nd Resonance Mode};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.4,yscale=.8]
+      \draw[thick] (0,-.5)--(pi,-.5);
+      \draw[thick] (0,0.5)--(pi,0.5);
+      \foreach \x in {0,pi/3,2*pi/3,pi}
+      \node[below,fill=pink!50] at (\x,-.55){A};
+      \foreach \x in {pi/6,pi/2,5*pi/6}
+      \node[below,fill=yellow!50] at (\x,-.55){N};
+      \begin{scope}[smooth,samples=30,domain=0:pi]
+        \draw[functions] plot(\x,{.5*sin(540/pi*\x+90)});
+        \draw[dashed] plot(\x,{-.5*sin(540/pi*\x+90)});
+      \end{scope}
+      \node[above] at (pi/2,.5){3rd Resonance Mode};
+    \end{tikzpicture}
+  \end{center}
+  Like strings and closed pipes, open pipes also have a ``full set of
+  harmonics''. The $n$-th resonance mode is given by:
+  
+  \eq{-.15in}{
+    \boxed{f_n=nf_1}
+    \quad n=1,2,3,\ldots
+    \quad\text{\normalsize where}
+    \quad\boxed{f_1=\frac{v_s}{2L}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example}: An air column, open at both ends, has a fundamental
+  resonance mode at \SI{330}\hertz.
+  \begin{enumerate}
+  \item What are the frequencies of the second and third resonance modes?
+  \item If the speed of sound in air is \SI{344}{\metre\per\second}, what is the
+    length of the air column?
+  \end{enumerate}
+\end{frame}
+
+
+
+\subsection{Semi-Open Pipes}
+
+\begin{frame}{Standing Waves in a Semi-Open Pipe of Length $L$}
+  Not all configurations have a full set of harmonics. Most organ pipes, as
+  well as most woodwind (e.g.\ clarinet, oboe, bassoon) and brass instruments
+  (e.g.\ French horn, trumpet, trombone) have one closed end and one open end.
+  \begin{itemize}
+  \item The closed end is a node, while
+  \item The open end is an antinode
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[xscale=1.4]
+      \draw[thick] (pi,-.5)--(0,-.5) node[pos=0,below=1.5,fill=pink!50]{A}
+      node[below=1.5,fill=yellow!50]{N}--(0,.5)--(pi,.5);
+      \begin{scope}[smooth,samples=10,domain=0:pi]
+        \draw[functions] plot(\x,{.5*sin(90/pi*\x)});
+        \draw[dashed] plot(\x,{-.5*sin(90/pi*\x)});
+      \end{scope}
+      \node[above] at (pi/2,.5){Fundamental Mode};
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=1.4]
+      \draw[thick] (pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \foreach \x in {0,2*pi/3}\node[below,fill=yellow!50] at (\x,-.55){N};
+      \foreach \x in {pi/3,pi} \node[below,fill=pink!50] at (\x,-.55){A};
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{.5*sin(270/pi*\x)});
+        \draw[dashed] plot(\x,{-.5*sin(270/pi*\x)});
+      \end{scope}
+      \node[above] at (pi/2,.5){2nd Resonance Mode};
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=1.4]
+      \draw[thick] (pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \foreach\x in {0,2*pi/5,4*pi/5}\node[below,fill=yellow!50] at(\x,-.55){N};
+      \foreach\x in {pi/5,3*pi/5,pi} \node[below,fill=pink!50] at (\x,-.55){A};
+      \begin{scope}[smooth,samples=30,domain=0:pi]
+        \draw[functions] plot(\x,{.5*sin(450/pi*\x)});
+        \draw[dashed] plot(\x,{-.5*sin(450/pi*\x)});
+      \end{scope}
+      \node[above] at (pi/2,.5){3rd Resonance Mode};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in a Semi-Open Pipe of Length $L$}
+  In this case, the fundamental mode occurs at $\lambda=4L$:
+  \begin{center}
+    \begin{tikzpicture}[xscale=1.1,yscale=.5]
+      \draw[thick] (pi,-1)--(0,-1)--(0,1)--(pi,1);
+      \begin{scope}[smooth,samples=25]
+        \draw[domain=0:pi,functions] plot(\x,{sin(90/pi*\x)});
+        \draw[domain=pi:4*pi,dashed] plot(\x,{sin(90/pi*\x)});
+        \draw[domain=0:4*pi,dashed] plot(\x,{-1*sin(90/pi*\x)});
+      \end{scope}
+      \draw[|<->|] (0,1.55)--(pi,1.55) node[midway,fill=white]{$L$};
+      \draw[|<->|] (0,-1.3)--(4*pi,-1.3) node[midway,fill=white]{$\lambda$};
+    \end{tikzpicture}
+  \end{center}
+  
+  Fundamental frequency $f_1$ differs from open-pipe and closed-pipe by a
+  factor of 2:
+
+  \eq{-.1in}{
+    \boxed{f_1=\frac{v_s}\lambda=\frac{v_s}{4L}}
+  }
+    
+  Fundamental mode $f_1$ is lower than open-ended and closed-ended pipes for
+  the same length ; it has advantages when designing organ pipes that produces
+  low frequencies.
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in a Semi-Open Pipe of Length $L$}
+  A second resonance mode occurs at $\lambda=\dfrac43L$:
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[xscale=1.5,yscale=.5]
+      \begin{scope}[smooth,samples=15,domain=0:pi]
+        \draw[functions] plot(\x,{sin(270/pi*\x)});
+        \draw[dashed] plot(\x,{-1*sin(270/pi*\x)});
+      \end{scope}
+      \begin{scope}[smooth,dashed,samples=10,domain=pi:1.5*pi]
+        \draw plot(\x,{-1*sin(270/pi*\x)});
+        \draw plot(\x,{1*sin(270/pi*\x)});
+      \end{scope}
+      \draw[|<->|] (0,-1.6)--(4/3*pi,-1.6) node[midway,fill=white]{$\lambda$};
+      \draw[thick] (pi,-1)--(0,-1)--(0,1)--(pi,1);
+    \end{tikzpicture}
+    
+    \column{.55\textwidth}
+    \eq{-.2in}{
+      f_2=\frac{v_s}\lambda=\frac{3v_s}{4L}=3f_1
+    }
+  \end{columns}
+
+  \vspace{.1in}And a third resonance mode occurs at $\lambda=\dfrac45L$:
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[xscale=1.5,yscale=.5]
+      \draw[thick] (pi,-1)--(0,-1)--(0,1)--(pi,1);
+      \begin{scope}[smooth,samples=20,domain=0:pi]
+        \draw[functions] plot(\x,{sin(450/pi*\x)});
+        \draw[dashed] plot(\x,{-1*sin(450/pi*\x)});
+      \end{scope}
+      \draw[<->] (0,-1.6)--(.8*pi,-1.6) node[midway,fill=white]{$\lambda$};
+    \end{tikzpicture}
+
+    \column{.55\textwidth}
+    \eq{0in}{
+      f_3=\frac{v_s}\lambda=\frac{5v_s}{4L}=5f_1
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in a Semi-Open Pipe of Length $L$}
+  Semi-open pipes have an \emph{odd set of harmonics} because only
+  \emph{odd-number} multiples of the fundamental can be resonance modes.
+
+  \eq{-.1in}{
+    \boxed{f_n=(2n-1)f_1}
+    \quad n=1,2,3,\ldots
+    \quad\text{\normalsize where}\quad
+    \boxed{f_1=\frac{v_s}{4L}}
+  }
+
+  Remember: harmonic frequencies are multiples of the fundamental frequency.
+  This means that:
+  \begin{itemize}
+  \item 2nd resonance mode = 3rd harmonic frequency
+  \item 3rd resonance mode = 5th harmonic frequency
+  \item 4th resonance mode = 7th harmonic frequency
+  \end{itemize}
+\end{frame}
+\end{document}

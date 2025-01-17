@@ -77,6 +77,16 @@
 
 \tikzstyle{slits}=[line width=2.5,green!50!black]
 
+\tikzstyle{mass-element}=[draw,minimum size=.6cm,fill=cyan!30]
+\tikzstyle{springy}=[decorate,decoration={
+    coil,
+    segment length=4pt,
+    aspect=.7,
+    amplitude=4pt,
+    pre=lineto,
+    pre length=1mm,
+    post=lineto,
+    post length=1mm},thick]
 
 \sisetup{
   inter-unit-product=\cdot,
@@ -249,8 +259,9 @@ language governing permissions and limitations under the License.\\ % License in
 %	PART 4: Waves
 %---------------------------------------------------------------------------
 
-
-
+\input{mechanicalWaves/PhysAP2-C09-mechWaves}
+\input{soundWaves/PhysAP2-C10-soundWaves-extendedVersion}
+  
 %---------------------------------------------------------------------------
 %	PART 5: Light Waves
 %---------------------------------------------------------------------------
