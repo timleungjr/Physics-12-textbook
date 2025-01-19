@@ -58,6 +58,9 @@
 \usepackage{colortbl}
 \usepackage{multicol}
 
+
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
 \tikzset{
   >=latex,
   voltage dir=RP,
@@ -71,12 +74,9 @@
 \tikzstyle{every node}=[font=\footnotesize]%scriptsize]
 \tikzstyle{balloon1}=[ball color=red]
 \tikzstyle{balloon2}=[ball color=blue]
-
 \tikzstyle{poscharge}=[ball color=blue!50!gray]
 \tikzstyle{negcharge}=[ball color=red]
-
 \tikzstyle{slits}=[line width=2.5,green!50!black]
-
 \tikzstyle{mass-element}=[draw,minimum size=.6cm,fill=cyan!30]
 \tikzstyle{springy}=[decorate,decoration={
     coil,
@@ -93,8 +93,7 @@
   per-mode=symbol
 }
 
-\usetikzlibrary{decorations.pathmorphing,patterns}
-
+\newcolumntype{g}{>{\columncolor{gray!15}}c}
 
 % Book information for PDF metadata, remove/comment this block if not required 
 \hypersetup{
@@ -104,6 +103,7 @@
   pdfkeywords={Keyword1, Keyword2, ...}, % Keywords
   pdfcreator={LaTeX}, % Content creator field
 }
+
 
 \addbibresource{references.bib} % Bibliography file
 
@@ -253,14 +253,10 @@ language governing permissions and limitations under the License.\\ % License in
 \part{Magnetism}
 
 \input{magneticField/Phys12-C10-magField}
-\input{magneticField/homework/Phys12-C10-HW}
+%\input{magneticField/homework/Phys12-C10-HW}
+\input{faradaysLaw/PhysAP2-C08-magnetism2}
 
-\chapter{Magnetic Induction}
-
-\section{Faraday's Law}
-\section{Induced Current}
-\section{Lenz's Law}
-\section{Galvanometer}
+\chapter{Tranformers \& Power Generation}
 
 %---------------------------------------------------------------------------
 %	PART 4: Waves
@@ -276,9 +272,10 @@ language governing permissions and limitations under the License.\\ % License in
 
 \part{Light Waves}
 
-\input{lightWaves/Phys12-C11-light}
+%\input{lightWaves/Phys12-C11-light}
+\input{lightWaves2/PhysAP2-C11-lightOptics}
 \input{physicalOptics/Phys12-C12-lightInterference}
-\input{physicalOptics/homework/Phys12-C12-HW}
+%\input{physicalOptics/homework/Phys12-C12-HW}
 \input{thinFilmInterference/Phys12-C13-thinFilm}
 
 %---------------------------------------------------------------------------
@@ -291,7 +288,7 @@ language governing permissions and limitations under the License.\\ % License in
 %\input{specialRelativity/homework/Phys12-C14-HW}
 
 \input{quantumMechanics/Phys12-C15-quantumMech}
-\input{quantumMechanics/homework/Phys12-C15-HW}
+%\input{quantumMechanics/homework/Phys12-C15-HW}
 
 \chapter{Nuclear Physics}
 \section{Nucleus}

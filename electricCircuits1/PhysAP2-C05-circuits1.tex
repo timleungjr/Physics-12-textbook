@@ -40,7 +40,7 @@
 %
 %
 %
-%\section{Electric Current}
+\section{Electric Current}
 %
 %{Electric Current}
 %  In an electric circuit, a large number of charge ``carriers'' are pushed
@@ -90,22 +90,22 @@
 %
 %
 %
-\section{Electrical Current}
-The average \textbf{electrical current} $I$ through conductor is the amount of
-charges $Q$ that passes through a point during a finite time interval
+%\section{Electrical Current}
+The average \textbf{electrical current} $I_\text{avg}$ through conductor is the
+amount of charges $Q$ that passes through a point during a finite time interval
 $\Delta t$:
-%
-%  \eq{-.1in}{
-%    \boxed{I=\frac Q{\Delta t}}
-%  }
-%
-%  Generally, the current through a conductor is a function of time ($I=I(t)$),
-%  and $+/-$ signs may be used to indicate direction of the current.
-%
-%
-%
-%
+\begin{equation}
+  \boxed{
+    I_\text{avg}=\frac Q{\Delta t}
+  }
+\end{equation}
+Generally, the current through a conductor is a function of time ($I=I(t)$),
+and $+/-$ signs may be used to indicate direction of the current.
+
+
+
 \subsection{Direct Current}
+
 In a \textbf{direct current} (\textbf{DC}), the flow of charges is always in
 the same direction, but the current itself does not have to be constant in
 time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
@@ -113,7 +113,7 @@ time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
   \centering
   \begin{subfigure}{.28\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.7]
+    \begin{tikzpicture}[scale=.85]
       \draw[red,ultra thick] (0,3)--(4,3);
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,4) node[above]{$I$};
@@ -122,7 +122,7 @@ time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
   \end{subfigure}
   \begin{subfigure}{.34\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.7]
+    \begin{tikzpicture}[scale=.85]
       \draw[smooth,samples=20,domain=0:3.5,functions]
       plot(\x,{3*(exp(-.8*\x))});
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
@@ -132,7 +132,7 @@ time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
   \end{subfigure}
   \begin{subfigure}{.34\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.7]
+    \begin{tikzpicture}[scale=.85]
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,4) node[above]{$I$};
       \draw[smooth,samples=20,domain=0:3.5,functions]
@@ -302,7 +302,7 @@ The expression for electric current can be expanded this way:
 %
 %
 %
-\section{Resistors}
+%\section{Resistors}
 %
 %
 %{Circuit Diagrams: Loads}
@@ -332,16 +332,29 @@ The expression for electric current can be expanded this way:
 %  \end{itemize}
 %  \vspace{.2in}
 %  %Other things to have in a circuit (switches, fuse)  
-%
-%
-%
-%
+
+
+
+
 \section{Ohm's Law}
-The electric potential difference $V$ across a resistor equals the product of
-the current $I$ through the load and the resistance $R$:
+
+Georg Ohm discovered that when a current is passed through a piece of metal
+conductor, the voltage (electric potential difference) $V$ across the two ends
+of the metal is proportional to the amount of current ($I$) through it. This is
+known as \textbf{Ohm's law}:
 \begin{equation}
-  \boxed{V=IR}
+  \boxed{
+    V=IR
+  }
 \end{equation}
+The proportionality between voltage and current is called \textbf{resistance}.
+We now know that electrical resistance is caused by the free electrons'
+collisions with the atoms in the metal. The collisions transfer kinetic energy
+from the electrons to the atoms. The atoms would then vibrate, and release
+the additional energy in the form of electromagnetic radiation (as we have
+learned, in Section~\ref{sec:heat-transfer}, is a form of heat transfer).
+%The electric potential difference $V$ across a resistor equals the product of
+%the current $I$ through the load and the resistance $R$:
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -351,21 +364,58 @@ the current $I$ through the load and the resistance $R$:
 %      Resistance           & $R$    & \si\ohm
 %    \end{tabular}
 %  \end{center}
-%  A load is considered ``ohmic'' if it obeys Ohm's law. Note that Ohm's law
-%  is not a fundamental law in physics.
-%
-%
-%
-%
-%{Resistance of a Conductor}
-%  The resistance of a conductor is proportional to the resistivity $\rho$ and
-%  its length $L$, and inversely proportional to the cross-sectional area $A$:
-%
-%  \begin{equation}
-%    \boxed{
-%      R=\rho\frac LA
-%    }
-%  }
+%  A load is considered ``ohmic'' if it obeys Ohm's law.
+Note that Ohm's law is \emph{not} a fundamental law in physics; it only applies
+to mostly metal conductors.
+
+Electrical devices where the relationship between voltage across the device and
+the current through the device is linear are called \textbf{ohmic devices}.
+Incandescent light bulbs and heating elements are examples of ohmic devices.
+If we plot the current vs.\ voltage for the device, we would find a straight
+line; the slope of the graph is the inverse of the resistance, as shown in
+Fig.~\ref{fig:ohmic-relationship}.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[functions] (0,0)--(2.5,2.5)
+      node[midway,right]{$\text{slope}=\dfrac1R$};
+      \draw[axes] (0,0)--(3,0) node[right]{$V$};
+      \draw[axes] (0,0)--(0,3) node[right]{$I$};
+    \end{tikzpicture}
+    \caption{Ohmic}
+    \label{fig:ohmic-relationship}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(3,0) node[right]{$V$};
+      \draw[axes] (0,0)--(0,3) node[right]{$I$};
+      \draw[functions,domain=0:2.45,smooth] plot(\x,.0008*\x^9);
+    \end{tikzpicture}
+    \caption{Non-ohmic}
+    \label{fig:non-ohmic-relationship}
+  \end{subfigure}
+  \caption{Relationship between current and voltage for ohmic and non-ohmic
+    devices.}
+\end{figure}
+Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
+between voltage and current is \emph{not} linear, as shown in
+Fig.~\ref{fig:non-ohmic-relationship}.
+%For example, diodes (e.g.\ your TV's LED screen) are non-ohmic.
+
+
+
+\subsection{Resistance of a Conductor}
+
+The resistance of a conductor is proportional to the resistivity $\rho$ and
+its length $L$, and inversely proportional to the cross-sectional area $A$:
+\begin{equation}
+  \boxed{
+    R=\rho\frac LA
+  }
+\end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -376,29 +426,45 @@ the current $I$ through the load and the resistance $R$:
 %      Cross-sectional area & $A$    & \si{\metre\squared}
 %    \end{tabular}
 %  \end{center}
-%  The resistivity $\rho$ is determined by the material.
+The resistivity $\rho$ is a material property, which is usually determined
+experimentally. The SI unit for resistivity is an \textbf{ohm metre}
+(\si{\ohm\metre}).
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c|c}
+    \rowcolor{pink!50}
+    Material & Resistivity $\rho$ (\si{\ohm\metre})\\ \hline
+    silver & \num{1.6e-8} \\
+    copper    & \num{1.7e-8} \\
+    aluminum  & \num{2.7e-8} \\
+    tungsten  & \num{5.6e-8} \\
+    Nichrome  & \num{100e-8} \\
+    carbon    & \num{3500e-8}\\
+    germanium & \num{.46} \\
+    glass     & \num{e10} to \num{e14}\\
+  \end{tabular}
+  \caption{Resistivity of common materials}
+\end{table}
+
+Resistivity of a material is also the ratio between strength of the electric
+field $E$ inside the material (the electric field that drives the current)
+and the current density $J$:
+\begin{equation}
+  \boxed{
+    \rho=\frac EJ
+  }
+\end{equation}
+%  \begin{itemize}
+%  \item Conductor: the electrons are free to move, therefore the electric
+%    field tend to be very small, and the resistivity is low.
+%  \item Insulators and dielectric: electrons cannot move easily (dielectric:
+%    they can only polarize themselves) the electric field are generally
+%    strong, and the resistivity is higher.
+%  \end{itemize}
 %
-%
-%
-%
-%%{Resistivity}
-%%  The resistivity of a material is the ratio between strength of the electric
-%%  field $E$ inside the material and the current density $J$:
-%%
-%%  \begin{equation}
-%%    \boxed{\rho=\frac EJ}
-%%  }
-%%  \begin{itemize}
-%%  \item Conductor: the electrons are free to move, therefore the electric
-%%    field tend to be very small, and the resistivity is low.
-%%  \item Insulators and dielectric: electrons cannot move easily (dielectric:
-%%    they can only polarize themselves) the electric field are generally
-%%    strong, and the resistivity is higher.
-%%  \end{itemize}
-%%
-%
-%
-%
+
+
+
 %{Resistance of a Conductor}
 %
 %  \eq{.0in}{
@@ -421,63 +487,10 @@ the current $I$ through the load and the resistance $R$:
 %                        18 & \num{1.02} & \num{21.90} \\
 %                        22 & \num{0.64} & \num{51.70} \\
 %    \end{tabular}
-%    
-%    \column{.5\textwidth}
-%    \centering
-%    \begin{tabular}{c|c}
-%      \rowcolor{blue!50}
-%               {\color{white} Material} & 
-%               {\color{white} Resistivity $\rho$ (\si{\ohm\metre})}\\ \hline
-%               silver    & \num{1.6e-8} \\
-%               copper    & \num{1.7e-8} \\
-%               aluminum  & \num{2.7e-8} \\
-%               tungsten  & \num{5.6e-8} \\
-%               Nichrome  & \num{100e-8} \\
-%               carbon    & \num{3500e-8}\\
-%               germanium & \num{.46} \\
-%               glass     & \num{e10} to \num{e14}\\
-%    \end{tabular}
-%  
-%
-%
-%
-%
-%{Ohmic vs.\ Non-Ohmic Devices}
-%  In an \textbf{ohmic device} such as a resistor, the relationship between
-%  voltage across the device and the current through the device is linear:
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.7]
-%      \draw[functions] (0,0)--(2.5,2.5) node[right]{$\text{slope}=R$};
-%      \draw[axes] (0,0)--(3,0) node[right]{$I$};
-%      \draw[axes] (0,0)--(0,3) node[right]{$V$};
-%    \end{tikzpicture}
-%    \hspace{.15in}
-%    \begin{tikzpicture}[scale=.7]
-%      \draw[functions] (0,0)--(2.5,2.5)
-%      node[right]{$\text{slope}=\dfrac1R$};
-%      \draw[axes] (0,0)--(3,0) node[right]{$V$};
-%      \draw[axes] (0,0)--(0,3) node[right]{$I$};
-%    \end{tikzpicture}
-%  \end{center}
-%
-%
-%
-%
-%{Ohmic vs.\ Non-Ohmic Devices}
-%  Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
-%  between voltage and current is \emph{not} linear. For example, diodes (e.g.\
-%  your TV's LED screen) are non-ohmic.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.7]
-%      \draw[axes] (0,0)--(3,0) node[right]{$V$};
-%      \draw[axes] (0,0)--(0,3) node[right]{$I$};
-%      \draw[functions,domain=0:2.45,smooth] plot(\x,.0008*\x^9);
-%    \end{tikzpicture}
-%  \end{center}
-%
-%
-%
-%
+
+
+
+
 %{Power Dissipated by a Load}
 %  Average power $P$ is the rate at which work $W$ is done, and from
 %  electrostatics, the change in electric potential energy $\Delta E_q$ is
