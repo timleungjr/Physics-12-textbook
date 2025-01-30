@@ -112,6 +112,22 @@ The following is a simple example with two voltage sources:
 %
 \section{Capacitors in Circuits}
 
+In Chapter~\ref{chapter:capacitors}, we learned that capacitor is a device that
+stores energy in the electric field. Two parallel plates with equal and opposite
+charges will generate a voltage. Whereas Chapter~\ref{chapter:capacitors} is
+concerned primarily with defining the capacitance, here, we focus on the
+capacitor's application in cicuits.
+
+In a circuit, a capacitor acts as an energy storage device. When both sides of
+a capacitor has a charge of $\pm Q$, the capacitor voltage is given by
+\begin{equation*}
+  V_c=\frac QC
+\end{equation*}
+where $C$ is the capacitance. The voltage $V_c$ can be used to drive a current
+in the circuit. However, unlike in a battery, where a nearly-constant voltage is
+generated \emph{chemically}, in a capacitor, voltage can vary depending on
+whether the capacitor is charging or discharging.
+
 \subsection{Capacitors in Parallel}
 
 \begin{figure}[ht]
@@ -187,8 +203,7 @@ because of conservation of charges.
 
 
 \section{$RC$ Circuits}
-%
-%{Circuits with Resistors and Capacitors}
+
 Now that we have seen how resistors and capacitors behave in a circuit, we can
 look into combining them in to an ``$RC$ circuit''.
 %  \begin{center}
@@ -374,10 +389,7 @@ same as the discharging case:
 %  \item When a capacitor is charged, there is a voltage across it, but no
 %    current flows \emph{through} it. Effectively it acts like an open circuit.
 %  \end{enumerate}
-%
-%
-%
-%
+
 \section{General $RC$ Circuits}
 
 \begin{figure}[ht]
@@ -392,9 +404,41 @@ same as the discharging case:
     \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
   \end{tikzpicture}
 \end{figure}
+
+
+
+
 %  \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
 %  the current through the battery
 %  \begin{enumerate}
 %  \item Immediately after the switch is closed
 %  \item A long time after the switch is closed
 %  \end{enumerate}
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.2,american voltages]
+      \draw[thick] (0,0)
+      to[battery,l=\SI{12}\volt] (0,2)
+      to[R=\SI4\ohm](2,2)--(3,2) to[short] (4,2)--(4,0)--(0,0);
+      \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
+      \draw[line width=12,opacity=.2,yellow] (0,0)--(0,2)--(4,2)--(4,0)--(0,0);
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.2,american voltages]
+      \draw[thick] (0,0)
+      to[battery,l=\SI{12}\volt] (0,2)
+      to[R=\SI4\ohm](2,2)--(3,2) to[short] (4,2) to[short,-o] (4,1.2);
+      \draw[thick] (4,.8) to[short,o-] (4,0)--(0,0);
+      \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
+      \draw[line width=12,opacity=.2,yellow] (0,0)--(0,2)--(3,2)--(3,0)--(0,0);
+    \end{tikzpicture}
+  \end{subfigure}
+  \caption{The initial and steady-state circuit diagram for a general RC
+    circuit}
+\end{figure}

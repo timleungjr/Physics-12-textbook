@@ -152,17 +152,17 @@ In an \textbf{alternating current} (\textbf{AC}), the flow of charges changes
 in direction, \emph{usually} as a sinusoidal function of time.
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{.45\textwidth}
+  \begin{subfigure}{.35\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.85]
       \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
       \draw[axes] (0,0)--(5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$I$};
     \end{tikzpicture}
   \end{subfigure}
-  \begin{subfigure}{.45\textwidth}
+  \begin{subfigure}{.35\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.85]
       \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
       \draw[axes] (0,0)--(5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$V$};
@@ -177,44 +177,30 @@ The power outlet in North America are all AC, with a maximum voltage of
 %{Current Through the Conductor}
 The expression for electric current can be expanded this way:
 
-%%  \begin{equation}
-%%    I=\frac Q{\Delta t}=\left(\frac QV\right)\frac V{\Delta t}
-%%    =\left[ne\right]\left[Av_d\right]
-%%  }
-%%  where
-%%  \begin{itemize}
-%%  \item $Q/V$ is the \emph{amount of charges per volume}, which is also the
-%%    \textbf{charge carrier density} (number of charge carriers per volume) $n$
-%%    times the \textbf{elementary charge} $e$
-%%  \item $V/t$ is the rate the volume of charges moves through the
-%%    conductor, give by the cross-section area of the conductor $A$ times the
-%%    \textbf{drift velocity} $v_d$ of the charge carrier
-%%  \end{itemize}
-%%
-%%
-%%
-%%
-%%{Charge Carrier Density}
-%%  Calculating the charge carrier density in a \emph{metal} conductor involves
-%%  some physical information about the metal:
-%%  \begin{enumerate}
-%%  \item Divide the metal's density $\rho$ by its molar mass $M$ to find the
-%%    \emph{number of moles of atoms per unit volume}
-%%  \item Multiply by Avogadro's number $N_A=\SI{6.0221e23}{\per mol}$ to find
-%%    \emph{number of atoms per unit volume}
-%%  \item Multiply by the number of free electrons per atom $k$ for that
-%%    particular metal
-%%  \end{enumerate}
-%%
-%%
-%%
-%%
-%%{Charge Carrier Density}
-%%  Collecting all the terms from the last slide, we have:
-%%  
-%%  \begin{equation}
-%%    \boxed{n=\frac{\rho kN_A}M}
-%%  }
+\begin{equation}
+  I=\frac Q{\Delta t}=\left(\frac QV\right)\frac V{\Delta t}
+  =\left[ne\right]\left[Av_d\right]
+\end{equation}
+where $Q/V$ is the \emph{amount of charges per volume}, which is also the
+\textbf{charge carrier density} (number of charge carriers per volume) $n$
+times the \textbf{elementary charge} $e$; $V/t$ is the rate the volume of
+charges moves through the conductor, give by the cross-section area of the
+conductor $A$ times the \textbf{drift velocity} $v_d$ of the charge carrier.
+
+Calculating the charge carrier density in a \emph{metal} conductor involves
+some physical information about the metal:
+\begin{enumerate}
+\item Divide the metal's density $\rho$ by its molar mass $M$ to find the
+  \emph{number of moles of atoms per unit volume}
+\item Multiply by Avogadro's number $N_A=\SI{6.0221e23}{\per mol}$ to find
+  \emph{number of atoms per unit volume}
+\item Multiply by the number of free electrons per atom $k$ for that
+  particular metal
+\end{enumerate}
+Collecting all the terms from the last slide, we have:  
+\begin{equation}
+  \boxed{n=\frac{\rho kN_A}M}
+\end{equation}
 %%  \begin{center}
 %%    \begin{tabular}{l|c|c}
 %%      \rowcolor{pink}
@@ -226,9 +212,9 @@ The expression for electric current can be expanded this way:
 %%      Molar mass               & $M$    & \si{\kilo\gram\per\mol}
 %%    \end{tabular}
 %%  \end{center}
-%%  For copper, $M=\SI{63.54e-3}{\kilo\gram\per\mol}$,
-%%  $\rho=\SI{8.96e3}{\kilo\gram\per\metre\cubed}$, $k=1$ and therefore
-%%  $n=\SI{8.5e28}{\per\metre\cubed}$.
+For copper, $M=\SI{63.54e-3}{\kilo\gram\per\mol}$,
+$\rho=\SI{8.96e3}{\kilo\gram\per\metre\cubed}$, $k=1$ and therefore
+$n=\SI{8.5e28}{\per\metre\cubed}$.
 %%
 %%
 %%
@@ -408,34 +394,7 @@ we use the conventional current for simplicity.
 %\section{Resistors}
 %
 %
-%{Circuit Diagrams: Loads}
-%  Loads are devices that transforms the electrical energy in the circuit into
-%  other forms of energy. Examples include:
-%  \begin{center}
-%    \begin{circuitikz}[american voltages]
-%      \draw[thick] (0,0) to[R,l=Resistor,o-o] (2,0);
-%      \draw[thick] (3,0) to[bulb,l=Light Bulb,o-o] (5,0);
-%      \draw[thick] (6,0) to[lamp,l=Lamp,o-o] (8,0);
-%      \draw[thick] (9,0) to[short,o-o] (11,0);
-%      \draw[very thick,fill=white] (9.35,-.2) rectangle (10.65,.2);
-%      \draw[very thick,fill=white] (10,0) circle (14pt) node{M};
-%      \node at (10,.8) {Motor};
-%    \end{circuitikz}
-%  \end{center}
-%  \begin{itemize}
-%    \item Resistors, light bulbs and other lamps transform electrical energy
-%      into heat, light and other forms of
-%      \textbf{electromagnetic radiation}\footnote{Also known as
-%      \textbf{electromagnetic waves}, or \textbf{EM waves}. They include radio
-%      waves, microwaves, infrared radiation, visible light, ultraviolet (UV)
-%      radiation, x-ray and gamma rays}
-%    \item A motor converts electrical energy into kinetic energy of the motor
-%      shaft and whatever objects are connected to it through an interaction
-%      with a magnetic field inside the motor
-%  \end{itemize}
-%  \vspace{.2in}
-%  %Other things to have in a circuit (switches, fuse)  
-
+{Circuit Diagrams: Loads}
 
 
 
@@ -479,7 +438,7 @@ line; the slope of the graph is the inverse of the resistance, as shown in
 Fig.~\ref{fig:ohmic-relationship}.
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}
       \draw[functions] (0,0)--(2.5,2.5)
@@ -490,7 +449,7 @@ Fig.~\ref{fig:ohmic-relationship}.
     \caption{Ohmic}
     \label{fig:ohmic-relationship}
   \end{subfigure}
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}
       \draw[axes] (0,0)--(3,0) node[right]{$V$};
@@ -502,12 +461,22 @@ Fig.~\ref{fig:ohmic-relationship}.
   \end{subfigure}
   \caption{Relationship between current and voltage for ohmic and non-ohmic
     devices.}
+  \label{fig:i-vs-v-diagrams}
 \end{figure}
 Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
 between voltage and current is \emph{not} linear, as shown in
 Fig.~\ref{fig:non-ohmic-relationship}.
 %For example, diodes (e.g.\ your TV's LED screen) are non-ohmic.
-
+\begin{remark}
+  For clarification, in the graphs in Fig.~\ref{fig:i-vs-v-diagrams}, we have
+  plotted $I$ vs.\ $V$. This is because we usually alter the voltage as an
+  \emph{input}, and then measure the resulting current in the circuit as an
+  \emph{output}. From this point of view, it makes sense that $V$ is the
+  independent variable, and $I$ is the dependent variable. You can, of course,
+  reverse the axes by plotting $V$ vs.\ $I$. In this case, across an ohmic
+  device, the line would still be straight, but the slope would now be the
+  resistance $R$.
+\end{remark}
 
 
 \subsection{Resistance of a Conductor}
@@ -594,17 +563,16 @@ and the current density $J$:
 
 
 
-%{Power Dissipated by a Load}
-%  Average power $P$ is the rate at which work $W$ is done, and from
-%  electrostatics, the change in electric potential energy $\Delta E_q$ is
-%  proportional to the amount of charge $q$ and the voltage $V$. This gives a
-%  very simple expression for power through a resistor:
-%  
-%  \begin{equation}
-%    P=\frac W{\Delta t}=\frac{\Delta (qV)}{\Delta t}
-%    =\left(\frac{\Delta q}{\Delta t}\right)V
-%    \;\rightarrow\;\boxed{P=IV}
-%  }
+\subsection{Power Dissipated by a Load}
+Average power $P$ is the rate at which work $W$ is done, and from
+electrostatics, the change in electric potential energy $\Delta E_q$ is
+proportional to the amount of charge $q$ and the voltage $V$. This gives a
+very simple expression for power through a resistor:
+\begin{equation}
+  P=\frac W{\Delta t}=\frac{\Delta (qV)}{\Delta t}
+  =\left(\frac{\Delta q}{\Delta t}\right)V
+  \;\rightarrow\;\boxed{P=IV}
+\end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -645,20 +613,57 @@ and the current density $J$:
 Aside from the necessary circuit devices,
 
 For example, an energy sources may include:
-%  \begin{center}
-%    \begin{tikzpicture}[american voltages,thick]
-%      \draw (-3,0) to[battery1,l=Voltaic Cell,o-o] (-1,0);
-%      \draw (0,0) to[battery, l=Battery,o-o] (2,0);
-%      \draw (3,0) to[pvsource,l=Solar Panel,o-o] (5,0);
-%      %\draw (3,0) to[C,l=Capacitor,o-o] (5,0);
-%      \draw (6,0) to[american voltage source,l=DC Voltage,o-o] (8,0);
-%      \draw (9,0) to[sinusoidal voltage source,l=AC Voltage,o-o] (11,0);
-%    \end{tikzpicture}
-%  \end{center}
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[battery1,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{A voltaic cell}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[battery,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{A voltaic pile (battery)}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[pvsource,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{A solar panel}
+  \end{subfigure}
+
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[C,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{A capacitor}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[american voltage source,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{A DC voltage source}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (9,0) to[sinusoidal voltage source,o-o] (11,0);
+    \end{tikzpicture}
+    \caption{An AC voltage source}
+  \end{subfigure}
+\end{figure}
 
 A \textbf{capacitor} can also act as a energy source. When a capacitor is
 charged---with charge $+Q$ on one plate, and $-Q$ on the other, a voltage is
-generated, according to the equation $V=Q/C$ (studied in Class 5).
+generated, according to the equation $V=Q/C$ (studied in
+Chapter~\ref{chapter:capacitor}).
 %  \begin{center}
 %    \begin{tikzpicture}[thick]
 %      \draw (3,0) to[C,l=Capacitor,o-o] (5,0);
@@ -669,14 +674,65 @@ generated, according to the equation $V=Q/C$ (studied in Class 5).
 There are also other circuit devices that are not strictly necessary, but are
 very important/useful to ensure the reliable operation of an electrical
 circuit. For examples:
-
-%    \column{.3\textwidth}
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[thick,scale=1.2]
     \draw (0,0) to[fuse,l=Fuse,o-o] (2,0);
   \end{tikzpicture}
+  \caption{Circuit diagram of a fuse}  
 \end{figure}
+
+Loads are devices that transforms the electrical energy in the circuit into
+other forms of energy. Examples include:
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \begin{circuitikz}[american voltages]
+      \draw[thick] (0,0) to[R,o-o] (2,0);
+    \end{circuitikz}
+    \caption{Resistor}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \begin{circuitikz}[american voltages]
+      \draw[thick] (3,0) to[bulb,o-o] (5,0);
+    \end{circuitikz}
+    \caption{Light bulb}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \begin{circuitikz}[american voltages]
+      \draw[thick] (6,0) to[lamp,o-o] (8,0);
+    \end{circuitikz}
+    \caption{Lamp}
+  \end{subfigure}
+  \begin{subfigure}{.24\textwidth}
+    \centering
+    \begin{circuitikz}[american voltages]
+      \draw[thick] (9,0) to[short,o-o] (11,0);
+       \draw[very thick,fill=white] (9.35,-.2) rectangle (10.65,.2);
+       \draw[very thick,fill=white] (10,0) circle (14pt) node{M};
+    \end{circuitikz}
+    \caption{DC motor}
+  \end{subfigure}
+\end{figure}
+%  \begin{itemize}
+%    \item Resistors, light bulbs and other lamps transform electrical energy
+%      into heat, light and other forms of
+%      \textbf{electromagnetic radiation}\footnote{Also known as
+%      \textbf{electromagnetic waves}, or \textbf{EM waves}. They include radio
+%      waves, microwaves, infrared radiation, visible light, ultraviolet (UV)
+%      radiation, x-ray and gamma rays}
+%    \item A motor converts electrical energy into kinetic energy of the motor
+%      shaft and whatever objects are connected to it through an interaction
+%      with a magnetic field inside the motor
+%  \end{itemize}
+
+
+
+
+
 A \textbf{fuse} will break (stopping current from flowing) when the current
 through it exceeds its rating.
 
@@ -691,62 +747,69 @@ through it exceeds its rating.
 \end{figure}
 A switch allows the circuit to be manually turned on or off. (In the example,
 the switch is open and no current flows through it.)
-%  
-%
-%
-%
+
+
+
 \section{Measuring Devices}
 
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick] (.2,0) to[R,l=$R$] (2.8,0);
-%      \draw[thick] (.7,0) to[short,*-](.7,-.8)--(2.3,-.8) to[short,-*] (2.3,0);
-%      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{V};
-%    \end{tikzpicture}
-%    
-%    A \textbf{voltmeter} is placed in \emph{parallel} with a load to measure
-%    the voltage across it. An ideal voltmeter has infinite resistance
-%    ($R=\infty$) and no current through it ($I=0$).
-%
-%    \column{.3\textwidth}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick] (0,0) to[short] (1,0) to[R,l=$R$] (2.8,0);
-%      \draw[very thick,fill=black!2] (.7,0) circle (.3) node{A};
-%    \end{tikzpicture}
-%    
-%    \vspace{.47in}An \textbf{ammeter} is placed in \emph{series} with a load to
-%    measure the current through it. An ideal ammeter has zero resistance
-%    ($R=0$), thus it does not alter the flow of current in the circuilt
-%
-%    \column{.3\textwidth}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick] (0,0) to[R,l=$R$] (3,0);
-%      \draw[thick] (.7,0) to[short,*-] (.7,-.8)--(2.3,-.8) to[short,-*](2.3,0);
-%      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{$\Omega$};
-%    \end{tikzpicture}    
-%    
-%    An \textbf{ohmmeter} is placed in \emph{parallel} with a load to measure
-%    the resistance across the load.
-%  
-%
-%
-%
-%
-%{Digital Multi-Meter}
-%  
-%    \column{.3\textwidth}
-%    \pic1{voltmeter}
-%
-%    \column{.7\textwidth}
-%    \begin{itemize}
-%    \item Voltmeters, ammeters and ohmmeters operate on the same principle
-%      using magnetic effects inside the device, called a \textbf{galvanometer}.
-%    \item Modern voltmeters are usually part of a \textbf{multi-meter} that
-%      also operates as an ammeter and ohmmeter.
-%    \end{itemize}
-%  
-%
-%
-%
+A \textbf{voltmeter} (Fig.~\ref{fig:voltmeter}) is used to measure the voltage
+across two points in a circuit. To measure the voltage across a load, it is
+placed in \emph{parallel} with a load. % to measure the voltage across it.
+An ideal voltmeter has infinite resistance ($R=\infty$) and no current through
+it ($I=0$).
+
+An \textbf{ammeter} (Fig.~\ref{fig:ammeter}) is used to measure the current
+across a point in the circuit. It is placed in \emph{series} with a load to
+measure the current through it. An ideal ammeter has zero resistance ($R=0$),
+thus it does not alter the flow of current in the circuit
+
+An \textbf{ohmmeter} is used to measure the resistance of a particular load.
+It is placed in \emph{parallel} with a load.
+%to measure  the resistance across the load.
+It can only be used when there is no active current in the circuit.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (.2,0) to[R,l=$R$] (2.8,0);
+      \draw[thick] (.7,0) to[short,*-](.7,-.8)--(2.3,-.8) to[short,-*] (2.3,0);
+      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{V};
+    \end{tikzpicture}
+    \caption{Voltmeter}
+    \label{fig:voltmeter}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[short] (1,0) to[R,l=$R$] (2.8,0);
+      \draw[very thick,fill=black!2] (.7,0) circle (.3) node{A};
+    \end{tikzpicture}
+    \caption{Ammeter}
+    \label{fig:ammeter}
+  \end{subfigure}
+  \begin{subfigure}{.32\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[R,l=$R$] (3,0);
+      \draw[thick] (.7,0) to[short,*-] (.7,-.8)--(2.3,-.8) to[short,-*](2.3,0);
+      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{$\Omega$};
+    \end{tikzpicture}
+    \caption{Ohmmeter}
+  \end{subfigure}
+\end{figure}
+
+Voltmeters, ammeters and ohmmeters operate on the same principle using magnetic
+effects inside the device, called a \textbf{galvanometer}. Modern voltmeters
+are usually part of a \textbf{multi-meter} that also operates as an ammeter
+and ohmmeter.
+\begin{figure}[ht]
+  \centering
+  \pic{.4}{electricCircuits1/voltmeter}
+\end{figure}
+
+
+
 \section{Kirchhoff's Laws}
 %
 \subsection{Kichhoff's Junction Law}
@@ -754,31 +817,32 @@ In the \textbf{junction law}, also known as the \textbf{current law}, the
 electrical current that flows into any junction in a circuit must be equal to
 the current which flows out.
 
-%    \centering
-%    \begin{tikzpicture}[scale=1.2]
-%      \draw[thick] (1,1) to[short,o-*] (1,0)--(0,0)--(0,-.7) to[R] (0,-2);
-%      \draw[thick] (1,-2) to[C] (1,-.7)--(1,0)--(2,0)--(2,-.7) to[L] (2,-2);
-%      \begin{scope}[ultra thick,red,->]
-%        \draw (1,.9)--(1,.1) node[midway,right]{$I$};
-%        \draw (.9,0)--(.1,0) node[midway,above]{$I_1$};
-%        \draw (1,-.1)--(1,-.9) node[midway,right]{$I_2$};
-%        \draw (1.1,0)--(1.9,0) node[midway,above]{$I_3$};
-%      \end{scope}
-%    \end{tikzpicture}
-%    
-%    \column{.7\textwidth}
-%    In the example, there are 4 paths to the junction at the centre, with $I$
-%    flowing into the junction, and $I_1$, $I_2$, $I_3$ flowing out, then the
-%    junction law says that
-%
-%    \eq{-.15in}{
-%      I=I_1+I_2+I_3
-%    }
-%
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.2]
+    \draw[thick] (1,1) to[short,o-*] (1,0)--(0,0)--(0,-.7) to[R] (0,-2);
+    \draw[thick] (1,-2) to[C] (1,-.7)--(1,0)--(2,0)--(2,-.7) to[L] (2,-2);
+    \begin{scope}[ultra thick,red,->]
+      \draw (1,.9)--(1,.1) node[midway,right]{$I$};
+      \draw (.9,0)--(.1,0) node[midway,above]{$I_1$};
+      \draw (1,-.1)--(1,-.9) node[midway,right]{$I_2$};
+      \draw (1.1,0)--(1.9,0) node[midway,above]{$I_3$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{An example of the junction law}
+  \label{fig:junction-law}
+\end{figure}
+In the example in Fig.~\ref{fig:junction-law}, there are 4 paths to the
+junction at the centre, with $I$ flowing into the junction, and $I_1$, $I_2$,
+$I_3$ flowing out, then the junction law says that
+\begin{equation*}
+  I=I_1+I_2+I_3
+\end{equation*}
 regardless of what circuit devices those paths are connected to. In the
-example, a resistor, a capacitor and an inductor (not part of AP Physics 2) are
-joined at the junction. The junction law implies that there must be
-accumulation of charges anywhere in the circuit.
+example, a resistor, a capacitor and an inductor\footnote{Inductor coils usee
+magnetic field inside a solenoid to storage energy. It is \emph{not} part of
+AP Physics 2} are joined at the junction. The junction law implies that there
+must be no accumulation of charges anywhere in the circuit.
 
 
 
@@ -873,6 +937,7 @@ connected in parallel (side by side) must be the same:
     \draw (2.25,2) to[short] (3.5,2) to[R=$R_3\ldots$] (3.5,0)
     to[short] (2.25,0);
   \end{tikzpicture}
+  \caption{Circuit diagram of 3 resistors connected in parallel}
 \end{figure}
 From the current law, we know that the total current is the current through all
 the resistors, which we can rewrite in terms of voltage and resistance using
@@ -884,19 +949,17 @@ Ohm's law:
     
 But since we also know that $V_1=V_2=V_3=\cdots=V$ from the voltage law, we
 can re-write as
-%
-%    \begin{equation}
-%      I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)
-%    }
+\begin{equation*}
+  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)
+\end{equation*}
 The equivalent resistance of a parallel circuit can found by applying Ohm's law
 and Kirchhoff's laws: The inverse of the equivalent resistance is the sum of
 the inverses of the individual resistances.
-%
-%  \begin{equation}
-%    \boxed{
-%      \frac1{R_p}=\sum_i\frac1{R_i}
-%    }
-%  }
+\begin{equation}
+  \boxed{
+    \frac1{R_p}=\sum_i\frac1{R_i}
+  }
+\end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -914,7 +977,6 @@ it effectively increases the cross section area that the current passes through.
 %
 %    \vspace{.6in}$R_\text{eq}=R$
 %    
-%    \column{.25\textwidth}
 %    \centering
 %
 %    \vspace{.2in}
@@ -926,7 +988,6 @@ it effectively increases the cross section area that the current passes through.
 %    
 %    \vspace{.27in}$R_\text{eq}=\dfrac R2$
 %    
-%    \centering
 %    \begin{tikzpicture}[thick]
 %      \draw (0,0) to[R=$R$,o-o] (3,0);
 %      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
@@ -947,6 +1008,7 @@ it effectively increases the cross section area that the current passes through.
   \begin{tikzpicture}[thick]
     \draw (0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0) to[R=$R_3$,-o] (6,0);
   \end{tikzpicture}
+  \caption{Circuit diagrams of 3 resistors connected in series}
 \end{figure}
 The analysis for resistors in series is similar (but easier). The current
 through each resistor is the same:
@@ -974,47 +1036,46 @@ through.
 %
 %
 %
-%
+\section{Combination Circuits}
 %{Tips for Solving ``Simple'' Circuit Problems}
-%  \begin{enumerate}
-%  \item Identify groups of resistors that are in parallel or in series, and
-%    find their equivalent resistance.
-%  \item Gradually reduce the entire circuit to one voltage source and one
-%    resistor.
-%  \item Using Ohm's law, find the current out of the battery.
-%  \item Using Kirchhoff's laws, find the current through each of the resistors.
-%  \end{enumerate}
-%
-%
-%
-%
+\begin{enumerate}
+\item Identify groups of resistors that are in parallel or in series, and
+  find their equivalent resistance.
+\item Gradually reduce the entire circuit to one voltage source and one
+  resistor.
+\item Using Ohm's law, find the current out of the battery.
+\item Using Kirchhoff's laws, find the current through each of the resistors.
+\end{enumerate}
+
+
+
+
 \section{Internal Resistance}
 
 %{Internal Resistance, Electromotive Force, Terminal Voltage}
-%  \textbf{Internal Resistance:}
-%  \begin{itemize}
-%  \item The resistance within the battery itself
-%  \item Analogy: like the friction inside an engine itself. Some energy is
-%    needed to overcome that friction
-%  \end{itemize}
-%  \textbf{Electromotive Force} (\emph{emf} or $\mathcal{E}$)
-%  \begin{itemize}
-%  \item The part of battery that actually provides the energy source
-%  \item Not an actual ``force'' as we understand it (think energy instead)
-%  \item Without internal resistance, terminal voltage = $\mathcal E$
-%  \end{itemize}
+\textbf{Internal Resistance:}
+\begin{itemize}
+\item The resistance within the battery itself
+\item Analogy: like the friction inside an engine itself. Some energy is
+  needed to overcome that friction
+\end{itemize}
+\textbf{Electromotive Force} (\emph{emf} or $\mathcal E$)
+\begin{itemize}
+\item The part of battery that actually provides the energy source
+\item Not an actual ``force'' as we understand it (think energy instead)
+\item Without internal resistance, terminal voltage = $\mathcal E$
+\end{itemize}
 %
 %
 %
 %
 %{Terminal Voltage and \emph{emf}}
-%  The terminal voltage (or potential difference across the poles) of a battery
-%  is the difference of the emf ($\mathcal{E}$) of the battery and the potential
-%  drop across the internal resistance of the battery.
-%
-%  \eq{-.25in}{
-%    \boxed{V_S = \mathcal{E}-V_\text{int}}
-%  }
+The terminal voltage (or potential difference across the poles) of a battery
+is the difference of the emf ($\mathcal E$) of the battery and the potential
+drop across the internal resistance of the battery.
+\begin{equation}
+  \boxed{V_S = \mathcal{E}-V_\text{int}}
+\end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|l}
 %      \rowcolor{pink}
@@ -1024,14 +1085,12 @@ through.
 %      Internal potential drop of a battery & $V_\text{int}$ & \si\volt
 %    \end{tabular}
 %  \end{center}
-%  If no current passes through a battery, then the potential difference across
-%  the internal resistance will be zero ($V_\text{int}=0$)
+If no current passes through a battery, then the potential difference across
+the internal resistance will be zero ($V_\text{int}=0$)
 
-%
-%
-%
-%{Example Problem}
-%  \textbf{Example:} A battery with an emf of \SI{9.0}{\volt} has an internal
-%  resistance of \SI{.0500}\ohm. Calculate the potential difference lost to the
-%  internal resistance, and the terminal voltage of the battery, if it is
-%  connected to an external resistance of \SI{4.00}\ohm.
+\begin{example}
+  A battery with an \emph{emf} of \SI{9.0}{\volt} has an internal resistance of
+  \SI{.0500}\ohm. Calculate the potential difference lost to the internal
+  resistance, and the terminal voltage of the battery, if it is connected to an
+  external resistance of \SI{4.00}\ohm.
+\end{example}
