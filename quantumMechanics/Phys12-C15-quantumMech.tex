@@ -244,16 +244,16 @@ Eq.~\ref{eq:amplitude-from-energy}:
 \end{align*}
 For a spring-mass system with a low natural frequency, the energy gap---and
 therefore the gaps between amplitudes---is laughably small, which is why energy
-quantization cannot be observed in a macroscopic scale. But for a charge
+quantization cannot be observed in a macroscopic scale. But for a charged
 particle emitting light, it will have to vibrate at a frequency between
-\num{4e14} to \SI{7e14}{\hertz}. All of a sudden, the gap $\Delta E$ is no longer so
-small.
+\num{4e14} to \SI{7e14}\hertz. All of a sudden, the gap $\Delta E$ is no
+longer small.
 
 When this mass is oscillating, frictional forces removes energy from the
-system. In Chapter 7, we studied the use of a ``damping force''
-$F_D=-bv$ to consolidate the effects of kinetic friction, drag and viscous
-damping. When this damping force is present, the total energy $E$ of the
-system decreases with time $t$ as an exponential decay function:
+system. In Chapter 7, we studied the use of a ``damping force'' $F_D=-bv$ to
+consolidate the effects of kinetic friction, drag and viscous damping. When
+this damping force is present, the total energy $E$ of the system decreases
+with time $t$ as an exponential decay function:
 \begin{equation}
   E(t)=E_0e^{-\frac bmt} %=E_0e^{-\frac{t}{\tau}}
 \end{equation}
@@ -265,14 +265,10 @@ indeed quantized, then $E(t)$ would, in fact, decrease as a step function, as
 shown in Fig.\ 15.4b.
 
 
-\section{Maxwell's Equations: Classical Laws of Electrodynamics}
-%%  
-%%    \column{.25\textwidth}
-%%    \centering
-%%    \pic{.97}{graphics/PORTRAIT-James-Clerk-Maxwell}\\  
-%%    {\footnotesize James Clerk Maxwell\par}
-%%    
-%%    \column{.75\textwidth}
+\section{Maxwell's Equations: Classical Laws of Electrodynamics}  
+%    \pic{.97}{graphics/PORTRAIT-James-Clerk-Maxwell}\\  
+%    {\footnotesize James Clerk Maxwell\par}
+
 Maxwell's equations show that an oscillating charge generates a fluctuating
 electric field and magnetic field, which travels through space as an
 ``electromagnetic wave'' with speed:
@@ -390,43 +386,37 @@ off the surface with some kinetic energy, generating a current
 \end{center}
 The current can be stopped by adjusting the voltage, called the
 \textbf{stopping voltage}, allowing us to measure the kinetic energy of the
-\textbf{photo electrons}
-%
-%
-%
-%
-%
-%\begin{frame}{Photoelectric Effect: Cannot be Explained by Classical View}
-From the classical electrodynamics:
+\textbf{photo electrons}.
+
+From the classical electrodynamics, energy is transferred continuously from the
+light wave to the electrons on the metal surface. Maxwell's equation shows that
+the intensity\footnote{Intensity of a wave is defined as the power transmitted
+by a wave divided by the area that the wavefront passes through} of the
+electromagnetic wave is defined as
+\begin{equation*}
+  I=\frac{cB_0^2}{2\mu}
+\end{equation*}
+The power transmitted by the wave depends on the square of the amplitude.
+Therefore, based on classical electrodynamics, the kinetic energy of the
+photo-electrons should be proportional to the square of the ``brightness''
+of the light (i.e.\ intensity), but not the frequency of the light. Therefore,
+increasing intensity of the light should:
 \begin{itemize}
-\item Energy is transferred from light wave to the electrons
-\item Kinetic energy of the emitted electrons should be proportional to both
-  \emph{intensity} (related to the amplitude of the EM wave; brightness) and
-  \emph{frequency}
-\item Increasing intensity:
-  \begin{itemize}
-  \item Increases the number of electron emitted
-  \item Increases the electrons' kinetic energy
-  \end{itemize}
-\item Even a dim light would \emph{eventually} transfer enough energy to an
-  electron be emitted
+\item Increases the number of electron emitted
+\item Increases the electrons' kinetic energy
 \end{itemize}
-\textbf{But this isn't what is happening!}
+Even a dim light would \emph{eventually} transfer enough energy to an electron
+be emitted. However, \textbf{this is not what is happening!}
 
-
-
-
-%\begin{frame}{Photoelectric Effect: What Actually Happens}
-\begin{center}
+\begin{figure}[ht]
+  \centering
   \pic{.9}{quantumMechanics/graphics/73bacc9f2bf571752483a89ef6c61a94f07470f7}
-\end{center}
-\begin{itemize}
-\item Increasing intensity of light knocked off more electrons, but does not
-  change their maximum kinetic energy $K_\text{max}$, but
-\item Changing the \emph{frequency} of the light did change $K_\text{max}$
-  though, although
-\item Below a certain frequency, \emph{no} electrons were emitted
-\end{itemize}
+\end{figure}
+Experimental results show that increasing intensity of light knocked off more
+electrons from the metal, but does \emph{not} change their maximum kinetic
+energy $K_\text{max}$ of the photo electrons. Curiously, increasing the
+\emph{frequency} of the light did change $K_\text{max}$, although below a
+certain frequency, \emph{no} electrons were emitted.
 
 
 
@@ -436,8 +426,7 @@ From the classical electrodynamics:
 %%\begin{frame}{1905: \emph{Annus Mirabilis} (The Miraculous Year)}
 %%  {The Year That Einstein Became Very Famous}
 %%  \begin{itemize}
-%%  \item<alert@2>\textbf{Photoelectric effect:} ``On a Heuristic Viewpoint
-%%    Concerning the Production and Transformation of Light''
+%%  \item<alert@2>\textbf{Photoelectric effect:} 
 %%  \item\textbf{Brownian motion:} ``On the Motion of Small Particles Suspended
 %%    in a Stationary Liquid, as Required by the Molecular Kinetic Theory of
 %%    Heat''
@@ -451,20 +440,22 @@ From the classical electrodynamics:
 
 
 \subsection{The Photon: Packets of Energy}
-In a paper published in 1905, Albert Einstein\footnote{1879--1955. Nobel Prize
-winner 1921} offered a solution to the photoelectric effect: it can only be
-explained if light behaves \emph{not} as a continuous wave, but rather, \emph{a
-collection of discrete energy particles} called \textbf{photons}, each with
-energy $E=hf$. In Einstein's model, the photons collide with the electrons, and
-are then all of their energy are absorbed into the electron without delay.
+In the paper, \emph{On a Heuristic Viewpoint Concerning the Production and
+Transformation of Light}, published in 1905, Albert Einstein proposed a
+solution to the photoelectric effect: that it can only be explained if light
+behaves \emph{not} as a continuous wave, but rather, \emph{a collection of
+discrete energy particles} that he called \textbf{photons}, each carrying energy
+$E=hf$. In Einstein's model, the photons collide with the electrons, and are
+then all of their energy are absorbed into the electron without delay.
 
 The energy of the photon is determined by its \emph{frequency}, in agreement
-with Planck, therefore, increasing the frequency of the light increases the
-kinetic energy $K$ of the ejected photo electrons, in agreement with
-experimental results. Additionally, the intensity (brightness) of light is
-related to the number of photons. Therefore, increasing the brightness of
-the light results in a higher number of electrons being knocked off the metal
-surface. This is also in agreement with experimental results.
+with Planck's energy quantization equation, therefore, increasing the frequency
+of the light increases the kinetic energy $K$ of the ejected photo electrons,
+in agreement with experimental results. Additionally, the intensity
+(brightness) of light is related to the number of photons. Therefore,
+increasing the brightness of the light results in a higher number of electrons
+being knocked off the metal surface. This is also in agreement with
+experimental results.
 
 The relationship between kinetic energy of electrons and the photons can be
 summarized in a simple linear function:
@@ -476,14 +467,14 @@ summarized in a simple linear function:
       0          & \text{otherwise}
     \end{cases}
   }
+  \label{eq:photo-electric-effect}
 \end{equation}
 where $K_\text{max}$ is the maximum kinetic energy of the photo-electrons; $h$
 is Planck's constant; $f$ is the frequency of the EM wave; and $\varphi$ is
 property of the material, called the \text{work function}.
 
 
-%The ``work function'' is a property of the metal that determines how much
-%energy is absorbed until an electron is knocked off
+%The ``work function'' is a property of the metal that 
 
 Bottom line: Classical electrodynamics concept cannot
 be applied in photoelectric effect, and must be replaced with quantum
@@ -494,15 +485,24 @@ mechanics.
 
 \subsection{Work Function $\varphi$}
 
-\textbf{Work function} $\varphi$ is the minimum energy required to remove
-an electron from the metal to a point just outside the metal surface. The
-lowest frequency at which electrons are ejected is called the
-\textbf{threshold frequency} $f_0$. The slope of the graph is $h$ independent
-of the metal.
+\textbf{Work function} $\varphi$ is the minimum energy required to remove an
+electron from the metal to a point just outside the metal surface. In other
+words, it determines how much energy is absorbed by the metal until an electron
+can be knocked off its surface. The lowest frequency at which electrons are
+ejected is called the \textbf{threshold frequency} $f_0$. At this frequency,
+the photoelectrons have zero kinetic energy. Using
+\ref{eq:photo-electric-effect}, we find that expression for threshold
+frequency:
+\begin{equation}
+  \boxed{
+    f_0=\frac{\varphi}h
+  }
+\end{equation}
+The slope of the graph is $h$ independent of the metal.
 
 An example for zinc is shown as an example in Fig.~\ref{fig:zinc}. Zinc has a
-work function of 4.3 eV, and therefore a threshold frequency of
-\SI{1.04e15}{\hertz}. The frequency is in the ultra-violet range, and therefore
+work function of \SI{4.3}{\electronvolt}, and therefore a threshold frequency of
+\SI{1.04e15}\hertz. The frequency is in the ultra-violet range, and therefore
 visible light will not cause electrons to be ejected.
 \begin{figure}[ht]
   \centering
@@ -903,7 +903,7 @@ momentum, and vice versa.
 %
 %
 \section{Particle in a Box}
-%  
+
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}
@@ -919,11 +919,13 @@ momentum, and vice versa.
     --(0,0) node[pos=0,above]{$\psi(x)$} node[below]{0}
     --(3,0) node[below]{$L$}--(3,5);
   \end{tikzpicture}
+  \caption{Standing-wave resonance modes for a particle inside a 1D box}
+  \label{fig:particle-in-a-box}
 \end{figure}
 
-A particle confined to a 1D box behaves like a standing wave. The resonance
-modes (frequencies where a stable standing wave exists) correspond to the
-wavelengths:
+A particle confined to a 1D box behaves like a standing wave, as shown in
+Fig.~\ref{fig:particle-in-a-box}. The resonance modes (frequencies where a
+stable standing wave exists) correspond to the wavelengths:
 \begin{equation}
   \lambda=\frac{2L}n\quad n=1,2,3\ldots
 \end{equation}
@@ -931,11 +933,9 @@ and the momentum of the particle at the $n$-th mode is:
 \begin{equation}
   p_n=\frac h\lambda=\frac{nh}{2L}
 \end{equation}
-%  
-%
-%
-%
-%
+
+
+
 %\begin{figure}[ht]
 %  \centering
 %  \begin{tikzpicture}
@@ -969,18 +969,18 @@ never be zero, therefore
   \SI{1.42}{\metre} wide. How long (in seconds) will it take to travel from one
   side of the table to the other side at fundamental mode?
 \end{example}
+
+
+
+%\section{Schr\"{o}dinger}
 %
-%
-%
-\section{Schr\"{o}dinger}
-%%
-%%\begin{frame}{What Else Can You Learn from Quantum Mechanics}
-%%  {Schr\"{o}dinger's Equation}
-%%  \begin{itemize}
-%%  \item The differential equations that governs the quantum state of a
-%%    quantum system changes in time
-%%  \item It's like what Newton's second law of motion and conservation of
-%%    energy to classical mechanics
-%%  \item Gives full details of the behaviour of electrons in atoms
-%%  \item ``Schr\"{o}dinger's Cat'' thought experiment
-%%  \end{itemize}
+%\begin{frame}{What Else Can You Learn from Quantum Mechanics}
+%  {Schr\"{o}dinger's Equation}
+%  \begin{itemize}
+%  \item The differential equations that governs the quantum state of a
+%    quantum system changes in time
+%  \item It's like what Newton's second law of motion and conservation of
+%    energy to classical mechanics
+%  \item Gives full details of the behaviour of electrons in atoms
+%  \item ``Schr\"{o}dinger's Cat'' thought experiment
+%  \end{itemize}
