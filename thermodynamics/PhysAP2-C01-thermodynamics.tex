@@ -1169,7 +1169,7 @@ values for some common substances:
 
 
 
-\section{Quasi-Static Process}
+\section{Quasi-Static Processes}
 
 To show the work by a gas, and how the state of the gas changes, we can plot
 the pressure vs.\ the volume of the gas, called a $P$-$V$ diagram, as the
@@ -1232,58 +1232,53 @@ The fact that $W$ is \emph{path dependent} means that the force exerted by
 the gas $F=P\cdot A$ is non-conservative (it may be obvious to you already).
 
 A \textbf{quasi-static process} is a thermodynamic process that happens slowly
-enough for the system to remain in internal equilibrium. We are concerned with
-four of these processes:
-\begin{itemize}
-\item\textbf{Isobaric process}--constant pressure\footnote{If you don't know
-  already, a ``bar'' is a measurement of pressure, where
-  $\SI1{bar}=\SI{10e5}{\pascal}$}
-\item\textbf{Isochoric process}--constant volume
-\item\textbf{Isothermal process}--constant temperature
-\item\textbf{Adiabatic process}--``isolated'', no heat exchanged with
-  surrounding
-\end{itemize}
-
+enough for the system to remain in internal equilibrium.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.75]
       \draw[axes] (0,0)--(5,0) node[right]{$V$} node[midway,below]{Isobaric};
       \draw[axes] (0,0)--(0,4) node[left]{$P$};
       \draw[thick] (1,2)--(3.95,2);
       \fill (1,2) circle (.1);
       \fill (4,2) circle (.1);
       %\draw[thick] (0,2)--(-.2,2) node[left]{\scriptsize$P$};
-      \draw[axes,red] (1.5,2.2)--(3.5,2.2) node[midway,above=0]{\tiny$W<0$};
-      \draw[axes,red] (3.5,1.8)--(1.5,1.8) node[midway,below=0]{\tiny$W>0$};
+      %\draw[axes,red] (1.5,2.2)--(3.5,2.2) node[midway,above=0]{\tiny$W<0$};
+      %\draw[axes,red] (3.5,1.8)--(1.5,1.8) node[midway,below=0]{\tiny$W>0$};
     \end{tikzpicture}
+    \caption{Isobaric process (constant pressure)}
+    \label{fig:isobaric}
   \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.75]
       \draw[axes] (0,0)--(5,0) node[right]{$V$} node[midway,below]{Isochoric};
       \draw[axes] (0,0)--(0,4) node[left]{$P$};
       \draw[thick] (2,1)--(2,3.5);
       \fill (2,1) circle (.1);
       \fill (2,3.5) circle (.1);
-      \node at (5,4) {$\Delta U=Q+\cancel W$};
+      %\node at (5,4) {$\Delta U=Q+\cancel W$};
     \end{tikzpicture}
+    \caption{Isochoric (constant volume) process}
+    \label{fig:isochoric}
   \end{subfigure}
   
   \begin{subfigure}{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.75]
       \draw[axes] (0,0)--(5,0) node[right]{$V$} node[midway,below]{Isothermal};
       \draw[axes] (0,0)--(0,4) node[left]{$P$};
       \draw[smooth,samples=15,domain=1:3.5,thick] plot(\x,{3/\x});
       \fill (1,3) circle (.1);
       \fill (3.5,.85) circle (.1);
     \end{tikzpicture}
+    \caption{Isothermal (constant temperature) process}
+    \label{fig:isothermal}
   \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.6]
+    \begin{tikzpicture}[scale=.75]
       \draw[axes] (0,0)--(5,0) node[right]{$V$} node[midway,below]{Adiabatic};
       \draw[axes] (0,0)--(0,4) node[left]{$P$};
       \begin{scope}[smooth,samples=15,domain=1:4,thick]
@@ -1294,12 +1289,40 @@ four of these processes:
       \fill(1,4) circle (.1);
       \fill(4,.57) circle (.1);
     \end{tikzpicture}
+    \caption{Adiabatic process}
+    \label{fig:adiabatic}
   \end{subfigure}
+  \caption{Quasi-processes}
 \end{figure}
+We are concerned with four of these processes:
+\begin{itemize}[itemsep=6pt]
+\item\textbf{Isobaric process} (Fig.~\ref{fig:isobaric}
+  constant pressure\footnote{If you don't know
+  already, a ``bar'' is a measurement of pressure, where
+  $\SI1{bar}=\SI{10e5}{\pascal}$}
+\item\textbf{Isochoric process} is a process in which the volume remains
+  constant. There is no work done to or by the gas during this process
+  ($W=0$), therefore all the heat that goes into and out of the system will
+  only change the internal energy of the system, i.e.:
+  \begin{equation*}
+    \Delta U = Q
+  \end{equation*}
+\item\textbf{Isothermal process} is a process in which the temperature remains
+  constant. There is no change in the internal energy of the gas
+  ($\Delta U=0$); all the heat that goes into the gas is accounted for by the
+  work done, i.e.:
+  \begin{equation*}
+    Q=-W
+  \end{equation*}
+\item\textbf{Adiabatic process}--``isolated'', no heat exchanged with
+  surrounding, therefore $Q=0$.
+\end{itemize}
 
-%{A Simple Heat Engine Cycle}
-%  
-%    \column{.8\textwidth}
+
+
+\section{Heat Engine Cycle}
+
+
 %    \begin{center}
 %      \pic{.52}{heat-engine}
 %    \end{center}
@@ -1312,7 +1335,7 @@ four of these processes:
 %      compress it.
 %    \end{enumerate}
 %
-%    \column{.2\textwidth}
+
 %    \begin{tikzpicture}[scale=.5]
 %      \fill[pink!50](1,1) rectangle(4,3.5);
 %      \draw[axes] (0,0)--(5,0) node[below]{$V$};
@@ -1354,11 +1377,17 @@ four of these processes:
 %%    effect than that of extracting heat from a reservoir and performing an
 %%    equivalent amount of work.
 %%  \end{block}
-%%
-%
-%
-%
-%{Carnot Engine}
+
+
+
+\subsection{Application: Otto Cycle}
+The four stroke engine
+
+
+\subsection{Application: Diesel Cycle}
+
+
+\subsection{Carnot Cycle}
 %  The Carnot engine cycle is the most efficient.
 %  \begin{center}
 %    \pic{.4}{carnot}
