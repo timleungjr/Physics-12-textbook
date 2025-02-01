@@ -170,8 +170,8 @@ in direction, \emph{usually} as a sinusoidal function of time.
   \end{subfigure}
 \end{figure}
 
-The power outlet in North America are all AC, with a maximum voltage of
-\SI{120}\volt, and a frequency of \SI{60}\hertz.
+The power outlet in North America are all AC, with a rms (root-mean-square)
+voltage of \SI{120}\volt, and a frequency of \SI{60}\hertz.
 
 
 %{Current Through the Conductor}
@@ -341,8 +341,9 @@ we use the conventional current for simplicity.
   \caption{Modelling of electrical current}
 \end{figure}
 
-%
+
 %{Conventional Current vs.\ Electron Flow}
+
 %  We have \emph{assumed} that the charge carriers are positively charged, which
 %  means that the current flows from high electric potential to low potential
 %  (i.e.\ from cathode to anode).
@@ -373,28 +374,19 @@ we use the conventional current for simplicity.
 %
 %
 %
-%
-%{Electric Field Inside the Wire}
-%  Inside the wire, there is a weak electric field, which exerts a force on the
-%  free electrons as they move in the wire
-%  \begin{itemize}
-%  \item As the charges move through a conductor, they lose potential energy
-%  \item Unlike a falling object which converts gravitational potential energy
-%    to kinetic energy, in a circuit, the energy is 
-%    \begin{itemize}
-%    \item converted into radiative heat or light through the resistance of the
-%      wire, or
-%    \item converted into kinetic energy of a motor shaft
-%    \end{itemize}
-%  \end{itemize}
-%
-%
-%
-%
-%\section{Resistors}
-%
-%
-{Circuit Diagrams: Loads}
+\subsection{Electric Field Inside the Wire}
+Inside the wire, there is a weak electric field, which exerts a force on the
+free electrons as they move in the wire
+\begin{itemize}
+\item As the charges move through a conductor, they lose potential energy
+\item Unlike a falling object which converts gravitational potential energy
+  to kinetic energy, in a circuit, the energy is 
+  \begin{itemize}
+  \item converted into radiative heat or light through the resistance of the
+    wire, or
+  \item converted into kinetic energy of a motor shaft
+  \end{itemize}
+\end{itemize}
 
 
 
@@ -465,8 +457,10 @@ Fig.~\ref{fig:ohmic-relationship}.
 \end{figure}
 Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
 between voltage and current is \emph{not} linear, as shown in
-Fig.~\ref{fig:non-ohmic-relationship}.
-%For example, diodes (e.g.\ your TV's LED screen) are non-ohmic.
+Fig.~\ref{fig:non-ohmic-relationship}. Semi-conductor devices such as diodes
+(e.g.\ your TV's LED screen) are non-ohmic. As well, a DC motor is only ohmic
+if it is stalled (i.e.\ when current passes through the current but the motor
+shaft is not turning).
 \begin{remark}
   For clarification, in the graphs in Fig.~\ref{fig:i-vs-v-diagrams}, we have
   plotted $I$ vs.\ $V$. This is because we usually alter the voltage as an
@@ -477,6 +471,7 @@ Fig.~\ref{fig:non-ohmic-relationship}.
   device, the line would still be straight, but the slope would now be the
   resistance $R$.
 \end{remark}
+
 
 
 \subsection{Resistance of a Conductor}
@@ -582,18 +577,17 @@ very simple expression for power through a resistor:
 %      Voltage across the load & $V$ & \si\volt
 %    \end{tabular}
 %  \end{center}
-%  This relationship applies regardless of whether the loads are ohmic or not
+This relationship applies regardless of whether the loads are ohmic or not
 %
 %
 %
 %
 %{Other Equations for Power}
-%  Combining Ohm's law ($V=IR$) with power equation, we get two additional
-%  expressions for power through a resistor:
-%
-%  \begin{equation}
-%    \boxed{P=\frac{V^2}R}\quad\quad\boxed{P=I^2R}
-%  }
+Combining Ohm's law ($V=IR$) with power equation, we get two additional
+expressions for power through a resistor:
+\begin{equation}
+  \boxed{P=\frac{V^2}R}\quad\quad\boxed{P=I^2R}
+\end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -604,10 +598,10 @@ very simple expression for power through a resistor:
 %      Current    & $I$ & \si\ampere
 %    \end{tabular}
 %  \end{center}
-%  Not surprisingly, these equations will only apply to ohmic devices.
-%
-%
-%
+Not surprisingly, these equations will only apply to ohmic devices.
+
+
+
 \section{Other Circuit Devices}
 
 Aside from the necessary circuit devices,
