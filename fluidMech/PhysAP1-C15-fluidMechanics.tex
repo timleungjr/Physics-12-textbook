@@ -1,0 +1,604 @@
+\chapter{Fluid Mechanics}
+\label{chapter:fluid-mechanics}
+
+\section{What is a Fluid?}
+%  \begin{itemize}
+%  \item\textbf{Non-scientific definition:} anything that \emph{flows}, which
+%    covers most gases and liquids
+%  \item\textbf{Scientific definition:} any substance that deforms
+%    \emph{continuously} under oblique stress
+%  \item Fluid is continuous: it will fill all available space without gaps
+%  \end{itemize}
+
+%
+%
+%
+%{Deformation Under Oblique Stress}
+%  When an oblique force $F$ is applied to a solid, it deforms until all the
+%  internal forces are balanced, and the deformation stops:
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.6]
+%      \fill[yellow!70] rectangle (4,2);
+%      \draw[vectors] (1,2.4)--(3,2.4) node[right]{$F$};
+%      \draw[vectors] (3,-.4)--(1,-.4) node[left] {$F$};
+%      \draw[ultra thick] (-.5,0)--(4.5,0);
+%      \draw[ultra thick] (-.5,2)--(4.5,2);
+%      \draw[line width=2.5,->] (6,1)--(10,1);
+%      \fill[yellow!70] (12,0)--(13,2)--(17,2)--(16,0)--cycle;
+%      \draw[vectors] (14,2.4)--(16,2.4) node[right]{$F$};
+%      \draw[vectors] (15,-.4)--(13,-.4) node[left]{$F$};
+%      \draw[vectors,red] (15.7,1.6)--(13.7,1.6) node[left]{$F$};
+%      \draw[vectors,red] (13.3,0.4)--(15.3,0.4) node[right]{$F$};
+%      \draw[ultra thick] (11.5,0)--(16.5,0);
+%      \draw[ultra thick] (12.5,2)--(17.5,2);
+%    \end{tikzpicture}
+%  \end{center}
+%  However, when a force is applied to a fluid, it continues to deform in shape
+%  as long as the force is present
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.6]
+%      \fill[yellow!70] rectangle (4,2);
+%      \draw[vectors] (1,2.4)--(3,2.4) node[right]{$F$};
+%      \draw[vectors] (3,-.4)--(1,-.4) node[left] {$F$};
+%      \draw[ultra thick] (-.5,0)--(4.5,0);
+%      \draw[ultra thick] (-.5,2)--(4.5,2);
+%      \draw[line width=2.5,->] (6,1)--(10,1);
+%      \fill[yellow!70] (12,0)--(13,2)--(17,2)--(16,0)--cycle;
+%      \draw[vectors] (14,2.4)--(16,2.4) node[right]{$F$};
+%      \draw[vectors] (15,-.4)--(13,-.4) node[left]{$F$};
+%      \draw[vectors] (18,2)--(19.5,2) node[right]{$v$};
+%      \draw[vectors] (11,0)--(9.5,0) node[left]{$v$};
+%      \draw[ultra thick] (11.5,0)--(16.5,0);
+%      \draw[ultra thick] (12.5,2)--(17.5,2);
+%    \end{tikzpicture}
+%  \end{center}
+
+%
+%
+%
+%{Density of a Fluid}
+The \textbf{density} $\rho$ of a fluid is defined as the mass of the fluid
+$m_\text{fluid}$ per unit volume $V_\text{fluid}$ that it occupies:
+\begin{equation}
+  \boxed{
+    \rho=\frac{m_\text{fluid}}{V_\text{fluid}}
+  }
+\end{equation}
+%  \begin{itemize}
+%  \item Unit for density is \textbf{kilograms per meter cubed}
+%    (\si{\kilo\gram\per\metre\cubed})
+%  \item Below Mach number $M\approx 0.3$, density can be assumed to be constant
+%    throughout the fluid
+%  \item May be dependent on temperature by basic thermal expansion
+%  \end{itemize}
+
+%
+%
+%
+%{Viscosity of a Fluid}
+\textbf{Viscosity} $\mu$ measures how ``thick'' a fluid is. It relates the rate
+of deformation ($\Delta u/\Delta y$) of the fluid to the shear stress $\tau$
+that it experiences:
+\begin{equation}
+  \boxed{
+    \tau = \mu\frac{\Delta u}{\Delta y}
+  }
+\end{equation}
+%  \begin{itemize}
+%  \item e.g.\ honey is more viscous than water.
+%  \item Shear stress is defined as $\tau=F/A$, with a unit of \textbf{pascal}
+%    (\si\pascal), which is the same as for pressure
+%  \item In AP Physics 2, we will mostly ignore viscous effects, as important as
+%    they are
+%  \end{itemize}
+
+%
+%
+%
+%{Hydrostatics}
+%  The fluid \textbf{pressure} on its density and depth:
+\begin{equation}
+  \boxed{
+    P=P_0+\rho_\text{fluid}gz
+  }
+\end{equation} 
+%  where $g$ is the acceleration due to gravity, $z$ is the depth below the
+%  surface, and $P_0=\SI{1.01e5}\pascal$ is the atmospheric pressure at the
+%  surface.
+%  \begin{itemize}
+%  \item Pressure is the same in all directions
+%  \item Pressure is defined as force per unit area, and the unit is
+%    \textbf{pascal} (\si\pascal) where
+%    $\SI1\pascal=\SI1{\newton\per\metre\squared}$:
+%
+%    \eq{-.1in}{
+%      \boxed{P=\frac FA}\quad\quad\SI1\pascal=\SI1{\newton\per\metre\squared}
+%    }
+%  \end{itemize}
+
+%
+%
+%
+%{Pascal's Principle}
+%  If force is applied somewhere on a container holding fluid, the pressure
+%  increases \emph{everywhere} in the fluid, not just where the force is applied.
+%
+%  i.e.\ the pressure of the force will be transmitted into the fluid.
+
+%
+%
+%
+%{Pressure with Different Fluids}
+%  
+%    \column{.3\textwidth}
+%    \begin{tikzpicture}
+%      \draw[axes] (-1,4.5)--(-1,2) node[below]{$z$};
+%      \fill[white!10!blue!60] (0,1) rectangle (3,2.5);
+%      \fill[white!30!blue!45] (0,2.5) rectangle (3,3);
+%      \fill[white!40!blue!30] (0,3) rectangle (3,4.2);
+%      \fill[white!50!blue!20] (0,4.2) rectangle (3,5);
+%      \node at (-.2,5){\tiny $z=0$};
+%      \node at (-.2,4.2){\tiny $z_1$};
+%      \node at (-.2,3){\tiny $z_2$};
+%      \node at (-.2,2.5){\tiny $z_3$};
+%      \node at (-.2,1){\tiny $z_4$};
+%
+%      \node at (1.5,5.1){\tiny Known pressure $P_0$};
+%      \node at (1.5,4.6){\tiny Oil, $\rho_O$};
+%      \node at (1.5,3.6){\tiny Water, $\rho_W$};
+%      \node at (1.5,2.75){\tiny Glycerine, $\rho_G$};
+%      \node at (1.5,1.75){\tiny Mercury, $\rho_M$};
+%    \end{tikzpicture}
+%    
+%    \column{.7\textwidth}
+%    For the fluid surface to remain \emph{static}, the fluid pressure on both
+%    side of the interface have to be equal. In this example:
+%
+%      \begin{displaymath}
+%        \begin{split}
+%          P_1-P_0&=\rho_Ogz_1\\
+%          P_2-P_1&=\rho_Wg(z_2-z_1)\\
+%          P_3-P_2&=\rho_Gg(z_3-z_2)\\
+%          P_4-P_3&=\rho_Mg(z_4-z_3)\\ \hline
+%          P_4-P_0&=\sum\Delta P
+%        \end{split}
+%      \end{displaymath}
+%  
+
+%
+%
+%
+\begin{example}
+  An aquarium is filled with water. The lateral wall of the aquarium is
+  \SI{40}{\centi\metre} long and \SI{30}{\centi\metre} high. Using
+  \SI{10}{\metre\per\second\squared} for the acceleration due to gravity, and
+  \SI1{\gram\per\centi\metre\squared} for density of water, the force on the
+  lateral wall of the aquarium is:
+%    \begin{enumerate}[(A)]
+%    \item\SI{36}\newton
+%    \item\SI{90}\newton
+%    \item\SI{180}\newton
+%    \item\SI{1500}\newton
+%    \end{enumerate}
+%
+%    \column{.3\textwidth}
+%    \pic{1}{home-fish-tank}
+\end{example} 
+
+\begin{example}
+  Consider the hydraulic jack in the diagram. A person stands on a piston that
+  pushes down on a thin cylinder full of water. The cylinder is connected via
+  pipes to a wide platform on top of which rests a 1-ton
+  (\SI{1000}{\kilo\gram}) car. The area of the platform under the car is
+  \SI{25}{\metre\squared}; the person stands on a \SI{.3}{\metre\squared}
+  piston. What is the lightest weight of a person who could successfully lift
+  the car?
+%  \begin{center}
+%    \pic{.35}{jack}
+%    
+%    \vspace{-.2in}{\tiny Believe it or not, there \emph{is} someone who draws
+%      worse diagrams than me!}
+%  \end{center}
+\end{example}
+
+\begin{example}%{A ``Manometer'' Example}
+  Pressure gauge $B$ is to measure the pressure at point $A$ in a water flow,
+  as shown in the figure on the right. If the pressure at $B$ is
+  \SI{87}{\kilo\pascal}, estimate the pressure at $A$, in \si{\kilo\pascal}.
+  Assume all fluids are at \SI{20}\celsius. The densities of water, mercury and
+  SAE 30 oil are, respectively?
+  \begin{align*}
+    \rho_\text{water}&=\SI{1000}{\kilo\gram\per\metre\cubed}\\
+    \rho_\text{Hg}&=\SI{13600}{\kilo\gram\per\metre\cubed}\\
+    \rho_\text{oil}&=\SI{890}{\kilo\gram\per\metre\cubed}
+  \end{align*}
+   
+%    \pic1{mano}
+\end{example}  
+
+%
+%
+%
+%%
+%%  \frametitle{Hydrostatic Example: Forces on a Hinge}
+%%  
+%%
+%%    The gate in the figure on the left is \SI{5}{m} wide, is hinged at point
+%%    $B$, and rests against a smooth wall at point $A$. Compute
+%%    \begin{enumerate}[(a)]
+%%    \item the force on the gate due to seawater pressure, and
+%%    \item the horizontal force $P$ exerted by the wall at point $A$, and
+%%    \item the reaction at the hinge $B$
+%%    \end{enumerate}
+%%  
+%
+%
+%
+\section{Buoyant Force}
+%
+%{Buoyancy: Everything Floats a Little}
+%  When an object is submerged inside a fluid
+%  \begin{itemize}
+%  \item The fluid exerts a pressure at the surface of the object
+%  \item By hydrostatics, the pressure is higher at the bottom than at the top
+%  \end{itemize}
+%  \begin{center}
+%    \pic{.3}{rock_fbvectors}
+%  \end{center}
+
+%
+%
+%
+%{Buoyancy}
+Using some basic calculus (well, depends on who you ask), we can find the
+pressure over the entire surface to find the total buoyant force $\vec F_B$ the
+fluid exerts on the object. The expression is surprisingly simple:  
+\begin{equation}
+  \boxed{
+    \vec F_B=\rho_\text{fluid}gV\hat z=m_\text{fluid}g\hat z
+  }
+\end{equation}
+where $\rho_\text{fluid}$ is the density of the displaced fluid, and $V$ is
+the volume displaced. The direction of the force is upward ($\hat z$). This
+equation is known as \textbf{Archimedes' principle}.
+
+%  \textbf{Buoyant force has a magnitude that equals to the
+%    weight of the fluid displaced by the submerged object, pointing upward.}
+
+%
+%
+%
+%{Buoyancy}
+%
+%  \eq{0in}{
+%    \boxed{\vec B = \rho_\text{fluid}gV\hat z=
+%      m_\text{fluid}g\hat z}
+%\end{equation}
+%
+%  Buoyancy does not depend on:
+%  \begin{itemize}
+%  \item the mass of the immersed object, or
+%  \item the density of the immersed object
+%  \end{itemize}
+%
+%  \vspace{.15in}Objects immersed in a fluid have an ``apparent weight''
+%  $\vec w'$ that is reduced by the buoyant force:
+%
+\begin{equation}
+  \vec w'=\vec w-\vec B=\rho'\vec gV
+\end{equation}
+%  
+%  where $\rho'=\rho_\text{obj}-\rho_\text{fluid}$ is the relative density
+
+%
+%
+%
+%{How Submarines Work}
+%  Like this:
+%  \begin{center}
+%    \pic{.7}{EbHMOXk}
+%  \end{center}
+
+%
+%
+%
+%{How Submarines Work}
+%  Like all ships, a submarine does not naturally sink due to buoyancy. When a
+%  submarine submerges, water is pumped into the  ``ballast tanks'' in the hull
+%  hull to make the submarine heavier.
+%  \begin{center}
+%    \pic{1}{risinglemur}
+%  \end{center}
+
+%
+%
+%
+\begin{example}
+  An apple is held completely submerged just below the surface of a container
+  of water. The apple is then moved to a deeper point in the water. Compared
+  with the force needed to hold the water just below the surface, what is the
+  force needed to hold it at a deeper point?
+%    \begin{enumerate}[(A)]
+%    \item Larger
+%    \item The same
+%    \item Smaller
+%    \item Impossible to determine
+%    \end{enumerate}
+%    \pic1{apple}
+\end{example} 
+
+%
+%
+%
+\begin{example}  
+%    \pic1{hpa_b}
+  A salvage ship tries to raise a sunken miniature submarine from the bottom of
+  Lake Superior. The submarine and its contents have a mass of
+  \SI{72000}{\kilo\gram} and a volume of \SI{18.9}{\metre\cubed}. What upward
+  force must be applied to raise the submarine? The density of water is
+  \SI{1000}{\kilo\gram\per\metre\cubed}.
+%    \begin{enumerate}[(A)]
+%    \item\SI{1.8e5}\newton
+%    \item\SI{2.0e5}\newton
+%    \item\SI{4.8e5}\newton
+%    \item\SI{5.2e5}\newton
+%    \end{enumerate}
+\end{example} 
+
+
+\section{Fluid Flow}
+
+%%{Fluid Flow}
+%%  \begin{center}
+%%    As important as it is to understand hydrostatics,\\
+%%    it's way more interesting when the fluid is moving!
+%%  \end{center}
+%
+%%
+%%
+%%
+%%{Control Volume and Control Surfaces}
+%%  A control volume ``CV'' is a fixed volume in which fluid is able to flow in
+%%  and out of it. The surfaces of the control volume is called the control
+%%  surface ``CS''.
+%%  \begin{center}
+%%    \pic{.5}{CV-CS}
+%%  \end{center}
+%
+%
+%
+%
+\subsection{Navier-Stokes Equations}
+The governing equations in fluid mechanics is called
+\textbf{Navier-Stokes equations}, which is written in complicated vector
+and calculus symbols:
+\begin{align}
+  \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\vec v)&=0\\
+  \frac{\partial(\rho\vec v)}{\partial t} +
+  \nabla(\rho\vec v\otimes\vec v) &= -\nabla P+\nabla\cdot\vec\tau
+  +\rho\vec g\\
+  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\vec v) &=
+  \nabla\cdotp(k\nabla T)+\Phi
+\end{align}
+Even for university students experienced with calculus, solving these equations
+is still an intimating task. \textbf{But what do they actually mean?}
+
+%{Continuity Equation}
+%  The first equation is called the \textbf{continuity equation}, which is the
+%  conservation of mass:
+%
+%\begin{equation}
+%    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\vec v)=0
+%\end{equation}
+%
+%  \textbf{Meaning:} The decrease in fluid mass in a fixed volume containing a
+%  fluid is the amount of mass that flows out minus the volume that flows into
+%  the volume.
+
+%
+%
+%
+%{Momentum Equation}
+%  The second equation is the \textbf{momentum equation}, which is the 
+%  momentum-impulse theorem applied to fluids in a volume:
+%
+%\begin{equation}
+%    \frac{\partial(\rho\vec v)}{\partial t} +
+%    \nabla(\rho\vec v\otimes\vec v) = -\nabla P+\nabla\cdot\vec\tau
+%    +\rho\vec g
+%\end{equation}
+%
+%  \textbf{Meaning:} The decrease in the total momentum of a fluid in a fixed
+%  volume is the sum of all the external forces (pressure, shear \& body forces)
+%  applied to the fluids, plus the change in momentum through the flow of
+%  particles in and out of the volume.
+
+%
+%
+%
+%{Energy Equation}
+%  The third and final equation is the \textbf{energy equation}, which is the
+%  the conservation of energy theorem applied to fluids:
+%  
+%\begin{equation}
+%  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\vec v)=
+%  \nabla\cdotp(k\nabla T)+\Phi
+%\end{equation}
+%
+%  \textbf{Meaning:} The decrease in the internal energy of the fluid (i.e.\ the
+%  total kinetic energy of all the fluid particles) in a fixed volume is the
+%  work done by fluid's pressure forces, viscous forces (i.e.\ friction), the
+%  heat transfer into the fluid, plus the change in energy from the flow of
+%  fluid in and out of the volume.
+
+%
+%
+%
+\subsection{Bernoulli Equation}
+For an ``ideal fluid flow'', we make the following assumptions to simplify the
+Navier-Stokes equation:
+\begin{enumerate}
+\item The flow is \textbf{steady}
+  \begin{itemize}
+  \item Flow is ``time independent'', i.e.\ does not change with time
+  \end{itemize}
+\item The flow is \textbf{inviscid}
+  \begin{itemize}
+  \item The fluid has no viscosity
+  \item No friction between the fluid and the surrounding, and therefore
+  \item No shear stresses on the fluid
+  \item Only forces are pressure at the surface, and body forces from gravity
+  \end{itemize}
+\item The flow is \textbf{incompressible}
+  \begin{itemize}
+  \item Density is constant throughout
+  \end{itemize}
+\item\textbf{No shaft work} done along the streamline
+\item\textbf{No heat transfer} along the streamline
+\end{enumerate}
+Then the Navier-Stokes equations reduces to the \textbf{Bernoulli equation}.
+For steady flow of an ideal fluid along any streamline:
+\begin{equation}
+  \boxed{
+    p_1+\frac12\rho v_1^2+\rho gh_1=
+    p_2+\frac12\rho v_2^2+\rho gh_2
+  }
+\end{equation}
+
+%
+%
+%
+\subsection{Streamlines}
+\textbf{Streamlines} are the paths that fluid particles follow when they move.
+Much like the gravitational and electric fields
+%\footnote{Gravitational field is
+%a topic covered briefly in AP Physics 1, and we will cover electric field later in this course}, this is a vector field.
+\begin{itemize}
+\item The velocity of the fluid flow is tangent to the streamline
+\item Do not tell the magnitude of the velocity
+\item Under ideal fluid flow, streamlines are always smooth
+\end{itemize}
+%\begin{center}
+%  \pic{.35}{800px-AirfoilDeflectionLift_W3C}
+%\end{center}
+
+%
+%
+%{Real Fluid Flow}
+%  In real fluid flow, streamlines are often not smooth
+%  \begin{center}
+%    \pic{.3}{stalling}
+%    \pic{.362}{baseball}
+%  \end{center}
+%  Note that the Bernoulli equation does not capture a lot of real fluid flow
+%  properties (re: our earlier assumptions)
+
+%
+%
+%
+\begin{equation}
+  \boxed{
+    p_1+\frac12\rho v_1^2+\rho gh_1= p_2+\frac12\rho v_2^2+\rho gh_2
+  }
+\end{equation}
+
+%  \textbf{Dynamic pressure} is the kinetic energy per unit
+%  volume\footnote{Anyone who took AP Physics 1 or Physics 11 may remember that
+%  the drag force also contains the dynamic pressure term}:
+%
+\begin{equation}
+  \frac12\rho v^2
+\end{equation}
+%  
+%  \textbf{Hydrostatic pressure} is the gravitational potential energy per unit
+%  volume:
+%
+\begin{equation}
+  \rho gh
+\end{equation}
+The relationship between pressure and energy will be explained in the next
+topic.
+
+%
+%
+%
+%{Bernoulli Equation}
+%  Regions where Bernoulli equation is valid:
+%  \begin{center}
+%    \pic{.8}{bernoulli}
+%  \end{center}
+
+%
+%
+%
+\subsection{Inlet Outlet Flow}
+%  \begin{center}
+%    \pic{.5}{physicsbook_fluids_graphik_26}
+%  \end{center}
+%  In this example, the mass flowing at the inlet is the same as the flow out of
+%  it:
+%
+\begin{equation}
+  \boxed{
+    \rho_1 v_1A_1=\rho_2 v_2A_2
+  }
+\end{equation} 
+For constant fluid density, the $\rho$ terms on both sides of the equation will
+cancel:
+\begin{equation}
+  \boxed{
+    v_1A_1=v_2A_2
+  }
+\end{equation}
+
+%
+%
+%
+%{Example: Multiple Inlet \& Outlets}
+%
+%    \column{.43\textwidth}
+%    \begin{tikzpicture}[scale=.9]
+%      \fill[blue!20!gray!30] rectangle (4,4);
+%      \fill[blue!20!gray!30] (2.5,0) rectangle (3.25,-1);
+%      \fill[blue!20!gray!30] (-1,.5) rectangle (0,1.5);
+%      \fill[blue!20!gray!30] (4,3) rectangle (5,3.75);
+%      \draw[very thick] (-1,1.5)--(0,1.5)--(0,4)--(4,4)--(4,3.75)--(5,3.75);
+%      \draw[very thick] (-1,0.5)--(0,0.5)--(0,0)--(2.5,0)--(2.5,-1);
+%      \draw[very thick] (3.25,-1)--(3.25,0)--(4,0)--(4,3)--(5,3);
+%      \node[draw] at (-.5,2.25) (a) {1};
+%      \node[draw] at (4.5,4.5) (b) {2};
+%      \node[draw] at (4,-.5) (c) {3};
+%      \draw(-.5,1.5)--(a);
+%      \draw(4.5,3.75)--(b);
+%      \draw(3.25,-.5)--(c);
+%      \draw[vectors,blue] (-1.5,1)--(-.5,1);
+%      \draw[vectors,blue] (4.5,3.375)--(5.5,3.375);
+%      \draw[<->,very thick,blue] (2.875,-.5)--(2.875,-1.5);
+%    \end{tikzpicture}
+%
+%    \column{.57\textwidth}
+%    \textbf{Example:} Water at \SI{20}{\celsius} flows steadily through a
+%    closed tank, as shown in the figure. As section 1,
+%    $D_1=\SI6{\centi\metre}$ and the volume flow is
+%    \SI{100}{\metre\cubed\per\hour}. At section 2, $D_2=\SI5{\centi\metre}$
+%    and the average velocity is \SI8{\metre\per\second}. If
+%    $D_3=\SI4{\centi\metre}$, what is
+%    \begin{enumerate}
+%    \item the flow rate $Q_3$ in \si{\metre\cubed\per\hour}?
+%    \item the average $v_3$ in \si{\metre\per\second}?
+%    \end{enumerate}
+
+%
+%
+%
+%{Example}
+%  \textbf{Example:} Find a relation between the nozzle discharge velocity
+%  $V$ and the tank free-surface height $h$. Assume frictionless flow.
+%  \begin{center}
+%    \pic{.35}{EGL}
+%  \end{center}
+%
+%    \footnotesize The line labelled ``EGL'' is called the
+%    ``energy grade line'', or the ``Bernoulli head'', given by the equation
+%    $h_0=z+p/\rho g+v^2/2g$. In the region where Bernoulli equation is valid,
+%    EGL is a constant.\par
