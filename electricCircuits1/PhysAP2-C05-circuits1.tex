@@ -272,7 +272,7 @@ we use the conventional current for simplicity.
       \node at (1.8,0){\huge$I$};
       \node at (5.3,0){\pic{.45}{electricCircuits1/arrow-east}};
     \end{tikzpicture}
-    \caption{Electric current modelled as a continuously flow of charges}    
+    \caption{Electric current modelled as continuously flow of charges}    
   \end{subfigure}
 %    \end{center}
 %    \vspace{-.1in}{\scriptsize\par
@@ -309,8 +309,7 @@ we use the conventional current for simplicity.
       \draw[thick,fill=pink!20] (6.3,1.5) circle (.4) node{$+$};
       \draw[thick,->] (6.7,1.5)--+(1.5,0);
     \end{tikzpicture}
-    \caption{Electric current modelled as the discrete motion of positive
-      charges}
+    \caption{Electric current modelled as discrete motion of ($+$) charges}
   \end{subfigure}
   \begin{subfigure}{.32\textwidth}
     \centering
@@ -334,11 +333,10 @@ we use the conventional current for simplicity.
       \draw[axes] (2.5,1.8)--(0,1.8);
       \draw[thick,fill=pink!20] (2.5,1.8) circle (.4) node{\tiny$e^-$};
     \end{tikzpicture}
-    \caption{Electric current modelled as the discrete motion of negative
-      charges}
+    \caption{Electric current is actually the discrete motion of electrons}
     \label{fig:electron-flow}
   \end{subfigure}
-  \caption{Modelling of electrical current}
+  \caption{Modelling of electrical current in a metal conductor}
 \end{figure}
 
 
@@ -482,6 +480,7 @@ its length $L$, and inversely proportional to the cross-sectional area $A$:
   \boxed{
     R=\rho\frac LA
   }
+  \label{eq:resistivity}
 \end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
@@ -529,6 +528,14 @@ and the current density $J$:
 %    strong, and the resistivity is higher.
 %  \end{itemize}
 %
+
+
+\begin{example}
+  Calculate the resistance of a \SI{15}{\metre} length of copper wire, at
+  \SI{20}\celsius, that has a diameter of \SI{.050}{\centi\metre}.
+
+  \vspace{.1in}\textbf{Solution:} Using Eq.~\ref{eq:resistivity},
+\end{example}
 
 
 
@@ -614,21 +621,21 @@ For example, an energy sources may include:
     \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[battery1,o-o] (2,0);
     \end{tikzpicture}
-    \caption{A voltaic cell}
+    \caption{Voltaic cell}
   \end{subfigure}
   \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[battery,o-o] (2,0);
     \end{tikzpicture}
-    \caption{A voltaic pile (battery)}
+    \caption{Voltaic pile (battery)}
   \end{subfigure}
   \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[pvsource,o-o] (2,0);
     \end{tikzpicture}
-    \caption{A solar panel}
+    \caption{Solar panel}
   \end{subfigure}
 
   \begin{subfigure}{.32\textwidth}
@@ -636,21 +643,21 @@ For example, an energy sources may include:
     \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[C,o-o] (2,0);
     \end{tikzpicture}
-    \caption{A capacitor}
+    \caption{Capacitor}
   \end{subfigure}
   \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[american voltage source,o-o] (2,0);
     \end{tikzpicture}
-    \caption{A DC voltage source}
+    \caption{DC voltage source}
   \end{subfigure}
   \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}[american voltages,thick]
       \draw (9,0) to[sinusoidal voltage source,o-o] (11,0);
     \end{tikzpicture}
-    \caption{An AC voltage source}
+    \caption{AC voltage source}
   \end{subfigure}
 \end{figure}
 
@@ -1027,11 +1034,11 @@ individual loads ($R_i$):
 Increasing the number of resistors in parallel \emph{increases} $R_s$ because
 it effectively increases the length of the resistor that the current passes
 through.
-%
-%
-%
+
+
+
 \section{Combination Circuits}
-%{Tips for Solving ``Simple'' Circuit Problems}
+
 \begin{enumerate}
 \item Identify groups of resistors that are in parallel or in series, and
   find their equivalent resistance.
@@ -1040,6 +1047,61 @@ through.
 \item Using Ohm's law, find the current out of the battery.
 \item Using Kirchhoff's laws, find the current through each of the resistors.
 \end{enumerate}
+
+
+\begin{example}
+  Consider the resistor circuit shown below, where $\mathcal E=\SI{30}\volt$,
+  $R_1=\SI{18}\ohm$, $R_2=\SI{9.0}\ohm$, $R_3=\SI{3.0}\ohm$, and
+  $R_4=\SI{8.0}\ohm$.
+
+  \begin{minipage}{.43\linewidth}
+    \begin{tikzpicture}[thick,scale=1.1]
+      \draw (5,3) to[battery,l_=$\mathcal E$] (0,3)--(0,0)--(.5,0)
+      to[bulb=$R_2$] (3,0)--(5,0) to[bulb=$R_4$] (5,3);
+      \draw (.5,0)--(.5,1.5) to[bulb=$R_1$] (3,1.5)--(3,0);
+      \draw (.5,0)--(.5,-1.5) to[bulb=$R_3$] (3,-1.5)--(3,0);
+    \end{tikzpicture}    
+  \end{minipage}
+  \begin{minipage}{.55\linewidth}
+    \begin{enumerate}
+    \item What is the equivalent resistance of the above circuit?
+    \item Find the current through bulb $R_4$.
+    \item What is the power dissipated by the entire circuit?
+    \item If $R_3$ is disconnected from the circuit so that only 3 light bulbs,
+      remain in the circuit, will the brightness of bulbs $R_1$ and $R_4$
+      increase, decrease, or remain the same? Justify your answer.
+      %(Hint: You may show calculations, but if you understand resistors in
+      %parallel and series, calculations are not necessary.)
+    \end{enumerate}
+  \end{minipage}
+  
+  \vspace{.2in}\textbf{Solutions:}
+  \begin{enumerate}
+  \item We can see that $R_2$, $R_3$ and $R_4$ are connected in parallel,
+    therefore the effective resistance is:
+    \begin{displaymath}
+      \frac1{R_{234}}
+      =\frac1{R_2}+\frac1{R_3}+\frac1{R_4}
+      =\frac1{9.0}+\frac1{3.0}+\frac1{8.0}=
+      \quad\longrightarrow\quad R_{234}=
+    \end{displaymath}
+    $R_1$ is in series with $R_{234}$, therefore, the total resistance current
+    through the circuit is
+  \item The current through $R_4$ is the same as the current out of the battery,
+    which we can calculate using Ohm's law:
+    \begin{displaymath}
+      I_4=I_\text{battery}=\frac{\mathcal E}{R_\text{eq}}=\frac{12}{10}
+      =\SI{1.2}\ampere
+    \end{displaymath}
+  \item The power dissipated by the circuit entire cicuit can be calculated
+    using the equivalent resistance $R=R_\text{eq}$ and the current out of the
+    battery $I=I_\text{battery}$:
+    \begin{displaymath}
+      P = I^2R=
+    \end{displaymath}
+  \end{enumerate}
+\end{example}
+
 
 
 

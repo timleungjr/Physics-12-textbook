@@ -21,7 +21,7 @@
 %
 %
 %
-\section{Properties of Sound Waves}
+%\section{Properties of Sound Waves}
 %
 %\subsection{Compression/Rarefaction}
 %
@@ -112,11 +112,13 @@
 %
 %
 %
-%{Speed of Sound in a Gas}
+\subsection{Speed of Sound in a Gas}
 The speed of sound $v_s$ in an ideal gas is a thermodynamic property that
 depends on its temperature and its composition:
 \begin{equation}
-  v_s=\sqrt{\frac{\gamma RT}M}
+  \boxed{
+    v_s=\sqrt{\frac{\gamma RT}M}
+  }
 \end{equation}
 where $M$ is the molar mass of the ideal gas, measured in
 \emph{kilograms per mole} (\si{\kilo\gram\per\mol}); and $T$ is the
@@ -134,7 +136,7 @@ absolute/thermodynamic temperature, measured in \emph{kelvins} (\si\kelvin).
 %  \end{center}
 For air, $\gamma=1.4$ and $M=\SI{29e-3}{\kilo\gram\per\mol}$.
 
-\subsection{Speed of Sound in an Ideal Gas}
+%\subsection{Speed of Sound in an Ideal Gas}
 
 Applying the specific values for $M$ and $\gamma$ of air into the equation, we
 can further calculate the speed of sound in dry air:
@@ -162,35 +164,35 @@ and density $\rho$:
 \end{equation}
 %    \centering
 %    {\small
-%      \begin{tabular}{l|c}
-%        \rowcolor{cyan!30}
-%        \textbf{Material} & \textbf{Speed} (\si{\metre\per\second}) \\
-%        \rowcolor{pink!70}
-%        \multicolumn{2}{c}{Gases (\SI0\celsius, \SI{101}{\kilo\pascal})} \\
-%        Carbon dioxide & 259 \\
-%        Oxygen         & 316 \\
-%        Air            & 331 \\
-%        Helium         & 965 \\
-%        \rowcolor{pink!70}
-%        \multicolumn{2}{c}{Liquids (\SI{20}\celsius)} \\
-%        Ethanol        & 1162 \\
-%        Fresh water    & 1482 \\
-%        Seawater       & 1440-1500 \\
-%        \rowcolor{pink!70}
-%        \multicolumn{2}{c}{Solids} \\
-%        Copper         & 5010 \\
-%        Glass          & 5640 \\
-%        Steel          & 5960
-%      \end{tabular}
-%    }
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l|c}
+    \rowcolor{cyan!30}
+    \textbf{Material} & \textbf{Speed} (\si{\metre\per\second}) \\
+    \rowcolor{pink!70}
+    \multicolumn{2}{c}{Gases (\SI0\celsius, \SI{101}{\kilo\pascal})} \\
+    Carbon dioxide & 259 \\
+    Oxygen         & 316 \\
+    Air            & 331 \\
+    Helium         & 965 \\
+    \rowcolor{pink!70}
+    \multicolumn{2}{c}{Liquids (\SI{20}\celsius)} \\
+    Ethanol        & 1162 \\
+    Fresh water    & 1482 \\
+    Seawater       & 1440-1500 \\
+    \rowcolor{pink!70}
+    \multicolumn{2}{c}{Solids} \\
+    Copper         & 5010 \\
+    Glass          & 5640 \\
+    Steel          & 5960
+  \end{tabular}
+\end{table}
 
-%
-%
-%
-%%{Example Problem}
-%%  \textbf{Example}: Suppose the room temperature of a classroom is
-%%  \SI{21}\celsius. Calculate the speed of sound in the classroom.
-%%
+
+\begin{example}
+  Suppose the room temperature of a classroom is \SI{21}\celsius. Calculate the
+  speed of sound in the classroom.
+\end{example}
 %%
 %%
 %%
@@ -246,25 +248,22 @@ intensity decreases:
 As the intensity drops further away from the source, the amplitude $\Delta p$
 of the sound wave also decreases.
 
+%\subsection{Threshold of Hearing}
 
-
-\subsection{Threshold of Hearing}
-
-The lowest detectable sound intensity is called the
-\textbf{threshold of hearing} $I_0$, defined as:
-\begin{equation}
+The \textbf{threshold of hearing} $I_0$ is the lowest detectable sound
+intensity that is detectable by the human ear, and is \emph{defined} as:
+\begin{equation*}
   I_0=\SI{e-12}{\watt\per\metre\squared}
-\end{equation}
+\end{equation*}
   
 While the sound intensity at the \textbf{threshold of pain} can damage a human
 ear:
-\begin{equation}
+\begin{equation*}
   I_p=\SI1{\watt\per\metre\squared}
-\end{equation}
-%
-%
-%
-%
+\end{equation*}
+
+
+
 %{Threshold of Hearing}
 %  \begin{center}
 %    \pic{.5}{images/earcrv2}
@@ -282,10 +281,11 @@ ear:
 \subsection{The Decibel}
 
 The \textbf{decibel} is defined as the logarithm of the ratio intensity of
-sound $I$ compared to the threshold of hearing $I_0$:
- 
+sound $I$ compared to the threshold of hearing $I_0$: 
 \begin{equation}
-  \beta=10\log_{10}\left[\frac I{I_0}\right]
+  \boxed{
+    \beta=10\log_{10}\left[\frac I{I_0}\right]
+  }
 \end{equation}
 The threshold of hearing is \SI0{dB} while the threshold of pain is
 \SI{120}{dB}. Humans perceive a doubling of loudness when intensity is
@@ -332,7 +332,7 @@ increased by a factor of 10 (i.e.\ \SI{10}{dB}).
 %
 %
 %
-\subsection{Frequency/Pitch}
+\section{Frequency/Pitch}
 %
 %{Frequency and Pitch}
 %  
@@ -358,14 +358,13 @@ while frequencies that are above audible range are called an
 %
 %
 %
-\section{Doppler Effect}
-%
-%\subsection{Mach Number}
-%  Speeds close to the speed of sound are often expressed in terms of its ratio
-%  to the speed of sound. This is called the \textbf{Mach number} ($M$):
-%  
+\section{Mach Number}
+Speeds close to the speed of sound are often expressed in terms of its ratio
+to the speed of sound. This is called the \textbf{Mach number} ($M$):  
 \begin{equation}
-%    \boxed{M=\frac v{v_s}}
+  \boxed{
+    M=\frac v{v_s}
+  }
 \end{equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
@@ -384,7 +383,9 @@ while frequencies that are above audible range are called an
 %
 %
 %
-%
+\section{Doppler Effect}
+
+
 \subsection{Sound from a Stationary Source}
 
 When a sound is emitted from a stationary point source, the sound wave moves
@@ -408,11 +409,9 @@ wavelength and therefore, the same frequency (pitch) of sound.
   \end{tikzpicture}
 \end{figure}
 
-%  
-%
-%
-%
-%
+
+
+
 \subsection{Sound from a Moving Source}
 
 When sound is emitted from a subsonic \emph{moving} source, the diagram looks
@@ -449,20 +448,14 @@ decreases. This is called the \textbf{Doppler effect}.
 %
 %
 %{Doppler Effect}
-%  We experience Doppler effect every time an ambulance speeds by us with its
-%  sirens on.
-%  \begin{center}
-%    \pic{.6}{images/toronto-ambulance}
-%  \end{center}
-%  When it is moving towards us, the pitch of the siren is high, but
-%  the moment it passes us, the pitch decreases.
+
 %
 %
 %
 %
 %{Doppler Effect}
-%  When a wave source is moving at a speed $v_\text{src}$ and an observer is
-%  moving at $v_\text{ob}$, the perceived frequency $f'$ is shifted:
+When a wave source is moving at a speed $v_\text{src}$ and an observer is
+moving at $v_\text{ob}$, the perceived frequency $f'$ is shifted:
 \begin{equation}
   \boxed{f'=\frac{v_s+v_\text{ob}}{v_s-v_\text{src}}f}
 \end{equation}
@@ -479,13 +472,19 @@ decreases. This is called the \textbf{Doppler effect}.
 %  \end{center}
 $v_\text{src}$ and $v_\text{ob}$ are positive when the move towards each other,
 and negative when they move away.
-%
-%
-%
-%
-%\subsection{Sonic Boom}
-%
-\subsection{Sound from a Source at Sonic Speed}
+
+We experience Doppler effect every time an ambulance speeds by us with its
+sirens on.
+\begin{figure}[ht]
+  \centering
+  \pic{.6}{soundWaves/images/toronto-ambulance}
+\end{figure}
+When it is moving towards us, the pitch of the siren is high, but the moment it
+passes us, the pitch decreases.
+
+
+
+\subsection{Sonic Boom: Sound from a Source at Sonic Speed}
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[scale=.75]
