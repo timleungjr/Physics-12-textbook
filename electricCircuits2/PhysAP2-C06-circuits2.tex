@@ -4,7 +4,8 @@
 
 %{Circuits Aren't Always Simple}
 Some of these problems require you to solve a system of linear equations.
-The following is a simple example with two voltage sources:
+Fig.~\ref{fig:multiloop1} is a simple example with two voltage sources that
+cannot be simplified.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[american voltages,scale=1.3,thick]
@@ -20,6 +21,8 @@ The following is a simple example with two voltage sources:
       %  node[midway,below]{$I_2$};
       %}
   \end{tikzpicture}
+  \caption{A simple multi-loop circuit}
+  \label{fig:multiloop1}
 \end{figure}
 %  \uncover<2->{
 %    In this case, we have to draw two loops of current.
@@ -112,9 +115,9 @@ The following is a simple example with two voltage sources:
 %
 \section{Capacitors in Circuits}
 
-In Chapter~\ref{chapter:capacitors}, we learned that capacitor is a device that
+In Chapter~\ref{chapter:capacitor}, we learned that capacitor is a device that
 stores energy in the electric field. Two parallel plates with equal and opposite
-charges will generate a voltage. Whereas Chapter~\ref{chapter:capacitors} is
+charges will generate a voltage. Whereas Chapter~\ref{chapter:capacitor} is
 concerned primarily with defining the capacitance, here, we focus on the
 capacitor's application in cicuits.
 
@@ -137,6 +140,8 @@ whether the capacitor is charging or discharging.
     \draw (1,1)--(3,1) to[C=$C_2$]       (3,0)--(1,0);
     \draw (3,1)--(5,1) to[C=$C_3\cdots$] (5,0)--(3,0);
   \end{tikzpicture}
+  \caption{Capacitors connected in parallel}
+  \label{fig:parallel-capacitors}
 \end{figure}
 From the voltage law, we know that the voltage across all the capacitors are
 the same, i.e.\ $V_1=V_2=V_3=\cdots=V$. We can express the total charge
@@ -147,12 +152,11 @@ common voltage $V$:
 \end{equation}  
 Factoring out $V$ from each term gives us the equivalent capacitance, we find
 the equivalent capacitance in parallel:
-\begin{equation}
-  \boxed{
-    C_p=\sum_i C_i
-  }
-\end{equation}
-
+\begin{important-equation}
+  C_p=\sum_i C_i
+\end{important-equation}
+Connecting capacitors effectively increases the cross-sectional area of the
+plates, therefore increasing capacitance.
 
 \subsection{Capacitors in Series}
 Likewise, we can do a similar analysis to capacitors connected in series.
@@ -162,6 +166,8 @@ Likewise, we can do a similar analysis to capacitors connected in series.
     \draw (0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$] (2.5,0)
     to[C=$C_3$,-o] (3.75,0);
   \end{tikzpicture}
+  \caption{Capacitors connected in series}
+  \label{fig:series-capacitors}
 \end{figure}
 The total voltage across these capacitors are the sum of the voltages across
 each of them, i.e.\
@@ -175,11 +181,9 @@ total voltage in terms of capacitance and charge:
 \end{equation}
 The inverse of the equivalent capacitance for $N$ capacitors connected in
 series is the sum of the inverses of the individual capacitance.
-\begin{equation}
-  \boxed{
-    \frac1{C_s}=\sum_i\frac1{C_i}
-  }
-\end{equation}
+\begin{important-equation}
+  \frac1{C_s}=\sum_i\frac1{C_i}
+\end{important-equation}
 Increasing the number of capacitors in series effectively increases the plate
 separation, therefore decreasing the capacitance.
   
@@ -194,6 +198,7 @@ charges across all the capacitors are the same
     \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$,-o] (2.5,0);
     \draw[dashed](0.625,-.75) rectangle (1.875,1.2);
   \end{tikzpicture}
+  \caption{The plates of two capacitor is a single conductor}
 \end{figure}
 The capacitor plates and the wire connecting them are really one piece of
 conductor; there is nowhere for the charges to leave the conductor, therefore
@@ -212,10 +217,6 @@ look into combining them in to an ``$RC$ circuit''.
 %    \end{tikzpicture}
 %  \end{center}
 
-The simplest form is a resistor and capacitor connected in series, with the
-capacitor initially charged to a voltage $V_C$\footnote{The initial charge
-stored in the capacitor would have been $+Q_0=CV$ on one side, and $-Q_0$ on
-another.}
 %  \begin{itemize}
 %  \item The voltage on the capacitor drives a current in the circuit.
 %%  and
@@ -230,8 +231,11 @@ another.}
 \subsection{A Discharging Capacitor}
 
 The simplest example of an $RC$ circuit is the discharging capacitor case,
-where a capacitor and a resistor are connected in series, with the capacitor
-initially charged, as shown in Fig.~\ref{fig:discharing-capacitor}.
+where a capacitor and a resistor are connected in series. with the capacitor
+initially charged, with the capacitor initially charged to a voltage $V_C$,
+as shown in Fig.~\ref{fig:discharing-capacitor}. (The initial charge stored in
+the capacitor would have been $+Q_0=CV$ on one side, and $-Q_0$ on another.)
+
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[american voltages,scale=.8]
@@ -248,30 +252,23 @@ $I_0$ through the circuit is based on Ohm's law:
 \begin{displaymath}
   I_0=\frac{V_0}R
 \end{displaymath}
-As current flows, charge $Q$ across the capacitor decreases
-\begin{itemize}
-\item Voltage $V_c(t)$ across the capacitor decreases
-\item The current $I(t)=V_c(t)/R$ also decreases
-\item But since current decreases, $Q$ also decreases more
-  slowly
-\end{itemize}
-
-Using calculus, we find that the expression of charge $Q(t)$ across the
-capacitor is an exponential decay function:
-\begin{equation}
-  \boxed{
-    Q(t)=Q_0e^{-t/\tau}
-  }
-\end{equation}  
+As current flows, charge $Q(t)$ across the capacitor decreases, therefore
+the capacitor voltage $V_c(t)$ across the capacitor also decreases. As the
+capacitor discharges, the currrent $I(t)=V_c(t)/R$ out of the capacitor (and
+through the entire circuit) also decreases with time. But since current
+decreases, $Q(t)$ also decreases more slowly. Using calculus, we find that the
+expression of charge $Q(t)$ across the capacitor is an exponential decay
+function:
+\begin{important-equation}
+  Q(t)=Q_0e^{-t/\tau}
+\end{important-equation}  
 where $Q_0$ is the initial charge on the capacitor, and $\tau=RC$ is called the
 \textbf{time constant}. As $Q$ decreases, voltage $V_c$ across the capacitor
 also decreases, and the current $I(t)$ through the circuit also decreases as an
 exponential decay function:
-\begin{equation}
-  \boxed{
-    I(t)=I_0e^{-t/\tau}
-  }
-\end{equation}
+\begin{important-equation}
+  I(t)=I_0e^{-t/\tau}
+\end{important-equation}
 The initially current can be expressed using $Q_0$, $V_0$, $C$, $R$ or $\tau$:
 \begin{displaymath}
   I_0=\frac{V_0}R=\frac{Q_0}{RC}=\frac{Q_0}\tau
@@ -280,35 +277,43 @@ The initially current can be expressed using $Q_0$, $V_0$, $C$, $R$ or $\tau$:
 
 
 \subsection{Charging a Capacitor}
+
 Before a capacitor can be discharged, it must first be charged. The simplest
 form of such a circuit is shown in Fig.~\ref{fig:charging-capacitor}.
-%  The capacitor is initially uncharged $Q=0$, therefore the voltage across the
-%  capacitor is also zero: $V_c=0$.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[american voltages,scale=1.2]
-    \draw[thick] (0,0)
-    to[battery,l=$\mathcal E$] (0,2)
-    to[R=$R$] (2,2)
-    to[C=$C$] (2,0)--(0,0);
+    \draw[thick] (0,0) to[battery,l=$\mathcal E$] (0,2)
+    to[R=$R$] (2,2) to[C=$C$] (2,0)--(0,0);
   \end{tikzpicture}
   \caption{A simple capacitor charged by a battery}
   \label{fig:charging-capacitor}
 \end{figure}
-  
-When charging the capacitor, the charge across the capacitor is given by:
-\begin{equation}
-  \boxed{
-    Q(t)=Q_\text{tot}(1-e^{-t/\tau})
-  }
-\end{equation}
-the time constant $\tau=RC$ is the same as the discharging case
+The capacitor is initially uncharged $Q=0$, therefore the voltage across the
+capacitor is also zero: $V_c=0$. At $t=0$, current begins to flow. There is no
+voltage across the capacitor, so (by Kirchhoff's voltage law) the capacitor
+acts like a short circuit (as if the capacitor is not there at all). The
+initial current through the circuit is:
+\begin{displaymath}
+  I_0=\dfrac{\mathcal E}R
+\end{displaymath}
+All the energy in the circuit is dissipated by resistor. As current flows,
+charges $Q(t)$ begin to accumulate on the capacitor. The voltage
+$V_c(t)=Q(t)/C$ across the capacitor begins to increase. By the voltage law,
+voltage drop across the resistor decreaes. Since voltage across the resistor
+decreases, the current $I=V_R/R$ also decreases.
 
-%      At $t=0$, current begins to flow. There is no voltage across the
-%      capacitor, so (by Kirchhoff's voltage law) the capacitor acts like a
-%      short circuit (as if the capacitor is not there at all).\par
-%    }
-%    
+As $t\longrightarrow\infty$, the voltage across the capacitor:
+$V_c\longrightarrow\mathcal E$, and the charge across the capacitor:
+$Q(t)\longrightarrow C\mathcal E$. The current through the circuit:
+$I\longrightarrow 0$ begin to accumulate on the capacitor.
+%%\begin{itemize}
+
+When charging the capacitor, the charge across the capacitor is given by:
+\begin{important-equation}
+  Q(t)=Q_\text{tot}(1-e^{-t/\tau})
+\end{important-equation}
+the time constant $\tau=RC$ is the same as the discharging case
 
 %    \centering
 %    \begin{tikzpicture}[american voltages]
@@ -317,21 +322,7 @@ the time constant $\tau=RC$ is the same as the discharging case
 %      to[R=$R$] (2,2)--(2,0)--(0,0);
 %    \end{tikzpicture}
 %
-%    \column{.37\textwidth}{\color{orange}\small
-%      Initial current through the circuit is:
-%      \begin{displaymath}
-%        I_0=\dfrac{\mathcal E}R
-%      \end{displaymath}
-%      All the energy in the circuit is dissipated by resistor
-%    }
 
-%  As current flows, charges $Q(t)$ begin to accumulate on the capacitor.
-%  \begin{itemize}
-%  \item The voltage $V_c(t)=Q(t)/C$ across the capacitor begins to increase
-%  \item By Kirchhoff's voltage law, voltage drop across the resistor decreaes
-%  \item Since voltage across the resistor decreases, the current $I=V_R/R$
-%    decreases
-%  \end{itemize}
 %  \begin{center}
 %    \begin{tikzpicture}[american voltages,scale=1.1]
 %      \draw[thick] (0,0) to[battery,l=$\mathcal E$] (0,2)
@@ -340,9 +331,9 @@ the time constant $\tau=RC$ is the same as the discharging case
 %  \end{center}
 The current $I$ through the circuit decreases as an exponential decay function,
 same as the discharging case:
-\begin{equation}
-    \boxed{I_c(t)=I_0e^{-t/\tau}}
-\end{equation}
+\begin{important-equation}
+  I_c(t)=I_0e^{-t/\tau}
+\end{important-equation}
 
 
 %
@@ -351,13 +342,7 @@ same as the discharging case:
 %
 %
 %{Charging a Capacitor}
-%  As $t\longrightarrow\infty$
-%  \begin{itemize}
-%  \item voltage across the capacitor: $V_c\longrightarrow\mathcal E$, and the
-%  \item charge across the capacitor: $Q(t)\longrightarrow C\mathcal E$
-%  \item The current through the circuit: $I\longrightarrow 0$
-%%  begin to accumulate on the capacitor.
-%%\begin{itemize}
+
 %%\item The voltage $V_c(t)=Q(t)/C$ across the capacitor begins to increase
 %%\item By Kirchhoff's voltage law, voltage drop across the resistor decreaes
 %%\item Since voltage across the resistor decreases, the current $I=V_R/R$
@@ -382,15 +367,22 @@ same as the discharging case:
 %
 %
 %
-%{Two Small Notes}
-%  \begin{enumerate}
-%  \item When a capacitor is uncharged, there is no voltage across the plate,
-%    it acts like a short circuit.
-%  \item When a capacitor is charged, there is a voltage across it, but no
-%    current flows \emph{through} it. Effectively it acts like an open circuit.
-%  \end{enumerate}
+From the charging capacitor case, we make two small but very important
+observations:
+\begin{enumerate}
+\item When a capacitor is uncharged, there is no voltage across the plate,
+  it acts like a short circuit.
+\item When a capacitor is charged, there is a voltage across it, but no
+  current flows \emph{through} it. Effectively it acts like an open circuit.
+\end{enumerate}
+We will use this information to solve more difficult $RC$ circuit problems
 
-\section{General $RC$ Circuits}
+
+
+\subsection{General $RC$ Circuits}
+
+In general, $RC$ circuits would involve multiple resistors and capacitor that
+cannot be simplified into the configurations shown in previous sections.
 
 \begin{figure}[ht]
   \centering
@@ -403,6 +395,7 @@ same as the discharging case:
     to[C=\SI6{\micro\farad}] (4,0)--(0,0);
     \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
   \end{tikzpicture}
+  \caption{Example of a general $RC$ circuit}
 \end{figure}
 
 
@@ -427,6 +420,7 @@ same as the discharging case:
       \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
       \draw[line width=12,opacity=.2,yellow] (0,0)--(0,2)--(4,2)--(4,0)--(0,0);
     \end{tikzpicture}
+    \caption{Initial circuit at $t=0$}
   \end{subfigure}
   \begin{subfigure}{.49\textwidth}
     \centering
@@ -438,6 +432,7 @@ same as the discharging case:
       \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
       \draw[line width=12,opacity=.2,yellow] (0,0)--(0,2)--(3,2)--(3,0)--(0,0);
     \end{tikzpicture}
+    \caption{Final circuit as $t\longrightarrow0$}
   \end{subfigure}
   \caption{The initial and steady-state circuit diagram for a general RC
     circuit}

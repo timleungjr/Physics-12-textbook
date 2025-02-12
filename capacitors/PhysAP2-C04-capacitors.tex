@@ -2,7 +2,7 @@
 %\input{../mybeamer}
 
 \chapter{Capacitors}
-
+\label{chapter:capacitor}
 
 %\section{Capacitors}
 %
@@ -88,9 +88,10 @@
 %{Capacitors}
 \textbf{Capacitors} is a device that stores energy in an electric field. The
 simplest form of a capacitor is a set of closely spaced parallel plates:
-%  \begin{center}
-%    \pic{.45}{cap19}
-%  \end{center}
+\begin{figure}[ht]
+  \centering
+  \pic{.45}{capacitors/cap19}
+\end{figure}
 
 When the plates are connected to a battery, the battery transfer charges to the
 plates until the voltage $V$ equals the battery terminals. After that, one
@@ -101,149 +102,128 @@ plate has charge $+Q$; the other has $-Q$.
 The (uniform) electric field between two parallel plates is proportional to the
 surface charge density $\sigma$, which is the charge $Q$ divided by the area of
 the plates $A$:
-
-%  \eq{-.1in}{
-%    E=\frac{\color{red}\sigma}{\epsilon_0}=
-%    \frac{\color{red}Q}{{\color{red}A}\epsilon_0}
-%  }
-  
+\begin{equation*}
+  E=\frac{\color{red}\sigma}{\epsilon_0}=
+  \frac{\color{red}Q}{{\color{red}A}\epsilon_0}
+\end{equation*} 
 Substituting this into the relationship between the plate voltage $V$ and
 electric field, we find a relationship between the charges across the plates
 and the voltage:
-
-%  \eq{-.1in}{
-%    V={\color{blue}E}d=
-%    \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
-%    \quad\longrightarrow\quad
-%    \boxed{Q=\left[\frac{A\epsilon_0}d\right]V}
-%  }
-%
-
+\begin{equation*}
+  V={\color{blue}E}d=
+  \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
+  \quad\longrightarrow\quad
+  \boxed{Q=\left[\frac{A\epsilon_0}d\right]V}
+\end{equation*}
 Since area $A$, distance of separation $d$ and the vacuum permittivity
 $\epsilon_0$ are all constants, the relationship between charge $Q$ and voltage
 $V$ is \emph{linear}. And the constant is called the \textbf{capacitance} $C$,
 defined as:
-
-%  \eq{-.1in}{
-%    \boxed{C=\frac QV}
-%  }
-%
+\begin{important-equation}
+  C=\frac QV
+\end{important-equation}
 For parallel plates:
-%
-%  \eq{-.1in}{
-%    C=\frac{A\epsilon_0}d
-%  }
-%
+\begin{important-equation}
+  C=\frac{A\epsilon_0}d
+\end{important-equation}
 The unit for capacitance is a \textbf{farad} (named after Michael Faraday),
 where $\SI1\farad=\SI1{\coulomb\per\volt}$.
 
 
 
 
-\subsection{Cylindrical Capacitors}
+\section{Cylindrical Capacitors}
 
-%%    \pic{1.05}{cylindrical-capacitor}
-%%
+\begin{figure}[ht]
+  \centering
+  \pic{.7}{capacitors/cylindrical-capacitor}
+\end{figure}
+
 Not all capacitors are parallel plates. Cylindrical capacitors are also popular.
-%%    \begin{itemize}
-%%    \item The capacitor has length $\ell$ which is much larger than the radii
-%%      of the inner \& outer cylinders ($a$, $b$)
-%%    \item Inner cylinder has total charge $Q$
-%%    \item Outer cylinder has total charge $-Q$
-%%    \item Inside the capacitor, the electric field in the radial direction
-%%    \item Outside of the capacitor, there is no electric field
-%%    \end{itemize}
+\begin{itemize}
+\item The capacitor has length $\ell$ which is much larger than the radii
+  of the inner \& outer cylinders ($a$, $b$)
+\item Inner cylinder has total charge $Q$
+\item Outer cylinder has total charge $-Q$
+\item Inside the capacitor, the electric field in the radial direction
+\item Outside of the capacitor, there is no electric field
+\end{itemize}
 
 
-
-%%{Cylindrical Capacitors: Electric Field}
-%%  \begin{columns}
-%%    \column{.4\textwidth}
-%%    \pic{1.05}{cylindrical-capacitor}
-%%
-%%    \column{.56\textwidth}
-%%
-%%    Using a bit of calculus, we can also see that, like the parallel plate, the
-%%    relationship between voltage and charge is still linear. In this case, the
-%%    capacitance is defined as:
-%%
-%%    \eq{-.1in}{
-%%      \boxed{C=\frac QV=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}}
-%%    }
-%%    
-%%    The capacitance is generally expressed in terms of $C/\ell$. Capacitance
-%%    depends only on the geometry (i.e.\ the raidii $a$ and $b$) and the
-%%    permittivity.
-%%  \end{columns}
+Using a bit of calculus, we can also see that, like the parallel plate, the
+relationship between voltage and charge is still linear. In this case, the
+capacitance is defined as:
+\begin{equation}
+  C=\frac QV=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}
+\end{equation}
+%    The capacitance is generally expressed in terms of $C/\ell$. Capacitance
+%    depends only on the geometry (i.e.\ the raidii $a$ and $b$) and the
+%    permittivity.
 
 
 
 \section{Practical Capacitors}
 
-%    \column{.3\textwidth}
-%    \pic1{Figure_20_05_05a}
-%    
-%    \column{.7\textwidth}
-%    \begin{itemize}
-%    \item Parallel-plate capacitors are very common in electric circuits, but
-%      the vacuum between the plates is not very effective
-%    \item Instead, a non-conducting \textbf{dielectric} material is inserted
-%      between the plates
-%    \item When the plates are charged, the electric field of the plates
-%      polarizes the dielectric
-%    \item The polarization  produces an electric field that opposes the field
-%      from the plates, therefore reduces the effective voltage, and increasing
-%      the capacitance
-%    \end{itemize}
-%
-%
-%
-%
+\begin{figure}[ht]
+  \centering
+  \pic{.35}{capacitors/Figure_20_05_05a}
+\end{figure}
+
+\begin{itemize}
+\item Parallel-plate capacitors are very common in electric circuits, but the
+  vacuum between the plates is not very effective
+\item Instead, a non-conducting \textbf{dielectric} material is inserted
+  between the plates
+\item When the plates are charged, the electric field of the plates polarizes
+  the dielectric
+\item The polarization  produces an electric field that opposes the field from
+  the plates, therefore reduces the effective voltage, and increasing the
+  capacitance
+\end{itemize}
+
+
+
+
 \section{Dielectric Constant}
+
 If electric field without dielectric is $E_0$, then $E$ in the dielectric is
 reduced by $\kappa$, the \textbf{dielectric constant}:
-%
-%  \eq{-.1in}{
-%    \boxed{\kappa=\frac{E_0}E}
-%  }
-%
-%  The capacitance of the plates with the dielectric is now amplified by the
-%  same factor $\kappa$:
-%
-%  \eq{-.1in}{
-%    \boxed{C=\kappa C_0}
-%  }
-%
-%  We can also view the dielectric as something that increases the
-%  \emph{effective permittivity}:
-%  
-%  \eq{-.1in}{
-%    \boxed{\epsilon=\kappa\epsilon_0}
-%  }
-%
-%
-%
-%
+\begin{important-equation}
+  \kappa=\frac{E_0}E
+\end{important-equation}
+The capacitance of the plates with the dielectric is now amplified by the
+same factor $\kappa$:
+\begin{important-equation}
+  C_\text{eff}=\kappa C_0
+\end{important-equation}
+We can also view the dielectric as something that increases the
+\textbf{effective permittivity}:
+\begin{important-equation}
+  \epsilon_\text{eff}=\kappa\epsilon_0
+\end{important-equation}
+
+
+
 %{Dielectric Constant}
-%  The dielectric constants of commonly used materials are:
-%  \begin{center}
-%    \begin{tabular}{l|l}
-%      \rowcolor{pink}
-%      \textbf{Material} & $\kappa$ \\ \hline
-%      Air         & \num{1.00059} \\
-%      Bakelite    & \num{4.9} \\
-%      Pyrex glass & \num{5.6} \\
-%      Neoprene    & \num{6.9} \\
-%      Plexiglas   & \num{3.4} \\
-%      Polystyrene & \num{2.55} \\
-%      Water (\SI{20}\celsius) & \num{80} 
-%    \end{tabular}
-%  \end{center}
-%
-%
-%
-%
-%{Storage of Electrical Energy}
+The dielectric constants of commonly used materials are:
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l|l}
+    \rowcolor{pink}
+    \textbf{Material} & $\kappa$ \\ \hline
+    Air         & \num{1.00059} \\
+    Bakelite    & \num{4.9} \\
+    Pyrex glass & \num{5.6} \\
+    Neoprene    & \num{6.9} \\
+    Plexiglas   & \num{3.4} \\
+    Polystyrene & \num{2.55} \\
+    Water (\SI{20}\celsius) & \num{80} 
+  \end{tabular}
+\end{table}
+
+
+
+\section{Storage of Electrical Energy}
 %  When charging up a capacitor, imagine positive charges moving from the
 %  ($-$) plate to the ($+$) plate.
 %  \begin{center}c
@@ -252,39 +232,34 @@ reduced by $\kappa$, the \textbf{dielectric constant}:
 %  Initially neither plates are charged, so moving the first charge takes very
 %  little work; as the electric field builds, more work needs to be done.
 %  The total work done is the potential energy inside the capacitor:
-%
-%  \eq{-.1in}{
-%    \boxed{U_c=\frac12\frac{Q^2}C=\frac12QV=\frac12CV^2}
-%  }
-%
-%
-%
-%
-%
-%{Notes About Storage of Electric Energy}
-%  \begin{itemize}
-%  \item The presence of a dielectric \emph{increases} the capacitance; therefore
-%    the work (and potential energy stored) to move a charge \emph{decreases}
-%    with the dielectric constant $\kappa$
-%  \item After the capacitor is charged, removing the dielectric material from
-%    the capacitor plates will require additional work.
-%  \end{itemize}
-%
-%
-%
-%
-%{Capacitors in Electric Circuits}
-%  Capacitors are an important part of an electric circuits because it stores
-%  energy in the electric field
-%  \begin{itemize}
-%  \item Denoted by this symbol (with reference to the parallel-plate capacitor):
-%    \begin{center}
-%      \vspace{.1in}
-%      \begin{tikzpicture}
-%        \draw[thick] (3,0) to[C,o-o] (5,0);
-%      \end{tikzpicture}
-%    \end{center}
-%  \item Act like a voltage source
-%  \item Unlike a battery, the voltage increases or decreases as the charge
-%    across the capacitor plates change.
-%  \end{itemize}
+\begin{important-equation}
+  U_c=\frac12\frac{Q^2}C=\frac12QV=\frac12CV^2
+\end{important-equation}
+
+
+
+\begin{itemize}
+\item The presence of a dielectric \emph{increases} the capacitance; therefore
+  the work (and potential energy stored) to move a charge \emph{decreases}
+  with the dielectric constant $\kappa$
+\item After the capacitor is charged, removing the dielectric material from
+  the capacitor plates will require additional work.
+\end{itemize}
+
+
+
+\section{Capacitors in Electric Circuits}
+Capacitors are an important part of an electric circuits because it stores
+energy in the electric field
+\begin{itemize}
+\item Denoted by this symbol (with reference to the parallel-plate capacitor):
+  \begin{center}
+    \vspace{.1in}
+    \begin{tikzpicture}
+      \draw[thick] (3,0) to[C,o-o] (5,0);
+    \end{tikzpicture}
+  \end{center}
+\item Act like a voltage source
+\item Unlike a battery, the voltage increases or decreases as the charge
+  across the capacitor plates change.
+\end{itemize}

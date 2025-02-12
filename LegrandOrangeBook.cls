@@ -15,9 +15,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 %	CLASS CONFIGURATION
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{LegrandOrangeBook}[2022/01/26 The Legrand Orange Book Class v3.0]
@@ -720,6 +720,27 @@
   rightmargin=0cm % Outside right margin width
 ]{dBox}
 
+
+% Important equation box
+\newmdenv[
+  %skipabove=12pt, % Whitespace above box
+  %skipbelow=12pt, % Whitespace below box
+  rightline=false, % Right line visible
+  leftline=false, % Left line visible
+  topline=false, % Top line visible
+  bottomline=false, % Bottom line visible
+  %linecolor=magenta, % Border color
+  %linewidth=2pt, % Border width
+  backgroundcolor=yellow!15,
+  innerleftmargin=5pt, % Inside left margin width
+  innerrightmargin=5pt, % Inside right margin width
+  innertopmargin=5pt, % Inside top margin height
+  innerbottommargin=5pt, % Inside bottom margin height
+  leftmargin=0cm, % Outside left margin width
+  rightmargin=0cm % Outside right margin width
+]{eqBox}
+
+
 % Corollary box
 \newmdenv[
   skipabove=7pt, % Whitespace above box
@@ -739,7 +760,8 @@
   rightmargin=0cm % Outside right margin width
 ]{cBox}
 
-% Creates an environment for each type of theorem and assigns it a theorem text style from the THEOREM STYLES block above and a colored box from above
+% Creates an environment for each type of theorem and assigns it a theorem text
+% style from the THEOREM STYLES block above and a colored box from above
 \newenvironment{theorem}{
   \begin{tBox}
     \begin{theoremeT}}{\end{theoremeT}
@@ -767,6 +789,15 @@
   \end{dBox}
 }
 
+\newenvironment{important-equation}{
+  \begin{eqBox}
+    \begin{equation}
+}{
+    \end{equation}
+  \end{eqBox}
+}
+
+
 %\newenvironment{example}{
 %  \begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}
 %  \end{exampleT}
@@ -785,7 +816,7 @@
 %-----------------------------------------------------------------------------
 
 \newenvironment{remark}{%
-  \par\small%\small % Reduce font size for remarks
+  \par\small % Reduce font size for remarks
   \vspace{4pt} % Vertical whitespace
   \begin{adjustwidth}{60pt}{30pt} % Left and right padding
     \hspace{-3pt}%
@@ -796,7 +827,7 @@
         circle,fill=ocre!25,
         font=\sffamily\bfseries,
         inner sep=3pt,outer sep=0pt]
-      at (-20pt,-10pt){\Huge\textcolor{ocre}{R}}; % Orange R in a circle
+      at (-20pt,-10pt){\Huge\textcolor{ocre}{!}}; % Orange R in a circle
     \end{tikzpicture}
     \advance\baselineskip -1pt% Reduce line spacing
 }{%

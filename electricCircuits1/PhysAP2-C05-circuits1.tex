@@ -35,70 +35,70 @@
 %      \item Assume to have negligible resistance
 %      \end{itemize}
 %    \end{itemize}
-%  
-%
-%
-%
-%
+
+
+
+
 \section{Electric Current}
-%
-%{Electric Current}
-%  In an electric circuit, a large number of charge ``carriers'' are pushed
-%  along by a small electrostatic force in a conductive material, creating an
-%  \textbf{electric current}. We can imagine positive charges moving from the
-%  positive terminal towards the negative terminal.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.85,thick]
-%      \fill[magenta!10] rectangle (7,3);
-%      \draw[very thick] (0,0)--(7,0);
-%      \draw[very thick] (0,3)--(7,3);
-%      
-%      \draw[fill=cyan!20] (1,.5) circle(.25) node{$+$};
-%      \draw[axes] (1.25,.5)--(1.75,.5);
-%
-%      \draw[fill=cyan!20] (3,.75) circle(.25) node{$+$};
-%      \draw[axes] (3.25,.75)--(3.75,.75);
-%
-%      \draw[fill=cyan!20] (6,1.75) circle(.25) node{$+$};
-%      \draw[axes] (6.25,1.75)--(6.75,1.75);
-%
-%      \draw[fill=cyan!20] (5,2.5) circle(.25) node{$+$};
-%      \draw[axes] (5.25,2.5)--(5.75,2.5);
-%
-%      \draw[fill=cyan!20] (4,1.75) circle(.25) node{$+$};
-%      \draw[axes] (4.25,1.75)--(4.75,1.75);
-%
-%      \draw[fill=cyan!20] (5.25,1) circle(.25) node{$+$};
-%      \draw[axes] (5.5,1)--(6,1);
-%
-%      \draw[fill=cyan!20] (2,1.5) circle(.25) node{$+$};
-%      \draw[axes] (2.25,1.5)--(2.75,1.5);
-%
-%      \draw[fill=cyan!20] (.5,2.5) circle(.25) node{$+$};
-%      \draw[axes] (.75,2.5)--(1.25,2.5);
-%
-%      \draw[fill=cyan!20] (2.5,2.25) circle(.25) node{$+$};
-%      \draw[axes] (2.75,2.25)--(3.25,2.25);
-%
-%      \node at (0,1.5)[left] {\huge$+$};
-%      \node at (7,1.5)[right]{\huge$-$};
-%    \end{tikzpicture}
-%  \end{center}
+
+In an electric circuit, a large number of charge ``carriers'' are pushed along
+by a small electrostatic force in a conductive material, creating an
+\textbf{electric current}. We can model positive charges moving from the
+positive terminal towards the negative terminal, as shown in
+Fig.~\ref{fig:current}.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.8,thick]
+    \fill[gray!30] rectangle (7,3);
+    \draw[very thick] (0,0)--(7,0);
+    \draw[very thick] (0,3)--(7,3);
+
+    \begin{scope}[magenta]
+      \draw[fill=magenta!10] (1,.5) circle (.25) node{$+$};
+      \draw[axes] (1.25,.5)--(1.75,.5);
+
+      \draw[fill=magenta!10] (3,.75) circle (.25) node{$+$};
+      \draw[axes] (3.25,.75)--(3.75,.75);
+
+      \draw[fill=magenta!10] (6,1.75) circle (.25) node{$+$};
+      \draw[axes] (6.25,1.75)--(6.75,1.75);
+
+      \draw[fill=magenta!10] (5,2.5) circle (.25) node{$+$};
+      \draw[axes] (5.25,2.5)--(5.75,2.5);
+
+      \draw[fill=magenta!10] (4,1.75) circle (.25) node{$+$};
+      \draw[axes] (4.25,1.75)--(4.75,1.75);
+
+      \draw[fill=magenta!10] (5.25,1) circle (.25) node{$+$};
+      \draw[axes] (5.5,1)--(6,1);
+
+      \draw[fill=magenta!10] (2,1.5) circle (.25) node{$+$};
+      \draw[axes] (2.25,1.5)--(2.75,1.5);
+
+      \draw[fill=magenta!10] (.5,2.5) circle (.25) node{$+$};
+      \draw[axes] (.75,2.5)--(1.25,2.5);
+
+      \draw[fill=magenta!10] (2.5,2.25) circle (.25) node{$+$};
+      \draw[axes] (2.75,2.25)--(3.25,2.25);
+    \end{scope}
+
+    \node at (0,1.5)[left] {\huge$+$};
+    \node at (7,1.5)[right]{\huge$-$};
+  \end{tikzpicture}
+  \caption{Model of positive charges moving from the positive towards
+    the negative terminal}
+  \label{fig:current}
+\end{figure}
+
 %  In a metal conductor, \textbf{charge carriers} are freely-moving electrons.
 %  But in other applications protons or ions can also generate a current.
-%
-%
-%
-%
-%\section{Electrical Current}
+
 The average \textbf{electrical current} $I_\text{avg}$ through conductor is the
 amount of charges $Q$ that passes through a point during a finite time interval
 $\Delta t$:
-\begin{equation}
-  \boxed{
-    I_\text{avg}=\frac Q{\Delta t}
-  }
-\end{equation}
+\begin{important-equation}
+  I_\text{avg}=\frac Q{\Delta t}
+\end{important-equation}
 Generally, the current through a conductor is a function of time ($I=I(t)$),
 and $+/-$ signs may be used to indicate direction of the current.
 
@@ -108,37 +108,46 @@ and $+/-$ signs may be used to indicate direction of the current.
 
 In a \textbf{direct current} (\textbf{DC}), the flow of charges is always in
 the same direction, but the current itself does not have to be constant in
-time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
+time. The examples in Fig.~\ref{fig:DC-examples} shows different types of
+direct currents. Circuits with only resistors has constant, time-independent
+current, like in Fig.~\ref{fig:resistive-dc}. Circuits with charging or
+discharging capacitors have an exponentially decaying current, as shown in
+Fig.~\ref{fig:capacitive-dc}. Circuit with capacitors and inductors has a
+current that has a sinusoidal component, as shown in
+Fig.~\ref{fig:unductive-dc}.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.28\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.85]
+    \begin{tikzpicture}[scale=.8]
       \draw[red,ultra thick] (0,3)--(4,3);
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,4) node[above]{$I$};
     \end{tikzpicture}
     \caption{Resistive circuits}
+    \label{fig:resistive-dc}
   \end{subfigure}
   \begin{subfigure}{.34\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.85]
+    \begin{tikzpicture}[scale=.8]
       \draw[smooth,samples=20,domain=0:3.5,functions]
       plot(\x,{3*(exp(-.8*\x))});
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,4) node[above]{$I$};
     \end{tikzpicture}
     \caption{Resistive \& capacitive circuits}
+    \label{fig:capacitive-dc}
   \end{subfigure}
   \begin{subfigure}{.34\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.85]
+    \begin{tikzpicture}[scale=.8]
       \draw[axes] (0,0)--(4,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,4) node[above]{$I$};
       \draw[smooth,samples=20,domain=0:3.5,functions]
       plot(\x,{sin(120*\x)+2});
     \end{tikzpicture}
     \caption{Capacitive \& inductive circuits}
+    \label{fig:unductive-dc}
   \end{subfigure}
   \caption{Examples of direct-current circuits}
   \label{fig:DC-examples}
@@ -148,13 +157,13 @@ time. The examples in Fig.~\ref{fig:DC-examples} of direct currents.
 
 \subsection{Alternating Current}
 
-In an \textbf{alternating current} (\textbf{AC}), the flow of charges changes
-in direction, \emph{usually} as a sinusoidal function of time.
+In contrast, in an \textbf{alternating current} (\textbf{AC}), the flow of
+charges changes in direction, \emph{usually} as a sinusoidal function of time.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.35\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.85]
+    \begin{tikzpicture}[scale=.8]
       \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
       \draw[axes] (0,0)--(5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$I$};
@@ -162,12 +171,13 @@ in direction, \emph{usually} as a sinusoidal function of time.
   \end{subfigure}
   \begin{subfigure}{.35\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.85]
+    \begin{tikzpicture}[scale=.8]
       \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
       \draw[axes] (0,0)--(5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$V$};
     \end{tikzpicture}
   \end{subfigure}
+  \caption{Current and voltage from an alternating source}
 \end{figure}
 
 The power outlet in North America are all AC, with a rms (root-mean-square)
@@ -235,11 +245,43 @@ $n=\SI{8.5e28}{\per\metre\cubed}$.
 %%  \begin{equation}
 %%    \boxed{J=nev_d}
 %%  }
-%%
-%
-%
 
-\subsection{Modelling Electric Current}
+
+\subsection{Electric Current in Metal Conductors}
+
+In metal conductors, atoms are bonded to each other by \textbf{metallic bonds}.
+The atoms are arranged in a lattice-crystalline structure, and they share a
+cloud of valence electrons. Depending on the element, each atom may have one or
+two ``free electrons'' that can move under a very weak electric field inside
+the material. In other words, the charge carriers are negatively-charged
+electrons. Materials based on \textbf{ionic} and \textbf{covalent} bonds do not
+conduct electricity because neither have any free electrons.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.3]
+    \draw grid (3,2);
+    \foreach \x in {0,...,3}{
+      \foreach \y in {0,1,2}
+      \draw[thick,magenta,fill=magenta!10] (\x,\y) circle (.2) node{\large$+$};
+    }
+    \begin{scope}[thick, cyan,fill=cyan!10]
+      \draw (.2,1.6) circle (.08) node{\scriptsize$-$};
+      \draw (.7,1.3) circle (.08) node{\scriptsize$-$};
+      \draw (1.3,1.5) circle (.08) node{\scriptsize$-$};
+      \draw (1.7,1.7) circle (.08) node{\scriptsize$-$};
+      \draw (2.5,2.2) circle (.08) node{\scriptsize$-$};
+      \draw (2.6,1.4) circle (.08) node{\scriptsize$-$};
+      \draw (.3,.4) circle (.08) node{\scriptsize$-$};
+      \draw (.95,.55) circle (.08) node{\scriptsize$-$};
+      \draw (1.6,.8) circle (.08) node{\scriptsize$-$};
+      \draw (1.4,.3) circle (.08) node{\scriptsize$-$};
+      \draw (2.2,.6) circle (.08) node{\scriptsize$-$};
+      \draw (2.9,.45) circle (.08) node{\scriptsize$-$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Atoms and electrons in metallic bonds}.
+\end{figure}
+
 
 \textbf{Conventional current} flows from the positive terminal (cathode) to the
 negative terminal (anode). The flow  of current is assumed to be a continuous
@@ -274,13 +316,6 @@ we use the conventional current for simplicity.
     \end{tikzpicture}
     \caption{Electric current modelled as continuously flow of charges}    
   \end{subfigure}
-%    \end{center}
-%    \vspace{-.1in}{\scriptsize\par
-%    }
-%    
-%    \column{.34\textwidth}
-%    \color{red}\begin{center}
-%      Model: motion of (+) charges
   \begin{subfigure}{.32\textwidth}
     \centering
     \begin{tikzpicture}[scale=.4]
@@ -340,6 +375,53 @@ we use the conventional current for simplicity.
 \end{figure}
 
 
+
+\subsection{Electric Current in Solutions}
+
+Materials that are formed by ionic bonds (e.g.\ sodium chloride, or table salt)
+do not conduct electricity, but they can be dissolved, for example, in water,
+and the solution containing the ions is now conductive. Positive ions move
+towards negative terminal; while negative ions move towards positive terminal,
+as shown in Fig.~\ref{fig:current-in-solutions}.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.9]
+    \draw[fill=cyan!20] rectangle (6,2.5);
+    \foreach \x in {.4,5.6} \draw[line width=3] (\x,.5)--(\x,2);
+    \draw[thick] (.4,1.25)--+(-1.5,0) node[left]{\large$+$};
+    \draw[thick] (5.6,1.25)--+(1.5,0) node[right]{\large$-$};
+
+    \begin{scope}[thick,magenta,fill=magenta!10]
+      \draw[vectors] (1.2,2)--+(.5,0); \draw (1,2) circle (.2) node{$+$};
+      \draw[vectors] (2.2,1.3)--+(.5,0); \draw (2,1.3) circle (.2) node{$+$};
+      \draw[vectors] (3,.4)--+(.5,0); \draw (2.8,.4) circle (.2) node{$+$};
+      \draw[vectors] (4.2,1.7)--+(.5,0); \draw (4,1.7) circle (.2) node{$+$};
+      \draw[vectors] (3.5,1)--+(.5,0); \draw (3.3,1) circle (.2) node{$+$};
+      \draw[vectors] (5,1.3)--+(.5,0); \draw (4.8,1.3) circle (.2) node{$+$};
+    \end{scope}
+    \begin{scope}[thick,cyan,fill=cyan!10]
+      \draw[vectors] (1,1.2)--+(-.5,0);
+      \draw (1.2,1.2) circle (.18) node{$-$};
+      
+      \draw[vectors] (1.7,.7)--+(-.5,0);
+      \draw (1.9,.7) circle (.18) node{$-$};
+
+      \draw[vectors] (2.8,2)--+(-.5,0);
+      \draw (3,2) circle (.18) node{$-$};
+      
+      \draw[vectors] (3.1,1.6)--+(-.5,0);
+      \draw (3.3,1.6) circle (.18) node{$-$};
+      
+      \draw[vectors] (4.5,.5)--+(-.5,0);
+      \draw (4.7,.5) circle (.18) node{$-$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Motion of charges in a solution}
+  \label{fig:current-in-solutions}
+\end{figure}
+
+
+
 %{Conventional Current vs.\ Electron Flow}
 
 %  We have \emph{assumed} that the charge carriers are positively charged, which
@@ -368,11 +450,11 @@ we use the conventional current for simplicity.
 %      }
 %    \end{tikzpicture}
 %  \end{center}
-% 
-%
-%
-%
+
+
+
 \subsection{Electric Field Inside the Wire}
+
 Inside the wire, there is a weak electric field, which exerts a force on the
 free electrons as they move in the wire
 \begin{itemize}
@@ -394,11 +476,9 @@ Georg Ohm discovered that when a current is passed through a piece of metal
 conductor, the voltage (electric potential difference) $V$ across the two ends
 of the metal is proportional to the amount of current ($I$) through it. This is
 known as \textbf{Ohm's law}:
-\begin{equation}
-  \boxed{
-    V=IR
-  }
-\end{equation}
+\begin{important-equation}
+  V=IR
+\end{important-equation}
 The proportionality between voltage and current is called \textbf{resistance}.
 We now know that electrical resistance is caused by the free electrons'
 collisions with the atoms in the metal. The collisions transfer kinetic energy
@@ -419,6 +499,10 @@ learned, in Section~\ref{sec:heat-transfer}, is a form of heat transfer).
 %  A load is considered ``ohmic'' if it obeys Ohm's law.
 Note that Ohm's law is \emph{not} a fundamental law in physics; it only applies
 to mostly metal conductors.
+
+
+
+\subsection{Ohmic Devices}
 
 Electrical devices where the relationship between voltage across the device and
 the current through the device is linear are called \textbf{ohmic devices}.
@@ -453,6 +537,10 @@ Fig.~\ref{fig:ohmic-relationship}.
     devices.}
   \label{fig:i-vs-v-diagrams}
 \end{figure}
+
+
+\subsection{Non-Ohmic Devices}
+
 Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
 between voltage and current is \emph{not} linear, as shown in
 Fig.~\ref{fig:non-ohmic-relationship}. Semi-conductor devices such as diodes
@@ -460,8 +548,8 @@ Fig.~\ref{fig:non-ohmic-relationship}. Semi-conductor devices such as diodes
 if it is stalled (i.e.\ when current passes through the current but the motor
 shaft is not turning).
 \begin{remark}
-  For clarification, in the graphs in Fig.~\ref{fig:i-vs-v-diagrams}, we have
-  plotted $I$ vs.\ $V$. This is because we usually alter the voltage as an
+  For clarification, the graphs in Fig.~\ref{fig:i-vs-v-diagrams} are plotted as
+  $I$ vs.\ $V$. This is because we usually alter the voltage as an
   \emph{input}, and then measure the resulting current in the circuit as an
   \emph{output}. From this point of view, it makes sense that $V$ is the
   independent variable, and $I$ is the dependent variable. You can, of course,
@@ -476,12 +564,10 @@ shaft is not turning).
 
 The resistance of a conductor is proportional to the resistivity $\rho$ and
 its length $L$, and inversely proportional to the cross-sectional area $A$:
-\begin{equation}
-  \boxed{
-    R=\rho\frac LA
-  }
+\begin{important-equation}
+  R=\rho\frac LA
   \label{eq:resistivity}
-\end{equation}
+\end{important-equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -565,7 +651,7 @@ and the current density $J$:
 
 
 
-\subsection{Power Dissipated by a Load}
+\section{Power Dissipated by a Load}
 Average power $P$ is the rate at which work $W$ is done, and from
 electrostatics, the change in electric potential energy $\Delta E_q$ is
 proportional to the amount of charge $q$ and the voltage $V$. This gives a
@@ -584,12 +670,8 @@ very simple expression for power through a resistor:
 %      Voltage across the load & $V$ & \si\volt
 %    \end{tabular}
 %  \end{center}
-This relationship applies regardless of whether the loads are ohmic or not
-%
-%
-%
-%
-%{Other Equations for Power}
+This relationship applies regardless of whether the loads are ohmic or not.
+
 Combining Ohm's law ($V=IR$) with power equation, we get two additional
 expressions for power through a resistor:
 \begin{equation}
@@ -659,11 +741,16 @@ For example, an energy sources may include:
     \end{tikzpicture}
     \caption{AC voltage source}
   \end{subfigure}
+  \caption{Examples of energy sources in an electric circuit}
 \end{figure}
 
-A \textbf{capacitor} can also act as a energy source. When a capacitor is
-charged---with charge $+Q$ on one plate, and $-Q$ on the other, a voltage is
-generated, according to the equation $V=Q/C$ (studied in
+In voltaic cells and batteries, the \emph{emf} is controlled chemically; the
+raw \emph{emf} output from each solar cell may vary, but the overall
+\emph{emph} from a solar panel is generally controlled by a a device called a
+\emph{maximum power-point tracker}; a generic DC voltage may not have a
+constant \emph{emf}. A \textbf{capacitor} can also act as a energy source. When
+a capacitor is charged---with charge $+Q$ on one plate, and $-Q$ on the other,
+a voltage is generated, according to the equation $V=Q/C$ (studied in
 Chapter~\ref{chapter:capacitor}).
 %  \begin{center}
 %    \begin{tikzpicture}[thick]
@@ -671,17 +758,6 @@ Chapter~\ref{chapter:capacitor}).
 %    \end{tikzpicture}
 %  \end{center}
 %  Circuits with both resistors and capacitors will be studied next class.
-
-There are also other circuit devices that are not strictly necessary, but are
-very important/useful to ensure the reliable operation of an electrical
-circuit. For examples:
-\begin{figure}[ht]
-  \centering
-  \begin{tikzpicture}[thick,scale=1.2]
-    \draw (0,0) to[fuse,l=Fuse,o-o] (2,0);
-  \end{tikzpicture}
-  \caption{Circuit diagram of a fuse}  
-\end{figure}
 
 Loads are devices that transforms the electrical energy in the circuit into
 other forms of energy. Examples include:
@@ -731,23 +807,33 @@ other forms of energy. Examples include:
 %  \end{itemize}
 
 
-
-
-
-A \textbf{fuse} will break (stopping current from flowing) when the current
-through it exceeds its rating.
-
+There are also other circuit devices that are not strictly necessary, but are
+very important/useful to ensure the reliable operation of an electrical
+circuit. For example, a \textbf{fuse} will break (stopping current from
+flowing) when the current through it exceeds its rating. A switch allows the
+circuit to be manually turned on or off. (In the example, the switch is open
+and no current flows through it.)
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}[thick]
-    \draw (0,0) to[short,o-] (.7,0) to[short,-*]
-    +({.6*cos(40)},{.6*sin(40)});
-    \draw (1.3,0) to[short,*-o] (2,0);
-    \node at (1,.8){Switch};
-  \end{tikzpicture}
+  \begin{subfigure}{.35\textwidth}
+    \centering
+    \begin{tikzpicture}[thick,scale=1.2]
+      \draw (0,0) to[fuse,o-o] (2,0);
+    \end{tikzpicture}
+    \caption{Fuse}
+  \end{subfigure}
+  \begin{subfigure}{.35\textwidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[short,o-] (.7,0) to[short,-*]
+      +({.6*cos(40)},{.6*sin(40)});
+      \draw (1.3,0) to[short,*-o] (2,0);
+    \end{tikzpicture}
+    \caption{Switch}
+  \end{subfigure}
 \end{figure}
-A switch allows the circuit to be manually turned on or off. (In the example,
-the switch is open and no current flows through it.)
+
+
 
 
 
@@ -775,7 +861,7 @@ It can only be used when there is no active current in the circuit.
     \begin{tikzpicture}[scale=1.5]
       \draw[thick] (.2,0) to[R,l=$R$] (2.8,0);
       \draw[thick] (.7,0) to[short,*-](.7,-.8)--(2.3,-.8) to[short,-*] (2.3,0);
-      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{V};
+      \draw[very thick,fill=white] (1.5,-.8) circle (.3) node{V};
     \end{tikzpicture}
     \caption{Voltmeter}
     \label{fig:voltmeter}
@@ -784,8 +870,9 @@ It can only be used when there is no active current in the circuit.
     \centering
     \begin{tikzpicture}[scale=1.5]
       \draw[thick] (0,0) to[short] (1,0) to[R,l=$R$] (2.8,0);
-      \draw[very thick,fill=black!2] (.7,0) circle (.3) node{A};
+      \draw[very thick,fill=white] (.7,0) circle (.3) node{A};
     \end{tikzpicture}
+    \vspace{.47in}
     \caption{Ammeter}
     \label{fig:ammeter}
   \end{subfigure}
@@ -794,10 +881,11 @@ It can only be used when there is no active current in the circuit.
     \begin{tikzpicture}[scale=1.5]
       \draw[thick] (0,0) to[R,l=$R$] (3,0);
       \draw[thick] (.7,0) to[short,*-] (.7,-.8)--(2.3,-.8) to[short,-*](2.3,0);
-      \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{$\Omega$};
+      \draw[very thick,fill=white] (1.5,-.8) circle (.3) node{$\Omega$};
     \end{tikzpicture}
     \caption{Ohmmeter}
   \end{subfigure}
+  \caption{Circuit measuring devices}
 \end{figure}
 
 Voltmeters, ammeters and ohmmeters operate on the same principle using magnetic
@@ -943,66 +1031,54 @@ connected in parallel (side by side) must be the same:
 From the current law, we know that the total current is the current through all
 the resistors, which we can rewrite in terms of voltage and resistance using
 Ohm's law:
-%
-%    \begin{equation}
-%      I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
-%    }
-    
+\begin{equation*}
+  I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
+\end{equation*}
 But since we also know that $V_1=V_2=V_3=\cdots=V$ from the voltage law, we
 can re-write as
 \begin{equation*}
-  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)
+  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}+\cdots\right)
 \end{equation*}
 The equivalent resistance of a parallel circuit can found by applying Ohm's law
 and Kirchhoff's laws: The inverse of the equivalent resistance is the sum of
 the inverses of the individual resistances.
-\begin{equation}
-  \boxed{
-    \frac1{R_p}=\sum_i\frac1{R_i}
-  }
-\end{equation}
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Equivalent resistance in parallel & $R_p $ & \si\ohm \\
-%      Resistance of individual loads    & $R_i $ & \si\ohm
-%    \end{tabular}
-%  \end{center}
+\begin{important-equation}
+  \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
+\end{important-equation}
 Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
 it effectively increases the cross section area that the current passes through.
+The parallel equivalent resistance is \emph{always} lower than the lowest
+resistor.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[T]{.27\textwidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[R=$R$,o-o] (3,0);
+    \end{tikzpicture}
+    \caption{$R_\text{eq}=R$}
+  \end{subfigure}
+  \begin{subfigure}[T]{.27\textwidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
+      to[short,-o] (3,0);
+      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
+    \end{tikzpicture}
+    \caption{$R_\text{eq}=\dfrac R2$}
+  \end{subfigure}
+  \begin{subfigure}[T]{.27\textwidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[R=$R$,o-o] (3,0);
+      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
+      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
+    \end{tikzpicture}
+    \caption{$R_\text{eq}=\dfrac R3$}
+  \end{subfigure}
+\end{figure}
 
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%    \end{tikzpicture}
-%
-%    \vspace{.6in}$R_\text{eq}=R$
-%    
-%    \centering
-%
-%    \vspace{.2in}
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
-%      to[short,-o] (3,0);
-%      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
-%    \end{tikzpicture}
-%    
-%    \vspace{.27in}$R_\text{eq}=\dfrac R2$
-%    
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
-%      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
-%    \end{tikzpicture}
-%
-%    \vspace{.1in}$R_\text{eq}=\dfrac R3$
-%  
-%  \vspace{.1in}The parallel equivalent resistance is \emph{always} lower than
-%  the lowest resistor.
-%
-%
-%
-%
+
 \subsection{Resistors in Series}
 \begin{figure}[ht]
   \centering
@@ -1013,24 +1089,19 @@ it effectively increases the cross section area that the current passes through.
 \end{figure}
 The analysis for resistors in series is similar (but easier). The current
 through each resistor is the same:
-%  \eq{-.2in}{
-%    I_1=I_2=I_3=\cdots=I
-%  }
+\begin{equation*}
+  I_1=I_2=I_3=\cdots=I
+\end{equation*}
 And the total voltage drop across all resistor is therefore:
-%  \begin{equation}
-%    V=V_1+V_2+V_3+\cdots=I(\underbrace{R_1+R_2+R_3+\cdots}_{R_s})
-%  }
-%
-%
-%
-%
-%{Equivalent Resistance in Series}
+\begin{equation*}
+  V=V_1+V_2+V_3+\cdots=I(\underbracket[1pt]{R_1+R_2+R_3+\cdots}_{R_s})
+\end{equation*}
 Again, by applying Ohm's law and Kirchhoff's laws, we can find the equivalent
 resistance ($R_s$) in series: it is the sum of the resistances of the
 individual loads ($R_i$):
-\begin{equation}
-  \boxed{R_s=\sum_iR_i}
-\end{equation}
+\begin{important-equation}
+  R_s=\sum_{i=1}^NR_i
+\end{important-equation}
 Increasing the number of resistors in parallel \emph{increases} $R_s$ because
 it effectively increases the length of the resistor that the current passes
 through.
@@ -1055,7 +1126,7 @@ through.
   $R_4=\SI{8.0}\ohm$.
 
   \begin{minipage}{.43\linewidth}
-    \begin{tikzpicture}[thick,scale=1.1]
+    \begin{tikzpicture}[thick]
       \draw (5,3) to[battery,l_=$\mathcal E$] (0,3)--(0,0)--(.5,0)
       to[bulb=$R_2$] (3,0)--(5,0) to[bulb=$R_4$] (5,3);
       \draw (.5,0)--(.5,1.5) to[bulb=$R_1$] (3,1.5)--(3,0);
@@ -1108,7 +1179,6 @@ through.
 
 \section{Internal Resistance}
 
-%{Internal Resistance, Electromotive Force, Terminal Voltage}
 \textbf{Internal Resistance:}
 \begin{itemize}
 \item The resistance within the battery itself
@@ -1129,9 +1199,9 @@ through.
 The terminal voltage (or potential difference across the poles) of a battery
 is the difference of the emf ($\mathcal E$) of the battery and the potential
 drop across the internal resistance of the battery.
-\begin{equation}
-  \boxed{V_S = \mathcal{E}-V_\text{int}}
-\end{equation}
+\begin{important-equation}
+  V_S = \mathcal{E}-V_\text{int}
+\end{important-equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|l}
 %      \rowcolor{pink}

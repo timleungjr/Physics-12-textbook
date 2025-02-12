@@ -1,36 +1,42 @@
 %\section{Potential Energy \& Electric Potential}
 
 \section{Electrical Potential Energy}
-If you know calculus, you can easily find that the work done \emph{by} the
-electrostatic force $W_q$ when two charges move from a distance of $r_1$ to
-$r_2$:
+
+If an electrostatic force acts on a charge, and if the charge moves, then we
+can calculate the work done by the electrostatic force. Bear in mind that if
+the electrostatic forces come from point charges, as this charge moves, then
+both the magnitude and direction of $\mathbf F_q$ changes. Therefore, calculating
+the work done generally requires a fair amount of integral calculus. And if you
+know calculus, you can easily find that the work done \emph{by} the
+electrostatic force $W_q$ when two points charges move from a distance of $r_1$
+to $r_2$:
 \begin{equation}
   \underbracket[1pt]{{\color{magenta}W_q}=
-  \int_{\mathbf r_1}^{\mathbf r_2}\mathbf F_q\cdot d\mathbf r}_\text{definition using
+  \int_{\mathbf r_1}^{\mathbf r_2}\mathbf F_q\cdot \dl{\mathbf r}}_\text{definition using
       calculus}
-    =\cdots = kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}=\cdots
+    =\cdots = kq_1q_2\int_{r_1}^{r_2}\frac{\dl{r}}{r^2}=\cdots
     ={\color{magenta}-\Delta U_q}
 \end{equation}
-If you don't know calculus, all you need to know is the result: $U_q$ is
-defined as the \textbf{electric potential energy}:
-\begin{equation}
-  \boxed{
-    U_q=\frac{kq_1q_2}r
-  }
-\end{equation}
-Crucially, the electrostatic force is \emph{conservative} because the work done
-by the electrostatic force is equal to the negative change in electric
-potential energy:
-\begin{equation}
-  \boxed{
-    W_q=-\Delta U_q
-  }
-\end{equation}
+If you don't know calculus, all you need to know is that the work done by the
+electrostatic force results in the change in a potential energy $U_q$, defined
+as the \textbf{electric potential energy}. For a two-charge system, the energy
+stored is:
+\begin{important-equation}
+  U_q=\frac{kq_1q_2}r
+\end{important-equation}
+Crucially, because the work done by the electrostatic force is equal to the
+negative change in electric potential energy:
+\begin{important-equation}
+  W_q=-\Delta U_q
+  \label{eq:Uq}
+\end{important-equation}
+It means that the electrostatic force is, in fact \emph{conservative}.
 
 
-
-Like the gravitational potential energy (Eq.~\ref{eq:GPE-general}), the
-electric potential energy uses  $r=\infty$ as the reference. However, unlike
+Similar gravitational potential energy
+%(Eq.~\ref{eq:GPE-general}),
+Eq.~\ref{eq:Uq} uses  $r=\infty$ as the reference\footnote{The \emph{reference}
+is where $U=0$ by definition}. However, unlike
 gravitational potential energy which is \emph{always} negative, $U_q$ can be
 either positive or negative, because charges can be either positive or
 negative. When $U_g>0$ (energy stored between two positive charges or two
@@ -38,52 +44,49 @@ negative charges), external work must be done to bring the charges from
 $r=\infty$ to $r$. Conversely, if $U_q<0$ (energy stored between one positive
 and one negative charge), external work is done to pull two charges apart from
 $r$ to $r=\infty$.
+\begin{definition}
+  \begin{enumerate}[leftmargin=15pt]
+  \item When the work done by $\mathbf F_q$ is \emph{positive}, there is a
+    \emph{decreases} in electric potential energy by the same amount
+  \item When the work done by $\mathbf F_q$ is \emph{negative}, there is an
+    \emph{increases} in electric potential energy by the same amount
+  \item Work done is path independent: $W_q$ depends on the end points $r_1$ and
+    $r_2$, but not \emph{how} the charges move from $r_1$ to $r_2$
+  \item Only work done by $\mathbf F_q$ can change $U_q$
+  \end{enumerate}
+\end{definition}
 
 
-\begin{itemize}
-\item\emph{Positive} work by the electric force \emph{decreases} the
-  electric potential energy by the same amount
-\item \emph{Negative} work by the electric force \emph{increases} the
-  electric potential energy by the same amount
-\item Work done is path independent: $W_q$ depends on the end points $r_1$ and
-  $r_2$, but not \emph{how} the charges move from $r_1$ to $r_2$
-\item Only work done by $\mathbf F_q$ can change $U_q$
-\end{itemize}
+
+%
+%  To bring two charges together, I have to do work against electrostatic force,
+%  therefore, there is a gain/lost in \textbf{electric potential energy},
+%  defined as:
+%  
+%  \eq{-.1in}{
+%    \boxed{U_q=\frac{kq_1q_2}r}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Electric potential energy & $U_q$ & \si\joule \\
+%      Coulomb's constant & $k$ &\si{\newton\metre\squared\per\coulomb\squared}\\
+%      Electric charges          & $q_1$, $q_2$ & \si\coulomb \\
+%      Distance                  & $r$   & \si\metre
+%    \end{tabular}
+%  \end{center}
 
 
 
-
-%%\section{Electric Potential Energy}
-%%  To bring two charges together, I have to do work against electrostatic force,
-%%  therefore, there is a gain/lost in \textbf{electric potential energy},
-%%  defined as:
-%%  
-%%  \eq{-.1in}{
-%%    \boxed{U_q=\frac{kq_1q_2}r}
-%%  }
-%%  \begin{center}
-%%    \begin{tabular}{l|c|c}
-%%      \rowcolor{pink}
-%%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%%      Electric potential energy & $U_q$ & \si\joule \\
-%%      Coulomb's constant & $k$ &\si{\newton\metre\squared\per\coulomb\squared}\\
-%%      Electric charges          & $q_1$, $q_2$ & \si\coulomb \\
-%%      Distance                  & $r$   & \si\metre
-%%    \end{tabular}
-%%  \end{center}
-
+\subsection{Electric Potential Energy in More Than Two Charges}
 
 When there are more than two charges, the total potential energy is the total
 from all the \emph{systems of two charges}. For example, in the
-\emph{three}-charge system in Fig.~\ref{fig:3charge}, the total electric
-potential energy stored is given by:
-\begin{equation*}
-  U_q=\frac{kq_1q_2}{r_1} +\frac{kq_2q_3}{r_2} +\frac{kq_1q_3}{r_3}
-\end{equation*}
-
+\emph{three}-charge system in Fig.~\ref{fig:3charge},
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.2]
     \draw (0,0)--(1,-2) node[midway,fill=white]{$r_3$}
     --(-3,-2) node[midway,fill=white]{$r_2$}
     --(0,0) node[midway,fill=white]{$r_1$};
@@ -94,6 +97,13 @@ potential energy stored is given by:
   \caption{A three-charge system}
   \label{fig:3charge}
 \end{figure}
+there are three separate two-charge systems ($q_1$ and $q_2$, $q_2$ and $q_3$,
+and $q_1$ and $q_3$), therefore the total electric potential energy stored is
+given by:
+\begin{equation*}
+  U_q=\frac{kq_1q_2}{r_1} +\frac{kq_2q_3}{r_2} +\frac{kq_1q_3}{r_3}
+\end{equation*}
+In this example,
 $U_q$ may be positive or negative depending on the signs of $q_1$, $q_2$ and
 $q_3$. We can repeat this same exercise for the \emph{gravitational} potential
 energy stored between three \emph{masses}. The gravitational potential energy
@@ -137,37 +147,40 @@ This also applies to the general case of the gravitational potential energy:
 \end{equation}  
 This is also true for a charged particle inside an electric field, and the
 constant is called the \textbf{electric potential}, which is ``electric
-potential energy per unit charge''. For a point charge, it is defined as
-\begin{equation}
-  \boxed{
-    V=\frac{U_q}q=\frac{kq_s}r
-  }
-\end{equation}
+potential energy per unit charge'':
+\begin{important-equation}
+  V=\frac{U_q}q
+\end{important-equation}
+For a point source charge $q_s$, it is defined as
+\begin{important-equation}
+  V=\frac{kq_s}r
+\end{important-equation}
+
 The unit for electric potential is a \textbf{volt}\footnote{Named after
 Italian physicist Alessandro Volta} which is \emph{one joule per coulomb}:
 \begin{equation*}
   \SI1\volt=\SI1{\joule\per\coulomb}
 \end{equation*}
 
-%\section{Electric Potential}
-%  
-
-%    \centering
-%    \begin{tikzpicture}[scale=.8]
-%      \shade[poscharge] circle (.3) node[white]{$q$};
-%      \foreach \theta in {20,40,...,360}{
-%        \draw[rotate=\theta,axes,gray] (.3,0)--(3,0);
-%        \draw[rotate=\theta,gray,thick] (2.8,0)--(4,0);
-%      }
-%      \foreach \r in {1,2,3}{
-%        \draw[dashed,very thick,red!70!black] circle (\r);
-%        \node[red!70!black] at (0,-\r-.22){$V_\r$};
-%      }
-%    \end{tikzpicture}
-% 
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \shade[poscharge] circle (.3) node[white]{$q$};
+    \foreach \theta in {15,30,...,360}{
+      \draw[rotate=\theta,axes,lightgray] (.3,0)--(2.7,0);
+      \draw[rotate=\theta,thick,lightgray] (2.5,0)--(4,0);
+    }
+    \foreach \r in {1,2,3}{
+      \draw[dashed,thick,red!70!black] circle (\r);
+      \node[red!70!black,below] at (0,-\r){$V_\r$};
+    }
+  \end{tikzpicture}
+  \caption{Electric field and equipotential contours from a positive charge}
+  \label{fig:pt-charge-contours}
 %    \vspace{-.4in}\begin{displaymath}
 %      V_1>V_2>V_3
 %    \end{displaymath}
+\end{figure}
 
 For a point charge $q$, every point at a distance $r$ will have the same
 electric potential $V(r)$.
@@ -202,59 +215,6 @@ electric potential $V(r)$.
 %    in agreement with equation for electric potential energy
 
 
-
-\section{Electric Potential Difference}
-
-\begin{figure}[ht]
-  \centering
-  \begin{tikzpicture}[scale=.75]
-    \shade[poscharge] circle (.3) node[white]{$q$};
-    \foreach \theta in {30,60,...,360}{
-      \draw[rotate=\theta,axes,gray] (.3,0)--({7-4*sin(\theta/2)},0);
-    }
-    \draw[dashed,very thick,red!70!black,rotate=-70]
-    (2.5,0) arc (0:100:2.5) node[left]{$V_2$};
-    \draw[dashed,very thick,red!70!black,rotate=-60]
-    (5,0) arc (0:90:5) node[left]{$V_1$};
-    
-    \begin{scope}[rotate=-30]
-      \shade[negcharge] (2.5,0) circle (.23) node[white]{$Q$};
-      \draw[<->,thick] (.3,0)--(2.27,0)
-      node[midway,fill=white,rotate=-30]{$r_2$};
-    \end{scope}
-    \begin{scope}[rotate=15]
-      \shade[negcharge] (5,0) circle (.23) node[white]{$Q$};
-      \draw[<->,thick] (.3,0)--(4.77,0)
-      node[pos=2/3,fill=white,rotate=15]{$r_1$};
-    \end{scope}
-  \end{tikzpicture}
-\end{figure}
-When a charge is moved from $r_1$ to $r_2$, the change in electric potential
-energy is related to the change in electric potential by:
-\begin{equation}
-  \Delta U_q=U_2-U_1=Q\Delta V
-\end{equation}
-where $\Delta V$ is called the \textbf{potential difference}.
-  
-
-
-%\section{Electric Potential Difference (Voltage)}
-Movement of the charged particle inside the electric field changes the
-stored electric potential, i.e.\ \textbf{electric potential difference}. In
-circuits, it is referred to as the \textbf{voltage}:
-\begin{equation}
-  \boxed{\Delta V=\frac{\Delta U_q}q}
-\end{equation}
-We can relate $\Delta V$ to an equation that we knew from Grade 11 Physics.
-The energy dissipated in a resistor in a circuit $\Delta U_q$ to the voltage
-drop $\Delta V$ is given by:
-\begin{equation}
-  \Delta U_q=Q\Delta V
-\end{equation}
-
-
-
-
 %\section{Getting Those Names Right}
 %  \begin{itemize}
 %  \item Electric potential energy between point charges:
@@ -277,12 +237,12 @@ drop $\Delta V$ is given by:
 %
 %
 %
-%\section{Relating $U_q$, $\vec F_q$ and $\vec E$}
+%\section{Relating $U_q$, $\mathbf F_q$ and $\mathbf E$}
 %  From the work-energy theorem:
 %  \begin{itemize}  
-%  \item Electrostatic force $\vec F_q$ always points from high to low potential
+%  \item Electrostatic force $\mathbf F_q$ always points from high to low potential
 %    energy
-%  \item Similarly, electric field $\vec E$ points from high to low electric
+%  \item Similarly, electric field $\mathbf E$ points from high to low electric
 %    potential
 %  \item Electric field can also be expressed as the change of electric
 %    potential per unit distance, which has the unit
@@ -318,13 +278,14 @@ drop $\Delta V$ is given by:
 
 
 \begin{example}
+  \label{example:V}
   The diagram below shows three charges, $q_A=\SI{5.0}{\micro\coulomb}$,
   $q_B=\SI{-7.0}{\micro\coulomb}$, and $q_C=\SI{2.0}{\micro\coulomb}$, placed
   at three corners of a rectangle. Point $D$ is the fourth corner. What is the
   electric potential at point $D$?
   \begin{center}
     \vspace{-.25in}
-    \begin{tikzpicture}[scale=.75]
+    \begin{tikzpicture}[scale=.9]
       \draw rectangle (4,3);
       \shade[poscharge] (0,3) circle (.15) node[left]{$A$};
       \shade[poscharge] (4,3) circle (.15) node[right]{$B$};
@@ -354,10 +315,64 @@ drop $\Delta V$ is given by:
     \left(\frac{5.0}{3.0}-\frac{7.0}{5.0}+\frac{2.0}{4.0}\right)
     \times\frac{10^{-6}}{10^{-2}}=\boxed{\SI{1.234e5}{\volt}}
   \end{equation*}
-  But what does this mean? In the original configuration, there is already
-  energy stored between charges $A$ and $B$, between $B$ and $C$, and
-  between $A$ and $C$.
 \end{example}
+But what does the answer to Example~\ref{example:V} actually mean? In the
+original configuration, there is already electric potential energy stored
+between charges $A$ and $B$, between $B$ and $C$, and between $A$ and $C$.
+
+
+
+\section{Electric Potential Difference}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \shade[poscharge] circle (.3) node[white]{$Q$};
+    \foreach \theta in {15,30,...,360}{
+      \draw[rotate=\theta,axes,lightgray] (.3,0)--(2.7,0);
+      \draw[rotate=\theta,thick,lightgray] (2.5,0)--(4,0);
+      %\draw[rotate=\theta,axes,lightgray] (.3,0)--(2,0);
+      %\draw[rotate=\theta,thick,lightgray] (1.7,0)--({7-4.5*sin(\theta/2)},0);
+    }
+    \begin{scope}[dashed,thick,red!70!black]
+      \draw[rotate=-70] (2,0) arc (0:100:2) node[above]{$V_2$};
+      \draw[rotate=-60] (3.7,0) arc (0:90:3.7) node[above]{$V_1$};
+    \end{scope}
+    \begin{scope}[rotate=-30]
+      \shade[negcharge] (2,0) circle (.2) node[white]{$q$};
+      \draw[<->,thick] (.3,0)--(1.8,0) node[midway,fill=white,sloped]{$r_2$};
+    \end{scope}
+    \begin{scope}[rotate=15]
+      \shade[negcharge] (3.7,0) circle (.2) node[white]{$q$};
+      \draw[<->,thick] (.3,0)--(3.5,0) node[pos=2/3,fill=white,sloped]{$r_1$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+When a charge is moved from $r_1$ to $r_2$, the change in electric potential
+energy is related to the change in electric potential by:
+\begin{equation}
+  \Delta U_q=U_2-U_1=Q\Delta V
+\end{equation}
+where $\Delta V$ is called the \textbf{potential difference}.
+  
+
+
+%\section{Electric Potential Difference (Voltage)}
+Movement of the charged particle inside the electric field changes the
+stored electric potential, i.e.\ \textbf{electric potential difference}. In
+circuits, it is referred to as the \textbf{voltage}:
+\begin{important-equation}
+  \Delta V=\frac{\Delta U_q}q
+\end{important-equation}
+We can relate $\Delta V$ to an equation that we knew from Grade 11 Physics.
+The energy dissipated in a resistor in a circuit $\Delta U_q$ to the voltage
+drop $\Delta V$ is given by:
+\begin{equation}
+  \Delta U_q=Q\Delta V
+\end{equation}
+
+
+
 
 
 
@@ -402,27 +417,23 @@ drop $\Delta V$ is given by:
     \draw[thick] (8.2,.8)..controls(8.15,.4)..(8,.1);
   \end{tikzpicture}
 \end{center}
-The electric field $\vec E$ between two charged parallel plates is uniform at
+The electric field $\mathbf E$ between two charged parallel plates is uniform at
 all points between the parallel plates, independent of position. The magnitude
 is:
-\begin{equation}
-  \boxed{
-    E=\frac\sigma{\epsilon_0}
-  }
-\end{equation}
+\begin{important-equation}
+  E=\frac\sigma{\epsilon_0}\quad\quad\text{(parallel plates)}
+\end{important-equation}
 where $\sigma=Q/A$ is the \textbf{surface charge density}, and
-$\epsilon_0=\SI{8.85e-12}{\coulomb\squared\per\newton.\metre\squared}$ is a
-universal constant called the \textbf{permittivity of free space}. $\mathbf E$
-outside the plates is nearly zero, except for the fringe effects at the edges
-of the plates.
+%$\epsilon_0=\SI{8.85e-12}{\coulomb\squared\per\newton.\metre\squared}$ is a
+%universal constant called the \textbf{permittivity of free space}.
+$\mathbf E$ outside the plates is nearly zero, except for the fringe effects
+at the edges of the plates.
 
 Between parallel plates, there is a simple relationship between electric
 field, voltage, and the distance between the plates:
-\begin{equation}
-  \boxed{
-    E=\frac{\Delta V}d
-  }
-\end{equation}
+\begin{important-equation}
+  E=\frac{\Delta V}d\quad\quad\text{(parallel plates)}
+\end{important-equation}
 %\begin{center}
 %  \begin{tabular}{l|c|c}
 %    \rowcolor{pink}
