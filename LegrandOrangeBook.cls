@@ -79,6 +79,9 @@
 
 \usepackage{microtype} % Improve typography
 
+\usepackage{pgfplots}
+\usepgfplotslibrary{polar}
+
 %-----------------------------------------------------------------------------
 %	HEADERS AND FOOTERS
 %-----------------------------------------------------------------------------

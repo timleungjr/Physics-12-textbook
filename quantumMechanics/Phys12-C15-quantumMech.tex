@@ -1,4 +1,5 @@
-\chapter{Introduction to Quantum Mechanics}
+%\chapter{Introduction to Quantum Mechanics}
+\chapter{Quantum Mechanics}
 \label{chapter:quantum}
 
 
@@ -32,125 +33,448 @@ But now we're going to find out that things aren't as simple as it seems.
 %
 %
 \section{Blackbody Radiation}
+It has been well understood by blacksmiths for centuries that when metals are
+heated, the brightness and colour of its glow depends only on its temperature,
+and not the type of metal itself. An example is shown in
+Fig.~\ref{fig:glowing-metal}. However, there was no physics that could explain
+this phenomenon, until the concept of \textbf{blackbody radiation} was
+proposed by Gustav Kirchhoff in 1860, about the same time when Maxwell's
+equations for electrodynamics were developed.
+%\item Think of a box (``cavity'') with a mirror inside, and a hole where
+%  light (EM radiation) is allowed in
+%\item Some of the light reflects inside the cavity, and some gets absorbed
+%  by the blackbody
+%\item Eventually all the light inside the cavity is absorbed
 \begin{figure}[ht]
   \centering
-  \pic{.4}{quantumMechanics/graphics/Black-body_realization}
+  \pic{.6}{quantumMechanics/graphics/Glowing_metal}
+  \caption{Metals glow when heated}
+  \labwel{fig:glowing-metal}
 \end{figure}
+A blackbody is an idealized object that absorbs all incident electromagnetic
+radiation, regardless of frequency or angle of incidence.
 
+
+%  \begin{columns}
+%    \column{.25\textwidth}
+%    \pic1{blackbody1}
+%     
+%    \column{.75\textwidth}
 \begin{itemize}
-\item The concept was coined by Gustav Kirchhoff in 1860
-\item An idealized object that absorbs all incident EM radiation
-\item Model of a blackbody:
-  \begin{itemize}
-  \item A box (``cavity'') with a mirror inside, and a hole where
-    light (EM radiation) is allowed in
-  \item Some of the light reflects inside the cavity; some gets absorbed
-    by the cavity
-  \item Eventually all the light inside the cavity is absorbed
-  \end{itemize}
-
-%    \pic{1.2}{graphics/Black-body_realization}
+\item The concept was coined by 
+%\end{itemize}
+%
+%
+%
+%\begin{frame}{Blackbody Radiation}
+%  \begin{columns}
+%    \column{.25\textwidth}
+%    \pic1{blackbody1}
 %    
-%    \column{.8\textwidth}
-
-\item A blackbody is in thermal equilibrium
-  \begin{itemize}
-  \item All of the absorbed energy is then immediately radiated back as EM
-    radiation
-  \item The spectral distribution depends on temperature
-  \end{itemize}
-\item A blackbody at room temperature appears black, because most of the
-  radiative energy is infrared and invisible to the human eye
-\item Thermal radiation spontaneously emitted by many ordinary objects can
+%    \column{.75\textwidth}
+%    \begin{itemize}
+\item The object is in thermal equilibrium (recall thermodynamics from
+  Classes \#1 and \#2); all of the absorbed  energy is then
+  \emph{immediately} radiated back as EM radiation
+\item The spectral distribution depends only on temperature
+\item A blackbody at room temperature appears black, as most of the
+  radiation is infrared and cannot be perceived by the human eye
+\item Radiation spontaneously emitted by many ordinary objects can
   be approximated as blackbody radiation 
 \end{itemize}
-%  
-%
-%
-%
-%
-%\begin{frame}{Raleigh-Jeans Law and the Ultraviolet Catastrophe}
-%  
-%    \column{.55\textwidth}
-\begin{itemize}
-\item Based on classical thermodynamics
-\item Agrees with experimental results for long wavelengths, but the
-  equation predicts that short wavelengths (e.g.\ ultraviolet radiation,
-  x-ray) will have infinite intensity
-\item Known as \textbf{``ultraviolet catastrophe''}
-\end{itemize}
-%
-%    \column{.45\textwidth}
-%    \pic1{graphics/1280px-Black_body}
-  
 
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.2]
+    \def\N{100}
+    \def\xmax{3100}
+    \def\ymax{1.36e10}
+
+    % RAINBOW
+    \foreach \lambda in {430,432,...,750}{
+      \definecolor{tmpcolor}{wave}{\lambda}
+      \colorlet{mycolor}[rgb]{tmpcolor}
+      \draw[thick,mycolor,opacity=.3]
+      (\lambda/435+.41,.39)--(\lambda/435+.41,5);
+    }
+  
+    \begin{axis}[
+        every axis plot/.style={
+          thick,mark=none,samples=\N,domain=5:\xmax,smooth},
+        xmin=(-.05*\xmax), xmax=(1.05*\xmax),
+        ymin=(-.08*\ymax), ymax=(1.08*\ymax),
+        restrict y to domain=0:\ymax,
+        axis lines=middle,
+        %axis line style=thick,
+        %tick style={black,thick},
+        max space between ticks=26,
+        xlabel={Wavelength $\lambda$ [nm]},
+        ylabel={Power $P$ [kW/sr\,m$^2$\,nm]},
+        xlabel style={at={(rel axis cs:.5,0)},below=3pt},
+        ylabel style={at={(rel axis cs:-.132,.5)},rotate=90},
+        width=10cm, height=7cm,
+        tick scale binop=\times,
+        every y tick scale label/.style={at={(rel axis cs:0,1)},anchor=south}
+      ]
+      
+      % PLANCK
+      \addplot[red] {planck(x,3000)};
+      \addplot[orange] {planck(x,4000)};
+      \addplot[blue] {planck(x,5000)};
+      
+      % MAXIMUM (Wien's displacement law)
+      \addplot[very thick,variable=T,domain=2200:5200]
+      ({lampeak(T)},{planck(lampeak(T),T)});
+    \end{axis}
+      
+    % LABELS
+    \node[scale=.8,red] at (3,.85) {\SI{3000}\kelvin};
+    \node[scale=.8,orange] at (2.6,2) {\SI{4000}\kelvin};
+    \node[scale=.8,blue] at (2.8,4) {\SI{5000}\kelvin};
+
+    \fill (2.77,0.71) circle (2pt);
+    \fill (2.17,1.81) circle (2pt);
+    \fill (1.82,4.75) circle (2pt);
+  \end{tikzpicture}
+  \caption{Spectral radiance of the blackbody at various temperatures}
+\end{figure}
+
+As temperature of the blackbody increases: Radiation intensity increases (i.e.\
+the object glows brighter). The peak shifts towards shorter wavelengths (i.e.\
+colour become more bluish). The peak of the curve is predicted by
+\textbf{Wien's displacement law} (black line)
+
+
+
+\subsection{Rayleigh-Jeans Law}
+
+By 1899, the best explanation of the blackbody radiation is the
+\textbf{Rayleigh-Jeans law}. Based on established physics: standing waves,
+Maxwell's unified laws of electrodynamics, and thermodynamics.
+      %\footnote{If you are interested, and
+      %have background in calculus, you can find a fairly simple explanation
+      %via \href{https://hyperphysics.gsu.edu/hbase/mod6.html}
+      %{hyperphysics.gsu.edu/hbase/mod6.html})}
+
+Rayleigh-Jeans law predict that the energy per unit volume per unit wavelength
+is:
+\begin{equation}
+  P(\lambda,T)=\frac{8\pi k_BT}{\lambda^4}
+\end{equation}
+    
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \def\N{100}
+    \def\xmax{3100}
+    \def\ymax{1.36e10}
+
+    % RAINBOW
+    \foreach \lambda in {430,432,...,750}{
+      \definecolor{tmpcolor}{wave}{\lambda}
+      \colorlet{mycolor}[rgb]{tmpcolor}
+      \draw[thick,mycolor,opacity=.3]
+      (\lambda/435+.41,.39)--(\lambda/435+.41,5);
+    }
+  
+    \begin{axis}[
+        every axis plot/.style={
+          mark=none,samples=\N,domain=5:\xmax,smooth},
+        xmin=(-.05*\xmax), xmax=(1.05*\xmax),
+        ymin=(-.08*\ymax), ymax=(1.08*\ymax),
+        restrict y to domain=0:\ymax,
+        axis lines=middle,
+        axis line style=thick,
+        tick style={black,thick},
+        max space between ticks=26,
+        xlabel={Wavelength $\lambda$ (nm)},
+        ylabel={Power $P$ (kW/sr\,m$^2$\,nm)},
+        xlabel style={at={(rel axis cs:.5,0)},below=2pt},
+        ylabel style={at={(rel axis cs:-.12,.5)},rotate=90},
+        width=10cm, height=7cm,
+        tick scale binop=\times,
+        every y tick scale label/.style={at={(rel axis cs:0,1)},anchor=south}
+      ]
+      
+      % PLANCK
+      \addplot[black] {planck(x,3000)};
+      \addplot[black] {planck(x,4000)};
+      \addplot[black] {planck(x,5000)};
+      \addplot[red,ultra thick,domain=1000:3500] {rayleighjeans(x,5000)};
+    \end{axis}
+      
+    % LABELS
+    \node[scale=.7] at (3,.85) {\SI{3000}\kelvin};
+    \node[scale=.7] at (2.6,2) {\SI{4000}\kelvin};
+    \node[scale=.7] at (2.8,4) {\SI{5000}\kelvin};
+    \node[red,scale=.7] at (5.6,3) {\SI{5000}{\kelvin} Rayleigh-Jeans};
+  \end{tikzpicture}
+\end{figure}
+The law agrees with experimental results for long wavelengths (low frequency),
+but shorter wavelengths (e.g.\ ultraviolet waves) seem to have infinite
+intensity. This was known as the \emph{ultraviolet catastrophe}.
+
+
+The equation that \emph{best} predicted the spectral radiance for blackbody
+radiation was \textbf{Wien's distribution law}.
+    %which predicts the peaks wavelength of
+    %the spectral distribution curve, and
+It fits experimental data for shorter wavelengths, but not for lower
+frequencies (low wavelengths).
+\begin{itemize}
+\item This law is an ``empirical function'' to fit the data
+\end{itemize}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \def\N{100}
+    \def\xmax{3100}
+    \def\ymax{1.36e10}
+
+    % RAINBOW
+    \foreach \lambda in {430,432,...,750}{
+      \definecolor{tmpcolor}{wave}{\lambda}
+      \colorlet{mycolor}[rgb]{tmpcolor}
+      \draw[thick,mycolor,opacity=.03]
+      (\lambda/435+.41,.39)--(\lambda/435+.41,5);
+    }
+  
+    \begin{axis}[
+        every axis plot/.style={
+          mark=none,samples=\N,domain=5:\xmax,smooth},
+        title={Spectral Radiance at 5000 K},
+        xmin=(-.02*\xmax), xmax=(1.02*\xmax),
+        ymin=(-.05*\ymax), ymax=(1.08*\ymax),
+        restrict y to domain=0:\ymax,
+        axis lines=middle,
+        %axis line style=thick,
+        %tick style={black,thick},
+        max space between ticks=26,
+        xlabel={Wavelength $\lambda$ [nm]},
+        ylabel={Power $P$ [kW/sr\,m$^2$\,nm]},
+        xlabel style={at={(rel axis cs:.5,0)},below=3pt},
+        ylabel style={at={(rel axis cs:-.12,.5)},rotate=90},
+        width=10cm, height=7cm,
+        tick scale binop=\times,
+        every y tick scale label/.style={at={(rel axis cs:0,1)},anchor=south}
+      ]
+      
+      % PLANCK
+      \addplot[black] {planck(x,5000)};
+      \addplot[very thick,red] {wien(x,5000)};
+    \end{axis}
+      
+    % LABELS
+    \node[scale=.8,red] at (2.8,2) {Wien};
+  \end{tikzpicture}
+\end{figure}
 
 
 \section{Quantization of Energy}
-%  
-%    \column{.2\textwidth}
-%    \centering
-%    \pic1{graphics/20973-050-F6EEBFF1}\\
+
+In 1900, German physicist Max Planck began searching for a solution to the
+blackbody radiation problem
+%\begin{columns}
+%    \column{.16\textwidth}
+%    \pic{1.2}{20973-050-F6EEBFF1}\\
 %    {\footnotesize Max Planck}
 %    
 %    \column{.8\textwidth}
 \begin{itemize}
-\item Made a strange modification in the classical calculations
-\item Derived a function of $P(\lambda,T)$ that agreed with experimental
-  data for all wavelengths
-\item First found an empirical function to fit the data
-\item Then searched for a way to modify the usual calculations
+\item First improved on Wien's distributon law with better agreement with
+  experimental data
+\item Then derived the distribution function $P(\lambda,T)$, called
+  \textbf{Planck's law}:
+  \begin{equation}
+    P(\lambda,T)=\frac{2hc^2}{\lambda^5}
+    \dfrac1{\exp\left[\frac{hc}{\lambda k_BT}\right]-1}
+  \end{equation}
+\item Then he searched for a way to explain the physics
+\item Turned to a new branch of physics called
+  \textbf{statistical mechanics} (it is how the Maxwell-Boltzmann function
+  is derived in Class \#1)
 \end{itemize}
 
-Theorized that the walls of a blackbody are composed of subatomic electric
+A blackbody radiates because the walls are composed of subatomic electric
 oscillators (``resonators'')
 \begin{itemize}
 \item The nature of these resonators were unknown
 \item Billions of resonators vibrating at different frequencies, and
-\item Emitting radiation at those frequencies (remember: for a wave, the
-  frequency of source disturbance is the frequency of the wave)
-\item In classical physics, resonators can have any energy, and change
-  its amplitude continuously
+  therefore
+\item Emitting radiation at those frequencies (from Class \#9, the frequency
+  of disturbance at the source is the frequency of the wave)
+\item In classical physics, the resonators can have any value of energy, and
+  change its amplitude continuously
 \end{itemize}
-To agree with experiments, Planck theorized that energy emitted by a
+For Planck's law to make sense, Planck had to argue that energy emitted each
 resonator must be \emph{discrete}
 \begin{itemize}
-\item When energy is emitted from a resonator, it drops to the next
-  lower energy level
+\item When energy is emitted from a resonator, it drops to the next lower
+  (discrete) energy level
 \end{itemize}
 
-The total energy $E_\text{res}$ of a harmonic oscillator is proportional
-to the integral multiples of its natural frequency $f$:
+The total energy of \emph{any} harmonic oscillator can only be whole-number
+multiples of $hf$:
 \begin{equation}
-  \boxed{E_\text{res}=nhf}
+  \boxed{E_\text{res}=nhf}\quad n=0,1,2,\ldots
 \end{equation}
-%    \begin{center}
-%      \begin{tabular}{l|c|c}
-%        \rowcolor{pink}
-%        \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%        Energy of the resonator & $E_\text{res}$ & \si\joule\\
-%        Energy level            & $n$ & (no unit)\\
-%        Planck's constant       & $h$ & \si{\joule\second}\\
-%        Frequency of resonator  & $f$ & \si\hertz
-%      \end{tabular}
-%    \end{center}
+\begin{center}
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+    Energy of the resonator & $E_\text{res}$ & \si\joule\\
+    Energy level            & $n$ & (no unit)\\
+    Planck's constant      & $h$ & \si{\joule\second}\\
+    Frequency of resonator & $f$ & \si\hertz
+  \end{tabular}
+\end{center}
+\textbf{Planck's constant} is experimentally determined to be
+$h=\SI{6.626e-34}{\joule\second}$
 
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}[xscale=.55,yscale=.75]
-    \foreach \y in {0,1,...,4} {
-      \draw[very thick] (0,\y)--(4,\y)
-      node[pos=0,left]{$\y$} node[right]{$\y hf$};
+  \begin{tikzpicture}[xscale=.5,yscale=.7]
+    \draw[very thick] (0,0)--(4,0);
+    \node at (-.5,0){$0$};
+    \node at (4.7,0){$0$};
+    \foreach \y in {1,...,4} {
+      \draw[very thick] (0,\y)--(4,\y);
+      \node at (-.5,\y){$\y$};
+      \node at (4.7,\y){$\y hf$};
     }
-    \foreach \y in {0,1,...,3} {
-      \draw[very thick,red!70!black,<->] (\y+.2,\y)--(\y+.2,\y+1);
-    }
-    \draw[vectors] (4.7,4.5)--(4.7,5.9) node[above]{Energy $E$};
-    \draw[vectors] (-.4,4.5)--(-.4,6) node[above]{to $n=\infty$};
+    \foreach \y in {0,...,3} \draw[very thick,red,<->] (\y+.5,\y)--+(0,1);
+    
+    \draw[vectors] (4.7,4.5)--+(0,1.5) node[above]{Energy $E$};
+    \draw[vectors] (-.5,4.5)--+(0,1.5) node[above]{to $n=\infty$};
   \end{tikzpicture}
 \end{figure}
-\textbf{Planck's constant} is experimentally determined to be
-$h=\SI{6.626e-34}{\joule\second}$
+
+%$
+%$
+%$
+%$\section{Blackbody Radiation}
+%$\begin{figure}[ht]
+%$  \centering
+%$  \pic{.4}{quantumMechanics/graphics/Black-body_realization}
+%$\end{figure}
+%$
+%$\begin{itemize}
+%$\item The concept was coined by Gustav Kirchhoff in 1860
+%$\item An idealized object that absorbs all incident EM radiation
+%$\item Model of a blackbody:
+%$  \begin{itemize}
+%$  \item A box (``cavity'') with a mirror inside, and a hole where
+%$    light (EM radiation) is allowed in
+%$  \item Some of the light reflects inside the cavity; some gets absorbed
+%$    by the cavity
+%$  \item Eventually all the light inside the cavity is absorbed
+%$  \end{itemize}
+%$
+%$%    \pic{1.2}{graphics/Black-body_realization}
+%$%    
+%$%    \column{.8\textwidth}
+%$
+%$\item A blackbody is in thermal equilibrium
+%$  \begin{itemize}
+%$  \item All of the absorbed energy is then immediately radiated back as EM
+%$    radiation
+%$  \item The spectral distribution depends on temperature
+%$  \end{itemize}
+%$\item A blackbody at room temperature appears black, because most of the
+%$  radiative energy is infrared and invisible to the human eye
+%$\item Thermal radiation spontaneously emitted by many ordinary objects can
+%$  be approximated as blackbody radiation 
+%$\end{itemize}
+%$%  
+%$%
+%$%
+%$%
+%$%
+%$%\begin{frame}{Raleigh-Jeans Law and the Ultraviolet Catastrophe}
+%$%  
+%$%    \column{.55\textwidth}
+%$\begin{itemize}
+%$\item Based on classical thermodynamics
+%$\item Agrees with experimental results for long wavelengths, but the
+%$  equation predicts that short wavelengths (e.g.\ ultraviolet radiation,
+%$  x-ray) will have infinite intensity
+%$\item Known as \textbf{``ultraviolet catastrophe''}
+%$\end{itemize}
+%$%
+%$%    \column{.45\textwidth}
+%$%    \pic1{graphics/1280px-Black_body}
+%$  
+%$
+%$
+%$
+%$\section{Quantization of Energy}
+%$%  
+%$%    \column{.2\textwidth}
+%$%    \centering
+%$%    \pic1{graphics/20973-050-F6EEBFF1}\\
+%$%    {\footnotesize Max Planck}
+%$%    
+%$%    \column{.8\textwidth}
+%$\begin{itemize}
+%$\item Made a strange modification in the classical calculations
+%$\item Derived a function of $P(\lambda,T)$ that agreed with experimental
+%$  data for all wavelengths
+%$\item First found an empirical function to fit the data
+%$\item Then searched for a way to modify the usual calculations
+%$\end{itemize}
+%$
+%$Theorized that the walls of a blackbody are composed of subatomic electric
+%$oscillators (``resonators'')
+%$\begin{itemize}
+%$\item The nature of these resonators were unknown
+%$\item Billions of resonators vibrating at different frequencies, and
+%$\item Emitting radiation at those frequencies (remember: for a wave, the
+%$  frequency of source disturbance is the frequency of the wave)
+%$\item In classical physics, resonators can have any energy, and change
+%$  its amplitude continuously
+%$\end{itemize}
+%$To agree with experiments, Planck theorized that energy emitted by a
+%$resonator must be \emph{discrete}
+%$\begin{itemize}
+%$\item When energy is emitted from a resonator, it drops to the next
+%$  lower energy level
+%$\end{itemize}
+%$
+%$The total energy $E_\text{res}$ of a harmonic oscillator is proportional
+%$to the integral multiples of its natural frequency $f$:
+%$\begin{equation}
+%$  \boxed{E_\text{res}=nhf}
+%$\end{equation}
+%$%    \begin{center}
+%$%      \begin{tabular}{l|c|c}
+%$%        \rowcolor{pink}
+%$%        \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%$%        Energy of the resonator & $E_\text{res}$ & \si\joule\\
+%$%        Energy level            & $n$ & (no unit)\\
+%$%        Planck's constant       & $h$ & \si{\joule\second}\\
+%$%        Frequency of resonator  & $f$ & \si\hertz
+%$%      \end{tabular}
+%$%    \end{center}
+%$
+%$\begin{figure}[ht]
+%$  \centering
+%$  \begin{tikzpicture}[xscale=.55,yscale=.75]
+%$    \foreach \y in {0,1,...,4} {
+%$      \draw[very thick] (0,\y)--(4,\y)
+%$      node[pos=0,left]{$\y$} node[right]{$\y hf$};
+%$    }
+%$    \foreach \y in {0,1,...,3} {
+%$      \draw[very thick,red!70!black,<->] (\y+.2,\y)--(\y+.2,\y+1);
+%$    }
+%$    \draw[vectors] (4.7,4.5)--(4.7,5.9) node[above]{Energy $E$};
+%$    \draw[vectors] (-.4,4.5)--(-.4,6) node[above]{to $n=\infty$};
+%$  \end{tikzpicture}
+%$\end{figure}
+%$\textbf{Planck's constant} is experimentally determined to be
+%$$h=\SI{6.626e-34}{\joule\second}$
 %
 %
 %
@@ -510,7 +834,7 @@ visible light will not cause electrons to be ejected.
     \foreach \wav in {420, 422,...,740}{
       \definecolor{tmpcolor}{wave}{\wav}
       \colorlet{mycolor}[rgb]{tmpcolor}
-      \fill[fill=mycolor,opacity=.2] ({3000/\wav},-5) rectangle +(.1,7);
+      \fill[fill=mycolor] ({3000/\wav},-5) rectangle +(.1,7);
     }
     \draw[axes] (0,0)--(15.7,0) node[above]{$f$ ($\times\SI{e14}{\hertz}$)};
     \draw[axes] (0,-5.2)--(0,2.7) node[right]{$\varphi$ ($\si{\electronvolt})$};
@@ -555,61 +879,160 @@ visible light will not cause electrons to be ejected.
 %
 \section{Compton Scattering}
 
-%%    \pic{1.2}{graphics/Arthur_Compton_1927}
-%%
-%%    {\footnotesize Arthur H.\ Compton\par}
-
 American physicist Arthur Compton\footnote{1892--1962; Nobel Prize winner in
-1927}, was studying x-ray scattering by free electrons
+1927} studied x-ray scattering by free electrons
 \begin{itemize}
-\item Classical theory cannot account for the scattering behaviour
-\item Frequency shift only depends on scattering angle
-\item Prediction possible if treating the x-ray as photons with
-  momentum, just like a particle
-\item In the \textbf{momentum-energy relation} by Einstein\footnote{From
-the mass-energy equivalence $E=m'c^2$ which can be also expressed as
-$E^2=p^2c^2+m^2c^4$}, a massless particle ($m=0$) has an energy related
-  to its momentum by $E=pc$.
+\item ``Free electrons'' are actually valence electrons in atoms that have
+  \emph{very} low ionization energy, so any EM radiation will knock them off
+  the atom
+\item After hitting the electrons, the x-ray radiation is scattered
+\item Those electrons ejected from the atoms are called \textbf{recoil
+  electrons}
+\end{itemize}
+\begin{center}
+  \input{quantumMechanics/compton}
+\end{center}
+It was quickly discovered that \emph{classical} theory of electrodynamics
+cannot account for the scattering behaviour.
+    
+Classical theory predicted that:
+\begin{itemize}
+\item No change in the frequency and wavelength of the scattered x-ray
+  (because frequency of a wave should only depend on the source)
+\item The motion of the ``recoil'' electrons should be random
+\end{itemize}
+But what really happened was that:
+\begin{itemize}
+\item Frequency shift in scattered x-ray depends on scattering angle
+  $\theta$
+\item Energy of the recoil electrons depends on the recoil angle $\phi$
 \end{itemize}
 
+
+\subsection{Side Track: Using Mass-Energy Equivalence}
+Compton turned Einstein's discovery of mass-energy equivalance in 1905, which
+drew a link between relativity and quantum mechanics:
 \begin{equation}
-  \boxed{
-    p=\frac Ec=\frac{hf}c=\frac h\lambda
-  }
+  E=mc^2
 \end{equation}
-
-
-
-
-%\begin{frame}{Compton Scattering}
-By treating x-ray as photons (i.e.\ a particle) with momentum $p=h/\lambda$,
-Compton showed that the behaviour of the scattered x-ray and the recoil
-electron is consistent with an \emph{elastic collision}\footnote{Recall from
-Unit 2 that in an elastic collision, both momentum and kinetic energy are
-conserved} between the x-ray photon and the electron.
+where $E$ is the total energy of an object, $m$ is the relativistic mass, and
+$c$ is the speed of light in a vacuum. This equation can be written in the
+\textbf{energy-momentum relation} form:
+\begin{equation}
+  E^2=p^2c^2+m_0^2c^4
+\end{equation}
+where $m_0$ is the rest mass of the object. This equation predicted that a
+\emph{massless} particle, like a photon, should also have a momentum:
+\begin{equation}
+  \boxed{p=\frac Ec=\frac{hf}c=\frac h\lambda}
+\end{equation}
+By treating the x-ray as particles (photons) with momentum, the electron
+scattering problem becomes a basic 2D elastic collision (similar to the
+problems studied in Class \#5). In this collision, both momentum and energy
+are conserved:
+\begin{equation}
+  \vec p_i=\vec p_e + \vec p_f\quad\text{and}\quad
+  E_i = E + E_f
+\end{equation}
 \begin{center}
-  \pic{.45}{quantumMechanics/graphics/compton2}
+  \begin{tikzpicture}
+    \draw (0,0)--(-2.5,0);
+    \draw[dashed] (0,0)--(2,0);
+    \draw[vectors,red] (-1.8,0)--+(1,0)
+    node[midway,below]{\small incident photon};
+    \draw[thick,fill=red] (-1.8,0) circle (.1);
+      
+    \begin{scope}[rotate=40]
+      \draw (0,0)--(2,0);
+      \draw[vectors] (2,0)--+(.7,0);
+      \draw[thick,fill=violet] (2,0) circle (.07)
+      node[right=3]{recoil electron};
+    \end{scope}
+    \draw[axes] (1.5,0) arc (0:40:1.5) node[midway,right]{$\phi$};
+      
+    \begin{scope}[rotate=-50]
+      \draw (0,0)--(2,0);
+      \draw[vectors,orange] (.75,0)--+(1,0)
+      node[midway,below,rotate=-50]{\small scattered photon};
+      \draw[thick,fill=orange] (.75,0) circle (.1);
+    \end{scope}
+    \draw[axes] (1.2,0) arc (0:-50:1.2) node[midway,right]{$\theta$};
+      
+    \draw[thick,fill=cyan!90!black] circle (.15) node[above=5]{atom};
+
+    \node[text width=100,color=red] at (-1.8,-.9){\small
+      $p_i=\dfrac{E_i}c=\dfrac{hf_i}c=\dfrac h{\lambda_i}$};
+
+    \node[text width=100,color=orange] at (2.5,-.9){\small
+      $p_f=\dfrac{E_f}c=\dfrac{hf_f}c=\dfrac h{\lambda_f}$};
+
+    \node[text width=100,color=violet] at (0,1.3){\small
+      $p_e=\dfrac{\sqrt{E^2-(m_ec^2)^2}}c$};
+  \end{tikzpicture}
 \end{center}
+The change in wavelength in the x-ray photons is given by:
+\begin{equation}
+  \Delta\lambda=\lambda_f-\lambda_i=\frac h{m_ec}\left(1-\cos\theta\right)
+\end{equation}
+The conclusion from the Compton scattering experiment is that, in addition to
+energy, photons also have a momentum that is proportional to Planck's
+constant and inversely proportional to its wavelength:
+
+%%%    \pic{1.2}{graphics/Arthur_Compton_1927}
+%%%
+%%%    {\footnotesize Arthur H.\ Compton\par}
 %
+%American physicist Arthur Compton\footnote{1892--1962; Nobel Prize winner in
+%1927}, was studying x-ray scattering by free electrons
+%\begin{itemize}
+%\item Classical theory cannot account for the scattering behaviour
+%\item Frequency shift only depends on scattering angle
+%\item Prediction possible if treating the x-ray as photons with
+%  momentum, just like a particle
+%\item In the \textbf{momentum-energy relation} by Einstein\footnote{From
+%the mass-energy equivalence $E=m'c^2$ which can be also expressed as
+%$E^2=p^2c^2+m^2c^4$}, a massless particle ($m=0$) has an energy related
+%  to its momentum by $E=pc$.
+%\end{itemize}
 %
-%
-%
-%\begin{frame}{Momentum of a Photon}
-The momentum of a photon is proportional to Planck's constant and inversely
-proportional to its wavelength:
-%
-%  \eq{-.1in}{
-%    \boxed{p=\frac h\lambda}
+%\begin{equation}
+%  \boxed{
+%    p=\frac Ec=\frac{hf}c=\frac h\lambda
 %  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Momentum          & $p$       & \si{\kilo\gram\metre\per\second} \\
-%      Planck's constant & $h$       & \si{\joule\second} \\
-%      Wavelength        & $\lambda$ & \si\metre
-%    \end{tabular}
-%  \end{center}
+%\end{equation}
+%
+%
+%
+%
+%%\begin{frame}{Compton Scattering}
+%By treating x-ray as photons (i.e.\ a particle) with momentum $p=h/\lambda$,
+%Compton showed that the behaviour of the scattered x-ray and the recoil
+%electron is consistent with an \emph{elastic collision}\footnote{Recall from
+%Unit 2 that in an elastic collision, both momentum and kinetic energy are
+%conserved} between the x-ray photon and the electron.
+%\begin{center}
+%  \pic{.45}{quantumMechanics/graphics/compton2}
+%\end{center}
+%%
+%%
+%%
+%%
+%%\begin{frame}{Momentum of a Photon}
+%The momentum of a photon is proportional to Planck's constant and inversely
+%proportional to its wavelength:
+
+\begin{equation}
+  \boxed{p=\frac h\lambda}
+\end{equation}
+\begin{center}
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+    Momentum          & $p$       & \si{\kilo\gram\metre\per\second} \\
+    Planck's constant & $h$       & \si{\joule\second} \\
+    Wavelength        & $\lambda$ & \si\metre
+  \end{tabular}
+\end{center}
 
 
 
@@ -799,109 +1222,319 @@ momentum, and vice versa.
 
 
 \section{Bohr Atomic Model}
-%%
-%%\begin{frame}{Atomic Model}
-%%  J.\ J.\ Thomson: plum-pudding model (1897)
-%%  \begin{itemize}
-%%  \item Developed along with William Croakes
-%%  \item Negatively-charged electrons are like raisins in a positively-charged
-%%    ``dough''
-%%  \end{itemize}
-%%  Ernest Rutherford: planetary model (1911)
-%%  \begin{itemize}
-%%  \item The atom is mostly empty space
-%%  \item Negatively-charged electrons orbiting a fixed, positively-charged
-%%    nucleus in set, predictable paths (orbits)
-%%  \end{itemize}
-%%  The Rutherford model explains a lot more than the Thomson model, but misses
-%%  out on a very important feature of an accelerating electron:
-%%  \emph{it radiates energy as electromagnetic waves!}
-%%
-%%
-%%
-%%
-%%\begin{frame}{Why the Planetary Model Doesn't Work}
-%%  \begin{center}
-%%    \pic{.23}{graphics/spiral}
-%%  \end{center}
-%%  According to classical electrodynamics:
-%%  \begin{itemize}
-%%  \item An accelerating electron has an oscillating electric field and an
-%%    oscillating magnetic field
-%%  \item Therefore it emits electromagnetic radiation
-%%  \item The electron will lose energy and the orbit decays
-%%  \item Eventually it'll collapse into the nucleus
-%%  \end{itemize}
-%%
-%%
-%%
-%%
-%%\begin{frame}{Bohr Atomic Model}
-%%  Danish physicist Niels Bohr\footnote{1885--1962; Nobel Prize winner in
-%%    1922} postulated that electrons can move in certain ``non-radiating''
-%%  orbits, corresponding to energy levels:
+
+At the beginning of the 20th Century, a deeper understanding of the atom begin
+to take shape.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \filldraw[draw=pink,
+        even odd rule,
+        inner color=pink,
+        outer color=pink!40] circle (2);
+      \draw[dotted,thin] (-1.3,0)--(1,0);
+      \draw[dotted,thin] (-1.3,0)--(0,-1.3);
+      \draw[dotted,thin] (1,0)--(0,-1.3);
+      
+      \draw[dotted,thin] (-1.3,0)--(.3,.8);
+      \draw[dotted,thin] (0,-1.3)--(.3,.8);
+      \draw[dotted,thin] (1,0)--(.3,.8);
+    
+      \filldraw[cyan] (-1.3,0) circle (.1);
+      \filldraw[cyan] (1,0) circle (.1);
+      \filldraw[cyan] (0,-1.3) circle (.1);
+      \filldraw[cyan] (.3,.8) circle (.1);
+    \end{tikzpicture}
+    \caption{``Plum pudding model'' of J.\ J.\ Thomson in 1904}
+    \label{fig:plum-pudding}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \draw[gray,thin] circle (2);
+    \fill[red] circle (.2) node[white,midway]{$+$};
+    \foreach \theta in {0,135,...,430}{
+      \draw[thick,rotate=\theta] ellipse (2 and .5);
+      \filldraw[cyan,rotate=\theta] (-1.3,-.38) circle (.1);
+    }
+  \end{tikzpicture}
+  \caption{``Orbital model'' of Ernest Rutherford from 1911}
+  \label{fig:rutherford-model}
+  \end{subfigure}
+\end{figure}
+The plum-pudding model accounts for the existence of the electron, but is
+inconsistent with subsequent discovery of the nucleus.
+
+
+Consistent with the discovery of the nucleus, but difficult to accept because
+it assumes that the atom is mostly empty space. Rutherford's orbital model is
+more advanced than J.\ J.\ Thomson's model, but it is still inconsistent with
+Maxwell's equation:
+\begin{itemize}
+\item As electrons orbit the nucleus in circular motion, they must have a
+  centripetal acceleration
+\item Accelerating electrons emit electromagnetic radiation, and lose energy
+\end{itemize}
+Maxwell's equations predict that electrons' orbits must eventually collapse
+\begin{center}
+  \pic{.3}{quantumMechanics/graphics/decay}
+\end{center}
+
+
+
+\subsection{Hydyogen Emission Spectrum}
+When a gas is heated, it emits EM radiation at specific wavelengths. For
+hydrogen, there are 4 specific wavelengths that are visible to the human eyes.
+\begin{center}
+  %\pic{.4}{graphics/hydrogen-spectra1}
+  \pic{.6}{quantumMechanics/graphics/dab881c4db4639afd5967d5ada40d4d1}
+\end{center}
+Other gases have different wavelengths (and therefore colours). This is a
+topic studied in depth in Chemistry
+%\end{frame}
+%
+%
+%\begin{frame}{Hydyogen Emission Spectrum}
+The actual colours of the hydrogen emission spectrum looks like this:
+%\footnote{And let's be very clear that, despite being able to ``find''
+%diagrams of these lines online, there is absolutely no ``purple'' in the
+%colours; violet is a blue light, not purple}:
+\begin{center}
+  \pic{.7}{quantumMechanics/graphics/Visible_spectrum_of_hydrogen}
+\end{center}
+In 1885, Johann Balmer derived an empirical formula for the wavelengths of
+these lights:
 \begin{equation}
-  E_n=-\frac{k^2e^4m}{2\hslash^2}\frac{Z^2}{n^2}
+  \frac1\lambda=R_\text{H}\left[\frac1{2^2}-\frac1{n^2} \right]
 \end{equation}
-%%  \begin{center}
-%%    \begin{tabular}{l|c|c}
-%%      \rowcolor{pink}
-%%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%%      Energy at level $n$ & $E_n$ & \si{\joule}    \\
-%%      Coulomb's constant  & $k$   & \si{N.m^2/C^2}  \\
-%%      Elementary charge   & $e$   & \si{\coulomb}   \\
-%%      Atomic mass         & $m$   & \si{\kilo\gram} \\
-%%      Reduced Planck's constant & $\hbar=h/2\pi$ & \si{\joule\second}\\
-%%      Atomic number       & $Z$   & (integer)       \\
-%%      Energy level        & $n$   & (integer)
-%%    \end{tabular}
-%%  \end{center}
-%%
-%%
-%%
-%%
-%%\begin{frame}{Bohr Atomic  Model}
-%%  Successful in describing the behaviour of the hydrogen atom---but fails for
-%%  heavier atoms---although it still relies on 
-%%  \begin{itemize}
-%%  \item Coulomb forces between electrons and protons (classical)
-%%  \item Centripetal forces (classical)
-%%  \item Quantization of energy (new physics!)
-%%  \end{itemize}
-%%  De Broglie's hypothesis gives us a glimpse of what Bohr is missing
-%%  \begin{itemize}
-%%  \item The ``orbits'' correspond to a standing wave around the nucleus
-%%  \item A standing wave does not lose energy
-%%  \end{itemize}
-%%
-%%
-%%
-%%
-%%\begin{frame}{Standing Wave on a String}
-%%  
-%%    \column{.3\textwidth}
-%%    \pic{1}{graphics/strhar}
-%%
-%%    \column{.7\textwidth}
-%%    \begin{itemize}
-%%    \item We have studied standing waves in Grade 11
-%%    \item If electron is to be in a ``stable orbit'' around a nucleus, it has
-%%      to be in a standing wave pattern
-%%    \item Otherwise, it will interfere with itself
-%%    \end{itemize}
-%%  
-%%
-%%
-%%
-%%\begin{frame}{Circular Standing Wave}
-%%  \begin{center}
-%%    \pic{.7}{graphics/oo1wp}
-%%  \end{center}
-%%  Electron resonance states $n=3,4,5,6$
-%%
+where $n=3,4,\ldots$ is a whole number, and
+$R_\text{H}=\SI{1.09677583e7}{\per\metre}$ is the \textbf{Rydberg constant} for
+hydrogen. These emission lines are called the \textbf{Balmer series}. Other
+wavelengths \emph{outside} of the visible light spectrum were also discovered,
+giving the Rydberg formula for all hydrogen-like\footnote{A hydrogen-like atom
+is any atom or ion with a single valence electron} gas:
+\begin{equation}
+  \frac1\lambda=RZ^2\left[\frac1{n_1^2}-\frac1{n_2^2} \right]
+\end{equation}
+
+
+
+\subsection{Bohr Atomic Model}
+In 1918, Niels Bohr\footnote{1885--1962; Nobel Prize winner in 1922}
+postulated\footnote{Without evidence, of course!} that there must be
+``stationary'' orbits that electrons can orbit in without radiation. Bohr
+assumed that:
+\begin{itemize}
+\item Electrons are held in the atom by electrostatic force %(studied in Class
+  %\#8)
+\item The electrons are in circular motion, with the electrostatic force
+  providing the centripetal forces
+\item The ratio of electric potential energy to kinetic energy
+  of the electron is $U_q=-2K$
+\end{itemize}
+%The hydrogen emission spectrum corresponds to energy change when electrons
+%dropped from one quantum energy level to the next, emitting photons of
+%specific frequencies
+Bohr proposed that the energy levels of the electrons must be:
+%\begin{equation}
+%  \boxed{
+%    E_n=-\frac{k^2e^4m}{2\hbar^2}\frac{Z^2}{n^2}
+%  }
+%\end{equation}
+\begin{center}
+  \begin{tabular}{l|c|c}
+    \rowcolor{pink}
+    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+    Energy at level $n$ & $E_n$ & \si\joule \\
+    Coulomb's constant & $k$ & \si{N.m^2/C^2} \\
+    Elementary charge  & $e$ & \si\coulomb \\
+    Atomic mass        & $m$ & \si{\kilo\gram} \\
+%    Reduced Planck's constant & $\hbar$ & \si{\joule\second}\\
+    Atomic number      & $Z$ & integer; no units\\
+    Energy level       & $n$ & integer; no units
+  \end{tabular}
+\end{center}  
+%From the wave-particle duality perspective, the ``orbits'' correspond more to
+%a standing wave around the nucleus (a standing wave does not lose energy)
 %
 %
 %
+%\begin{frame}{Bohr Atomic Model}
+%
+%  \eq{-.0in}{
+%    \boxed{E_n=-\frac{k^2e^4m}{2\hbar^2}\frac{Z^2}{n^2}}
+%  }
+%
+The Bohr model is successful in describing the hydrogen atom and singly-ionized
+helium atom, but it fails for heavier atoms. Simplifying the equation for the
+hydrogen atom:
+\begin{equation}
+  E_n=-\frac{13.6}{n^2}
+\end{equation}
+where $E_n$ is in electron volts (\si{\electronvolt})
+
+
+
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.3]
+    \draw[thick] (-2,1)--+(2.5,0) node[right]{$n_i$};
+    \draw[thick] (-2,-1)--+(2.5,0) node[right]{$n_f$};
+    \draw[thick,fill=violet] (-1,1) circle (.05);
+    \draw[thick,fill=violet!20] (-1,-1) circle (.05);
+    \draw[vectors](-1,.95)--(-1,-.95);
+    \draw[xscale=.1,yscale=.25,thick,red,smooth,samples=300,domain=-9:9]
+    plot(\x,{.1*(
+      sin(221*\x)+sin(223*\x)+sin(225*\x)+
+      sin(226*\x)+sin(228*\x)+sin(230*\x)+
+      sin(231*\x)+sin(233*\x)+sin(235*\x)+
+      sin(236*\x)+sin(238*\x)+sin(240*\x)+
+      sin(241*\x)+sin(243*\x)+sin(245*\x)+
+      sin(246*\x)+sin(248*\x)+sin(250*\x)+
+      sin(251*\x)+sin(253*\x)+sin(255*\x)+
+      sin(256*\x)+sin(258*\x)
+    });
+    \draw[vectors,red] (1,0)--+(.7,0) node[right]{photon};
+  \end{tikzpicture}
+\end{figure}
+When electrons drop from one energy ($n_i$) to another ($n_f$), a photon is
+emitted, with energy (measured in electronvolts):
+\begin{equation}
+  \Delta E=13.6\left[\frac1{n_f^2}-\frac1{n_i^2} \right]
+\end{equation}
+The frequency and wavelength corresponding to the emitted photon are given by:
+\begin{equation}
+  f=\frac{\Delta E}h\quad\to\quad
+  \lambda=\frac cf
+\end{equation}
+
+Aside from the ``Balmer series'' of hydrogen spectrum, there are 5 other series
+that are not in the visible-light spectrum.
+
+\begin{itemize}
+\item\textbf{Lyman series} (ultraviolet):
+  \begin{itemize}
+  \item the EM emissions when the electrons drop from a higher energy state
+    ($E_n$) to the ground state $n=1$ (i.e.\ $E_1$)
+  \end{itemize}
+\item\textbf{Balmer series}: from $E_n$ to $E_2$ (visible light)
+\item\textbf{Paschen series}: from $E_n$ to $E_3$ (infrared)
+\item\textbf{Brackket series}: from $E_n$ to $E_4$ (infrared)
+\item\textbf{Pfund series}: from $E_n$ to $E_5$ (infrared)
+\item\textbf{Hymphreys series}: from $E_n$ to $E_6$ (infrared)
+\end{itemize}
+
+\begin{center}
+  \pic{.4}{quantumMechanics/graphics/400px-Hydrogen_transitions}
+\end{center}
+
+When Bohr developed the hydrogen atom model, De Broglie's hypothesis has not
+been formulated, but it gives us a glimpse of what Bohr is missing:
+\begin{itemize}
+\item The ``stationary orbits'' correspond to a standing wave around the
+  nucleus %, called a resonance mode
+\item A standing wave does not lose energy
+\item For example, electron standing wave modes $n=1,\ldots,6$
+\end{itemize}
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=1$}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(2*x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(2*x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=2$}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(3*x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(3*x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=3$}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(4*x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(4*x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=4$}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(5*x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(5*x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=5$}
+  \end{subfigure}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.6]
+      \begin{polaraxis}[
+          axis lines=none,
+          line width=3
+        ]
+        \addplot[draw=black,thick,domain=0:360,samples=360] {1}; 
+        \addplot[domain=0:360,samples=360] {.2*cos(6*x)+1};
+        \addplot[dashed,domain=0:360,samples=360] {-.2*cos(6*x)+1};
+      \end{polaraxis}
+    \end{tikzpicture}
+    \caption{$n=6$}
+  \end{subfigure}
+  \caption{The first 6 resonance mode for electrons in a hydrogen atom}
+  
+\end{figure}
+
+
+
+
+
 \section{Particle in a Box}
 
 \begin{figure}[ht]
