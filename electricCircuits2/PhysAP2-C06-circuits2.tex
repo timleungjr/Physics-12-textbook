@@ -4,7 +4,8 @@
 
 %{Circuits Aren't Always Simple}
 Some of these problems require you to solve a system of linear equations.
-The following is a simple example with two voltage sources:
+For example, Figure~\ref{fig:multiloop1} shows a simple example with two
+voltage sources and three resistors. This circuit cannot be reduced.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[american voltages,scale=1.3,thick]
@@ -20,6 +21,7 @@ The following is a simple example with two voltage sources:
       %  node[midway,below]{$I_2$};
       %}
   \end{tikzpicture}
+  \label{fig:multiloop1}
 \end{figure}
 %  \uncover<2->{
 %    In this case, we have to draw two loops of current.
@@ -106,10 +108,9 @@ The following is a simple example with two voltage sources:
 %%      wrong.
 %%    \end{itemize}
 %%  \end{columns}
-%%
-%
-%
-%
+
+
+
 \section{Capacitors in Circuits}
 
 In Chapter~\ref{chapter:capacitors}, we learned that capacitor is a device that
@@ -205,17 +206,18 @@ because of conservation of charges.
 \section{$RC$ Circuits}
 
 Now that we have seen how resistors and capacitors behave in a circuit, we can
-look into combining them in to an ``$RC$ circuit''.
+combine them in to an \textbf{$RC$ circuit}. An $RC$ circuit merely refer to
+any circuit that contain both resistors and capacitors, but does not necesarily
+indicate a specific arrangment of the devices.
 %  \begin{center}
 %    \begin{tikzpicture}[american voltages,scale=.8]
 %      \draw[thick] (0,0) to[C=$C$] (0,3)--(3,3) to[R=$R$] (3,0)--(0,0);
 %    \end{tikzpicture}
 %  \end{center}
-
-The simplest form is a resistor and capacitor connected in series, with the
-capacitor initially charged to a voltage $V_C$\footnote{The initial charge
-stored in the capacitor would have been $+Q_0=CV$ on one side, and $-Q_0$ on
-another.}
+%The simplest form is a resistor and capacitor connected in series, with the
+%capacitor initially charged to a voltage $V_C$\footnote{The initial charge
+%stored in the capacitor would have been $+Q_0=CV$ on one side, and $-Q_0$ on
+%another.}
 %  \begin{itemize}
 %  \item The voltage on the capacitor drives a current in the circuit.
 %%  and
@@ -230,8 +232,8 @@ another.}
 \subsection{A Discharging Capacitor}
 
 The simplest example of an $RC$ circuit is the discharging capacitor case,
-where a capacitor and a resistor are connected in series, with the capacitor
-initially charged, as shown in Fig.~\ref{fig:discharing-capacitor}.
+where a capacitor and a resistor are connected in series, as shown in
+Fig.~\ref{fig:discharing-capacitor}.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[american voltages,scale=.8]
@@ -240,22 +242,27 @@ initially charged, as shown in Fig.~\ref{fig:discharing-capacitor}.
   \caption{A simple discharging capacitor circuit}
   \label{fig:discharing-capacitor}
 \end{figure}
+%The capacitor initially charged with a
+%charge of $+Q$ on one slide, and $-Q$ on the other. The ini
 Initially, the switch is open, and no current flows in the circuit. At this
-time, the capacitor has an initial charge $Q_o$ across the plates, and therefore
-a voltage of $V_0=Q_0/C$. At $t=0$, the switch is closed, and current---driven
-by the voltage in the capacitor plates---begin to flow. The initial current
+time, the capacitor has an initial charge $Q_o$ across the plates (i.e.\ $+Q$
+on one side, and $-Q$ on the other), and therefore a voltage of $V_0=Q_0/C$. At
+$t=0$, the switch is closed, completing the circuit. Current---driven by the
+voltage in the capacitor plates---begin to flow at $t=0$. The initial current
 $I_0$ through the circuit is based on Ohm's law:
 \begin{displaymath}
   I_0=\frac{V_0}R
 \end{displaymath}
-As current flows, charge $Q$ across the capacitor decreases
-\begin{itemize}
-\item Voltage $V_c(t)$ across the capacitor decreases
-\item The current $I(t)=V_c(t)/R$ also decreases
-\item But since current decreases, $Q$ also decreases more
-  slowly
-\end{itemize}
-
+As current flows, charge $Q(t)$ across the capacitor decreases in time, and
+therefore voltage
+\begin{equation*}
+  V_c(t)=\frac{Q(t)}C
+\end{equation*}
+across the capacitor decreases. Since this voltage drives the current
+\begin{equation*}
+  I(t)=\frac{V_c(t)}R=\frac{Q(t)}{RC}
+\end{equation*}
+also decreases. But since current decreases, $Q$ also decreases more slowly.
 Using calculus, we find that the expression of charge $Q(t)$ across the
 capacitor is an exponential decay function:
 \begin{equation}

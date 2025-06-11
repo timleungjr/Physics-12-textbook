@@ -301,7 +301,7 @@ $\Gamma$ from the two slits to the screen:
 
 \subsection{Constructive Maxima \& Destructive Minima}
 
-A \textbf{constructive maximum}, or \textbf{anti-nodal point}, appear as a
+A \textbf{constructive maximum}, or a \textbf{anti-nodal point}, appear as a
 \textbf{bright fringe} on the screen at lateral angle $\theta$ when the path
 difference ($\Gamma=d\sin\theta$) is a whole-number ($n$) multiple of the
 wavelength ($\lambda$):
@@ -314,10 +314,10 @@ wavelength ($\lambda$):
   \label{eq:2-slit-bright-fringe}
 \end{equation}
 The integer $n$ is called the \textbf{order number}\footnote{e.g.\ $n=0$ is
-called the ``zeroth order''; $n=1$ is called ``first order'' etc}. The number
-of bright fringes is not infinite. In Eq.~\ref{eq:2-slit-bright-fringe}, we
-can see that the highest order fringe $n=n_\text{max}$ must occur when
-$\sin\theta=1$:
+called the ``zeroth order''; $n=1$ is called ``first order'' etc}. Since
+$\sin\theta\leq 1$, the number of bright fringes is \emph{not} infinite. In
+Eq.~\ref{eq:2-slit-bright-fringe}, we can find the highest order fringe
+$n_\text{max}$ by setting $\sin\theta=1$, then:
 \begin{equation}
   n_\text{max}=\left\lfloor\frac d\lambda\right\rfloor
 \end{equation}
@@ -331,9 +331,9 @@ number of bright fringes $N$ is
 \end{equation}
 
 
-Conversely, a \textbf{destructive minimum}, or \textbf{nodal point}), appear as
-a \textbf{dark fringe} when $\Gamma$ is a half-number ($n+\frac12$) multiple of
-the wavelength:
+Conversely, a \textbf{destructive minimum}, or a \textbf{nodal point}, appear
+as a \textbf{dark fringe} when $\Gamma$ is a half-number ($n+\frac12$)
+multiple of the wavelength:
 \begin{equation}
   \boxed{
     d\sin\theta_n = \left[n+\frac12\right]\lambda
@@ -530,8 +530,8 @@ double-slit problem:
 
 When a wave goes through an small opening, it \textbf{diffracts}. This happens
 with sound waves, ocean waves\ldots and light. For example,
-Fig.~\ref{fig:alexandria} is an aerial photo of the Eastern Port in
-Alexandria,Egypt. The shape of the entire harbour is created because of
+Fig.~\ref{fig:alexandria} is an aerial photo of the Eastern Harhour in
+Alexandria, Egypt. The shape of the entire harbour is created because of
 diffraction of ocean wave.
 \begin{figure}[ht]
   \centering
@@ -783,43 +783,71 @@ equation:
 
 
 \section{Multiple-Slit Interference: Diffraction Grating}
-Diffraction grating is when there are more than two slits. One such example is
-shown in Fig.~\ref{fig:3-slit} for a three-slit configuration.
+Multiple equally-spaced point sources is called a \textbf{diffraction grating}.
+We can show that the condition for bright fringes is identical to that of the
+double-slit. A 5-slit (5 point sources) example is shown in
+Fig.~\ref{fig:5-slit}. Again, we assume that $L$ is sufficiently large that
+light rays to point $P$ are approximately parallel.
+
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}[scale=.6]
-    % Draw the slits
-    \draw[slits] (0,1.1)--(0,3);
-    \draw[slits] (0,.9)--(0,-.9);
-    \draw[slits] (0,-1.1)--(0,-3);
-    \draw[|<->|] (-.5,-1)--(-.5,1) node[midway,left]{$d$};
-    \node at (-.7,1.5) {$S_1$};
-    \node at (-.7,-1.5) {$S_2$};
+  \begin{tikzpicture}[scale=.65]
     % Draw the screen
     \draw[ultra thick,blue!60] (20,5)--(20,-2.5);
     % Draw dimension of the problem
-    \draw[<->] (0,0)--(20,0) node[midway,fill=white]{$L$};
-    \draw[|<->|] (20.7,0)--(20.7,3) node[midway,fill=white]{$y$};
+    \draw[<->] (0,0)--(20,0) node[midway,fill=black!2]{$L$};
+    \draw[|<->|] (20.7,0)--(20.7,3) node[midway,right]{$y$};
     % Draw rays to P
-    \draw[functions] (0,1)--(20,3)--(0,-1);
-    \draw[dotted] (0,0)--(20,3);
-    \draw[<->] (15,0) arc (0:atan(3/20):15)
-    node[midway,right]{$\theta$};
-    \fill (20,3) circle (.13) node[above right]{$P$};
+    \foreach \x in {1,...,5} {
+      \draw[red,thick] (0,3-\x)--(20,3);
+      \fill (0,3-\x) circle(.12) node[left]{$S_\x$};
+    }
+    \draw[<->] (15,0) arc (0:8.5:15) node[midway,right]{$\theta$};
+    \fill (20,3) circle (.12) node[above left]{$P$};
   \end{tikzpicture}
-  
-  \textbf{THIS IS THE WRONG DIAGRAM AT THIS MOMENT!}
-  \caption{Geometry of a five-slit configuration}
-  \label{fig:3-slit}
+  \label{fig:5-slit}
 \end{figure}
+
+
+%Diffraction grating is when there are more than two slits. One such example is
+%shown in Fig.~\ref{fig:3-slit} for a three-slit configuration.
+%\begin{figure}[ht]
+%  \centering
+%  \begin{tikzpicture}[scale=.6]
+%    % Draw the slits
+%    \draw[slits] (0,1.1)--(0,3);
+%    \draw[slits] (0,.9)--(0,-.9);
+%    \draw[slits] (0,-1.1)--(0,-3);
+%    \draw[|<->|] (-.5,-1)--(-.5,1) node[midway,left]{$d$};
+%    \node at (-.7,1.5) {$S_1$};
+%    \node at (-.7,-1.5) {$S_2$};
+%    % Draw the screen
+%    \draw[ultra thick,blue!60] (20,5)--(20,-2.5);
+%    % Draw dimension of the problem
+%    \draw[<->] (0,0)--(20,0) node[midway,fill=white]{$L$};
+%    \draw[|<->|] (20.7,0)--(20.7,3) node[midway,fill=white]{$y$};
+%    % Draw rays to P
+%    \draw[functions] (0,1)--(20,3)--(0,-1);
+%    \draw[dotted] (0,0)--(20,3);
+%    \draw[<->] (15,0) arc (0:atan(3/20):15)
+%    node[midway,right]{$\theta$};
+%    \fill (20,3) circle (.13) node[above right]{$P$};
+%  \end{tikzpicture}
+%  
+%  \textbf{THIS IS THE WRONG DIAGRAM AT THIS MOMENT!}
+%  \caption{Geometry of a five-slit configuration}
+%  \label{fig:3-slit}
+%\end{figure}
 A practical diffraction grating would have thousands of slits per centimetre.
 Not surprisingly, diffraction gratings also show alternating bright and dark
 fringes, although the analysis is slightly more complicated. We continue to
 make the same assumptions from the analysis of the double slit.
 
+
+\subsection{Primary Maxima}
 Constructive maxima, where each slit interfere constructively with each other,
 would still occur when the path difference between each of slits to the screen
-are whole-number multiples of the wavelength. This means that the conditions
+are whole-number multiples of the wavelength.  This means that the conditions
 for constructive maxima are the same as for the double-slit configuration:
 \begin{equation}
   d\sin\theta=n\lambda
@@ -828,6 +856,36 @@ for constructive maxima are the same as for the double-slit configuration:
 For the diffraction grating, the maxima specified in Eq.~\ref{grating-max} are
 called \emph{primary} maxima. As we will see later, between primary maxima,
 there are also secondary maxima.
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=.9]
+    \foreach \y in {2,...,5}{
+      \begin{scope}[rotate around={30:(0,\y)}]
+        \fill[yellow!30] (0,\y)--(0,\y-.866)--(-.5,\y-.866)--cycle;
+        \draw[dotted] (0,\y)--+(0,-1.1);
+        \draw[|<->|] ((0,\y-1)--(-.5,\y-1) node[pos=0,right=0]{$d\sin\theta$};
+      \end{scope}
+    }
+    \foreach \y in {1,...,5} {
+      \begin{scope}[rotate around={30:(0,\y)}]
+        \draw[vectors,red] (0,\y)--+(4,0);
+      \end{scope}
+      \fill (0,\y) circle (.08) node[left]{$S_\y$};
+    }
+    \draw (0,5)--(1.3,5);
+    \draw[->] (1,5) arc (0:30:1) node[midway,right]{$\theta$};
+  \end{tikzpicture}
+\end{figure}
+
+%  \column{.7\textwidth}
+%  For diffraction gratings, the condition for \emph{complete} constructive
+%    maxima are the same as for double-slit. In this case, the bright fringes
+%    are called \textbf{primary maxima}:
+%
+%    \eq{-.1in}{
+%      n\lambda = d\sin\theta_n
+%    }
+
 
 Locating the destructive minima is somewhat more complicated. Take the
 three-slit configuration in Fig.~\ref{fig:3-slit} as an example, \emph{complete}
