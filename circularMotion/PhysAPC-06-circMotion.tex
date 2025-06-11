@@ -15,13 +15,13 @@ it is usually the most convenient to describe an object's position using the
 Cartesian coordinate system, i.e.\ using the $x$ and $y$ coordinates as
 functions of time:
 \begin{equation}
-  \mathbf r(t)=x(t)\hat x + y(t)\hat y
+  \bm r(t)=x(t)\hat{\bm x} + y(t)\hat{\bm y}
 \end{equation}
 However, for circular motion or general \textbf{curvilinear motions}, the
 \textbf{polar coordinate system} is preferred. The position of an object is
 described by:
 \begin{equation}
-  \mathbf r(t)=r(t)\hat{\bm r} + \theta(t)\hat{\bm\theta}
+  \bm r(t)=r(t)\hat{\bm r} + \theta(t)\hat{\bm\theta}
 \end{equation}
 where $r(t)$ is distance from the origin, and $\theta(t)$ is the standard
 angle, measured counterclockwise from the $x$ axis. Some examples of
@@ -36,44 +36,45 @@ related by:
 
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{.2\linewidth}
+  \begin{subfigure}{.4\linewidth}
     \centering
-    \begin{tikzpicture}[scale=.9]
+    \begin{tikzpicture}
       \draw[axes] (-2,0)--(2,0) node[right]{$x$};
       \draw[axes] (0,-2)--(0,2) node[above]{$y$};
       \draw[function] circle (1.5);
-    \end{tikzpicture}
+      \end{tikzpicture}
     \caption{Circular motion}
     \label{fig:circ-motion1}
   \end{subfigure}  
-  \begin{subfigure}{.2\linewidth}
+  \begin{subfigure}{.4\linewidth}
     \centering
-    \begin{tikzpicture}[scale=.9]
+    \begin{tikzpicture}
       \draw[axes] (-2,0)--(2,0) node[right]{$x$};
       \draw[axes] (0,-2)--(0,2) node[above]{$y$};
       \draw[function,rotate=30] ellipse (1.8 and 1);
     \end{tikzpicture}
     \caption{Elliptical motion}
   \end{subfigure}
-  %\begin{subfigure}{.2\linewidth}
-  %  \centering
-  %  \begin{tikzpicture}[scale=.9]
-  %    \draw[axes] (-2,0)--(2,0) node[right]{$x$};
-  %    \draw[axes] (0,-2)--(0,2) node[above]{$y$};
-  %    \draw[function,domain={-1.7:1.7}] plot(\x,{.5*(\x*\x)-.3});
-  %  \end{tikzpicture}
-  %  \caption{Parabolic motion}
-  %\end{subfigure}
-  %\begin{subfigure}{.2\linewidth}
-  %  \centering
-  %  \begin{tikzpicture}[scale=.9]
-  %    \draw[axes] (-2,0)--(2,0) node[right]{$x$};
-  %    \draw[axes] (0,-2)--(0,2) node[above]{$y$};
-  %    \draw[domain=0:25,variable=\t,samples=200,function]
-  %    plot({\t r:1.75*exp(-.1*\t)});
-  %  \end{tikzpicture}
-  %  \caption{Inward/Outward spiral}
-  %s\end{subfigure}
+  
+  \begin{subfigure}{.4\linewidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[axes] (-2,0)--(2,0) node[right]{$x$};
+      \draw[axes] (0,-2)--(0,2) node[above]{$y$};
+      \draw[function,domain={-1.7:1.7}] plot(\x,{.5*(\x*\x)-.3});
+    \end{tikzpicture}
+    \caption{Parabolic motion}
+  \end{subfigure}
+  \begin{subfigure}{.4\linewidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[axes] (-2,0)--(2,0) node[right]{$x$};
+      \draw[axes] (0,-2)--(0,2) node[above]{$y$};
+      \draw[domain=45:1000,samples=500,function]
+      plot (\x:{1.75*exp(-0.0025*\x)});
+    \end{tikzpicture}
+    \caption{Inward/Outward spiral}
+  \end{subfigure}
   \caption{Examples of curvilinear motion in two dimensions}
   \label{fig:curvilinear-motions}
 \end{figure}

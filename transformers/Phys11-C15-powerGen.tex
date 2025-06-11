@@ -1,0 +1,238 @@
+%\documentclass[12pt,compress,aspectratio=169]{beamer}
+%\input{../mybeamer}
+%
+\chapter{Transformers}
+%\subtitle{Unit 5: Electricity and Magnetism}
+%\input{../term}
+%\input{../mycommands}
+%
+%
+%\begin{document}
+%
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}{Direct and Alternating Current}
+%  In a \textbf{direct current} (\textbf{DC}), the flow of charges is always in
+%  the same direction, but the current itself does not have to be constant in
+%  time.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.6]
+%      \draw[functions] (0,3)--(4,3);
+%      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+%      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+%    \end{tikzpicture}
+%    \begin{tikzpicture}[scale=.6]
+%      \draw[smooth,samples=20,domain=0:3.5,functions]
+%      plot(\x,{3*(exp(-.8*\x))});
+%      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+%      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+%    \end{tikzpicture}
+%    \begin{tikzpicture}[scale=.6]
+%      \draw[smooth,samples=20,domain=0:3.5,functions] plot(\x,{sin(120*\x)+2});
+%      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+%      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+%    \end{tikzpicture}
+%  \end{center}
+%
+%
+%
+%
+%\section{Direct and Alternating Current}
+%  In an \textbf{alternating current} (AC), the flow of charges changes
+%  direction, usually as a sinusoidal function of time.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.6]
+%      \draw[axes] (0,0)--(5,0) node[right]{$t$};
+%      \draw[axes] (0,-2)--(0,2) node[above]{$I$};
+%      \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
+%    \end{tikzpicture}
+%    \begin{tikzpicture}[scale=.6]
+%      \draw[axes] (0,0)--(5,0) node[right]{$t$};
+%      \draw[axes] (0,-2)--(0,2) node[above]{$V$};
+%      \draw[smooth,samples=40,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
+%    \end{tikzpicture}
+%  \end{center}
+%  The power outlet in North America are all AC, with a maximum voltage of
+%  \SI{120}\volt, and a frequency of \SI{60}\hertz. AC current are important
+%  in the power generation.
+%
+%
+%
+%
+%\section{AC Generator}
+%  
+%    \pic1{graphics/generator}
+%
+%    \begin{itemize}
+%    \item When the coil is turning, the charge carriers inside the coil move
+%      relative to the magnetic field
+%    \item The charges experience a magnetic force, creating an electromotive
+%      force
+%%    \item When the coil is turning, the orientation between the coil and the
+%%      magnetic field changes
+%%    \item Because the \emph{magnetic flux} is changing, a potential difference
+%%      (voltage) is created in the coil itself
+%    \item When connected to a resistor, it acts as an AC power source
+%    \end{itemize}
+%  
+%
+%
+%
+%
+%\section{Transformers}
+%
+%\section[t]{How Transformers Work}
+%  \begin{center}
+%    \pic{.8}{graphics/transformers}
+%  \end{center}
+%  \vspace{-.2in}\begin{itemize}
+%  \item Consists of two coils (\emph{primary} and \emph{secondary})
+%  \item Think of each coil as solenoids
+%  \item The coils are not electrically connected (i.e.\ no wires connecting the
+%    two circuits)
+%  \item Both coils may be wrapped around a square soft-iron core (shown above)
+%  \end{itemize}
+%
+%
+%
+%
+%\section[t]{How Transformers Work}
+%  \begin{center}
+%    \pic{.8}{graphics/transformers}
+%  \end{center}
+%  \vspace{-.2in}\begin{itemize}
+%  \item The primary coil is connected to a AC power source
+%  \item When current flows through the primary circuit, a magnetic field is
+%    generated in the primary coil
+%  \item Because the current is AC, the magnetic field inside the primary coil
+%    is constantly changing in strength and direction
+%  \end{itemize}
+%
+%
+%
+%
+%\section[t]{How Transformers Work}
+%  \begin{center}
+%    \pic{.8}{graphics/transformers}
+%  \end{center}
+%  \vspace{-.2in}\begin{itemize}
+%  \item A magnetic field is also generated inside the entire soft-iron core
+%  \item The magnetic field in the iron core oscillates with the same
+%    frequency as the primary coil
+%  \item A current is induced in the secondary coil because the magnetic field
+%    through the coil (i.e.\ the iron core) is changing
+%  \end{itemize}
+%
+%
+%
+%
+%\section[t]{How Transformers Work}
+%  \begin{center}
+%    \pic{.8}{graphics/transformers}
+%  \end{center}
+%  \vspace{-.2in}\begin{itemize}
+%  \item An alternating current is generated in the secondary coil with the same
+%    frequency as the primary coil
+%  \item The output voltage and current in the secondary coil depends on the
+%    ratio of windings in both coils
+%    \begin{itemize}
+%    \item \textbf{(a)} is called a \emph{step-down} transformer, while
+%    \item \textbf{(b)} is called a \emph{step-up} transformer
+%    \end{itemize}
+%  \end{itemize}
+%
+%
+%
+%
+%\section{Transformers in Circuit Diagrams}
+%  The circuit diagram for a transformer consists of two coils. The vertical
+%  line between the coil indicate whether this transformer has a soft-iron core:
+%
+%  \vspace{.2in}
+%  
+%    \centering
+%    \begin{tikzpicture}[scale=2]
+%      \draw (0,0) node[transformer] (T) {}
+%      (T.A2) to [short,o-] ++ (-1,0) coordinate (aux)
+%      to [sI] (aux |- T.A1)
+%      to [short,-o] (T.A1);
+%    \end{tikzpicture}
+%
+%    Air core
+%
+%    \centering
+%    \begin{tikzpicture}[scale=2]
+%      \draw (0,0) node[transformer] (T) {}
+%      (T.A2) to [short,o-] ++ (-1,0) coordinate (aux)
+%      to [sI] (aux |- T.A1)
+%      to [short,-o] (T.A1);
+%      \draw[thick] ( .03,.3)--( .03,-.3);
+%      \draw[thick] (-.03,.3)--(-.03,-.3);
+%    \end{tikzpicture}
+%
+%    Iron core
+%  
+%
+%
+%
+%
+%\section{Transformers}
+%  Assuming that the electric potential energy (and therefore power) in the
+%  primary coil is transmitted to the secondary coil, and using the equation for
+%  power in a circuit:
+%
+%  \eq{-.1in}{
+%    \Delta E_p=\Delta E_s
+%    \quad\rightarrow\quad
+%    P_p=P_s
+%    \quad\rightarrow\quad
+%    \boxed{V_pI_p = V_sI_s}
+%  }
+%
+%
+%
+%
+%\section{Transformers}
+%  Voltage, current in the two coils (primary and secondary) are related to the
+%  number of windings:
+%  
+%  \eq{-.1in}{
+%    \boxed{\frac{V_p}{V_s}=\frac{I_s}{I_p}=\frac{N_p}{N_s}}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Number of windings in primary \& secondary coils & $N_p$, $N_s$ & N/A \\
+%      Current in primary \& secondary coils & $I_p$, $I_s$ & \si\ampere \\
+%      Voltage across primary \& secondary coils & $V_p$, $V_s$ & \si\volt
+%    \end{tabular}
+%  \end{center}
+%  These two equations assume that the transformer is \SI{100}{\percent}
+%  efficient. In practice, the efficiency of transformers is
+%  $\approx\SI{90}\percent$.
+%
+%
+%
+%
+%%\section{Transformers}
+%%  \begin{itemize}
+%%  \item Because only a \emph{changing} magnetic field can induce current, the
+%%    transformer can only be used with alternating current
+%%  \end{itemize}
+%%
+%
+%
+%
+%\section{Power Grid}
+%  Between where power is generated, and your electrical outlet, AC power
+%  usually goes through a number of step-up and step-down transformers. This is
+%  usually referred to as a \textbf{power grid}.
+%  \begin{center}
+%    \pic{.7}{graphics/powerline}
+%  \end{center}

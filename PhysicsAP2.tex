@@ -58,9 +58,37 @@
 \usepackage{colortbl}
 \usepackage{multicol}
 
+\pgfplotsset{
+  compat=1.13, % TikZ coordinates <-> axes coordinates
+  /pgf/number format/1000 sep={},
+  legend image code/.code={
+    \draw[mark repeat=2,mark phase=2]
+    plot coordinates {(0cm,0cm) (0.22cm,0cm) (0.44cm,0cm)};%
+  }
+}
 
+% Planck's law
+\pgfmathdeclarefunction{planck}{2}{%
+  \pgfmathparse{1.191042972e26/(#1^5)/(exp(0.01439e9/(#1*#2))-1)}%
+}
+
+% Rayleigh-Jeans law
+\pgfmathdeclarefunction{rayleighjeans}{2}{%
+  \pgfmathparse{8.278160269e18*#2/(#1^4)}%
+}
+
+%Wien's distribution law
+\pgfmathdeclarefunction{wien}{2}{%
+  \pgfmathparse{1.191042972e26/(#1^5)*exp(-0.01439e9/(#1*#2))}%
+}
+
+% Wien's displacement law
+\pgfmathdeclarefunction{lampeak}{1}{% 
+  \pgfmathparse{2.898e6/#1}%
+}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
+
 \tikzset{
   >=latex,
   voltage dir=RP,
