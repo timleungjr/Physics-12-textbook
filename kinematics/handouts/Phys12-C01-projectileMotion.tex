@@ -1,48 +1,3 @@
-%\documentclass{../../oss-handout}
-%\usepackage{enumitem}
-%\usepackage{tikz}
-%\usepackage{siunitx}
-%\usepackage{amsmath}
-%\usepackage{newtxtext,newtxmath}
-%
-%\sisetup{
-%  detect-all,
-%  per-mode=symbol,
-%}
-%
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{6pt}
-%\setlength{\headheight}{26pt}
-%
-%\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-%
-%\tikzset{
-%  >=latex
-%}
-%\tikzstyle{axes}=[thick,->]
-%\tikzstyle{vectors}=[very thick,->]
-%\tikzstyle{every node}=[font=\footnotesize]
-%
-%
-%% Set the page style for the document
-%\pagestyle{plain}
-%
-%% Course & handout information
-%\renewcommand{\institution}{Meritus Academy}
-%\renewcommand{\coursetitle}{Grade 12 Physics}
-%\renewcommand{\term}{Updated: Winter/Spring 2023}
-%\title{Unit 1 Handout: Projectile Motion}
-%\author{Dr.\ Timothy Leung}
-%\date{\today}
-%
-%\begin{document}
-%\thispagestyle{title}
-%\gentitle
-%
-%\begin{center}
-%  \textbf{Projectile Motion}
-%\end{center}
-
 \section{Projectile Motion}
 
 A \textbf{projectile} is an object that is launched through the air\footnote{Or
@@ -67,32 +22,31 @@ system, as shown in Fig.~\ref{fig:projectile}, where:
     \draw[axes] (0,0)--(0,2) node[above]{$y$};
     \draw[axes] (.5,0) arc (0:52:.5) node[midway,right]{$\theta$};
     \draw[dotted,domain=0:4.5,thick] plot(\x,{1.2*\x-.2*\x*\x});
-    \draw[vectors] (0,0)--(.75,.9) node[above]{$\vec v_i$};
-    \draw[vectors,red!80!black] (0,0)--(0,.9) node[midway,left]{$v_{y1}$};
-    \draw[vectors,blue!80!black] (0,0)--(.75,0) node[midway,below]{$v_x$};
+    \draw[vectors] (0,0)--(.75,.9) node[above]{$\bm V_i$};
+    \draw[vectors,red!80!black] (0,0)--(0,.9) node[midway,left]{$\bm v_i$};
+    \draw[vectors,blue!80!black] (0,0)--(.75,0) node[midway,below]{$\bm u_i$};
   \end{tikzpicture}
   \caption{Schematic diagram of a projectile motion.}
   \label{fig:projectile}
 \end{figure}
 %In this case, the $x$ and $y$ components of velocity are defined as:
 %\begin{align*}
-%  v_x   &=v_i\cos\theta\\
-%  v_{y1}&=v_i\sin\theta
+%  v_x   &=V_i\cos\theta\\
+%  v_{y1}&=V_i\sin\theta
 %\end{align*}
 
 In the \textbf{horizontal} ($x$) direction, there is no acceleration (i.e.\
 $a_x=0$), therefore the horizontal velocity component is constant. Assuming
-that the projectile is launched forward with an initial speed $v_i$ at an angle
+that the projectile is launched forward with an initial speed $V_i$ at an angle
 of $\theta$ above the horizontal, the kinematic equations reduce to a single
 equation:
 \begin{equation}
-  \Delta x=v_x\Delta t=v_i\cos\theta\Delta t
+  \Delta x=u_i\Delta t=V_i\cos\theta\Delta t
   \label{horizontal}
 \end{equation}
-
 where $\Delta x$ is the final horizontal displacement when motion stops,
-$v_i$ is the initial speed (magnitude of the initial velocity),
-$v_x=v_i\cos\theta$ is therefore the horizontal component of the
+$V_i$ is the initial speed (magnitude of the initial velocity),
+$u_i=V_i\cos\theta$ is therefore the horizontal component of the
 initial velocity (which is constant), and $\Delta t$ is the time of motion.
 
 In the \textbf{vertical} ($y$) direction, there is a constant acceleration due
@@ -100,12 +54,12 @@ to gravity alone (i.e.\ $a_y=-g=\SI{-9.81}{\metre\per\second\squared}$).
 Acceleration is \emph{negative} because the convention is to point the positive
 axis upwards. The kinematic equations now take the form:
 \begin{align}
-  \Delta y &= v_{y1}\Delta t - \frac12 g\Delta t^2
-  = v_i\sin\theta\Delta t - \frac12 g\Delta t^2\label{vertical}\\
-  v_y &= v_i\sin\theta -g\Delta t\\
-  v_y^2 &= v_i^2\sin^2\theta-2g\Delta y\label{height}
+  \Delta y &= v_i\Delta t - \frac12 g\Delta t^2
+  = V_i\sin\theta\Delta t - \frac12 g\Delta t^2\label{vertical}\\
+  v_f &= V_i\sin\theta -g\Delta t\\
+  v_f^2 &= V_i^2\sin^2\theta-2g\Delta y\label{height}
 \end{align}
-where $v_{1y}=v_i\sin\theta$ is the initial vertical component of velocity
+where $v_i=V_i\sin\theta$ is the initial vertical component of velocity
 (positive if $\theta$ above horizontal, and negative if $\theta$ is below), and
 $\Delta y$ is the final vertical displacement (positive if the object lands
 higher, then $\Delta y > 0$, if it lands lower, then $\Delta y<0$.)
@@ -119,7 +73,7 @@ variables that are shared in both directions (Eqs.\ref{horizontal} and
 \begin{itemize}[nosep]
 \item Time interval $\Delta t$
 \item Launch angle $\theta$
-\item Initial speed $v_i$
+\item Initial speed $V_i$
 \end{itemize}
 When solving any projectile motion problems, there will be likely \emph{two}
 equations with \emph{two} unknowns that you need to solve for. It is almost
@@ -135,61 +89,64 @@ A \textbf{symmetric trajectory} is a special case where an object is launched
 at an angle of $\theta$ (between $\ang{0}$ and $\ang{90}$) above
 horizontal\footnote{This may be obvious, but any angles \emph{below} the 
 horizontal will never have a symmetric trajectory.} with an initial speed
-$v_i$, and then lands at the same height. Examples may include hitting a golf
+$V_i$, and then lands at the same height. Examples may include hitting a golf
 ball towards the hole, or shooting a bullet towards a horizontal
 target\footnote{Shooting a bullet towards a horizontal target always require an
 upward angle because of gravity}. To derive the equations, we use the $x$-axis
 for the horizontal direction and $y$-axis for the vertical.
 
-\textbf{Maximum height} $H$: Apply the kinematic equation in the $y$-direction.
-Recognizing that at maximum height $H=\Delta y$, vertical velocity is zero
-$v_{y2}=0$. Substituting this into Eq.~\ref{height}:
+\subsubsection*{Maximum height}
+The maximum height $H$ that the symmetric projectile by applying the kinematic
+equation in the $y$-direction. Recognizing that at maximum height $H=\Delta y$,
+vertical component of velocity is zero $v_{y2}=0$. Substituting this into
+Eq.~\ref{height}:
 \begin{equation}
-  0 = (v_i\sin\theta)^2-2gH
+  0 = (V_i\sin\theta)^2-2gH
 \end{equation}
 Solving for $H$, we get the maximum height equation:
-\begin{equation}
-  \boxed{H=\frac{v_i^2\sin^2\theta}{2g}}
-\end{equation}
+\begin{important-equation}
+  H=\frac{V_i^2\sin^2\theta}{2g}\quad\quad\quad\text{(for symmetric trajectory)}
+\end{important-equation}
 
-\textbf{Total time of flight} $T$: We apply the kinematic equation in the $y$
-(vertical) direction. When the object lands at the same height, the final
-vertical displacement is zero. We can set $\Delta y=0$ and $T=\Delta t$ in
+\subsubsection*{Total time of flight}
+The total time of flight $T$ is calculated by applying the kinematic equation
+in the $y$ (vertical) direction. When the object lands at the same height, the
+final vertical displacement is zero. We can set $\Delta y=0$ and $T=\Delta t$ in
 Eq.~\ref{vertical}:
-
-%velocity is the same in magnitude and opposite in direction as the initial
-%velocity, i.e.\  $v_{y2}=-v_{y1}=-v_i\sin\theta$:
 \begin{equation*}
-  0 = v_i\sin\theta T - \frac12 gT^2
+  0 = V_i\sin\theta T - \frac12 gT^2
 \end{equation*}
 Solving for $T$, we have:
-\begin{equation}
-  \boxed{T=\frac{2v_i\sin\theta}g}
+\begin{important-equation}
+  T=\frac{2V_i\sin\theta}g\quad\quad\quad\text{(for symmetric trajectory)}
   \label{tmax}
-\end{equation}
+\end{important-equation}
 
-\textbf{Range} $R$: We substitute the expression for $T$ from
-Eq.~\ref{tmax} into the $\Delta t$ in Eq.~\ref{horizontal}, the range
+\subsubsection*{Range}
+To calculate the range of the projectile $R$, we substitute the expression for
+$T$ from Eq.~\ref{tmax} into the $\Delta t$ in Eq.~\ref{horizontal}, the range
 $R=\Delta x$ can be calculated for any given launch angle and initial speed:
 \begin{equation*}
-  R =v_i\cos\theta\left(\frac{2v_i\sin\theta}g\right)
+  R = V_i\cos\theta\left(\frac{2V_i\sin\theta}g\right)
 \end{equation*}
 Using the trigonometric identity $\sin(2\theta)=2\sin\theta\cos\theta$, we
 simplify the equation to:
-\begin{equation}
-  \boxed{R=\frac{v_i^2\sin(2\theta)}g}
-\end{equation}
-It is obvious that for any given initial speed $v_i$, the maximum range
+\begin{important-equation}
+  R=\frac{V_i^2\sin(2\theta)}g
+  \quad\quad\quad\text{(for symmetric trajectory)}
+\end{important-equation}
+It is obvious that for any given initial speed $V_i$, the maximum range
 $R_\text{max}$ occurs when $\sin(2\theta)=1$ (i.e.\ $\theta=\ang{45}$), with a
 range of:
-\begin{equation}
-  \boxed{R_\text{max}=\frac{v_i^2}g}
-\end{equation}
-Also, for a known initial speed $v_i$ and range $R$, the launch angle $\theta$
+\begin{important-equation}
+  R_\text{max}=\frac{V_i^2}g
+  \quad\quad\quad\text{(for symmetric trajectory)}
+\end{important-equation}
+Also, for a known initial speed $V$ and range $R$, the launch angle $\theta$
 is given by:
 \begin{equation}
   \boxed{
-    \theta_1=\frac12\sin^{-1}\left(\frac{gR}{v_i^2}\right)
+    \theta_1=\frac12\sin^{-1}\left(\frac{gR}{V_i^2}\right)
   }
 \end{equation}
 This angle is labelled $\theta_1$ because it is \emph{not} the only angle that
@@ -294,7 +251,7 @@ where $2\theta=\ang{180}-2\theta$, or quite simply:
 %\item A projectile is fired into the air from the edge of a $125$-\si{\metre}
 %  high cliff at an angle of \ang{30.2} above the horizontal. The projectile
 %  hits a target \SI{455}{\metre} away from the base of the cliff. What is the
-%  initial speed of the projectile, $v_i$?
+%  initial speed of the projectile, $V_i$?
 %  
 %  \pic{.4}{../graphics/projectile_motion_problems_image1}
 %  \vspace{\stretch{1}}
