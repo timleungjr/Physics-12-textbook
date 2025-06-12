@@ -169,7 +169,7 @@ calculating the work done by ``a force'', it could mean:
   \item Work done by the normal force is zero, because $\bm F_n$ is
     perpendicular to the direction of motion:
     \begin{equation*}
-      W_n=\int\underbrace{\bm F_n\cdot\dl{\bm x}}_{=0}=0
+      W_n=\int\underbracket[1pt]{\bm F_n\cdot\dl{\bm x}}_{=0}=0
     \end{equation*}
   \item Work done by kinetic friction is negative, because $\bm f$ is in
     the opposite direction to motion:
@@ -802,7 +802,7 @@ However, with static friction present, the gain in kinetic energy is reduced:
 \begin{equation*}
   \Delta K_1 = \int_{x_0}^{x_1} F_\text{net}\dl x =
   \int_{x_0}^{x_1} (F-f)\dl x = \int_{x_0}^{x_1} F\dl x -
-  \underbrace{\int_{x_0}^{x_1} f\dl x}_{\Delta K_2}
+  \underbracket[1pt]{\int_{x_0}^{x_1} f\dl x}_{\Delta K_2}
 \end{equation*}
 Work done by static friction reduced the kinetic energy of $m_1$ by the same
 amount that is gained by $m_2$. We therefore conclude that work done by
@@ -895,7 +895,10 @@ are part of a much larger discipline within physics called
 
 
 
-\section{Conservation of Energy}
+\chapter{Conservation of Energy}
+\label{chapter:energy-conservation}
+
+
 Conservation of energy is most often stated using a statement that even a lay
 person with no physics background watching a movie may be familiar with:
 \begin{definition}
@@ -905,18 +908,18 @@ person with no physics background watching a movie may be familiar with:
 While this statement certainly is not incorrect---indeed, it captures the
 \emph{essence} of how energy is conserved---the actual law for the conservation
 of energy is more nuanced. In application, it is often a tedius exercise in
-bookkeeping:
+bookkeeping. We can express the law of conservation of energy with a simple
+equation:
 \begin{definition}
   \textbf{Law of conservation of energy:} The change in the total energy
   of a system is equal to the net external work done to the system.
+  \begin{equation}
+    \boxed{
+      \Delta E_\text{sys}=W_\text{ext}
+    }
+    \label{eq:energy-conservation-law}
+  \end{equation}
 \end{definition}
-We can express the law of conservation of energy with the simple equation:
-\begin{equation}
-  \boxed{
-    \Delta E_\text{sys}=W_\text{ext}
-  }
-  \label{eq:energy-conservation-law}
-\end{equation}
 
 
 
@@ -944,30 +947,24 @@ forces on each other.}, they may also do work on each other. A system may be:
 The system's energy include both all the kinetic and potential energies of the
 objects (collectively known as the \textbf{mechanical energy}), as well as the
 internal/thermal energies of the objects:
-\begin{equation}
-  \boxed{
-    E_\text{sys}
-    =\underbracket[1.3pt]{\sum K+\sum U}_\text{mechanical energy}+
-    \sum E_\text{int}
-  }
+\begin{important-equation}
+  E_\text{sys}
+  =\underbracket[1pt]{\sum K+\sum U}_\text{mechanical energy}+
+  \sum E_\text{int}
   \label{eq:system-energy}
-\end{equation}
+\end{important-equation}
 The \emph{change} in system energy must therefore be the total change of all
 the energies in the systems. i.e.:
 \begin{equation}
-  \boxed{
-    \Delta E_\text{sys}
-    =\sum\Delta K+\sum\Delta U+\sum\Delta E_\text{int}
-  }
+  \Delta E_\text{sys}
+  =\sum\Delta K+\sum\Delta U+\sum\Delta E_\text{int}
   \label{eq:system-energy-change}
 \end{equation}
 Substituting the expression from Eq.~(\ref{eq:system-energy}) into
 (\ref{eq:energy-conservation-law}), we get the ``change'' in system energy:
-\begin{equation}
-  \boxed{
-    \sum\Delta K + \sum\Delta U + \sum\Delta E_\text{int}=W_\text{ext}
-  }
-\end{equation}
+\begin{important-equation}
+  \sum\Delta K + \sum\Delta U + \sum\Delta E_\text{int}=W_\text{ext}
+\end{important-equation}
 The sign convention of the external work $W_\text{ext}$ is the same as how it
 is defined earlier in %Section~\ref{sec:mechwork}.
 Section~\ref{sec:mechwork}. When external work is:
@@ -981,11 +978,10 @@ Section~\ref{sec:mechwork}. When external work is:
 In isolated systems that does not interact with the outside (and therefore
 no external work can be done to the system), the law of conservation of energy
 further simplifies to
-\begin{equation}
-  \boxed{
-    \sum\Delta K+\sum\Delta U+\sum\Delta E_\text{int}=0
-  }
-\end{equation}
+\begin{important-equation}
+  \sum\Delta K+\sum\Delta U+\sum\Delta E_\text{int}=0
+  \quad\quad\quad\text{(isolated system)}
+\end{important-equation}
 
 %  In almost all of the problem encountered in AP Physics C, there will be no
 %  change in the internal energy of the system, and conservation of energy
@@ -1050,8 +1046,8 @@ energy is zero.
 \end{equation}
 In practice, we can also use the following equation for problem solving:
 \begin{equation}
-  \underbracket[1.3pt]{K+U_g}_\text{initial state}
-  =\underbracket[1.3pt]{K'+U_g'}_\text{final state}
+  \underbracket[1pt]{K+U_g}_\text{initial state}
+  =\underbracket[1pt]{K'+U_g'}_\text{final state}
 \end{equation}
 
 \begin{example}
@@ -1067,8 +1063,8 @@ In practice, we can also use the following equation for problem solving:
   total mechanical energy is conserved between when the ball is thrown, and the
   moment just before it hits the ground:
   \begin{displaymath}
-    \underbracket[1.3pt]{K + U_g}_\text{thrown} =
-    \underbracket[1.3pt]{K' + U_g'}_\text{just before hitting the ground}
+    \underbracket[1pt]{K + U_g}_\text{thrown} =
+    \underbracket[1pt]{K' + U_g'}_\text{just before hitting the ground}
   \end{displaymath}
   Setting $h=0$ at ground level (our reference level), and substituting the
   expressions for $K$ and $U_g$ the above equattion, we have
@@ -1417,8 +1413,8 @@ The solution:
 The negative work done by kinetic friction and drag (collectively known as
 $W_f$) are treated as external work between initial and final states
 \begin{equation}
-  \underbrace{K + U_g + U_e}_\text{initial state} + W_f=
-  \underbrace{K' + U_g' + U_e'}_\text{final state}
+  \underbracket[1pt]{K + U_g + U_e}_\text{initial state} + W_f=
+  \underbracket[1pt]{K' + U_g' + U_e'}_\text{final state}
 \end{equation}
 
 %  If \emph{only} conservative forces are doing work, mechanical energy (i.e.\

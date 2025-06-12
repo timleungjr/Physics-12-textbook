@@ -1803,7 +1803,7 @@ periodic functions, and none of them are constant!
 
 \section{Advanced Graphing Techniques}
 
-\subsection{Advanced Graphing Technique: $x$ vs.\ $t^2$}
+\subsection{Position vs.\ Time Squared}
 
 A toy cart rolls down a ramp from rest (i.e.\ $v_0=0$). At regular distances,
 time is recorded. In this case, the acceleration of the cart \emph{should} be
@@ -1879,20 +1879,19 @@ everyone.
 
 
 
-\subsection{Advanced Graphing Technique: $v^2$ vs.\ $\Delta x$}
+\subsection{Velocity Squared vs.\ Displacement}
 
 A toy cart rolls down a ramp. At regular positions $x$ along the ramp, the
 cart's velocity $v$ is recorded instead. Again, acceleration \emph{should}
 be constant. Can we determine the car's acceleration from the data?
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}[scale=.7,rotate around={-10:(9,0)}]
+  \begin{tikzpicture}[rotate around={-10:(9,0)}]
     \draw[thick] (0,0)--+(8.8,0);
     \draw[thick] (.3,.1) rectangle +(.8,.2);
-    \draw[thick,fill=black!2] (.5,.1) circle (.1);
-    \draw[thick,fill=black!2] (.9,.1) circle (.1);
-    \foreach \x in {.7,1.2,...,8.5}
-    \draw[thick](\x,0)--+(0,-.15); % node[below]{\tiny$\x$};
+    \draw[thick,fill=white] (.5,.1) circle (.1);
+    \draw[thick,fill=white] (.9,.1) circle (.1);
+    \foreach \x in {.7,1.2,...,8.5} \draw[thick](\x,0)--+(0,-.15);
   \end{tikzpicture}
 \end{figure}
       
@@ -1954,10 +1953,14 @@ form of $y=mx+b$.
 
 
 
-\subsection{Graphing ``Linear'' Functions: Example}
-  
+
+\subsection{Graphing ``Linear'' Functions}
+
 This concept extends to graphing other physical relationships not related to
-kinematics. For example, to find the index of refraction of a material using
+kinematics.
+
+\subsubsection*{Example: Snell's Law}
+For example, to find the index of refraction of a material using
 Snell's law, we can plot $\sin\theta_1$ vs.\ $\sin\theta_2$ (instead than
 $\theta_1$ vs.\ $\theta_2$). The slope is the ratio of the indices $n_1/n_2$:
 \begin{equation}
@@ -1973,7 +1976,7 @@ $n_2$.
 
 
 
-\subsection*{Graphing ``Linear'' Functions: Another Example}
+\subsubsection*{Example: Period of Oscillation of a Simple Pendulum}
 To relate the period of oscillation (the time it takes to swing back and
 forth once) of a simple pendulum to the length of the pendulum, plot $T$
 vs.\ $\sqrt\ell$:
@@ -2136,8 +2139,23 @@ extending our understanding to three dimensions is much easier.
 
 \section{Two-Dimensional Coordinate System}
 
+
+\begin{wrapfigure}{r}{.34\textwidth}
+  \centering
+  \begin{tikzpicture}[axes]
+      \draw (-2,0)--(2,0) node[right]{$x$};
+      \draw (0,-2)--(0,2) node[right]{$y$};
+  \end{tikzpicture}
+  \caption{The $xy$-plane is a 2D Cartesian coordinate system}
+\end{wrapfigure}
 The coordinate system for two dimensional motion is the Cartesian $xy$-plane,
-as we have discussed briefly in the previous chapter. Again, we attribute the
+as we have discussed briefly in the previous chapter. The $x$ and $y$ axes are
+\textbf{orthogonal} to each other.
+%\footnote{Two vectors are orthogonal when they are pependicular to
+%each other}.
+This means that motion along the $x$ axis is independent of motion along the
+$y$ axis. Mathematically, we call this \textbf{linear independence}.
+Again, we attribute the
 $x$ and $y$ axes based on the physical directions. For example, for motion on
 level ground, we may wish to align the $x$ axis to the east, and the $y$ axis
 to the north. For projectile motions, which will be discussed in details in
@@ -2149,51 +2167,57 @@ simplify calculations.
 
 
 
-\section{Describing a 2D Vector}
+\section{Describing a 2D Vector} %On The $xy$-Plane}
 
-Once the two-dimensional coordinate system has been set, \emph{any} vector
-inside the coordinate system is a two-dimensional vector. Like vectors in
-higher dimensions are also represented as arrows. The magnitude of the vector
+Once a 2D coordinate system has been set, \emph{any} vector inside the
+coordinate system is a 2D vector. Like vectors in 1D, vectors in higher
+dimensions are also represented as arrows. The magnitude of the vector
 is the length of the arrow; the direction of the vector can be described by the
-angle it makes with the $x$-axis. We can explicitly state the magnitude of the
-vector, with the direction inside a bracket:
+angle it makes with the $x$-axis. One way to describe \emph{any} 2D vector is
+to explicitly state the magnitude of the vector, with the direction inside a
+bracket:
 \begin{center}
   magnitude [direction]
 \end{center}
-Fig.~\ref{fig:2d-vectors} shows four examples of 2D vectors on the xy plane.
-Vectors $\bm A$ and $\bm B$ have both $x$ and $y$ ``components''; vector
-$\bm C$ is only along the $+x$ axis; and vector $\bm D$ is entirely along the
-$-y$ axis.
+In introductory-level physics courses, this is often the preferred way of
+expressing 2D vectors, because it can be understood intuitively by a novice
+physics student. However, in high-level physics courses, it is often more
+convenient to express 2D vectors in component form. Fig.~\ref{fig:2d-vectors}
+shows four examples of 2D vectors on the $xy$-plane. Describing vectors in
+component form is discussed in Section~\ref{section:component-form}.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[scale=.7]
     \draw[help lines,gray] (-5,-3) grid (5,4);
     \draw[axes] (-5.3,0)--(5.3,0) node[right]{$x$};
     \draw[axes] (0,-3.3)--(0,4.3) node[right]{$y$};
+
     \draw[vectors,red] (0,0)--(4,3) node[right]{$\bm A$};
+
     \draw[axes] (1.5,0) arc (0:atan(3/4):1.5)
     node[midway,right]{\SI{37}\degree};
     \draw[vectors,red] (-2,3)--+(-2,-2) node[left]{$\bm B$};
     \draw[thick,dash dot] (-2,3)--+(1.25,0);
-    \draw[axes] (-1,3) arc (0:225:1) node[pos=.75,left]{\SI{225}\degree};
+
+    \draw[axes] (-1.2,3) arc (0:225:.8) node[pos=.75,left]{\SI{225}\degree};
     \draw[vectors,red] (2,-1)--+(2,0) node[below]{$\bm C$};
-    \draw[vectors,red] (0,-1)--+(0,-1.5) node[right]{$\bm D$};
+    
+    \draw[vectors,red] (-1,-1)--+(0,-1.5) node[right]{$\bm D$};
+    \draw[axes] (-.2,-1) arc (0:270:.8) node[pos=.75,left]{\SI{270}\degree};
   \end{tikzpicture}
-  \caption{Examples of two-dimensional vectors}
+  \caption{Four examples of 2D vectors on the $xy$-plane}
   \label{fig:2d-vectors}
 \end{figure}
-We can express these vectors by directly stating their magnitudes and
+Vectors $\bm A$ and $\bm B$ have both $x$ and $y$ ``components''; vector
+$\bm C$ is only along the $+x$ axis; and vector $\bm D$ is entirely along the
+$-y$ axis. We can express these vectors by directly stating their magnitudes and
 directions:
 \begin{align*}
-  \bm A &= 5.0\;[\SI{37}\degree]\\
-  \bm B &= 1.4\;[\SI{135}\degree]\\
-  \bm C &= 2.0\;[\SI0\degree]\\
+  \bm A &= 5\;[\SI{37}\degree]\\
+  \bm B &= 2.82\;[\SI{135}\degree]\\
+  \bm C &= 2\;[\SI0\degree]\\
   \bm D &= 1.5\;[\SI{270}\degree]
 \end{align*}
-In introductory-level physics courses, this is often the preferred way of
-expressing 2D vectors, because it can be understood intuitively. However, in
-high-level physics courses, it is often more convenient to express 2D vectors
-in component form.
 
 In Cartesian space, regardless of where the vector is drawn, as long they have
 the same magnitude and direction (i.e.\ making the same angle with the
@@ -2221,6 +2245,8 @@ three vectors are equal, i.e. $\bm A=\bm A'=\bm A''$.
 
 
 \section{Vector Decomposition}
+\label{section:component-form}
+
 In the previous section, we alluded to the fact that some 2D vectors have
 components. These components are the \textbf{projection} of the vector on to
 the axes. For our current purpose, we can think of the projection as the
@@ -2325,11 +2351,11 @@ be calculated using Pythagorean theorem and basic trigonometry, respectively:
 \end{align}
 
 Conversely, if magnitude $|\bm A|$ and direction $\phi$ are known, then
-components $\bm A_x$ and $\bm A_y$ can be easily obtained using the sine and
-cosine functions:
+components $A_x$ and $A_y$ can be easily obtained using the sine and cosine
+functions:
 \begin{align}
-  |\bm A_x| &= |\bm A| \cos\phi\\
-  |\bm A_y| &= |\bm A| \sin\phi
+  A_x &= |\bm A| \cos\phi\\
+  A_y &= |\bm A| \sin\phi
 \end{align}
 Note: A 2D vector can be fully described using any 2 of the parameters: $A_x$,
 $A_y$, $A$ or $\phi$
@@ -2361,7 +2387,7 @@ $A_y$, $A$ or $\phi$
 The vector sum can be visualized by lining up the head of one vector with
 the toe of the next one, shown graphically on the right. Like scalars, the
 order of the addition does not matter.
-\begin{figure}
+\begin{figure}[ht]
   \centering
   \begin{tikzpicture}[scale=.5]
     \draw[help lines] (-4,0) grid (4,8);

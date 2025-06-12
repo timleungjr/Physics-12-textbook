@@ -20,26 +20,27 @@ between all massive objects, as shown in Fig.~\ref{fig:gravity1}.
   \label{fig:gravity1}
 \end{figure}
 
-The magnitude of \textbf{gravitational force} ($\bm F_g$)  between two
-masses is proportional to their masses ($m_1$, $m_2$), and inversely
-proportional to the square of the distance ($r$) between them:
-\begin{equation}
-  \boxed{
-    F_g=\frac{Gm_1m_2}{r^2}
-  }
+In the 
+The magnitude of the gravitational force ($\bm F_g$) between two masses is
+described by the \textbf{law of universal gravitation}. The force is
+proportional to the masses $m_1$, $m_2$, and inversely proportional to the
+square of the distance ($r$) between them:
+\begin{important-equation}
+  F_g=\frac{Gm_1m_2}{r^2}
   \label{eq:law-of-gravity}
-\end{equation}
+\end{important-equation}
 where $G=\SI{6.67e-11}{N.m^2/kg^2}$ is the \textbf{universal gravitational
   constant}. This equation is derived based on the second law of motion and
-Kepler's law of planetary motion (discussed later in this chapter). 
+Kepler's laws of planetary motion (discussed later in this chapter). 
 
-Like \emph{all} forces, gravity obey the third law of motion: if $m_1$ exerts a
-force $\bm F_g$ on $m_2$, then $m_2$ also exerts a force $-\bm F_g$ on
-$m_1$. The attractive forces are equal in magnitude and opposite in direction
-(i.e.\ third law of motion). The masses $m_1$ and $m_2$ are assumed to be
-\emph{point masses} that do not occupy any space. For objects with
-\emph{spatial extend} (i.e.\ the mass actually takes up space), we assume that
-one object is not inside the other.
+Like \emph{all} forces, gravitational force obey the third law of motion: if
+$m_1$ exerts a force $\bm F$ on $m_2$, then $m_2$ must also exerts a force
+$-\bm F$ on $m_1$; the attractive forces on the two masses are equal in
+magnitude and opposite in direction.
+
+The masses $m_1$ and $m_2$ are assumed to be \emph{point masses} that do not
+occupy any space. For objects with \emph{spatial extend} (i.e.\ masses that
+actually takes up space), we assume that one object is not inside the other.
 
 This equation does not work for extremely massive objects (e.g.\ black holes
 and neutron stars), and the law must be replaced by the theory of general
@@ -49,48 +50,48 @@ neutons). However, aside from the extreme, using Eq.~\ref{eq:law-of-gravity} is
 generally acceptable.
 \begin{common-question}
   \textbf{What happens when $r=0$?} From Eq.~\ref{eq:law-of-gravity}, it
-  appears that when $r\rightarrow 0$, $F_g\rightarrow\infty$. However, it is
-  worth pointing out that point masses do not actually exist (even an electron
-  has a finite size). Therefore the situation for $r=0$ never arises; $F_g$ is
-  never be infinite. From a more practical point of view, whether a mass can be
-  treated as a point mass is a matter of \emph{scale}. For example, at the
-  scale of the solar system, the Sun and all the planets, moons, comets can all
-  be considered as point masses, but near the surface of an
-  irregularly-shaped asteroid, the point mass model would be very inaccurate.
+  appears that when $r\to0$, $F_g\to\infty$. However, it is worth pointing out
+  that point masses do not actually exist (even an electron has a finite size).
+  Therefore the situation for $r=0$ never arises; $F_g$ is never be infinite.
+  From a more practical point of view, whether a mass can be treated as a
+  point mass is a matter of \emph{scale}. For example, at the scale of the
+  solar system, the Sun and all the planets, moons, comets can all be
+  considered as point masses, but near the surface of an irregularly-shaped
+  asteroid, the point mass model would be very inaccurate.
 \end{common-question}
 
 
 
 
 \begin{example}
-  A \SI{65.0}{\kilo\gram} astronaut is walking on the surface of the moon,
-  which has a mean radius of \SI{1.74e3}{\kilo\metre} and a mass of
-  \SI{7.35e22}{\kilo\gram}. What is the weight of the astronaut?
+  A \SI{65.0}{\kilo\gram} astronaut is walking on the surface of the Moon,
+  which has a mean radius of \SI{1.74e6}{\metre} and a mass of
+  \SI{7.35e22}{\kilo\gram}. What is his weight?
 
-  \textbf{Solution:} When the astronaut walks on the moon, the
-  distance between his centre of mass (CM) and the Moon's CM is just the
-  radius of the Moon.
+  \textbf{Solution:} When the astronaut is on the Moon, the distance between
+  him and the Moon's centre of mass is just the Moon's radius. The weight of
+  the astronaut is the gravitational force that the Moon exerts on him:
   \begin{equation*}
-    F_g=\frac{Gm_1m_2}{r^2}=
+    F_g=\frac{Gm_1m_2}{r^2}
+    =\frac{(\num{6.67e-11})(65.0)(\num{7.35e22})}{(\num{1.74e6})^2}
+    =\SI{12.4}\newton
   \end{equation*}
-  We have previously known that the gravitational pull on the Moon is
-  approximately $1/6$ that of Earth. This calculation confirms it.
+  On the Moon, you weigh approximately $1/6$ of your weight on Earth.
 \end{example}
 
 
 
 \begin{example}
-  How far apart would you have to place two
-  \SI{7.0}{\kilo\gram} bowling balls so that the force of gravity between them
-  would be \SI{1.25e-8}\newton? (Notice the magnitude of gravitational force
-  between the two objects. In fact, gravitational force is the weakest of all
-  fundamental forces.)
+  How far apart would you have to place two \SI{7.0}{\kilo\gram} bowling balls
+  so that the force of gravity between them would be \SI{1.25e-8}\newton?
 
   \vspace{.15in}\textbf{Solution:}
   \begin{equation*}
     F_g=\frac{Gm_1m_2}{r^2}=\frac{Gm^2}{r^2}=\quad\rightarrow\quad
     r=\sqrt{\frac{Gm^2}{F_g}}=\left(\sqrt{\frac G{F_g}}\right)m=
   \end{equation*}
+  Notice the magnitude of gravitational force between the two objects. In fact,
+  gravitational force is the weakest of all fundamental forces.
 \end{example}
 
 
@@ -139,8 +140,10 @@ We usually describe gravitational force using the familiar equation:
 \begin{equation*}
   \bm F_g=m\bm g
 \end{equation*}
-To find $g$, we can group together the variables in the law of
-universal gravitation. For the gravitational force acting on $m_2$, we have:
+
+To find the magnitude of $\bm g$, we can group together the variables in the
+law of universal gravitation. For the gravitational force acting on $m_2$, we
+have:
 \begin{equation} 
   F_g=\underbracket[1pt]{\left[\frac{Gm_1}{r^2}\right]}_{=g}m_2=m_2g
 \end{equation}
@@ -159,10 +162,10 @@ masses in its vicinity.
 %$m_s$ and the distance $r$ from it;
 Its magnitude\footnote{Also referred to as its \emph{strength} or
 \emph{intensity} of the field} is given as a function of two variables:
-\begin{equation}
-  \boxed{
-    g(m_s,r)=\frac{Gm_s}{r^2}}
-\end{equation}
+\begin{important-equation}
+  g(m_s,r)=\frac{Gm_s}{r^2}
+  \quad\quad\quad\text{Gravitational field from a point mass}
+\end{important-equation}
 The direction of the gravitational field is \emph{towards} the source mass
 that created it.
 \begin{remark}%sidenote}
@@ -306,8 +309,7 @@ vector sum of all the gravitational fields from each source mass.
 The expression for \textbf{gravitational potential energy} can be obtained
 through the law of universal gravitation using basic integral calculus, by
 calculating the work done by the gravitational force as it moves an object from
-$r_1$ to $r_2$. Of course, the calculus is ``basic'' only if you already know
-calculus, otherwise it is impossible:
+$r_1$ to $r_2$:
 \begin{equation*}
   \underbracket[1pt]{
     W_g = \int_{\bm r_1}^{\bm r_2}\bm F_g\cdot d\bm r
@@ -315,12 +317,15 @@ calculus, otherwise it is impossible:
   = \cdots = Gm_1m_2 \int_{r_1}^{r_2}\frac{dr}{r^2}
   =\frac{Gm_1m_2}{r_1} - \frac{Gm_1m_2}{r_2}=-\Delta U_g
 \end{equation*}
-But we can skip over to the final result: $U_g$ is the gravitational potential
-energy stored between masses $m_1$ and $m_2$, defined as:
-\begin{equation}
-  \boxed{U_g=-\frac{Gm_1m_2}r}
+Of course, the calculus is ``basic'' only if you already know calculus,
+otherwise it is impossible. But we can skip over to the final result: the work
+done by gravitational foce $U_g$ is
+the gravitational potential energy stored between masses $m_1$ and $m_2$,
+defined as:
+\begin{important-equation}
+  U_g=-\frac{Gm_1m_2}r
   \label{eq:GPE-general}
-\end{equation}
+\end{important-equation}
 By definition, $U_g$ is the work done by gravity required to move two objects
 from $r$ to $\infty$. To generalize the equation, the reference where $U_g=0$
 is set at $r=\infty$, and $U_g$ \emph{decrease} as $r$ decreases.
@@ -561,7 +566,7 @@ launched parallel to the surface of Earth with some initial velocity
 $\bm v$.
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \begin{tikzpicture}
       \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
@@ -574,7 +579,7 @@ $\bm v$.
       planet after travelling a short distance}
   \end{subfigure}
   \hspace{.3in}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \begin{tikzpicture}
       \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
@@ -586,7 +591,8 @@ $\bm v$.
       distance but eventually, it still falls.}
   \end{subfigure}
 
-  \vspace{.2in}\begin{subfigure}{.4\textwidth}
+  \vspace{.2in}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \begin{tikzpicture}
       \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
@@ -598,7 +604,7 @@ $\bm v$.
     \label{fig:in-orbit}
   \end{subfigure}
   \hspace{.3in}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \begin{tikzpicture}
       \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
@@ -673,12 +679,10 @@ centripetal force $\bm F_c$:
 cancelling the $r$ and $m$ terms on both sides of the equation, we can solve
 for the expression for orbital speed:
 %which does not depend on the mass $m$ of the object in orbit:
-\begin{equation}
-  \boxed{
-    v_\text{orbit}=\sqrt{\frac{GM}r}
-  }
+\begin{important-equation}
+  v_\text{orbit}=\sqrt{\frac{GM}r}
   \label{eq:orbital-velocity}
-\end{equation}
+\end{important-equation}
 Note that this equation is only applicable for perfectly circular orbits. Like
 all uniform circular motion, the direction of $\bm v_\text{orbit}$ is
 tangent to the circular path.

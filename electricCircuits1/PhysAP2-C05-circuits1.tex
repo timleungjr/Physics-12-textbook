@@ -1028,64 +1028,131 @@ connected in parallel (side by side) must be the same:
   \end{tikzpicture}
   \caption{Circuit diagram of 3 resistors connected in parallel}
 \end{figure}
-From the current law, we know that the total current is the current through all
-the resistors, which we can rewrite in terms of voltage and resistance using
-Ohm's law:
+From the junction law, we know that the total current is the current through all
+the parallel resistors, which we can then express in terms of voltage and
+resistance using Ohm's law:
+\begin{equation}
+  I=I_1+I_2+I_3+\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}+\cdots
+  \label{eq:parallel1}
+\end{equation}
+From the voltage law, we know that the voltage across the parallel resistors
+must be the same (i.e.\ $V_1=V_2=V_3=\cdots=V$), therefore we can factor out
+the voltage term in Eq.~\ref{eq:parallel1}, and re-write in terms of an
+\emph{equivalent} resistance $R_p$:
 \begin{equation*}
-  I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
+  I=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)=
+  \frac V{R_p}
 \end{equation*}
-But since we also know that $V_1=V_2=V_3=\cdots=V$ from the voltage law, we
-can re-write as
-\begin{equation*}
-  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}+\cdots\right)
-\end{equation*}
-The equivalent resistance of a parallel circuit can found by applying Ohm's law
-and Kirchhoff's laws: The inverse of the equivalent resistance is the sum of
-the inverses of the individual resistances.
-\begin{important-equation}
-  \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
-\end{important-equation}
+From this, we find the parallel equivalent resistance of $N$ resistors connected
+in parallel: The inverse of the equivalent resistance $R_p$ is the sum of the
+inverses of the individual resistances $R_i$:
+\begin{equation}
+  \boxed{
+    \frac1{R_p}=\sum_i\frac1{R_i}
+  }
+\end{equation}
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Equivalent resistance in parallel & $R_p $ & \si\ohm \\
+%      Resistance of individual loads    & $R_i $ & \si\ohm
+%    \end{tabular}
+%  \end{center}
 Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
 it effectively increases the cross section area that the current passes through.
-The parallel equivalent resistance is \emph{always} lower than the lowest
-resistor.
-\begin{figure}[ht]
-  \centering
-  \begin{subfigure}[T]{.27\textwidth}
-    \centering
-    \begin{tikzpicture}[thick]
-      \draw (0,0) to[R=$R$,o-o] (3,0);
-    \end{tikzpicture}
-    \caption{$R_\text{eq}=R$}
-  \end{subfigure}
-  \begin{subfigure}[T]{.27\textwidth}
-    \centering
-    \begin{tikzpicture}[thick]
-      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
-      to[short,-o] (3,0);
-      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
-    \end{tikzpicture}
-    \caption{$R_\text{eq}=\dfrac R2$}
-  \end{subfigure}
-  \begin{subfigure}[T]{.27\textwidth}
-    \centering
-    \begin{tikzpicture}[thick]
-      \draw (0,0) to[R=$R$,o-o] (3,0);
-      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
-      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
-    \end{tikzpicture}
-    \caption{$R_\text{eq}=\dfrac R3$}
-  \end{subfigure}
-\end{figure}
-
-
+Also, the parallel equivalent resistance is \emph{always} lower than the 
+any individual resistor.
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[R=$R$,o-o] (3,0);
+%    \end{tikzpicture}
+%
+%    \vspace{.6in}$R_\text{eq}=R$
+%    
+%    \centering
+%
+%    \vspace{.2in}
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
+%      to[short,-o] (3,0);
+%      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
+%    \end{tikzpicture}
+%    
+%    \vspace{.27in}$R_\text{eq}=\dfrac R2$
+%    
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[R=$R$,o-o] (3,0);
+%      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
+%      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
+%    \end{tikzpicture}
+%
+%    \vspace{.1in}$R_\text{eq}=\dfrac R3$
+%  
+%  \vspace{.1in}
+%
+%
+%
+%
+%=======
+%From the current law, we know that the total current is the current through all
+%the resistors, which we can rewrite in terms of voltage and resistance using
+%Ohm's law:
+%\begin{equation*}
+%  I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
+%\end{equation*}
+%But since we also know that $V_1=V_2=V_3=\cdots=V$ from the voltage law, we
+%can re-write as
+%\begin{equation*}
+%  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}+\cdots\right)
+%\end{equation*}
+%The equivalent resistance of a parallel circuit can found by applying Ohm's law
+%and Kirchhoff's laws: The inverse of the equivalent resistance is the sum of
+%the inverses of the individual resistances.
+%\begin{important-equation}
+%  \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
+%\end{important-equation}
+%Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
+%it effectively increases the cross section area that the current passes through.
+%The parallel equivalent resistance is \emph{always} lower than the lowest
+%resistor.
+%\begin{figure}[ht]
+%  \centering
+%  \begin{subfigure}[T]{.27\textwidth}
+%    \centering
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[R=$R$,o-o] (3,0);
+%    \end{tikzpicture}
+%    \caption{$R_\text{eq}=R$}
+%  \end{subfigure}
+%  \begin{subfigure}[T]{.27\textwidth}
+%    \centering
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
+%      to[short,-o] (3,0);
+%      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
+%    \end{tikzpicture}
+%    \caption{$R_\text{eq}=\dfrac R2$}
+%  \end{subfigure}
+%  \begin{subfigure}[T]{.27\textwidth}
+%    \centering
+%    \begin{tikzpicture}[thick]
+%      \draw (0,0) to[R=$R$,o-o] (3,0);
+%      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
+%      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
+%    \end{tikzpicture}
+%    \caption{$R_\text{eq}=\dfrac R3$}
+%  \end{subfigure}
+%\end{figure}
+%
+%
+%>>>>>>> 317105678c5ffcc4eff105474c2ee9d8a1facdb9
 \subsection{Resistors in Series}
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[thick]
     \draw (0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0) to[R=$R_3$,-o] (6,0);
   \end{tikzpicture}
-  \caption{Circuit diagrams of 3 resistors connected in series}
+  \caption{Circuit diagrams of three resistors connected in series}
 \end{figure}
 The analysis for resistors in series is similar (but easier). The current
 through each resistor is the same:
