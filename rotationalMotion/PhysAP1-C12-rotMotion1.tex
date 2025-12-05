@@ -373,24 +373,26 @@ physical system, $L$ describes its overall \emph{rotational state}
 \subsection{First Law of Motion}
 As we have already learned in Chapters~\ref{chapter:dynamics} and
 \ref{chapter:momentum}, an object is in \textbf{translational equilibrium} is
-when the net force acting on it is zero:
+when the net force acting on it is zero. In such a case, the linear momentum
+of the object is constant:
 \begin{equation*}
-  \bm F_\text{net}=\bm 0
+  \bm F_\text{net}=\bm 0\quad\longleftrightarrow\quad
+  \bm p=m\bm v=\text{constant}
 \end{equation*}
 The equilibrium condition does \emph{not} mean that the object has no
-translational motion; it just means that the object's overall
-\emph{translational state} is not changing (i.e.\ the translational momentum
-$\bm p=m\bm v$ is constant). For objects with constant mass $m$, this means
+translational motion; it just means that the object's
+\emph{translational state} is not changing (i.e.\ the translational moment
+is constant). For objects with constant mass $m$, this means
 that the object has a constant velocity (i.e.\ $\bm v=\text{constant}$) and
 no acceleration (i.e.\ $\bm a=\bm 0$).
 
 Likewise, an object is in \textbf{rotational equilibrium} when the net torque
 acting on it is zero:
-\begin{equation}
-  \boxed{
-    \tau_\text{net}=0
-  }
-\end{equation}
+\begin{important-equation}
+  \tau_\text{net}=0
+  \quad\longleftrightarrow\quad
+  L=I\omega=\text{constant}
+\end{important-equation}
 This does \emph{not} mean that the object has no rotational motion; it just
 means that the object's overall \emph{rotational state} is not changing (i.e.\
 angular momentum $L=I\omega$ is constant). For objects with constant moment of
@@ -434,17 +436,15 @@ equation that we learned in Chapter~\ref{chapter:dynamics}:
 \end{equation*}
 Likewise, for rotational motion, net torque $\tau_\text{net}$ is the rate of
 change of angular momentum $L$:
-\begin{equation}
-  \boxed{
-    \tau_\text{net}=\frac{\Delta L}{\Delta t}
-  }
-\end{equation}
-For objects with constant moment of inertia $I$, this reduces to:
-\begin{equation}
-  \boxed{
-    \tau_\text{net}=I\alpha
-  }
-\end{equation}
+\begin{important-equation}
+  \tau_\text{net}=\frac{\Delta L}{\Delta t}
+  \label{eq:2nd-law-rotation}
+\end{important-equation}
+For objects with constant moment of inertia $I$, Eq.~\ref{eq:2nd-law-rotation}
+reduces to:
+\begin{important-equation}
+  \tau_\text{net}=I\alpha
+\end{important-equation}
 
 
 
