@@ -57,7 +57,7 @@
 \usepackage{cancel}
 \usepackage{colortbl}
 \usepackage{multicol}
-
+\usepackage{wrapfig}
 \tikzset{
   >=latex,
   voltage dir=RP,
@@ -600,11 +600,11 @@ language governing permissions and limitations under the License.\\ % License in
 
 %------------------------------------------------
 
-\chapter*{Bibliography}
-\markboth{\sffamily\normalsize\bfseries Bibliography}{\sffamily\normalsize\bfseries Bibliography} % Set the page headers to display a Bibliography chapter name
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
-
-\printbibliography[heading=bibempty] % Output article bibliography entries
+%TML\chapter*{Bibliography}
+%TML\markboth{\sffamily\normalsize\bfseries Bibliography}{\sffamily\normalsize\bfseries Bibliography} % Set the page headers to display a Bibliography chapter name
+%TML\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+%TML
+%TML\printbibliography[heading=bibempty] % Output article bibliography entries
 
 %\section*{Articles}
 %\addcontentsline{toc}{section}{Articles} % Add the Articles subheading to the table of contents
@@ -622,8 +622,10 @@ language governing permissions and limitations under the License.\\ % License in
 
 \cleardoublepage % Make sure the index starts on an odd (right side) page
 \phantomsection
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
-\printindex % Output the index
+% Add an Index heading to the table of contents:
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+% Output the index:
+\printindex
 
 %-------------------------------------------------------------------------
 %	APPENDICES
@@ -635,7 +637,8 @@ language governing permissions and limitations under the License.\\ % License in
 
 \begin{appendices}
 
-  % Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers:
+  % Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of
+  % "Chapter A: Title" in the headers:
   \renewcommand{\chaptername}{Appendix}
 
   \input{numbers-and-units/Phys11-C01-motionQuantities}

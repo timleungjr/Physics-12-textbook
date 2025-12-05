@@ -75,7 +75,8 @@
 
 \usepackage{mathptmx}
 % Use the Adobe Times Roman as the default text font together with math symbols
-%from the Sym­bol, Chancery and Com­puter Modern fonts
+%from the Symbol, Chancery and Computer Modern fonts
+%\usepackage{newtxtext,newtxmath}
 
 \usepackage{microtype} % Improve typography
 
@@ -799,6 +800,14 @@
     \end{equation}
   \end{eqBox}
 }
+
+%\newenvironment{important-equations}{
+%  \begin{eqBox}
+%    \begin{align}
+%}{
+%    \end{align}
+%  \end{eqBox}
+%}
 
 
 %\newenvironment{example}{
