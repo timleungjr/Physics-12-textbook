@@ -198,70 +198,117 @@ calculating the work done by ``a force'', it could mean:
 
 \section{Kinetic Energy}
 \label{sec:transKE}
-When a net force acts on an object (with constant mass) to accelerate it, work
-is done, For motion in one dimension, the total/net work done is given by:
-\footnote{When you do this problem ``properly'' in 2D or 3D, the only
-difference is the dot product, which only \emph{slightly} increases the
-complexity of the problem from the 1D case:
-\begin{equation*}
-  W_\text{net}
-  = \int\bm F_\text{net}(\bm x)\cdot\dl{\bm x}
-  = \cdots = m\int\bm v\cdot\dl{\bm v}
-\end{equation*}
-The difference in the dot product is a lot easier to evaluate than you might
-think:
-\begin{align*}
-  m\int\bm v\cdot\dl{\bm v}
-  &=m\left(\int v_x\dl v_x + \int v_y\dl v_y + \int v_z\dl v_z\right)\\
-  &=\left(\frac12mv_x^2+\frac12mv_y^2 + \frac12mv_z^2\right)
-  =\frac12mv^2
-\end{align*}
-where $v^2=v_x^2+v_y^2+v_z^2$. This is, of course, the same result that we
-got from the one-dimensional case.}
+To define kinetic energy, we will (for the time being) confine the motion to
+one-dimension. In one-dimensional, if a net force acts on an object, the
+object's motion will be either in the same direction as the net force (i.e.\
+net force does positive work), or motion will be in the opposite direction to
+the force (i.e.\ net force does negative work). Either way, we can use the
+equation
 \begin{equation}
-  W_\text{net}
-  =\int_{x_0}^{x_1}F_\text{net}(x)\dl x
-  =\int ma\dl x
-  =m\int\diff vt\dl x
+  W_\text{net}=F_\text{net}\Delta x
 \end{equation}
-Since both $v(t)$ and $x(t)$ are continuously differentiable in time, we can
-switch the order of the differentiation:
+to calculate work without using the cosine term.
+
+We will (again, for the time being) assume that the mass of the object is
+constant, and that the net force that is doing work is also constant we well.
+From the second law of motion, the acceleration
 \begin{equation*}
-  =m\int\diff xt\dl v=m\int_{v_0}^{v_1}v\dl v
+  a=\frac{F_\text{net}}m
 \end{equation*}
-The limits of integration switch from the initial and final position ($x_0$ and
-$x_1$) to the initial and final velocities, where $v_0=v(x_0)$ and
-$v_1=v(x_1)$. Evaluating this integral, we have:
+of the object would be constant, and we can also use the kinematic
+equations. Replacing the acceleration term with the second law of motion, we
+now have:
 \begin{equation*}
-  =m\int_{v_0}^{v_1}v\dl v
-  =\frac12mv^2\Big|^{v_1}_{v_0}
-  =\frac12mv_1^2-\frac12mv_0^2
-  =\Delta K
+  v_1^2=v_0^2+2{\color{magenta}a}\Delta x
+  \quad\longrightarrow\quad
+  v_1^2=v_0^2+2{\color{magenta}\frac{F_\text{net}}m}\Delta x
 \end{equation*}
-where $K$ is defined as the \textbf{kinetic energy}\footnote{This is more
+We can now see the net work term $F_\text{net}\Delta x$ appearing on the right
+hand side of the equation. Isolating that term, we have:
+\begin{equation*}
+  \underbracket[1pt]{F_\text{net}\Delta x}_{W_\text{net}}=
+  \underbracket[1pt]{\frac12mv_1^2}_{K_1}-
+  \underbracket[1pt]{\frac12mv_0^2}_{K_0}
+\end{equation*}
+We see a recurring term
+\begin{important-equation}
+  K=\frac12mv^2
+\end{important-equation}
+on the right hand side of the equation: $K_0$ corresponds to when the object
+was travelling at its initial velocity $v_0$, before the net force does work;
+$K_1$ corresponds to when the object was travelling at its final velocity
+$v_1$, \emph{after} the net force has done work.
+%When a net force acts on an object (with constant mass) to accelerate it, work
+%is done, For motion in one dimension, the total/net work done is given by:
+%\footnote{When you do this problem ``properly'' in 2D or 3D, the only
+%difference is the dot product, which only \emph{slightly} increases the
+%complexity of the problem from the 1D case:
+%\begin{equation*}
+%  W_\text{net}
+%  = \int\bm F_\text{net}(\bm x)\cdot\dl{\bm x}
+%  = \cdots = m\int\bm v\cdot\dl{\bm v}
+%\end{equation*}
+%The difference in the dot product is a lot easier to evaluate than you might
+%think:
+%\begin{align*}
+%  m\int\bm v\cdot\dl{\bm v}
+%  &=m\left(\int v_x\dl v_x + \int v_y\dl v_y + \int v_z\dl v_z\right)\\
+%  &=\left(\frac12mv_x^2+\frac12mv_y^2 + \frac12mv_z^2\right)
+%  =\frac12mv^2
+%\end{align*}
+%where $v^2=v_x^2+v_y^2+v_z^2$. This is, of course, the same result that we
+%got from the one-dimensional case.}
+%\begin{equation}
+%  W_\text{net}
+%  =\int_{x_0}^{x_1}F_\text{net}(x)\dl x
+%  =\int ma\dl x
+%  =m\int\diff vt\dl x
+%\end{equation}
+%Since both $v(t)$ and $x(t)$ are continuously differentiable in time, we can
+%switch the order of the differentiation:
+%\begin{equation*}
+%  =m\int\diff xt\dl v=m\int_{v_0}^{v_1}v\dl v
+%\end{equation*}
+%The limits of integration switch from the initial and final position ($x_0$ and
+%$x_1$) to the initial and final velocities, where $v_0=v(x_0)$ and
+%$v_1=v(x_1)$. Evaluating this integral, we have:
+%\begin{equation*}
+%  =m\int_{v_0}^{v_1}v\dl v
+%  =\frac12mv^2\Big|^{v_1}_{v_0}
+%  =\frac12mv_1^2-\frac12mv_0^2
+%  =\Delta K
+%\end{equation*}
+The quatity $K$ is defined as the \textbf{kinetic energy}\footnote{This is more
 specifically called the \emph{translational} kinetic energy, and it should be
 distinguished from the \emph{rotational kinetic energy} which is used when an
 object is rotating about a pivot.}:
-\begin{equation}
-  \boxed{
-    K=\frac12mv^2
-  }
-\end{equation}
-The definition of kinetic energy came from this integration: when the net force
-on an object is doing work, that work is equal to the change in
-\emph{something}, and we \emph{define} that quantity as the kinetic energy.
-This is known as the \textbf{work-energy theorem}\footnote{Also known as the
-\textbf{work-energy principle}, and \textbf{work-energy relationship}}:
-\begin{equation}
-  \boxed{
+%\begin{equation}
+%  \boxed{
+%    K=\frac12mv^2
+%  }
+%\end{equation}
+%The definition of kinetic energy came from this integration:
+When the net force acting on an object is doing work, that (net) work is equal
+to the change in \emph{something}, and we \emph{define} that quantity as the
+kinetic energy. This is the \textbf{work-energy theorem}, or the
+\textbf{work-energy principle}:
+\begin{important-equation}
     W_\text{net}=\Delta K
-  }
   \label{work-energy-theorem}
-\end{equation}
-When multiple forces act on an object, \emph{positive} net work will
-\emph{increase} the kinetic energy of the object, while \emph{negative} net
-work will decreases kinetic energy. Eq.~\ref{work-energy-theorem} applies
-regardless of \emph{what} the net force is comprised of. Very importantly, the
+\end{important-equation}
+In deriving the expression for kinetic energy, we have not asked what the net
+force consists of, therefore Eq.~\ref{work-energy-theorem} applies regardless
+of \emph{what} the net force is. As long as there is a net force, and as long
+as the net force is doing work, then there will be a change in kinetic energy.
+When a net force acts on an object
+\begin{itemize}
+\item \emph{Positive} net work will \emph{increase} the kinetic energy of the
+  object by the same amount, causing the object to speed up, while
+\item \emph{Negative} net work will \emph{decrease} the kinetic energy of the
+  object by the same amount, causing the object to slow down.
+\end{itemize}
+
+Very importantly, the
 work-energy theorem turns a potentially difficult integration problem
 (integrating $W_\text{net}$) into a simple algebraic expression ($\Delta K$).
 \begin{example}
@@ -898,7 +945,6 @@ are part of a much larger discipline within physics called
 \chapter{Conservation of Energy}
 \label{chapter:energy-conservation}
 
-
 Conservation of energy is most often stated using a statement that even a lay
 person with no physics background watching a movie may be familiar with:
 \begin{definition}
@@ -926,15 +972,17 @@ equation:
 \subsection{System}
 
 Before we can show how energy \emph{must} be conserved, we must first define
-what a system is. A \emph{system} of objects is defined in the same way as in
-solving dynamics problems: 
-%(specifically, the multi-body problems studied in
-%Section~\ref{sec:multibody}):
-a system is a predefined collection of objects that apply forces on each other.
-Because object apply forces on each other\footnote{This statement may be
-plainly obvious to some, but not to
-many others: the third law of motion is at work here when objects applies
-forces on each other.}, they may also do work on each other. A system may be:
+what a \emph{system} is.  A system of objects is defined in the same way as in
+solving dynamics problems, specifically, the multi-body problems studied in
+Chapter~\ref{sec:multibody}:
+\begin{definition}
+  A \textbf{system} is a predefined collection of objects that apply forces on
+  each other.
+\end{definition}
+Crucially, because object apply forces \emph{on each other}\footnote{This
+phrase may be plainly obvious to some, but not to many others: the third law of
+motion is at work here. When forces are created, objects applies forces on each
+other.}, they may also do work on each other. A system may be:
 \begin{itemize}[leftmargin=12pt,topsep=0pt,itemsep=3pt]
 \item\textbf{Isolated:} All the forces that act on the objects in the system
   act on each other (third law of motion) and are therefore \emph{internal}.
@@ -997,9 +1045,9 @@ further simplifies to
 
 
 \subsection{Free-Fall}
-Assuming that there are no friction, drag (air resistance)%see Section~\ref{sec:drag}),
-or other damping forces present, a free-falling object (shown in
-Fig.~\ref{fig:earth}) forms an isolated system with Earth. 
+Assuming that there are no friction, drag (air resistance) or other damping
+forces present, a free-falling object (shown in Fig.~\ref{fig:earth}) forms an
+isolated system with Earth. 
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[scale=.65]
@@ -1013,15 +1061,11 @@ Fig.~\ref{fig:earth}) forms an isolated system with Earth.
 \end{figure}
 This system consists of only Earth and the mass $m$, and therefore the energy
 of the system is the kinetic energy of the mass ($K$) and the gravitational
-potential energy ($U_g$)\footnote{$U_g$ is often described as ``the
-gravitational potential energy of the object''. Strictly speaking, this is
-incorrect.
-%this is a topic that will be studied in more detail in
-%Section~\ref{section:gravity}.
-However, this will not affect how the calculations is done, and in the
-opinion of the author, poses no major conceptual issue. You are, of course,
-welcome to disagree.
-} stored between the mass and Earth.
+potential energy ($U_g$) stored between the mass and Earth.\footnote{$U_g$ is
+often called ``the gravitational potential energy of the object''. Strictly
+speaking, this is incorrect. However, this will not affect how the calculations
+is done, and in the opinion of the author, poses no major conceptual issue.
+You are, of course, welcome to disagree.}
 
 The only force that in the system is the gravitational force $\bm F_g$,
 which (by the third law of motion) acts on \emph{both} the mass and Earth, and
@@ -1131,9 +1175,9 @@ Talk about why we don't include thermal energy in the examples.
 
 
 \subsection{Arbitrary Ramps}
-Another type of gravitational system that is similar to the free-falling
-object is an object that is sliding along an arbitrary ramp without friction,
-drag, or other damping forces, as shown in Fig.~\ref{fig:ramp-system}.
+Another type of gravitational system similar to the free-falling object is an
+object that is sliding along an arbitrary ramp without friction, drag, or other
+damping forces, as shown in Fig.~\ref{fig:ramp-system}.
 %Assuming that there is no friction or drag, energy is also conserved for an
 %object sliding down an arbitrarily-shaped ramp:
 \begin{figure}[ht]
@@ -1156,17 +1200,22 @@ the system energy consists of the kinetic energy $K$ of the mass, and the
 gravitational potential energy $U_g$ stored between the mass and Earth. The
 two object interact \emph{with each other} via the gravitational force
 $\bm F_g$ and the normal force $\bm F_n$ at the interface at the ramp.
-Since these two forces act on both objects, it is \emph{internal} to the
-system. There are no other forces from the outside, and the system is isolated.
+Since these two forces act on both objects, both are \emph{internal} to the
+system. There are no other forces from the outside, and the system is isolated,
+i.e.:
+\begin{equation}
+  \Delta K + \Delta U_g=0%\quad\text{or}\quad
+  %K+U_g=\text{constant}
+\end{equation}
 
 As the mass slides down (or up!) along the ramp, normal force $\bm F_n$ is
 always perpendicular to motion, therefore the only force that does work is
 gravity $\bm F_g$. And since gravitational force is conservative,
-\begin{itemize}[leftmargin=15pt]
-\item when the mass slides downward, the \emph{positive} work done by gravity
+\begin{itemize}%[leftmargin=15pt]
+\item When the mass slides downward, the \emph{positive} work done by gravity
   transforms gravitational potential energy into kinetic energy by the same
   amount
-\item when the mass slides upwards, the \emph{negative} work done by gravity
+\item When the mass slides upwards, the \emph{negative} work done by gravity
   transforms kinetic energy of the mass into gravitational potential energy by
   the same amount
 \end{itemize}

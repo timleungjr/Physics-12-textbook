@@ -87,7 +87,7 @@ The direction of the force is based on the \emph{sign} of the charges:
 as shown in Fig.~\ref{fig:coulomb-charge}.
 \begin{figure}[ht]
   \centering
-  \begin{subfigure}{.3\linewidth}
+  \begin{subfigure}{.5\linewidth}
     \centering
     \begin{tikzpicture}[scale=.6]
       \draw[vectors] (0,0)--(2,0) node[above]{$\bm F_q$};
@@ -97,7 +97,8 @@ as shown in Fig.~\ref{fig:coulomb-charge}.
     \end{tikzpicture}
     \caption{Electrostatic force between opposite charges is attractive}
   \end{subfigure}
-  \begin{subfigure}{.3\linewidth}
+  
+  \begin{subfigure}{.5\linewidth}
     \centering
     \begin{tikzpicture}[scale=.6]
       \draw[vectors] (0,0)--(-2.5,0) node[above]{$\bm F_q$};
@@ -107,7 +108,8 @@ as shown in Fig.~\ref{fig:coulomb-charge}.
     \end{tikzpicture}
     \caption{Electrostatic force between two positive charges is repulsive}
   \end{subfigure}
-  \begin{subfigure}{.3\linewidth}
+  
+  \begin{subfigure}{.5\linewidth}
     \centering
     \begin{tikzpicture}[scale=.6]
       \draw[vectors] (0,0)--(-2.5,0) node[above]{$\bm F_q$};
@@ -338,17 +340,8 @@ of the field} of
   E(q_s,r)=\frac{k|q_s|}{r^2}
   \label{eq:point-charge-electric-field}
 \end{important-equation}
-where $r$ is the distance from the point charge.
-%\begin{center}
-%  \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Electric field strength & $E$ & \si{\newton\per\coulomb} \\
-%      Coulomb's constant & $k$ & \si{N.m^2/C^2} \\
-%      Source charge & $q_s$ & \si\coulomb \\
-%      Distance from source charge & $r$ & \si\metre
-%  \end{tabular}
-%\end{center}
+where $r$ is the distance from the source point charge.
+
 Similar to gravitational field, electric field $\bm E$ created by $q_s$ is
 a function that shows how it influences other charged particles around it. The
 direction of the field is radially outward from a positive point charge and
@@ -470,10 +463,10 @@ $\bm E$.
 When there are multiple source charges, then the total electric field at any
 location is the vector sum of all the electric field from each source
 charge, i.e.:
-\begin{equation}
+\begin{important-equation}
   \bm E=\sum_{i=1}^N \bm E_i
   =\bm E_1+\bm E_2+\bm E_3+\bm E_4+\cdots+\bm E_N
-\end{equation}
+\end{important-equation}
 Once the total electric field is known, we can use the equation
 $\bm F_q=q\bm E$ without knowing \emph{what} created $\bm E$.
 

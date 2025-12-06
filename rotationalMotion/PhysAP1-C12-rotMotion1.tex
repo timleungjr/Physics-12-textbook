@@ -1,13 +1,5 @@
-%\documentclass[12pt,compress,aspectratio=169]{beamer}
-%\input{../mybeamer}
-%\tikzstyle{every node}=[font=\footnotesize]
-%
-%\usetikzlibrary{patterns}
-%
 \chapter{Rigid-Body Rotational Motion}
-%\subtitle{AP Physics 1}
-%\input{../me}
-%\input{../mycommands}
+\label{chapter:rotMotion}
 
 \section*{Before We Start}
 Make sure that you have reviewed the following
@@ -62,38 +54,38 @@ nut depends on \emph{both} the distance as well as the amount of force.
 
 \textbf{Torque}\footnote{Also known as the \textbf{moment of force}, or just
 \textbf{moment}} is the tendency for a force to change the rotational motion
-of a body.
-%  \begin{itemize}
-%  \item A force $\bm F$ acts at a point some position $\bm r$ from a
-%    \textbf{pivot}, or \textbf{fulcrum}
-%  \item There is an angle $\phi$ between $\bm F$ and $\bm r$
-%  \item Example: the force to twist a screw
-%  %\item In the example below, a force $\bm F$ is applied $\bm r$ away from
-%  %  the pivot at an angle $\phi$. This generates a torque around the pivot.
-%  \end{itemize}
-The SI unit for torque is a \textbf{newton metre} (\si{\newton\metre}).
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.2]
-%      \draw[thick,fill=lightgray] (-.13,-.13) rectangle (5.13,.13);
-%      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{\normalsize$\bm r$};
-%      \draw[vectors,blue] (5,0)--(5.7,-1.5) node[right]{\normalsize$\bm F$};
-%      \draw[dashed] (5,0)--(6,0);
-%      \draw[axes] (5.7,0) arc(0:-atan(1.5/.7):.7)
-%      node[midway,right]{\normalsize$\phi$};
-%      \fill circle (.06) node[above=1]{\scriptsize\textbf{pivot}};
-%    \end{tikzpicture}
-%  \end{center}
-
-We can express torque $\tau$ in terms of the force $\bm F$, the position
-vector $\bm r$ and the angle $\phi$ between $\bm F$ and $\bm r$:
+of a body. In order to generate a torque, a force $\bm F$ must acts at a point
+some position $\bm r$ from a \textbf{pivot}, or \textbf{fulcrum}. The angle
+between $\bm F$ and $\bm r$ is $\phi$. The SI unit for torque is a
+\emph{newton metre} (\si{\newton\metre}).
+ %  \item Example: the force to twist a screw
+Fig.~\ref{fig:generating-torque} shows a force $\bm F$ is applied $\bm r$ away
+from the pivot at an angle $\phi$. This generates a torque around the pivot.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=1.2]
+    \draw[thick,fill=lightgray] (-.13,-.13) rectangle (5.13,.13);
+    \draw[vectors,red] (0,0)--(5,0) node[midway,below]{\normalsize$\bm r$};
+    \draw[vectors,blue] (5,0)--(5.7,-1.5) node[right]{\normalsize$\bm F$};
+    \draw[dashed] (5,0)--(6,0);
+    \draw[axes] (5.7,0) arc(0:-atan(1.5/.7):.7)
+    node[midway,right]{\normalsize$\phi$};
+    \fill circle (.06) node[above=1]{\scriptsize\textbf{pivot}};
+  \end{tikzpicture}
+  \caption{A force generating a torque.}
+  \label{fig:generating-torque}
+\end{figure}
+We can express the magnitude of torque $\tau$ in terms of the magnitude of the
+force vector $\bm F$, magnitide of the position vector $\bm r$ and the angle
+$\phi$ between $\bm F$ and $\bm r$:
 \begin{equation}
   \boxed{
     \tau=rF_\perp=rF\sin\phi
   }
 \end{equation}
 The subscript $\perp$ means that it is the force component that is
-perpendicular to $\bm r$ that generates a torque; the parallel component does
-not generate a torque.
+\emph{perpendicular} to $\bm r$ that generates a torque; the parallel component
+does not generate a torque.
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -377,14 +369,15 @@ when the net force acting on it is zero. In such a case, the linear momentum
 of the object is constant:
 \begin{equation*}
   \bm F_\text{net}=\bm 0\quad\longleftrightarrow\quad
-  \bm p=m\bm v=\text{constant}
+  \bm p=m\bm v_\text{cm}=\text{constant}
 \end{equation*}
 The equilibrium condition does \emph{not} mean that the object has no
 translational motion; it just means that the object's
-\emph{translational state} is not changing (i.e.\ the translational moment
-is constant). For objects with constant mass $m$, this means
-that the object has a constant velocity (i.e.\ $\bm v=\text{constant}$) and
-no acceleration (i.e.\ $\bm a=\bm 0$).
+\emph{translational state} is not changing (i.e.\ the translational momentum
+is constant). For objects with constant mass $m$, this means that the velocity
+at evaluated at the object's centre of mass is constant (i.e.\
+$\bm v_\text{cm}=\text{constant}$) and that there is no acceleration (i.e.\
+$\bm a_\text{cm}=\bm 0$).
 
 Likewise, an object is in \textbf{rotational equilibrium} when the net torque
 acting on it is zero:
@@ -572,11 +565,9 @@ constant force $\bm F$ displacing an object by $\Delta\bm r$ is given by:
 For rotational motion, the \emph{rotational} work done by a constant
 \emph{torque} $\tau$ displacing an object by an \emph{angular displacement}
 of $\Delta\theta$ is given by:
-\begin{equation}
-  \boxed{
-    W_r = \tau\Delta\theta
-  }
-\end{equation}
+\begin{important-equation}
+  W_r = \tau\Delta\theta
+\end{important-equation}
 Note that $\Delta\theta$ is measured in \textbf{radians}.
 
 
@@ -587,7 +578,7 @@ When the object is being constant net torque $\tau_\text{net}$, the crate
 rotates a constant angular acceleration $\alpha$, changing the angular velocity
 from $\omega_i$ to $\omega_2$:
 \begin{equation}
-  \tau_\text{net}=I\alpha\quad\rightarrow\quad a=\frac{F_\text{net}}m
+  \tau_\text{net}=I\alpha\quad\rightarrow\quad \alpha=\frac{\tau_\text{net}}I
 \end{equation}
 
 Substituting the expression of acceleration into the kinematics equations,
@@ -609,11 +600,9 @@ and the work done is equal to a change in a motion quantity ``$K_r$'':
   \underbracket[1pt]{\frac12I\omega_i^2}_{\text{init. }K_r} = \Delta K_r
 \end{equation}
 This quantity $K$ is called the \textbf{rotational kinetic energy}, defined as:
-\begin{equation}
-  \boxed{
-    K=\frac12I\omega^2
-  }
-\end{equation}
+\begin{important-equation}
+  K=\frac12I\omega^2
+\end{important-equation}
 
 We can also try this, by using the definition of translational kinetic
 energy to derive the rotational kinetic energy:
@@ -629,9 +618,9 @@ energy to derive the rotational kinetic energy:
 The \textbf{work-energy theorem} for rotational work shows that the net
 rotational work done on an object is \emph{always} equal to the change in its
 rotational kinetic energy:
-\begin{equation} 
-  \boxed{W_\text{net} = \Delta K_r}
-\end{equation}
+\begin{important-equation} 
+  \text{Work-energy principle:} W_\text{net} = \Delta K_r
+\end{important-equation}
 As was the case for translational work, positive net work ($W_\text{net}>0$)
 \emph{increases} kinetic energy (i.e.\ $\Delta K>0$) and the object's rotation
 speeds up; while negative net work ($W_\text{net}<0$) \emph{decreases} kinetic
@@ -648,7 +637,7 @@ The total kinetic energy of a rotating system is the sum of its translational
 and rotational kinetic energies at its centre of mass:
 \begin{equation}
   \boxed{
-    K=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2
+    K_\text{total}=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2
   }
 \end{equation}  
 In this case, $I_\text{cm}$ is evalulated at the centre of mass. For simple

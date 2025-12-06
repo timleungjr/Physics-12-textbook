@@ -116,9 +116,9 @@ voltage sources and three resistors. This circuit cannot be reduced.
 
 \section{Capacitors in Circuits}
 
-In Chapter~\ref{chapter:capacitor}, we learned that the capacitor is a device
+In Chapter~\ref{chapter:capacitors}, we learned that the capacitor is a device
 that stores energy in its electric field. But whereas
-Chapter~\ref{chapter:capacitor} dealt primarily with how we define the
+Chapter~\ref{chapter:capacitors} dealt primarily with how we define the
 capacitance, here, we are interested in how a capacitor can be used in a
 circuit.
 
@@ -139,7 +139,7 @@ in the circuit would not be steady (i.e.\ current is a function of time).
 The analysis of circuits that have both resistors and capacitors, called an
 ``RC circuit'' focuses on finding two specific operating conditions: an
 \emph{initial condition}, for when the current begins to flow at $t=0$, and a
-final \emph{steady-state} solution for $t\rightarrow\infty$, when the current
+final \emph{steady-state} solution for $t\to\infty$, when the current
 no longer changes with time.
 
 
@@ -235,10 +235,10 @@ because of conservation of charges.
 
 
 
-\section{$RC$ Circuits}
+\section{RC Circuits}
 
 Now that we have seen how resistors and capacitors behave in a circuit, we can
-combine them in to an \textbf{$RC$ circuit}. An $RC$ circuit merely refer to
+combine them in to an \textbf{RC circuit}. An $RC$ circuit merely refer to
 any circuit that contain both resistors and capacitors, but does not necesarily
 indicate a specific arrangment of the devices.
 %  \begin{center}
@@ -301,9 +301,7 @@ also decreases. But since current decreases, $Q$ also decreases more slowly.
 Using calculus, we find that the expression of charge $Q(t)$ across the
 capacitor is an exponential decay function:
 \begin{important-equation}
-  \boxed{
-    Q(t)=Q_0e^{-t/\tau}
-  }
+  Q(t)=Q_0e^{-t/\tau}
 \end{important-equation}
 %=======
 %As current flows, charge $Q(t)$ across the capacitor decreases, therefore
@@ -358,10 +356,10 @@ $V_c(t)=Q(t)/C$ across the capacitor begins to increase. By the voltage law,
 voltage drop across the resistor decreaes. Since voltage across the resistor
 decreases, the current $I=V_R/R$ also decreases.
 
-As $t\longrightarrow\infty$, the voltage across the capacitor:
-$V_c\longrightarrow\mathcal E$, and the charge across the capacitor:
-$Q(t)\longrightarrow C\mathcal E$. The current through the circuit:
-$I\longrightarrow 0$ begin to accumulate on the capacitor.
+As $t\\to\infty$, the voltage across the capacitor:
+$V_c\\to\mathcal E$, and the charge across the capacitor:
+$Q(t)\\to C\mathcal E$. The current through the circuit:
+$I\\to 0$ begin to accumulate on the capacitor.
 %%\begin{itemize}
 
 When charging the capacitor, the charge across the capacitor is given by:
@@ -458,7 +456,7 @@ the current through, and the voltage across, each element
 \begin{enumerate}
 \item Immediately after the switch is closed (the initial condition at $t=0$)
 \item A long time after the switch is closed (the steady-state solution for
-  $t\rightarrow\infty$)
+  $t\to\infty$)
 \end{enumerate}
 
 
@@ -486,7 +484,7 @@ the current through, and the voltage across, each element
       \draw[thick] (3,0) to[R=\SI8\ohm] (3,2);
       \draw[line width=12,opacity=.2,yellow] (0,0)--(0,2)--(3,2)--(3,0)--(0,0);
     \end{tikzpicture}
-    \caption{Steady-state circuit as $t\longrightarrow0$}
+    \caption{Steady-state circuit as $t\to\infty$}
   \end{subfigure}
   \caption{The initial and steady-state circuit diagram for a general RC
     circuit}
