@@ -751,7 +751,7 @@ raw \emph{emf} output from each solar cell may vary, but the overall
 constant \emph{emf}. A \textbf{capacitor} can also act as a energy source. When
 a capacitor is charged---with charge $+Q$ on one plate, and $-Q$ on the other,
 a voltage is generated, according to the equation $V=Q/C$ (studied in
-Chapter~\ref{chapter:capacitor}).
+Chapter~\ref{chapter:capacitors}).
 %  \begin{center}
 %    \begin{tikzpicture}[thick]
 %      \draw (3,0) to[C,l=Capacitor,o-o] (5,0);
@@ -760,7 +760,8 @@ Chapter~\ref{chapter:capacitor}).
 %  Circuits with both resistors and capacitors will be studied next class.
 
 Loads are devices that transforms the electrical energy in the circuit into
-other forms of energy. Examples include:
+other forms of energy. Examples include those in
+Fig.~\ref{fig:non-ohmic-loads}.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.24\textwidth}
@@ -793,6 +794,8 @@ other forms of energy. Examples include:
     \end{circuitikz}
     \caption{DC motor}
   \end{subfigure}
+  \caption{Non-ohmic loads}
+  \label{fig:non-ohmic-loads}
 \end{figure}
 %  \begin{itemize}
 %    \item Resistors, light bulbs and other lamps transform electrical energy
@@ -900,7 +903,7 @@ and ohmmeter.
 
 
 \section{Kirchhoff's Laws}
-%
+
 \subsection{Kichhoff's Junction Law}
 In the \textbf{junction law}, also known as the \textbf{current law}, the
 electrical current that flows into any junction in a circuit must be equal to
@@ -986,34 +989,32 @@ and losses from any of the loops always sum to zero:
 %
 %{Kichhoff's Voltage Law}
 %  
-
-%    \centering
-%    \begin{tikzpicture}[scale=1.75,american voltages,thick]
-%      \draw (1,1.5) to[short,o-] (1.5,1.5) to[R=$R_2$] (1.5,0)
-%      to[short,-o] (1,0);
-%      \draw (1.5,1.5)--(2.5,1.5) to[C=$C$] (2.5,0)--(1.5,0);
-%      \draw (2.5,1.5)--(3.5,1.5) to[L=$L$] (3.5,0)--(2.5,0);
-%    \end{tikzpicture}
-%    
-%    \column{.6\textwidth}
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[scale=1.75,american voltages,thick]
+    \draw (1,1.5) to[short,o-] (1.5,1.5) to[R=$R_2$] (1.5,0)
+    to[short,-o] (1,0);
+    \draw (1.5,1.5)--(2.5,1.5) to[C=$C$] (2.5,0)--(1.5,0);
+    \draw (2.5,1.5)--(3.5,1.5) to[L=$L$] (3.5,0)--(2.5,0);
+  \end{tikzpicture}
+\end{figure}
 The voltage law can also show that the voltage across any circuit devices
 connected in parallel (side by side) must be the same:
-%    
+\begin{equation*}
+  V_2=V_C=V_L
+\end{equation*}
+
+%    If I incorrectly guess that $I$ flows counterclockwise, I
+%    will still have a similar expression
+%
 %    \begin{equation}
-%      V_2=V_C=V_L
+%      -V_R-V=0\;\;\rightarrow\;\; -V-IR=0
 %    }
-%%
-%%    If I incorrectly guess that $I$ flows counterclockwise, I
-%%    will still have a similar expression
-%%
-%%    \begin{equation}
-%%      -V_R-V=0\;\;\rightarrow\;\; -V-IR=0
-%%    }
-%  
-%
-%
-%
-%
+  
+
+
+
+
 \section{Resistors in Circuits}
 
 \subsection{Resistors in Parallel}
@@ -1046,19 +1047,9 @@ the voltage term in Eq.~\ref{eq:parallel1}, and re-write in terms of an
 From this, we find the parallel equivalent resistance of $N$ resistors connected
 in parallel: The inverse of the equivalent resistance $R_p$ is the sum of the
 inverses of the individual resistances $R_i$:
-\begin{equation}
-  \boxed{
-    \frac1{R_p}=\sum_i\frac1{R_i}
-  }
-\end{equation}
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Equivalent resistance in parallel & $R_p $ & \si\ohm \\
-%      Resistance of individual loads    & $R_i $ & \si\ohm
-%    \end{tabular}
-%  \end{center}
+\begin{important-equation}
+  \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
+\end{important-equation}
 Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
 it effectively increases the cross section area that the current passes through.
 Also, the parallel equivalent resistance is \emph{always} lower than the 

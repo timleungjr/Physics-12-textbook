@@ -1,0 +1,545 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../mybeamer}
+
+\title{Class 15: Power Generation}
+\subtitle{Unit 5: Electricity and Magnetism}
+\input{../term}
+\input{../mycommands}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+
+\begin{frame}{Direct and Alternating Current}
+  In a \textbf{direct current} (\textbf{DC}), the flow of charges is always in
+  the same direction, but the current itself does not have to be constant in
+  time.
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[functions] (0,3)--(4,3);
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.6]
+      \draw[smooth,samples=20,domain=0:3.5,functions]
+      plot(\x,{3*(exp(-.8*\x))});
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.6]
+      \draw[smooth,samples=20,domain=0:3.5,functions] plot(\x,{sin(120*\x)+2});
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,4) node[above]{$I$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Direct and Alternating Current}
+  In an \textbf{alternating current} (AC), the flow of charges changes
+  direction, usually as a sinusoidal function of time.
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[axes] (0,0)--(5,0) node[right]{$t$};
+      \draw[axes] (0,-2)--(0,2) node[above]{$I$};
+      \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.6]
+      \draw[axes] (0,0)--(5,0) node[right]{$t$};
+      \draw[axes] (0,-2)--(0,2) node[above]{$V$};
+      \draw[smooth,samples=40,domain=0:4,functions] plot(\x,{1.5*sin(150*\x)});
+    \end{tikzpicture}
+  \end{center}
+  The power outlet in North America are all AC, with a root-mean-square voltage
+  of \SI{120}\volt, and a frequency of \SI{60}\hertz. AC current are important
+  in the power generation.
+\end{frame}
+
+
+
+\begin{frame}{AC Generator}
+  \begin{columns}
+    \column{.5\textwidth}
+    \pic1{graphics/generator}
+
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item When the coil is turning, the charge carriers inside the coil move
+      relative to the magnetic field
+    \item The charges experience a magnetic force, creating an electromotive
+      force
+%    \item When the coil is turning, the orientation between the coil and the
+%      magnetic field changes
+%    \item Because the \emph{magnetic flux} is changing, a potential difference
+%      (voltage) is created in the coil itself
+    \item When connected to a resistor, it acts as an AC power source
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\section{Transformers}
+
+\begin{frame}[t]{How Transformers Work}
+  \begin{center}
+    \pic{.8}{graphics/transformers}
+  \end{center}
+  \begin{itemize}
+  \item Consists of two coils (\emph{primary} and \emph{secondary})
+  \item Think of each coil as solenoids
+  \item The coils are not electrically connected (i.e.\ no wires connecting the
+    two circuits)
+  \item Both coils may be wrapped around a square soft-iron core (shown above)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[t]{How Transformers Work}
+  \begin{center}
+    \pic{.8}{graphics/transformers}
+  \end{center}
+  \begin{itemize}
+  \item The primary coil is connected to a AC power source
+  \item When current flows through the primary circuit, a magnetic field is
+    generated in the primary coil
+  \item Because the current alternates, the magnetic field inside the primary
+    coil is constantly changing in strength and direction
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[t]{How Transformers Work}
+  \begin{center}
+    \pic{.8}{graphics/transformers}
+  \end{center}
+  \begin{itemize}
+  \item A magnetic field is also generated inside the entire soft-iron core
+  \item The magnetic field in the iron core oscillates with the same
+    frequency as the primary coil
+  \item A current is induced in the secondary coil because the magnetic field
+    through the coil (i.e.\ the iron core) is changing
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[t]{How Transformers Work}
+  \begin{center}
+    \pic{.8}{graphics/transformers}
+  \end{center}
+  \begin{itemize}
+  \item An alternating voltage is generated in the secondary coil with the same
+    frequency as the primary coil
+  \item The voltage in the secondary coil depends on the
+    ratio of windings in both coils
+    \begin{itemize}
+    \item \textbf{(a)} is called a \emph{step-down} transformer, while
+    \item \textbf{(b)} is called a \emph{step-up} transformer
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Transformers in Circuit Diagrams}
+  The circuit diagram for a transformer consists of two coils. The vertical
+  line between the coil indicate whether this transformer has a soft-iron core:
+
+  \vspace{.2in}
+  \begin{columns}
+    \column{.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=2,thick]
+      \draw (0,0) node[transformer] (T) {}
+      (T.A2) to [short,o-] ++ (-1,0) coordinate (aux)
+      to [sI] (aux |- T.A1)
+      to [short,-o] (T.A1);
+    \end{tikzpicture}
+
+    Air core
+
+    \column{.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=2,thick]
+      \draw (0,0) node[transformer] (T) {}
+      (T.A2) to [short,o-] ++ (-1,0) coordinate (aux)
+      to [sI] (aux |- T.A1)
+      to [short,-o] (T.A1);
+      \draw[thick] ( .03,.3)--( .03,-.3);
+      \draw[thick] (-.03,.3)--(-.03,-.3);
+    \end{tikzpicture}
+
+    Iron core
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Transformers}
+  Assuming that the electric potential energy (and therefore power) in the
+  primary coil is transmitted to the secondary coil, and using the equation for
+  power in a circuit:
+
+  \eq{-.1in}{
+    \Delta E_p=\Delta E_s
+    \quad\to\quad
+    P_p=P_s
+    \quad\to\quad
+    \boxed{I_pV_p = I_sV_s}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Transformers}
+  Voltage, current in the two coils (primary and secondary) are related to the
+  number of windings:
+  
+  \eq{-.1in}{
+    \boxed{\frac{V_p}{V_s}=\frac{I_s}{I_p}=\frac{N_p}{N_s}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Number of windings in primary \& secondary coils & $N_p$, $N_s$ & N/A \\
+      Current in primary \& secondary coils & $I_p$, $I_s$ & \si\ampere \\
+      Voltage across primary \& secondary coils & $V_p$, $V_s$ & \si\volt
+    \end{tabular}
+  \end{center}
+  These two equations assume that the transformer is \SI{100}{\percent}
+  efficient. In practice, the efficiency of transformers is
+  $\approx\SI{90}\percent$.
+\end{frame}
+
+
+
+%\begin{frame}{Transformers}
+%  \begin{itemize}
+%  \item Because only a \emph{changing} magnetic field can induce current, the
+%    transformer can only be used with alternating current
+%  \end{itemize}
+%\end{frame}
+
+
+
+\begin{frame}{Power Grid}
+  Between where power is generated, and your electrical outlet, AC power
+  usually goes through a number of step-up and step-down transformers. This is
+  usually referred to as a \textbf{power grid}.
+  \begin{center}
+    \pic{.7}{graphics/powerline}
+  \end{center}
+\end{frame}
+
+
+
+\section{Power Generation}
+
+\begin{frame}{Power Generation}
+  How do we generate the high-voltage AC in the first place then?
+\end{frame}
+
+
+
+\subsection{Fossil Fuels}
+
+\begin{frame}{Fossil Fuels: The Dominant Fuel Source}
+  \begin{center}
+    \pic{.5}{graphics/gasoline-engine}
+  \end{center}
+  \begin{itemize}
+  \item Example: crude oil, coal,natural gas
+  \item Crude oil is \emph{refined} be separating the different hydrocarbon
+    fuels (gasoline, kerosene, diesel etc)
+  \item Combustion of the fuel releases thermal energy which turns a shaft
+    connected to an AC generator to generates electricity
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Fossil Fuels: The Dominant Fuel Source}
+  \begin{columns}
+    \column{.7\textwidth}
+    Advantages:
+    \begin{itemize}
+    \item Relatively inexpensive to process
+    \end{itemize}
+    Disadvantages:
+    \begin{itemize}
+    \item Releases harmful by-products
+    \item Source of greenhouse gases, especially carbon monoxide and carbon
+      dioxide (effects last for decades)
+    \item Contribute to global warming and climate change
+    \end{itemize}
+    
+    \column{.29\textwidth}
+    \pic1{graphics/rig}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Fossil Fuels: A Crisis}
+  \begin{center}
+    \pic{.5}{graphics/Oil-Drilling-and-7-Year-Low-Oil-Prices}
+  \end{center}
+  \begin{itemize}
+  \item Oil ``production'' (i.e.\ extraction of crude oil) has peaked
+  \item Largest reservoir of crude oil located in geo-politically unstable
+    areas (Middle East, Central America, Africa)
+  \end{itemize}
+\end{frame}
+
+
+
+\subsection{Wind}
+
+\begin{frame}{Wind Power}
+  \begin{itemize}
+  \item Have been used for centuries in windy areas around the world
+  \item Turbine blades are highly optimized like wings on airplanes to generate
+    as much lift force as possible
+  \item The turbine turns an AC generator (mounted on the wind urbine itself)
+    to create electricity
+  \end{itemize}
+  \begin{center}
+    \pic{.63}{graphics/windfarm}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Wind Power}
+  Advantages:
+  \begin{itemize}
+  \item Zero emissions of greenhouse gases
+  \item Limited potential for accidents
+  \end{itemize}
+
+  Disadvantages:
+  \begin{itemize}
+  \item Expensive to build
+  \item Low energy density--requires a large site for a large city
+  \item Need sustained wind of sufficient strength
+  \item Unpredictable
+  \item Kill birds?
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Wind Power: A Local Example}
+  \begin{center}
+    \pic{.5}{graphics/CrombieCruise-108}
+  \end{center}
+  The wind turbine at the CNE can power about 300 homes on windy days (when it
+  is working)
+\end{frame}
+
+
+
+\subsection{Hydroelectric}
+
+\begin{frame}{Hydroelectric Power}
+  The Hoover Dam in the United States was the first large-scale hydroelectric
+  project in the world
+  \begin{center}
+    \pic{.45}{graphics/hooverdam}
+  \end{center}
+  It is a popular power generating method in Canada, United States and in Europe
+\end{frame}
+
+
+
+\begin{frame}{Hydroelectric Power}
+  \begin{center}
+    \pic{.65}{graphics/Hydroelectric-generating-station1}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.15in}At the bottom of the reservoir, water pressure is high
+  \item Water is pushed through the \textbf{penstock}, gaining kinetic energy
+  \item The high-speed water pushes the turbine, which then generates a
+    high-voltage AC
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Hydroelectric Power}
+  Advantages:
+  \begin{itemize}
+  \item Efficient
+  \item Reliable
+  \item Carbon neutral: operation does not generate greenhouse gases
+  \item Limited environmental impact after the operation of the facility begins
+  \item Well-developed technologies and infrastructure
+  \end{itemize}
+  Disadvantages:
+  \begin{itemize}
+  \item Large ecological damage during construction
+  \end{itemize}
+  %What other advantages and/or disadvantages can you think of?
+\end{frame}
+
+
+
+\subsection{Geothermal}
+
+\begin{frame}{Geothermal Power}
+  \begin{columns}[T]
+    \column{.45\textwidth}
+    \pic1{graphics/Geothermal}
+    
+    \column{.55\textwidth}
+    \begin{itemize}
+    \item Hot steam (high temperature and high pressure) is pumped from
+      underground streams
+    \item The high pressure steam is used to push a turbine, turning kinetic
+      energy into electricity
+    \item The cooled water is then pumped back into the steam
+    \item Used widely in Iceland
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Geothermal Power}
+  \begin{columns}
+    \column{.45\textwidth}
+    \pic1{graphics/Geothermal}
+    
+    \column{.55\textwidth}
+    Advantages:
+    \begin{itemize}
+    \item Carbon neutral
+    \item Unlimited supply (unless the whole core of the earth cools down)
+    \end{itemize}
+
+    Disadvantages:
+    \begin{itemize}
+    \item Limited location
+    \item Naturally occurring, dissolved corrosive salts can cause problems for
+      equipment
+    \item Potential for toxic gas discharge (e.g.\ hydrogen sulphide)
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Geothermal Power}
+  On a smaller scale, there are also home-based geothermal system for heating
+  and cooling. They take advantage of the fact that the temperature below
+  ground is generally held to a consistent temperature throughout the year.
+  \begin{center}
+    \pic{.45}{graphics/heat-cool-1024x773}
+  \end{center}
+\end{frame}
+
+
+
+\subsection{Solar}
+
+\begin{frame}{Solar Power: No Generators Needed}
+  \begin{center}
+    \pic{.6}{graphics/PV-cell}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.15in}Solar power is based on \textbf{photoelectric effect},
+    where light at specific frequencies knock off electrons from metals
+  \item A \textbf{photo-voltaic cell} combines layers of metal that have too
+    many electrons with layers that lacks them.
+  \item When light hits the metal, a current is generated
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Solar Power}
+  \begin{center}
+    \pic{.4}{graphics/Solar-Farms-Splash1}
+  \end{center}
+  \vspace{-.1in}Advantages:
+  \begin{itemize}
+  \item Portable---it requires no infrastructure (e.g.\ pipelines, transformers)
+  \item Zero emission---it generates no greenhouse gases
+  \end{itemize}
+  Disadvantages:
+  \begin{itemize}
+  \item Expensive
+  \item Low efficiency: ``Terrestrial grade'' solar cells are only
+    $\approx\SI{18}{\percent}$ efficient
+  \item Potentially toxic chemicals to make 
+  \item Significant land area required (what's the work around?)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Solar Power}
+  Practicality aside, you can even powered a car with solar power.
+  \begin{columns}[T]
+    \column{.4\textwidth}
+    \pic1{graphics/SOLARCAR}
+    
+    \column{.6\textwidth}
+    \begin{itemize}
+    \item At peak power, the on-board solar panels generate 
+      $\approx\SI{1200}\watt$ of power (the power consumed by a hair dryer)
+    \item Most solar cars have very efficient electric motors, and very little
+      aerodynamic loses
+    \item Well-designed solar cars can run on solar power alone (no battery
+      assistance) at \SI{80}{\kilo\metre\per\hour}
+    \end{itemize}
+  \end{columns}
+  
+  The Honda solar car in the photo cost several million dollars to
+  develop and build.
+\end{frame}
+
+
+
+\subsection{Nuclear}
+
+\begin{frame}{Nuclear Power}
+  Energy is released by nuclear fission (e.g.\ uranium, plutonium)
+  \begin{columns}
+    \column{.65\textwidth}
+    \begin{itemize}
+    \item Example: Canada's own CANDU reactors
+    \item Advantages:
+      \begin{itemize}
+      \item Fuels are relatively easy to transport
+      \item Radiation from \emph{normal} operation of a power plant less
+        than a coal power plan
+      \end{itemize}
+    \item Disadvantages:
+      \begin{itemize}
+      \item Nuclear waste: fission bi-products are also
+        radioactive; require careful storage
+      \item Accident could happen (regardless how small the possibility is)
+      \item Very expensive to build (rate of return is lower than other power
+        sources)
+      \end{itemize}
+    \end{itemize}
+
+    \column{.35\textwidth}
+    \centering
+    \pic1{graphics/candu}\\
+    {\scriptsize CANDU reactor}\par
+  \end{columns}
+\end{frame}
+
+\end{document}
