@@ -76,7 +76,13 @@
 \usepackage{mathptmx}
 % Use the Adobe Times Roman as the default text font together with math symbols
 %from the Symbol, Chancery and Computer Modern fonts
-%\usepackage{newtxtext,newtxmath}
+%\usepackage{tgtermes}
+%\usepackage{bera}
+%\usepackage{mlmodern,mathalpha}
+%\usepackage{bookman}  % text works, but no math fornts
+%\usepackage{time}                % This gives me errors
+%\usepackage{newtxtext,newtxmath} % This gives me errors
+%\usepackage{notomath}            % This gives me errors
 
 \usepackage{microtype} % Improve typography
 
@@ -137,20 +143,31 @@
       anchor=north west,
       inner sep=0pt,
       xshift=\Gm@lmargin,
-      yshift=-\Gm@tmargin] at (current page.north west) {\fontsize{220pt}{220pt}\selectfont\sffamily\bfseries\textcolor{ocre!40}{#1}}; % Part number
+      yshift=-\Gm@tmargin] at (current page.north west) {
+      \fontsize{220pt}{220pt}
+      \selectfont\sffamily\bfseries
+      \textcolor{ocre!40}{#1}}; % Part number
     \node[
       anchor=north east,
       inner sep=0pt,
       xshift=-\Gm@rmargin,
-      yshift=-\Gm@tmargin] at (current page.north east) {\fontsize{30pt}{30pt}\selectfont\sffamily\bfseries\textcolor{white}{\strut #2}}; % Part title
+      yshift=-\Gm@tmargin] at (current page.north east) {
+      \fontsize{30pt}{30pt}
+      \selectfont\sffamily\bfseries
+      \textcolor{white}{\strut #2}}; % Part title
     \node[
       anchor=south east,
       inner sep=0pt,
       xshift=-\Gm@rmargin,
-      yshift=\Gm@bmargin] at (current page.south east) { % Mini table of contents
-      \parbox[t][][t]{8.5cm}{ % Width of box holding the mini ToC
-	\printcontents[part]{l}{0}{\setcounter{tocdepth}{1}} % Display the mini table of contents showing chapters and sections, change tocdepth to 2 to also show subsections or 0 to only show chapters
-			}
+      yshift=\Gm@bmargin] at (current page.south east) {
+      % Mini table of contents
+      \parbox[t][][t]{8.5cm}{
+        % Width of box holding the mini ToC
+	\printcontents[part]{l}{0}{\setcounter{tocdepth}{1}}
+        % Display the mini table of contents showing chapters and sections,
+        % change tocdepth to 2 to also show subsections or 0 to only show
+        % chapters
+      }
     };
   \end{tikzpicture}
 }
@@ -189,7 +206,9 @@
       \node[
 	anchor=north west, % Anchor point on the image
 	inner sep=0pt, % Inner padding
-      ] at (current page.north west) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+      ] at (current page.north west) {
+        \includegraphics[width=\paperwidth]{\thechapterimage}
+      };
     }
     % Box with the chapter title
     \draw[anchor=west] (current page.north west) node [

@@ -72,7 +72,7 @@ to the current form}
 
 \subsection{Absolute Temperature}
 
-William Thomson (better known by his totle: Lord Kelvin) and James Prescott
+William Thomson (better known by his title: Lord Kelvin) and James Prescott
 Joule discovered that when a gas is heated or cooled at \emph{constant volume},
 there is always a \emph{linear} relationship between pressure and temperature,
 as shown in Fig.~\ref{fig:abs-temp}.
@@ -337,36 +337,28 @@ At thermal equilibrium, pressure is evenly distributed in the gas
 %  Therefore $C$ must scale with the number of molecules $N$, which
 %  modifies the equation to the \textbf{ideal gas law}:
 
-\begin{equation}
-  \boxed{PV=Nk_BT}
-\end{equation}
+\begin{important-equation}
+  PV=Nk_BT
+\end{important-equation}
 The constant $k_B=\SI{1.381e-23}{\joule\per\kelvin}$ is called
 \textbf{Boltzmann's constant}. It is found experimentally to have the same
-value for any kind or amount of gas.
-%
-%
-%
-%
-%{Ideal Gas Law}
-The ideal gas law is often expressed in a different form in chemistry courses:  
-\begin{equation}
-  \boxed{PV=nRT}
-\end{equation}
-where:
-%  \begin{itemize}
-%  \item $n=N/N_A$ is the number of moles of the gas
-%  \item $R=k_BN_A=\SI{8.314}{\kilo\gram\per\mol.\kelvin}$ is the
-%    \textbf{universal gas constant}, and
-%  \item $N_A=\num{6.022e23}$ is \textbf{Avogadro's number}, which is the number
-%    of molecules in one mole\footnote{One \emph{mole} of substance is the
-%    number of atoms in 12 grams of carbon-12 atoms. This number is also
-%    related to the definition of the \emph{unified atomic mass unit}, which
-%    will be discussed in the last topic of the course, on nuclear physics.} of
-%    the substance
-%  \end{itemize}
-The ideal gas law relates all the quantities that define the \emph{state} of a
-gas: pressure $P$, volume $V$ and temperature $T$. Both forms of the equations
-are used in this book
+value for any kind or amount of gas. The ideal gas law is often expressed in a
+different form in chemistry courses:  
+\begin{important-equation}
+  PV=nRT
+\end{important-equation}
+where: $n=N/N_A$ is the number of moles of the gas;
+$R=k_BN_A=\SI{8.314}{\kilo\gram\per\mol.\kelvin}$ is the
+\textbf{universal gas constant}, and
+$N_A=\num{6.022e23}$ is \textbf{Avogadro's number}, which is the number of
+molecules in one mole\footnote{One \emph{mole} of substance is the number of
+atoms in 12 grams of carbon-12 atoms. This number is also related to the
+definition of the \emph{unified atomic mass unit}, which will be discussed in
+the last topic of the course, on nuclear physics.} of the substance. Both
+version of the idea gas law is commonly used.
+%The ideal gas law relates all the quantities that define the \emph{state} of a
+%gas: pressure $P$, volume $V$ and temperature $T$. Both forms of the equations
+%are used in this book
 
 
 
@@ -414,7 +406,7 @@ Fig.~\ref{fig:maxwell-dist}.
   \label{fig:maxwell-dist}
 \end{figure}
 
-The Maxwell-Boltzmann function is a type of functin called a
+The Maxwell-Boltzmann function is a type of function called a
 \textbf{probability distribution function}, or
 \textbf{probability density function}. It describes the probability/likelihood
 of finding a molecule between speeds $v_1$ and $v_2$. The area under any
@@ -424,7 +416,6 @@ from $v=0\rightarrow\infty$. We can also note that the peak (mode) of this
 distribution shifts to higher speeds as $T$ increases.
 %\item The peak, which represents the most-probable speed $v_\text{prob}$,
 %  is lower at higher temperatures
-%\end{itemize}
 
 There are three particles speeds that are important: the most-probable speed
 $v_\text{prob}$, the mean (average) speed $\langle v \rangle$ and the
@@ -442,40 +433,40 @@ root-mean-square speed $v_\text{rms}$, shown in Fig.~\ref{fig:dist-speeds}.
 The \textbf{most probable speed} $v_\text{prob}$ is the peak (i.e.\ mode) of the
 distribution function. This is the speed you are most likely to find a molecule
 travelling at:
-\begin{equation}
+\begin{important-equation}
+  \text{Most probable speed:}\quad
   v_\text{prob}=\sqrt{\frac{2k_BT}m}=\sqrt{\frac{2RT}M}
-\end{equation}
+\end{important-equation}
 where $m$ is the molecular mass of the gas, $R$ is the universal gas constant,
 and $M$ is the molar mass (i.e.\ the mass of 1 mole of the substance).
 $v_\text{prob}$ is obtained through using basic calculus\footnote{Albeit not
 necessarily simple. It involves finding the derivative of $f(v)$ and solving
 for $v$ where $f'(v)=0$.}. We can see that the most probable speed is
 proportional to the square root of absolute temperature:
-\begin{equation}  
+\begin{equation*}  
   v_\text{prob}\propto\sqrt T
-\end{equation}
+\end{equation*}
 
 \subsection{Mean/Average Speed}
-%  
-%    \column{.45\textwidth}
-%    \pic1{speed-distribution}
-%    
-%    \column{.55\textwidth}
-The \textbf{mean speed} $\langle v\rangle$ (or \textbf{average speed}) is
-the arithmetic average of $N$ particles:
-\begin{align*}
-  \langle v\rangle &=\frac{v_1+v_2+\cdots+v_N}N\\
-  &=\sqrt{\frac{8k_BT}{\pi m}}=\sqrt{\frac{8RT}{\pi M}}
-\end{align*}
+
+The \textbf{mean speed} $\langle v\rangle$ (or \textbf{average speed}) is the
+arithmetic average of $N$ particles:
+\begin{equation}
+  \langle v\rangle =\frac{v_1+v_2+\cdots+v_N}N
+\end{equation}
+\begin{important-equation}
+  \text{Mean speed:}\quad
+  \langle v\rangle =\sqrt{\frac{8k_BT}{\pi m}}=\sqrt{\frac{8RT}{\pi M}}
+\end{important-equation}
 The above value for $\langle v\rangle$ is obtained using basic integral
 calculus\footnote{The Maxwell-Boltzmann distribution function is continuous
 in $v$, so this is done by computing the integral
-$\langle v\rangle=\int_0^\infty vf(v)dv$. The Maxwell-Boltzmann distribution
+$\langle v\rangle=\int_0^\infty vf(v)\dl v$. The Maxwell-Boltzmann distribution
 acts as a weighting function}. Like $v_\text{prob}$, $\langle v\rangle$ is
 also proportional to square root of absolute temperature:
-\begin{equation}
+\begin{equation*}
   \langle v\rangle\propto\sqrt T
-\end{equation}
+\end{equation*}
 %
 %
 %
@@ -522,14 +513,15 @@ also proportional to square root of absolute temperature:
 When studying ideal gases, we are \emph{most} interested in the average
 \emph{kinetic energy} $\langle K\rangle$ of the gas molecules, which scales
 with $v^2$. The average value of $v^2$ (i.e.\ $\langle v^2\rangle$) is therefore
-\begin{equation}
-  \langle K\rangle =\dfrac{K_1+K_2+\cdots+K_N}N
-  =\dfrac{\frac12mv_1^2+\frac12mv_2^2+\cdots+\frac12mv_N^2}N
-  =\frac12m
+\begin{align}
+  \nonumber \langle K\rangle &=\dfrac{K_1+K_2+\cdots+K_N}N\\
+  \nonumber &=\dfrac{\frac12mv_1^2+\frac12mv_2^2+\cdots+\frac12mv_N^2}N\\
+  \nonumber &=\frac12m
   \underbracket[1.3pt]{
     \left[\frac{v_1^2+v_2^2+\cdots+v_N^2}N\right]
-  }_{\langle v^2\rangle}
-\end{equation}
+  }_{\langle v^2\rangle}\\
+  \langle K\rangle &=\frac12m\langle v^2\rangle
+\end{align}
 Using ``basic'' integral calculus, we can show that
 \begin{equation}
   \langle v^2\rangle=\frac{3k_BT}m
@@ -546,17 +538,17 @@ Using ``basic'' integral calculus, we can show that
 The speed that gives the average kinetic energy is called the
 \textbf{root-mean-square speed} $v_\text{rms}$, which is the square root of
 $\langle v^2\rangle$:
-\begin{equation}
+\begin{important-equation}
   \underbracket[1pt]{v_\text{rms}=\sqrt{\langle v^2\rangle}}_{
     \text{i.e.\ }v_\text{rms}^2=\langle v^2\rangle}
   =\sqrt{\frac{3k_BT}m}=\sqrt{\frac{3RT}M}
-\end{equation}
+\end{important-equation}
 ``Root mean square'' literally means ``the square root of the mean of the
 square''. Like $v_\text{prob}$ and $\langle v\rangle$, $v_\text{rms}$ is
 also proportional to the square root of absolute temperature:
-\begin{equation}
+\begin{equation*}
   v_\text{rms}\propto\sqrt T
-\end{equation}
+\end{equation*}
 
 
 
@@ -585,10 +577,11 @@ temperature:
 
 \section{First Law of Thermodynamics}
 
-The first law of thermodynamics is based on the law of conservation of energy,
-which is arguably the most important concept in fundamental physics:
+The first law of thermodynamics is application of law of conservation of
+energy (Chapter~\ref{chapter:energy})
+which is arguably the most important concept in fundamental physics
 \begin{definition}
-  \textbf{Law of Conservation of Enegy:} The change in the total energy of a
+  \textbf{Law of Conservation of Energy:} The change in the total energy of a
   system $E_\text{sys}$ is equal to the net external mechanical work
   $W_\text{ext}$ done from outside the system.
   \begin{equation}
@@ -600,8 +593,8 @@ which is arguably the most important concept in fundamental physics:
 \end{definition}
 The \emph{consequence} of the law of conservation of energy is that,
 \begin{definition}
-  \textbf{Law of Conservation of Enegy:} In an isolated system, energy cannot
-  be created or destroyed; it can only hange in form.
+  \textbf{Law of Conservation of Energy:} In an isolated system, energy cannot
+  be created or destroyed; it can only change in form.
 \end{definition}
 In general, the total system energy is the sum of all the kinetic and potential
 energies of the objects in the system in the macroscopic scale, collectively
@@ -674,7 +667,7 @@ energy. This reduces the equation to:
   \xcancel{\sum\Delta K} + \xcancel{\sum\Delta U} + \Delta E_\text{int}=
   W_\text{ext}
 \end{equation}
-Futhermore, aside from the (macroscopic) mechanical work done, there is also a
+Furthermore, aside from the (macroscopic) mechanical work done, there is also a
 ``non-mechanical'' transfer of energy (i.e.\ work done at the
 \emph{microscopic} level), called \textbf{heat transfer} $Q$. The law of
 conservation of energy becomes the first law of thermodynamics:
@@ -689,15 +682,6 @@ conservation of energy becomes the first law of thermodynamics:
     }
   \end{equation}
 \end{definition}
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Change in internal energy of a system & $\Delta U$ & \si\joule \\
-%      Mechanical work done \emph{to} the system & $W$    & \si\joule \\
-%      Heat transfer into the system & $Q$ & \si\joule
-%    \end{tabular}
-%  \end{center}
 Note that by convention, Eq.~\ref{eq:1st-law-of-thermodynamics} is written in a
 \emph{slightly} different notation from the last slide by convention, in that
 here, we use ``$U$'' for internal energy instead of macroscopic potential
@@ -711,20 +695,15 @@ energy.
 
 
 
-\subsection{Internal Energy}
-{\large
-  \begin{equation*}
-    \boxed{
-      \Delta{\color{orange}U}=Q+W
-    }
-  \end{equation*}
-}
-Internal energy {\color{orange}$U$} is the total kinetic and potential energies
-of the atoms/molecules at the microscopic level. To calculate the internal
-energy of a collection of molecules, we first note the average kinetic energy
-of an ideal-gas molecule. A molecule can translate in three dimensions (its
-velocity can have the $\hat x$, $\hat y$ and $\hat z$ components), so kinetic
-energy can be evenly divided amongst the three ``degrees of freedom'' (DoF):
+\subsection{Internal/Thermal Energy}
+
+As discussed in Section XXX and XXX, internal energy, or thermal enegy ($U$) is
+the total kinetic and potential energies of the atoms/molecules at the
+microscopic level. To calculate the internal energy of a collection of
+molecules, we first note the average kinetic energy of an ideal-gas molecule. A
+molecule can translate in three dimensions (its velocity can have the $\hat x$,
+$\hat y$ and $\hat z$ components), so kinetic energy can be equally divided
+amongst the three ``degrees of freedom'' (DoF):
 \begin{equation*}
   \langle K \rangle=\frac12m\langle v^2\rangle
   =\frac12m\langle v_x^2+v_y^2+v_z^2\rangle\\
@@ -733,46 +712,50 @@ energy can be evenly divided amongst the three ``degrees of freedom'' (DoF):
 \end{equation*}
 Since the motion of the molecules is random (i.e.\ no preferred direction of
 motion), the component averages must be the same, i.e.
-\begin{equation}
+\begin{equation*}
   \langle v_x^2\rangle=\langle v_y^2\rangle=\langle v_z^2\rangle
-\end{equation}
+\end{equation*}
 
 \begin{definition}
-  \textbf{Equipartition theorem:} Since the motion is random, the internal
-  energy of a thermodynamic system must be evenly divided between each degrees
-  of freedom (DoF). Each DoF has a contribution of
+  \textbf{Equipartition theorem:} %Since the motion is random,
+  The internal energy of a thermodynamic system must be evenly divided between
+  each degrees of freedom (DoF). Each DoF has a contribution of
   \begin{equation*}
     \frac12Nk_BT\quad\text{\normalsize or}\quad\frac12nRT
   \end{equation*}
-  towards the total internal energy
+  towards the total internal energy of the system
 \end{definition}
 
-\emph{Monatomic} gases have 3 translational DoF, therefore the internal
-energy is the total kinetic energy, which were shown earlier:
-\begin{equation}
-  U=\frac32Nk_BT=\frac32nRT
-\end{equation}
-%
-\emph{Diatomic} gases
+\begin{itemize}
+\item\textbf{Monatomic gases} (e.g.\ helium, argon gases) have 3
+  translational DoF, therefore the internal energy is the total kinetic energy,
+  which were shown earlier:
+  \begin{equation}
+    U=\frac32Nk_BT=\frac32nRT
+  \end{equation}
+
+\item\emph{Diatomic} gases (e.g.\ hydrogen, oxygen, nitrogen)
 %\footnote{In
 %  %\footnote{By definition, diatomic gases cannot also
 %  %be ideal gases. However, in
 %  AP Physics 2, you will often hear of a ``diatomic ideal gas''. In those
 %  cases, we assume an equality rather than an approximation}
-have 3 translational DoF, and 2 rotational DoF, therefore the total internal
-energy is:
-\begin{equation}
-  U=\frac52Nk_BT=\frac52nRT
-\end{equation}
+  have 3 translational DoF, and 2 rotational DoF, therefore the total internal
+  energy is:
+  \begin{equation}
+    U=\frac52Nk_BT=\frac52nRT
+  \end{equation}
 
-\emph{Solids} typically have 3 translational DoF, plus 3 vibrational DoF in
-elastic compression, and therefore the internal energy is:
-\begin{equation}
-  U\approx3Nk_BT\quad\text{\normalsize or}\quad 3nRT
-\end{equation}
-It should be noted that the above approximation is more accurate for solids
-that have well-defined lattice structures (e.g.\ metals and their alloys). For
-other substances, this approximation can be \emph{very} inaccurate.
+\item\emph{Solids} typically have 3 translational DoF, plus 3 vibrational DoF in
+  elastic compression, and therefore the internal energy is:
+  \begin{equation}
+    U\approx3Nk_BT\quad\text{\normalsize or}\quad 3nRT
+  \end{equation}
+  It should be noted that the above approximation is more accurate for solids
+  that have well-defined lattice-crystalline structures (e.g.\ metals and their
+  alloys). For other substances, this approximation can be \emph{very}
+  inaccurate.
+\end{itemize}
 
 What is conspicuously missing is the description of liquids. In general, there
 is no viable approximation for the internal energy of a liquid because of the
@@ -789,30 +772,18 @@ by how much) temperature is changing.
 \subsection{Heat}
 \label{sec:heat-transfer}
 
-{\large
-  \begin{equation*}
-    \boxed{
-      \Delta U={\color{blue}Q} + W
-    }
-  \end{equation*}
-}
-\textbf{Heat} {\color{blue}$Q$} is the spontaneous non-mechanical transfer of
-energy \emph{into} the system, through conduction, convection and radiation.
+\textbf{Heat} ($Q$) is the spontaneous non-mechanical transfer of energy
+\emph{into} the system, through conduction, convection and radiation. In other
+words, heat transfer is work done at the molecular level. By the sign
+convention used in this book, heat transfer is:
+\begin{itemize}
+\item $+$ if heat is added to the system
+\item $-$ if heat leaves the system
+\end{itemize}
+By the second law of thermodynamics, the net heat transfer is always from the
+higher temperature to low temperature. Two objects are in thermal equilibrium
+(zero net heat transfer) if the temperature of both objects are the same.
 
-%  \eq{-.2in}{
-%    \boxed{\Delta U={\color{blue}Q}+W}
-%  }
-%  \begin{itemize}
-%  \item Heat transfer $Q$ is:
-%    \begin{itemize}
-%    \item $+$ if heat is added to the system
-%    \item $-$ if heat leaves the system
-%    \end{itemize}
-%  \item The net flow of energy is always from the higher temperature to low
-%    temperature (second law of thermodynamics)
-%  \item Two objects are in thermal equilibrium if the temperatures are the same
-%  \end{itemize}
-%
 \textbf{Conduction:}
 
 \textbf{Convection:}
@@ -852,79 +823,75 @@ energy \emph{into} the system, through conduction, convection and radiation.
 %
 %
 %
-%%{Example of a Thermal System}
-%%  \centering
-%%  \begin{tikzpicture}[scale=1.2]
-%%    \begin{scope}[thick]
-%%      \draw[fill=cyan!10] (5,0)--(1.5,0)--(1.5,1)--(0,1)--(0,2)--(4,2)
-%%      --(4,.7)--(5,.7);
-%%      \draw[fill=black!2] (.2,1.2) rectangle (1.5,1.8);
-%%    \end{scope}
-%%    \fill (4.8,0) rectangle (5,.7);
-%%
-%%    \node at (2.8,1.3) {\normalsize gas};
-%%    
-%%    \foreach \y in {.05,.25,...,.7} \draw[vectors] (5.5,\y)--(5,\y);
-%%    \node[right=4,text width=135,draw=black,fill=gray!10] at (5.5,.35){
-%%      {\scriptsize External pressure compressing the gas through the piston
-%%        does \emph{positive} work \emph{to} the thermal system\par}
-%%      
-%%      \vspace{-.38in}{\Large
-%%        \begin{displaymath}
-%%          +W
-%%        \end{displaymath}
-%%      }
-%%      
-%%      \vspace{-.07in}{\scriptsize Work done \emph{by} the system is
-%%        negative.\par}
-%%    };
-%%    \foreach \x in {1.75,2.25,...,4}
-%%    \draw[axes,red,decorate,decoration=snake] (\x,2.1)--+(0,1.2);
-%%    \node[above=4,text width=100,red,draw=red,fill=red!10] at (2.8,3.3){
-%%      {\scriptsize Heat loss through radiation at the walls of the container
-%%        \par}
-%%
-%%      \vspace{-.38in}{\Large
-%%        \begin{displaymath}
-%%          -Q
-%%        \end{displaymath}
-%%        \par}
-%%    };
-%%  \end{tikzpicture}
-%%
+%{Example of a Thermal System}
+%  \centering
+%  \begin{tikzpicture}[scale=1.2]
+%    \begin{scope}[thick]
+%      \draw[fill=cyan!10] (5,0)--(1.5,0)--(1.5,1)--(0,1)--(0,2)--(4,2)
+%      --(4,.7)--(5,.7);
+%      \draw[fill=black!2] (.2,1.2) rectangle (1.5,1.8);
+%    \end{scope}
+%    \fill (4.8,0) rectangle (5,.7);
 %
+%    \node at (2.8,1.3) {\normalsize gas};
+%    
+%    \foreach \y in {.05,.25,...,.7} \draw[vectors] (5.5,\y)--(5,\y);
+%    \node[right=4,text width=135,draw=black,fill=gray!10] at (5.5,.35){
+%      {\scriptsize External pressure compressing the gas through the piston
+%        does \emph{positive} work \emph{to} the thermal system\par}
+%      
+%      \vspace{-.38in}{\Large
+%        \begin{displaymath}
+%          +W
+%        \end{displaymath}
+%      }
+%      
+%      \vspace{-.07in}{\scriptsize Work done \emph{by} the system is
+%        negative.\par}
+%    };
+%    \foreach \x in {1.75,2.25,...,4}
+%    \draw[axes,red,decorate,decoration=snake] (\x,2.1)--+(0,1.2);
+%    \node[above=4,text width=100,red,draw=red,fill=red!10] at (2.8,3.3){
+%      {\scriptsize Heat loss through radiation at the walls of the container
+%        \par}
 %
-%
+%        \begin{displaymath}
+%          -Q
+%        \end{displaymath}
+%    };
+%  \end{tikzpicture}
+
+
+
 \section{Heat Capacity}
 
 In many situations, heat transferred from a thermodynamic system ($Q$) can be
 directly related to the change in temperature ($\Delta T$) by the object's
 \textbf{heat capacity} ($C$):
-\begin{equation}
-    Q = C\Delta T
-\end{equation}
-
-%  \vspace{-.1in}$C$ has a unit of \textbf{joule per kelvin}
-%  (\si{\joule\per\kelvin}) or \text{joule per degree Celsius}
-%  (\si{\joule\per\celsius}).
-Heat capacity depends on the object's mass as well as its composition.
-%%  It can be also expressed using a related quantity called the \textbf{molar
-%%    heat capacity}, which is the energy required to heat \SI1{\mol} of a
-%%  substance by \SI1\kelvin:
-%%
-%%  \eq{-.15in}{
-%%    \boxed{ Q = nc_m\Delta T }
-%%  }
-However, more practically, the \textbf{specific heat capacity} (lower case $c$)
-is the energy required to raise the temperature of \SI1{\kilo\gram} of a
-substance by \SI1{\kelvin} or \SI1\celsius:
-\begin{equation}
-  \boxed{
-    Q = mc\Delta T
-  }
-\end{equation}
+\begin{important-equation}
+  Q = C\Delta T
+\end{important-equation}
+$C$ is the amount of energy required to heat up the substance by \SI1{\kelvin}
+or \SI1{\celsius}. It has a unit of \emph{joule per kelvin}
+(\si{\joule\per\kelvin}) or \emph{joule per degree Celsius}
+(\si{\joule\per\celsius}). Heat capacity depends on the object's mass as well
+as its composition.
+%  It can be also expressed using a related quantity called the \textbf{molar
+%    heat capacity}, which is the energy required to heat \SI1{\mol} of a
+%  substance by \SI1\kelvin:
+%
+%  \eq{-.15in}{
+%    \boxed{ Q = nc_m\Delta T }
+%  }
+However, more practically, we separate the substance from the amount of it.
+The \textbf{specific heat capacity} (lower case $c$) is the energy required to
+raise the temperature of \SI1{\kilo\gram} of a substance by \SI1{\kelvin} or
+\SI1\celsius:
+\begin{important-equation}
+  Q = \underbracket[1pt]{mc}_C\Delta T
+\end{important-equation}
 $c$ is a physical property of a substance, with an SI unit of
-\textbf{joule per kilogram per kelvin} (\si{\joule\per\kilo\gram.\kelvin})
+\emph{joule per kilogram per kelvin} (\si{\joule\per\kilo\gram.\kelvin})
 
 
 
@@ -936,12 +903,12 @@ changing the internal energy:
 \begin{equation}
   Q\approx\Delta U\approx\underbracket[1pt]{3nR}_{mc}\Delta T
 \end{equation}
-%%  The molar heat capacity is approximately the same for \emph{most} solids.
-%%  Note that the universal gas constant still makes an appearance!
-%%
-%%  \eq{-.15in}{
-%%    c_m\approx\frac Cn=3R
-%%  }
+%  The molar heat capacity is approximately the same for \emph{most} solids.
+%  Note that the universal gas constant still makes an appearance!
+%
+%  \eq{-.15in}{
+%    c_m\approx\frac Cn=3R
+%  }
 And the specific heat capacity can be obtained by:
 %$m=nM$ from the heat capacity:
 \begin{equation}
@@ -976,12 +943,12 @@ while for diatomic gases:
 
 
 %{Heat Capacities of Gases at Constant Volume}
-%%  The molar heat capacity of a gas is therefore:
-%%
-%%  \begin{equation}
-%%    c_m=\frac{C_v}n=\frac32R\quad\text{(ideal)}\quad\quad
-%%    c_m=\frac{C_v}n\approx\frac52R\quad\text{(diatomic)}
-%%  }
+%  The molar heat capacity of a gas is therefore:
+%
+%  \begin{equation}
+%    c_m=\frac{C_v}n=\frac32R\quad\text{(ideal)}\quad\quad
+%    c_m=\frac{C_v}n\approx\frac52R\quad\text{(diatomic)}
+%  }
 %
 %  And the specific heat capacities for ideal/monatomic and diatomic gases are,
 %  respectively:
@@ -990,7 +957,7 @@ while for diatomic gases:
 %    c_v=\frac{C_v}m=\frac32\frac RM\quad\text{(ideal)}\quad\quad
 %    c_v=\frac{C_v}m\approx\frac52\frac RM\quad\text{(diatomic)}
 %  }
-%
+
 
 
 \subsection{Heat Capacities of Gases at Constant Pressure}
@@ -1003,8 +970,9 @@ using the ideal gas law:
 \end{equation}
 The heat added is therefore
 \begin{equation}
-  Q=\Delta U - W =mc_v\Delta T + nR\Delta T\quad\rightarrow\quad
-  \boxed{c_p=c_v+nR}
+  Q=\Delta U - W =mc_v\Delta T + nR\Delta T
+  %\quad\rightarrow\quad
+  %\boxed{c_p=c_v+nR}
 \end{equation}
 %  which means that heat capacities are:
 %
@@ -1012,11 +980,7 @@ The heat added is therefore
 %    C_p=\frac52nR\quad\text{(ideal)}\quad\quad
 %    C_p\approx\frac72nR\quad\text{(diatomic)}
 %  }
-%
-%
-%
-%
-%{Heat Capacities of Gases at Constant Pressure}
+
 %  The molar heat capacity of a gas at constant pressure is therefore:
 %
 %  \begin{equation}
@@ -1028,10 +992,9 @@ which means that the specific heat capacity is:
   c_p=\frac52\frac RM\quad\text{(ideal)}\quad\quad
   c_p\approx\frac72\frac RM\quad\text{(diatomic)}
 \end{equation}
+The actual specific heat capacities of different substances are usually found
+experimentally
 
-The actual specific heat capacities of different substances are usually
-found experimentally
-%
 \begin{table}[ht]
   \centering
   \begin{tabular}{|l|r|}
@@ -1040,7 +1003,7 @@ found experimentally
     \textbf{Substance} & $c$ (\si{\joule\per\kilo\gram.\kelvin}) \\
     \hline
     ethyl alcohol & 2450 \\
-    glycerine     & 2410 \\
+    glycerin     & 2410 \\
     mercury       & 139 \\
     water (at \SI{15}\celsius) & 4186 \\
     \hline
@@ -1082,17 +1045,9 @@ matter: \textbf{solid}, \textbf{liquid}, \textbf{gas} and \textbf{plasma}
 %%    \end{tikzpicture}
 %  \end{center}
 %
-%
-%
-%
-%{Phase Transition}
-%  
-%    \column{.38\textwidth}
-%    \centering
 %    Phase diagram of water\\
 %    \pic{1.1}{10-figure-31}
 %
-%    \column{.62\textwidth}
 %    \begin{itemize}
 %    \item Which phase change can occur depends on pressure and temperature.
 %    \item For example, water in its liquid form cannot exist below
@@ -1105,12 +1060,8 @@ matter: \textbf{solid}, \textbf{liquid}, \textbf{gas} and \textbf{plasma}
 %    \item Beyond (C), the matter is considered to be a \emph{supercritical
 %    fluid}
 %    \end{itemize}
-%  
-%
-%
-%
-%
-%{During Phase Transition}
+
+
 During phase change, heat is either added or taken away from a substance, but
 the temperature does not change. This is a heating curve for water at
 atmospheric pressure:
@@ -1119,10 +1070,9 @@ atmospheric pressure:
 %  \end{center}
 %  The mechanics of phase transition is \emph{very} complex, and beyond the
 %  scope of this course.
-%
-%
-%
-%
+
+
+
 \subsection{Latent Heat}
 
 \textbf{Specific latent heat} is the heat required to change the phase of
@@ -1133,16 +1083,6 @@ condensation).
 \begin{equation}
   \boxed{Q = mL_f} \quad\quad \boxed{Q = mL_v}
 \end{equation}
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Heat required to change state & $Q$ & \si\joule \\
-%      Mass                          & $m$ & \si{\kilo\gram} \\
-%      Specific latent heat of fusion & $L_f$ & \si{\joule\per\kilo\gram} \\
-%      Specific latent heat of vaporization & $L_v$ & \si{\joule\per\kilo\gram}
-%    \end{tabular}
-%  \end{center}
 During phase change, the temperature will remain constant. Specific latent heat
 values for some common substances:
 
@@ -1172,12 +1112,12 @@ values for some common substances:
 \section{Quasi-Static Processes}
 
 To show the work by a gas, and how the state of the gas changes, we can plot
-the pressure vs.\ the volume of the gas, called a $P$-$V$ diagram, as the
-state changes. The mechanical work $W$ is the area under the curve: $W<0$ (work
-done \emph{by} the system) if the path moves towards the right, while $W>0$
-(work done \emph{to} the system) if the path moves towards the left. In the
-examples shown in Fig.~\ref{fig:PV1}, the gas is changed from the same
-states (1 to 2), but the mechanical work done is different.
+the pressure vs.\ the volume of the gas, called a $P$-$V$ diagram, as the state
+changes. The mechanical work $W$ is the area under the curve: $W<0$ (work done
+\emph{by} the system) if the path moves towards the right, while $W>0$ (work
+done \emph{to} the system) if the path moves towards the left. In the examples
+shown in Fig.~\ref{fig:PV1}, the gas is changed from the same states (1 to 2),
+but the mechanical work done is different.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.32\textwidth}
@@ -1228,8 +1168,8 @@ states (1 to 2), but the mechanical work done is different.
   \caption{Work done to/by a gas as it moves through two different states}
   \label{fig:PV1}
 \end{figure}
-The fact that $W$ is \emph{path dependent} means that the force exerted by
-the gas $F=P\cdot A$ is non-conservative (it may be obvious to you already).
+The fact that $W$ is \emph{path dependent} means that the force exerted by the
+gas $F=P\cdot A$ is non-conservative (it may be obvious to you already).
 
 A \textbf{quasi-static process} is a thermodynamic process that happens slowly
 enough for the system to remain in internal equilibrium.

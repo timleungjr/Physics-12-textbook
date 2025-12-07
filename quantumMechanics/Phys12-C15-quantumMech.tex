@@ -374,9 +374,9 @@ Fig.~\ref{fig:horizontal-spring-mass1-again}.
     forces.}
   \label{fig:horizontal-spring-mass1-again}
 \end{figure}
-In Section 7.4, we derived the equation for the natural frequency ($f_0$) of
-this system, which depends on the spring constant $k$ of the spring, and the
-mass $m$ connected to it:
+In Section \ref{sec:horizontal-spring-mass} we derived the equation for the
+natural frequency ($f_0$) of such a system, which depends on the spring
+constant $k$ of the spring, and the mass $m$ connected to it:
 \begin{equation*}
   f_0 = \frac1{2\pi}\sqrt{\frac km}
 \end{equation*}
@@ -384,13 +384,13 @@ When the mass oscillates, its total mechanical energy is the mass's kinetic
 energy, plus the elastic potential energy stored in the spring, as we have
 already shown in Eq.~\ref{eq:total-energy}.
 \begin{equation*}
-  E = K + U_s
+  E_\text{total} = K + U_e
   \label{eq:total-energy}
 \end{equation*}
-At maximum displacement (i.e.\ at amplitude $A$), all of the system's energy is
-in elastic potential energy:
+At maximum spring displacement (i.e.\ at amplitude $A$), all of the system's
+energy is in elastic potential energy:
 \begin{equation*}
-  E = \frac12kA^2
+  E_\text{total} = \frac12kA^2
 \end{equation*}
 We can then relate the total energy to the amplitude of the harmonic motion.
 Solving for the amplitude, we have:
@@ -401,10 +401,12 @@ Solving for the amplitude, we have:
 In classical physics, the pendulum can have \emph{any} energy levels: both the
 mass's kinetic and elastic potential energies are continuous functions, and
 therefore any amplitudes are plausible. However, in Planck's view, the energies
-of this system must also be quantized. For a hypothetical system with
-$k=\SI{987}{\newton\per\metre}$, and $m=\SI1{\kilo\gram}$, we will have a
-natural frequency of $f_0=\SI{5.00}\hertz$. As it is oscillating at its natural
-frequency, the allowable energies are:
+of this system must also be quantized.
+
+For a hypothetical system with $k=\SI{987}{\newton\per\metre}$, and
+$m=\SI1{\kilo\gram}$, we will have a natural frequency of
+$f_0=\SI{5.00}\hertz$. As it is oscillating at its natural frequency, the
+allowable energies are:
 \begin{align*}
   E_0 &= 0\\
   E_1 &= hf_0  = \SI{3.32e-33}\joule\\
@@ -412,9 +414,9 @@ frequency, the allowable energies are:
   E_3 &= 3hf_0 = \SI{9.94e-33}\joule
 \end{align*}
 The gap between different energy levels is $\Delta E=hf=\SI{3.32e-33}\joule$.
-Energies between these discrete levels(i.e. between $E_1$ and $E_2$, or between
-$E_2$ and $E_3$) are not allowed. This means that the possible amplitudes of
-the mass can be calculated by substituting the energy levels into
+Energies between these discrete levels (i.e.\ between $E_1$ and $E_2$, or
+between $E_2$ and $E_3$) are not allowed. This means that the possible
+amplitudes of the mass can be calculated by substituting the energy levels into
 Eq.~\ref{eq:amplitude-from-energy}:
 \begin{align*}
   A_0 &= 0\\
@@ -422,12 +424,12 @@ Eq.~\ref{eq:amplitude-from-energy}:
   A_2 &= \cdots\\
   A_3 &= \cdots
 \end{align*}
-For a spring-mass system with a low natural frequency, the energy gap---and
+For a spring-mass system with such a low natural frequency, the energy gap---and
 therefore the gaps between amplitudes---is laughably small, which is why energy
 quantization cannot be observed in a macroscopic scale. But for a charged
 particle emitting light, it will have to vibrate at a frequency between
-\num{4e14} to \SI{7e14}\hertz. All of a sudden, the gap $\Delta E$ is no
-longer small.
+\num{4e14} to \SI{7e14}\hertz. All of a sudden, the gap $\Delta E$ is no longer
+small.
 
 When this mass is oscillating, frictional forces removes energy from the
 system. In Chapter 7, we studied the use of a ``damping force'' $F_D=-bv$ to
@@ -442,30 +444,31 @@ constant. For simplicity, we are not showing the derivation of this equation,
 except to point out that $E(t)$ is a continuous function in time, as shown in
 Fig.\ 15.4a. However, if the energy levels of this harmonic oscillator is
 indeed quantized, then $E(t)$ would, in fact, decrease as a step function, as
-shown in Fig.\ 15.4b.
+shown in .%Fig.\ 15.4b.
 
+\section{Photoelectric Effect}
 
 %\section{Maxwell's Equations: Classical Laws of Electrodynamics}  
 %%    \pic{.97}{graphics/PORTRAIT-James-Clerk-Maxwell}\\  
 %%    {\footnotesize James Clerk Maxwell\par}
-%
-%Maxwell's equations show that an oscillating charge generates a fluctuating
-%electric field and magnetic field, which travels through space as an
-%``electromagnetic wave'' with speed:
+
+Maxwell's equations show that an oscillating charge generates a fluctuating
+electric field and magnetic field, which travels through space as an
+``electromagnetic wave'' with speed:
 %\begin{equation*}
 %  c=\frac1{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{\meter\per\second}
 %\end{equation*}
-%By 1862, the speed of light was already measured to within about
-%\SI{.6}{\percent} of this value\footnote{By L\'{e}on Foucault using a
-%rotating mirror experiment. His experimental value was
-%\num{298000}$\pm 500$ \si{\metre\per\second}}. Does that mean that light is
-%an EM wave?
+By 1862, the speed of light was already measured to within \SI{.6}{\percent} of
+this value\footnote{By L\'{e}on Foucault using a rotating mirror experiment.
+His experimental value was \num{298000}$\pm 500$ \si{\metre\per\second}}. Does
+that mean that light is an EM wave?
 %
 %
 %
 %
+
 %%\begin{frame}{Proving Light as an Electromagnetic Wave}
-%Proving that light is an EM wave requires an alternating current with a
+Proving that light is an EM wave requires an alternating current with a
 %frequency of \SI{e14}{\per\second}.
 %\begin{itemize}
 %\item Physicists already knew the wavelengths of visible light (e.g.\ through
@@ -484,7 +487,7 @@ shown in Fig.\ 15.4b.
 
 
 
-\section{Photoelectric Effect}
+
 
 %%\begin{frame}{Heinrich Hertz}
 %%  
@@ -635,26 +638,23 @@ experimental results.
 
 The relationship between kinetic energy of electrons and the photons can be
 summarized in a simple linear function:
-\begin{equation}
-  \boxed{
-    K_\text{max}=
-    \begin{cases}
-      hf-\varphi & \text{if}\;\;hf>\varphi\\
-      0          & \text{otherwise}
-    \end{cases}
-  }
+\begin{important-equation}
+  \text{Photoelectric effect:}
+  \quad
+  K_\text{max}=
+  \begin{cases}
+    hf-\varphi & \text{if}\;\;hf>\varphi\\
+    0          & \text{otherwise}
+  \end{cases}
   \label{eq:photo-electric-effect}
-\end{equation}
-where $K_\text{max}$ is the maximum kinetic energy of the photo-electrons; $h$
-is Planck's constant; $f$ is the frequency of the EM wave; and $\varphi$ is
-property of the material, called the \text{work function}.
-
-
+\end{important-equation}
+where $K_\text{max}$ is the maximum kinetic energy of the ``photo-electrons''
+ejected from the metal; $h$ is Planck's constant; $f$ is the frequency of the
+incident electromagnetic radiation; and $\varphi$ a property of the material,
+called the \text{work function}.
 %The ``work function'' is a property of the metal that 
-
-Bottom line: Classical electrodynamics concept cannot
-be applied in photoelectric effect, and must be replaced with quantum
-mechanics.
+The bottom line is that classical electrodynamics concept cannot be applied in
+photoelectric effect, and must be replaced with quantum mechanics.
 
 
 
@@ -669,11 +669,9 @@ ejected is called the \textbf{threshold frequency} $f_0$. At this frequency,
 the photoelectrons have zero kinetic energy. Using
 \ref{eq:photo-electric-effect}, we find that expression for threshold
 frequency:
-\begin{equation}
-  \boxed{
-    f_0=\frac{\varphi}h
-  }
-\end{equation}
+\begin{important-equation}
+  f_0=\frac{\varphi}h
+\end{important-equation}
 The slope of the graph is $h$ independent of the metal.
 
 An example for zinc is shown as an example in Fig.~\ref{fig:zinc}. Zinc has a
@@ -724,23 +722,17 @@ visible light will not cause electrons to be ejected.
   \caption{Work function for various metals}
   \label{tabl:work-function}
 \end{table}
-%  
-%
-%
-%
-%
+
+
 \section{Compton Scattering}
 
 American physicist Arthur Compton\footnote{1892--1962; Nobel Prize winner in
-1927} studied x-ray scattering by free electrons
-\begin{itemize}
-\item ``Free electrons'' are actually valence electrons in atoms that have
-  \emph{very} low ionization energy, so any EM radiation will knock them off
-  the atom
-\item After hitting the electrons, the x-ray radiation is scattered
-\item Those electrons ejected from the atoms are called \textbf{recoil
-  electrons}
-\end{itemize}
+1927} studied x-ray scattering by free electrons. In this case, the
+``free electrons'' are actually valence electrons in atoms that have
+\emph{very} low ionization energy, so any electromagnetic radiation will knock
+them off the atom. After hitting the electrons, the x-ray radiation is
+scattered into different angles. The electrons ejected from the atoms are
+called \textbf{recoil electrons}.
 \begin{center}
   \input{quantumMechanics/compton}
 \end{center}
@@ -775,15 +767,16 @@ $c$ is the speed of light in a vacuum. This equation can be written in the
 \end{equation}
 where $m_0$ is the rest mass of the object. This equation predicted that a
 \emph{massless} particle, like a photon, should also have a momentum:
-\begin{equation}
-  \boxed{p=\frac Ec=\frac{hf}c=\frac h\lambda}
-\end{equation}
+\begin{important-equation}
+  \text{Momentum of a photon:}\quad
+  p=\frac Ec=\frac{hf}c=\frac h\lambda
+\end{important-equation}
 By treating the x-ray as particles (photons) with momentum, the electron
 scattering problem becomes a basic 2D elastic collision (similar to the
 problems studied in Class \#5). In this collision, both momentum and energy
 are conserved:
 \begin{equation}
-  \vec p_i=\vec p_e + \vec p_f\quad\text{and}\quad
+  \bm p_i=\bm p_e + \bm p_f\quad\text{and}\quad
   E_i = E + E_f
 \end{equation}
 \begin{center}
@@ -873,18 +866,18 @@ constant and inversely proportional to its wavelength:
 %The momentum of a photon is proportional to Planck's constant and inversely
 %proportional to its wavelength:
 
-\begin{equation}
-  \boxed{p=\frac h\lambda}
-\end{equation}
-\begin{center}
-  \begin{tabular}{l|c|c}
-    \rowcolor{pink}
-    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-    Momentum          & $p$       & \si{\kilo\gram\metre\per\second} \\
-    Planck's constant & $h$       & \si{\joule\second} \\
-    Wavelength        & $\lambda$ & \si\metre
-  \end{tabular}
-\end{center}
+%\begin{equation}
+%  \boxed{p=\frac h\lambda}
+%\end{equation}
+%\begin{center}
+%  \begin{tabular}{l|c|c}
+%    \rowcolor{pink}
+%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%    Momentum          & $p$       & \si{\kilo\gram\metre\per\second} \\
+%    Planck's constant & $h$       & \si{\joule\second} \\
+%    Wavelength        & $\lambda$ & \si\metre
+%  \end{tabular}
+%\end{center}
 
 
 

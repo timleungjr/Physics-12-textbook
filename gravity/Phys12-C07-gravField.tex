@@ -318,10 +318,10 @@ $r_1$ to $r_2$:
   =\frac{Gm_1m_2}{r_1} - \frac{Gm_1m_2}{r_2}=-\Delta U_g
 \end{equation*}
 Of course, the calculus is ``basic'' only if you already know calculus,
-otherwise it is impossible. But we can skip over to the final result: the work
-done by gravitational foce $U_g$ is
-the gravitational potential energy stored between masses $m_1$ and $m_2$,
-defined as:
+otherwise it is impossible. But even if we are unfamiliar with calculus, we can
+still skip over to the final result: the work done by gravitational force $U_g$
+is related to the gravitational potential energy stored between two masses,
+$m_1$ and $m_2$, defined as:
 \begin{important-equation}
   U_g=-\frac{Gm_1m_2}r
   \label{eq:GPE-general}
@@ -330,229 +330,174 @@ By definition, $U_g$ is the work done by gravity required to move two objects
 from $r$ to $\infty$. To generalize the equation, the reference where $U_g=0$
 is set at $r=\infty$, and $U_g$ \emph{decrease} as $r$ decreases.
 
-%%  Since $g$ is not a constant, we use an equation consistent with the law of
-%%  universal gravity to obtain the general expression for
-%%  \textbf{gravitational potential energy} stored between a system of two
-%%  masses:
-%  
-%  \eq{-.05in}{
-%    \boxed{U_g=-\frac{Gm_1m_2}r}
-%  }
-%\begin{center}
-%  \begin{tabular}{l|c|c}
-%    \rowcolor{pink}
-%    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%    Gravitational potential energy & $U_g$ & \si\joule \\
-%    Point masses & $m_1$, $m_2$ & \si{\kilo\gram} \\
-%    Distance between centres of mass & $r$ & \si\metre \\
-%    Universal gravitational constant & $G$ & \si{N.m^2/kg^2}
-%  \end{tabular}
-%\end{center}
-
-
 %  %Similar to the simpler expression for gravitational potential energy
 %  %($U_g=mgh$),
 
+\begin{important-equation}
+  W_g=-\Delta U_g
+  \label{eq:GPE-work}
+\end{important-equation}
 
+Eqs.~\ref{eq:GPE-general} and \label{eq:GPE-work} show that the gravitational
+force is conservative:
+\begin{definition}
+  \begin{enumerate} %[itemsep=3pt,leftmargin=15pt]
+  \item When work done by gravtational force is \emph{positive} (i.e.\
+    $W_g>0$), there is a \emph{decrease} in gravitational potential energy by
+    the same amount ($\Delta U_g>0$), while
+  \item When work done by graviational force is \emph{negative} (i.e.\
+    $W_g<0$), there is an \emph{increase} in gravitational potential energy by
+    the same amount ($\Delta U_g>0$)
+  \item The work by gravity is \emph{path independent}: $W_g$, and therefore
+    $\Delta U_g$, depends on the end points $r_1$ and $r_2$, but not \emph{how}
+    the objects move from $r_1$ to $r_2$
+  \item Only work done by gravity can affect $U_g$
+  \end{enumerate}
+\end{definition}
+
+
+%\section{Relating Gravitational Potential Energy to Force}
+%  The work-energy theorem tells us that
+%  \begin{itemize}
+%  \item $\bm F_g$ always points in the direction from high to low potential
+%    energy, i.e.
+%  \item A falling object is always decreasing in $U_g$
+%  \item ``Steepest descent'': the direction of $\bm F_g$ is the shortest path
+%    to decrease $U_g$ 
+%  \item Objects travelling perpendicular to $\bm F_g$ has constant $U_g$
+%  \end{itemize}  
+%  In vector calculus, we say that gravitational force ($\bm F_g$) is the
+%  negative gradient of the gravitational potential energy ($U_g$):
+%  
 %  \eq{-.1in}{
-%    \boxed{U_g=-\frac{Gm_1m_2}r}\quad\text{\normalsize and }
-%    \quad\boxed{  W_g=-\Delta U_g}
+%    \bm F_g=-\nabla U_g=-\frac{dU_g}{dr}\hat{\bm{r}}
 %  }
 
-Eq.~\ref{eq:GPE-general} also shows that the gravitational force is
-conservative:
-
-\begin{enumerate} %[itemsep=3pt,leftmargin=15pt]
-\item When work done by gravtational force is \emph{positive} (i.e.\
-  $W_g>0$), there is a \emph{decrease} in gravitational potential energy by
-  the same amount ($\Delta U_g>0$), while
-\item When work done by graviational force is \emph{negative} (i.e.\
-  $W_g<0$), there is an \emph{increase} in gravitational potential energy by
-  the same amount ($\Delta U_g>0$)
-\item The work by gravity is \emph{path independent}: $W_g$, and therefore
-  $\Delta U_g$, depends on the end points $r_1$ and $r_2$, but not \emph{how}
-  the objects move from $r_1$ to $r_2$
-  \item Only work done by gravity can affect $U_g$
-\end{enumerate}
-
-%\fcolorbox{black}{yellow!5}{
-%  \begin{minipage}{.95\textwidth}
-%    \begin{itemize}
-%    \item \emph{Positive} work by $\bm F_g$ \emph{decreases} gravitational
-%      potential energy $U_g$, while
-%    \item \emph{Negative} work by $\bm F_g$ \emph{increases} gravitational
-%      potential energy $U_g$
-%    \item $W_g$ depends on $r_1$ and $r_2$, but not \emph{how} the mass moves
-%      from $r_1\rightarrow r_2$
-%    \item Only work done by $\bm F_g$ can change $U_g$
-%    \end{itemize}
-%  \end{minipage}
-%}
+%\section{Relating $U_g$, $\bm F_g$ and $\bm g$}
+%  Knowing that $\bm F_g$ and $\bm g$ only differ by a constant, we can
+%  also relate gravitational field to $U_g$ by the gradient operator:
+%
+%  \eq{-.1in}{
+%    \bm g=\frac{\bm F_g}{m}=-\nabla\left(\frac{U_g}{m}\right)=
+%    -\frac{d}{dr}\left(\frac{U_g}{m}\right)\hat{\bm{r}}
+%  }
+%
+%  We already know that the direction of $\bm g$ is the same as $\bm F_g$,
+%  i.e.
+%  \begin{itemize}
+%  \item The direction of $\bm g$ is the shortest path to decrease $U_g$ 
+%  \item Objects travelling perpendicular to $\bm g$ has constant $U_g$
+%  \end{itemize}
+%
 
 
+\section{Kepler's Laws of Planetary Motion}
+We will now combine our knowledge of gravitational force and gravitational
+energy to understand motion of satellites, planets and stars.
 
-
-%%\section{Relating Gravitational Potential Energy to Force}
-%%  The work-energy theorem tells us that
-%%  \begin{itemize}
-%%  \item $\bm F_g$ always points in the direction from high to low potential
-%%    energy, i.e.
-%%  \item A falling object is always decreasing in $U_g$
-%%  \item ``Steepest descent'': the direction of $\bm F_g$ is the shortest path
-%%    to decrease $U_g$ 
-%%  \item Objects travelling perpendicular to $\bm F_g$ has constant $U_g$
-%%  \end{itemize}  
-%%  In vector calculus, we say that gravitational force ($\bm F_g$) is the
-%%  negative gradient of the gravitational potential energy ($U_g$):
-%%  
-%%  \eq{-.1in}{
-%%    \bm F_g=-\nabla U_g=-\frac{dU_g}{dr}\hat{\bm{r}}
-%%  }
-%%
-%
-%
-%
-%%\section{Relating $U_g$, $\bm F_g$ and $\bm g$}
-%%  Knowing that $\bm F_g$ and $\bm g$ only differ by a constant, we can
-%%  also relate gravitational field to $U_g$ by the gradient operator:
-%%
-%%  \eq{-.1in}{
-%%    \bm g=\frac{\bm F_g}{m}=-\nabla\left(\frac{U_g}{m}\right)=
-%%    -\frac{d}{dr}\left(\frac{U_g}{m}\right)\hat{\bm{r}}
-%%  }
-%%
-%%  We already know that the direction of $\bm g$ is the same as $\bm F_g$,
-%%  i.e.
-%%  \begin{itemize}
-%%  \item The direction of $\bm g$ is the shortest path to decrease $U_g$ 
-%%  \item Objects travelling perpendicular to $\bm g$ has constant $U_g$
-%%  \end{itemize}
-%%
-%
-%
-%
-%%\section
-%%  We will now combine our knowledge of gravitational force and gravitational
-%%  energy to understand motion of satellites, planets and stars.
-%%
-%
-%
-%
-%\section{Kepler's Laws}
-%
 %%    \pic{1.1}{graphics/kepler}
 %%      
-%\begin{itemize}
-%\item German mathematician, astronomer \& astrologer
-%\item Formulated his laws based on the observation of his teacher, Tycho
-%  Brahe
-%\item Published his first two laws in 1609, third law in 1619
-%\item His work was controversial because of another competing theory,
-%  but by 1670, most scientists have accepted his findings
-%\item Kepler's laws are considered to be \emph{empirical}:
-%  \begin{itemize}
-%  \item Based purely on observed data
-%  \item Kepler had no physical theory
-%  \item ``Fitting the curve'' to the data
-%  \end{itemize}
-%\end{itemize}
-%  
-%
-%
-%
-%
-%\section{Kepler's Laws of Planetary Motion}
-%  \textbf{1.\ Law of Ellipses: The orbit of a planet is an ellipse with the Sun
-%    at one of the two foci.}
+\begin{itemize}
+\item German mathematician, astronomer \& astrologer
+\item Formulated his laws based on the observation of his teacher, Tycho
+  Brahe
+\item Published his first two laws in 1609, third law in 1619
+\item His work was controversial because of another competing theory,
+  but by 1670, most scientists have accepted his findings
+\item Kepler's laws are considered to be \emph{empirical}:
+  \begin{itemize}
+  \item Based purely on observed data
+  \item Kepler had no physical theory
+  \item ``Fitting the curve'' to the data
+  \end{itemize}
+\end{itemize}
+  
+
+
+
+
+\subsection{First Law of Planetary Motion}
+\textbf{1.\ Law of Ellipses: The orbit of a planet is an ellipse with the Sun
+  at one of the two foci.}
 %  \begin{center}
 %    \pic{.35}{graphics/23kepler1}
 %  \end{center}
-%  This is an extraordinary claim, because it is different from those of
-%  Nicolaus Copernicus, who claimed that the orbit of a planet is circular.
-%
-%
-%
-%
-%\section{Kepler's Laws of Planetary Motion}
-%  \textbf{2.\ Law of Equal Areas: A line segment joining a planet and the Sun
-%    sweeps out equal areas during equal intervals of time.}
+
+This is an extraordinary claim, because it is different from those of
+Nicolaus Copernicus, who claimed that the orbit of a planet is circular.
+
+
+\subsection{Second Law of Planetary Motion}
+\textbf{2.\ Law of Equal Areas: A line segment joining a planet and the Sun
+  sweeps out equal areas during equal intervals of time.}
 %  \begin{center}
 %    \pic{.4}{graphics/201532-132212364-3243-planet}
 %  \end{center}
-%  The planet moves faster when it is closer to the Sun, and slower when it
-%  farther.
+The planet moves faster when it is closer to the Sun, and slower when it
+farther. This is the result of the conservation of energy and 
 %
 %
 %
 %
-%\section{Kepler's Laws of Planetary Motion}
-%  \textbf{3.\ Law of Periods: The square of the orbital period of a planet is
-%    proportional to the cube of the semi-major axis of its orbit.}
+\subsection{Third Law of Planetary Motion}
+\textbf{3.\ Law of Periods: The square of the orbital period of a planet is
+  proportional to the cube of the semi-major axis of its orbit.}
 %
 %  \vspace{.1in}For two different planets $A$ and $B$ orbiting the same sun:
-%  
-%  \eq{-.1in}{
-%    \boxed{\frac{T^2}{r^3}=\text{constant}}\quad\text{or}\quad
-%    \boxed{\frac{T_A^2}{r_A^3}=\frac{T_B^2}{r_B^3}}
-%  }
-%
-%
-%
-%
+
+\begin{important-equation}
+  \boxed{\frac{T^2}{r^3}=\text{constant}}\quad\text{or}\quad
+  \boxed{\frac{T_A^2}{r_A^3}=\frac{T_B^2}{r_B^3}}
+\end{important-equation}
+
+
+
+
 %\section{Orbital Radii and Periods of Different Planets}
-%  
-%    \centering
-%    \begin{tabular}{c|c|r}
-%      \rowcolor{pink}
-%      \textbf{Planet} &
-%      \textbf{$R$ (AU)} &
-%      \textbf{$T$ (days)} \\ \hline
-%      Mercury & 0.389 & 87.77  \\
-%      Venus   & 0.742 & 224.70 \\
-%      Earth   & 1.000 & 365.25 \\
-%      Mars    & 1.524 & 686.98 \\
-%      Jupiter & 5.200 & 4332.62 \\
-%      Saturn  & 9.150 & \num{10579.20}
-%    \end{tabular}
-%    
-%    \centering
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c|c|r}
+    \rowcolor{pink}
+    \textbf{Planet} &
+    \textbf{$R$ (AU)} &
+    \textbf{$T$ (days)} \\ \hline
+    Mercury & 0.389 & 87.77  \\
+    Venus   & 0.742 & 224.70 \\
+    Earth   & 1.000 & 365.25 \\
+    Mars    & 1.524 & 686.98 \\
+    Jupiter & 5.200 & 4332.62 \\
+    Saturn  & 9.150 & \num{10579.20}
+  \end{tabular}
+\end{table}
 %    \pic{.8}{graphics/kep8}
-%  
-%  \vspace{.1in}\textbf{Astronomical unit} (AU) is defined as the average radius
-%  of Earth's orbit
-%
-%
-%
-%
-%\section{Kepler's Law of Planetary Motion}  
-%    The elliptical orbits of most of the planets in the solar system have very
-%    small eccentricity (i.e.\ their orbits are close to being circular) but
-%    comets can have much higher eccentricity
-%
-%    \begin{tabular}{l|l}
-%      \rowcolor{pink}
-%      \textbf{Object} & $e$ \\ \hline
-%      Mercury	& \num{.206} \\
-%      Venus	& \num{.0068} \\
-%      Earth	& \num{.0167} \\
-%      Mars	& \num{.0934} \\
-%      Jupiter	& \num{.0485} \\
-%      Saturn	& \num{.0556} \\
-%      Uranus	& \num{.0472} \\
-%      Neptune	& \num{.0086} \\
-%      Pluto	& \num{.25} \\ \hline
-%      Halley's Comet   & \num{.9671} \\
-%      Comet Hale-Bopp  & \num{.9951} \\
-%      Comet Ikeya-Seki & \num{.9999}
-%    \end{tabular}
-%  
-%
-%
-%
-%%\section{Kepler's Laws of Planetary Motion}
-%
-%%  Also, Brahe's original observations deviated from Kepler's laws slightly,
-%%  especially for Jupiter (Kepler knew that something is missing)
+\textbf{Astronomical unit} (AU) is defined as the average radius of Earth's
+orbit
+
+The elliptical orbits of most of the planets in the solar system have very
+small eccentricity (i.e.\ their orbits are close to being circular) but
+comets can have much higher eccentricity
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l|l}
+    \rowcolor{pink}
+    \textbf{Object} & $e$ \\ \hline
+    Mercury	& \num{.206} \\
+    Venus	& \num{.0068} \\
+    Earth	& \num{.0167} \\
+    Mars	& \num{.0934} \\
+    Jupiter	& \num{.0485} \\
+    Saturn	& \num{.0556} \\
+    Uranus	& \num{.0472} \\
+    Neptune	& \num{.0086} \\
+    Pluto	& \num{.25} \\ \hline
+    Halley's Comet   & \num{.9671} \\
+    Comet Hale-Bopp  & \num{.9951} \\
+    Comet Ikeya-Seki & \num{.9999}
+  \end{tabular}
+\end{table}
+%  Also, Brahe's original observations deviated from Kepler's laws slightly,
+%  especially for Jupiter (Kepler knew that something is missing)
 
 
 \section{Orbital Motion}
@@ -563,16 +508,15 @@ In \emph{Treatise of the System of the World}, the third book in
 Fig.~\ref{fig:thought-experiment}. The dashed line in the figures represent a
 circular path that is concentric with the centre of Earth. A cannonball is
 launched parallel to the surface of Earth with some initial velocity
-$\bm v$.
+$\bm v$, say, from the top of a mountain.
 \begin{figure}[ht]
   \centering
   \begin{subfigure}{.45\textwidth}
     \centering
-    \begin{tikzpicture}
-      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+    \begin{tikzpicture}[scale=1.3]
+      \node at (0,0) {\pic{.53}{gravity/earth-1200px}};
       \fill[red] (0,1.7) circle (.05);
       \draw[function,->] (0,1.7) arc (90:30:1 and 1.45);
-      %\draw[function,->,domain=0:.5] plot(\x,{-.5*\x*\x+1.7});
       \draw[dashed,gray,thick] circle (1.7);
     \end{tikzpicture}
     \caption{If initial velocity is too slow, the object falls back onto the
@@ -581,8 +525,8 @@ $\bm v$.
   \hspace{.3in}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \begin{tikzpicture}
-      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+    \begin{tikzpicture}[scale=1.3]
+      \node at (0,0) {\pic{.53}{gravity/earth-1200px}};
       \fill[red] (0,1.7) circle (.05);
       \draw[function,->] (0,1.7) arc (90:-55:1.5 and 1.5);
       \draw[dashed,gray,thick] circle (1.7);
@@ -594,8 +538,8 @@ $\bm v$.
   \vspace{.2in}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \begin{tikzpicture}
-      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+    \begin{tikzpicture}[scale=1.3]
+      \node at (0,0) {\pic{.53}{gravity/earth-1200px}};
       \fill[red] (0,1.7) circle (.05);
       \draw[function,->] (0,1.7) arc (90:-270:1.7);
     \end{tikzpicture}
@@ -606,8 +550,8 @@ $\bm v$.
   \hspace{.3in}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \begin{tikzpicture}
-      \node at (0,0) {\pic{.45}{gravity/earth-1200px}};
+    \begin{tikzpicture}[scale=1.3]
+      \node at (0,0) {\pic{.53}{gravity/earth-1200px}};
       \fill[red] (0,1.7) circle (.05);
       \draw[dashed,gray,thick] circle (1.7);
       \draw[function,->,domain=0:2.2] plot(\x,{-.3*\x*\x+1.7});
@@ -998,22 +942,13 @@ Substituting the expressions for $K$ and $U_g$ derived for objects in orbit:
 %%  \eq{-.1in}{
 %%    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac{GMm}{2r}
 %%  }
-%  
-%Gravitational potential energy is $-2$ times the orbital kinetic energy:
-%  
-%%  \eq{-.1in}{
-%%    U_g=-\frac{GMm}r=-2K_\text{orbit}
-%%  }
-%%
-%Adding $K_\text{orbit}$ and $U_g$ together, the total orbital
-%energy must be the negative of the orbit kinetic energy:
-%  
-%  \eq{-.15in}{
-%    E_\text{orbit}=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
-%  }
-%
-%
-%
+  
+Gravitational potential energy is $-2$ times the orbital kinetic energy:
+\begin{align*}
+  U_g &=2K_\text{orbit}\\
+  E_\text{orbit} &=-K_\text{orbit}
+\end{align*}
+
 \textbf{Binding Energy:} Binding energy $E_\text{binding}$ is the energy
 required to remove the mass $m$ from its orbit, and bring it to $r=\infty$,
 where total energy $E_\infty=0$. To do so, we need to make up for the deficit

@@ -34,7 +34,7 @@
 %-----------------------------------------------------------------------------
 
 \documentclass[
-  12pt, % Default font size, select one of 10pt, 11pt or 12pt
+  11pt, % Default font size, select one of 10pt, 11pt or 12pt
   %fleqn, % Left align equations
   letterpaper,
   % Paper size, use either 'a4paper' for A4 size or 'letterpaper' for US
@@ -45,6 +45,7 @@
   %instead of printed
 ]{LegrandOrangeBook}
 
+\usepackage{isotope}
 \usepackage{siunitx}
 \usepackage[siunitx]{circuitikz}
 \usepackage[ISO]{diffcoeff}
@@ -58,6 +59,7 @@
 \usepackage{colortbl}
 \usepackage{multicol}
 \usepackage{wrapfig}
+
 
 \pgfplotsset{
   compat=1.13, % TikZ coordinates <-> axes coordinates
@@ -124,13 +126,11 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-
 \newcolumntype{g}{>{\columncolor{gray!15}}c}
-
 
 % Book information for PDF metadata, remove/comment this block if not required 
 \hypersetup{
-  pdftitle={Basic Physics}, % Title field
+  pdftitle={Companion Book for AP Physics 1 \& 2}, % Title field
   pdfauthor={Timothy M. Leung}, % Author field
   pdfsubject={Subject}, % Subject field
   pdfkeywords={Keyword1, Keyword2, ...}, % Keywords
@@ -187,7 +187,7 @@
     {\includegraphics[width=\paperwidth]{background.pdf}} % Code to output the background image, which should be the same dimensions as the paper to fill the page entirely; leave empty for no background image
     { % Title(s) and author(s)
       \centering\sffamily % Font styling
-	  {\Huge\bfseries Basic Physics\par} % Book title
+	  {\Huge\bfseries Companion Book for AP Physics 1\& 2\par} % Book title
 	  \vspace{16pt} % Vertical whitespace
 		 {\LARGE Without Calculus\par} % Subtitle
 		 \vspace{24pt} % Vertical whitespace
@@ -227,9 +227,9 @@ language governing permissions and limitations under the License.\\ % License in
 
 \tableofcontents % Output the table of contents
 
-%\listoffigures % Output the list of figures, comment or remove this command if not required
+\listoffigures % Output the list of figures, comment or remove this command if not required
 
-%\listoftables % Output the list of tables, comment or remove this command if not required
+\listoftables % Output the list of tables, comment or remove this command if not required
 
 \pagestyle{fancy} % Enable default headers and footers again
 
@@ -238,20 +238,28 @@ language governing permissions and limitations under the License.\\ % License in
 \input{preface}
 
 %---------------------------------------------------------------------------
-%	PART 1: Mechanics
+%	Mechanics
 %---------------------------------------------------------------------------
 
-\part{Mechanics}
+\part{Kinematics}
 
 \input{kinematics/Phys12-C01-kinematics}
 \input{kinematics/handouts/Phys12-C01-projectileMotion}
 \input{kinematics/Phys12-C01-HW}
 
 
+%---------------------------------------------------------------------------
+%	DYNAMICS
+%---------------------------------------------------------------------------
+
 \part{Dynamics}
 
 \input{dynamics/Phys12-C02-dynamics}
 %\input{dynamics/homework/Phys12-C02-HW}
+
+%---------------------------------------------------------------------------
+%	ENERGY AND MOMENTUM
+%---------------------------------------------------------------------------
 
 
 \part{Energy and Momentum}
@@ -269,10 +277,14 @@ language governing permissions and limitations under the License.\\ % License in
 
 \input{CM/PhysAP1-C11b-CM}
 
+
+%---------------------------------------------------------------------------
+%	PERIODIC MOION
+%---------------------------------------------------------------------------
 \part{Periodic Motion}
 
-%\input{circularMotion/PhysAPC-06-circMotion}
-%\input{circularMotion/homework/Phys12-C03-HW}
+\input{circularMotion/PhysAPC-06-circMotion}
+\input{circularMotion/homework/Phys12-C03-HW}
 
 \input{rotationalMotion/PhysAP1-C12-rotMotion1}
 \input{rotationalMotion2/PhysAP1-C13-rotMotion2}
@@ -281,26 +293,31 @@ language governing permissions and limitations under the License.\\ % License in
 %\input{harmonicMotion/homework/Phys12-C06-HW}
 %\input{../harmonicMotion/harmonicMotion-practice-questions}
 
+
+%---------------------------------------------------------------------------
+%      GRAVITY AND PLANETARY MOTION
+%---------------------------------------------------------------------------
+
 \part{Universal Gravitation}
   
 \input{gravity/Phys12-C07-gravField}
 %\input{gravity/homework/Phys12-C08-HW}
 
 
-%\part{Fluid Mechanics}
-%\input{fluidMech/PhysAP1-C15-fluidMechanics}
-
 
 %---------------------------------------------------------------------------
-%	PART 1: Thermodynamics
+%	THERMALFLUIDS
 %---------------------------------------------------------------------------
-\part{Thermodynamics}
+\part{Thermal Fluids}
+
+\input{fluidMech/PhysAP1-C15-fluidMechanics}
+\input{fluidMech/homework/PhysAP1-C15-Homework}
 
 \input{thermodynamics/PhysAP2-C01-thermodynamics}
-
+\input{thermodynamics/homework/PhysAP2-C01-Homework}
 
 %---------------------------------------------------------------------------
-%	PART 2: Electricity
+%       Electricity
 %---------------------------------------------------------------------------
 \part{Electricity}
 
@@ -311,7 +328,7 @@ language governing permissions and limitations under the License.\\ % License in
 \input{electricCircuits2/PhysAP2-C06-circuits2}
 
 %---------------------------------------------------------------------------
-%	PART 3: Magnetism
+%	Magnetism
 %---------------------------------------------------------------------------
 \part{Magnetism}
 
@@ -322,15 +339,17 @@ language governing permissions and limitations under the License.\\ % License in
 \chapter{Tranformers \& Power Generation}
 
 %---------------------------------------------------------------------------
-%	PART 4: Waves
+%	Waves
 %---------------------------------------------------------------------------
 \part{Waves}
 
 \input{mechanicalWaves/PhysAP2-C09-mechWaves}
+\input{mechanicalWaves/homework/PhysAP2-C10-Homework}
 \input{soundWaves/PhysAP2-C10-soundWaves-extendedVersion}
-  
+\input{soundWaves/PhysAP2-C10-Homework}
+
 %---------------------------------------------------------------------------
-%	PART 5: Light Waves
+%	Light Waves
 %---------------------------------------------------------------------------
 
 \part{Light Waves}
@@ -338,11 +357,11 @@ language governing permissions and limitations under the License.\\ % License in
 %\input{lightWaves/Phys12-C11-light}
 \input{lightWaves2/PhysAP2-C11-lightOptics}
 \input{physicalOptics/Phys12-C12-lightInterference}
-%\input{physicalOptics/homework/Phys12-C12-HW}
+\input{physicalOptics/homework/Phys12-C12-HW}
 \input{thinFilmInterference/Phys12-C13-thinFilm}
 
 %---------------------------------------------------------------------------
-%	PART 6: Modern Physics
+%	Modern Physics
 %---------------------------------------------------------------------------
 
 \part{Modern Physics}
@@ -353,21 +372,9 @@ language governing permissions and limitations under the License.\\ % License in
 \input{quantumMechanics/Phys12-C15-quantumMech}
 \input{quantumMechanics/homework/Phys12-C15-HW}
 
-\chapter{Nuclear Physics}
-\section{Nucleus}
-\section{Mass Defect}
-\section{Nuclear Binding Energy}
-\section{Radioactivity}
-\section{Nuclear Fission}
-\section{Nuclear Fusion}
+\input{nuclearPhysics/Phys11-C10-nuclear}
 
 
-%%---------------------------------------------------------------------------
-%%	PART
-%%---------------------------------------------------------------------------
-%
-%\part{Part One Title}
-%
 %%---------------------------------------------------------------------------
 %%	SECTIONING EXAMPLES CHAPTER
 %%---------------------------------------------------------------------------
