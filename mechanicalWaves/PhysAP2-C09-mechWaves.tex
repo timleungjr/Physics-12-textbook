@@ -226,7 +226,7 @@ points are in phase.
 %
 %
 %
-%{Wave on a String}
+%\subsection%{Wave on a String}
 %  The speed of a travelling wave on a stretched string is determined by:
 %  
 %  \eq{-.1in}{
@@ -250,67 +250,63 @@ points are in phase.
 %
 %
 %{Frequency and Speed of A Wave}
-%  Frequency ($f$):
-%  \begin{itemize}
-%  \item The number of complete wavelengths that pass a point in a given amount
-%    of time
-%  \item Same as the frequency of the disturbance that generated the wave
-%  \item\textbf{Depends only on the source}, not the medium
-%  \end{itemize}
-%
-%  \vspace{.2in}Wave speed ($v$)
-%  \begin{itemize}
-%  \item The speed at which the wave fronts are moving
-%  \item \textbf{Depends only on the medium}, not the source disturbance that
-%    produced the wave
-%  \end{itemize}
-%
-%
-%
-%
+Frequency ($f$) of a wave:
+\begin{itemize}
+\item The number of complete wavelengths that pass a point in a given amount
+  of time
+\item Same as the frequency of the disturbance that generated the wave
+\item\textbf{Depends only on the source}, not the medium
+\end{itemize}
+
+Speed ($v$) of a travelling wave:
+\begin{itemize}
+\item The speed at which the wave fronts are moving
+\item \textbf{Depends only on the medium}, not the source disturbance that
+  produced the wave
+\end{itemize}
+
+
+
+
 \section{Harmonic Waves}
 %
 %{Fourier Series}
-%  Not all harmonic waves have to have a sinusoidal shape, because \emph{all}
-%  periodic functions with (spatial) period $P$ (related to the wavelength) are
-%  actually infinite sums of sine and/or cosine functions, called the
-%  \textbf{Fourier series}:
-%    \begin{align*}
-%      u(x)=\frac{a_0}2 + 
-%      \sum_{n=1}^\infty a_n\sin\left(\frac{2\pi n}Px\right)+
-%      \sum_{n=1}^\infty b_n\cos\left(\frac{2\pi n}Px\right)
-%    \end{align*}
-%  Depending on the shape of the harmonic wave, some coefficients $a_n$ and $b_n$
-%  are zeros.
-%
-%
-%
-%
-%{Harmonic Waves with Sine Waves}
-%  For example, this harmonic wave is a composite of 4 sine waves all travelling
-%  at the same speed. (The coefficients are arbitrarily chosen.)
-%  {\footnotesize
-%    \begin{displaymath}
-%      u(x)=\sin(50x)+\frac25\sin(100x) +\frac1{10}\sin(150x)
-%      +\frac15\sin(200x) +\frac3{10}\sin(250x)
-%    \end{displaymath}
-%  }
-%  \begin{center}
-%    \begin{tikzpicture}[xscale=.4]
-%      \draw[thick] (-1,0)--(21,0);
-%      \draw[smooth,samples=500,domain=-1:21,very thick,red]
-%      plot(\x, {sin(50*\x)+.4*sin(100*\x)+.1*sin(150*\x)
-%        +.2*sin(200*\x)+.3*sin(250*\x)});
-%      \draw[dimensions] (7.75,1.5)--(14.9,1.5)
-%      node[midway,fill=black!2]{$\lambda$};
-%      \draw[vectors,red] (22,.6)--(25,.6)
-%      node[midway,above,black!80]{Direction of wave travel};
-%    \end{tikzpicture}
-%  \end{center}
-%
-%
-%
-%
+Not all harmonic waves have to have a sinusoidal shape, because \emph{all}
+periodic functions with (spatial) period $P$ (related to the wavelength) are
+actually infinite sums of sine and/or cosine functions, called the
+\textbf{Fourier series}:
+\begin{align*}
+  u(x)=\frac{a_0}2 + 
+  \sum_{n=1}^\infty a_n\sin\left(\frac{2\pi n}Px\right)+
+  \sum_{n=1}^\infty b_n\cos\left(\frac{2\pi n}Px\right)
+\end{align*}
+Depending on the shape of the harmonic wave, some coefficients $a_n$ and $b_n$
+are zeros.
+
+For example, this harmonic wave is a composite of 4 sine waves all travelling
+at the same speed. (The coefficients are arbitrarily chosen.)
+{\footnotesize
+  \begin{displaymath}
+    u(x)=\sin(50x)+\frac25\sin(100x) +\frac1{10}\sin(150x)
+    +\frac15\sin(200x) +\frac3{10}\sin(250x)
+  \end{displaymath}
+}
+\begin{center}
+  \begin{tikzpicture}[xscale=.4]
+    \draw[thick] (-1,0)--(21,0);
+    \draw[smooth,samples=500,domain=-1:21,very thick,red]
+    plot(\x, {sin(50*\x)+.4*sin(100*\x)+.1*sin(150*\x)
+      +.2*sin(200*\x)+.3*sin(250*\x)});
+    \draw[<->] (7.75,1.5)--(14.9,1.5)
+    node[midway,fill=black!2]{$\lambda$};
+    \draw[vectors,red] (22,.6)--(25,.6)
+    node[midway,above,black!80]{Direction of wave travel};
+  \end{tikzpicture}
+\end{center}
+
+
+
+
 %{Fourier Series and Harmonic Frequencies}
 %  \begin{center}
 %    \begin{tikzpicture}
@@ -406,37 +402,28 @@ points are in phase.
 %  For a spherical wave (e.g.\ sound emitted from a stationary source), the area
 %  that the wavefront passes through is $S=4\pi r^2$, where $r$ is the distance
 %  from the source.
-%
-%
-%
-%
-%\section{Reflection and Transmission}
-%
+
 \section{Reflection of a Wave at a Boundary}
-%  \begin{columns}
-%    \column{.45\textwidth}
-%    When a wave on a string reflects at a boundary, how the reflected wave looks
-%    depends on the type of boundary
-%    \begin{itemize}
-%    \item At a \emph{fixed end} (left):
-%      \begin{itemize}
-%      \item the reflected wave is \emph{inverted}
-%      \item i.e.\ a phase shift of $\pi$
-%      \item i.e.\ a crest becomes a trough
-%      \end{itemize}
-%    \item At a \emph{free end} (right)
-%      \begin{itemize}
-%      \item the reflected wave is upright
-%      \item No phase shifts
-%      \end{itemize}
-%    \end{itemize}
-%    
-%    \column{.55\textwidth}
-%    \pic1{22}
-%  \end{columns}
-%
-%
-%
+
+When a wave on a string reflects at a boundary, how the reflected wave looks
+depends on the type of boundary
+\begin{itemize}
+\item At a \emph{fixed end} (left):
+  \begin{itemize}
+  \item the reflected wave is \emph{inverted}
+  \item i.e.\ a phase shift of $\pi$
+  \item i.e.\ a crest becomes a trough
+  \end{itemize}
+\item At a \emph{free end} (right)
+  \begin{itemize}
+  \item the reflected wave is upright
+  \item No phase shifts
+  \end{itemize}
+\end{itemize}
+\begin{center}
+  \pic{.5}{mechanicalWaves/22}
+\end{center}
+
 \section{Transmission of Waves}
 %: Fast to Slow Medium}
 %  \begin{columns}
@@ -497,94 +484,94 @@ points are in phase.
 %  \begin{center}
 %    \pic{.6}{omkAt}
 %  \end{center}
-%  \begin{itemize}
-%  \item\textbf{Principle of Superposition:} When multiple waves pass through
-%    the same point, the resultant wave is the \emph{sum} of the waves
-%    \begin{itemize}
-%    \item A fancy way of saying that waves add together
-%    \end{itemize}
-%  \item The consequence of the principle of superposition is
-%    \textbf{interference of waves}. There are two kinds of interference:
-%    \begin{itemize}
-%    \item\textbf{Constructive interference:} Two wave fronts (crests) passing
-%      through creates a wave front with greater amplitude
-%    \item\textbf{Destructive interference:} A crest and trough will cancel
-%      each other
-%    \end{itemize}
-%  \end{itemize}
-%
-%
-%
-%
-%{Constructive Interference}
+\begin{itemize}
+\item\textbf{Principle of Superposition:} When multiple waves pass through
+  the same point, the resultant wave is the \emph{sum} of the waves
+  \begin{itemize}
+  \item A fancy way of saying that waves add together
+  \end{itemize}
+\item The consequence of the principle of superposition is
+  \textbf{interference of waves}. There are two kinds of interference:
+  \begin{itemize}
+  \item\textbf{Constructive interference:} Two wave fronts (crests) passing
+    through creates a wave front with greater amplitude
+  \item\textbf{Destructive interference:} A crest and trough will cancel
+    each other
+  \end{itemize}
+\end{itemize}
+
+
+
+
+\subsection{Constructive Interference}
 %  \vspace{.1in}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.8]
-%      \draw[cyan,very thick,domain=-3:3,smooth,samples=120]
-%      plot(\x,{exp(-3*(\x-1.5)^2)+exp(-3*(\x+1.5)^2)});
-%      \draw[vectors,red!70!black] (-1.8,.4)--(-1.2,.4);
-%      \draw[vectors,red!70!black] (1.8,.4)--(1.2,.4);
-%    \end{tikzpicture}
-%    \hspace{.2in}
-%    \begin{minipage}{.6\textwidth}
-%      \vspace{-.3in}
-%      \small Two pulse waves (shown as crests), one travelling to the right,
-%      and the other one to the left. At this time, the two waves do
-%      not interact.\par
-%    \end{minipage}
-%
-%    \vspace{.2in}
-%    \begin{tikzpicture}[scale=.8]
-%      \begin{scope}[very thick,smooth]
-%        \draw[cyan!30,domain=-2:2,samples=120] plot(\x,{exp(-3*(\x-.5)^2)});
-%        \draw[cyan!30,domain=-2:2,samples=120] plot(\x,{exp(-3*(\x+.5)^2)});
-%        \draw[cyan,domain=-3:3,samples=120]
-%        plot(\x,{exp(-3*(\x-.5)^2)+exp(-3*(\x+.5)^2)});
-%      \end{scope}
-%      \draw[vectors,red!70!black] (-.8,.4)--(-.2,.4);
-%      \draw[vectors,red!70!black] (.8,.4)--(.2,.4);
-%    \end{tikzpicture}
-%    \hspace{.2in}
-%    \begin{minipage}{.6\textwidth}
-%      \vspace{-.3in}
-%      \small As the two waves begin to overlap, the parts where the waves
-%      overlap is the superposition (sum) of the waves.\par
-%    \end{minipage}
-%
-%    \vspace{.15in}
-%    \begin{tikzpicture}[scale=.8]
-%      \begin{scope}[very thick,smooth]
-%        \draw[cyan!30,domain=-1:1,samples=40] plot(\x,{exp(-3*(\x)^2)});
-%        \draw[cyan,domain=-3:3,samples=120] plot(\x,{2*exp(-3*(\x)^2)});
-%      \end{scope}
-%    \end{tikzpicture}
-%    \hspace{.2in}
-%    \begin{minipage}{.6\textwidth}
-%      \vspace{-.65in}
-%      \small For a brief moment, the two waves completely overlap each other,
-%      resulting in an amplitude greater than each of the two crests.
-%      This is called \textbf{constructive interference}.\par
-%    \end{minipage}
-%
-%    \vspace{.2in}
-%    \begin{tikzpicture}[scale=.8]
-%      \draw[cyan,very thick,domain=-3:3,smooth,samples=120]
-%      plot(\x,{exp(-3*(\x-1.5)^2)+exp(-3*(\x+1.5)^2)});
-%      \draw[vectors,red!70!black] (-1.2,.4)--(-1.8,.4);
-%      \draw[vectors,red!70!black] (1.2,.4)--(1.8,.4);
-%    \end{tikzpicture}
-%    \hspace{.2in}
-%    \begin{minipage}{.6\textwidth}
-%      \vspace{-.2in}
-%      \small After the two waves have pass through each other, they continue to
-%      travel along the medium \emph{as if no interaction had occured}.\par
-%    \end{minipage}   
-%  \end{center}
-%
-%
+\begin{center}
+  \begin{tikzpicture}[scale=.8]
+    \draw[cyan,very thick,domain=-3:3,smooth,samples=120]
+    plot(\x,{exp(-3*(\x-1.5)^2)+exp(-3*(\x+1.5)^2)});
+    \draw[vectors,red!70!black] (-1.8,.4)--(-1.2,.4);
+    \draw[vectors,red!70!black] (1.8,.4)--(1.2,.4);
+  \end{tikzpicture}
+  \hspace{.2in}
+  \begin{minipage}{.6\textwidth}
+    \vspace{-.3in}
+    \small Two pulse waves (shown as crests), one travelling to the right,
+    and the other one to the left. At this time, the two waves do
+    not interact.\par
+  \end{minipage}
+
+  \vspace{.2in}
+  \begin{tikzpicture}[scale=.8]
+    \begin{scope}[very thick,smooth]
+      \draw[cyan!30,domain=-2:2,samples=120] plot(\x,{exp(-3*(\x-.5)^2)});
+      \draw[cyan!30,domain=-2:2,samples=120] plot(\x,{exp(-3*(\x+.5)^2)});
+      \draw[cyan,domain=-3:3,samples=120]
+      plot(\x,{exp(-3*(\x-.5)^2)+exp(-3*(\x+.5)^2)});
+    \end{scope}
+    \draw[vectors,red!70!black] (-.8,.4)--(-.2,.4);
+    \draw[vectors,red!70!black] (.8,.4)--(.2,.4);
+  \end{tikzpicture}
+  \hspace{.2in}
+  \begin{minipage}{.6\textwidth}
+    \vspace{-.3in}
+    \small As the two waves begin to overlap, the parts where the waves
+    overlap is the superposition (sum) of the waves.\par
+  \end{minipage}
+
+  \vspace{.15in}
+  \begin{tikzpicture}[scale=.8]
+    \begin{scope}[very thick,smooth]
+      \draw[cyan!30,domain=-1:1,samples=40] plot(\x,{exp(-3*(\x)^2)});
+      \draw[cyan,domain=-3:3,samples=120] plot(\x,{2*exp(-3*(\x)^2)});
+    \end{scope}
+  \end{tikzpicture}
+  \hspace{.2in}
+  \begin{minipage}{.6\textwidth}
+    \vspace{-.65in}
+    \small For a brief moment, the two waves completely overlap each other,
+    resulting in an amplitude greater than each of the two crests.
+    This is called \textbf{constructive interference}.\par
+  \end{minipage}
+
+  \vspace{.2in}
+  \begin{tikzpicture}[scale=.8]
+    \draw[cyan,very thick,domain=-3:3,smooth,samples=120]
+    plot(\x,{exp(-3*(\x-1.5)^2)+exp(-3*(\x+1.5)^2)});
+    \draw[vectors,red!70!black] (-1.2,.4)--(-1.8,.4);
+    \draw[vectors,red!70!black] (1.2,.4)--(1.8,.4);
+  \end{tikzpicture}
+  \hspace{.2in}
+  \begin{minipage}{.6\textwidth}
+    \vspace{-.2in}
+    \small After the two waves have pass through each other, they continue to
+    travel along the medium \emph{as if no interaction had occured}.\par
+  \end{minipage}   
+\end{center}
 %
 %
-%{Destructive Interference}
+%
+%
+\subsection{Destructive Interference}
 %  \vspace{.1in}
 %  \begin{center}
 %    \begin{tikzpicture}[scale=.8]
@@ -654,82 +641,70 @@ points are in phase.
 %
 %
 \section{Standing Waves}
-%
-%%{Standing Waves}
-%%  If two waves of the same frequency meet up under the right conditions, they
-%%  may appear to be ``standing still''. This is called a standing wave
-%%  \begin{itemize}
-%%  \item Node: A point that never moves
-%%  \item Anti-node: A point which moves/vibrates maximally
-%%  \end{itemize}
-%%
-%
-%
-%
-%{Standing Waves}
-%  Two identical waves (blue \& yellow) move in opposite directions in the
-%  same medium. At some moment in time, they are out of phase, resulting in
-%  destructive interference (green):
-%  \begin{center}
-%    \begin{tikzpicture}[very thick]
-%      \draw[->,blue] (3.5,.65)--(4.5,.65);
-%      \draw[->,yellow] (6.5,.65)--(5.5,.65);
-%      \draw[smooth,samples=150,domain=0:10,blue] plot(\x,{.5*sin(150*\x)});
-%      \draw[smooth,samples=150,domain=0:10,yellow] plot(\x,{-.5*sin(150*\x)});
-%      \draw[green!60!black](0,0)--(10,0);
-%      \foreach \x in {0.6,1.8,...,10} \fill[red](\x,0) circle(.07);
-%    \end{tikzpicture}
-%  \end{center}
-%  A quarter of a wavelength later, the 2 waves are in phase (constructive
-%  interference):
-%  \begin{center}
-%    \begin{tikzpicture}[very thick]
-%      \draw[->,blue] (3.5,.65)--(4.5,.65);
-%      \draw[->,yellow] (6.5,.65)--(5.5,.65);
-%      \draw[smooth,samples=150,domain=0:10,blue]
-%      plot(\x,{.5*sin(150*\x+90)});
-%      \draw[smooth,samples=150,domain=0:10,yellow]
-%      plot(\x,{-.5*sin(150*\x-90)+0.07});
-%      \draw[smooth,samples=150,domain=0:10,green!70!black]
-%      plot(\x,{sin(150*\x+90)});
-%      \draw[thin] (0,0)--(10,0);
-%      \foreach \x in {.6,1.8,...,10} \fill[red] (\x,0) circle (.07);
-%    \end{tikzpicture}
-%  \end{center}
-%  But regardless of whether the wave is in phase, the red dots always have zero
-%  displacement. They are called \textbf{nodes}.
+
+Two identical waves (blue \& yellow) move in opposite directions in the same
+medium. At some moment in time, they are out of phase, resulting in destructive
+interference (green):
+\begin{center}
+  \begin{tikzpicture}[very thick]
+    \draw[->,blue] (3.5,.65)--(4.5,.65);
+    \draw[->,yellow] (6.5,.65)--(5.5,.65);
+    \draw[smooth,samples=150,domain=0:10,blue] plot(\x,{.5*sin(150*\x)});
+    \draw[smooth,samples=150,domain=0:10,yellow] plot(\x,{-.5*sin(150*\x)});
+    \draw[green!60!black](0,0)--(10,0);
+    \foreach \x in {0.6,1.8,...,10} \fill[red](\x,0) circle(.07);
+  \end{tikzpicture}
+\end{center}
+A quarter of a wavelength later, the 2 waves are in phase (constructive
+interference):
+\begin{center}
+  \begin{tikzpicture}[very thick]
+    \draw[->,blue] (3.5,.65)--(4.5,.65);
+    \draw[->,yellow] (6.5,.65)--(5.5,.65);
+    \draw[smooth,samples=150,domain=0:10,blue]
+    plot(\x,{.5*sin(150*\x+90)});
+    \draw[smooth,samples=150,domain=0:10,yellow]
+    plot(\x,{-.5*sin(150*\x-90)+0.07});
+    \draw[smooth,samples=150,domain=0:10,green!70!black]
+    plot(\x,{sin(150*\x+90)});
+    \draw[thin] (0,0)--(10,0);
+    \foreach \x in {.6,1.8,...,10} \fill[red] (\x,0) circle (.07);
+  \end{tikzpicture}
+\end{center}
+But regardless of whether the wave is in phase, the red dots always have zero
+displacement. They are called \textbf{nodes}.
 %
 %
 %
 %
 %{Standing Waves}
-%  If two waves of the same frequency meet up under the right conditions, they
-%  may appear to be ``standing still''. This is called a \textbf{standing wave}.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.7]
-%      \foreach \A in {-1.2,-1.1,...,1.2}
-%      \draw[cyan!60,smooth,samples=100,domain=0:12] plot(\x,{\A*sin(60*\x)});
-%      \draw[functions,smooth,samples=100,domain=0:12] plot(\x,{.7*sin(60*\x)});
-%      \draw (0,0)--(12,0);
-%      \draw (3,0)--+(-.3,-1.8)--+(-.6,-1.8) node[left]{node};
-%      \draw (9,0)--+(.3,-1.8)--+(.6,-1.8) node[right]{node};
-%      \draw (1.5,1.2)--+(.3,.5)--+(.6,.5) node[right]{anti-node};
-%      \draw (10.5,1.2)--+(.3,.5)--+(.6,.5) node[right]{anti-node};
-%      %\draw[|<->|] (4.5,-1.4)--+(3,0) node[midway,fill=white]{$\frac\lambda2$};
-%      %\draw[<->] (6,1.75)--+(3,0) node[midway,fill=white]{$\frac\lambda2$};
-%      %\draw (6,0)--+(0,1.85);
-%      %\draw (9,0)--+(0,1.85);
-%    \end{tikzpicture}
-%  \end{center}
-%  In a standing wave, the wavefronts do not move.
-%  %(the location of the nodes and anti-nodes are fixed}.
-%  Instead, you only see the medium vibrate. While it appears as if there
-%  are \emph{no} waves travelling, there are, in fact, always \emph{two} waves
-%  travelling in opposite directions.
-%
-%
-%
-%
+If two waves of the same frequency meet up under the right conditions, they
+may appear to be ``standing still''. This is called a \textbf{standing wave}.
+\begin{center}
+  \begin{tikzpicture}[scale=.7]
+    \foreach \A in {-1.2,-1.1,...,1.2}
+    \draw[cyan!60,smooth,samples=100,domain=0:12] plot(\x,{\A*sin(60*\x)});
+    \draw[functions,smooth,samples=100,domain=0:12] plot(\x,{.7*sin(60*\x)});
+    \draw (0,0)--(12,0);
+    \draw (3,0)--+(-.3,-1.8)--+(-.6,-1.8) node[left]{node};
+    \draw (9,0)--+(.3,-1.8)--+(.6,-1.8) node[right]{node};
+    \draw (1.5,1.2)--+(.3,.5)--+(.6,.5) node[right]{anti-node};
+    \draw (10.5,1.2)--+(.3,.5)--+(.6,.5) node[right]{anti-node};
+    %\draw[|<->|] (4.5,-1.4)--+(3,0) node[midway,fill=white]{$\frac\lambda2$};
+    %\draw[<->] (6,1.75)--+(3,0) node[midway,fill=white]{$\frac\lambda2$};
+    %\draw (6,0)--+(0,1.85);
+    %\draw (9,0)--+(0,1.85);
+  \end{tikzpicture}
+\end{center}
+In a standing wave, the wavefronts do not move.
+%(the location of the nodes and anti-nodes are fixed}.
+Instead, you only see the medium vibrate. While it appears as if there
+are \emph{no} waves travelling, there are, in fact, always \emph{two} waves
+travelling in opposite directions.
+
+
+
+
 %{Standing Waves}
 %  \begin{center}
 %    \begin{tikzpicture}[scale=.7]
@@ -747,90 +722,87 @@ points are in phase.
 %      \draw (9,0)--+(0,1.85);
 %    \end{tikzpicture}
 %  \end{center}
-%  \begin{itemize}
-%  \item Node: A point that never moves
-%  \item Anti-node: A point which moves/vibrates maximally
-%  \end{itemize}
-%  Nodes and anti-nodes are evenly spaced.
+\begin{itemize}
+\item Node: A point that never moves
+\item Anti-node: A point which moves/vibrates maximally
+\end{itemize}
+Nodes and anti-nodes are evenly spaced.
 %
 %
 %
 %
 %
-%{Standing Waves On a String of Length $L$}
-%  \begin{itemize}
-%  \item A ``vibrating'' string is actually a standing wave on a string
-%  \item Both ends of the string are nodes
-%  %\item As the string vibrates, the air around it vibrates at the same frequency
-%  %\item The vibration travels as a sound wave toward your ears
-%  %\item Examples:
-%  %  \begin{itemize}
-%  %  \item Plucking a guitar or violin string
-%  %  \item Hitting a key on a piano/harpsichord
-%  %  \end{itemize}
-%  \end{itemize}
-%
-%
-%
-%
-%{Standing Waves On a String of Length $L$}
-%  \textbf{Resonance modes} are frequencies where a standing wave can be
-%  created. The first resonance (fundamental) frequency at occurs when
-%  $\lambda=2L$, where $L$ is the length of the string. The ends of the strings
-%  are nodes because they cannot vibrate
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick] (0,0)--(pi,0);
-%      \draw[thick] (0,-.1) --(0,.1);
-%      \draw[thick] (pi,-.1)--(pi,.1);
-%      \draw[|<->|] (0,-.6)--(2*pi,-.6) node[midway,fill=black!2]{$\lambda=2L$};
-%      \foreach\x in {0,pi}
-%      \fill (\x,0) circle (.04) node[below=4,fill=yellow!30,opacity=.9]{N};
-%      \fill (pi/2,0) circle (.04) node[below=5,fill=pink!30,opacity=.9]{A};
-%      \begin{scope}[smooth,samples=20]
-%        \draw[domain=0:pi,red,very thick] plot(\x,{.4*sin(180/pi*\x)});
-%        \draw[domain=pi:2*pi,dashed] plot(\x,{.4*sin(180/pi*\x)});
-%        \draw[domain=0:2*pi,dashed] plot(\x,{-.4*sin(180/pi*\x)});
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{center}
-%  The fundamental frequency $f_1$ can be calculated based on the
-%  speed of the travelling wave along the string $v$:
-%
-%  \eq{-.1in}{
-%    \boxed{
-%      f_1 = \frac v\lambda=\frac v{2L}}\quad\text{\normalsize where}\quad
-%    v=\sqrt{\frac{F_T}\mu}
-%  }
+\section{Standing Waves On a String}% of Length $L$}
+\begin{itemize}
+\item A ``vibrating'' string is actually a standing wave on a string
+\item Both ends of the string are nodes
+  %\item As the string vibrates, the air around it vibrates at the same frequency
+  %\item The vibration travels as a sound wave toward your ears
+  %\item Examples:
+  %  \begin{itemize}
+  %  \item Plucking a guitar or violin string
+  %  \item Hitting a key on a piano/harpsichord
+  %  \end{itemize}
+\end{itemize}
 %
 %
 %
 %
 %{Standing Waves On a String of Length $L$}
-%  The second resonance mode ($n=2$) occurs when $\lambda=L$:
-%  \begin{columns}
-%    \column{.4\textwidth}
-%    \centering
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick] (0,0)--(pi,0);
-%      \draw[thick] (0,-.1)--(0,.1);
-%      \draw[thick] (pi,-.1)--(pi,.1);
-%      \foreach \x in {0,pi/2,pi}
-%      \fill (\x,0) circle (.04) node[below=3,fill=yellow!30,opacity=.8]{N};
-%      \foreach \x in {pi/4,3*pi/4}
-%      \fill (\x,0) circle (.04) node[below=3,fill=pink!30,opacity=.8]{A};
-%      \begin{scope}[smooth,samples=20,domain=0:pi]
-%        \draw[red,very thick] plot(\x,{.4*sin(360/pi*\x)});
-%        \draw[dashed] plot(\x,{-.4*sin(360/pi*\x)});
-%      \end{scope}
-%    \end{tikzpicture}
-%    
-%    \column{.6\textwidth}    
-%    \eq{-.01in}{
-%      f_2 = \frac v\lambda=\frac vL=2f_1
-%    }
-%  \end{columns}
-%
+\textbf{Resonance modes} are frequencies where a standing wave can be
+created. The first resonance (fundamental) frequency at occurs when
+$\lambda=2L$, where $L$ is the length of the string. The ends of the strings
+are nodes because they cannot vibrate
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+    \draw[thick] (0,0)--(pi,0);
+    \draw[thick] (0,-.1) --(0,.1);
+    \draw[thick] (pi,-.1)--(pi,.1);
+    \draw[|<->|] (0,-.6)--(2*pi,-.6) node[midway,fill=black!2]{$\lambda=2L$};
+    \foreach\x in {0,pi}
+    \fill (\x,0) circle (.04) node[below=4,fill=yellow!30,opacity=.9]{N};
+    \fill (pi/2,0) circle (.04) node[below=5,fill=pink!30,opacity=.9]{A};
+    \begin{scope}[smooth,samples=20]
+      \draw[domain=0:pi,red,very thick] plot(\x,{.4*sin(180/pi*\x)});
+      \draw[domain=pi:2*pi,dashed] plot(\x,{.4*sin(180/pi*\x)});
+      \draw[domain=0:2*pi,dashed] plot(\x,{-.4*sin(180/pi*\x)});
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+The fundamental frequency $f_1$ can be calculated based on the
+speed of the travelling wave along the string $v$:
+\begin{important-equation}
+  f_1 = \frac v\lambda=\frac v{2L}
+  \quad\text{\normalsize where}\quad
+  v=\sqrt{\frac{F_T}\mu}
+\end{important-equation}
+
+
+
+
+%{Standing Waves On a String of Length $L$}
+The second resonance mode ($n=2$) occurs when $\lambda=L$:
+
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+    \draw[thick] (0,0)--(pi,0);
+    \draw[thick] (0,-.1)--(0,.1);
+    \draw[thick] (pi,-.1)--(pi,.1);
+    \foreach \x in {0,pi/2,pi}
+    \fill (\x,0) circle (.04) node[below=3,fill=yellow!30,opacity=.8]{N};
+    \foreach \x in {pi/4,3*pi/4}
+    \fill (\x,0) circle (.04) node[below=3,fill=pink!30,opacity=.8]{A};
+    \begin{scope}[smooth,samples=20,domain=0:pi]
+      \draw[red,very thick] plot(\x,{.4*sin(360/pi*\x)});
+      \draw[dashed] plot(\x,{-.4*sin(360/pi*\x)});
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+
+\begin{important-equation}
+  f_2 = \frac v\lambda=\frac vL=2f_1
+\end{important-equation}
+
 %  \vspace{.2in}while the third resonance mode ($n=3$) occurs at
 %  $\lambda=\dfrac23L$:
 %  \begin{columns}

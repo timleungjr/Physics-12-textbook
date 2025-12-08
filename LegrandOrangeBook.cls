@@ -20,7 +20,7 @@
 %-----------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{LegrandOrangeBook}[2022/01/26 The Legrand Orange Book Class v3.0]
+\ProvidesClass{LegrandOrangeBook}[The Legrand Orange Book Class v3]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}} % Pass through any options to the base class
 \ProcessOptions\relax % Process given options
@@ -32,19 +32,26 @@
 %-----------------------------------------------------------------------------
 
 \usepackage{graphicx} % Required for including pictures
-\graphicspath{{Images/}} % Specifies the directory where pictures are stored
+%\graphicspath{{Images/}} % Specifies the directory where pictures are stored
 
-\usepackage{float} % Allows more precisely positioning floats e.g. \begin{figure}[H]
+\usepackage{float}
+% Allows more precisely positioning floats e.g. \begin{figure}[H]
 
-\usepackage[usenames, svgnames, table]{xcolor} % Required for defining and using custom colors
+\usepackage[usenames,svgnames,table]{xcolor}
+% Required for defining and using custom colors
 
-\usepackage{calc} % For simpler calculations - used for spacing the index letter headings correctly
+\usepackage{calc}
+% For simpler calculations - used for spacing the index letter headings
+% correctly
 
-\usepackage{changepage} % Required for temporarily indenting text blocks
+\usepackage{changepage}
+% Required for temporarily indenting text blocks
 
-\usepackage[toc]{appendix} % Required for the appendices chapters
+\usepackage[toc]{appendix}
+% Required for the appendices chapters
 
-\usepackage{etoolbox} % Required for conditional logic and easily changing commands
+\usepackage{etoolbox}
+% Required for conditional logic and easily changing commands
 
 %-----------------------------------------------------------------------------
 %	MARGINS
@@ -53,10 +60,12 @@
 \usepackage{geometry} % Required for adjusting page dimensions and margins
 
 \geometry{
+  paperheight=9.25in,
+  paperwidth=7.25in,
   top=2cm, %3cm, % Top margin
   bottom=2cm,%2.5cm, % Bottom margin
-  inner=3cm, % Inner margin (left on odd pages, right on even or left in oneside mode)
-  outer=3cm, % Outer margin (right on odd pages, left on even or right in oneside mode)
+  inner=2.2cm, % Inner margin (left on odd pages, right on even or left in oneside mode)
+  outer=1.5cm, % Outer margin (right on odd pages, left on even or right in oneside mode)
   headsep=10pt, % Space from the top margin to the baseline of the header
   headheight=0.5cm, % Header height
   footskip=1.4cm, % Space from the bottom margin to the baseline of the footer
@@ -64,25 +73,30 @@
   %showframe, % Uncomment to show how the type block is set on the page
 }
 
+
 %-----------------------------------------------------------------------------
 %	FONTS
 %-----------------------------------------------------------------------------
 
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
 
 \usepackage{avant} % Use the Avantgarde font for headings
 
-\usepackage{mathptmx}
+%\usepackage{mathptmx}
 % Use the Adobe Times Roman as the default text font together with math symbols
 %from the Symbol, Chancery and Computer Modern fonts
+\usepackage{charter}
+%\usepackage{mathdesign}
 %\usepackage{tgtermes}
 %\usepackage{bera}
 %\usepackage{mlmodern,mathalpha}
+%\usepackage{mathalpha}
 %\usepackage{bookman}  % text works, but no math fornts
 %\usepackage{time}                % This gives me errors
 %\usepackage{newtxtext,newtxmath} % This gives me errors
 %\usepackage{notomath}            % This gives me errors
+
 
 \usepackage{microtype} % Improve typography
 
@@ -183,7 +197,8 @@
 
 %-------------------------------------------
 
-% Command to store the current chapter image to use for all future chapters, can be changed any time in the document and can be empty
+% Command to store the current chapter image to use for all future chapters,
+% can be changed any time in the document and can be empty
 \newcommand{\thechapterimage}{}
 \newcommand{\chapterimage}[1]{\renewcommand{\thechapterimage}{#1}}
 
@@ -256,7 +271,7 @@
 
 \titleformat
     {\section} % Section type being modified
-    [block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+    %[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
     {\bfseries\sffamily\Large} % Format of the whole section
     {\llap{\textcolor{ocre}{\thesection}\hspace{1em}}#1} % Format of the section label
     {0cm} % Space between the title and label
@@ -265,7 +280,7 @@
     
 \titleformat
     {name=\section, numberless} % Section type being modified
-    [block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+    %[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
     {\bfseries\sffamily\Large} % Format of the whole section
     {#1} % Format of the section label
     {0cm} % Space between the title and label
@@ -336,6 +351,7 @@
 %-----------------------------------------------------------------------------
 
 \usepackage{titletoc} % Required for manipulating the table of contents
+\usepackage{setspace}
 
 \setcounter{tocdepth}{2} % Display down to subsections in the table of contents
 
@@ -388,8 +404,13 @@
 
 \titlecontents{chapter} % Section type being modified
 	[1.25cm] % Left indentation
-	{\addvspace{12pt}\large\sffamily\bfseries\hypersetup{linkcolor=ocre}} % Before code
-	{\color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
+	{
+          \addvspace{12pt}
+          \large\sffamily\bfseries\hypersetup{linkcolor=ocre}
+        } % Before code
+	{
+          \color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}
+        } % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{\color{ocre!60}\normalsize\;\titlerule*[6pt]{.}\;\color{ocre}\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 	[] % After code
@@ -398,7 +419,11 @@
 
 \titlecontents{section} % Section type being modified
 	[1.25cm] % Left indentation
-	{\addvspace{3pt}\sffamily\bfseries} % Before code
+	%TML {\addvspace{3pt}\sffamily\bfseries} % Before code
+        {
+          \addvspace{-4pt}
+          \sffamily\bfseries
+        }
 	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{~{\normalfont\titlerule*[6pt]{.}}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
@@ -408,7 +433,8 @@
 
 \titlecontents{subsection} % Section type being modified
 	[1.25cm] % Left indentation
-	{\addvspace{1pt}\sffamily\small} % Before code
+	%TML {\addvspace{1pt}\sffamily\small} % Before code
+        {\addvspace{-4pt}\sffamily\small} % Before code
 	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{~\titlerule*[6pt]{.}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
@@ -418,7 +444,9 @@
 
 \titlecontents{subsubsection} % Section type being modified
 	[1.75cm] % Left indentation
-	{\sffamily\small} % Before code
+	{
+          \sffamily\small
+        } % Before code
 	{\contentslabel[\thecontentslabel]{1.75cm}} % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{~\titlerule*[6pt]{.}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
@@ -429,7 +457,8 @@
 % List of figures entries
 \titlecontents{figure} % Section type being modified
 	[0cm] % Left indentation
-	{\addvspace{2pt}\sffamily\small} % Before code
+	%TML{\addvspace{2pt}\sffamily\small} % Before code
+        {\sffamily\small} % Before code
 	{\thecontentslabel\hspace*{1em}} % Formatting of numbered sections of this type
 	{} % Formatting of numberless sections of this type
 	{~\titlerule*[6pt]{.}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
@@ -597,6 +626,7 @@
 %-----------------------------------------------------------------------------
 
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage[charter]{mathdesign}
 % For math equations, theorems, symbols, etc
 
 \renewcommand{\qedsymbol}{$\blacksquare$}

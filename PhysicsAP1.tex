@@ -34,12 +34,12 @@
 %-----------------------------------------------------------------------------
 
 \documentclass[
-  11pt, % Default font size, select one of 10pt, 11pt or 12pt
+  10pt, % Default font size, select one of 10pt, 11pt or 12pt
   %fleqn, % Left align equations
-  letterpaper,
+  %letterpaper,
   % Paper size, use either 'a4paper' for A4 size or 'letterpaper' for US
   %letter size
-  %oneside, % Uncomment for oneside mode, this doesn't start new
+  oneside, % Uncomment for oneside mode, this doesn't start new
   %chapters and parts on odd pages (adding an empty page if required),
   %this mode is more suitable if the book is to be read on a screen
   %instead of printed
@@ -53,7 +53,6 @@
 \usepackage{bm}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{pgfplots}
 \usepackage{mathtools}
 \usepackage{cancel}
 \usepackage{colortbl}
@@ -146,11 +145,11 @@
 
 % Default whitespace from the top of the page to the chapter title on chapter
 % pages
-\chapterspaceabove{6.5cm}
+\chapterspaceabove{5cm}
 
 % Default amount of vertical whitespace from the top margin to the start of
 % the text on chapter pages
-\chapterspacebelow{6.75cm}
+\chapterspacebelow{5.5cm}
 
 
 \newcommand{\pic}[2]{
@@ -217,7 +216,7 @@ is distributed on an \textsc{``as is'' basis, without warranties or conditions
   of any kind}, either express or implied. See the License for the specific
 language governing permissions and limitations under the License.\\ % License information, replace this with your own license (if any)
 
-\noindent \textit{First printing, March 2022} % Printing/edition date
+\noindent \textit{First printing, January 2027} % Printing/edition date
 
 %---------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -227,9 +226,9 @@ language governing permissions and limitations under the License.\\ % License in
 
 \tableofcontents % Output the table of contents
 
-\listoffigures % Output the list of figures, comment or remove this command if not required
+%\listoffigures % Output the list of figures, comment or remove this command if not required
 
-\listoftables % Output the list of tables, comment or remove this command if not required
+%\listoftables % Output the list of tables, comment or remove this command if not required
 
 \pagestyle{fancy} % Enable default headers and footers again
 
@@ -276,7 +275,7 @@ language governing permissions and limitations under the License.\\ % License in
 \chapterimage{orange1.jpg} % Chapter heading image
 
 \input{CM/PhysAP1-C11b-CM}
-
+%\input{CM/homework/PhysAP1-C11b-CM}
 
 %---------------------------------------------------------------------------
 %	PERIODIC MOION
@@ -289,6 +288,7 @@ language governing permissions and limitations under the License.\\ % License in
 \input{rotationalMotion/PhysAP1-C12-rotMotion1}
 \input{rotationalMotion2/PhysAP1-C13-rotMotion2}
 
+\chapterimage{harmonicMotion/buying-compression-springs1765131102}
 \input{harmonicMotion/harmonicMotion}
 %\input{harmonicMotion/homework/Phys12-C06-HW}
 %\input{../harmonicMotion/harmonicMotion-practice-questions}
@@ -298,10 +298,12 @@ language governing permissions and limitations under the License.\\ % License in
 %      GRAVITY AND PLANETARY MOTION
 %---------------------------------------------------------------------------
 
+\chapterimage{orange1.jpg} % Chapter heading image
+
 \part{Universal Gravitation}
   
 \input{gravity/Phys12-C07-gravField}
-%\input{gravity/homework/Phys12-C08-HW}
+\input{gravity/homework/Phys12-C08-HW}
 
 
 
@@ -323,8 +325,13 @@ language governing permissions and limitations under the License.\\ % License in
 
 \input{electricField/Phys12-C08-elecField}
 \input{electricPotential/Phys12-C09-elecPotential}
+\input{electricPotential/homework/Phys12-C09-HW}
+
 \input{capacitors/PhysAP2-C04-capacitors}
+
 \input{electricCircuits1/PhysAP2-C05-circuits1}
+
+
 \input{electricCircuits2/PhysAP2-C06-circuits2}
 
 %---------------------------------------------------------------------------
@@ -332,8 +339,12 @@ language governing permissions and limitations under the License.\\ % License in
 %---------------------------------------------------------------------------
 \part{Magnetism}
 
+\chapterimage{magneticField/1440_SS_magnetism-1030x580.jpg}
 \input{magneticField/Phys12-C10-magField}
-%\input{magneticField/homework/Phys12-C10-HW}
+\input{magneticField/homework/Phys12-C10-HW}
+
+\chapterimage{orange2.jpg} % Chapter heading image
+
 \input{faradaysLaw/PhysAP2-C08-magnetism2}
 
 \chapter{Tranformers \& Power Generation}
@@ -345,6 +356,7 @@ language governing permissions and limitations under the License.\\ % License in
 
 \input{mechanicalWaves/PhysAP2-C09-mechWaves}
 \input{mechanicalWaves/homework/PhysAP2-C10-Homework}
+
 \input{soundWaves/PhysAP2-C10-soundWaves-extendedVersion}
 \input{soundWaves/PhysAP2-C10-Homework}
 
@@ -356,8 +368,10 @@ language governing permissions and limitations under the License.\\ % License in
 
 %\input{lightWaves/Phys12-C11-light}
 \input{lightWaves2/PhysAP2-C11-lightOptics}
+
 \input{physicalOptics/Phys12-C12-lightInterference}
 \input{physicalOptics/homework/Phys12-C12-HW}
+
 \input{thinFilmInterference/Phys12-C13-thinFilm}
 
 %---------------------------------------------------------------------------
