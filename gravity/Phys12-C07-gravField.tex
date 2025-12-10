@@ -19,19 +19,18 @@ between all massive objects, as shown in Fig.~\ref{fig:gravity1}.
     on each other.}
   \label{fig:gravity1}
 \end{figure}
-
-In the 
-The magnitude of the gravitational force ($\bm F_g$) between two masses is
-described by the \textbf{law of universal gravitation}. The force is
+The magnitude of the \textbf{gravitational force} ($\bm F_g$) between two
+masses is described by the \textbf{law of universal gravitation}. This force is
 proportional to the masses $m_1$, $m_2$, and inversely proportional to the
 square of the distance ($r$) between them:
 \begin{important-equation}
   F_g=\frac{Gm_1m_2}{r^2}
   \label{eq:law-of-gravity}
 \end{important-equation}
-where $G=\SI{6.67e-11}{N.m^2/kg^2}$ is the \textbf{universal gravitational
-  constant}. This equation is derived based on the second law of motion and
-Kepler's laws of planetary motion (discussed later in this chapter). 
+where $G=\SI{6.67e-11}{N.m^2/kg^2}$ is the
+\textbf{universal gravitational constant}. This equation is derived based on
+the second law of motion and Kepler's laws of planetary motion (discussed in
+\ref{section:keplers-laws} later in this chapter).
 
 Like \emph{all} forces, gravitational force obey the third law of motion: if
 $m_1$ exerts a force $\bm F$ on $m_2$, then $m_2$ must also exerts a force
@@ -392,6 +391,7 @@ force is conservative:
 
 
 \section{Kepler's Laws of Planetary Motion}
+\label{section:keplers-laws}
 We will now combine our knowledge of gravitational force and gravitational
 energy to understand motion of satellites, planets and stars.
 
@@ -715,13 +715,13 @@ $v_\text{orbit}$ around Earth at the same altitude.
 \end{example}
 
 
-\subsection{Escape Velocity}
+\subsection{Escape Speed}
 An object can leave the surface of Earth at any velocity. But when all the
 kinetic energy of that object is converted into gravitational potential
 energy, it will return back to the surface of Earth. However, there is a
-\emph{minimum} velocity at which the object would not fall back to Earth
-because of gravity, called the \textbf{escape velocity}. To derive the escape
-velocity, we assume that
+\emph{minimum} speed at which the object would not fall back to Earth
+because of gravity, called the \textbf{escape speed}. To derive the escape
+speed, we assume that
 \begin{itemize}[itemsep=2pt]
 \item The object and Earth form an isolated system
 \item All the work is done by gravity
@@ -911,55 +911,61 @@ depending on the magnitude of $\bm v$ at $P$:
 
 \section{Orbital Energies}
 
-\textbf{Orbital kinetic energy:} We can obtain the orbital kinetic energy in a
-perfectly circular orbit by applying the orbital velocity in our expression of
-kinetic energy:
+\textbf{Orbital kinetic energy:} We can obtain the orbital kinetic energy of an
+object in a \emph{perfectly circular orbit} by applying the equation for
+orbital speed (Eq.~\ref{eq:orbital-velocity}) and the definition of kinetic
+energy (Eq.~\ref{eq:KE-definition}):
 \begin{equation}
   K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
-  \left(\sqrt{\frac{GM}r}\right)^2=\boxed{\frac{GMm}{2r}}
+  \left(\sqrt{\frac{GM}r}\right)^2
 \end{equation}
+which gives us this equation:
+\begin{important-equation}
+  K_\text{orbit}=\frac{GMm}{2r}
+  \label{eq:orbital-KE}
+\end{important-equation}
 This equation uses the expression for orbital velocity $v_\text{orbit}$,
 therefore it relies on the same assumption, i.e.\ a perfectly circular orbit
 
 
 
 \textbf{Total orbital energy:} Total orbital energy is the sum of kinetic and
-gravitational potential energies while in orbit:
-\begin{equation}
-  E_\text{orbit}=K_\text{orbit}+U_g
-\end{equation}
-Substituting the expressions for $K$ and $U_g$ derived for objects in orbit:
+gravitational potential energies while in orbit. Substituting the expressions
+for $K_\text{orbit}$ (Eq.~\ref{eq:orbital-KE}) and $U_g$
+(Eq.~\ref{eq:GPE-general}) derived for objects in circular orbit:
 \begin{equation}
   E_\text{orbit}=
-  \underbracket[1pt]{\frac{GMm}{2r}}_{K_\text{orbit}} +
-  \underbracket[1pt]{\left(-\frac{GMm}r\right)}_{U_g}=
-  \boxed{-\frac{GMm}{2r}}
+  K_\text{orbit}+U_g =
+  \frac{GMm}{2r} +%{K_\text{orbit} +
+  \left(-\frac{GMm}r\right) %}_{U_g}=
 \end{equation}
+Which gives us the equation:
+\begin{important-equation}
+  E_\text{orbit}=
+  %\underbracket[1pt]{\frac{GMm}{2r}}_{K_\text{orbit}} +
+  %\underbracket[1pt]{\left(-\frac{GMm}r\right)}_{U_g}=
+  -\frac{GMm}{2r}
+\end{important-equation}
 
-%Orbital kinetic energy can be exprssed in terms of orbital velocities, or
-%in terms of $M$ and orbital radius $r$:
-%
-%%  \eq{-.1in}{
-%%    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac{GMm}{2r}
-%%  }
-  
-Gravitational potential energy is $-2$ times the orbital kinetic energy:
-\begin{align*}
-  U_g &=2K_\text{orbit}\\
-  E_\text{orbit} &=-K_\text{orbit}
-\end{align*}
+
 
 \textbf{Binding Energy:} Binding energy $E_\text{binding}$ is the energy
 required to remove the mass $m$ from its orbit, and bring it to $r=\infty$,
 where total energy $E_\infty=0$. To do so, we need to make up for the deficit
 in total energy, therefore:
-\begin{equation}
-  E_\text{binding}=E_\infty-E_\text{orbit}=0-(-K_\text{orbit})=K_\text{orbit}
-\end{equation}
+\begin{important-equation}
+  E_\text{binding}=E_\infty-E_\text{orbit}=\frac{GMm}{2r}
+  %-K_\text{orbit})=K_\text{orbit}
+\end{important-equation}
 For those with a background in chemistry, the binding energy is analogous to
 the \emph{ionization energy} of removing the valence electron from an atom.
 
-
+We can see that there are simple relationships betweeen orbital kinetic energy,
+gravitational potential energy, total energy and escape energy:
+%Gravitational potential energy is $-2$ times the orbital kinetic energy:
+\begin{equation}
+  K_\text{orbit} = \frac12U_g = -E_\text{orbit} = E_\text{binding}
+\end{equation}
 
 %%\begin{example}
 %%  On March 6, 2001, the Mir space station was deliberately

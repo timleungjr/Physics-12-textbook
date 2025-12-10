@@ -58,7 +58,15 @@
 \usepackage{colortbl}
 \usepackage{multicol}
 \usepackage{wrapfig}
+\usepackage{physics}
 
+\def\kB{1.38e-23} % Boltzmann constant
+%\def\mu{1.66e-27} % unified atomic mass unit/Dalton (symbols: m_u or Da)
+\def\mu{6.6465e-27} % molecular mass of Heliumn
+
+\def\maxwellboltzmann#1{
+  40000*pi*(\mu/(2*pi*\kB*#1))^(3/2)*(1000*x)^2*exp(-\mu*(1000*x)^2/(2*\kB*#1))
+}
 
 \pgfplotsset{
   compat=1.13, % TikZ coordinates <-> axes coordinates
@@ -294,14 +302,8 @@ language governing permissions and limitations under the License.\\ % License in
 %\input{../harmonicMotion/harmonicMotion-practice-questions}
 
 
-%---------------------------------------------------------------------------
-%      GRAVITY AND PLANETARY MOTION
-%---------------------------------------------------------------------------
-
+%\part{Universal Gravitation}
 \chapterimage{orange1.jpg} % Chapter heading image
-
-\part{Universal Gravitation}
-  
 \input{gravity/Phys12-C07-gravField}
 \input{gravity/homework/Phys12-C08-HW}
 

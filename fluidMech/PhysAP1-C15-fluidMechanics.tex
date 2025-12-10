@@ -251,11 +251,11 @@ that it experiences:
 %
 %{Buoyancy}
 Using some basic calculus (well, depends on who you ask), we can find the
-pressure over the entire surface to find the total buoyant force $\vec F_B$ the
+pressure over the entire surface to find the total buoyant force $\bm F_B$ the
 fluid exerts on the object. The expression is surprisingly simple:  
 \begin{equation}
   \boxed{
-    \vec F_B=\rho_\text{fluid}gV\hat z=m_\text{fluid}g\hat z
+    \bm F_B=\rho_\text{fluid}gV\hat z=m_\text{fluid}g\hat z
   }
 \end{equation}
 where $\rho_\text{fluid}$ is the density of the displaced fluid, and $V$ is
@@ -271,7 +271,7 @@ equation is known as \textbf{Archimedes' principle}.
 %{Buoyancy}
 %
 %  \eq{0in}{
-%    \boxed{\vec B = \rho_\text{fluid}gV\hat z=
+%    \boxed{\bm B = \rho_\text{fluid}gV\hat z=
 %      m_\text{fluid}g\hat z}
 %\end{equation}
 %
@@ -282,10 +282,10 @@ equation is known as \textbf{Archimedes' principle}.
 %  \end{itemize}
 %
 %  \vspace{.15in}Objects immersed in a fluid have an ``apparent weight''
-%  $\vec w'$ that is reduced by the buoyant force:
+%  $\bm w'$ that is reduced by the buoyant force:
 %
 \begin{equation}
-  \vec w'=\vec w-\vec B=\rho'\vec gV
+  \bm w'=\bm w-\bm B=\rho'\bm gV
 \end{equation}
 %  
 %  where $\rho'=\rho_\text{obj}-\rho_\text{fluid}$ is the relative density
@@ -373,11 +373,11 @@ The governing equations in fluid mechanics is called
 \textbf{Navier-Stokes equations}, which is written in complicated vector
 and calculus symbols:
 \begin{align}
-  \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\vec v)&=0\\
-  \frac{\partial(\rho\vec v)}{\partial t} +
-  \nabla(\rho\vec v\otimes\vec v) &= -\nabla P+\nabla\cdot\vec\tau
-  +\rho\vec g\\
-  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\vec v) &=
+  \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\bm v)&=0\\
+  \frac{\partial(\rho\bm v)}{\partial t} +
+  \nabla(\rho\bm v\otimes\bm v) &= -\nabla P+\nabla\cdot\bm\tau
+  +\rho\bm g\\
+  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\bm v) &=
   \nabla\cdotp(k\nabla T)+\Phi
 \end{align}
 Even for university students experienced with calculus, solving these equations
@@ -388,7 +388,7 @@ is still an intimating task. \textbf{But what do they actually mean?}
 %  conservation of mass:
 %
 %\begin{equation}
-%    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\vec v)=0
+%    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\bm v)=0
 %\end{equation}
 %
 %  \textbf{Meaning:} The decrease in fluid mass in a fixed volume containing a
@@ -403,9 +403,9 @@ is still an intimating task. \textbf{But what do they actually mean?}
 %  momentum-impulse theorem applied to fluids in a volume:
 %
 %\begin{equation}
-%    \frac{\partial(\rho\vec v)}{\partial t} +
-%    \nabla(\rho\vec v\otimes\vec v) = -\nabla P+\nabla\cdot\vec\tau
-%    +\rho\vec g
+%    \frac{\partial(\rho\bm v)}{\partial t} +
+%    \nabla(\rho\bm v\otimes\bm v) = -\nabla P+\nabla\cdot\bm\tau
+%    +\rho\bm g
 %\end{equation}
 %
 %  \textbf{Meaning:} The decrease in the total momentum of a fluid in a fixed
@@ -421,7 +421,7 @@ is still an intimating task. \textbf{But what do they actually mean?}
 %  the conservation of energy theorem applied to fluids:
 %  
 %\begin{equation}
-%  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\vec v)=
+%  \rho\frac{\partial e}{\partial t} + P(\nabla\cdotp\bm v)=
 %  \nabla\cdotp(k\nabla T)+\Phi
 %\end{equation}
 %

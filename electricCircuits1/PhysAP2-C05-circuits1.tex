@@ -474,7 +474,24 @@ free electrons as they move in the wire
 
 Georg Ohm discovered that when a current is passed through a piece of metal
 conductor, the voltage (electric potential difference) $V$ across the two ends
-of the metal is proportional to the amount of current ($I$) through it. This is
+of the metal is proportional to the amount of current ($I$) through it
+(Fig.~\ref{fig:ohm1}).
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[thick,scale=.37]
+    \draw (-4,0)--(14,0);
+    \draw (-1,0)--(-1,-3)--(11,-3)--(11,0);
+    \draw[fill=lightgray] (0,-1) rectangle (10,1) node[midway]{$\rho$};
+    \draw[fill=black!2] (5,-3) circle (.8) node{\large V};
+    \draw[|<->|] (0,1.6)--(10,1.6) node[midway,above]{$L$};
+    \draw[<-] (10,.5) to[out=0,in=180] (13,1.5) node[right]{$A$};
+  \end{tikzpicture}
+  \caption{Measuring voltage across a piece of meteal}
+  \label{fig:ohm1}
+\end{figure}
+
+
+This is
 known as \textbf{Ohm's law}:
 \begin{important-equation}
   V=IR
@@ -538,15 +555,6 @@ Fig.~\ref{fig:ohmic-relationship}.
   \label{fig:i-vs-v-diagrams}
 \end{figure}
 
-
-\subsection{Non-Ohmic Devices}
-
-Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
-between voltage and current is \emph{not} linear, as shown in
-Fig.~\ref{fig:non-ohmic-relationship}. Semi-conductor devices such as diodes
-(e.g.\ your TV's LED screen) are non-ohmic. As well, a DC motor is only ohmic
-if it is stalled (i.e.\ when current passes through the current but the motor
-shaft is not turning).
 \begin{remark}
   For clarification, the graphs in Fig.~\ref{fig:i-vs-v-diagrams} are plotted as
   $I$ vs.\ $V$. This is because we usually alter the voltage as an
@@ -557,6 +565,33 @@ shaft is not turning).
   device, the line would still be straight, but the slope would now be the
   resistance $R$.
 \end{remark}
+
+\subsection{Non-Ohmic Devices}
+
+Loads that are \textbf{non-ohmic} do not obey Ohm's law; the relationship
+between voltage and current is \emph{not} linear, as shown in
+Fig.~\ref{fig:non-ohmic-relationship}. The majority of devices that we
+encounter in circuits are non-ohmic. The include:
+\begin{itemize}
+\item Semi-conductor devices used for electronics
+  \begin{itemize}
+  \item Vacuum tubes
+  \item Transistors
+  \item Diodes (including light-emitting diodes, LEDs)
+  \end{itemize}
+\item Neon lights
+\item DC motors
+\end{itemize}
+\begin{remark}
+  A DC motor is ohmic if it is \emph{stalled}, i.e.\ current flows through it,
+  but the motor shaft/axle does not turn. All of the energy is dissipated by
+  the resistance in the wires inside the motor. A properly-operating DC motor
+  is non-ohmic because as the armature turns, it generates a
+  ``back \emph{emf}'' when the magnetic flux through the armature changes, as
+  discussed in Faraday's law.
+\end{remark}
+
+
 
 
 
@@ -656,11 +691,15 @@ Average power $P$ is the rate at which work $W$ is done, and from
 electrostatics, the change in electric potential energy $\Delta E_q$ is
 proportional to the amount of charge $q$ and the voltage $V$. This gives a
 very simple expression for power through a resistor:
-\begin{equation}
+\begin{equation*}
   P=\frac W{\Delta t}=\frac{\Delta (qV)}{\Delta t}
   =\left(\frac{\Delta q}{\Delta t}\right)V
-  \;\rightarrow\;\boxed{P=IV}
-\end{equation}
+\end{equation*}
+Noting that $\frac{\Delta q}{\Delta t}$ is the electrical current through the
+circuit, we have a final expression for power through a circuit:
+\begin{important-equation}
+  P=IV
+\end{important-equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -674,9 +713,10 @@ This relationship applies regardless of whether the loads are ohmic or not.
 
 Combining Ohm's law ($V=IR$) with power equation, we get two additional
 expressions for power through a resistor:
-\begin{equation}
-  \boxed{P=\frac{V^2}R}\quad\quad\boxed{P=I^2R}
-\end{equation}
+\begin{important-equation}
+  P=\frac{V^2}R\quad\quad
+  P=I^2R
+\end{important-equation}
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -1018,7 +1058,9 @@ connected in parallel (side by side) must be the same:
 \section{Resistors in Circuits}
 
 \subsection{Resistors in Parallel}
-
+In circuit analaysis, \emph{parallel} means devices that are connected side by
+side to each other. In the case of resistors in parallel, one such example is
+shown in Fig.~\ref{fig:parallel-resistors}.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[thick]
@@ -1028,116 +1070,77 @@ connected in parallel (side by side) must be the same:
     to[short] (2.25,0);
   \end{tikzpicture}
   \caption{Circuit diagram of 3 resistors connected in parallel}
+  \label{fig:parallel-resistors}
 \end{figure}
+
 From the junction law, we know that the total current is the current through all
 the parallel resistors, which we can then express in terms of voltage and
 resistance using Ohm's law:
-\begin{equation}
+\begin{equation*}
   I=I_1+I_2+I_3+\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}+\cdots
   \label{eq:parallel1}
-\end{equation}
+\end{equation*}
 From the voltage law, we know that the voltage across the parallel resistors
-must be the same (i.e.\ $V_1=V_2=V_3=\cdots=V$), therefore we can factor out
-the voltage term in Eq.~\ref{eq:parallel1}, and re-write in terms of an
+must be the same, i.e.\ $V_1=V_2=V_3=\cdots=V$, therefore we can factor out the
+voltage term in Eq.~\ref{eq:parallel1}, and re-write in terms of an
 \emph{equivalent} resistance $R_p$:
 \begin{equation*}
-  I=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)=
-  \frac V{R_p}
+  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)
 \end{equation*}
-From this, we find the parallel equivalent resistance of $N$ resistors connected
-in parallel: The inverse of the equivalent resistance $R_p$ is the sum of the
-inverses of the individual resistances $R_i$:
+From this equation, we find the parallel equivalent resistance of $N$ resistors
+connected in parallel: The inverse of the equivalent resistance $R_p$ is the
+sum of the inverses of the individual resistances $R_i$:
 \begin{important-equation}
   \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
 \end{important-equation}
-Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
-it effectively increases the cross section area that the current passes through.
-Also, the parallel equivalent resistance is \emph{always} lower than the 
-any individual resistor.
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%    \end{tikzpicture}
-%
-%    \vspace{.6in}$R_\text{eq}=R$
-%    
-%    \centering
-%
-%    \vspace{.2in}
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
-%      to[short,-o] (3,0);
-%      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
-%    \end{tikzpicture}
-%    
-%    \vspace{.27in}$R_\text{eq}=\dfrac R2$
-%    
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
-%      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
-%    \end{tikzpicture}
-%
-%    \vspace{.1in}$R_\text{eq}=\dfrac R3$
-%  
-%  \vspace{.1in}
-%
-%
-%
-%
-%=======
-%From the current law, we know that the total current is the current through all
-%the resistors, which we can rewrite in terms of voltage and resistance using
-%Ohm's law:
-%\begin{equation*}
-%  I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
-%\end{equation*}
-%But since we also know that $V_1=V_2=V_3=\cdots=V$ from the voltage law, we
-%can re-write as
-%\begin{equation*}
-%  I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}+\cdots\right)
-%\end{equation*}
-%The equivalent resistance of a parallel circuit can found by applying Ohm's law
-%and Kirchhoff's laws: The inverse of the equivalent resistance is the sum of
-%the inverses of the individual resistances.
-%\begin{important-equation}
-%  \frac1{R_p}=\sum_{i=1}^N\frac1{R_i}
-%\end{important-equation}
-%Increasing the number of resistors in parallel \emph{decreases} $R_p$ because
-%it effectively increases the cross section area that the current passes through.
-%The parallel equivalent resistance is \emph{always} lower than the lowest
-%resistor.
-%\begin{figure}[ht]
-%  \centering
-%  \begin{subfigure}[T]{.27\textwidth}
-%    \centering
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%    \end{tikzpicture}
-%    \caption{$R_\text{eq}=R$}
-%  \end{subfigure}
-%  \begin{subfigure}[T]{.27\textwidth}
-%    \centering
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
-%      to[short,-o] (3,0);
-%      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
-%    \end{tikzpicture}
-%    \caption{$R_\text{eq}=\dfrac R2$}
-%  \end{subfigure}
-%  \begin{subfigure}[T]{.27\textwidth}
-%    \centering
-%    \begin{tikzpicture}[thick]
-%      \draw (0,0) to[R=$R$,o-o] (3,0);
-%      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
-%      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
-%    \end{tikzpicture}
-%    \caption{$R_\text{eq}=\dfrac R3$}
-%  \end{subfigure}
-%\end{figure}
-%
-%
-%>>>>>>> 317105678c5ffcc4eff105474c2ee9d8a1facdb9
+Increasing the number of resistors in parallel \emph{decreases} $R_p$, as
+shown in Fig.~\ref{fig:parallel-resistance} because it effectively increases
+the cross section area that the current passes through. Conversely, removing
+resistors from a parallel configuration increases the overall resistance.
+Also, the parallel equivalent resistance is \emph{always} lower than the any
+individual resistor.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{.3\linewidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[R=$R$,o-o] (3,0);
+    \end{tikzpicture}
+
+    \vspace{.55in}$R_\text{eq}=R$
+    \caption{A single resistors}
+  \end{subfigure}
+  \begin{subfigure}{.3\linewidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[short,o-] (.3,0)--(.3,.7) to[R=$R$] (2.7,.7)--(2.7,0)
+      to[short,-o] (3,0);
+      \draw (.3,0)--(.3,-.7) to[R=$R$] (2.7,-.7)--(2.7,0);
+    \end{tikzpicture}
+
+    \vspace{.27in}$R_\text{eq}=\frac R2$
+    \caption{Two resistors in parallel}
+  \end{subfigure}
+  \begin{subfigure}{.3\linewidth}
+    \centering
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[R=$R$,o-o] (3,0);
+      \draw (.3,0)--(.3,1.2) to[R=$R$] (2.7,1.2)--(2.7,0);
+      \draw (.3,0)--(.3,-1.2) to[R=$R$] (2.7,-1.2)--(2.7,0);
+    \end{tikzpicture}
+
+    \vspace{.1in}$R_\text{eq}=\frac R3$
+    \caption{Three resistors in parallel}
+  \end{subfigure}
+  \caption{Decreasing equivalent resistance when more resistors are connected
+    in parallel}
+  \label{fig:parallel-resistance}
+\end{figure}
+
+
+
 \subsection{Resistors in Series}
+
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[thick]

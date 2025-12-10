@@ -102,17 +102,17 @@ Since pressure cannot be negative; no temperature can exist below that value.
 The \textbf{absolute temperature} $T$ (also known as the
 \textbf{thermodynamic temperature}) is obtained by shifting the ``null point''
 (where temperature is zero) from the Celsius temperature $T_C$.
-\begin{equation}
-  \boxed{T = T_C + 273.15}
-\end{equation}
+\begin{important-equation}
+  T = T_C + 273.15
+\end{important-equation}
 A temperature of \SI0{\kelvin} is called \textbf{absolute zero} (Note that
 absolute zero is impossible to obtain because of quantum-mechanic effects,
 discussed in Chapter~\ref{chapter:quantum}). This scale is consistent with
 physical and thermodynamic properties of gases. Note that the temperature
 \emph{change} of \SI1{\kelvin} is the same as \SI1\celsius, i.e.:
-\begin{equation}
+\begin{important-equation}
   \Delta T=\Delta T_C
-\end{equation}
+\end{important-equation}
 
 
 \section{Thermal Expansion}
@@ -304,39 +304,30 @@ At thermal equilibrium, pressure is evenly distributed in the gas
 %
 %
 %
-%{Ideal Gas Law for Low-Density Gases}
-%  Robert Boyle (1627-1691) discovered that, when a gas is allowed to expand or
-%  compress at \emph{constant temperature}, the product of pressure $P$ and $V$
-%  remain constant (\textbf{Boyle's law}):
-%
-%  \begin{equation}
-%    PV=\text{constant}
-% }
-%
-%  \vspace{-.15in}From the previous discussion on the absolute temperature scale,
-%  we also know that at \emph{constant volume}, temperature is proportional to
-%  pressure. Combining the two discoveries yields this equation:
-%
-%  \eq{-.2in}{
-%    PV=CT
-%  }
-%
-%  \vspace{-.15in}where ``C'' is some constant to be determined.
-%
-%
-%
-%
-%{Ideal Gas Law for Low-Density Gases}
-%  Thought experiment:
-%  \begin{itemize}
-%  \item Two identical containers with the same volume $V$, same amount of same
-%    kind of gas, at same pressure $P$ and same temperature $T$
-%  \item When the containers are combined and the molecules are free to move,
-%    $P$ and $T$ remain the same, but $V$ and $N$ both increases by factor of 2
-%  \end{itemize}
-%  Therefore $C$ must scale with the number of molecules $N$, which
-%  modifies the equation to the \textbf{ideal gas law}:
+\section{Ideal Gas Law for Low-Density Gases}
+Robert Boyle (1627-1691) discovered that, when a gas is allowed to expand or
+compress at \emph{constant temperature}, the product of pressure $P$ and $V$
+remain constant (\textbf{Boyle's law}):
+\begin{equation}
+  PV=\text{constant}
+\end{equation}
+From the previous discussion on the absolute temperature scale, we also know
+that at \emph{constant volume}, temperature is proportional to pressure.
+Combining the two discoveries yields this equation:
+\begin{equation}
+  PV=CT
+\end{equation}
+where ``C'' is some constant to be determined.
 
+Thought experiment:
+\begin{itemize}
+\item Two identical containers with the same volume $V$, same amount of same
+  kind of gas, at same pressure $P$ and same temperature $T$
+\item When the containers are combined and the molecules are free to move,
+  $P$ and $T$ remain the same, but $V$ and $N$ both increases by factor of 2
+\end{itemize}
+Therefore $C$ must scale with the number of molecules $N$, which
+modifies the equation to the \textbf{ideal gas law}:
 \begin{important-equation}
   PV=Nk_BT
 \end{important-equation}
@@ -383,8 +374,9 @@ gas in a container at temperature $T$ is given by the
 \end{equation}
 At this point, we are not very concerned with the (very difficult) mathematics
 of how this equation is derived. Rather, we are most interested in the
-consequence of this equation. The distributions of speeds are shown in
-Fig.~\ref{fig:maxwell-dist}.
+consequence of this equation. The distributions of speeds at \SI{300}\kelvin,
+\SI{300}\kelvin, and \SI{1000}{\kelvin} for helium (which is a monatomic gas)
+are shown in Fig.~\ref{fig:maxwell-dist}.
 %  the overall concept, so you don't need to memorize this equation
 %
 %  Note: $\exp(x)=e^x$
@@ -401,7 +393,32 @@ Fig.~\ref{fig:maxwell-dist}.
 %  \end{center}
 \begin{figure}[ht]
   \centering
-  \pic{.7}{thermodynamics/maxwell-boltzmann}
+  \begin{tikzpicture}[scale=.8]
+    \begin{axis}[
+        domain = 0:5,
+        xmax=5.5,
+        ymax=7.8,
+        xlabel = {Speed $v$ [$\times\SI{e3}{\metre\per\second}$]},
+        ylabel = {$P(v)$ [$\times\num{e-4}$]},
+        smooth,
+        samples=200,
+        thick,
+        axis lines = left,
+        every tick/.style = {thick},
+        tick scale binop=\times,
+      ]
+        
+      \addplot[very thick,color=red]{\maxwellboltzmann{300}};
+      \addplot[very thick,color=orange]{\maxwellboltzmann{600}};
+      \addplot[very thick,color=blue]{\maxwellboltzmann{1000}};
+      
+      \legend{
+        \SI{300}\kelvin,
+        \SI{600}\kelvin,
+        \SI{1000}\kelvin
+      }
+    \end{axis}
+  \end{tikzpicture}
   \caption{Maxwell-Boltzmann distribution function}
   \label{fig:maxwell-dist}
 \end{figure}
@@ -422,8 +439,31 @@ $v_\text{prob}$, the mean (average) speed $\langle v \rangle$ and the
 root-mean-square speed $v_\text{rms}$, shown in Fig.~\ref{fig:dist-speeds}.
 \begin{figure}[ht]
   \centering
-  \pic{.7}{thermodynamics/speed-distribution}
-  \caption{Most probable, average, and RMS velocities}
+  \begin{tikzpicture}
+    \begin{axis}[
+        domain = 0:2.5,
+        xmax=2.7,
+        ymax=9,
+        xlabel = {Speed $v$ [$\times\SI{e3}{\metre\per\second}$]},
+        ylabel = {$P(v)$ [$\times\num{e-4}$]},
+        title = {Maxwell-Boltzmann Distribution for Helium Gas at 300 K},
+        samples=200,
+        thick,
+        axis lines = left,
+        every tick/.style = {thick},
+        tick scale binop=\times,
+        width=11cm,
+        height=6cm,
+      ]
+
+      \addplot[very thick,color=black]{\maxwellboltzmann{300}};
+      
+      \draw[thick,magenta] (1.12,0)--(1.12,8) node[above]{$v_\text{prob}$};
+      \draw[thick,cyan] (1.26,0)--(1.26,8) node[above]{$\expval v$};
+      \draw[thick,violet] (1.38,0)--(1.38,8) node[above]{$v_\text{rms}$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Most probable, average, and RMS speeds}
   \label{fig:dist-speeds}
 \end{figure}
 
@@ -539,9 +579,9 @@ The speed that gives the average kinetic energy is called the
 \textbf{root-mean-square speed} $v_\text{rms}$, which is the square root of
 $\langle v^2\rangle$:
 \begin{important-equation}
-  \underbracket[1pt]{v_\text{rms}=\sqrt{\langle v^2\rangle}}_{
-    \text{i.e.\ }v_\text{rms}^2=\langle v^2\rangle}
-  =\sqrt{\frac{3k_BT}m}=\sqrt{\frac{3RT}M}
+  \text{RMS speed:}\quad
+  %\underbracket[1pt]{v_\text{rms}=\sqrt{\langle v^2\rangle}}_{
+  v_\text{rms}=\sqrt{\expval{v^2}}=\sqrt{\frac{3k_BT}m}=\sqrt{\frac{3RT}M}
 \end{important-equation}
 ``Root mean square'' literally means ``the square root of the mean of the
 square''. Like $v_\text{prob}$ and $\langle v\rangle$, $v_\text{rms}$ is
@@ -697,23 +737,21 @@ energy.
 
 \subsection{Internal/Thermal Energy}
 
-As discussed in Section XXX and XXX, internal energy, or thermal enegy ($U$) is
-the total kinetic and potential energies of the atoms/molecules at the
-microscopic level. To calculate the internal energy of a collection of
-molecules, we first note the average kinetic energy of an ideal-gas molecule. A
-molecule can translate in three dimensions (its velocity can have the $\hat x$,
-$\hat y$ and $\hat z$ components), so kinetic energy can be equally divided
-amongst the three ``degrees of freedom'' (DoF):
+As discussed in Sec.~\ref{sec:thermal-energy-definition}, internal energy, or
+thermal energy ($U$) is the total kinetic and potential energies of the
+atoms/molecules at the molecular level. To calculate the thermal energy of a
+collection of molecules, we first note the average kinetic energy of an
+ideal-gas molecule. A molecule can translate in three dimensions (its velocity
+can have the $\hat x$, $\hat y$ and $\hat z$ components), so kinetic energy
+can be equally divided amongst the three ``degrees of freedom'' (DoF):
 \begin{equation*}
-  \langle K \rangle=\frac12m\langle v^2\rangle
-  =\frac12m\langle v_x^2+v_y^2+v_z^2\rangle\\
-  =\frac12m\langle v_x^2\rangle+\frac12m\langle v_y^2\rangle+
-  \frac12m\langle v_z^2\rangle
+  \expval K=\frac12m\expval{v^2}=\frac12m\expval{v_x^2+v_y^2+v_z^2}
+  =\frac12m\expval{v_x^2}+\frac12m\expval{v_y^2}+\frac12m\expval{v_z^2}
 \end{equation*}
-Since the motion of the molecules is random (i.e.\ no preferred direction of
-motion), the component averages must be the same, i.e.
+Since the motion of the molecules is entirely random (i.e.\ there is no
+preferred direction of motion), the component averages must be the same, i.e.
 \begin{equation*}
-  \langle v_x^2\rangle=\langle v_y^2\rangle=\langle v_z^2\rangle
+  \expval{v_x^2}=\expval{v_y^2}=\expval{v_z^2}
 \end{equation*}
 
 \begin{definition}
@@ -726,36 +764,32 @@ motion), the component averages must be the same, i.e.
   towards the total internal energy of the system
 \end{definition}
 
-\begin{itemize}
-\item\textbf{Monatomic gases} (e.g.\ helium, argon gases) have 3
-  translational DoF, therefore the internal energy is the total kinetic energy,
-  which were shown earlier:
-  \begin{equation}
-    U=\frac32Nk_BT=\frac32nRT
-  \end{equation}
-
-\item\emph{Diatomic} gases (e.g.\ hydrogen, oxygen, nitrogen)
+\textbf{Monatomic gases} (e.g.\ helium, argon gases) have 3 translational DoF,
+therefore the internal energy is the total kinetic energy, which were shown
+earlier:
+\begin{equation}
+  U=\frac32Nk_BT=\frac32nRT
+\end{equation}
+\textbf{Diatomic gases} (e.g.\ hydrogen, oxygen, nitrogen)
 %\footnote{In
 %  %\footnote{By definition, diatomic gases cannot also
 %  %be ideal gases. However, in
 %  AP Physics 2, you will often hear of a ``diatomic ideal gas''. In those
 %  cases, we assume an equality rather than an approximation}
-  have 3 translational DoF, and 2 rotational DoF, therefore the total internal
-  energy is:
-  \begin{equation}
-    U=\frac52Nk_BT=\frac52nRT
-  \end{equation}
-
-\item\emph{Solids} typically have 3 translational DoF, plus 3 vibrational DoF in
-  elastic compression, and therefore the internal energy is:
-  \begin{equation}
-    U\approx3Nk_BT\quad\text{\normalsize or}\quad 3nRT
-  \end{equation}
-  It should be noted that the above approximation is more accurate for solids
-  that have well-defined lattice-crystalline structures (e.g.\ metals and their
-  alloys). For other substances, this approximation can be \emph{very}
-  inaccurate.
-\end{itemize}
+have 3 translational DoF, and 2 rotational DoF, therefore the total internal
+energy is:
+\begin{equation}
+  U=\frac52Nk_BT=\frac52nRT
+\end{equation}
+\textbf{Solids} typically have 3 translational DoF, plus 3 vibrational DoF in
+elastic compression, and therefore the internal energy is:
+\begin{equation}
+  U\approx3Nk_BT\quad\text{\normalsize or}\quad 3nRT
+\end{equation}
+It should be noted that the above approximation is more accurate for solids
+that have well-defined lattice-crystalline structures (e.g.\ metals and their
+alloys). For other substances, this approximation can be \emph{very}
+inaccurate.
 
 What is conspicuously missing is the description of liquids. In general, there
 is no viable approximation for the internal energy of a liquid because of the
@@ -897,9 +931,9 @@ $c$ is a physical property of a substance, with an SI unit of
 
 \subsection{Specific Heat Capacity for Solids}
 
-For solids, when heat is added or removed, usually little to no work is done
-\emph{by} the solid (i.e.\ $W\approx 0$). Therefore all the heat goes into
-changing the internal energy:
+When heat is added or removed from a solid, usually little to no work is done
+\emph{by} the solid (i.e.\ $W\approx 0$). Therefore all the heat transfer goes
+into changing the internal energy:
 \begin{equation}
   Q\approx\Delta U\approx\underbracket[1pt]{3nR}_{mc}\Delta T
 \end{equation}
