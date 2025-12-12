@@ -624,12 +624,10 @@ which is arguably the most important concept in fundamental physics
   \textbf{Law of Conservation of Energy:} The change in the total energy of a
   system $E_\text{sys}$ is equal to the net external mechanical work
   $W_\text{ext}$ done from outside the system.
-  \begin{equation}
-    \boxed{
-      \Delta E_\text{sys}=W_\text{ext}
-    }
-    \label{eq:conservation-of-energy}
-  \end{equation}
+  \begin{equation*}
+    \Delta E_\text{sys}=W_\text{ext}
+    %\label{eq:conservation-of-energy}
+  \end{equation*}
 \end{definition}
 The \emph{consequence} of the law of conservation of energy is that,
 \begin{definition}
@@ -701,8 +699,8 @@ When applying the law of conservation of energy to a \emph{thermodynamic}
 system, we note there is no change in bulk kinetic energy and potential
 energies, since no matter how fast the container moves, or how high it is above
 Earth, or how much the spring stretches, the temperature of the gas inside would
-not be affect. The only energy change to the system is its \emph{internal}
-energy. This reduces the equation to:
+not be affected. The only energy change to the system is its thermal energy.
+This reduces the equation to:
 \begin{equation}
   \xcancel{\sum\Delta K} + \xcancel{\sum\Delta U} + \Delta E_\text{int}=
   W_\text{ext}
@@ -742,8 +740,9 @@ thermal energy ($U$) is the total kinetic and potential energies of the
 atoms/molecules at the molecular level. To calculate the thermal energy of a
 collection of molecules, we first note the average kinetic energy of an
 ideal-gas molecule. A molecule can translate in three dimensions (its velocity
-can have the $\hat x$, $\hat y$ and $\hat z$ components), so kinetic energy
-can be equally divided amongst the three ``degrees of freedom'' (DoF):
+can have the $\xxx$, $\yyy$ and $\zzz$ components), and by the phythagorean
+theorem, $v^2=v_x^2+v_y^2+v_z^2$, so kinetic energy can be divided amongst the
+three ``degrees of freedom'' (DoF):
 \begin{equation*}
   \expval K=\frac12m\expval{v^2}=\frac12m\expval{v_x^2+v_y^2+v_z^2}
   =\frac12m\expval{v_x^2}+\frac12m\expval{v_y^2}+\frac12m\expval{v_z^2}
@@ -828,42 +827,29 @@ higher temperature to low temperature. Two objects are in thermal equilibrium
 
 \subsection{Mechanical Work}
 
-{\color{orange}$W$} is the mechanical work%\footnote{The full
-%    definition in calculus form is $W=\int PdV$ (i.e.\ pressure times change in
-%    volume) which is derived from the definition of mechanical work:
-%    $W=\int\bm F\cdot d\bm x$ (force times distance)} done \emph{to}
-%  the system by the surrounding.
-%
-%  \begin{equation}
-%    \boxed{
-%      \Delta U=Q+{\color{orange}W}
-%    }
-%  }
-%  \begin{itemize}
-%  \item Work is done if the volume changes
-%  \item At constant pressure:
-%
-%    \eq{-.15in}{
-%      W=-P\Delta V
-%    }
-%    
-%  \item\vspace{-.1in}\textbf{POSITIVE} if done \emph{to} the system, e.g.\
-%    pushing a piston to compress gas in an engine
-%  \item\textbf{NEGATIVE} if done \emph{by} the system, e.g.\ using steam
-%    pressure to push a piston or shaft
-%  \end{itemize}
-%  \vspace{.4in}
-%
-%
-%
-%
+{\color{orange}$W$} is the mechanical work done \emph{to} the system by the
+surrounding.
+
+The full definition in calculus form is $W=\int PdV$ (i.e.\ pressure times
+change in volume) which is derived from the definition of mechanical work:
+$W=\int\bm F\cdot d\bm x$ (force times distance)
+
+Work is done if the volume changes. At constant pressure:
+\begin{equation}
+  W=-P\Delta V
+\end{equation}
+By the convention used in this boo, Work is \emph{positive} if it is done
+\emph{to} the system, e.g.\ pushing a piston to compress gas in an engine, and
+\emph{negative} if work is done \emph{by} the system, e.g.\ using steam
+pressure to push a piston or shaft
+
+
 %{Example of a Thermal System}
 %  \centering
 %  \begin{tikzpicture}[scale=1.2]
 %    \begin{scope}[thick]
 %      \draw[fill=cyan!10] (5,0)--(1.5,0)--(1.5,1)--(0,1)--(0,2)--(4,2)
 %      --(4,.7)--(5,.7);
-%      \draw[fill=black!2] (.2,1.2) rectangle (1.5,1.8);
 %    \end{scope}
 %    \fill (4.8,0) rectangle (5,.7);
 %
@@ -905,8 +891,8 @@ directly related to the change in temperature ($\Delta T$) by the object's
 \begin{important-equation}
   Q = C\Delta T
 \end{important-equation}
-$C$ is the amount of energy required to heat up the substance by \SI1{\kelvin}
-or \SI1{\celsius}. It has a unit of \emph{joule per kelvin}
+$C$ is the amount of energy required to heat up an object by \SI1{\kelvin} or
+\SI1{\celsius}. It has a unit of \emph{joule per kelvin}
 (\si{\joule\per\kelvin}) or \emph{joule per degree Celsius}
 (\si{\joule\per\celsius}). Heat capacity depends on the object's mass as well
 as its composition.
